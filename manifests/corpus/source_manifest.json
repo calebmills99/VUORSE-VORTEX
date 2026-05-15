@@ -1,0 +1,10 @@
+{
+  "name": "VUORSE-VORTEX Source Corpus",
+  "description": "Manifest for Slayverse lore, canon, roadmap-private material, and synthetic enrichment sources.",
+  "sources": [],
+  "notes": [
+    "Populate from Slayverse Lore Compendium materials.",
+    "Keep Memory Cortex separate.",
+    "Do not invent Jake's mother's name prematurely."
+  ]
+}
