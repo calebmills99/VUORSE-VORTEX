@@ -1,0 +1,14 @@
+{
+  "batch_id": "example-hooplehopper-totality-pass-001",
+  "seed": 19061938,
+  "skill": "skills/vuorse-synthetic-enrichment/SKILL.md",
+  "agent_count": 4,
+  "records_per_agent": 25,
+  "layers": ["hooplehopper_totality", "apocrypha", "roadmap_manifest"],
+  "forbidden_disclosures": [
+    "future Hooplehopper public names",
+    "Jake mother name invention",
+    "Vorst reveal to writers room"
+  ],
+  "output_dir": "synthetic_enrichment/generated"
+}

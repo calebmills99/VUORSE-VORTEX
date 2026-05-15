@@ -1,0 +1,60 @@
+[project]
+name = "vuorse-vortex"
+version = "0.1.0"
+description = "VUORSE-VORTEX: cloud-scale Slayverse synthetic memory, canon firewalling, and GPU-first enrichment architecture."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Private / Weaver-controlled" }
+authors = [
+  { name = "Caleb Mills Stewart" }
+]
+dependencies = [
+  "pydantic>=2.7",
+  "typer>=0.12",
+  "rich>=13.7",
+  "jsonschema>=4.22",
+  "orjson>=3.10",
+  "python-dotenv>=1.0",
+  "numpy>=1.26",
+  "tqdm>=4.66",
+]
+
+[project.optional-dependencies]
+gpu = [
+  "torch>=2.3",
+  "sentence-transformers>=3.0",
+  "chromadb>=0.5",
+  "faiss-cpu>=1.8",
+]
+dev = [
+  "pytest>=8.2",
+  "ruff>=0.5",
+  "mypy>=1.10",
+]
+
+[project.scripts]
+vuorse-vortex = "vuorse_vortex.cli:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+package = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = []
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+ignore_missing_imports = true

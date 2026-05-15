@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# macOS
+.DS_Store
+.AppleDouble
+._*
+
+# Secrets
+.env
+.env.*
+!.env.example
+config.local.*
+*_secret.*
+*_secrets.*
+
+# Runtime data
+embeddings/output/*
+embeddings/indexes/*
+!embeddings/output/.gitkeep
+!embeddings/indexes/.gitkeep
+
+# Large generated artifacts
+*.parquet
+*.faiss
+*.bin
+*.safetensors
+*.pt
+*.ckpt
+*.sqlite
+*.sqlite3
+chromadb/
+
+# Logs / temp
+logs/
+tmp/
+*.log
+*.tmp
+
+# Private local-only scratch
+scratch/
+local_data/
