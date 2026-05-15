@@ -6,6 +6,7 @@ from pathlib import Path
 
 import orjson
 
+from vuorse_vortex.firewall import CanonFirewallValidator
 from vuorse_vortex.schemas import MemoryRecord
 
 
@@ -21,6 +22,7 @@ def iter_jsonl(path: Path):
 def validate_jsonl(path: Path) -> list[str]:
     errors: list[str] = []
     seen: set[str] = set()
+    firewall = CanonFirewallValidator()
 
     for line_no, obj in iter_jsonl(path):
         try:
@@ -33,10 +35,7 @@ def validate_jsonl(path: Path) -> list[str]:
             errors.append(f"{path}:{line_no}: duplicate id: {record.id}")
         seen.add(record.id)
 
-        if record.layer in {"apocrypha", "roadmap_manifest", "hooplehopper_totality"}:
-            if record.behavior.may_state_as_fact:
-                errors.append(f"{path}:{line_no}: private layer may_state_as_fact must be false")
-            if record.behavior.may_reveal_to_user:
-                errors.append(f"{path}:{line_no}: private layer may_reveal_to_user must be false")
+        for msg in firewall.validate_record(record):
+            errors.append(f"{path}:{line_no}: {msg}")
 
     return errors
