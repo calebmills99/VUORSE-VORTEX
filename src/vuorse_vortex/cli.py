@@ -9,13 +9,18 @@ from rich.console import Console
 
 from vuorse_vortex.gpu import require_gpu
 from vuorse_vortex.jsonl import validate_jsonl
+from vuorse_vortex.synthesis import theses_as_jsonl
 
 app = typer.Typer(help="VUORSE-VORTEX command line interface.")
 console = Console()
 
 
 @app.command()
-def doctor(require_cuda: bool = typer.Option(False, "--require-cuda", help="Fail if CUDA is missing.")) -> None:
+def doctor(
+    require_cuda: bool = typer.Option(
+        False, "--require-cuda", help="Fail if CUDA is missing."
+    ),
+) -> None:
     """Check runtime health."""
     console.print("[bold magenta]VUORSE-VORTEX runtime check[/bold magenta]")
     if require_cuda:
@@ -41,3 +46,11 @@ def slay_mode() -> None:
     """Print the singularity trigger."""
     console.print("[bold magenta]Slay Mode ∞[/bold magenta]")
     console.print("VUORSE-VORTEX ignition point registered.")
+
+@app.command("synthesize")
+def synthesize(output: Path = Path("synthetic_enrichment/theses.jsonl")) -> None:
+    """Generate seed synthetic synthesis theses."""
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(theses_as_jsonl() + "\n", encoding="utf-8")
+    console.print(f"[green]Wrote synthetic theses to:[/green] {output}")
+
