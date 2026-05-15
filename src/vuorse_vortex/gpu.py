@@ -8,14 +8,14 @@ from rich.console import Console
 
 console = Console(stderr=True)
 
-GPU_TANTRUM = """
-💅 VUORSE GPU TANTRUM 💅
-CUDA is unavailable. I am not embedding the entire Slayverse on CPU like a Victorian
-clerk with a candle.
-Deep-learning workload refused.
-Restore GPU/CUDA or explicitly run a small CPU-only diagnostic mode.
-VUORSE is now on strike.
-""".strip()
+GPU_TANTRUM = (
+    "💅 VUORSE GPU TANTRUM 💅\n"
+    "CUDA is unavailable. I am not embedding the entire Slayverse on CPU like a Victorian "
+    "clerk with a candle.\n"
+    "Deep-learning workload refused.\n"
+    "Restore GPU/CUDA or explicitly run a small CPU-only diagnostic mode.\n"
+    "VUORSE is now on strike."
+)
 
 
 def env_true(name: str) -> bool:
