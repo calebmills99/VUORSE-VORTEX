@@ -1,0 +1,162 @@
+name: VUORSE-VORTEX CI/CD
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+  schedule:
+    # Run synthetic enrichment daily at 03:00 UTC
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+    inputs:
+      run_enrichment:
+        description: "Run synthetic enrichment agent"
+        required: false
+        default: "false"
+        type: boolean
+
+env:
+  UV_SYSTEM_PYTHON: "1"
+  VORTEX_LOG_FORMAT: "console"
+  VORTEX_LOG_LEVEL: "INFO"
+  VORTEX_REQUIRE_CUDA: "false"
+  VORTEX_FIREWALL_STRICT_MODE: "true"
+
+jobs:
+  # ── Lint & Type Check ────────────────────────────────────────────────────
+  lint:
+    name: Lint & Type Check
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install UV
+        uses: astral-sh/setup-uv@v4
+        with:
+          version: "latest"
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dev dependencies
+        run: uv sync --extra dev
+
+      - name: Run ruff lint
+        run: uv run ruff check src/ tests/
+
+      - name: Run ruff format check
+        run: uv run ruff format --check src/ tests/
+
+  # ── Tests ────────────────────────────────────────────────────────────────
+  test:
+    name: Tests (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    strategy:
+      matrix:
+        python-version: ["3.12"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install UV
+        uses: astral-sh/setup-uv@v4
+        with:
+          version: "latest"
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: uv sync --extra dev
+
+      - name: Run tests with coverage
+        run: |
+          uv run pytest tests/ \
+            --cov=src/vuorse_vortex \
+            --cov-report=xml \
+            --cov-report=term-missing \
+            -q
+
+      - name: Upload coverage
+        uses: codecov/codecov-action@v4
+        if: always()
+        with:
+          file: ./coverage.xml
+          fail_ci_if_error: false
+
+  # ── Canon Firewall Validation ─────────────────────────────────────────────
+  validate-manifests:
+    name: Validate Sample Manifests
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    needs: [test]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install UV
+        uses: astral-sh/setup-uv@v4
+        with:
+          version: "latest"
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Validate sample JSONL manifest
+        run: |
+          uv run vortex validate manifests/sample_synthetic_memory.jsonl \
+            --no-strict
+
+  # ── Synthetic Enrichment (scheduled / manual) ─────────────────────────────
+  synthetic-enrichment:
+    name: Synthetic Enrichment Agent
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    if: |
+      github.event_name == 'schedule' ||
+      (github.event_name == 'workflow_dispatch' && inputs.run_enrichment == 'true')
+    needs: [validate-manifests]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install UV
+        uses: astral-sh/setup-uv@v4
+        with:
+          version: "latest"
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Run synthetic enrichment agent
+        run: |
+          uv run vortex enrich \
+            "Hooplehopper displacement event — Archive enrichment cycle" \
+            --category hooplehopper_totality \
+            --count 5 \
+            --output output/enrichment-$(date +%Y%m%d).jsonl
+
+      - name: Upload enrichment artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: synthetic-memories-${{ github.run_id }}
+          path: output/enrichment-*.jsonl
+          retention-days: 30
