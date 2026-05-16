@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import os
+from functools import lru_cache
 
 from rich.console import Console
 
@@ -26,6 +27,7 @@ def gpu_required() -> bool:
     return env_true("CORTEX_REQUIRE_GPU") and not env_true("CORTEX_ALLOW_CPU_DIAGNOSTIC")
 
 
+@lru_cache(maxsize=1)
 def cuda_available() -> bool:
     try:
         import torch
@@ -33,6 +35,11 @@ def cuda_available() -> bool:
         return bool(torch.cuda.is_available())
     except Exception:
         return False
+
+
+def _reset_cuda_cache() -> None:
+    """Clear CUDA availability cache, primarily for tests."""
+    cuda_available.cache_clear()
 
 
 def require_gpu(workload: str = "deep-learning workload") -> None:
