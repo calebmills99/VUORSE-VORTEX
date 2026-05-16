@@ -1,6 +1,7 @@
 """Tests for centralized settings and canon firewall."""
 
 from vuorse_vortex.firewall import CanonFirewallValidator
+from vuorse_vortex.gpu import _reset_cuda_cache
 from vuorse_vortex.schemas import (
     BehaviorPolicy,
     Layer,
@@ -9,7 +10,7 @@ from vuorse_vortex.schemas import (
     RetrievalMetadata,
 )
 from vuorse_vortex.settings import Settings, get_settings
-from vuorse_vortex.vector import VectorDBBackend, get_backend
+from vuorse_vortex.vector import ChromaDBBackend, FaissBackend, VectorDBBackend, get_backend
 
 
 def _make_record(
@@ -106,3 +107,31 @@ def test_get_backend_rejects_unknown_backend() -> None:
         assert "Unknown vector backend" in str(exc)
     else:
         raise AssertionError("Expected unknown vector backend to raise ValueError")
+
+
+def test_chromadb_backend_query_enforces_gpu_before_import(monkeypatch) -> None:
+    monkeypatch.setenv("CORTEX_REQUIRE_GPU", "1")
+    monkeypatch.delenv("CORTEX_ALLOW_CPU_DIAGNOSTIC", raising=False)
+    _reset_cuda_cache()
+
+    backend = ChromaDBBackend()
+    try:
+        backend.query("private memory", top_k=1)
+    except RuntimeError as exc:
+        assert "chromadb vector query" in str(exc)
+    else:
+        raise AssertionError("Expected ChromaDB backend query to enforce GPU strict mode")
+
+
+def test_faiss_backend_query_enforces_gpu_before_import(monkeypatch) -> None:
+    monkeypatch.setenv("CORTEX_REQUIRE_GPU", "1")
+    monkeypatch.delenv("CORTEX_ALLOW_CPU_DIAGNOSTIC", raising=False)
+    _reset_cuda_cache()
+
+    backend = FaissBackend()
+    try:
+        backend.query("private memory", top_k=1)
+    except RuntimeError as exc:
+        assert "faiss vector query" in str(exc)
+    else:
+        raise AssertionError("Expected FAISS backend query to enforce GPU strict mode")
