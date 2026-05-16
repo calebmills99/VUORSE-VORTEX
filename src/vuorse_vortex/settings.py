@@ -2,7 +2,12 @@
 
 from __future__ import annotations
 
+from functools import lru_cache
+from typing import Literal
+
 from pydantic import BaseModel, Field
+
+VectorBackendName = Literal["chromadb", "faiss"]
 
 
 class Settings(BaseModel):
@@ -18,7 +23,7 @@ class Settings(BaseModel):
         description="Layers subject to canon firewall enforcement.",
     )
 
-    vector_backend: str = Field(
+    vector_backend: VectorBackendName = Field(
         default="chromadb",
         description="Vector DB backend to use for retrieval (chromadb or faiss).",
     )
@@ -29,6 +34,12 @@ class Settings(BaseModel):
     )
 
 
+@lru_cache(maxsize=1)
 def get_settings() -> Settings:
     """Return the current application settings."""
     return Settings()
+
+
+def clear_settings() -> None:
+    """Clear cached settings, primarily for tests."""
+    get_settings.cache_clear()

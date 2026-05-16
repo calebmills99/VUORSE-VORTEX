@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import Literal
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 Layer = Literal[
     "canon",
@@ -41,6 +41,8 @@ EmbeddingWeight = Literal["low", "medium", "high", "critical"]
 
 
 class MemoryMetadata(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
     canon_status: CanonStatus
     visibility: Visibility
     tags: list[str] = Field(default_factory=list)
@@ -50,12 +52,16 @@ class MemoryMetadata(BaseModel):
 
 
 class RetrievalMetadata(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
     priority: int = Field(ge=0, le=10)
     embedding_weight: EmbeddingWeight
     query_hints: list[str] = Field(default_factory=list)
 
 
 class BehaviorPolicy(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
     may_state_as_fact: bool
     may_use_for_voice: bool
     may_reveal_to_user: bool
@@ -64,6 +70,8 @@ class BehaviorPolicy(BaseModel):
 
 
 class MemoryRecord(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
     id: str
     layer: Layer
     record_type: str

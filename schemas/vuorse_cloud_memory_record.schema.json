@@ -4,7 +4,7 @@
   "title": "VUORSE-VORTEX Memory Record",
   "type": "object",
   "required": ["id", "layer", "record_type", "title", "text", "metadata", "retrieval", "behavior"],
-  "additionalProperties": true,
+  "additionalProperties": false,
   "properties": {
     "id": {"type": "string", "minLength": 1},
     "layer": {
@@ -17,7 +17,7 @@
     "metadata": {
       "type": "object",
       "required": ["canon_status", "visibility", "tags"],
-      "additionalProperties": true,
+      "additionalProperties": false,
       "properties": {
         "canon_status": {
           "type": "string",
@@ -33,7 +33,7 @@
     "retrieval": {
       "type": "object",
       "required": ["priority", "embedding_weight", "query_hints"],
-      "additionalProperties": true,
+      "additionalProperties": false,
       "properties": {
         "priority": {"type": "integer", "minimum": 0, "maximum": 10},
         "embedding_weight": {"type": "string", "enum": ["low", "medium", "high", "critical"]},
@@ -43,7 +43,7 @@
     "behavior": {
       "type": "object",
       "required": ["may_state_as_fact", "may_use_for_voice", "may_reveal_to_user"],
-      "additionalProperties": true,
+      "additionalProperties": false,
       "properties": {
         "may_state_as_fact": {"type": "boolean"},
         "may_use_for_voice": {"type": "boolean"},
