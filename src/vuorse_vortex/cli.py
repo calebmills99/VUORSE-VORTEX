@@ -9,7 +9,9 @@ from rich.console import Console
 
 from vuorse_vortex.gpu import require_gpu
 from vuorse_vortex.jsonl import validate_jsonl
+from vuorse_vortex.settings import get_settings
 from vuorse_vortex.synthesis import theses_as_jsonl
+from vuorse_vortex.vector import get_backend
 
 app = typer.Typer(help="VUORSE-VORTEX command line interface.")
 console = Console()
@@ -53,4 +55,33 @@ def synthesize(output: Path = Path("synthetic_enrichment/theses.jsonl")) -> None
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(theses_as_jsonl() + "\n", encoding="utf-8")
     console.print(f"[green]Wrote synthetic theses to:[/green] {output}")
+
+
+@app.command("query")
+def query(
+    text: str = typer.Argument(..., help="Query text to search the memory store."),
+    top_k: int = typer.Option(5, "--top-k", "-k", help="Number of results to return."),
+    backend: str | None = typer.Option(
+        None, "--backend", "-b", help="Vector backend override (chromadb or faiss)."
+    ),
+) -> None:
+    """Query the VUORSE memory vector store."""
+    settings = get_settings()
+    if backend:
+        settings = settings.model_copy(update={"vector_backend": backend})
+
+    require_gpu("query embedding")
+
+    vector_backend = get_backend(settings=settings)
+    results = vector_backend.query(text, top_k=top_k)
+
+    if not results:
+        console.print("[yellow]No results found.[/yellow]")
+        raise typer.Exit(code=0)
+
+    for i, result in enumerate(results, start=1):
+        console.print(f"\n[bold cyan]#{i}[/bold cyan] (score: {result.score:.4f})")
+        console.print(f"  [dim]id:[/dim] {result.record_id}")
+        console.print(f"  [dim]layer:[/dim] {result.layer}")
+        console.print(f"  {result.text[:200]}")
 
