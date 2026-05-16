@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+from typing import Any
 
 from vuorse_vortex.settings import Settings, get_settings
 
@@ -15,7 +16,7 @@ class QueryResult:
     text: str
     score: float
     layer: str
-    metadata: dict = field(default_factory=dict)
+    metadata: dict[str, Any] = field(default_factory=dict)
 
 
 class VectorDBBackend:
@@ -39,6 +40,8 @@ class VectorDBBackend:
 
         Subclasses should override _raw_query to implement backend-specific
         retrieval. This method applies canon firewall filtering automatically.
+        Results are best-effort: if filtering removes sealed records, fewer
+        than top_k records may be returned.
         """
         results = self._raw_query(text, top_k=top_k + len(self.sealed_categories) * 2)
         filtered = [r for r in results if r.layer not in self.sealed_categories]
@@ -48,7 +51,7 @@ class VectorDBBackend:
         """Backend-specific query implementation. Override in subclasses."""
         return []
 
-    def ingest(self, records: list[dict]) -> int:
+    def ingest(self, records: list[dict[str, Any]]) -> int:
         """Ingest records into the vector store. Returns count ingested."""
         return 0
 
@@ -88,5 +91,8 @@ def get_backend(settings: Settings | None = None) -> VectorDBBackend:
         "chromadb": ChromaDBBackend,
         "faiss": FaissBackend,
     }
-    backend_cls = backends.get(settings.vector_backend, VectorDBBackend)
+    try:
+        backend_cls = backends[settings.vector_backend]
+    except KeyError as exc:
+        raise ValueError(f"Unknown vector backend: {settings.vector_backend}") from exc
     return backend_cls(settings=settings)

@@ -1,3 +1,7 @@
+from __future__ import annotations
+
+from typing import Any
+
 from fastapi import FastAPI
 
 app = FastAPI(
@@ -7,7 +11,7 @@ app = FastAPI(
 )
 
 @app.get("/")
-def root():
+def root() -> dict[str, Any]:
     return {
         "status": "online",
         "system": "VUORSE-VORTEX",
@@ -15,5 +19,5 @@ def root():
     }
 
 @app.get("/health")
-def health():
+def health() -> dict[str, bool]:
     return {"ok": True}

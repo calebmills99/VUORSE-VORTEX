@@ -1,12 +1,12 @@
-I have created the following plan after thorough exploration and analysis of the codebase. Follow the below plan verbatim. Trust the files and references. Do not re-verify what's written in the plan. Explore only when absolutely necessary. First implement all the proposed file changes and then I'll review all the changes together at the end.
+This plan is a repo-optimization review, not an instruction to execute blindly. Verify current file state before each change, preserve lore and roadmap firewalls, and avoid destructive consolidation until the canonical frontend layout is explicitly confirmed.
 
 ## Observations
 
-The repo is a mostly-scaffolded mono-project: a small `vuorse_vortex` Python package (CLI + FastAPI + JSONL/firewall/vector stubs), two near-identical React/Vite frontends (`frontend/` and `vuorse-vortex/`), and a stranded Tailwind-only Vite config at the root. Lore directories under `canon/`, `roadmap/`, etc. are content, not code. Several inconsistencies stand out: a duplicate front-end whose `vuorse-vortex/src/App.tsx` imports assets that don't exist (broken build), Tailwind declared at the root but used inside `frontend/` (which doesn't import it), strict mypy configured but never gated in CI, and contract drift between `schemas.py`, `synthesis.py`, and `settings.py`.
+The repo is a mostly-scaffolded mono-project: a small `vuorse_vortex` Python package (CLI + FastAPI + JSONL/firewall/vector stubs), two similar React/Vite frontends (`frontend/` and `vuorse-vortex/`), and a stranded Tailwind-only Vite config at the root. Lore directories under `canon/`, `roadmap/`, etc. are content, not code. Several inconsistencies stand out: duplicate front-end ownership is unresolved, Tailwind utilities are used inside `frontend/` without Tailwind being wired there, strict mypy is configured but not gated in CI, and contract drift exists between `schemas.py`, `synthesis.py`, and `settings.py`.
 
 ## Approach
 
-Treat this as a code-health / dead-weight pass rather than a feature change. Group findings by impact: (1) eliminate duplicated/broken front-end scaffolding and align Tailwind ownership with the app that actually uses it; (2) tighten the Python package's typing, validation, contract drift, and GPU/firewall enforcement gaps; (3) close the CI gap (mypy + front-end build) and add light caching where modules are re-imported on hot paths. No new features, no refactors that change product semantics — only consolidation, correctness, and developer-loop optimizations consistent with `AGENTS.md` / `CLAUDE.md`.
+Treat this as a code-health / dead-weight pass rather than a feature change. Group findings by impact: (1) resolve duplicate front-end ownership and align Tailwind ownership with the app that actually uses it; (2) tighten the Python package's typing, validation, contract drift, and GPU/firewall enforcement gaps; (3) close the CI gap (mypy + front-end build) and add light caching where modules are re-imported on hot paths. No new features, no refactors that change product semantics — only consolidation, correctness, and developer-loop optimizations consistent with `AGENTS.md` / `CLAUDE.md`.
 
 ## Optimization Findings & Recommended Changes
 
@@ -14,8 +14,8 @@ Treat this as a code-health / dead-weight pass rather than a feature change. Gro
 
 | Item | Current state | Recommendation |
 |---|---|---|
-| `vuorse-vortex/` directory | Vite/React scaffold whose `src/App.tsx` imports `./assets/react.svg`, `./assets/vite.svg`, `./assets/hero.png`, and `/icons.svg#…` — none of which exist on disk. `npm run build` will fail. Identical `package.json`, `tsconfig*`, `eslint.config.js`, `vite.config.ts` to `frontend/`. | Decide and document the single canonical app. Per `CLAUDE.md`, `frontend/` is the real app; delete `vuorse-vortex/` entirely (or, if the name must be kept, rename `frontend/` → `vuorse-vortex/` and delete the broken one). |
-| Root `package.json` + `vite.config.ts` | Declares only `@tailwindcss/vite` + `tailwindcss` v4; no `index.html` or sources at root. `.gitignore` already excludes root `src/`, `index.html`, `tsconfig*`, etc., confirming it's intentional drift. | Either remove root `package.json`/`vite.config.ts` and move Tailwind to the chosen front-end, or leave it solely as a shared dep workspace and document it. See item 2. |
+| `vuorse-vortex/` directory | Vite/React scaffold with assets present on disk, but it duplicates much of `frontend/` and is not currently documented as canonical. | Decide and document the single canonical app before deleting or renaming anything. Per current `CLAUDE.md`, `frontend/` is the real app; treat deletion of `vuorse-vortex/` as a separate user-approved cleanup. |
+| Root `package.json` + `vite.config.ts` | Declares only `@tailwindcss/vite` + `tailwindcss` v4; root app source files are ignored as scaffold drift. | Either remove root `package.json`/`vite.config.ts` after confirming they are no longer needed, or leave them solely as shared dep workspace scaffolding and document it. See item 2. |
 | Tailwind ownership | `frontend/src/App.tsx` uses Tailwind utilities (`min-h-screen`, `bg-gradient-to-br`, …), but `frontend/package.json` has no Tailwind dependency and `frontend/vite.config.ts` does not load `@tailwindcss/vite`. Tailwind classes silently no-op at runtime — wrong styles ship. | Add `tailwindcss` + `@tailwindcss/vite` to `frontend/package.json`, load the plugin in `frontend/vite.config.ts`, and `@import "tailwindcss";` from `frontend/src/index.css` (Tailwind v4 entry). Remove the now-empty root `package.json`/`vite.config.ts`. |
 | Duplicated configs | `eslint.config.js`, `tsconfig.json`, `tsconfig.app.json`, `tsconfig.node.json`, `index.html`, `App.css`, `index.css`, `README.md` all exist twice byte-for-byte. | Removing `vuorse-vortex/` resolves this. Keep a single template-derived `README.md` and replace the boilerplate Vite text with project-specific guidance. |
 | Front-end README | Both READMEs are unchanged Vite template text. | Replace with a short note pointing to the root `README.md` and the dev commands (`npm install`, `npm run dev/build/lint`). |
@@ -43,7 +43,7 @@ Treat this as a code-health / dead-weight pass rather than a feature change. Gro
 ### 3. Tests, CI, and developer loop
 
 - **CI gates only `ruff` and `pytest`.** Add `uv run mypy src` as a CI step — `pyproject.toml` already declares strict mode, but without enforcement type errors accrue silently (CLAUDE.md flags this explicitly).
-- **Add front-end CI job** (a second job in `.github/workflows/validate.yml`) that runs `npm ci`, `npm run lint`, `npm run build` inside the canonical front-end folder. This would have caught the broken `vuorse-vortex/src/App.tsx` imports.
+- **Add front-end CI job** (a second job in `.github/workflows/validate.yml`) that runs `npm ci`, `npm run lint`, `npm run build` inside the canonical front-end folder. This catches missing asset, dependency, and build-configuration drift before it ships.
 - **No test for `jsonl.validate_jsonl` end-to-end.** Add a small fixture (valid record + duplicate-id record + firewall-violating record) under `tests/` to cover the happy and unhappy paths through `iter_jsonl` + `MemoryRecord` + firewall.
 - **No test that `synthesize` output passes `validate-jsonl`.** Once the contract is aligned (item 2), add such a test — it pins the two CLI commands together.
 
@@ -59,7 +59,7 @@ Treat this as a code-health / dead-weight pass rather than a feature change. Gro
 ```mermaid
 flowchart TD
   A[1. Pick canonical frontend folder] --> B[2. Move Tailwind into that frontend & wire plugin]
-  B --> C[3. Delete duplicate scaffold + root Vite/Tailwind files]
+  B --> C[3. Decide whether to delete duplicate scaffold + root Vite/Tailwind files]
   C --> D[4. Update CLAUDE.md / AGENTS.md frontend sections]
   A --> E[5. Align Layer/CanonStatus between schemas.py and synthesis.py]
   E --> F[6. Add extra=forbid on Pydantic models]
@@ -74,7 +74,7 @@ flowchart TD
 
 | Tier | Why it matters | Files touched |
 |---|---|---|
-| Front-end consolidation | Removes a guaranteed-broken build and ships actual Tailwind styles | `vuorse-vortex/**` (delete), `frontend/package.json`, `frontend/vite.config.ts`, `frontend/src/index.css`, root `package.json`, root `vite.config.ts`, `CLAUDE.md`, `AGENTS.md` |
+| Front-end consolidation | Resolves duplicate app ownership and ships actual Tailwind styles | `frontend/package.json`, `frontend/vite.config.ts`, `frontend/src/index.css`, optional later cleanup of `vuorse-vortex/**`, root `package.json`, root `vite.config.ts`, `CLAUDE.md`, `AGENTS.md` |
 | Contract alignment + extra=forbid | Prevents silent firewall bypass via typos and unifies the two literals | `src/vuorse_vortex/schemas.py`, `src/vuorse_vortex/synthesis.py`, `src/vuorse_vortex/settings.py`, `src/vuorse_vortex/vector.py` |
 | Caching | Avoids re-importing torch and re-creating settings on hot paths | `src/vuorse_vortex/settings.py`, `src/vuorse_vortex/firewall.py`, `src/vuorse_vortex/gpu.py` |
 | CI gating | Makes strict mypy and front-end breakage visible | `.github/workflows/validate.yml` |
