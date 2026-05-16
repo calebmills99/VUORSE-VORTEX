@@ -21,6 +21,7 @@ jobs:
       - name: Mypy
         run: uv run mypy src
 
+  frontend:
     runs-on: ubuntu-latest
     defaults:
       run:
