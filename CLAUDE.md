@@ -2,6 +2,82 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Claude Code Writers Room
+
+This repo includes a Claude Code-compatible Slayverse writers room under `.claude/agents/`. Use these subagents for Slayverse development work:
+
+- `showrunner`: season architecture, story direction, emotional spine, and canon discipline.
+- `episode-breaker`: pilot beats, episode grids, act structure, A/B stories, reveals, and ending images.
+- `dialogue-smith`: character dialogue, confrontation scenes, and VUORSE narration.
+- `canon-keeper`: continuity, canon hierarchy, contradictions, relationship logic, timeline issues, and canon drift review.
+- `lore-archivist`: JSONL records, summaries, indexes, dossiers, tagging, and machine-readable lore organization.
+- `ritual-and-tone-editor`: VUORSE, Golden Wingers, Velvet Archive, ritual prose, and heightened ceremonial polish.
+- `pitch-deck-dramaturg`: loglines, one-pagers, pitch sections, season summaries, character blurbs, and tonal positioning.
+
+Use tool access conservatively. Prefer `Read`, `Grep`, `Glob`, and `Write`; use shell commands only when file discovery, validation, or tooling genuinely requires them.
+
+## Slayverse Operating Instructions
+
+- Read relevant source files in `canon/` before editing writers room materials, JSONL, indexes, scripts, summaries, or pitch documents.
+- Exclude `.rtf` files from normal source discovery and search. Treat them as scratch/raw material, and inspect them only when the user explicitly requests `.rtf` scratch material.
+- Do not invent new Slayverse canon.
+- Do not alter lore source files unless the user explicitly asks.
+- Preserve canon status labels exactly, including `[LOCKED]`, `[PENDING REVIEW]`, `[EXPLORATORY]`, `[FULL]`, `[MODERATE]`, `[SKETCHED]`, and `[HOOK ONLY]`.
+- Treat the Wyoming / Jake McCullen arc as the Season 1 entry point unless the user requests another scope.
+- Season 1 is the story of Jake McCullen learning that the wound beneath his ranch and the silence around his mother are the same wound.
+- Every Season 1 story choice should move Jake closer to speaking his mother's name aloud.
+- The mythology serves the wound, not the reverse.
+- The show is not "space cowboys"; it is a cowboy standing on cosmically contaminated ground.
+- Save the prairie mother, save the universe.
+- Season 1 must feel like there is something missing. Do not identify the hidden personal cause behind the wound unless the user explicitly lifts that firewall.
+- Do not build the present-day Wyoming story around a defined external antagonist. Jake's denial, containment instinct, anger, and rejection of all things Slayverse supply the pseudo-antagonistic pressure.
+- The user is holding the Season 1 finale reveal. Writers room-facing agents should know Vorst only through his pre-finale depiction and must not infer, pitch, outline, or foreshadow his hidden causal function unless the user explicitly provides finale scope.
+- `roadmap/finale/` is private finale roadmap space. Do not expose it to writers room agents, Season 1 docs, or public canon summaries unless the user explicitly asks for finale work, private roadmap synthesis, or VUORSE-confidential generation.
+
+## Canon Hierarchy
+
+- Locked canon outranks development material.
+- Development canon can guide drafts but should remain traceable to source files or explicit user direction.
+- Mythic rumor, exploratory material, and symbolic interpretations must remain clearly labeled.
+- Never treat exploratory material as locked canon.
+- Flag contradictions instead of silently fixing them.
+- Maintain the distinction between soul-line and bloodline.
+- Preserve: "Blood reproduces. The soul-line recurs."
+- Preserve: "The Hooplehoppers do not descend. They return."
+- Track canon implications of any new proposed scene or beat.
+
+## Slayverse Voice Rules
+
+- Jake: clipped, concrete, lonely, emotionally guarded. When he tells the truth, it costs him.
+- Weaver: precise, layered, timeless, theatrical but not silly. Constructs conversation rather than merely speaking.
+- Pop: broken fragments, silence, half-confession, haunted restraint.
+- VUORSE: warm, knowing, devastating, regal, witty, cosmic drag oracle energy.
+- Eli: contemporary, unguarded, the only one who sounds like a normal teenager.
+- Jake/Wyoming material should remain restrained and grounded.
+- VUORSE / Archive / ritual material may carry heightened ceremonial force.
+- Season 1 dialogue, pitch, and episode work must preserve the missing shape around the wound rather than resolving it into a named culprit.
+- Jake may oppose the story without being reduced to a villain; his refusal is the obstacle that makes the season move.
+
+## Required Review Before Modifying Lore
+
+Before modifying any lore-adjacent file:
+
+1. Identify which source files in `canon/` are relevant.
+2. Read those files or the relevant sections.
+3. State whether the edit is locked canon, development canon, or exploratory.
+4. Preserve existing canon status labels exactly.
+5. If a contradiction appears, flag it for canon-keeper review instead of silently resolving it.
+
+## File Safety
+
+- Do not run destructive commands.
+- Do not modify source lore files unless explicitly requested.
+- Keep generated writers room scaffolding in `.claude/agents/` and `docs/writers-room/`.
+- Keep finale reveal architecture in `roadmap/finale/`; do not mirror it into writers room-facing files.
+- Use `skills/vuorse-scaffold-completion/SKILL.md` before filling placeholder folders; keep runtime output directories empty unless a real run creates content.
+- For uncertain scaffold work, use the skill's What-If Mode first and report the proposed files, risks, and exact follow-up command before editing.
+- If writing JSONL, ensure every line is valid JSON and preserve source meaning without adding unsupported facts.
+
 ## Commands
 
 Python tooling is driven by `uv` (not `pip`). The `dev` extra provides `ruff`, `pytest`, `mypy`; `gpu` provides `torch`, `sentence-transformers`, `chromadb`, `faiss-cpu`.

@@ -13,6 +13,11 @@ venv/
 .AppleDouble
 ._*
 
+# Local app/session state
+.frolic-*.json
+.frolic-session.json
+vuorse_vortex_bootstrap.zip
+
 # Secrets
 .env
 .env.*
@@ -22,6 +27,7 @@ config.local.*
 *_secrets.*
 
 # Runtime data
+node_modules/
 embeddings/output/*
 embeddings/indexes/*
 !embeddings/output/.gitkeep
@@ -47,3 +53,17 @@ tmp/
 # Private local-only scratch
 scratch/
 local_data/
+*.rtf
+
+# Root Vite scaffold drift; real apps live in frontend/ and vuorse-vortex/
+/index.html
+/eslint.config.js
+/public/
+/src/App.css
+/src/App.tsx
+/src/assets/
+/src/index.css
+/src/main.tsx
+/tsconfig.app.json
+/tsconfig.json
+/tsconfig.node.json
