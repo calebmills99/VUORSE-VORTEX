@@ -5,6 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Any
 
+from vuorse_vortex.gpu import require_gpu
 from vuorse_vortex.settings import Settings, get_settings
 
 
@@ -60,6 +61,7 @@ class ChromaDBBackend(VectorDBBackend):
     """ChromaDB-backed vector retrieval (requires GPU extras)."""
 
     def _raw_query(self, text: str, top_k: int = 5) -> list[QueryResult]:
+        require_gpu("chromadb vector query")
         try:
             import chromadb  # noqa: F401
         except ImportError as exc:
@@ -74,6 +76,7 @@ class FaissBackend(VectorDBBackend):
     """FAISS-backed vector retrieval (requires GPU extras)."""
 
     def _raw_query(self, text: str, top_k: int = 5) -> list[QueryResult]:
+        require_gpu("faiss vector query")
         try:
             import faiss  # noqa: F401
         except ImportError as exc:
