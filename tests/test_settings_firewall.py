@@ -1,5 +1,7 @@
 """Tests for centralized settings and canon firewall."""
 
+import pytest
+
 from vuorse_vortex.firewall import CanonFirewallValidator
 from vuorse_vortex.gpu import _reset_cuda_cache
 from vuorse_vortex.schemas import (
@@ -109,7 +111,7 @@ def test_get_backend_rejects_unknown_backend() -> None:
         raise AssertionError("Expected unknown vector backend to raise ValueError")
 
 
-def test_chromadb_backend_query_enforces_gpu_before_import(monkeypatch) -> None:
+def test_chromadb_backend_query_enforces_gpu_before_import(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setenv("CORTEX_REQUIRE_GPU", "1")
     monkeypatch.delenv("CORTEX_ALLOW_CPU_DIAGNOSTIC", raising=False)
     _reset_cuda_cache()
@@ -124,7 +126,7 @@ def test_chromadb_backend_query_enforces_gpu_before_import(monkeypatch) -> None:
         raise AssertionError("Expected ChromaDB backend query to enforce GPU strict mode")
 
 
-def test_faiss_backend_query_enforces_gpu_before_import(monkeypatch) -> None:
+def test_faiss_backend_query_enforces_gpu_before_import(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setenv("CORTEX_REQUIRE_GPU", "1")
     monkeypatch.delenv("CORTEX_ALLOW_CPU_DIAGNOSTIC", raising=False)
     _reset_cuda_cache()
