@@ -345,13 +345,28 @@ if command -v chsh >/dev/null 2>&1; then
   fi
 fi
 
+# The Vast.ai PyTorch template ships torch inside its own venv at /venv/main,
+# not in the base interpreter's site-packages. So we must point uv at that
+# environment directly — creating a side .venv (even with --system-site-packages)
+# does NOT inherit torch, because system-site-packages targets the base
+# interpreter, not /venv/main. UV_PROJECT_ENVIRONMENT lets `uv sync` / `uv run`
+# manage that pre-existing venv as the project env instead of building a new one.
+VAST_VENV="${VAST_VENV:-/venv/main}"
+if [[ ! -x "$VAST_VENV/bin/python" ]]; then
+  warn "Expected Vast PyTorch venv at $VAST_VENV/bin/python — falling back to a fresh project venv"
+  VAST_VENV=""
+fi
+
 say "Writing VUORSE GPU environment defaults"
-cat >/etc/profile.d/vuorse-vortex.sh <<'ENV'
+cat >/etc/profile.d/vuorse-vortex.sh <<ENV
 export CORTEX_REQUIRE_GPU=1
 export CORTEX_DEVICE=cuda
-export CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES:-0}
-export HF_HOME=${HF_HOME:-/workspace/.cache/huggingface}
+export CUDA_VISIBLE_DEVICES=\${CUDA_VISIBLE_DEVICES:-0}
+export HF_HOME=\${HF_HOME:-/workspace/.cache/huggingface}
 export UV_LINK_MODE=copy
+${VAST_VENV:+export UV_PROJECT_ENVIRONMENT=$VAST_VENV}
+${VAST_VENV:+export VIRTUAL_ENV=$VAST_VENV}
+${VAST_VENV:+export PATH=$VAST_VENV/bin:\$PATH}
 ENV
 
 export CORTEX_REQUIRE_GPU=1
@@ -359,6 +374,11 @@ export CORTEX_DEVICE=cuda
 export CUDA_VISIBLE_DEVICES="${CUDA_VISIBLE_DEVICES:-0}"
 export HF_HOME="${HF_HOME:-/workspace/.cache/huggingface}"
 export UV_LINK_MODE=copy
+if [[ -n "$VAST_VENV" ]]; then
+  export UV_PROJECT_ENVIRONMENT="$VAST_VENV"
+  export VIRTUAL_ENV="$VAST_VENV"
+  export PATH="$VAST_VENV/bin:$PATH"
+fi
 
 mkdir -p /workspace/.cache/huggingface
 
@@ -375,15 +395,26 @@ fi
 
 cd "$REPO_DIR"
 
-say "Creating project virtualenv with access to PyTorch template packages"
-uv venv --system-site-packages .venv
-
-say "Installing Python project dependencies without reinstalling torch"
-uv sync --extra dev
-uv pip install \
-  "sentence-transformers>=3.0" \
-  "chromadb>=0.5" \
-  "faiss-cpu>=1.8"
+if [[ -n "$VAST_VENV" ]]; then
+  say "Using Vast PyTorch template venv at $VAST_VENV as the project environment"
+  # --inexact tells `uv sync` not to remove packages it didn't install (torch,
+  # torchvision, torchaudio, nvidia-* wheels, etc.). Without it, uv would purge
+  # the very stack we came here to reuse.
+  uv sync --extra dev --inexact
+  uv pip install --python "$VAST_VENV/bin/python" \
+    "sentence-transformers>=3.0" \
+    "chromadb>=0.5" \
+    "faiss-cpu>=1.8"
+else
+  say "Creating fresh project virtualenv (no Vast torch to reuse)"
+  uv venv .venv
+  uv sync --extra dev
+  uv pip install \
+    "sentence-transformers>=3.0" \
+    "chromadb>=0.5" \
+    "faiss-cpu>=1.8" \
+    "torch>=2.3"
+fi
 
 say "Installing canonical web frontend dependencies"
 npm ci --prefix web
