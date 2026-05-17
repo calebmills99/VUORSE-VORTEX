@@ -78,3 +78,20 @@ def test_embed_command_surfaces_firewall_errors(
     assert result.exit_code == 1
     assert "may_state_as_fact" in result.output
     assert fake.ingested == []
+
+
+def test_embed_command_rejects_unsupported_faiss_backend(synthetic_jsonl: Path) -> None:
+    """`--backend faiss` must fail loudly, not silently swap to ChromaDB.
+
+    Pre-fix the FAISS backend accepted ``ingest()`` calls and reported success
+    while persisting nothing. The Settings literal is now narrowed to
+    ``"chromadb"`` so Pydantic rejects the override at ``model_copy`` time.
+    Surface that failure as a non-zero CLI exit so automation notices.
+    """
+    runner = CliRunner()
+    result = runner.invoke(cli.app, ["embed", str(synthetic_jsonl), "--backend", "faiss"])
+    assert result.exit_code != 0
+    # Either the typer wrapper or the Pydantic ValidationError needs to be on
+    # stdout/stderr — both are acceptable, what matters is the loud failure.
+    combined = (result.output or "") + (str(result.exception) if result.exception else "")
+    assert "faiss" in combined.lower() or "vector_backend" in combined.lower()

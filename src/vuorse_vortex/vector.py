@@ -176,32 +176,43 @@ class ChromaDBBackend(VectorDBBackend):
 
 
 class FaissBackend(VectorDBBackend):
-    """FAISS-backed vector retrieval (requires GPU extras).
+    """FAISS-backed vector retrieval — NOT IMPLEMENTED.
 
-    Stubbed: ingest and query paths still guard GPU and import faiss, but no
-    real index is built. Use ChromaDBBackend until FAISS support lands.
+    Previously this class accepted ``ingest()`` calls and silently returned 0,
+    while ``_raw_query()`` returned ``[]`` — meaning users who selected the
+    FAISS backend saw "Ingested N records" messages but nothing was ever
+    persisted or retrievable. That was a silent data-loss bug.
+
+    The class is preserved as a tombstone so the import surface stays stable
+    and the slot for a real FAISS implementation is reserved. Constructing it
+    raises immediately; ``get_backend()`` will never produce one because
+    ``Settings.vector_backend`` is now narrowed to ``Literal["chromadb"]``.
     """
 
-    def _raw_query(self, text: str, top_k: int = 5) -> list[QueryResult]:
-        require_gpu("faiss vector query")
-        try:
-            import faiss  # noqa: F401
-        except ImportError as exc:
-            raise RuntimeError(
-                "faiss-cpu is not installed. Install with: uv sync --extra gpu"
-            ) from exc
-        return []
+    _UNSUPPORTED_MESSAGE = (
+        "FaissBackend is not implemented. Use vector_backend='chromadb'. "
+        "If you need FAISS, implement real ingest() and _raw_query() against a "
+        "persisted faiss index before re-enabling it in Settings.VectorBackendName."
+    )
+
+    def __init__(self, settings: Settings | None = None) -> None:
+        raise NotImplementedError(self._UNSUPPORTED_MESSAGE)
 
 
 def get_backend(settings: Settings | None = None) -> VectorDBBackend:
-    """Return the configured vector backend based on Settings."""
+    """Return the configured vector backend based on Settings.
+
+    Only ``chromadb`` is supported. ``Settings.vector_backend`` is typed as
+    ``Literal["chromadb"]``, so Pydantic validation rejects anything else
+    before reaching this function — but we defend in depth in case a caller
+    bypasses Settings validation (e.g. by constructing a backend dict directly
+    or by setting an attribute on an already-constructed Settings instance).
+    """
     settings = settings or get_settings()
-    backends = {
-        "chromadb": ChromaDBBackend,
-        "faiss": FaissBackend,
-    }
-    try:
-        backend_cls = backends[settings.vector_backend]
-    except KeyError as exc:
-        raise ValueError(f"Unknown vector backend: {settings.vector_backend}") from exc
-    return backend_cls(settings=settings)
+    backend_name = settings.vector_backend
+    if backend_name == "chromadb":
+        return ChromaDBBackend(settings=settings)
+    raise ValueError(
+        f"Unsupported vector backend: {backend_name!r}. "
+        "Only 'chromadb' is implemented; see FaissBackend tombstone for details."
+    )

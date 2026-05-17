@@ -106,7 +106,7 @@ def test_get_backend_rejects_unknown_backend() -> None:
     try:
         get_backend(settings=settings)
     except ValueError as exc:
-        assert "Unknown vector backend" in str(exc)
+        assert "Unsupported vector backend" in str(exc)
     else:
         raise AssertionError("Expected unknown vector backend to raise ValueError")
 
@@ -126,16 +126,39 @@ def test_chromadb_backend_query_enforces_gpu_before_import(monkeypatch: pytest.M
         raise AssertionError("Expected ChromaDB backend query to enforce GPU strict mode")
 
 
-def test_faiss_backend_query_enforces_gpu_before_import(monkeypatch: pytest.MonkeyPatch) -> None:
-    monkeypatch.setenv("CORTEX_REQUIRE_GPU", "1")
-    monkeypatch.delenv("CORTEX_ALLOW_CPU_DIAGNOSTIC", raising=False)
-    _reset_cuda_cache()
-    monkeypatch.setattr("vuorse_vortex.gpu.cuda_available", lambda: False)
+def test_faiss_backend_is_explicitly_unsupported() -> None:
+    """FaissBackend is a tombstone, not a usable backend.
 
-    backend = FaissBackend()
-    try:
-        backend.query("private memory", top_k=1)
-    except RuntimeError as exc:
-        assert "faiss vector query" in str(exc)
-    else:
-        raise AssertionError("Expected FAISS backend query to enforce GPU strict mode")
+    Pre-fix it silently swallowed ``ingest()`` (returned 0) and ``_raw_query()``
+    (returned []), so users who selected the FAISS backend saw success messages
+    while nothing was persisted. The class now refuses to instantiate; this
+    test pins that behavior so re-enabling FAISS requires a real implementation.
+    """
+    with pytest.raises(NotImplementedError) as exc_info:
+        FaissBackend()
+    message = str(exc_info.value)
+    assert "not implemented" in message.lower()
+    assert "chromadb" in message
+
+
+def test_settings_rejects_unsupported_vector_backend() -> None:
+    """``vector_backend`` is ``Literal['chromadb']``; anything else is a Pydantic error."""
+    from pydantic import ValidationError
+
+    with pytest.raises(ValidationError):
+        Settings(vector_backend="faiss")  # type: ignore[arg-type]
+
+
+def test_get_backend_refuses_faiss_when_settings_validation_is_bypassed(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """Defense in depth: even if a caller bypasses Settings validation, get_backend refuses.
+
+    ``object.__setattr__`` (or model_construct) can produce a Settings instance
+    whose ``vector_backend`` violates the Literal. The retrieval layer must
+    still refuse loudly instead of silently swapping in ChromaDB.
+    """
+    settings = Settings()
+    object.__setattr__(settings, "vector_backend", "faiss")
+    with pytest.raises(ValueError, match="Unsupported vector backend"):
+        get_backend(settings=settings)
