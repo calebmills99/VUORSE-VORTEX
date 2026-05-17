@@ -31,6 +31,7 @@ Run::
 
 from __future__ import annotations
 
+import json
 import os
 import sys
 from dataclasses import dataclass
@@ -150,36 +151,49 @@ def make_client(api_key: str) -> Any:
             "so the PEP 723 dependency block resolves automatically."
         )
         raise typer.Exit(code=2) from exc
-    return VastAI(api_key=api_key)
+    # raw=True requests machine-readable responses. In the inspected SDK build
+    # the per-method paths already return parsed dicts/lists, but honoring the
+    # flag both signals intent and is forward-compatible with future shapes —
+    # _normalize_response() below absorbs the difference either way.
+    return VastAI(api_key=api_key, raw=True)
 
 
 def ensure_template(client: Any, opts: ProvisionOptions) -> str:
     """Idempotently materialize the VUORSE PyTorch template, returning its hash_id."""
     console.print(f"[bold magenta]→ Reconciling template[/bold magenta] '{TEMPLATE_NAME}'…")
-    existing = _safe_call(client, "show_templates") or []
-    if isinstance(existing, dict):
-        existing = existing.get("templates", []) or []
+    raw = _safe_call(client, "search_templates")
+    existing = _coerce_template_list(_normalize_response(raw))
 
     for tpl in existing:
-        if not isinstance(tpl, dict):
-            continue
         if tpl.get("name") == TEMPLATE_NAME:
             hash_id = str(tpl.get("hash_id") or tpl.get("id") or "")
-            console.print(f"  [green]✓[/green] Found existing template hash={hash_id}")
-            return hash_id
+            if hash_id:
+                console.print(f"  [green]✓[/green] Found existing template hash={hash_id}")
+                return hash_id
 
     console.print("  [yellow]·[/yellow] Not found — creating it now…")
-    created = _safe_call(
-        client,
-        "create_template",
-        name=TEMPLATE_NAME,
-        image=IMAGE,
-        tag=opts.tag,
-        env=ENV_FLAGS,
-        onstart_cmd=ONSTART_CMD,
-        runtype="ssh",
-        ssh_direct=True,
+    # The SDK's create_template translates ssh=True + direct=True into ssh_direct=True
+    # internally and derives runtype from ssh/jupyter; passing runtype/ssh_direct/tag
+    # directly is silently dropped. image_tag is the supported kwarg for the image tag.
+    # If a future SDK release stops exposing these kwargs, fall back to a REST
+    # POST /api/v0/template/ with the same payload.
+    created = _normalize_response(
+        _safe_call(
+            client,
+            "create_template",
+            name=TEMPLATE_NAME,
+            image=IMAGE,
+            image_tag=opts.tag,
+            env=ENV_FLAGS,
+            onstart_cmd=ONSTART_CMD,
+            ssh=True,
+            direct=True,
+            disk_space=float(opts.min_disk),
+            desc="VUORSE-VORTEX PyTorch CUDA box (CORTEX_REQUIRE_GPU=1 baked in).",
+        )
     )
+    if isinstance(created, dict) and isinstance(created.get("template"), dict):
+        created = created["template"]
     if not isinstance(created, dict):
         err_console.print(
             f"[bold red]create_template returned an unexpected payload:[/bold red] {created!r}"
@@ -215,7 +229,7 @@ def find_cheapest_offer(client: Any, query: str, order: str) -> dict[str, Any]:
     console.print(f"[bold magenta]→ Searching offers[/bold magenta] (order={order} asc)")
     console.print(f"  [dim]query:[/dim] {query}")
     raw = _safe_call(client, "search_offers", query=query, order=order, limit=20)
-    offers = _coerce_offers(raw)
+    offers = _coerce_offers(_normalize_response(raw))
 
     if not offers:
         err_console.print(
@@ -244,22 +258,25 @@ def create_instance(
         f"[bold magenta]→ Creating instance[/bold magenta] from offer {offer_id} "
         f"(@${offer.get('dph_total', '?')}/hr)…"
     )
-    result = _safe_call(
-        client,
-        "create_instance",
-        id=offer_id,
-        template_hash=template_hash,
-        image=IMAGE,
-        disk=opts.min_disk,
-        runtype="ssh",
-        ssh=True,
-        label="vuorse-vortex",
+    # Note: instances.create_instance() does NOT accept an `ssh` kwarg —
+    # runtype="ssh" is how SSH is selected. Passing ssh=True raises TypeError.
+    result = _normalize_response(
+        _safe_call(
+            client,
+            "create_instance",
+            id=offer_id,
+            template_hash=template_hash,
+            image=IMAGE,
+            disk=opts.min_disk,
+            runtype="ssh",
+            label="vuorse-vortex",
+        )
     )
     if not isinstance(result, dict):
         err_console.print(f"[bold red]create_instance returned:[/bold red] {result!r}")
         raise typer.Exit(code=1)
 
-    if not (result.get("success", True)):
+    if not result.get("success", True):
         err_console.print(f"[bold red]Vast.ai refused the launch:[/bold red] {result!r}")
         raise typer.Exit(code=1)
 
@@ -279,7 +296,9 @@ def convert_to_reserved(
         f"[bold magenta]→ Prepaying ${amount}[/bold magenta] "
         f"(={hourly_rate:.4f}/hr × {commit_hours} h) to lock reserved pricing…"
     )
-    result = _safe_call(client, "prepay_instance", id=instance_id, amount=amount)
+    result = _normalize_response(
+        _safe_call(client, "prepay_instance", id=instance_id, amount=amount)
+    )
     if not isinstance(result, dict):
         err_console.print(
             f"[bold red]prepay_instance returned an unexpected payload:[/bold red] {result!r}"
@@ -319,6 +338,41 @@ def _safe_call(client: Any, method: str, **kwargs: Any) -> Any:
     except Exception as exc:  # noqa: BLE001 — surface the underlying SDK error verbatim
         err_console.print(f"[bold red]vastai.{method} raised:[/bold red] {exc}")
         raise typer.Exit(code=1) from exc
+
+
+def _normalize_response(payload: Any) -> Any:
+    """Coerce a vastai SDK response into native Python.
+
+    Handles three shapes so future SDK changes don't break this script:
+
+    * Already-decoded ``dict`` / ``list`` — returned untouched (current SDK).
+    * JSON-encoded ``str`` / ``bytes`` — parsed via ``json.loads`` (forward
+      compatibility with ``raw=True``).
+    * Anything else — returned as-is so the caller can render a clean error.
+    """
+    if isinstance(payload, (bytes, bytearray)):
+        payload = payload.decode("utf-8", errors="replace")
+    if isinstance(payload, str):
+        stripped = payload.strip()
+        if stripped and stripped[0] in "[{":
+            try:
+                return json.loads(stripped)
+            except json.JSONDecodeError:
+                return payload
+    return payload
+
+
+def _coerce_template_list(raw: Any) -> list[dict[str, Any]]:
+    """Normalize ``search_templates`` responses into a list of template dicts."""
+    if raw is None:
+        return []
+    if isinstance(raw, list):
+        return [t for t in raw if isinstance(t, dict)]
+    if isinstance(raw, dict):
+        value = raw.get("templates")
+        if isinstance(value, list):
+            return [t for t in value if isinstance(t, dict)]
+    return []
 
 
 def _coerce_offers(raw: Any) -> list[dict[str, Any]]:
