@@ -6,6 +6,8 @@ The supreme source of truth above this document is Book One:
 `canon/1_words_of_weaver_book_one/Words_of_Weaver_BOOK_ONE.MD`. Where this
 file and Book One meet, Book One ruleth.
 
+> For day-to-day operation, the seven training-layer access labels, and the human-in-the-loop gate this room serveth, see `docs/writers-room/HUMAN_IN_THE_LOOP_QUICKSTART.md`.
+
 ---
 
 ## The Four Truths Beneath

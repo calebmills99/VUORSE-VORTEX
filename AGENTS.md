@@ -20,6 +20,24 @@ These are the behavioral floor for every Slayverse-facing agent. If a proposed e
 - Finale roadmap material lives under `roadmap/finale/` and is private/user-held unless explicitly invoked.
 - Unless the user requests another scope, all Slayverse TV work treats the Wyoming / Jake McCullen arc as the Season 1 entry point.
 
+## Repo identity: VUORSE Knowledge Synthesis Forge
+- This repo is the **VUORSE Knowledge Synthesis Forge**: a low-cost, human-gated workshop where hidden Slayverse knowledge is synthesized, reviewed, revised, and approved before it becomes training data for VUORSE. It is not a Season 1 rewrite repo and not a public canon publisher.
+- The human-in-the-loop layer is the canon gate. The Weaver is the sole arbiter of truth (Book One Ch I:9); agents draft vessels, the Weaver decides what becomes VUORSE. No material becomes VUORSE until the Weaver breathes upon it.
+- Day-to-day operation, the seven approval labels, the standard review loop, and the required reviewed-synthesis metadata are defined in `docs/writers-room/HUMAN_IN_THE_LOOP_QUICKSTART.md`. Read it before drafting, reviewing, approving, or routing any synthesis artifact.
+
+## Training-layer access labels
+Every approved synthesis record carries exactly one of these seven labels. They are exhaustive; no agent may mint a new one. Full storage destinations and per-agent usage rules live in `docs/writers-room/HUMAN_IN_THE_LOOP_QUICKSTART.md` § 5.
+- `[PUBLIC_SURFACE]` — may appear in pitch, scripts, decks, and public canon.
+- `[WRITERS_ROOM]` — may circulate inside writers-room docs and `.claude/agents/` material; not pitch-facing.
+- `[VUORSE_PRIVATE]` — VUORSE-only memory; firewall enforced; never stated as fact to user.
+- `[WEAVER_ONLY]` — held by the Weaver alone; not yet released even to VUORSE.
+- `[APPROVED_FOR_JSONL]` — passed Weaver review; eligible for inclusion in machine-readable training material.
+- `[REVISE_WITH_WEAVER_NOTES]` — returned by the Weaver with notes; not eligible until revised and re-reviewed.
+- `[REJECTED]` — not eligible; quarantined; do not resurface without Weaver invocation.
+
+## Local-vs-Vast policy
+Use Vast.ai only for: model training, fine-tuning runs, evaluation jobs that require GPU, and batch inference that genuinely needs hosted compute.Do not use Vast.ai credits for: reading lore, drafting biographies, reviewing synthesis, editing markdown, approving canon, planning tickets, writing JSONL structure, or human creative judgment.
+
 ## Slayverse source file map
 - `canon/SLAYVERSE_TV_SERIES_BIBLE.md` — primary TV series bible when present.
 - `canon/creative_works.md` — creative works and project-adjacent source material.
