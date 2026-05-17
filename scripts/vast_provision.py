@@ -47,7 +47,7 @@ from rich.table import Table
 # Constants — the "optimal for this repo" defaults                            #
 # --------------------------------------------------------------------------- #
 
-TEMPLATE_NAME = "vuorse-vortex-pytorch"
+TEMPLATE_NAME = "vuorse-vortex-full"
 IMAGE = "vastai/pytorch"
 IMAGE_TAG = "cuda-12.4.1-auto"
 
@@ -61,18 +61,54 @@ DEFAULT_MAX_DPH = 5.00  # safety cap: refuse to launch above $5/hr without overr
 # Public repo cloned onto the box on first boot. No auth needed.
 GH_REPO_URL = "https://github.com/calebmills99/VUORSE_VORTEX.git"
 
-# Mirrors .env.example + repo's FastAPI/SSH surface.
+# Default noVNC/VNC password. Override per-instance via the Vast.ai env editor;
+# the onstart reads ${VNC_PASSWORD:-vuorse} so this is just a fallback.
+DEFAULT_VNC_PASSWORD = "vuorse"
+
+# Port surface for the full template:
+#   22   — SSH (direct)
+#   8000 — FastAPI (vuorse_vortex.api:app)
+#   8080 — Jupyter Lab (vastai/pytorch image auto-starts it when runtype=jupyter*)
+#   6080 — noVNC web client → XFCE desktop on display :1
+#   5901 — raw VNC (TigerVNC) on display :1, for native VNC clients
 ENV_FLAGS = (
     "-e CORTEX_REQUIRE_GPU=1 "
     "-e CORTEX_DEVICE=cuda "
     "-e CUDA_VISIBLE_DEVICES=0 "
     "-e HF_HOME=/workspace/.cache/huggingface "
+    f"-e VNC_PASSWORD={DEFAULT_VNC_PASSWORD} "
     "-p 22:22 "
-    "-p 8000:8000"
+    "-p 8000:8000 "
+    "-p 8080:8080 "
+    "-p 6080:6080 "
+    "-p 5901:5901"
+)
+
+# Desktop bootstrap: XFCE + TigerVNC + noVNC. Runs once on first container boot.
+# Idempotent on re-runs — the package installs become no-ops and vncserver/websockify
+# guards swallow "already running" errors so a restart doesn't double-launch them.
+DESKTOP_SETUP = (
+    "export DEBIAN_FRONTEND=noninteractive; "
+    "apt-get update; "
+    "apt-get install -y --no-install-recommends "
+    "xfce4 xfce4-terminal dbus-x11 x11-xserver-utils xauth "
+    "tigervnc-standalone-server tigervnc-common "
+    "novnc websockify; "
+    "mkdir -p /root/.vnc; "
+    'printf "%s\\n" "${VNC_PASSWORD:-vuorse}" | vncpasswd -f > /root/.vnc/passwd; '
+    "chmod 600 /root/.vnc/passwd; "
+    'printf "#!/bin/sh\\nunset SESSION_MANAGER\\nunset DBUS_SESSION_BUS_ADDRESS\\n'
+    'exec startxfce4\\n" > /root/.vnc/xstartup; '
+    "chmod +x /root/.vnc/xstartup; "
+    "pgrep -f 'Xtigervnc :1' >/dev/null 2>&1 || "
+    "vncserver :1 -geometry 1920x1080 -depth 24 -localhost no -SecurityTypes VncAuth; "
+    "pgrep -f 'websockify.*6080' >/dev/null 2>&1 || "
+    "websockify -D --web=/usr/share/novnc 6080 localhost:5901"
 )
 
 # Pre-warm the runtime extras declared in pyproject.toml and clone the (public)
 # repo so the box is ready for `uv sync --extra gpu` without a cold install.
+# Then bring up the XFCE desktop behind noVNC.
 ONSTART_CMD = (
     "env >> /etc/environment; "
     "curl -LsSf https://astral.sh/uv/install.sh | sh; "
@@ -83,7 +119,8 @@ ONSTART_CMD = (
     "'python-dotenv>=1.0' 'numpy>=1.26' 'tqdm>=4.66' "
     "'fastapi>=0.136.1' 'uvicorn>=0.47.0' 'jinja2>=3.1.6'; "
     "mkdir -p /workspace && cd /workspace && "
-    f"(git clone {GH_REPO_URL} || true)"
+    f"(git clone {GH_REPO_URL} || true); "
+    f"{DESKTOP_SETUP}"
 )
 
 # --------------------------------------------------------------------------- #
@@ -174,9 +211,11 @@ def ensure_template(client: Any, opts: ProvisionOptions) -> str:
                 return hash_id
 
     console.print("  [yellow]·[/yellow] Not found — creating it now…")
-    # The SDK's create_template translates ssh=True + direct=True into ssh_direct=True
-    # internally and derives runtype from ssh/jupyter; passing runtype/ssh_direct/tag
-    # directly is silently dropped. image_tag is the supported kwarg for the image tag.
+    # The SDK's create_template translates ssh=True + jupyter=True + direct=True
+    # into runtype=jupyter_direct_ssh internally and derives the ssh_direct/jupyter_direct
+    # flags from those booleans; passing runtype/ssh_direct/tag directly is silently
+    # dropped. image_tag is the supported kwarg for the image tag. jupyter_lab=True
+    # makes the auto-started Jupyter come up as JupyterLab instead of classic Notebook.
     # If a future SDK release stops exposing these kwargs, fall back to a REST
     # POST /api/v0/template/ with the same payload.
     created = _normalize_response(
@@ -189,9 +228,15 @@ def ensure_template(client: Any, opts: ProvisionOptions) -> str:
             env=ENV_FLAGS,
             onstart_cmd=ONSTART_CMD,
             ssh=True,
+            jupyter=True,
+            jupyter_lab=True,
+            jupyter_dir="/workspace",
             direct=True,
             disk_space=float(opts.min_disk),
-            desc="VUORSE-VORTEX PyTorch CUDA box (CORTEX_REQUIRE_GPU=1 baked in).",
+            desc=(
+                "VUORSE-VORTEX full PyTorch CUDA box: SSH (22) + JupyterLab (8080) + "
+                "XFCE desktop via noVNC (6080) / VNC (5901). CORTEX_REQUIRE_GPU=1 baked in."
+            ),
         )
     )
     if isinstance(created, dict) and isinstance(created.get("template"), dict):
