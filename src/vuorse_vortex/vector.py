@@ -2,11 +2,17 @@
 
 from __future__ import annotations
 
+import json
+from collections.abc import Sequence
 from dataclasses import dataclass, field
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 from vuorse_vortex.gpu import require_gpu
+from vuorse_vortex.schemas import MemoryRecord
 from vuorse_vortex.settings import Settings, get_settings
+
+if TYPE_CHECKING:
+    from sentence_transformers import SentenceTransformer
 
 
 @dataclass
@@ -18,6 +24,13 @@ class QueryResult:
     score: float
     layer: str
     metadata: dict[str, Any] = field(default_factory=dict)
+
+
+def _normalize_record(record: dict[str, Any] | MemoryRecord) -> dict[str, Any]:
+    """Accept either a ``MemoryRecord`` or a raw dict; return a dict."""
+    if isinstance(record, MemoryRecord):
+        return record.model_dump(mode="json", exclude_none=True)
+    return record
 
 
 class VectorDBBackend:
@@ -52,7 +65,7 @@ class VectorDBBackend:
         """Backend-specific query implementation. Override in subclasses."""
         return []
 
-    def ingest(self, records: list[dict[str, Any]]) -> int:
+    def ingest(self, records: Sequence[dict[str, Any] | MemoryRecord]) -> int:
         """Ingest records into the vector store. Returns count ingested."""
         return 0
 
@@ -60,20 +73,114 @@ class VectorDBBackend:
 class ChromaDBBackend(VectorDBBackend):
     """ChromaDB-backed vector retrieval (requires GPU extras)."""
 
-    def _raw_query(self, text: str, top_k: int = 5) -> list[QueryResult]:
-        require_gpu("chromadb vector query")
+    def __init__(self, settings: Settings | None = None) -> None:
+        super().__init__(settings=settings)
+        self._client: Any | None = None
+        self._collection: Any | None = None
+        self._encoder: SentenceTransformer | None = None
+
+    def _get_collection(self) -> Any:
+        if self._collection is not None:
+            return self._collection
         try:
-            import chromadb  # noqa: F401
+            import chromadb
         except ImportError as exc:
             raise RuntimeError(
                 "chromadb is not installed. Install with: uv sync --extra gpu"
             ) from exc
-        # Actual chromadb query would go here once collection is configured
-        return []
+        self._client = chromadb.PersistentClient(path=self._settings.chromadb_path)
+        self._collection = self._client.get_or_create_collection(
+            name=self._settings.chromadb_collection,
+            metadata={"hnsw:space": "cosine"},
+        )
+        return self._collection
+
+    def _get_encoder(self) -> SentenceTransformer:
+        if self._encoder is not None:
+            return self._encoder
+        try:
+            from sentence_transformers import SentenceTransformer
+        except ImportError as exc:
+            raise RuntimeError(
+                "sentence-transformers is not installed. Install with: uv sync --extra gpu"
+            ) from exc
+        self._encoder = SentenceTransformer(self._settings.embedding_model, device="cuda")
+        return self._encoder
+
+    def _encode(self, texts: list[str]) -> list[list[float]]:
+        encoder = self._get_encoder()
+        vectors = encoder.encode(texts, convert_to_numpy=True, show_progress_bar=False)
+        return [vec.tolist() for vec in vectors]
+
+    def ingest(self, records: Sequence[dict[str, Any] | MemoryRecord]) -> int:
+        require_gpu("chromadb ingest")
+        if not records:
+            return 0
+
+        normalized = [_normalize_record(r) for r in records]
+        ids = [str(r["id"]) for r in normalized]
+        documents = [str(r["text"]) for r in normalized]
+        metadatas: list[dict[str, Any]] = []
+        for r in normalized:
+            meta = r.get("metadata") or {}
+            retrieval = r.get("retrieval") or {}
+            metadatas.append(
+                {
+                    "layer": r.get("layer", "unknown"),
+                    "canon_status": meta.get("canon_status", "unknown"),
+                    "visibility": meta.get("visibility", "internal"),
+                    "tags": json.dumps(meta.get("tags", [])),
+                    "priority": int(retrieval.get("priority", 0)),
+                }
+            )
+
+        embeddings = self._encode(documents)
+        collection = self._get_collection()
+        collection.upsert(
+            ids=ids,
+            embeddings=embeddings,
+            documents=documents,
+            metadatas=metadatas,
+        )
+        return len(ids)
+
+    def _raw_query(self, text: str, top_k: int = 5) -> list[QueryResult]:
+        require_gpu("chromadb vector query")
+        collection = self._get_collection()
+        query_embedding = self._encode([text])[0]
+        raw = collection.query(
+            query_embeddings=[query_embedding],
+            n_results=top_k,
+        )
+
+        ids = (raw.get("ids") or [[]])[0]
+        docs = (raw.get("documents") or [[]])[0]
+        dists = (raw.get("distances") or [[]])[0]
+        metas = (raw.get("metadatas") or [[]])[0]
+
+        results: list[QueryResult] = []
+        for record_id, doc, dist, meta in zip(ids, docs, dists, metas, strict=False):
+            meta_dict: dict[str, Any] = dict(meta or {})
+            layer = str(meta_dict.get("layer", "unknown"))
+            score = 1.0 - float(dist)
+            results.append(
+                QueryResult(
+                    record_id=str(record_id),
+                    text=str(doc or ""),
+                    score=score,
+                    layer=layer,
+                    metadata=meta_dict,
+                )
+            )
+        return results
 
 
 class FaissBackend(VectorDBBackend):
-    """FAISS-backed vector retrieval (requires GPU extras)."""
+    """FAISS-backed vector retrieval (requires GPU extras).
+
+    Stubbed: ingest and query paths still guard GPU and import faiss, but no
+    real index is built. Use ChromaDBBackend until FAISS support lands.
+    """
 
     def _raw_query(self, text: str, top_k: int = 5) -> list[QueryResult]:
         require_gpu("faiss vector query")
@@ -83,7 +190,6 @@ class FaissBackend(VectorDBBackend):
             raise RuntimeError(
                 "faiss-cpu is not installed. Install with: uv sync --extra gpu"
             ) from exc
-        # Actual FAISS query would go here once index is loaded
         return []
 
 
