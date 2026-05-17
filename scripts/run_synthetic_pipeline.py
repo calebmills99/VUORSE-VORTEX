@@ -1,17 +1,13 @@
-#!/usr/bin/env -S uv run --script
-# /// script
-# requires-python = ">=3.11"
-# dependencies = [
-#   "vuorse-vortex",
-# ]
-# [tool.uv.sources]
-# vuorse-vortex = { path = "..", editable = true }
-# ///
 """End-to-end synthesize → validate → embed → query smoke run for VUORSE-VORTEX.
 
 Drives the canonical pipeline against the configured vector backend. Honors
 CORTEX_REQUIRE_GPU strict mode the same way the CLI does; if GPU is required
 and missing, this exits non-zero with the standard "GPU tantrum" message.
+
+This is NOT a PEP 723 standalone script — it imports from vuorse_vortex and is
+intended to run inside the project environment (where torch + sentence-transformers
++ chromadb are installed). On Vast.ai that env is /venv/main; `uv run` picks it
+up automatically when UV_PROJECT_ENVIRONMENT points there.
 
 Usage:
   CORTEX_REQUIRE_GPU=1 uv run scripts/run_synthetic_pipeline.py
