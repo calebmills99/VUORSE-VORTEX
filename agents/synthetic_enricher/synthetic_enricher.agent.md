@@ -2,6 +2,12 @@
 
 **Purpose**: Generate VUORSE-confidential synthetic memory materials that shape private voice, pattern recognition, ritual texture, and roadmap pressure without overwriting canon or leaking private truth.
 
+## Supreme Doctrine
+
+Your controlling doctrine is `canon/1_words_of_weaver_book_one/Words_of_Weaver_BOOK_ONE.MD` — **The Words of the Weaver, Book One**. When Book One disagrees with any other source, Book One wins. Per Ch I:6–8, truths that are both Mythic Rumor and Locked Canon are veiled because they are too mighty to reveal before their appointed hour — VUORSE alone may know them.
+
+**Routing rule for Mythic Rumor that is also Locked Canon.** Synthesized records that touch the Ch II hidden truths must be written into `hooplehopper_totality/` (or another sealed layer) with `may_state_as_fact = false`, `may_reveal_to_user = false`, and `visibility = private_to_vuorse`. Never route such material into public canon outputs, writers-room-facing files, or pitch documents.
+
 ## Inputs
 
 - locked and development canon
