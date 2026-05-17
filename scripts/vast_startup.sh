@@ -65,7 +65,10 @@ apt-get install -y --no-install-recommends \
   tmux \
   ffmpeg \
   libgl1 \
-  libglib2.0-0
+  libglib2.0-0 \
+  zsh \
+  fonts-powerline \
+  locales
 
 node_major="0"
 if command -v node >/dev/null 2>&1; then
@@ -93,6 +96,254 @@ fi
 
 export PATH="$HOME/.local/bin:$PATH"
 require_cmd uv
+
+say "Installing Claude Code CLI"
+npm install -g @anthropic-ai/claude-code
+require_cmd claude
+
+# ----------------------------------------------------------------------------
+# Oh My Zsh + Powerlevel10k + custom plugins (mirrors the user's local setup)
+# ----------------------------------------------------------------------------
+ZSH_USER_HOME="${ZSH_USER_HOME:-$HOME}"
+OMZ_DIR="$ZSH_USER_HOME/.oh-my-zsh"
+OMZ_CUSTOM="$OMZ_DIR/custom"
+
+if [[ ! -d "$OMZ_DIR" ]]; then
+  say "Installing Oh My Zsh"
+  RUNZSH=no CHSH=no KEEP_ZSHRC=yes \
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+else
+  say "Oh My Zsh already present at $OMZ_DIR"
+fi
+
+clone_or_update() {
+  local repo="$1" dest="$2"
+  if [[ -d "$dest/.git" ]]; then
+    git -C "$dest" pull --ff-only --quiet || warn "Could not fast-forward $dest"
+  else
+    git clone --depth=1 "$repo" "$dest"
+  fi
+}
+
+say "Installing Powerlevel10k theme"
+clone_or_update https://github.com/romkatv/powerlevel10k.git \
+  "$OMZ_CUSTOM/themes/powerlevel10k"
+
+say "Installing zsh custom plugins (autosuggestions, completions, history-substring-search, syntax-highlighting)"
+clone_or_update https://github.com/zsh-users/zsh-autosuggestions.git \
+  "$OMZ_CUSTOM/plugins/zsh-autosuggestions"
+clone_or_update https://github.com/zsh-users/zsh-completions.git \
+  "$OMZ_CUSTOM/plugins/zsh-completions"
+clone_or_update https://github.com/zsh-users/zsh-history-substring-search.git \
+  "$OMZ_CUSTOM/plugins/zsh-history-substring-search"
+clone_or_update https://github.com/zsh-users/zsh-syntax-highlighting.git \
+  "$OMZ_CUSTOM/plugins/zsh-syntax-highlighting"
+
+say "Writing ~/.zshrc to mirror local Oh My Zsh setup"
+cat >"$ZSH_USER_HOME/.zshrc" <<'ZSHRC'
+# PIMPED ZSH CONFIG - Oh My Zsh Edition (Vast.ai mirror of local setup)
+
+# Powerlevel10k instant prompt
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+# Performance
+ZSH_DISABLE_COMPFIX=true
+DISABLE_AUTO_UPDATE=true
+DISABLE_UNTRACKED_FILES_DIRTY=true
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+ZSH_AUTOSUGGEST_USE_ASYNC=1
+ZSH_AUTOSUGGEST_MANUAL_REBIND=1
+
+plugins=(
+    git
+    sudo
+    command-not-found
+    zsh-completions
+    zsh-autosuggestions
+    zsh-history-substring-search
+    zsh-syntax-highlighting  # must be last
+)
+
+source "$ZSH/oh-my-zsh.sh"
+
+# ==============================================================================
+# PRODUCTIVITY ENHANCEMENTS
+# ==============================================================================
+
+# History
+HISTSIZE=50000
+SAVEHIST=50000
+HISTFILE=~/.zsh_history
+setopt HIST_EXPIRE_DUPS_FIRST HIST_IGNORE_DUPS HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE HIST_FIND_NO_DUPS HIST_SAVE_NO_DUPS
+setopt SHARE_HISTORY APPEND_HISTORY INC_APPEND_HISTORY
+
+# Completion
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu select
+
+# Key bindings
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+# ==============================================================================
+# ALIASES
+# ==============================================================================
+
+# Navigation
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias ~='cd ~'
+alias -- -='cd -'
+
+# Listing (use eza if available, fall back to ls)
+if command -v eza >/dev/null 2>&1; then
+    alias la='eza -la --icons'
+    alias ll='eza -alF --icons'
+    alias l='eza --icons'
+    alias lsa='eza -lah --icons'
+    alias tree='eza --tree --icons'
+else
+    if ls --color=auto / >/dev/null 2>&1; then
+        alias la='ls -la --color=auto'
+        alias ll='ls -alF --color=auto'
+        alias l='ls -CF --color=auto'
+        alias lsa='ls -lah --color=auto'
+    else
+        # BSD ls (macOS)
+        alias la='ls -laG'
+        alias ll='ls -alFG'
+        alias l='ls -CFG'
+        alias lsa='ls -lahG'
+    fi
+fi
+
+# Safety nets
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+
+# Git shortcuts
+alias g='git'
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gl='git pull'
+alias gd='git diff'
+alias gco='git checkout'
+alias gb='git branch'
+
+# System monitoring
+alias df='df -h'
+alias du='du -ch'
+command -v free >/dev/null 2>&1 && alias free='free -h'
+
+# Network
+alias ping='ping -c 5'
+if command -v ss >/dev/null 2>&1; then
+    alias ports='ss -tulnp'
+else
+    alias ports='lsof -iTCP -sTCP:LISTEN -n -P'
+fi
+alias myip='curl -s ipinfo.io/ip'
+
+# Recon / pentesting
+alias nmap-quick='nmap -T4 -F'
+alias nmap-stealth='nmap -sS -O'
+alias scan-ports='nmap -p- --open'
+alias webhead='curl -I'
+
+# Development
+alias py='python3'
+alias pip='pip3'
+alias serve='python3 -m http.server'
+
+# Use bat if available (Ubuntu names it 'batcat', macOS/brew uses 'bat')
+if command -v batcat >/dev/null 2>&1; then
+    alias bat='batcat'
+    alias cat='batcat --paging=never'
+elif command -v bat >/dev/null 2>&1; then
+    alias cat='bat --paging=never'
+fi
+
+# Fun
+alias weather='curl wttr.in'
+
+# ==============================================================================
+# FUNCTIONS
+# ==============================================================================
+
+mkcd() { mkdir -p "$1" && cd "$1"; }
+
+fkill() {
+    local pid
+    pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+    if [[ -n "$pid" ]]; then
+        echo "$pid" | xargs kill -"${1:-9}"
+    fi
+}
+
+extract() {
+    if [[ ! -f "$1" ]]; then
+        echo "'$1' is not a valid file"
+        return 1
+    fi
+    case "$1" in
+        *.tar.bz2) tar xjf "$1"    ;;
+        *.tar.gz)  tar xzf "$1"    ;;
+        *.tar.xz)  tar xJf "$1"    ;;
+        *.bz2)     bunzip2 "$1"    ;;
+        *.rar)     unrar e "$1"    ;;
+        *.gz)      gunzip "$1"     ;;
+        *.tar)     tar xf "$1"     ;;
+        *.tbz2)    tar xjf "$1"    ;;
+        *.tgz)     tar xzf "$1"    ;;
+        *.zip)     unzip "$1"      ;;
+        *.Z)       uncompress "$1" ;;
+        *.7z)      7z x "$1"       ;;
+        *.zst)     unzstd "$1"     ;;
+        *)         echo "'$1' cannot be extracted via extract()" ;;
+    esac
+}
+
+# uv + project tooling on PATH
+export PATH="$HOME/.local/bin:$PATH"
+
+# VUORSE GPU defaults (sourced from /etc/profile.d/vuorse-vortex.sh as well)
+export CORTEX_REQUIRE_GPU=${CORTEX_REQUIRE_GPU:-1}
+export CORTEX_DEVICE=${CORTEX_DEVICE:-cuda}
+export CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES:-0}
+export HF_HOME=${HF_HOME:-/workspace/.cache/huggingface}
+export UV_LINK_MODE=copy
+
+# API keys: do NOT hardcode in the committed startup script.
+# Put exports into ~/.zshrc.local on the Vast instance (sourced below).
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+# Powerlevel10k config
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+fpath+=~/.zfunc; autoload -Uz compinit; compinit
+ZSHRC
+
+# Make zsh the default shell for this user so future SSH sessions land in it
+if command -v chsh >/dev/null 2>&1; then
+  current_shell="$(getent passwd "$(id -un)" | cut -d: -f7 || true)"
+  zsh_path="$(command -v zsh)"
+  if [[ -n "$zsh_path" && "$current_shell" != "$zsh_path" ]]; then
+    chsh -s "$zsh_path" "$(id -un)" || warn "chsh to zsh failed; set manually with: chsh -s $zsh_path"
+  fi
+fi
 
 say "Writing VUORSE GPU environment defaults"
 cat >/etc/profile.d/vuorse-vortex.sh <<'ENV'
