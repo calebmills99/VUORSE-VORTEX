@@ -80,7 +80,11 @@ DEFAULT_NUM_GPUS = 1
 DEFAULT_MAX_DPH = 5.00  # safety cap: refuse to launch above $5/hr without override
 
 # Public repo cloned onto the box on first boot. No auth needed.
-GH_REPO_URL = "https://github.com/calebmills99/VUORSE_VORTEX.git"
+# Hyphen, not underscore — must match the real GitHub remote and the URL
+# referenced by scripts/vast_startup.sh + README.md. A typo here used to send
+# the onstart command at an `_` URL that 404s, after which `|| true` silently
+# moved on; the new bootstrap aborts loudly if the clone fails.
+GH_REPO_URL = "https://github.com/calebmills99/VUORSE-VORTEX.git"
 
 # Default noVNC/VNC password. Override per-instance via the Vast.ai env editor;
 # the onstart reads ${VNC_PASSWORD:-vuorse} so this is just a fallback.
@@ -130,7 +134,16 @@ DESKTOP_SETUP = (
 # Pre-warm the runtime extras declared in pyproject.toml and clone the (public)
 # repo so the box is ready for `uv sync --extra gpu` without a cold install.
 # Then bring up the XFCE desktop behind noVNC.
+#
+# Clone behavior: the script exits the container's onstart with a non-zero
+# status if `git clone` fails AND the target directory is also absent, instead
+# of silently moving on. Previously a typoed URL would 404, the `|| true`
+# swallowed the failure, and the user's first SSH would land on a box without
+# the repo — easy to miss because the desktop and Jupyter would still work.
+# The explicit `test -d ... || exit 1` makes the template bootstrap fail loudly
+# so misconfiguration shows up in the Vast.ai instance logs, not later.
 ONSTART_CMD = (
+    "set -e; "
     "env >> /etc/environment; "
     "curl -LsSf https://astral.sh/uv/install.sh | sh; "
     'export PATH="$HOME/.local/bin:$PATH"; '
@@ -140,7 +153,10 @@ ONSTART_CMD = (
     "'python-dotenv>=1.0' 'numpy>=1.26' 'tqdm>=4.66' "
     "'fastapi>=0.136.1' 'uvicorn>=0.47.0' 'jinja2>=3.1.6'; "
     "mkdir -p /workspace && cd /workspace && "
-    f"(git clone {GH_REPO_URL} || true); "
+    f"(test -d VUORSE-VORTEX/.git || git clone {GH_REPO_URL}); "
+    "test -d /workspace/VUORSE-VORTEX/.git || "
+    "{ echo FATAL: VUORSE-VORTEX clone did not produce a git repo at "
+    "/workspace/VUORSE-VORTEX; exit 1; }; "
     f"{DESKTOP_SETUP}"
 )
 

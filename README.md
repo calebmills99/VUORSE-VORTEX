@@ -102,16 +102,30 @@ GPU host. It is a self-contained PEP 723 script — `uv` resolves its dependenci
 on first run, so nothing needs to be added to `pyproject.toml`.
 
 Requires `VAST_API_KEY` in `.env` (see `.env.example`). The script enforces the
-VUORSE floor (≥32 GB VRAM, ≥500 GB disk, reliability > 0.99, North America) and
-searches cheapest-first by `dph_total`.
+VUORSE floor (≥32 GB VRAM, ≥500 GB disk, reliability > 0.99, North America, and
+**`compute_cap >= 800`** so Volta/Turing cards that can't run our torch stack are
+filtered out) and searches cheapest-first by `dph_total`. Billing is **on-demand
+hourly only**; there is no prepay or reserved-contract flow.
 
 ```bash
 # Dry-run: reconcile the template, render the top-5 candidate offers, spend nothing.
 uv run scripts/vast_provision.py
 
-# Real launch: spin up the cheapest match and prepay ~720 h to lock reserved pricing.
-uv run scripts/vast_provision.py --launch --commit-hours 720
+# Real launch: spin up the cheapest match on-demand hourly.
+# --max-dph is the safety cap (default $5/hr); the launch refuses anything pricier.
+uv run scripts/vast_provision.py --launch --max-dph 5.00
 ```
+
+After the box is up, SSH in (as root once for the bootstrap, then as `vuorse` for
+day-to-day work) and finish provisioning:
+
+```bash
+bash /workspace/VUORSE-VORTEX/scripts/vast_startup.sh
+```
+
+The startup script creates the non-root `vuorse` user, owns the repo + venv +
+Claude Code install + `~/.zshrc` under that user, and builds a Python 3.12 venv
+with CUDA-12.4 torch wheels from PyTorch's official index.
 
 ## First Commands
 
