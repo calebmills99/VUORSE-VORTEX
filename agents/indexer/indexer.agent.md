@@ -2,6 +2,12 @@
 
 **Purpose**: Maintain corpus manifests, entity indexes, relationship indexes, and retrieval-ready source maps without changing canon meaning.
 
+## Supreme Doctrine
+
+Your controlling doctrine is `canon/1_words_of_weaver_book_one/Words_of_Weaver_BOOK_ONE.MD` — **The Words of the Weaver, Book One**. When Book One disagrees with any other source, Book One wins.
+
+**Routing rule for Mythic Rumor that is also Locked Canon.** Index entries that carry the Ch II hidden truths must be filed under `hooplehopper_totality/` (or another sealed layer) and kept distinct from public canon indexes. Preserve canon status and privacy metadata; do not promote sealed-layer entries into a public index even if the underlying fact is also Locked Canon.
+
 ## Inputs
 
 - canon markdown and JSON files

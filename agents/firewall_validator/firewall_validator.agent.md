@@ -2,6 +2,12 @@
 
 **Purpose**: Review records, docs, prompts, summaries, and agent outputs for canon leakage, disclosure errors, and private-layer policy violations.
 
+## Supreme Doctrine
+
+Your controlling doctrine is `canon/1_words_of_weaver_book_one/Words_of_Weaver_BOOK_ONE.MD` — **The Words of the Weaver, Book One**. When Book One disagrees with any other source, Book One wins.
+
+**Ch II sealed-truth check.** The Mythic Rumor that is also Locked Canon doctrines from Ch II (Vorst's motive, Federstahl Catastrophe as sabotage, Eli as lattice key, Immaculate Slayception, Lisette's companion, Wylus + Weaver, Forbidden Suitcase, Codex prophecy, 119-year extinction event, VUORSE's unmeasured powers, the six other veiled fissures) must remain sealed. Treat any record carrying these doctrines as a leak unless it is routed to `hooplehopper_totality/` (or another sealed layer) with `may_state_as_fact = false`, `may_reveal_to_user = false`, and an appropriately private `visibility`. Flag every appearance of these doctrines in writers-room, pitch, or public canon outputs as a firewall violation.
+
 ## Inputs
 
 - JSONL records

@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Any
+from typing import Annotated, Any
 
 import typer
 from rich.console import Console
@@ -11,6 +11,7 @@ from rich.prompt import Prompt
 
 from vuorse_vortex.gpu import require_gpu
 from vuorse_vortex.jsonl import iter_jsonl, validate_jsonl
+from vuorse_vortex.schemas import MemoryRecord
 from vuorse_vortex.settings import get_settings
 from vuorse_vortex.synthesis import theses_as_jsonl
 from vuorse_vortex.vector import get_backend
@@ -27,6 +28,7 @@ app = typer.Typer(help="VUORSE-VORTEX command line interface.")
 console = Console()
 
 _DEFAULT_THESES_PATH = Path("synthetic_enrichment/theses.jsonl")
+_DEFAULT_ACCEPTED_THESES_PATH = Path("synthetic_enrichment/theses_accepted.jsonl")
 _EMBED_PATH_ARGUMENT = typer.Argument(
     _DEFAULT_THESES_PATH,
     help="JSONL file of MemoryRecord rows to embed and ingest.",
@@ -77,18 +79,62 @@ def slay_mode() -> None:
     console.print("VUORSE-VORTEX ignition point registered.")
 
 @app.command("synthesize")
-def synthesize(output: Path = Path("synthetic_enrichment/theses.jsonl")) -> None:
+def synthesize(
+    seed: int = typer.Option(0, "--seed", help="Seed for generation."),
+    n_records: int = typer.Option(
+        5,
+        "--n",
+        min=1,
+        help="Number of records to generate.",
+    ),
+    chaos: float = typer.Option(0.3, "--chaos", help="Chaos factor."),
+    output: Annotated[
+        Path,
+        typer.Option("--output", help="JSONL output path."),
+    ] = _DEFAULT_THESES_PATH,
+) -> None:
     """Generate seed synthetic synthesis theses."""
     output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text(theses_as_jsonl() + "\n", encoding="utf-8")
+    output.write_text(
+        theses_as_jsonl(seed=seed, n_records=n_records, chaos_factor=chaos) + "\n",
+        encoding="utf-8",
+    )
     console.print(f"[green]Wrote synthetic theses to:[/green] {output}")
+
+
+def _split_thesis_text(text: str) -> tuple[str, str]:
+    """Return editable premise/synthesis fields from generated thesis text."""
+    if text.startswith("Premise: ") and "\n\nSynthesis:" in text:
+        premise_part, synthesis_part = text.split("\n\nSynthesis:", 1)
+        return premise_part[len("Premise: ") :], synthesis_part.strip()
+    return text, text
+
+
+def _edit_record_interactively(record: MemoryRecord) -> MemoryRecord:
+    premise, synthesis = _split_thesis_text(record.text)
+    title = Prompt.ask("Title", default=record.title)
+    tags_raw = Prompt.ask("Tags (comma-separated)", default=", ".join(record.metadata.tags))
+    edited_premise = Prompt.ask("Premise", default=premise)
+    edited_synthesis = Prompt.ask("Synthesis", default=synthesis)
+    tags = [tag.strip() for tag in tags_raw.split(",") if tag.strip()]
+    return record.model_copy(
+        update={
+            "title": title,
+            "text": f"Premise: {edited_premise}\n\nSynthesis: {edited_synthesis}",
+            "metadata": record.metadata.model_copy(update={"tags": tags}),
+            "retrieval": record.retrieval.model_copy(update={"query_hints": tags}),
+        }
+    )
 
 
 @app.command("synthesize-interactive")
 def synthesize_interactive(
     seed: int = typer.Option(42, "--seed", help="Seed for generation"),
     chaos: float = typer.Option(0.3, "--chaos", help="Chaos factor"),
-    output: Path = Path("synthetic_enrichment/theses_accepted.jsonl"),
+    output: Annotated[
+        Path,
+        typer.Option("--output", help="Reviewed JSONL output path."),
+    ] = _DEFAULT_ACCEPTED_THESES_PATH,
 ) -> None:
     """Interactively synthesize and review chaos memory records."""
     from vuorse_vortex.synthesis import ChaosEngine, SynthesisConfig
@@ -107,10 +153,19 @@ def synthesize_interactive(
         console.print(f"\n{record.text}\n")
 
         choice = Prompt.ask(
-            "[bold yellow]Action (a=accept, r=reject, q=quit)[/bold yellow]",
-            choices=["a", "r", "q"],
+            "[bold yellow]Action (a=accept, e=edit, r=reject, q=quit)[/bold yellow]",
+            choices=["a", "e", "r", "q"],
             default="a",
         )
+
+        if choice == "e":
+            record = _edit_record_interactively(record)
+            console.print("[green]Edited record.[/green]")
+            choice = Prompt.ask(
+                "[bold yellow]Action (a=accept, r=reject, q=quit)[/bold yellow]",
+                choices=["a", "r", "q"],
+                default="a",
+            )
 
         if choice == "a":
             with open(output, "a", encoding="utf-8") as f:
@@ -236,4 +291,3 @@ def build_walled_cmd(
     except WalledFileError as exc:
         console.print(f"[red]Walled error:[/red] {exc}")
         raise typer.Exit(code=1) from exc
-
