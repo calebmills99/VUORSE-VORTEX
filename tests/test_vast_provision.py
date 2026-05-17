@@ -43,6 +43,7 @@ def _opts(**overrides: Any) -> Any:
         "min_disk": vp.MIN_DISK_GB,
         "min_vram": vp.MIN_GPU_RAM_GB,
         "min_reliability": vp.MIN_RELIABILITY,
+        "min_compute_cap": vp.MIN_COMPUTE_CAP,
         "countries": list(vp.NA_GEOS),
         "tag": vp.IMAGE_TAG,
         "num_gpus": vp.DEFAULT_NUM_GPUS,
@@ -343,3 +344,41 @@ def test_launch_path_creates_instance(monkeypatch: pytest.MonkeyPatch) -> None:
 
     assert result.exit_code == 0, result.output
     client.create_instance.assert_called_once()
+
+
+# --------------------------------------------------------------------------- #
+# build_query — compute capability floor                                       #
+# --------------------------------------------------------------------------- #
+
+
+def test_build_query_filters_below_ampere() -> None:
+    """The VUORSE floor is compute_cap >= 800 (Ampere). V100 = 700 must be excluded.
+
+    Locks the architecture floor into the query contract so a future edit
+    can't silently drop us back into Volta territory and pay for a GPU we
+    can't run our torch on.
+    """
+    query, order = vp.build_query(_opts())
+    assert order == "dph_total"
+    assert f"compute_cap >= {vp.MIN_COMPUTE_CAP}" in query
+    assert vp.MIN_COMPUTE_CAP >= 800, "VUORSE floor must stay at Ampere or higher"
+
+
+def test_build_query_honors_min_compute_cap_override() -> None:
+    """`--min-compute-cap` flows through to the search filter verbatim."""
+    query, _ = vp.build_query(_opts(min_compute_cap=890))
+    assert "compute_cap >= 890" in query
+
+
+def test_provision_refuses_compute_cap_below_floor(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """Passing --min-compute-cap below 800 without --allow-downgrade exits non-zero."""
+    monkeypatch.setattr(vp, "load_api_key", lambda: "fake-key")
+    monkeypatch.setattr(vp, "make_client", lambda _key: _stub_client())
+
+    runner = CliRunner()
+    result = runner.invoke(vp.app, ["--min-compute-cap", "700"])
+
+    assert result.exit_code == 2
+    assert "min-compute-cap" in result.output
