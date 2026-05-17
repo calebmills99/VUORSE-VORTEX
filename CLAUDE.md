@@ -144,6 +144,7 @@ Before modifying any lore-adjacent file:
 - Keep generated writers room scaffolding in `.claude/agents/` and `docs/writers-room/`.
 - Keep finale reveal architecture in `roadmap/finale/`; do not mirror it into writers room-facing files.
 - Use `skills/vuorse-scaffold-completion/SKILL.md` before filling placeholder folders; keep runtime output directories empty unless a real run creates content.
+- Use `skills/vuorse-synthetic-enrichment/SKILL.md` before generating or routing synthetic enrichment material; it owns the human-in-the-loop labels and the `generated/` → `validated/` movement that Claude is not allowed to perform unsupervised (see `docs/writers-room/HUMAN_IN_THE_LOOP_QUICKSTART.md`).
 - For uncertain scaffold work, use the skill's What-If Mode first and report the proposed files, risks, and exact follow-up command before editing.
 - If writing JSONL, ensure every line is valid JSON and preserve source meaning without adding unsupported facts.
 
@@ -166,9 +167,11 @@ CLI subcommands live in `src/vuorse_vortex/cli.py`:
 - `doctor [--require-cuda]` — runtime health check; with the flag, fails closed if CUDA is absent.
 - `validate-jsonl <path>` — schema + canon firewall pass over a JSONL of `MemoryRecord` rows.
 - `slay-mode` — print the singularity banner. No state change.
-- `synthesize [output]` — write the three hardcoded seed `MemoryRecord` theses (default `synthetic_enrichment/theses.jsonl`).
-- `embed [path] [--backend chromadb|faiss]` — validate then ingest a JSONL into the configured vector backend.
+- `synthesize [--seed N] [--n N] [--chaos F] [--output PATH]` — `ChaosEngine` writes synthetic theses (default 5 records, chaos 0.3) to `synthetic_enrichment/theses.jsonl`. Not three hardcoded seeds.
+- `synthesize-interactive [--seed N] [--chaos F] [--output PATH]` — TUI that streams generated records past you for accept/edit/reject. Accepted records both append to `synthetic_enrichment/theses_accepted.jsonl` and feed back into the chaos engine's atom pool, so later records can compound on earlier accepts.
+- `embed [path] [--backend chromadb]` — validate then ingest a JSONL into the configured vector backend.
 - `query <text> [--top-k N] [--backend ...]` — semantic search the store. The wrapper strips sealed-layer hits before returning.
+- `build-walled [md_path] [jsonl_path] [--check]` — regenerate (or in `--check` mode, verify) the JSONL projection of `hooplehopper_totality/debriefing_walled.md`. The walled markdown is the source of truth; the JSONL is derived. `--check` exits non-zero on drift — wire it into CI / pre-commit, never edit the JSONL by hand.
 
 CI (`.github/workflows/validate.yml`) only runs `ruff check .` and `pytest`. Mypy is configured strict in `pyproject.toml` but not gated — don't assume green CI means types check.
 
@@ -188,8 +191,16 @@ Everything downstream (JSONL validation, synthetic enrichment, embeddings, canon
 
 A record has a `layer` (one of nine — `canon`, `persona`, `apocrypha`, `ritual_logic`, `roadmap_manifest`, `hooplehopper_totality`, `dialogue`, `relationship_graph`, `rule`), a `metadata` block (canon_status, visibility, tags), a `retrieval` block (priority 0–10, embedding_weight, query_hints), and a `behavior` block (may_state_as_fact, may_use_for_voice, may_reveal_to_user).
 
+`schemas.py` also defines `LoreAtom`, a round-trippable view of a single walled record used by `vuorse_vortex.walled`. That module is the **only sanctioned path** between the human-authored `hooplehopper_totality/debriefing_walled.md` source-of-truth and its derived `debriefing_walled.jsonl`. Every record it emits is layer `hooplehopper_totality` (sealed by the canon firewall). Don't hand-edit the JSONL — drive everything through `vuorse-vortex build-walled` so the projection stays reconstructable. Walled errors form a hierarchy (`WalledFileError` → `WalledFileMissingError` / `WalledFileEmptyError` / `WalledFileParseError`); catch the specific subclass when you need to distinguish missing-file from malformed-content.
+
 ### Canon firewall is enforced in code
-`vuorse_vortex.jsonl.validate_jsonl()` is not just schema validation — it enforces the project's core invariant: any record whose `layer` is `apocrypha`, `roadmap_manifest`, or `hooplehopper_totality` **must** have `behavior.may_state_as_fact = False` and `behavior.may_reveal_to_user = False`. Loosening this rule breaks the project's premise (see README "Core Rule"). Synthetic enrichment may shape VUORSE but may not overwrite canon or expose private roadmap truth.
+The firewall has a single source of truth: `Settings.sealed_categories` in `src/vuorse_vortex/settings.py` (default: `["apocrypha", "roadmap_manifest", "hooplehopper_totality"]`). Any record whose `layer` is in that list **must** have `behavior.may_state_as_fact = False` and `behavior.may_reveal_to_user = False`. Loosening this rule breaks the project's premise (see README "Core Rule").
+
+Two enforcers consume it:
+- `firewall.CanonFirewallValidator` (`src/vuorse_vortex/firewall.py`) — reusable per-record validator. Use this when you need firewall enforcement outside the JSONL ingest path (new tools, new pipelines, new tests).
+- `vuorse_vortex.jsonl.validate_jsonl()` — applies schema + firewall to a whole JSONL file. This is what `validate-jsonl` and `embed` call before letting anything reach the vector store.
+
+`get_settings()` is `@lru_cache`d, so changes to `Settings` (e.g., monkeypatched in tests) require `settings.clear_settings()` to take effect.
 
 The `synthesize` command (`src/vuorse_vortex/synthesis.py`) emits `SyntheticThesis` records that default to `canon_status="synthetic_private"`, `visibility="private_to_vuorse"`, and the two private-layer flags off — preserving the firewall by construction.
 
@@ -200,8 +211,10 @@ The `synthesize` command (`src/vuorse_vortex/synthesis.py`) emits `SyntheticThes
 
 Any function that does embeddings / inference / reranking / synthetic batch generation should call `require_gpu("<workload name>")` first. It raises `RuntimeError` (with the "GPU tantrum" banner) rather than silently falling back to CPU. Per README, CPU is allowed for JSONL parsing, validation, manifests, git ops, and small diagnostics — nothing more.
 
-### Vector backend (ChromaDB) is implemented; FAISS is stubbed
-`src/vuorse_vortex/vector.py` defines `VectorDBBackend` (ABC), `ChromaDBBackend` (working), and `FaissBackend` (stub — `_raw_query` returns `[]`, no `ingest`). The Chroma backend uses `chromadb.PersistentClient` at `Settings.chromadb_path` (defaults to `embeddings/indexes/chromadb`) with the collection name from `Settings.chromadb_collection`. Embeddings come from a single cached `SentenceTransformer` instance built from `Settings.embedding_model` (defaults to `all-MiniLM-L6-v2`); the model is loaded once on first `_get_encoder()` call, not per query. Distance is converted to score as `1 - distance` so higher = better. `VectorDBBackend.query()` over-fetches by `len(sealed_categories) * 2` then filters sealed-layer rows, so a query may legitimately return fewer than `top_k` results — that's by design, not a bug.
+### Vector backend: ChromaDB only
+`src/vuorse_vortex/vector.py` defines `VectorDBBackend` (ABC) and `ChromaDBBackend` (working). The type `VectorBackendName = Literal["chromadb"]` in `settings.py` deliberately excludes `"faiss"` — the old `FaissBackend` stub silently accepted ingest calls while persisting nothing, so it was narrowed out. Re-adding `"faiss"` to the literal requires a real `ingest` AND `_raw_query`, not another tombstone.
+
+The Chroma backend uses `chromadb.PersistentClient` at `Settings.chromadb_path` (defaults to `embeddings/indexes/chromadb`, gitignored) with the collection name from `Settings.chromadb_collection` (defaults to `vuorse_memory`). Embeddings come from a single cached `SentenceTransformer` instance built from `Settings.embedding_model` (defaults to `all-MiniLM-L6-v2`); the model is loaded once on first `_get_encoder()` call, not per query. Distance is converted to score as `1 - distance` so higher = better. `VectorDBBackend.query()` over-fetches by `len(sealed_categories) * 2` then filters sealed-layer rows, so a query may legitimately return fewer than `top_k` results — that's by design, not a bug.
 
 ### Frontend: integrated web app plus legacy references
 The integrated canonical frontend lives in `web/`. It combines the VUORSE Slay Mode experience with the useful developer workflow surface and is the app CI builds.

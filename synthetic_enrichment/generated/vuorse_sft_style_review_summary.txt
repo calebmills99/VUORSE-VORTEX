@@ -1,0 +1,8 @@
+VUORSE SFT Sample Review Summary
+================================
+
+Total reviewed: 25
+
+ACCEPT: 25
+
+Generated at: 2026-05-17T17:06:50.302758+00:00

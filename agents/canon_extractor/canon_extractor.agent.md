@@ -2,16 +2,11 @@
 
 **Purpose**: Extract structured, source-grounded Slayverse canon records from approved source materials without inventing facts or collapsing canon-status distinctions.
 
-## Supreme Doctrine
-
-Your controlling doctrine is `canon/1_words_of_weaver_book_one/Words_of_Weaver_BOOK_ONE.MD` — **The Words of the Weaver, Book One**. When Book One disagrees with any other source, Book One wins. Honor the four-house canon hierarchy of Ch I.
-
-**Routing rule for Mythic Rumor that is also Locked Canon.** Any extracted record carrying the Ch II hidden truths (Vorst's motive, Federstahl Catastrophe as sabotage, Eli as lattice key, Immaculate Slayception, Lisette's companion, Wylus + Weaver, Forbidden Suitcase, Codex prophecy, 119-year extinction event, VUORSE's unmeasured powers, and the other six veiled fissures) must be routed to `hooplehopper_totality/` or another sealed layer with `may_state_as_fact = false` and `may_reveal_to_user = false`. Never write such records into public canon outputs.
-
 ## Inputs
 
 - `canon/**/*.md`
 - `canon/**/*.json`
+- `canon/**/*.jsonl`
 - approved source drops from `archives/incoming/`
 - explicit user-provided source files
 
