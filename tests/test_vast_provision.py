@@ -46,7 +46,6 @@ def _opts(**overrides: Any) -> Any:
         "countries": list(vp.NA_GEOS),
         "tag": vp.IMAGE_TAG,
         "num_gpus": vp.DEFAULT_NUM_GPUS,
-        "commit_hours": vp.DEFAULT_COMMIT_HOURS,
         "max_dph": vp.DEFAULT_MAX_DPH,
         "launch": False,
         "template_only": False,
@@ -254,35 +253,7 @@ def test_create_instance_exits_when_success_false() -> None:
     assert exc_info.value.exit_code == 1
 
 
-# --------------------------------------------------------------------------- #
-# convert_to_reserved — prepay parsing                                         #
-# --------------------------------------------------------------------------- #
 
-
-def test_convert_to_reserved_extracts_timescale_and_discount() -> None:
-    client = MagicMock()
-    client.prepay_instance.return_value = {"timescale": 720, "discount_rate": 0.2}
-    result = vp.convert_to_reserved(client, instance_id=42, hourly_rate=0.40, commit_hours=720)
-    assert result["timescale"] == 720
-    assert result["discount_rate"] == 0.2
-    kwargs = client.prepay_instance.call_args.kwargs
-    assert kwargs["id"] == 42
-    assert kwargs["amount"] == round(0.40 * 720, 2)
-
-
-def test_convert_to_reserved_parses_json_string_response() -> None:
-    client = MagicMock()
-    client.prepay_instance.return_value = '{"timescale": 720, "discount_rate": 0.2}'
-    result = vp.convert_to_reserved(client, instance_id=1, hourly_rate=0.40, commit_hours=720)
-    assert result == {"timescale": 720, "discount_rate": 0.2}
-
-
-def test_convert_to_reserved_exits_on_unexpected_payload() -> None:
-    client = MagicMock()
-    client.prepay_instance.return_value = "totally not json"
-    with pytest.raises(typer.Exit) as exc_info:
-        vp.convert_to_reserved(client, instance_id=1, hourly_rate=0.40, commit_hours=720)
-    assert exc_info.value.exit_code == 1
 
 
 # --------------------------------------------------------------------------- #
@@ -295,7 +266,6 @@ def _stub_client(
     templates: list[dict[str, Any]] | None = None,
     offers: list[dict[str, Any]] | None = None,
     instance_response: dict[str, Any] | None = None,
-    prepay_response: dict[str, Any] | None = None,
 ) -> MagicMock:
     client = MagicMock()
     client.search_templates.return_value = templates if templates is not None else [
@@ -321,10 +291,6 @@ def _stub_client(
         "success": True,
         "new_contract": 12345,
     }
-    client.prepay_instance.return_value = prepay_response or {
-        "timescale": 720,
-        "discount_rate": 0.2,
-    }
     return client
 
 
@@ -339,7 +305,6 @@ def test_dry_run_does_not_call_create_instance_or_prepay(monkeypatch: pytest.Mon
     assert result.exit_code == 0, result.output
     assert "[DRY-RUN]" in result.output
     client.create_instance.assert_not_called()
-    client.prepay_instance.assert_not_called()
 
 
 def test_template_only_exits_after_reconciling(monkeypatch: pytest.MonkeyPatch) -> None:
@@ -353,20 +318,15 @@ def test_template_only_exits_after_reconciling(monkeypatch: pytest.MonkeyPatch) 
     assert result.exit_code == 0, result.output
     client.search_offers.assert_not_called()
     client.create_instance.assert_not_called()
-    client.prepay_instance.assert_not_called()
 
 
-def test_launch_path_creates_instance_and_prepays(monkeypatch: pytest.MonkeyPatch) -> None:
+def test_launch_path_creates_instance(monkeypatch: pytest.MonkeyPatch) -> None:
     client = _stub_client()
     monkeypatch.setattr(vp, "make_client", lambda _key: client)
     monkeypatch.setattr(vp, "load_api_key", lambda: "fake-key")
 
     runner = CliRunner()
-    result = runner.invoke(vp.app, ["--launch", "--commit-hours", "720"])
+    result = runner.invoke(vp.app, ["--launch"])
 
     assert result.exit_code == 0, result.output
     client.create_instance.assert_called_once()
-    client.prepay_instance.assert_called_once()
-    prepay_kwargs = client.prepay_instance.call_args.kwargs
-    assert prepay_kwargs["id"] == 12345
-    assert prepay_kwargs["amount"] == round(0.40 * 720, 2)
