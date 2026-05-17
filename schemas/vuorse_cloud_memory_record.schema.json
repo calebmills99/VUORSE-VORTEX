@@ -120,6 +120,29 @@
           ],
           "default": null,
           "title": "Source Confidence"
+        },
+        "layer_affinity": {
+          "anyOf": [
+            {
+              "enum": [
+                "canon",
+                "persona",
+                "apocrypha",
+                "ritual_logic",
+                "roadmap_manifest",
+                "hooplehopper_totality",
+                "dialogue",
+                "relationship_graph",
+                "rule"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Layer Affinity"
         }
       },
       "required": [
