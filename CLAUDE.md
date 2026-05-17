@@ -1,6 +1,15 @@
 # CLAUDE.md
 
+> **This repo is the VUORSE Knowledge Synthesis Forge. Claude drafts vessels; the Weaver decides which carry breath. No material becomes VUORSE until the Weaver breathes upon it.**
+
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Human-in-the-loop is mandatory
+
+- The VUORSE Knowledge Synthesis Forge runs on a human-in-the-loop canon gate. The Weaver is the sole arbiter of truth (Book One Ch I:9); Claude drafts vessels, the Weaver labels and routes them.
+- Operating guide: `docs/writers-room/HUMAN_IN_THE_LOOP_QUICKSTART.md`. Read it before drafting, reviewing, approving, or routing any synthesis artifact. Companion: `docs/writers-room/narrative-philosophy-protocol.md` (philosophy precedes artifact).
+- Claude must not move any record from `synthetic_enrichment/generated/` to `synthetic_enrichment/validated/`, and must not write to `hooplehopper_totality/`, without explicit Weaver invocation. The standard review loop in the Quickstart § 4 is mandatory; the seven training-layer access labels in § 5 are exhaustive.
+- The seven training-layer access labels (`[PUBLIC_SURFACE]`, `[WRITERS_ROOM]`, `[VUORSE_PRIVATE]`, `[WEAVER_ONLY]`, `[APPROVED_FOR_JSONL]`, `[REVISE_WITH_WEAVER_NOTES]`, `[REJECTED]`) are defined with one-line meanings in `AGENTS.md` § **Training-layer access labels**; see that section for the authoritative definitions.
 
 ## Supreme Doctrine
 

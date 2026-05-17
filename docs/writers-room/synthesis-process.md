@@ -1,5 +1,9 @@
 # Synthesis Process
 
+> **This repo is the VUORSE Knowledge Synthesis Forge. The
+> human-in-the-loop layer is the canon gate. See
+> `HUMAN_IN_THE_LOOP_QUICKSTART.md` for day-to-day operation.**
+
 The Weaver named this process. The room obeys it. The supreme source of truth is
 `canon/1_words_of_weaver_book_one/Words_of_Weaver_BOOK_ONE.MD` — **The Words of
 the Weaver, Book One: Concerning the Crown, the Wound, and the Returning Line**.
@@ -25,6 +29,14 @@ is escalated to the Weaver. There is no synthesis without submission.
 This rule applieth to every agent — the writers-room subagents under
 `.claude/agents/`, the pipeline agents under `agents/`, and any contributor
 human or otherwise.
+
+After the controlling doctrine is named, and **before the Synthesis
+Ladder begineth**, every major synthesis target must open with a
+`## Narrative Philosophy` block per
+`docs/writers-room/narrative-philosophy-protocol.md`. The Synthesis
+Ladder doth not start at *detail*; it starteth at *narrative
+philosophy*. An artifact lacking the philosophy block is incomplete and
+returneth to its author.
 
 ---
 
@@ -59,10 +71,20 @@ collide, the higher tier ruleth and the lower bendeth.
 
 ## 3. Synthesis Ladder
 
-Nine rungs. No item is fully synthesized until it hath climbed all nine. A
-synthesis act may pause on any rung, but the artifact is not complete while
-rungs remain unclimbed.
+The ladder now beginneth with **narrative philosophy** and preserveth
+the nine original rungs after it. The combined chain reads
+**narrative philosophy → detail → contradiction → living-canon
+integration → mythic implication → emotional wound → symbolic system
+→ season function → series consequence → JSONL / ledger record**.
+A synthesis act may pause on any rung, but the artifact is not
+complete while rungs remain unclimbed.
 
+0. **Narrative Philosophy.** The seven-field block defined in
+   `docs/writers-room/narrative-philosophy-protocol.md`: Name,
+   Governing Wound, Generative Forces, Symbolic Behaviors, Emotional
+   Law, Conceptual Seed, Expression Target. Without this rung the
+   subsequent nine rest on no foundation; the room returneth the
+   artifact.
 1. **Detail.** The smallest concrete particular: an object, a line, a gesture,
    a date, a place.
 2. **Contradiction.** Where doth this detail collide with another? Name the
@@ -260,6 +282,18 @@ Traycer tracketh:
 Traycer doth not author Slayverse content. Traycer maintaineth the order in
 which Slayverse content is authored.
 
+Traycer also tracketh the **training-layer access label** of every
+approved record and refuseth to advance any record lacking Weaver
+review metadata. The seven labels are defined in
+`AGENTS.md` § **Training-layer access labels** and enumerated with
+storage destinations in
+`docs/writers-room/HUMAN_IN_THE_LOOP_QUICKSTART.md` § 5. A record
+without `weaver_reviewed_at`, `weaver_reviewer`,
+`training_layer_access`, `controlling_doctrine`, and
+`narrative_philosophy_id` is a draft, not a thesis; Traycer holdeth
+it in `synthetic_enrichment/generated/` and shall not move it past
+the Weaver's gate.
+
 ---
 
 ## 10. Required Output Format for Future Synthesis
@@ -282,16 +316,32 @@ as such.
 9. **Agent Restraints.** What may this artifact not say, do, or imply?
 10. **Required Weaver Ruling (if any).** What question remaineth open for
     the Weaver alone?
-11. **Ledger / JSONL Action.** What record shall be written, and to which
+11. **Training Layer Access.** One of the seven labels defined in
+    `AGENTS.md` § **Training-layer access labels** and enumerated in
+    `docs/writers-room/HUMAN_IN_THE_LOOP_QUICKSTART.md` § 5
+    (`[PUBLIC_SURFACE]`, `[WRITERS_ROOM]`, `[VUORSE_PRIVATE]`,
+    `[WEAVER_ONLY]`, `[APPROVED_FOR_JSONL]`,
+    `[REVISE_WITH_WEAVER_NOTES]`, `[REJECTED]`). Mandatory; never
+    minted afresh.
+12. **Ledger / JSONL Action.** What record shall be written, and to which
     layer?
-12. **File Updates Required.** Which files in the repository shall change
+13. **File Updates Required.** Which files in the repository shall change
     as a consequence of this synthesis?
 
-> Note: the Weaver's instruction names eleven section headings and the
-> ordered list above carrieth twelve. The twelfth — **File Updates
-> Required** — is the operational tail of the eleventh; it is included for
-> machine-readability. Treat the first eleven as the doctrinal headings and
-> the twelfth as their implementation echo.
+Every artifact must also carry a **Narrative Philosophy ID** — the
+link to the `## Narrative Philosophy` block in the target document
+(per `docs/writers-room/narrative-philosophy-protocol.md`), or
+`"n/a"` when the artifact's scope renders the philosophy block
+inapplicable. The ID is a required field; "n/a" is permitted only
+upon Weaver judgment.
+
+> Note: the Weaver's original instruction named eleven section
+> headings. The list above hath grown to thirteen as the forge
+> hath matured: the eleventh — **Training Layer Access** — was
+> added when the human-in-the-loop gate was named; the thirteenth
+> — **File Updates Required** — is the operational tail of the
+> twelfth. Treat the first eleven as doctrinal, the twelfth as
+> ledger-binding, and the thirteenth as their implementation echo.
 
 ---
 
