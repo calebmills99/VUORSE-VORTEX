@@ -33,6 +33,16 @@ class Settings(BaseModel):
         description="Sentence-transformer model name for embeddings.",
     )
 
+    chromadb_path: str = Field(
+        default="embeddings/indexes/chromadb",
+        description="On-disk path for the persistent ChromaDB client.",
+    )
+
+    chromadb_collection: str = Field(
+        default="vuorse_memory",
+        description="Collection name used inside the ChromaDB store.",
+    )
+
 
 @lru_cache(maxsize=1)
 def get_settings() -> Settings:

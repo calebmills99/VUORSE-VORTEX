@@ -3,18 +3,25 @@
 from __future__ import annotations
 
 from pathlib import Path
+from typing import Any
 
 import typer
 from rich.console import Console
 
 from vuorse_vortex.gpu import require_gpu
-from vuorse_vortex.jsonl import validate_jsonl
+from vuorse_vortex.jsonl import iter_jsonl, validate_jsonl
 from vuorse_vortex.settings import get_settings
 from vuorse_vortex.synthesis import theses_as_jsonl
 from vuorse_vortex.vector import get_backend
 
 app = typer.Typer(help="VUORSE-VORTEX command line interface.")
 console = Console()
+
+_DEFAULT_THESES_PATH = Path("synthetic_enrichment/theses.jsonl")
+_EMBED_PATH_ARGUMENT = typer.Argument(
+    _DEFAULT_THESES_PATH,
+    help="JSONL file of MemoryRecord rows to embed and ingest.",
+)
 
 
 @app.command()
@@ -55,6 +62,39 @@ def synthesize(output: Path = Path("synthetic_enrichment/theses.jsonl")) -> None
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(theses_as_jsonl() + "\n", encoding="utf-8")
     console.print(f"[green]Wrote synthetic theses to:[/green] {output}")
+
+
+@app.command("embed")
+def embed(
+    path: Path = _EMBED_PATH_ARGUMENT,
+    backend: str | None = typer.Option(
+        None, "--backend", "-b", help="Vector backend override (chromadb or faiss)."
+    ),
+) -> None:
+    """Validate a JSONL file and ingest its records into the vector store."""
+    if not path.exists():
+        console.print(f"[red]File not found:[/red] {path}")
+        raise typer.Exit(code=1)
+
+    errors = validate_jsonl(path)
+    if errors:
+        for error in errors:
+            console.print(f"[red]{error}[/red]")
+        raise typer.Exit(code=1)
+
+    settings = get_settings()
+    if backend:
+        settings = settings.model_copy(update={"vector_backend": backend})
+
+    records: list[dict[str, Any]] = [obj for _, obj in iter_jsonl(path)]
+    console.print(
+        f"[bold magenta]Embedding {len(records)} records[/bold magenta] "
+        f"into backend [cyan]{settings.vector_backend}[/cyan]..."
+    )
+
+    vector_backend = get_backend(settings=settings)
+    count = vector_backend.ingest(records)
+    console.print(f"[green]Ingested {count} records.[/green]")
 
 
 @app.command("query")
