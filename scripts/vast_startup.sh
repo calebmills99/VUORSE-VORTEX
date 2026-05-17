@@ -345,17 +345,21 @@ if command -v chsh >/dev/null 2>&1; then
   fi
 fi
 
-# The Vast.ai PyTorch template ships torch inside its own venv at /venv/main,
-# not in the base interpreter's site-packages. So we must point uv at that
-# environment directly — creating a side .venv (even with --system-site-packages)
-# does NOT inherit torch, because system-site-packages targets the base
-# interpreter, not /venv/main. UV_PROJECT_ENVIRONMENT lets `uv sync` / `uv run`
-# manage that pre-existing venv as the project env instead of building a new one.
-VAST_VENV="${VAST_VENV:-/venv/main}"
-if [[ ! -x "$VAST_VENV/bin/python" ]]; then
-  warn "Expected Vast PyTorch venv at $VAST_VENV/bin/python — falling back to a fresh project venv"
-  VAST_VENV=""
-fi
+# Don't trust the Vast.ai PyTorch template's /venv/main. We tried reusing it via
+# UV_PROJECT_ENVIRONMENT=/venv/main with `uv sync --inexact` and got burned: on
+# images where /venv/main exists but has a Python that doesn't match this repo's
+# `requires-python`, uv silently rebuilds it from scratch with managed Python
+# (3.14 in our case — which has no torch wheels yet), erasing whatever torch the
+# image shipped. --inexact only protects packages that already exist at sync
+# time, so a rebuilt-empty venv ends up torch-less.
+#
+# The reliable path is to own the project env explicitly: build $REPO_DIR/.venv
+# on Python 3.12 (last cpython with first-class torch wheels), install torch
+# from the official cu124 wheels (forward-compatible with driver CUDA 13.x),
+# THEN sync project deps so they layer on top of a CUDA-enabled torch.
+PROJECT_VENV="$REPO_DIR/.venv"
+PROJECT_PY="${PROJECT_PY:-3.12}"
+TORCH_INDEX_URL="${TORCH_INDEX_URL:-https://download.pytorch.org/whl/cu124}"
 
 say "Writing VUORSE GPU environment defaults"
 cat >/etc/profile.d/vuorse-vortex.sh <<ENV
@@ -364,9 +368,9 @@ export CORTEX_DEVICE=cuda
 export CUDA_VISIBLE_DEVICES=\${CUDA_VISIBLE_DEVICES:-0}
 export HF_HOME=\${HF_HOME:-/workspace/.cache/huggingface}
 export UV_LINK_MODE=copy
-${VAST_VENV:+export UV_PROJECT_ENVIRONMENT=$VAST_VENV}
-${VAST_VENV:+export VIRTUAL_ENV=$VAST_VENV}
-${VAST_VENV:+export PATH=$VAST_VENV/bin:\$PATH}
+export UV_PROJECT_ENVIRONMENT=$PROJECT_VENV
+export VIRTUAL_ENV=$PROJECT_VENV
+export PATH=$PROJECT_VENV/bin:\$HOME/.local/bin:\$PATH
 ENV
 
 export CORTEX_REQUIRE_GPU=1
@@ -374,11 +378,9 @@ export CORTEX_DEVICE=cuda
 export CUDA_VISIBLE_DEVICES="${CUDA_VISIBLE_DEVICES:-0}"
 export HF_HOME="${HF_HOME:-/workspace/.cache/huggingface}"
 export UV_LINK_MODE=copy
-if [[ -n "$VAST_VENV" ]]; then
-  export UV_PROJECT_ENVIRONMENT="$VAST_VENV"
-  export VIRTUAL_ENV="$VAST_VENV"
-  export PATH="$VAST_VENV/bin:$PATH"
-fi
+export UV_PROJECT_ENVIRONMENT="$PROJECT_VENV"
+export VIRTUAL_ENV="$PROJECT_VENV"
+export PATH="$PROJECT_VENV/bin:$HOME/.local/bin:$PATH"
 
 mkdir -p /workspace/.cache/huggingface
 
@@ -395,26 +397,28 @@ fi
 
 cd "$REPO_DIR"
 
-if [[ -n "$VAST_VENV" ]]; then
-  say "Using Vast PyTorch template venv at $VAST_VENV as the project environment"
-  # --inexact tells `uv sync` not to remove packages it didn't install (torch,
-  # torchvision, torchaudio, nvidia-* wheels, etc.). Without it, uv would purge
-  # the very stack we came here to reuse.
-  uv sync --extra dev --inexact
-  uv pip install --python "$VAST_VENV/bin/python" \
-    "sentence-transformers>=3.0" \
-    "chromadb>=0.5" \
-    "faiss-cpu>=1.8"
-else
-  say "Creating fresh project virtualenv (no Vast torch to reuse)"
-  uv venv .venv
-  uv sync --extra dev
-  uv pip install \
-    "sentence-transformers>=3.0" \
-    "chromadb>=0.5" \
-    "faiss-cpu>=1.8" \
-    "torch>=2.3"
-fi
+say "Building project venv at $PROJECT_VENV on Python $PROJECT_PY"
+# --clear so re-runs of the startup script always land on a known-good shape;
+# the previous run may have left a Python 3.14 stub here.
+uv venv --clear --python "$PROJECT_PY" "$PROJECT_VENV"
+
+say "Installing CUDA torch from $TORCH_INDEX_URL"
+# Install torch FIRST, from PyTorch's own index, so it carries the CUDA build.
+# Doing this before `uv sync` matters: once torch is in the env, --inexact will
+# preserve it; if we let `uv sync` resolve torch via PyPI's index, we'd get a
+# CPU-only wheel and lose the GPU we paid for.
+uv pip install --python "$PROJECT_VENV/bin/python" \
+  --index-url "$TORCH_INDEX_URL" \
+  torch
+
+say "Syncing project dependencies (preserves CUDA torch via --inexact)"
+uv sync --extra dev --inexact
+
+say "Installing GPU retrieval extras (sentence-transformers, chromadb, faiss-cpu)"
+uv pip install --python "$PROJECT_VENV/bin/python" \
+  "sentence-transformers>=3.0" \
+  "chromadb>=0.5" \
+  "faiss-cpu>=1.8"
 
 say "Installing canonical web frontend dependencies"
 npm ci --prefix web
