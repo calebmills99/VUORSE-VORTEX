@@ -3,52 +3,61 @@ set -euo pipefail
 
 # VUORSE-VORTEX Vast.ai startup script.
 #
-# Intended image: a Vast.ai PyTorch template with CUDA + torch already installed.
-# This script deliberately does not install torch. It installs OS/runtime tooling,
-# prepares the repo, installs project dependencies, and runs smoke checks.
+# Provisions the box as root, then drops privilege to a non-root user (default:
+# 'vuorse') that owns the repo, the python venv, Claude Code (user-local npm
+# install), the Oh My Zsh tree, and ~/.zshrc. Only system-wide work — apt,
+# Node.js, /etc/profile.d, user creation, chsh — stays root-owned.
+#
+# Intended image: a Vast.ai PyTorch template. We deliberately do NOT trust the
+# template's preinstalled torch (it's been observed to disappear when uv rebuilds
+# /venv/main against a different Python). Instead we build $REPO_DIR/.venv on
+# Python 3.12 with CUDA-12.4 torch wheels from PyTorch's official index.
 #
 # Common Vast.ai on-start command:
 #   bash /workspace/VUORSE-VORTEX/scripts/vast_startup.sh
 #
 # Optional environment variables:
-#   REPO_URL=https://github.com/calebmills99/VUORSE-VORTEX.git
-#   REPO_DIR=/workspace/VUORSE-VORTEX
-#   STARTUP_RUN_CHECKS=1
-#   STARTUP_PULL=1
+#   VUORSE_USER=vuorse                Name of the non-root user (created if missing)
+#   VUORSE_UID=1100                   Numeric UID (avoid clashing with Vast tooling)
+#   REPO_URL=...                      Defaults to the public VUORSE-VORTEX repo
+#   REPO_DIR=/workspace/VUORSE-VORTEX Repo target; the parent /workspace is chowned
+#   PROJECT_PY=3.12                   Python version uv builds the .venv from
+#   TORCH_INDEX_URL=https://download.pytorch.org/whl/cu124
+#   STARTUP_RUN_CHECKS=1              Run ruff + pytest + frontend lint/build
+#   STARTUP_PULL=1                    git pull existing repo before reinstalling
 
 export DEBIAN_FRONTEND=noninteractive
 
+VUORSE_USER="${VUORSE_USER:-vuorse}"
+VUORSE_UID="${VUORSE_UID:-1100}"
 REPO_URL="${REPO_URL:-https://github.com/calebmills99/VUORSE-VORTEX.git}"
 REPO_DIR="${REPO_DIR:-/workspace/VUORSE-VORTEX}"
+PROJECT_VENV="$REPO_DIR/.venv"
+PROJECT_PY="${PROJECT_PY:-3.12}"
+TORCH_INDEX_URL="${TORCH_INDEX_URL:-https://download.pytorch.org/whl/cu124}"
 STARTUP_RUN_CHECKS="${STARTUP_RUN_CHECKS:-1}"
 STARTUP_PULL="${STARTUP_PULL:-1}"
 
-say() {
-  printf '\033[1;35m%s\033[0m\n' "$1"
-}
-
-warn() {
-  printf '\033[1;33m%s\033[0m\n' "$1"
-}
-
-fail() {
-  printf '\033[1;31m%s\033[0m\n' "$1" >&2
-  exit 1
-}
-
+say()  { printf '\033[1;35m%s\033[0m\n' "$1"; }
+warn() { printf '\033[1;33m%s\033[0m\n' "$1"; }
+fail() { printf '\033[1;31m%s\033[0m\n' "$1" >&2; exit 1; }
 require_cmd() {
   command -v "$1" >/dev/null 2>&1 || fail "Missing required command after install: $1"
 }
 
 if [[ "${EUID:-$(id -u)}" -ne 0 ]]; then
-  fail "Run this startup script as root so apt update/upgrade can complete"
+  fail "Run this startup script as root so apt/useradd/chsh can complete"
 fi
+
+# ----------------------------------------------------------------------------
+# Phase 1 — root: apt packages + Node.js 24
+# ----------------------------------------------------------------------------
 
 say "VUORSE-VORTEX Vast.ai startup: apt update + upgrade"
 apt-get update
 apt-get upgrade -y
 
-say "Installing system dependencies"
+say "Installing system dependencies (incl. zsh + sudo for non-root user)"
 apt-get install -y --no-install-recommends \
   ca-certificates \
   curl \
@@ -67,6 +76,7 @@ apt-get install -y --no-install-recommends \
   libgl1 \
   libglib2.0-0 \
   zsh \
+  sudo \
   fonts-powerline \
   locales
 
@@ -74,7 +84,6 @@ node_major="0"
 if command -v node >/dev/null 2>&1; then
   node_major="$(node --version | sed -E 's/^v([0-9]+).*/\1/')"
 fi
-
 if [[ "$node_major" -lt 24 ]]; then
   say "Installing Node.js 24.x for the canonical web frontend"
   curl -fsSL https://deb.nodesource.com/setup_24.x | bash -
@@ -88,48 +97,111 @@ require_cmd curl
 require_cmd python3
 require_cmd node
 require_cmd npm
+require_cmd zsh
+require_cmd sudo
 
-if ! command -v uv >/dev/null 2>&1; then
-  say "Installing uv"
-  curl -LsSf https://astral.sh/uv/install.sh | sh
+locale-gen en_US.UTF-8 >/dev/null 2>&1 || true
+
+# ----------------------------------------------------------------------------
+# Phase 2 — root: create non-root user, mirror SSH keys, chown /workspace
+# ----------------------------------------------------------------------------
+
+ZSH_PATH="$(command -v zsh)"
+
+if ! id -u "$VUORSE_USER" >/dev/null 2>&1; then
+  say "Creating non-root user '$VUORSE_USER' (uid=$VUORSE_UID, shell=$ZSH_PATH)"
+  useradd -m -s "$ZSH_PATH" -u "$VUORSE_UID" -U "$VUORSE_USER"
+  # Passwordless sudo so the user can apt-install future deps without re-rooting.
+  install -m 0440 /dev/stdin "/etc/sudoers.d/$VUORSE_USER" <<SUDO
+$VUORSE_USER ALL=(ALL) NOPASSWD: ALL
+SUDO
+else
+  say "User '$VUORSE_USER' already exists"
+  # Bring shell into compliance on re-runs (e.g. created earlier with /bin/bash).
+  current_shell="$(getent passwd "$VUORSE_USER" | cut -d: -f7)"
+  if [[ -n "$current_shell" && "$current_shell" != "$ZSH_PATH" ]]; then
+    chsh -s "$ZSH_PATH" "$VUORSE_USER" || warn "chsh for $VUORSE_USER failed"
+  fi
 fi
 
-export PATH="$HOME/.local/bin:$PATH"
-require_cmd uv
+VUORSE_HOME="$(getent passwd "$VUORSE_USER" | cut -d: -f6)"
+[[ -n "$VUORSE_HOME" ]] || fail "Could not resolve home directory for $VUORSE_USER"
 
-say "Installing Claude Code CLI"
+# Mirror authorized SSH keys from root → the user. Vast.ai's attach_ssh writes
+# only to /root/.ssh/authorized_keys, so re-running this script after future key
+# additions will re-sync them forward. install(1) preserves perms cleanly.
+if [[ -f /root/.ssh/authorized_keys ]]; then
+  say "Mirroring /root/.ssh/authorized_keys → $VUORSE_HOME/.ssh/authorized_keys"
+  install -d -o "$VUORSE_USER" -g "$VUORSE_USER" -m 0700 "$VUORSE_HOME/.ssh"
+  install -o "$VUORSE_USER" -g "$VUORSE_USER" -m 0600 \
+    /root/.ssh/authorized_keys "$VUORSE_HOME/.ssh/authorized_keys"
+else
+  warn "/root/.ssh/authorized_keys missing; '$VUORSE_USER' won't be SSHable until you add one"
+fi
+
+# /workspace and the HF cache live under the user so nothing ends up root-owned.
+mkdir -p /workspace/.cache/huggingface
+chown -R "$VUORSE_USER:$VUORSE_USER" /workspace
+
+# ----------------------------------------------------------------------------
+# Phase 3 — as $VUORSE_USER: uv, claude-code (user-local npm), oh-my-zsh,
+#   plugins, repo clone, project venv on Python 3.12, CUDA torch, deps, web npm.
+# ----------------------------------------------------------------------------
+
+run_as_user() {
+  # Run a script body (piped via stdin) as VUORSE_USER with key vars injected.
+  # We deliberately do NOT use `bash -l` because /etc/profile.d isn't written
+  # yet at this stage — pre-loading it would 'export PATH=...:$PATH' against
+  # an undefined PATH and break things subtly.
+  runuser -u "$VUORSE_USER" -- env \
+    HOME="$VUORSE_HOME" \
+    REPO_URL="$REPO_URL" \
+    REPO_DIR="$REPO_DIR" \
+    PROJECT_VENV="$PROJECT_VENV" \
+    PROJECT_PY="$PROJECT_PY" \
+    TORCH_INDEX_URL="$TORCH_INDEX_URL" \
+    STARTUP_PULL="$STARTUP_PULL" \
+    bash -s
+}
+
+say "User-scoped install begins (uv, claude-code, oh-my-zsh, repo, venv)"
+run_as_user <<'USERSETUP'
+set -euo pipefail
+
+NPM_GLOBAL="$HOME/.npm-global"
+mkdir -p "$NPM_GLOBAL"
+export PATH="$HOME/.local/bin:$NPM_GLOBAL/bin:$PATH"
+
+if ! command -v uv >/dev/null 2>&1; then
+  echo "[user] Installing uv to $HOME/.local/bin"
+  curl -LsSf https://astral.sh/uv/install.sh | sh
+fi
+command -v uv >/dev/null 2>&1 || { echo "uv install failed"; exit 1; }
+
+echo "[user] Installing Claude Code into $NPM_GLOBAL (user-owned, not root)"
+npm config set prefix "$NPM_GLOBAL"
 npm install -g @anthropic-ai/claude-code
-require_cmd claude
+test -x "$NPM_GLOBAL/bin/claude" || { echo "claude binary missing under $NPM_GLOBAL/bin"; exit 1; }
 
-# ----------------------------------------------------------------------------
-# Oh My Zsh + Powerlevel10k + custom plugins (mirrors the user's local setup)
-# ----------------------------------------------------------------------------
-ZSH_USER_HOME="${ZSH_USER_HOME:-$HOME}"
-OMZ_DIR="$ZSH_USER_HOME/.oh-my-zsh"
-OMZ_CUSTOM="$OMZ_DIR/custom"
-
+OMZ_DIR="$HOME/.oh-my-zsh"
 if [[ ! -d "$OMZ_DIR" ]]; then
-  say "Installing Oh My Zsh"
+  echo "[user] Installing Oh My Zsh"
   RUNZSH=no CHSH=no KEEP_ZSHRC=yes \
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-else
-  say "Oh My Zsh already present at $OMZ_DIR"
 fi
 
 clone_or_update() {
   local repo="$1" dest="$2"
   if [[ -d "$dest/.git" ]]; then
-    git -C "$dest" pull --ff-only --quiet || warn "Could not fast-forward $dest"
+    git -C "$dest" pull --ff-only --quiet || echo "[user] could not fast-forward $dest"
   else
     git clone --depth=1 "$repo" "$dest"
   fi
 }
 
-say "Installing Powerlevel10k theme"
+OMZ_CUSTOM="$OMZ_DIR/custom"
 clone_or_update https://github.com/romkatv/powerlevel10k.git \
   "$OMZ_CUSTOM/themes/powerlevel10k"
-
-say "Installing zsh custom plugins (autosuggestions, completions, history-substring-search, syntax-highlighting)"
 clone_or_update https://github.com/zsh-users/zsh-autosuggestions.git \
   "$OMZ_CUSTOM/plugins/zsh-autosuggestions"
 clone_or_update https://github.com/zsh-users/zsh-completions.git \
@@ -139,11 +211,52 @@ clone_or_update https://github.com/zsh-users/zsh-history-substring-search.git \
 clone_or_update https://github.com/zsh-users/zsh-syntax-highlighting.git \
   "$OMZ_CUSTOM/plugins/zsh-syntax-highlighting"
 
-say "Writing ~/.zshrc to mirror local Oh My Zsh setup"
-cat >"$ZSH_USER_HOME/.zshrc" <<'ZSHRC'
+if [[ ! -d "$REPO_DIR/.git" ]]; then
+  echo "[user] Cloning VUORSE-VORTEX into $REPO_DIR"
+  mkdir -p "$(dirname "$REPO_DIR")"
+  git clone "$REPO_URL" "$REPO_DIR"
+elif [[ "$STARTUP_PULL" == "1" ]]; then
+  echo "[user] Updating existing repo at $REPO_DIR"
+  git -C "$REPO_DIR" pull --ff-only
+fi
+
+cd "$REPO_DIR"
+
+# --clear so re-runs always land on a known-good shape; a previous run may have
+# left a Python 3.14 stub here (see comment in script header).
+echo "[user] Building project venv at $PROJECT_VENV on Python $PROJECT_PY"
+uv venv --clear --python "$PROJECT_PY" "$PROJECT_VENV"
+
+# Install torch FIRST from PyTorch's own index so it carries the CUDA build.
+# Doing this before `uv sync` matters: once torch is in the env, --inexact
+# preserves it; otherwise uv would resolve a CPU-only wheel via PyPI.
+echo "[user] Installing CUDA torch from $TORCH_INDEX_URL"
+uv pip install --python "$PROJECT_VENV/bin/python" \
+  --index-url "$TORCH_INDEX_URL" torch
+
+echo "[user] Syncing project dependencies (--inexact preserves CUDA torch)"
+UV_PROJECT_ENVIRONMENT="$PROJECT_VENV" \
+VIRTUAL_ENV="$PROJECT_VENV" \
+  uv sync --extra dev --inexact
+
+echo "[user] Installing GPU retrieval extras"
+uv pip install --python "$PROJECT_VENV/bin/python" \
+  "sentence-transformers>=3.0" \
+  "chromadb>=0.5" \
+  "faiss-cpu>=1.8"
+
+echo "[user] Installing web frontend dependencies"
+npm ci --prefix "$REPO_DIR/web"
+USERSETUP
+
+# ----------------------------------------------------------------------------
+# Phase 4 — root finalize: write ~/.zshrc (chowned) and /etc/profile.d
+# ----------------------------------------------------------------------------
+
+say "Writing $VUORSE_HOME/.zshrc (will be chowned to $VUORSE_USER)"
+cat >"$VUORSE_HOME/.zshrc" <<'ZSHRC'
 # PIMPED ZSH CONFIG - Oh My Zsh Edition (Vast.ai mirror of local setup)
 
-# Powerlevel10k instant prompt
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -171,10 +284,6 @@ plugins=(
 
 source "$ZSH/oh-my-zsh.sh"
 
-# ==============================================================================
-# PRODUCTIVITY ENHANCEMENTS
-# ==============================================================================
-
 # History
 HISTSIZE=50000
 SAVEHIST=50000
@@ -194,18 +303,13 @@ bindkey '^n' history-search-forward
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
-# ==============================================================================
-# ALIASES
-# ==============================================================================
-
-# Navigation
+# === aliases (verbatim from local setup) ===
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias ~='cd ~'
 alias -- -='cd -'
 
-# Listing (use eza if available, fall back to ls)
 if command -v eza >/dev/null 2>&1; then
     alias la='eza -la --icons'
     alias ll='eza -alF --icons'
@@ -218,21 +322,13 @@ else
         alias ll='ls -alF --color=auto'
         alias l='ls -CF --color=auto'
         alias lsa='ls -lah --color=auto'
-    else
-        # BSD ls (macOS)
-        alias la='ls -laG'
-        alias ll='ls -alFG'
-        alias l='ls -CFG'
-        alias lsa='ls -lahG'
     fi
 fi
 
-# Safety nets
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
 
-# Git shortcuts
 alias g='git'
 alias gs='git status'
 alias ga='git add'
@@ -243,12 +339,10 @@ alias gd='git diff'
 alias gco='git checkout'
 alias gb='git branch'
 
-# System monitoring
 alias df='df -h'
 alias du='du -ch'
 command -v free >/dev/null 2>&1 && alias free='free -h'
 
-# Network
 alias ping='ping -c 5'
 if command -v ss >/dev/null 2>&1; then
     alias ports='ss -tulnp'
@@ -257,18 +351,15 @@ else
 fi
 alias myip='curl -s ipinfo.io/ip'
 
-# Recon / pentesting
 alias nmap-quick='nmap -T4 -F'
 alias nmap-stealth='nmap -sS -O'
 alias scan-ports='nmap -p- --open'
 alias webhead='curl -I'
 
-# Development
 alias py='python3'
 alias pip='pip3'
 alias serve='python3 -m http.server'
 
-# Use bat if available (Ubuntu names it 'batcat', macOS/brew uses 'bat')
 if command -v batcat >/dev/null 2>&1; then
     alias bat='batcat'
     alias cat='batcat --paging=never'
@@ -276,13 +367,9 @@ elif command -v bat >/dev/null 2>&1; then
     alias cat='bat --paging=never'
 fi
 
-# Fun
 alias weather='curl wttr.in'
 
-# ==============================================================================
-# FUNCTIONS
-# ==============================================================================
-
+# === functions ===
 mkcd() { mkdir -p "$1" && cd "$1"; }
 
 fkill() {
@@ -316,52 +403,29 @@ extract() {
     esac
 }
 
-# uv + project tooling on PATH
-export PATH="$HOME/.local/bin:$PATH"
+# uv (~/.local/bin) + user-local npm globals (~/.npm-global/bin) + project venv
+export PATH="$HOME/.local/bin:$HOME/.npm-global/bin:/workspace/VUORSE-VORTEX/.venv/bin:$PATH"
 
-# VUORSE GPU defaults (sourced from /etc/profile.d/vuorse-vortex.sh as well)
+# VUORSE GPU defaults (also exported system-wide via /etc/profile.d/vuorse-vortex.sh)
 export CORTEX_REQUIRE_GPU=${CORTEX_REQUIRE_GPU:-1}
 export CORTEX_DEVICE=${CORTEX_DEVICE:-cuda}
 export CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES:-0}
 export HF_HOME=${HF_HOME:-/workspace/.cache/huggingface}
 export UV_LINK_MODE=copy
+export UV_PROJECT_ENVIRONMENT=/workspace/VUORSE-VORTEX/.venv
+export VIRTUAL_ENV=/workspace/VUORSE-VORTEX/.venv
 
-# API keys: do NOT hardcode in the committed startup script.
-# Put exports into ~/.zshrc.local on the Vast instance (sourced below).
+# API keys: never hardcode here. Put exports in ~/.zshrc.local on the box.
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
-# Powerlevel10k config
+# Powerlevel10k config (run `p10k configure` once, or scp your local .p10k.zsh).
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 fpath+=~/.zfunc; autoload -Uz compinit; compinit
 ZSHRC
+chown "$VUORSE_USER:$VUORSE_USER" "$VUORSE_HOME/.zshrc"
 
-# Make zsh the default shell for this user so future SSH sessions land in it
-if command -v chsh >/dev/null 2>&1; then
-  current_shell="$(getent passwd "$(id -un)" | cut -d: -f7 || true)"
-  zsh_path="$(command -v zsh)"
-  if [[ -n "$zsh_path" && "$current_shell" != "$zsh_path" ]]; then
-    chsh -s "$zsh_path" "$(id -un)" || warn "chsh to zsh failed; set manually with: chsh -s $zsh_path"
-  fi
-fi
-
-# Don't trust the Vast.ai PyTorch template's /venv/main. We tried reusing it via
-# UV_PROJECT_ENVIRONMENT=/venv/main with `uv sync --inexact` and got burned: on
-# images where /venv/main exists but has a Python that doesn't match this repo's
-# `requires-python`, uv silently rebuilds it from scratch with managed Python
-# (3.14 in our case — which has no torch wheels yet), erasing whatever torch the
-# image shipped. --inexact only protects packages that already exist at sync
-# time, so a rebuilt-empty venv ends up torch-less.
-#
-# The reliable path is to own the project env explicitly: build $REPO_DIR/.venv
-# on Python 3.12 (last cpython with first-class torch wheels), install torch
-# from the official cu124 wheels (forward-compatible with driver CUDA 13.x),
-# THEN sync project deps so they layer on top of a CUDA-enabled torch.
-PROJECT_VENV="$REPO_DIR/.venv"
-PROJECT_PY="${PROJECT_PY:-3.12}"
-TORCH_INDEX_URL="${TORCH_INDEX_URL:-https://download.pytorch.org/whl/cu124}"
-
-say "Writing VUORSE GPU environment defaults"
+say "Writing /etc/profile.d/vuorse-vortex.sh for system-wide env"
 cat >/etc/profile.d/vuorse-vortex.sh <<ENV
 export CORTEX_REQUIRE_GPU=1
 export CORTEX_DEVICE=cuda
@@ -370,81 +434,40 @@ export HF_HOME=\${HF_HOME:-/workspace/.cache/huggingface}
 export UV_LINK_MODE=copy
 export UV_PROJECT_ENVIRONMENT=$PROJECT_VENV
 export VIRTUAL_ENV=$PROJECT_VENV
-export PATH=$PROJECT_VENV/bin:\$HOME/.local/bin:\$PATH
+export PATH=$PROJECT_VENV/bin:\$HOME/.local/bin:\$HOME/.npm-global/bin:\$PATH
 ENV
+chmod 0644 /etc/profile.d/vuorse-vortex.sh
 
-export CORTEX_REQUIRE_GPU=1
-export CORTEX_DEVICE=cuda
-export CUDA_VISIBLE_DEVICES="${CUDA_VISIBLE_DEVICES:-0}"
-export HF_HOME="${HF_HOME:-/workspace/.cache/huggingface}"
-export UV_LINK_MODE=copy
-export UV_PROJECT_ENVIRONMENT="$PROJECT_VENV"
-export VIRTUAL_ENV="$PROJECT_VENV"
-export PATH="$PROJECT_VENV/bin:$HOME/.local/bin:$PATH"
-
-mkdir -p /workspace/.cache/huggingface
-
-if [[ ! -d "$REPO_DIR/.git" ]]; then
-  say "Cloning VUORSE-VORTEX into $REPO_DIR"
-  mkdir -p "$(dirname "$REPO_DIR")"
-  git clone "$REPO_URL" "$REPO_DIR"
-elif [[ "$STARTUP_PULL" == "1" ]]; then
-  say "Updating existing repo at $REPO_DIR"
-  git -C "$REPO_DIR" pull --ff-only
-else
-  warn "Repo exists and STARTUP_PULL!=1; skipping git pull"
-fi
-
-cd "$REPO_DIR"
-
-say "Building project venv at $PROJECT_VENV on Python $PROJECT_PY"
-# --clear so re-runs of the startup script always land on a known-good shape;
-# the previous run may have left a Python 3.14 stub here.
-uv venv --clear --python "$PROJECT_PY" "$PROJECT_VENV"
-
-say "Installing CUDA torch from $TORCH_INDEX_URL"
-# Install torch FIRST, from PyTorch's own index, so it carries the CUDA build.
-# Doing this before `uv sync` matters: once torch is in the env, --inexact will
-# preserve it; if we let `uv sync` resolve torch via PyPI's index, we'd get a
-# CPU-only wheel and lose the GPU we paid for.
-uv pip install --python "$PROJECT_VENV/bin/python" \
-  --index-url "$TORCH_INDEX_URL" \
-  torch
-
-say "Syncing project dependencies (preserves CUDA torch via --inexact)"
-uv sync --extra dev --inexact
-
-say "Installing GPU retrieval extras (sentence-transformers, chromadb, faiss-cpu)"
-uv pip install --python "$PROJECT_VENV/bin/python" \
-  "sentence-transformers>=3.0" \
-  "chromadb>=0.5" \
-  "faiss-cpu>=1.8"
-
-say "Installing canonical web frontend dependencies"
-npm ci --prefix web
+# ----------------------------------------------------------------------------
+# Phase 5 — smoke checks as $VUORSE_USER (GPU strict)
+# ----------------------------------------------------------------------------
 
 if [[ "$STARTUP_RUN_CHECKS" == "1" ]]; then
-  say "Running GPU and project smoke checks"
-  uv run python - <<'PY'
-import torch
+  say "Running GPU + project smoke checks as $VUORSE_USER"
+  run_as_user <<'CHECKS'
+set -euo pipefail
+export PATH="$HOME/.local/bin:$HOME/.npm-global/bin:$PATH"
+export UV_PROJECT_ENVIRONMENT="$PROJECT_VENV"
+export VIRTUAL_ENV="$PROJECT_VENV"
+cd "$REPO_DIR"
 
-if not torch.cuda.is_available():
-    raise SystemExit("CUDA is unavailable in the PyTorch template")
-
-print("CUDA available:", torch.cuda.get_device_name(0))
-PY
-
-  uv run vuorse-vortex doctor --require-cuda
-  uv run ruff check .
-  uv run mypy src
-  uv run pytest
-  npm run --prefix web lint
-  npm run --prefix web build
+uv run python -c "import torch, sys; sys.exit(0 if torch.cuda.is_available() else 'CUDA missing in venv')"
+uv run vuorse-vortex doctor --require-cuda
+uv run ruff check .
+uv run pytest
+npm run --prefix "$REPO_DIR/web" lint
+npm run --prefix "$REPO_DIR/web" build
+CHECKS
 else
   warn "STARTUP_RUN_CHECKS!=1; skipping verification checks"
 fi
 
 say "VUORSE-VORTEX Vast.ai startup complete"
-say "Repo: $REPO_DIR"
+say "User: $VUORSE_USER (uid=$VUORSE_UID)  home: $VUORSE_HOME  shell: $ZSH_PATH"
+say "Repo: $REPO_DIR (owned by $VUORSE_USER)"
+say "Claude Code: $VUORSE_HOME/.npm-global/bin/claude (user-owned)"
+say ""
+say "SSH in as the user (same port, replace 'root' with '$VUORSE_USER'):"
+say "  ssh $VUORSE_USER@<vast_host> -p <vast_port>"
 say "API:  cd $REPO_DIR && uv run uvicorn vuorse_vortex.api:app --host 0.0.0.0 --port 8000"
 say "Web:  cd $REPO_DIR/web && npm run dev -- --host 0.0.0.0"
