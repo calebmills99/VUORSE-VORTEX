@@ -7,7 +7,11 @@ from typing import Literal
 
 from pydantic import BaseModel, Field
 
-VectorBackendName = Literal["chromadb", "faiss"]
+# Only chromadb is implemented. The FAISS slot was previously stubbed and
+# silently accepted ingest calls while persisting nothing, so we narrowed the
+# advertised type. Re-add "faiss" here only when FaissBackend is fully built
+# out (real ingest + _raw_query, not the NotImplementedError tombstone).
+VectorBackendName = Literal["chromadb"]
 
 
 class Settings(BaseModel):
@@ -25,7 +29,7 @@ class Settings(BaseModel):
 
     vector_backend: VectorBackendName = Field(
         default="chromadb",
-        description="Vector DB backend to use for retrieval (chromadb or faiss).",
+        description="Vector DB backend to use for retrieval. Only 'chromadb' is supported.",
     )
 
     embedding_model: str = Field(
