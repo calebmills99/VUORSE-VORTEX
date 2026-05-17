@@ -95,6 +95,24 @@ CPU is not allowed for large embeddings, reranking, model inference, synthetic b
 
 If CUDA is unavailable, VUORSE throws a tantrum and goes on strike.
 
+### Provisioning a Vast.ai box
+
+`scripts/vast_provision.py` is the sanctioned way to materialize a VUORSE-compliant
+GPU host. It is a self-contained PEP 723 script — `uv` resolves its dependencies
+on first run, so nothing needs to be added to `pyproject.toml`.
+
+Requires `VAST_API_KEY` in `.env` (see `.env.example`). The script enforces the
+VUORSE floor (≥32 GB VRAM, ≥500 GB disk, reliability > 0.99, North America) and
+searches cheapest-first by `dph_total`.
+
+```bash
+# Dry-run: reconcile the template, render the top-5 candidate offers, spend nothing.
+uv run scripts/vast_provision.py
+
+# Real launch: spin up the cheapest match and prepay ~720 h to lock reserved pricing.
+uv run scripts/vast_provision.py --launch --commit-hours 720
+```
+
 ## First Commands
 
 Initialize local git after running the bootstrap script:
