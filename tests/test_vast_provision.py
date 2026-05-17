@@ -351,6 +351,39 @@ def test_launch_path_creates_instance(monkeypatch: pytest.MonkeyPatch) -> None:
 # --------------------------------------------------------------------------- #
 
 
+# --------------------------------------------------------------------------- #
+# Repo URL alignment + clone failure-mode (drift regression)                  #
+# --------------------------------------------------------------------------- #
+
+
+def test_repo_url_uses_hyphen_to_match_github_remote() -> None:
+    """``GH_REPO_URL`` must match the real GitHub slug (hyphen, not underscore).
+
+    A typo (underscore form) used to 404 silently while ``|| true`` swallowed
+    the failure, so the bootstrap continued without the repo and the user only
+    noticed when their first SSH landed on a box missing /workspace/VUORSE-VORTEX.
+    """
+    assert vp.GH_REPO_URL == "https://github.com/calebmills99/VUORSE-VORTEX.git"
+
+
+def test_onstart_aborts_when_clone_does_not_produce_repo() -> None:
+    """The onstart command must fail loudly if the clone leaves no .git directory.
+
+    The contract is: a successful template bootstrap implies /workspace/VUORSE-VORTEX/.git
+    exists. Anything less must terminate the onstart with a non-zero exit so the
+    failure surfaces in Vast.ai instance logs instead of a half-provisioned box.
+    """
+    onstart = vp.ONSTART_CMD
+    # `set -e` propagates failures from intermediate commands.
+    assert onstart.startswith("set -e; "), "onstart must enable errexit upfront"
+    # No silent `|| true` swallowing the clone.
+    assert "git clone" in onstart
+    assert "git clone " + vp.GH_REPO_URL + " || true" not in onstart
+    # Explicit post-clone verification with a non-zero exit on failure.
+    assert "test -d /workspace/VUORSE-VORTEX/.git" in onstart
+    assert "exit 1" in onstart
+
+
 def test_build_query_filters_below_ampere() -> None:
     """The VUORSE floor is compute_cap >= 800 (Ampere). V100 = 700 must be excluded.
 
