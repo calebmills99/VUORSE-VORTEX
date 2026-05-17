@@ -62,6 +62,19 @@ IMAGE_TAG = "cuda-12.4.1-auto"
 MIN_DISK_GB = 500
 MIN_GPU_RAM_GB = 32
 MIN_RELIABILITY = 0.99
+# Compute capability floor, expressed as Vast.ai's integer-encoded value
+# (capability * 100). 800 = Ampere (A100, A40, A4000-A6000, RTX 30-series).
+# Below 800 means Volta (V100 = 700) or older, which lack bf16, FlashAttention,
+# and the kernel ISA modern torch/transformers builds expect. We got a V100 on
+# a previous run and it could not run our torch+CUDA stack; this floor stops
+# Vast from handing us one again.
+#  • 700 = Volta (V100)        ← rejected
+#  • 750 = Turing (T4, RTX 20)
+#  • 800 = Ampere (A100, A40, A6000, RTX 30)  ← floor
+#  • 860 = Ampere consumer    (RTX 3090)
+#  • 890 = Ada Lovelace       (RTX 4090, L40)
+#  • 900 = Hopper             (H100)
+MIN_COMPUTE_CAP = 800
 NA_GEOS = ["US", "CA", "MX"]
 DEFAULT_NUM_GPUS = 1
 DEFAULT_MAX_DPH = 5.00  # safety cap: refuse to launch above $5/hr without override
@@ -154,6 +167,7 @@ class ProvisionOptions:
     min_disk: int
     min_vram: int
     min_reliability: float
+    min_compute_cap: int
     countries: list[str]
     tag: str
     num_gpus: int
@@ -275,6 +289,7 @@ def build_query(opts: ProvisionOptions) -> tuple[str, str]:
         f"num_gpus >= {opts.num_gpus}",
         f"geolocation in [{opts.countries_joined}]",
         "cuda_max_good >= 12.0",
+        f"compute_cap >= {opts.min_compute_cap}",
     ]
     return " ".join(parts), "dph_total"
 
@@ -501,6 +516,14 @@ def provision(
     min_reliability: float = typer.Option(
         MIN_RELIABILITY, "--min-reliability", help="Minimum reliability (0-1). VUORSE floor: 0.99."
     ),
+    min_compute_cap: int = typer.Option(
+        MIN_COMPUTE_CAP,
+        "--min-compute-cap",
+        help=(
+            "Minimum CUDA compute capability * 100. VUORSE floor: 800 (Ampere). "
+            "Excludes Volta (V100=700) and Turing (T4=750), which can't run our torch."
+        ),
+    ),
     countries: str = typer.Option(
         ",".join(NA_GEOS), "--countries", help="Comma-separated ISO country codes."
     ),
@@ -533,6 +556,7 @@ def provision(
         min_disk=min_disk,
         min_vram=min_vram,
         min_reliability=min_reliability,
+        min_compute_cap=min_compute_cap,
         countries=[c.strip().upper() for c in countries.split(",") if c.strip()],
         tag=tag,
         num_gpus=num_gpus,
@@ -554,10 +578,15 @@ def provision(
     )
 
     if not opts.allow_downgrade:
-        if opts.min_disk < MIN_DISK_GB or opts.min_vram < MIN_GPU_RAM_GB:
+        if (
+            opts.min_disk < MIN_DISK_GB
+            or opts.min_vram < MIN_GPU_RAM_GB
+            or opts.min_compute_cap < MIN_COMPUTE_CAP
+        ):
             err_console.print(
                 f"[bold red]Refusing to operate below the VUORSE GPU-runtime floor[/bold red] "
-                f"(min-vram≥{MIN_GPU_RAM_GB}, min-disk≥{MIN_DISK_GB}). "
+                f"(min-vram≥{MIN_GPU_RAM_GB}, min-disk≥{MIN_DISK_GB}, "
+                f"min-compute-cap≥{MIN_COMPUTE_CAP}). "
                 "Pass --allow-downgrade to override."
             )
             raise typer.Exit(code=2)
