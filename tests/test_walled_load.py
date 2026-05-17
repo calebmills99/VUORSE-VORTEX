@@ -143,3 +143,60 @@ def test_load_malformed_line_raises(tmp_path: Path, walled_jsonl: Path) -> None:
         load_walled_atoms(walled_jsonl)
     # Bad JSON is on the 2nd line of file after insert.
     assert ":2:" in str(ei.value)
+
+
+def test_load_duplicate_concepts_preserve_original_text(tmp_path: Path) -> None:
+    """Duplicate concepts get distinct ``walled_<slug>_N`` IDs at build time,
+    but loading must reconstruct the original concept text — not the
+    ID-suffixed disambiguator. Otherwise the ``_2`` suffix bleeds into
+    synthesized titles downstream (see ``RecordCrystallizer.crystallize``).
+    """
+    duplicate_md = """\
+## First
+
+```yaml
+concept: repeated concept
+layer_affinity: canon
+tags: [a]
+premise_fragment: p1
+synthesis_fragment: s1
+```
+
+## Second
+
+```yaml
+concept: repeated concept
+layer_affinity: canon
+tags: [b]
+premise_fragment: p2
+synthesis_fragment: s2
+```
+"""
+    md = tmp_path / "duplicate.md"
+    md.write_text(duplicate_md, encoding="utf-8")
+    out = tmp_path / "walled.jsonl"
+    build_walled(md, out)
+
+    # JSONL records still have distinct IDs (disambiguation is internal).
+    raw_lines = [
+        orjson.loads(ln)
+        for ln in out.read_text(encoding="utf-8").splitlines()
+        if ln.strip()
+    ]
+    assert [obj["id"] for obj in raw_lines] == [
+        "walled_repeated_concept",
+        "walled_repeated_concept_2",
+    ]
+
+    # But loading back produces atoms with the original concept text on both.
+    atoms = load_walled_atoms(out, preserve_order=True)
+    assert len(atoms) == 2
+    assert atoms[0].concept == "repeated concept"
+    assert atoms[1].concept == "repeated concept"
+
+    # No numeric-suffix artifacts in the synthesized-title render.
+    for atom in atoms:
+        rendered = atom.concept.title()
+        assert "_2" not in rendered
+        assert not rendered.endswith(" 2")
+        assert rendered == "Repeated Concept"

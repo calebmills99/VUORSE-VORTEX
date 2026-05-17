@@ -239,7 +239,7 @@ def _humanize_concept(concept: str) -> str:
     return concept.strip().title()
 
 
-def _record_from_payload(payload: dict[str, Any]) -> MemoryRecord:
+def _record_from_payload(payload: dict[str, Any], *, record_id: str | None = None) -> MemoryRecord:
     concept = str(payload["concept"]).strip()
     slug = _slug_from_concept(concept)
     layer_affinity = payload["layer_affinity"]
@@ -248,7 +248,7 @@ def _record_from_payload(payload: dict[str, Any]) -> MemoryRecord:
     synthesis_fragment = str(payload["synthesis_fragment"])
 
     return MemoryRecord(
-        id=f"walled_{slug}",
+        id=record_id or f"walled_{slug}",
         layer="hooplehopper_totality",
         record_type="walled_atom",
         title=_humanize_concept(concept),
@@ -284,8 +284,14 @@ def _build_jsonl_text(md_path: Path) -> str:
         raise WalledFileEmptyError(md_path)
 
     lines: list[str] = []
+    seen_ids: dict[str, int] = {}
     for payload in payloads:
-        record = _record_from_payload(payload)
+        concept = str(payload["concept"]).strip()
+        base_id = f"walled_{_slug_from_concept(concept)}"
+        count = seen_ids.get(base_id, 0)
+        seen_ids[base_id] = count + 1
+        record_id = base_id if count == 0 else f"{base_id}_{count + 1}"
+        record = _record_from_payload(payload, record_id=record_id)
         lines.append(record.model_dump_json(exclude_none=True))
     return "\n".join(lines) + "\n"
 
@@ -362,8 +368,7 @@ def load_walled_atoms(
                 jsonl_path,
             )
 
-        concept_slug = record.id.removeprefix("walled_")
-        concept = concept_slug.replace("_", " ")
+        concept = record.title.lower().replace("_", " ").strip()
 
         text = record.text
         if "\n\nSynthesis:" not in text:
