@@ -27,10 +27,15 @@ class _FakeBackend(VectorDBBackend):
 
 
 @pytest.fixture
-def synthetic_jsonl(tmp_path: Path) -> Path:
+def synthetic_jsonl(tmp_path: Path, patch_walled_pool: Path) -> Path:
     path = tmp_path / "theses.jsonl"
-    path.write_text(theses_as_jsonl() + "\n", encoding="utf-8")
+    jsonl_text = theses_as_jsonl()
+    path.write_text(jsonl_text + "\n", encoding="utf-8")
     return path
+
+
+def _count_records(path: Path) -> int:
+    return sum(1 for line in path.read_text(encoding="utf-8").splitlines() if line.strip())
 
 
 def test_embed_command_validates_and_ingests(
@@ -42,9 +47,10 @@ def test_embed_command_validates_and_ingests(
     runner = CliRunner()
     result = runner.invoke(cli.app, ["embed", str(synthetic_jsonl)])
 
+    expected = _count_records(synthetic_jsonl)
     assert result.exit_code == 0, result.output
-    assert "Ingested 3 records." in result.output
-    assert len(fake.ingested) == 3
+    assert f"Ingested {expected} records." in result.output
+    assert len(fake.ingested) == expected
 
 
 def test_embed_command_rejects_invalid_file(tmp_path: Path) -> None:

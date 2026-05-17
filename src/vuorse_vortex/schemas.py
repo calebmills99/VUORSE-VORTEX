@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from dataclasses import dataclass
 from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field
@@ -49,6 +50,7 @@ class MemoryMetadata(BaseModel):
     source_file: str | None = None
     section: str | None = None
     source_confidence: str | None = None
+    layer_affinity: Layer | None = None
 
 
 class RetrievalMetadata(BaseModel):
@@ -80,3 +82,12 @@ class MemoryRecord(BaseModel):
     metadata: MemoryMetadata
     retrieval: RetrievalMetadata
     behavior: BehaviorPolicy
+
+
+@dataclass
+class LoreAtom:
+    concept: str
+    layer_affinity: Layer
+    tags: list[str]
+    premise_fragment: str
+    synthesis_fragment: str

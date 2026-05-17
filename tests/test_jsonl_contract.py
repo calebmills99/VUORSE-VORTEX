@@ -92,7 +92,9 @@ def test_validate_jsonl_rejects_private_fact_violation(tmp_path: Path) -> None:
     assert "may_state_as_fact" in errors[0]
 
 
-def test_synthesize_output_validates_as_memory_jsonl(tmp_path: Path) -> None:
+def test_synthesize_output_validates_as_memory_jsonl(
+    tmp_path: Path, patch_walled_pool: Path
+) -> None:
     path = tmp_path / "synthetic.jsonl"
     path.write_text(theses_as_jsonl() + "\n", encoding="utf-8")
 
@@ -137,7 +139,9 @@ def test_schema_generator_check_mode_passes_on_clean_tree() -> None:
 # --------------------------------------------------------------------------- #
 
 
-def test_synthesize_output_validates_against_published_schema() -> None:
+def test_synthesize_output_validates_against_published_schema(
+    patch_walled_pool: Path,
+) -> None:
     schema = _load_schema()
     validator = jsonschema.Draft202012Validator(schema)
     for line in theses_as_jsonl().splitlines():
@@ -260,7 +264,7 @@ def test_schema_allows_null_for_optional_string_fields() -> None:
 # --------------------------------------------------------------------------- #
 
 
-def test_pydantic_round_trip_through_schema() -> None:
+def test_pydantic_round_trip_through_schema(patch_walled_pool: Path) -> None:
     schema = _load_schema()
     # Walk every synthesis seed through Pydantic → JSON → JSON Schema validate
     # → Pydantic again. Catches subtle serialisation drift end-to-end.
