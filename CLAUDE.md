@@ -93,7 +93,13 @@ uv run vuorse-vortex --help       # Typer CLI entrypoint
 uv run uvicorn vuorse_vortex.api:app --reload        # FastAPI service (no console script)
 ```
 
-CLI subcommands live in `src/vuorse_vortex/cli.py`: `doctor [--require-cuda]`, `validate-jsonl <path>`, `slay-mode`, `synthesize [output]`.
+CLI subcommands live in `src/vuorse_vortex/cli.py`:
+- `doctor [--require-cuda]` — runtime health check; with the flag, fails closed if CUDA is absent.
+- `validate-jsonl <path>` — schema + canon firewall pass over a JSONL of `MemoryRecord` rows.
+- `slay-mode` — print the singularity banner. No state change.
+- `synthesize [output]` — write the three hardcoded seed `MemoryRecord` theses (default `synthetic_enrichment/theses.jsonl`).
+- `embed [path] [--backend chromadb|faiss]` — validate then ingest a JSONL into the configured vector backend.
+- `query <text> [--top-k N] [--backend ...]` — semantic search the store. The wrapper strips sealed-layer hits before returning.
 
 CI (`.github/workflows/validate.yml`) only runs `ruff check .` and `pytest`. Mypy is configured strict in `pyproject.toml` but not gated — don't assume green CI means types check.
 
@@ -125,6 +131,9 @@ The `synthesize` command (`src/vuorse_vortex/synthesis.py`) emits `SyntheticThes
 
 Any function that does embeddings / inference / reranking / synthetic batch generation should call `require_gpu("<workload name>")` first. It raises `RuntimeError` (with the "GPU tantrum" banner) rather than silently falling back to CPU. Per README, CPU is allowed for JSONL parsing, validation, manifests, git ops, and small diagnostics — nothing more.
 
+### Vector backend (ChromaDB) is implemented; FAISS is stubbed
+`src/vuorse_vortex/vector.py` defines `VectorDBBackend` (ABC), `ChromaDBBackend` (working), and `FaissBackend` (stub — `_raw_query` returns `[]`, no `ingest`). The Chroma backend uses `chromadb.PersistentClient` at `Settings.chromadb_path` (defaults to `embeddings/indexes/chromadb`) with the collection name from `Settings.chromadb_collection`. Embeddings come from a single cached `SentenceTransformer` instance built from `Settings.embedding_model` (defaults to `all-MiniLM-L6-v2`); the model is loaded once on first `_get_encoder()` call, not per query. Distance is converted to score as `1 - distance` so higher = better. `VectorDBBackend.query()` over-fetches by `len(sealed_categories) * 2` then filters sealed-layer rows, so a query may legitimately return fewer than `top_k` results — that's by design, not a bug.
+
 ### Frontend: integrated web app plus legacy references
 The integrated canonical frontend lives in `web/`. It combines the VUORSE Slay Mode experience with the useful developer workflow surface and is the app CI builds.
 
@@ -135,6 +144,13 @@ The integrated canonical frontend lives in `web/`. It combines the VUORSE Slay M
 
 ### Data directories (mostly git-tracked content, not code)
 `canon/`, `roadmap/`, `velvet_archive/`, `hooplehopper_totality/`, `synthetic_enrichment/`, `embeddings/`, `policies/`, `rituals/`, `manifests/`, `archives/`, `skills/`, `agents/` hold lore, policy, and runtime data — not Python modules. `.gitignore` excludes generated artifacts under `embeddings/output/`, `embeddings/indexes/`, plus `*.parquet`, `*.faiss`, `*.safetensors`, `*.pt`, `*.ckpt`, `chromadb/`. Don't commit those.
+
+### Operational scripts (`scripts/`)
+Three scripts coordinate the Vast.ai GPU runtime; they aren't optional reading if you're touching deploy or infra:
+
+- `scripts/vast_provision.py` — provisions an on-demand Vast.ai box. Dry-run by default; `--launch` to spend. Enforces a hardware floor: 500 GB disk, 32 GB VRAM, reliability > 0.99, North America, and **`compute_cap >= 800` (Ampere)**. The compute-cap floor is load-bearing — V100s (700) cannot run the bf16/SM 80-flavored kernels our torch + transformers stack expects. Override only with `--allow-downgrade`. The provisioned template (`vuorse-vortex-full`) exposes SSH (22), FastAPI (8000), JupyterLab (8080), noVNC desktop (6080), raw VNC (5901); SDK runtype is `jupyter_direct_ssh`.
+- `scripts/vast_startup.sh` — runs as root on the freshly-booted box, then drops privilege. **Owns four phases:** (1) root: apt + Node 24 + locale; (2) root: create non-root user `vuorse` (uid 1100, passwordless sudo, zsh login shell) and mirror `/root/.ssh/authorized_keys` so the user is directly SSHable; (3) as vuorse via `runuser`: install uv to `~/.local/bin`, install Claude Code to `~/.npm-global` (user-owned, not root), install Oh My Zsh + Powerlevel10k + four custom plugins, clone the repo into `/workspace/VUORSE-VORTEX`, build `.venv` on Python 3.12 with CUDA-12.4 torch wheels (from PyTorch's index, not PyPI), sync project deps with `--inexact`; (4) root: write `~vuorse/.zshrc` + `/etc/profile.d/vuorse-vortex.sh`, run smoke checks as vuorse. **Do NOT trust the Vast PyTorch template's `/venv/main`** — we tried and uv silently rebuilds it with managed Python 3.14 (no torch wheels), destroying preinstalled CUDA torch. The script intentionally builds its own `.venv` instead. After the script finishes, future SSH should target `vuorse@host`, not `root@host`. Secrets go in `~/.zshrc.local` (sourced by `~/.zshrc`), never in the script.
+- `scripts/run_synthetic_pipeline.py` — end-to-end smoke run: doctor → synthesize → validate → embed → sample queries. **Not** a PEP 723 standalone script; it imports `vuorse_vortex` and runs inside the project env. Invoke as `uv run scripts/run_synthetic_pipeline.py` so uv resolves `UV_PROJECT_ENVIRONMENT`. If you ever add a `# /// script` block + `#!/usr/bin/env -S uv run --script` shebang, uv will build an ephemeral env that omits the `gpu` extra and the pipeline will fail at the GPU doctor.
 
 ## Conventions
 

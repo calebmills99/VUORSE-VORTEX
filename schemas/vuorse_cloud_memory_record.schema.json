@@ -1,56 +1,222 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://vuorse-vortex.local/schemas/vuorse_cloud_memory_record.schema.json",
-  "title": "VUORSE-VORTEX Memory Record",
-  "type": "object",
-  "required": ["id", "layer", "record_type", "title", "text", "metadata", "retrieval", "behavior"],
-  "additionalProperties": false,
-  "properties": {
-    "id": {"type": "string", "minLength": 1},
-    "layer": {
-      "type": "string",
-      "enum": ["canon", "persona", "apocrypha", "ritual_logic", "roadmap_manifest", "hooplehopper_totality", "dialogue", "relationship_graph", "rule"]
+  "$defs": {
+    "BehaviorPolicy": {
+      "additionalProperties": false,
+      "properties": {
+        "may_state_as_fact": {
+          "title": "May State As Fact",
+          "type": "boolean"
+        },
+        "may_use_for_voice": {
+          "title": "May Use For Voice",
+          "type": "boolean"
+        },
+        "may_reveal_to_user": {
+          "title": "May Reveal To User",
+          "type": "boolean"
+        },
+        "allowed_surface_form": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Allowed Surface Form"
+        },
+        "promotion_authority": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Promotion Authority"
+        }
+      },
+      "required": [
+        "may_state_as_fact",
+        "may_use_for_voice",
+        "may_reveal_to_user"
+      ],
+      "title": "BehaviorPolicy",
+      "type": "object"
     },
-    "record_type": {"type": "string", "minLength": 1},
-    "title": {"type": "string", "minLength": 1},
-    "text": {"type": "string", "minLength": 1},
-    "metadata": {
-      "type": "object",
-      "required": ["canon_status", "visibility", "tags"],
+    "MemoryMetadata": {
       "additionalProperties": false,
       "properties": {
         "canon_status": {
-          "type": "string",
-          "enum": ["locked", "draft", "roadmap_private", "synthetic_behavioral", "non_canon_private", "poetic_private", "system_rule", "unknown"]
+          "enum": [
+            "locked",
+            "draft",
+            "roadmap_private",
+            "synthetic_behavioral",
+            "non_canon_private",
+            "poetic_private",
+            "system_rule",
+            "unknown"
+          ],
+          "title": "Canon Status",
+          "type": "string"
         },
         "visibility": {
-          "type": "string",
-          "enum": ["public", "behavioral", "private_to_vuorse", "internal", "weaver_only"]
+          "enum": [
+            "public",
+            "behavioral",
+            "private_to_vuorse",
+            "internal",
+            "weaver_only"
+          ],
+          "title": "Visibility",
+          "type": "string"
         },
-        "tags": {"type": "array", "items": {"type": "string"}}
-      }
+        "tags": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Tags",
+          "type": "array"
+        },
+        "source_file": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source File"
+        },
+        "section": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Section"
+        },
+        "source_confidence": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Confidence"
+        }
+      },
+      "required": [
+        "canon_status",
+        "visibility"
+      ],
+      "title": "MemoryMetadata",
+      "type": "object"
+    },
+    "RetrievalMetadata": {
+      "additionalProperties": false,
+      "properties": {
+        "priority": {
+          "maximum": 10,
+          "minimum": 0,
+          "title": "Priority",
+          "type": "integer"
+        },
+        "embedding_weight": {
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ],
+          "title": "Embedding Weight",
+          "type": "string"
+        },
+        "query_hints": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Query Hints",
+          "type": "array"
+        }
+      },
+      "required": [
+        "priority",
+        "embedding_weight"
+      ],
+      "title": "RetrievalMetadata",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "title": "Id",
+      "type": "string"
+    },
+    "layer": {
+      "enum": [
+        "canon",
+        "persona",
+        "apocrypha",
+        "ritual_logic",
+        "roadmap_manifest",
+        "hooplehopper_totality",
+        "dialogue",
+        "relationship_graph",
+        "rule"
+      ],
+      "title": "Layer",
+      "type": "string"
+    },
+    "record_type": {
+      "title": "Record Type",
+      "type": "string"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "text": {
+      "title": "Text",
+      "type": "string"
+    },
+    "metadata": {
+      "$ref": "#/$defs/MemoryMetadata"
     },
     "retrieval": {
-      "type": "object",
-      "required": ["priority", "embedding_weight", "query_hints"],
-      "additionalProperties": false,
-      "properties": {
-        "priority": {"type": "integer", "minimum": 0, "maximum": 10},
-        "embedding_weight": {"type": "string", "enum": ["low", "medium", "high", "critical"]},
-        "query_hints": {"type": "array", "items": {"type": "string"}}
-      }
+      "$ref": "#/$defs/RetrievalMetadata"
     },
     "behavior": {
-      "type": "object",
-      "required": ["may_state_as_fact", "may_use_for_voice", "may_reveal_to_user"],
-      "additionalProperties": false,
-      "properties": {
-        "may_state_as_fact": {"type": "boolean"},
-        "may_use_for_voice": {"type": "boolean"},
-        "may_reveal_to_user": {"type": "boolean"},
-        "allowed_surface_form": {"type": "string"},
-        "promotion_authority": {"type": "string"}
-      }
+      "$ref": "#/$defs/BehaviorPolicy"
     }
-  }
+  },
+  "required": [
+    "id",
+    "layer",
+    "record_type",
+    "title",
+    "text",
+    "metadata",
+    "retrieval",
+    "behavior"
+  ],
+  "title": "MemoryRecord",
+  "type": "object"
 }
