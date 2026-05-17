@@ -16,6 +16,14 @@ project's GPU-first runtime contract by pre-baking ``CORTEX_REQUIRE_GPU=1`` and
 fall under the published hardware floor (500 GB disk, 32 GB VRAM, 99% reliability,
 North America).
 
+The reconciled template (``vuorse-vortex-full``) exposes three access surfaces:
+
+* **SSH** on port 22 (direct, not proxied)
+* **JupyterLab** on port 8080 (auto-started by ``vastai/pytorch`` when
+  ``runtype=jupyter_direct_ssh``; ``jupyter_dir=/workspace``)
+* **XFCE desktop** via noVNC on port 6080 / raw VNC on port 5901, brought up by
+  the on-start command using TigerVNC + websockify
+
 The script is **non-destructive by default**. Without ``--launch`` it performs
 template reconciliation and offer search only, then prints what it *would* have
 spun up. Launching boots an **on-demand hourly** instance — billing accrues at
@@ -305,8 +313,11 @@ def create_instance(
         f"[bold magenta]→ Creating instance[/bold magenta] from offer {offer_id} "
         f"(@${offer.get('dph_total', '?')}/hr)…"
     )
-    # Note: instances.create_instance() does NOT accept an `ssh` kwarg —
-    # runtype="ssh" is how SSH is selected. Passing ssh=True raises TypeError.
+    # Note: instances.create_instance() does NOT accept ssh=/jupyter= kwargs —
+    # the `runtype` string is how protocols are selected. Passing ssh=True or
+    # jupyter=True raises TypeError. "jupyter_direct_ssh" matches the template's
+    # ssh+jupyter+direct combination and lets us hit Jupyter on 8080 and SSH on 22
+    # without proxying through the Vast cloud.
     result = _normalize_response(
         _safe_call(
             client,
@@ -315,7 +326,7 @@ def create_instance(
             template_hash=template_hash,
             image=IMAGE,
             disk=opts.min_disk,
-            runtype="ssh",
+            runtype="jupyter_direct_ssh",
             label="vuorse-vortex",
         )
     )
@@ -446,17 +457,32 @@ def _render_final_summary(
     instance_id = instance.get("new_contract") or instance.get("instance_id") or instance.get("id")
     ssh_host = instance.get("ssh_host") or offer.get("public_ipaddr") or "(provisioning…)"
     ssh_port = instance.get("ssh_port") or "(provisioning…)"
+    public_ip = offer.get("public_ipaddr") or ssh_host
     hourly = float(offer.get("dph_total", 0.0) or 0.0)
 
+    # noVNC/Jupyter/FastAPI ports are baked into ENV_FLAGS but Vast.ai remaps them
+    # to high external ports per-instance; the dashboard is the canonical place to
+    # discover the actual mappings. We still print the in-container ports so the
+    # user knows what to look for in the "Open Ports" panel.
     table = Table(title="VUORSE box online (on-demand)", title_style="bold magenta")
     table.add_column("field", style="bold cyan")
     table.add_column("value")
     table.add_row("instance_id", str(instance_id))
     table.add_row("ssh", f"ssh root@{ssh_host} -p {ssh_port}")
+    table.add_row("jupyter (in-container)", f"http://{public_ip}:8080/")
+    table.add_row("fastapi (in-container)", f"http://{public_ip}:8000/")
+    table.add_row("desktop / noVNC", f"http://{public_ip}:6080/vnc.html")
+    table.add_row("raw VNC", f"{public_ip}:5901  (password: $VNC_PASSWORD)")
     table.add_row("dashboard", "https://cloud.vast.ai/instances/")
     table.add_row("billing", "on-demand hourly")
     table.add_row("hourly cost", f"${hourly:.4f}/hr")
     console.print(table)
+    console.print(
+        "[dim]Vast.ai remaps container ports to high external ports; check the "
+        "instance's 'Open Ports' panel in the dashboard for the actual host:port "
+        "mappings. The XFCE desktop bootstrap runs on first boot and takes ~2–3 "
+        "minutes before noVNC at :6080 responds.[/dim]"
+    )
 
 
 # --------------------------------------------------------------------------- #
