@@ -68,7 +68,10 @@ def synthesize(output: Path = Path("synthetic_enrichment/theses.jsonl")) -> None
 def embed(
     path: Path = _EMBED_PATH_ARGUMENT,
     backend: str | None = typer.Option(
-        None, "--backend", "-b", help="Vector backend override (chromadb or faiss)."
+        None,
+        "--backend",
+        "-b",
+        help="Vector backend override. Only 'chromadb' is supported.",
     ),
 ) -> None:
     """Validate a JSONL file and ingest its records into the vector store."""
@@ -102,7 +105,10 @@ def query(
     text: str = typer.Argument(..., help="Query text to search the memory store."),
     top_k: int = typer.Option(5, "--top-k", "-k", help="Number of results to return."),
     backend: str | None = typer.Option(
-        None, "--backend", "-b", help="Vector backend override (chromadb or faiss)."
+        None,
+        "--backend",
+        "-b",
+        help="Vector backend override. Only 'chromadb' is supported.",
     ),
 ) -> None:
     """Query the VUORSE memory vector store."""
