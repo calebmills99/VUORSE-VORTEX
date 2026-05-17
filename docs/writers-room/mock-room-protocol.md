@@ -6,6 +6,8 @@ The protocol serveth the synthesis ritual described in
 both documents is Book One:
 `canon/1_words_of_weaver_book_one/Words_of_Weaver_BOOK_ONE.MD`.
 
+> For day-to-day operation, the seven training-layer access labels, and the human-in-the-loop gate this room serveth, see `docs/writers-room/HUMAN_IN_THE_LOOP_QUICKSTART.md`.
+
 The room is a mock room. It is convened inside a single synthesis pass and
 dispersed when the unified artifact issueth. It hath no membership roster
 beyond the seven voices named below.
