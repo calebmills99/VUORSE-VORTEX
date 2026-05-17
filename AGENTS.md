@@ -84,8 +84,10 @@
 - Call `require_gpu("<workload>")` before embeddings/inference/reranking or other deep-learning work.
 
 ## Frontend layout
-- Two separate Vite React apps exist: `frontend/` and `vuorse-vortex/` (each has its own `package.json` scripts).
-- Repo root only has Tailwind deps (`package.json`) + `vite.config.ts` and no Vite app sources; do not run `npm` at root expecting a dev server.
+- The integrated canonical Vite React app now lives in `web/`.
+- Legacy comparison apps remain in `frontend/` and `vuorse-vortex/`; do not treat either as canonical unless the user explicitly asks for legacy comparison work.
+- Repo root only has Tailwind deps (`package.json`) + `vite.config.ts` and no canonical Vite app sources; do not run `npm` at root expecting the production frontend.
+- Use `cd web && npm run dev|lint|build|preview` for frontend work.
 
 ## Repo data vs code
 - Python package lives in `src/vuorse_vortex/`; top-level lore dirs (`canon/`, `roadmap/`, `velvet_archive/`, `hooplehopper_totality/`, `synthetic_enrichment/`, etc.) are content, not importable modules.
