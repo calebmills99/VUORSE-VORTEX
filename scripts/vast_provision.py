@@ -8,7 +8,7 @@
 #   "python-dotenv>=1.0",
 # ]
 # ///
-"""Provision a VUORSE-VORTEX-tuned Vast.ai GPU box.
+"""Provision a VUORSE-VORTEX-tuned Vast.ai GPU box (on-demand hourly).
 
 This is the sanctioned cloud-agent provisioner for VUORSE-VORTEX. It enforces the
 project's GPU-first runtime contract by pre-baking ``CORTEX_REQUIRE_GPU=1`` and
@@ -18,15 +18,14 @@ North America).
 
 The script is **non-destructive by default**. Without ``--launch`` it performs
 template reconciliation and offer search only, then prints what it *would* have
-spun up. Launching incurs Vast.ai charges, so the call requires an explicit flag
-and converts the instance to a reserved contract via ``prepay_instance`` so the
-published discount tiers (e.g. 20% at ~720 h) actually apply.
+spun up. Launching boots an **on-demand hourly** instance — billing accrues at
+the offer's ``dph_total`` rate until the instance is destroyed. No prepay or
+reserved contract is created.
 
 Run::
 
     uv run scripts/vast_provision.py                          # dry-run
-    uv run scripts/vast_provision.py --launch                 # real launch
-    uv run scripts/vast_provision.py --launch --commit-hours 720
+    uv run scripts/vast_provision.py --launch                 # real launch (hourly)
 """
 
 from __future__ import annotations
@@ -56,9 +55,11 @@ MIN_DISK_GB = 500
 MIN_GPU_RAM_GB = 32
 MIN_RELIABILITY = 0.99
 NA_GEOS = ["US", "CA", "MX"]
-DEFAULT_COMMIT_HOURS = 720  # ~1 month, hits the published 20% reserved discount tier
 DEFAULT_NUM_GPUS = 1
 DEFAULT_MAX_DPH = 5.00  # safety cap: refuse to launch above $5/hr without override
+
+# Public repo cloned onto the box on first boot. No auth needed.
+GH_REPO_URL = "https://github.com/calebmills99/VUORSE_VORTEX.git"
 
 # Mirrors .env.example + repo's FastAPI/SSH surface.
 ENV_FLAGS = (
@@ -70,8 +71,8 @@ ENV_FLAGS = (
     "-p 8000:8000"
 )
 
-# Pre-warm the exact runtime extras declared in pyproject.toml so the box is
-# ready for `git clone` + `uv sync --extra gpu` without a cold install.
+# Pre-warm the runtime extras declared in pyproject.toml and clone the (public)
+# repo so the box is ready for `uv sync --extra gpu` without a cold install.
 ONSTART_CMD = (
     "env >> /etc/environment; "
     "curl -LsSf https://astral.sh/uv/install.sh | sh; "
@@ -80,7 +81,9 @@ ONSTART_CMD = (
     "'torch>=2.3' 'sentence-transformers>=3.0' 'chromadb>=0.5' 'faiss-cpu>=1.8' "
     "'pydantic>=2.7' 'typer>=0.12' 'rich>=13.7' 'jsonschema>=4.22' 'orjson>=3.10' "
     "'python-dotenv>=1.0' 'numpy>=1.26' 'tqdm>=4.66' "
-    "'fastapi>=0.136.1' 'uvicorn>=0.47.0' 'jinja2>=3.1.6'"
+    "'fastapi>=0.136.1' 'uvicorn>=0.47.0' 'jinja2>=3.1.6'; "
+    "mkdir -p /workspace && cd /workspace && "
+    f"(git clone {GH_REPO_URL} || true)"
 )
 
 # --------------------------------------------------------------------------- #
@@ -109,7 +112,6 @@ class ProvisionOptions:
     countries: list[str]
     tag: str
     num_gpus: int
-    commit_hours: int
     max_dph: float
     launch: bool
     template_only: bool
@@ -284,35 +286,6 @@ def create_instance(
     return result
 
 
-def convert_to_reserved(
-    client: Any,
-    instance_id: int,
-    hourly_rate: float,
-    commit_hours: int,
-) -> dict[str, Any]:
-    """Prepay the instance to convert it to a reserved contract."""
-    amount = round(hourly_rate * commit_hours, 2)
-    console.print(
-        f"[bold magenta]→ Prepaying ${amount}[/bold magenta] "
-        f"(={hourly_rate:.4f}/hr × {commit_hours} h) to lock reserved pricing…"
-    )
-    result = _normalize_response(
-        _safe_call(client, "prepay_instance", id=instance_id, amount=amount)
-    )
-    if not isinstance(result, dict):
-        err_console.print(
-            f"[bold red]prepay_instance returned an unexpected payload:[/bold red] {result!r}"
-        )
-        raise typer.Exit(code=1)
-
-    timescale = result.get("timescale")
-    discount_rate = result.get("discount_rate")
-    console.print(
-        f"  [green]✓[/green] Reserved: timescale={timescale} discount_rate={discount_rate}"
-    )
-    return result
-
-
 # --------------------------------------------------------------------------- #
 # Internal utilities                                                          #
 # --------------------------------------------------------------------------- #
@@ -423,25 +396,21 @@ def _render_offers_table(offers: list[dict[str, Any]]) -> None:
 def _render_final_summary(
     instance: dict[str, Any],
     offer: dict[str, Any],
-    prepay: dict[str, Any] | None,
     opts: ProvisionOptions,
 ) -> None:
     instance_id = instance.get("new_contract") or instance.get("instance_id") or instance.get("id")
     ssh_host = instance.get("ssh_host") or offer.get("public_ipaddr") or "(provisioning…)"
     ssh_port = instance.get("ssh_port") or "(provisioning…)"
     hourly = float(offer.get("dph_total", 0.0) or 0.0)
-    prepaid = round(hourly * opts.commit_hours, 2) if prepay else 0.0
-    discount = (prepay or {}).get("discount_rate", "n/a")
 
-    table = Table(title="VUORSE box online", title_style="bold magenta")
+    table = Table(title="VUORSE box online (on-demand)", title_style="bold magenta")
     table.add_column("field", style="bold cyan")
     table.add_column("value")
     table.add_row("instance_id", str(instance_id))
     table.add_row("ssh", f"ssh root@{ssh_host} -p {ssh_port}")
     table.add_row("dashboard", "https://cloud.vast.ai/instances/")
+    table.add_row("billing", "on-demand hourly")
     table.add_row("hourly cost", f"${hourly:.4f}/hr")
-    table.add_row("prepaid", f"${prepaid:.2f} ({opts.commit_hours} h)")
-    table.add_row("discount_rate", str(discount))
     console.print(table)
 
 
@@ -468,11 +437,6 @@ def provision(
         IMAGE_TAG, "--tag", help="Pinned image tag. Never use 'latest' (per Vast.ai docs)."
     ),
     num_gpus: int = typer.Option(DEFAULT_NUM_GPUS, "--num-gpus", help="GPUs per instance."),
-    commit_hours: int = typer.Option(
-        DEFAULT_COMMIT_HOURS,
-        "--commit-hours",
-        help="Hours to prepay (drives the reserved-pricing discount tier).",
-    ),
     max_dph: float = typer.Option(
         DEFAULT_MAX_DPH, "--max-dph", help="Refuse to launch above this $/hr cap."
     ),
@@ -493,7 +457,7 @@ def provision(
         "", "--api-key", help="Override VAST_API_KEY from .env (not recommended)."
     ),
 ) -> None:
-    """Reconcile template, search NA offers, and (optionally) launch + prepay."""
+    """Reconcile template, search NA offers, and (optionally) launch on-demand hourly."""
     opts = ProvisionOptions(
         min_disk=min_disk,
         min_vram=min_vram,
@@ -501,7 +465,6 @@ def provision(
         countries=[c.strip().upper() for c in countries.split(",") if c.strip()],
         tag=tag,
         num_gpus=num_gpus,
-        commit_hours=commit_hours,
         max_dph=max_dph,
         launch=launch,
         template_only=template_only,
@@ -554,9 +517,8 @@ def provision(
                 "[bold yellow][DRY-RUN][/bold yellow] No instance created, no charges incurred.\n"
                 f"Would launch offer [bold]{offer.get('id')}[/bold] "
                 f"({offer.get('gpu_name')} ×{offer.get('num_gpus')}) "
-                f"@ [bold]${hourly:.4f}/hr[/bold], then prepay "
-                f"[bold]${round(hourly * opts.commit_hours, 2)}[/bold] "
-                f"for {opts.commit_hours} h of reserved use.\n"
+                f"on-demand @ [bold]${hourly:.4f}/hr[/bold]. "
+                "Billing accrues hourly until the instance is destroyed.\n"
                 "Re-run with [bold cyan]--launch[/bold cyan] to spend.",
                 border_style="yellow",
             )
@@ -573,8 +535,7 @@ def provision(
         )
         raise typer.Exit(code=1)
 
-    prepay = convert_to_reserved(client, int(instance_id), hourly, opts.commit_hours)
-    _render_final_summary(instance, offer, prepay, opts)
+    _render_final_summary(instance, offer, opts)
 
 
 def main() -> None:

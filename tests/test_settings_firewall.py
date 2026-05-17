@@ -113,6 +113,7 @@ def test_chromadb_backend_query_enforces_gpu_before_import(monkeypatch) -> None:
     monkeypatch.setenv("CORTEX_REQUIRE_GPU", "1")
     monkeypatch.delenv("CORTEX_ALLOW_CPU_DIAGNOSTIC", raising=False)
     _reset_cuda_cache()
+    monkeypatch.setattr("vuorse_vortex.gpu.cuda_available", lambda: False)
 
     backend = ChromaDBBackend()
     try:
@@ -127,6 +128,7 @@ def test_faiss_backend_query_enforces_gpu_before_import(monkeypatch) -> None:
     monkeypatch.setenv("CORTEX_REQUIRE_GPU", "1")
     monkeypatch.delenv("CORTEX_ALLOW_CPU_DIAGNOSTIC", raising=False)
     _reset_cuda_cache()
+    monkeypatch.setattr("vuorse_vortex.gpu.cuda_available", lambda: False)
 
     backend = FaissBackend()
     try:
