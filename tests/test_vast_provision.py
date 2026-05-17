@@ -146,10 +146,17 @@ def test_ensure_template_creates_when_missing_with_sdk_compatible_kwargs() -> No
     assert kwargs["onstart_cmd"] == vp.ONSTART_CMD
     assert kwargs["ssh"] is True
     assert kwargs["direct"] is True
+    # Full template now bundles JupyterLab on top of SSH so the SDK derives
+    # runtype=jupyter_direct_ssh, and the XFCE desktop is bootstrapped from the
+    # onstart command. Lock the jupyter contract here.
+    assert kwargs["jupyter"] is True
+    assert kwargs["jupyter_lab"] is True
+    assert kwargs["jupyter_dir"] == "/workspace"
     # Non-SDK kwargs must not leak through
     assert "tag" not in kwargs
     assert "runtype" not in kwargs
     assert "ssh_direct" not in kwargs
+    assert "jupyter_direct" not in kwargs
 
 
 def test_ensure_template_unwraps_wrapped_template_response() -> None:
@@ -220,7 +227,7 @@ def test_find_cheapest_offer_exits_on_empty_results() -> None:
 # --------------------------------------------------------------------------- #
 
 
-def test_create_instance_uses_runtype_ssh_and_omits_ssh_kwarg() -> None:
+def test_create_instance_uses_jupyter_direct_ssh_runtype_and_omits_boolean_kwargs() -> None:
     client = MagicMock()
     client.create_instance.return_value = {"success": True, "new_contract": 4242}
 
@@ -231,9 +238,15 @@ def test_create_instance_uses_runtype_ssh_and_omits_ssh_kwarg() -> None:
     kwargs = client.create_instance.call_args.kwargs
     assert kwargs["id"] == 11
     assert kwargs["template_hash"] == "template-hash-xyz"
-    assert kwargs["runtype"] == "ssh"
-    # The SDK's instances.create_instance() does not accept `ssh` — must not leak.
+    # Combined SSH + JupyterLab + direct connect → the SDK runtype string is
+    # "jupyter_direct_ssh". Anything else either drops Jupyter ("ssh"), drops
+    # SSH ("jupyter_direct"), or forces traffic through the Vast proxy.
+    assert kwargs["runtype"] == "jupyter_direct_ssh"
+    # The SDK's instances.create_instance() does not accept ssh=/jupyter= kwargs
+    # — protocols are selected purely via `runtype`. Must not leak.
     assert "ssh" not in kwargs
+    assert "jupyter" not in kwargs
+    assert "direct" not in kwargs
 
 
 def test_create_instance_parses_json_string_launch_response() -> None:
