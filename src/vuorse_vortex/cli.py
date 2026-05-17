@@ -4,9 +4,11 @@ from __future__ import annotations
 
 from pathlib import Path
 from typing import Any
+import asyncio
 
 import typer
 from rich.console import Console
+from rich.prompt import Prompt
 
 from vuorse_vortex.gpu import require_gpu
 from vuorse_vortex.jsonl import iter_jsonl, validate_jsonl
@@ -62,6 +64,68 @@ def synthesize(output: Path = Path("synthetic_enrichment/theses.jsonl")) -> None
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(theses_as_jsonl() + "\n", encoding="utf-8")
     console.print(f"[green]Wrote synthetic theses to:[/green] {output}")
+
+
+@app.command("synthesize-interactive")
+def synthesize_interactive(
+    seed: int = typer.Option(42, "--seed", help="Seed for generation"),
+    chaos: float = typer.Option(0.3, "--chaos", help="Chaos factor"),
+    output: Path = Path("synthetic_enrichment/theses_accepted.jsonl")
+) -> None:
+    """Interactively synthesize and review chaos memory records asynchronously."""
+    from vuorse_vortex.synthesis import ChaosEngine, SynthesisConfig
+    
+    config = SynthesisConfig(seed=seed, chaos_factor=chaos, n_records=999999)
+    engine = ChaosEngine(config)
+    queue = asyncio.Queue(maxsize=1)
+    
+    output.parent.mkdir(parents=True, exist_ok=True)
+    
+    async def producer():
+        async for record in engine.async_stream():
+            await queue.put(record)
+
+    async def consumer():
+        accepted_count = 0
+        try:
+            while True:
+                record = await queue.get()
+                console.print(f"\n[bold magenta]Generated Record[/bold magenta]")
+                console.print(f"[cyan]Title:[/cyan] {record.title}")
+                console.print(f"[cyan]Layer:[/cyan] {record.layer}")
+                console.print(f"[cyan]Tags:[/cyan] {', '.join(record.metadata.tags)}")
+                console.print(f"\n{record.text}\n")
+                
+                choice = Prompt.ask("[bold yellow]Action (a=accept, r=reject, q=quit)[/bold yellow]", choices=["a", "r", "q"], default="a")
+                
+                if choice == "a":
+                    # Write to file
+                    with open(output, "a", encoding="utf-8") as f:
+                        f.write(record.model_dump_json(exclude_none=True) + "\n")
+                    
+                    # Feed back into engine
+                    engine.add_record_as_atom(record)
+                    accepted_count += 1
+                    console.print(f"[green]Accepted and added to atom pool! ({accepted_count} total)[/green]")
+                    
+                elif choice == "r":
+                    console.print("[red]Rejected.[/red]")
+                    
+                elif choice == "q":
+                    console.print("[dim]Quitting interactive mode.[/dim]")
+                    break
+                    
+                queue.task_done()
+        except asyncio.CancelledError:
+            pass
+
+    async def main():
+        prod_task = asyncio.create_task(producer())
+        cons_task = asyncio.create_task(consumer())
+        await cons_task
+        prod_task.cancel()
+        
+    asyncio.run(main())
 
 
 @app.command("embed")
