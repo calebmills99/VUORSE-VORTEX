@@ -13,6 +13,7 @@ from vuorse_vortex.walled import (
     WalledFileParseError,
     build_walled,
     build_walled_check,
+    load_walled_atoms,
 )
 
 VALID_TWO_SECTIONS = """\
@@ -221,3 +222,90 @@ def test_build_source_order_preserved(tmp_path: Path) -> None:
     ]
     assert lines[0]["id"] == "walled_velvet_archive"
     assert lines[1]["id"] == "walled_soul_line_recurrence"
+
+
+def test_build_disambiguates_duplicate_concept_ids(tmp_path: Path) -> None:
+    duplicate = """\
+## First
+
+```yaml
+concept: repeated concept
+layer_affinity: canon
+tags: [a]
+premise_fragment: p
+synthesis_fragment: s
+```
+
+## Second
+
+```yaml
+concept: repeated concept
+layer_affinity: canon
+tags: [b]
+premise_fragment: p
+synthesis_fragment: s
+```
+"""
+    md = _write(tmp_path, "duplicate.md", duplicate)
+    out = tmp_path / "walled.jsonl"
+    build_walled(md, out)
+
+    import orjson
+
+    lines = [
+        orjson.loads(ln)
+        for ln in out.read_text(encoding="utf-8").splitlines()
+        if ln.strip()
+    ]
+    assert [line["id"] for line in lines] == [
+        "walled_repeated_concept",
+        "walled_repeated_concept_2",
+    ]
+    assert validate_jsonl(out) == []
+
+
+def test_build_duplicate_concepts_round_trip_without_suffix(tmp_path: Path) -> None:
+    """Duplicate concepts get distinct IDs, but concepts round-trip without suffix.
+
+    The ``_2`` suffix exists only to keep ``MemoryRecord.id`` unique. It must not
+    leak into ``LoreAtom.concept`` or into any title rendered from concept text.
+    """
+    duplicate = """\
+## First
+
+```yaml
+concept: repeated concept
+layer_affinity: canon
+tags: [a]
+premise_fragment: p
+synthesis_fragment: s
+```
+
+## Second
+
+```yaml
+concept: repeated concept
+layer_affinity: canon
+tags: [b]
+premise_fragment: p
+synthesis_fragment: s
+```
+"""
+    md = _write(tmp_path, "duplicate.md", duplicate)
+    out = tmp_path / "walled.jsonl"
+    build_walled(md, out)
+
+    atoms = load_walled_atoms(out, preserve_order=True)
+    assert len(atoms) == 2
+
+    # Both atoms preserve the original concept text — no "_2" / " 2" artifact.
+    assert atoms[0].concept == "repeated concept"
+    assert atoms[1].concept == "repeated concept"
+
+    # Synthesized titles rendered from concept.title() must not contain
+    # numeric suffix artifacts from the build-side ID disambiguation.
+    for atom in atoms:
+        rendered = atom.concept.title()
+        assert "_2" not in rendered
+        assert not rendered.endswith(" 2")
+        assert rendered == "Repeated Concept"

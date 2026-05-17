@@ -16,6 +16,8 @@ jobs:
         run: uv sync --extra dev
       - name: Ruff
         run: uv run ruff check .
+      - name: Walled freshness
+        run: uv run vuorse-vortex build-walled --check
       - name: Tests
         run: uv run pytest
       - name: Mypy
