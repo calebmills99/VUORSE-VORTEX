@@ -125,10 +125,13 @@ The `synthesize` command (`src/vuorse_vortex/synthesis.py`) emits `SyntheticThes
 
 Any function that does embeddings / inference / reranking / synthetic batch generation should call `require_gpu("<workload name>")` first. It raises `RuntimeError` (with the "GPU tantrum" banner) rather than silently falling back to CPU. Per README, CPU is allowed for JSONL parsing, validation, manifests, git ops, and small diagnostics — nothing more.
 
-### Frontend: two setups, only one real
-There are two Vite/Tailwind configurations and they are not the same project:
-- Repo root: `package.json` + `vite.config.ts` declare Tailwind 4 only. No `index.html` or sources at root — this scaffold is incomplete.
-- `frontend/`: the actual React 19 + Vite + TypeScript app. Has its own `package.json` with `dev`, `build`, `lint`, `preview` scripts. Work inside `frontend/` (`cd frontend && npm run dev`), not at the repo root, unless you are intentionally unifying them.
+### Frontend: integrated web app plus legacy references
+The integrated canonical frontend lives in `web/`. It combines the VUORSE Slay Mode experience with the useful developer workflow surface and is the app CI builds.
+
+- `web/`: canonical React 19 + Vite + TypeScript + Tailwind app. Work inside `web/` (`cd web && npm run dev`, `npm run lint`, `npm run build`, `npm run preview`).
+- `frontend/`: legacy source app that carried the VUORSE Slay Mode experience before integration. Keep it for comparison until deletion is explicitly approved.
+- `vuorse-vortex/`: legacy scaffold app with the default Vite-style onboarding surface. Keep it for comparison until deletion is explicitly approved.
+- Repo root: `package.json` + `vite.config.ts` are not the canonical app; do not run `npm` at root expecting the production frontend.
 
 ### Data directories (mostly git-tracked content, not code)
 `canon/`, `roadmap/`, `velvet_archive/`, `hooplehopper_totality/`, `synthetic_enrichment/`, `embeddings/`, `policies/`, `rituals/`, `manifests/`, `archives/`, `skills/`, `agents/` hold lore, policy, and runtime data — not Python modules. `.gitignore` excludes generated artifacts under `embeddings/output/`, `embeddings/indexes/`, plus `*.parquet`, `*.faiss`, `*.safetensors`, `*.pt`, `*.ckpt`, `chromadb/`. Don't commit those.
