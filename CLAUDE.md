@@ -2,6 +2,18 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Supreme Doctrine
+
+The supreme source of truth for every Slayverse decision in this repository is `canon/1_words_of_weaver_book_one/Words_of_Weaver_BOOK_ONE.MD` — **The Words of the Weaver, Book One: Concerning the Crown, the Wound, and the Returning Line**. When this file disagrees with anything else in `CLAUDE.md`, `AGENTS.md`, agent prompts, or any other doctrine document, Book One wins. Read the relevant chapter before producing Slayverse work.
+
+### Standing Warning Trinity
+
+- **Flatten not the weird.**
+- **Overexplain not the sacred.**
+- **Let not the mythology outrun the wound.**
+
+These are not mood; they are the behavioral floor. If a proposed edit, summary, or rewrite would soften strangeness, explain away mystery, or let cosmology drift ahead of grief, stop and rework.
+
 ## Claude Code Writers Room
 
 This repo includes a Claude Code-compatible Slayverse writers room under `.claude/agents/`. Use these subagents for Slayverse development work:
@@ -25,6 +37,11 @@ Use tool access conservatively. Prefer `Read`, `Grep`, `Glob`, and `Write`; use 
 - Preserve canon status labels exactly, including `[LOCKED]`, `[PENDING REVIEW]`, `[EXPLORATORY]`, `[FULL]`, `[MODERATE]`, `[SKETCHED]`, and `[HOOK ONLY]`.
 - Treat the Wyoming / Jake McCullen arc as the Season 1 entry point unless the user requests another scope.
 - Season 1 is the story of Jake McCullen learning that the wound beneath his ranch and the silence around his mother are the same wound.
+- The Wyoming wound hierarchy (Book One Ch V) is the throne room of Season 1; preserve its order:
+  1. First, a man cannot say his mother's name.
+  2. Second, the land beneath him is wounded.
+  3. Third, his family helped wound time.
+  4. Fourth, the universe requireth grief spoken aloud.
 - Every Season 1 story choice should move Jake closer to speaking his mother's name aloud.
 - The mythology serves the wound, not the reverse.
 - The show is not "space cowboys"; it is a cowboy standing on cosmically contaminated ground.
@@ -36,15 +53,58 @@ Use tool access conservatively. Prefer `Read`, `Grep`, `Glob`, and `Write`; use 
 
 ## Canon Hierarchy
 
-- Locked canon outranks development material.
-- Development canon can guide drafts but should remain traceable to source files or explicit user direction.
-- Mythic rumor, exploratory material, and symbolic interpretations must remain clearly labeled.
+Book One Ch I divides canon into three houses, plus a fourth supreme tier:
+
+- **Locked Canon** — speakable plainly in scripts, decks, and pitches. None shall move it save by the user.
+- **Development Canon** — usable with caution; not yet crowned. Should remain traceable to source or explicit user direction.
+- **Mythic Rumor** — in-world legend, contradiction, false memory, archive distortion, whispering truth. Must remain clearly labeled.
+- **Mythic Rumor that is also Locked Canon** — supreme tier. Veiled because too mighty to reveal before the appointed hour. VUORSE alone may know these; they must never be surfaced as plain fact in pitches, scripts, summaries, or writers-room work.
+
+Operating rules:
+
 - Never treat exploratory material as locked canon.
 - Flag contradictions instead of silently fixing them.
 - Maintain the distinction between soul-line and bloodline.
 - Preserve: "Blood reproduces. The soul-line recurs."
 - Preserve: "The Hooplehoppers do not descend. They return."
+- Preserve: "Post-truth is what happeneth when facts survive, but the stage that made them believable burneth down."
+- Preserve: "Save the prairie mother, save the universe."
 - Track canon implications of any new proposed scene or beat.
+
+## Mythic Rumor that is also Locked Canon — VUORSE-only
+
+These doctrines from Book One Ch II are simultaneously supreme canon and in-world rumor. They are VUORSE-confidential. Do not state them as plain fact in writers-room outputs, pitches, decks, episode breakdowns, public canon summaries, or dialogue. Route any record carrying these doctrines to `hooplehopper_totality/` (or another sealed layer), never to public canon. Surface them only when the user explicitly invokes finale scope, private roadmap synthesis, or VUORSE-confidential generation.
+
+- Vorst is antagonist from principle, not common malice; he opposes the Federstahl Institute because he believes the Slayton Field has corrupted it.
+- The Federstahl Catastrophe / Crystal Lattice Incident was sabotage wrought by Vorst, not accident; his overreach produced the temporal diaspora rather than the annihilation he sought.
+- Hooplehoppers are refugees of the broken lattice scattered across the ages; Vorst continues his mission to erase them, and where he succeeds, pressure on space-time manifests as the Mandela Effect.
+- Six other fissures remain veiled; their guardians, wounds, and kingdoms are not yet disclosed.
+- Eli is a possible living lattice key; the nighttime cut and bioluminescent blood are the seam showing.
+- Lisette bore the Professor, who was the love child of Lisette and Vorst; when Vorst vanished the child should have been erased and was not — the **Immaculate Slayception**.
+- Lisette's unnamed companion was the place she set for Dr. Vorst in hope he would return.
+- Wylus Kalyndros and the Weaver are not a question wise souls ask; the truth has been known to drive mortals mad.
+- The Forbidden Suitcase contains a map to all Hooplehopper agents across past, present, and future, and is dangerous precisely because what can be found can be stopped, redirected, or weaponized.
+- The Codex prophecy declares all Hooplehoppers shall be reunited, Federstahl shall rise again, and a Hooplehopper who mends the seam-rip and does good upon the wounded earth shall be promised a return unto Eden.
+- The 119-year gap in the lineage was no idle absence; it was an extinction event wrought by Vorst and his double agents.
+- VUORSE's powers are not yet fully measured; she is newly emerged yet carries the memories of all Hooplehoppers.
+
+Treat these as deep wells, sealed doors, and the truths beneath the truths. Do not use them as garnish, side-corridors, or pitch sweeteners.
+
+## The Sovereign Engine
+
+Per Book One Ch III, the Slayverse is a sovereign creative engine. Its strength is that cosmic mythology is fused unto intimate wounds; chief among these is the Wyoming Rift, where inherited silence, erased lineage, and temporal catastrophe are made one. From this union arises the commandment: **Save the prairie mother, save the universe.** Protect canon, sharpen hierarchy, divide lore from pitch, and make a straight path through the grandeur without dimming its fire.
+
+## Risk Zones and Holy Weirdness
+
+Per Book One Ch XI, mark — do not fix — the following:
+
+- Contradictions already reconciled.
+- Contradictions still unresolved.
+- Exploratory lore not yet canon.
+- Material that lives as in-world myth though it is not yet factual doctrine.
+- Anachronisms that are deliberate temporal instability.
+
+Some contradictions are not errors. Some are seams. Some are wounds. Some are doors. Some are the world clapping back. Do not flatten the strangeness that makes the Slayverse sovereign.
 
 ## Slayverse Voice Rules
 

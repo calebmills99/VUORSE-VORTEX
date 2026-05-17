@@ -1,5 +1,17 @@
 # AGENTS.md
 
+## Supreme doctrine
+- The supreme source of truth for every Slayverse decision is `canon/1_words_of_weaver_book_one/Words_of_Weaver_BOOK_ONE.MD` — **The Words of the Weaver, Book One: Concerning the Crown, the Wound, and the Returning Line**.
+- When Book One disagrees with this file, with `CLAUDE.md`, with any agent prompt, or with any other doctrine document, Book One wins.
+- Read the relevant chapter of Book One before producing Slayverse work; cite the chapter when the change is doctrine-adjacent.
+
+## Standing warning trinity
+- **Flatten not the weird.**
+- **Overexplain not the sacred.**
+- **Let not the mythology outrun the wound.**
+
+These are the behavioral floor for every Slayverse-facing agent. If a proposed edit, summary, or rewrite would soften strangeness, explain away mystery, or let cosmology drift ahead of grief, stop and rework.
+
 ## Project overview
 - This repo contains the VUORSE-VORTEX tooling plus Slayverse lore, development, and writers room materials.
 - Slayverse source lore lives under `canon/`. Treat it as source material, not as importable code.
@@ -37,13 +49,25 @@
 - Never treat exploratory material as locked canon.
 - Flag contradictions instead of silently fixing them.
 - Maintain the distinction between soul-line and bloodline.
-- Preserve: "Blood reproduces. The soul-line recurs."
-- Preserve: "The Hooplehoppers do not descend. They return."
+- Preserve the royal decrees of Book One Ch IV verbatim — treat them as doctrine, build upon them, do not soften them:
+  - "Blood reproduces. The soul-line recurs."
+  - "The Hooplehoppers do not descend. They return."
+  - "Post-truth is what happeneth when facts survive, but the stage that made them believable burneth down."
+  - "Save the prairie mother, save the universe."
+- Honor Book One Ch I's canon hierarchy: Locked Canon, Development Canon, Mythic Rumor, and — above all — Mythic Rumor that is also Locked Canon (VUORSE-only, never surfaced as plain fact in writers-room outputs).
+- For the concrete Ch II hidden truths and sealed-layer routing expectations, defer to `CLAUDE.md` § **Mythic Rumor that is also Locked Canon — VUORSE-only**. That section enumerates the doctrines (Vorst's motive, Federstahl Catastrophe as sabotage, Eli as lattice key, Immaculate Slayception, Lisette's companion, Wylus + Weaver, Forbidden Suitcase, Codex prophecy, 119-year extinction event, VUORSE's unmeasured powers, six veiled fissures) that must be routed to `hooplehopper_totality/` (or another sealed layer) and never surfaced as plain fact.
+- For Book One Ch XI risk zones and holy weirdness, defer to `CLAUDE.md` § **Risk Zones and Holy Weirdness**. Mark — do not fix — contradictions already reconciled, contradictions still unresolved, exploratory lore not yet canon, material that lives as in-world myth though not yet factual doctrine, and anachronisms that are deliberate temporal instability. Some contradictions are seams, wounds, or doors; do not flatten the strangeness that makes the Slayverse sovereign.
 - Track canon implications of proposed scenes, beats, or summaries.
 
 ## Slayverse writing rules
 - Season 1 is about Jake McCullen learning that the wound beneath his ranch and the silence around his mother are the same wound.
-- Every Season 1 story choice should move Jake closer to speaking his mother's name aloud.
+- The Wyoming wound hierarchy (Book One Ch V) is the throne room of Season 1. Preserve its order verbatim:
+  1. First, a man cannot say his mother's name.
+  2. Second, the land beneath him is wounded.
+  3. Third, his family helped wound time.
+  4. Fourth, the universe requireth grief spoken aloud.
+- Every Season 1 story choice should move Jake closer to speaking his mother's name aloud — the load-bearing filter from Book One Ch IX: **Doth this bring Jake closer to saying his mother's name?**
+- For per-court voice register (Jake / VUORSE / Golden Wingers and Archive / cosmology), defer to Book One Ch VII and to `docs/writers-room/synthesis-process.md`.
 - The mythology serves the wound, not the reverse.
 - The show is not "space cowboys"; it is a cowboy standing on cosmically contaminated ground.
 - Save the prairie mother, save the universe.
