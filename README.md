@@ -125,7 +125,9 @@ bash /workspace/VUORSE-VORTEX/scripts/vast_startup.sh
 
 The startup script creates the non-root `vuorse` user, owns the repo + venv +
 Claude Code install + `~/.zshrc` under that user, and builds a Python 3.12 venv
-with CUDA-12.4 torch wheels from PyTorch's official index.
+with CUDA-13.2 torch wheels (cu132 channel) from PyTorch's official index. The
+project pins CUDA 13.1+ as a hard floor; PyTorch skips cu131 upstream, so cu132
+is the only wheel channel that satisfies the floor.
 
 ## First Commands
 

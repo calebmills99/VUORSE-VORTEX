@@ -13,6 +13,7 @@ from vuorse_vortex.schemas import (
     LoreAtom,
     MemoryMetadata,
     MemoryRecord,
+    Provenance,
     RetrievalMetadata,
 )
 from vuorse_vortex.sifting import clean_concept_name, is_valid_concept_name
@@ -118,6 +119,13 @@ class RecordCrystallizer:
             f"Synthesis: {synthesis_driver.synthesis_fragment}"
         )
 
+        # Provenance: record exactly which atoms (by concept) crystallized this
+        # record, and how deep into the chaos recursion we are. Generation is
+        # the deepest parent + 1 so an accepted record fed back as an atom and
+        # then recombined doesn't claim it's still gen 1.
+        parent_atom_ids = [atom.concept for atom in atoms]
+        generation = max((atom.generation for atom in atoms), default=0) + 1
+
         return MemoryRecord(
             id=record_id,
             layer=premise_anchor.layer_affinity,
@@ -130,6 +138,11 @@ class RecordCrystallizer:
                 tags=list(tags),
                 source_file="src/vuorse_vortex/synthesis.py",
                 source_confidence="synthetic_seed",
+                provenance=Provenance(
+                    parent_atom_ids=parent_atom_ids,
+                    generation=generation,
+                    engine="ChaosEngine",
+                ),
             ),
             retrieval=RetrievalMetadata(
                 priority=priority,
@@ -159,7 +172,11 @@ class ChaosEngine:
         self.chaos_field = ChaosField(self.rng, config.chaos_factor, self.pool)
         self.sampler = AtomSampler(self.config, self.chaos_field, self.rng, self.pool)
         self.crystallizer = RecordCrystallizer()
-        self.used_concept_pairs: set[tuple[str, str]] = set()
+        # Dedup over the FULL picked-atom set, not just the first two atoms,
+        # and permutation-invariant: ("a", "b", "c") and ("c", "a", "b") are
+        # the same combination. A reshuffle-and-retry attack against the old
+        # 2-tuple key used to slip through; this closes it.
+        self.used_concept_sets: set[frozenset[str]] = set()
         self.record_index = 0
 
     def add_record_as_atom(self, record: MemoryRecord) -> None:
@@ -178,12 +195,18 @@ class ChaosEngine:
         if not concept:
             concept = clean_concept_name(record.id)
 
+        provenance = record.metadata.provenance
+        parent_atom_ids = tuple(provenance.parent_atom_ids) if provenance else ()
+        generation = provenance.generation if provenance else 0
+
         atom = LoreAtom(
             concept=concept,
             layer_affinity=record.layer,
             tags=record.metadata.tags,
             premise_fragment=premise,
             synthesis_fragment=synthesis,
+            parent_atom_ids=parent_atom_ids,
+            generation=generation,
         )
         self.pool.append(atom)
         self.chaos_field.add_atom(atom, self.rng, self.config.chaos_factor)
@@ -198,8 +221,8 @@ class ChaosEngine:
                     raise RuntimeError("Failed to sample enough atoms")
                 continue
 
-            concept_key = (atoms[0].concept, atoms[1].concept)
-            if concept_key in self.used_concept_pairs:
+            concept_set = frozenset(atom.concept for atom in atoms)
+            if concept_set in self.used_concept_sets:
                 attempts += 1
                 if attempts > 1000:
                     raise RuntimeError("Exhausted combination space")
@@ -214,7 +237,7 @@ class ChaosEngine:
                 attempts += 1
                 continue
 
-            self.used_concept_pairs.add(concept_key)
+            self.used_concept_sets.add(concept_set)
             self.record_index += 1
             return record
 

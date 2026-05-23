@@ -237,8 +237,11 @@ def sort_children(ids, nodes):
 def render_txt(nodes, children, root_id, other, ids_all, max_depth):
     lines = []
     stats = {"folders": 0, "files": 0, "bytes": 0, "by_type": {}}
+    orphan = {"folders": 0, "files": 0, "bytes": 0, "by_type": {}}
 
-    def walk(node_id, depth, visited):
+    # walk() now writes into whichever stats bucket it is handed, so the same
+    # recursion serves the My Drive tree and the orphan / Computers-backup tree.
+    def walk(node_id, depth, visited, bucket):
         if node_id in visited:
             return
         visited.add(node_id)
@@ -249,16 +252,16 @@ def render_txt(nodes, children, root_id, other, ids_all, max_depth):
             indent = "  " * depth
             lbl = label_for(n["name"], n["mimeType"])
             if n["mimeType"] == FOLDER_MIME:
-                stats["folders"] += 1
+                bucket["folders"] += 1
                 kids = len(children.get(cid, []))
                 lines.append(f"{indent}{n['name']}/  ({kids})")
-                walk(cid, depth + 1, visited)
+                walk(cid, depth + 1, visited, bucket)
             else:
-                stats["files"] += 1
-                stats["by_type"][lbl] = stats["by_type"].get(lbl, 0) + 1
+                bucket["files"] += 1
+                bucket["by_type"][lbl] = bucket["by_type"].get(lbl, 0) + 1
                 size = n.get("size")
                 if size:
-                    stats["bytes"] += int(size)
+                    bucket["bytes"] += int(size)
                 date = (n.get("modifiedTime") or "")[:10]
                 tail = ""
                 if ids_all or lbl in FETCHABLE:
@@ -269,38 +272,71 @@ def render_txt(nodes, children, root_id, other, ids_all, max_depth):
 
     visited = set()
     lines.append("My Drive/")
-    walk(root_id, 1, visited)
+    walk(root_id, 1, visited, stats)
 
     if other:
         lines.append("")
-        lines.append("Shared-with-me / orphaned (parent outside My Drive):")
+        lines.append("Shared-with-me / Computers backup / orphaned "
+                     "(parent outside My Drive), now fully expanded:")
+        # Each top-level orphan node is printed, then walked recursively. The
+        # shared visited set keeps a node reachable from both roots from
+        # double-printing. Folder counts and the mirror subtotal come from the
+        # orphan bucket so the My Drive totals above stay clean.
         for cid in sort_children(other, nodes):
             n = nodes[cid]
             lbl = label_for(n["name"], n["mimeType"])
-            slash = "/" if n["mimeType"] == FOLDER_MIME else ""
             date = (n.get("modifiedTime") or "")[:10]
-            tail = f"  id={n['id']}" if (ids_all or lbl in FETCHABLE) else ""
-            lines.append(f"  {n['name']}{slash}  [{lbl}, {date}]{tail}")
+            if n["mimeType"] == FOLDER_MIME:
+                orphan["folders"] += 1
+                kids = len(children.get(cid, []))
+                lines.append(f"  {n['name']}/  ({kids})")
+                walk(cid, 2, visited, orphan)
+            else:
+                orphan["files"] += 1
+                orphan["by_type"][lbl] = orphan["by_type"].get(lbl, 0) + 1
+                size = n.get("size")
+                if size:
+                    orphan["bytes"] += int(size)
+                tail = f"  id={n['id']}" if (ids_all or lbl in FETCHABLE) else ""
+                lines.append(
+                    f"  {n['name']}  [{lbl}, {human_size_clean(size)}, {date}]{tail}"
+                )
 
     header = [
         "GOOGLE DRIVE TREE",
         f"generated: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}",
-        f"folders: {stats['folders']}   files: {stats['files']}   "
+        f"My Drive  -> folders: {stats['folders']}   files: {stats['files']}   "
         f"total file size: {human_size_clean(stats['bytes'])}",
-        "top types: " + ", ".join(
+    ]
+    if orphan["folders"] or orphan["files"]:
+        header.append(
+            f"mirrors+shared (expanded) -> folders: {orphan['folders']}   "
+            f"files: {orphan['files']}   size: {human_size_clean(orphan['bytes'])}"
+        )
+    header += [
+        "top types (My Drive): " + ", ".join(
             f"{k}:{v}" for k, v in sorted(
                 stats["by_type"].items(), key=lambda x: -x[1])[:12]
         ),
+    ]
+    if orphan["by_type"]:
+        header.append(
+            "top types (mirrors+shared): " + ", ".join(
+                f"{k}:{v}" for k, v in sorted(
+                    orphan["by_type"].items(), key=lambda x: -x[1])[:12]
+            )
+        )
+    header += [
         "legend: name/  (N children) = folder.  "
         "files show [type, size, modified].  id= shown for Claude-readable "
         "Google docs (and all items with --ids-all).",
         "=" * 70,
         "",
     ]
-    return "\n".join(header + lines) + "\n", stats
+    return "\n".join(header + lines) + "\n", stats, orphan
 
 
-def build_json(nodes, children, root_id, max_depth):
+def build_json(nodes, children, root_id, other, max_depth):
     def node_dict(node_id, depth, visited):
         if node_id in visited:
             return None
@@ -323,7 +359,14 @@ def build_json(nodes, children, root_id, max_depth):
                 d["children"] = []
         return d
 
-    return node_dict(root_id, 0, set())
+    # Shared visited set across the My Drive root and the orphan roots so the
+    # orphan subtrees (Computers backups, shared-with-me) are emitted in full
+    # without re-walking anything already placed under My Drive.
+    visited = set()
+    root = node_dict(root_id, 0, visited)
+    orphans = [d for d in (node_dict(oid, 0, visited)
+                           for oid in sort_children(other, nodes)) if d]
+    return root, orphans
 
 
 def main():
@@ -347,12 +390,16 @@ def main():
     files = fetch_all(service, args.include_trashed, args.shared_drives)
     nodes, children, other = build_tree(files, root_id)
 
-    txt, stats = render_txt(nodes, children, root_id, other,
-                            args.ids_all, args.max_depth)
+    txt, stats, orphan = render_txt(nodes, children, root_id, other,
+                                    args.ids_all, args.max_depth)
+    root_json, orphans_json = build_json(nodes, children, root_id, other,
+                                         args.max_depth)
     tree_json = {
         "generated": datetime.now(timezone.utc).isoformat(),
         "stats": stats,
-        "root": build_json(nodes, children, root_id, args.max_depth),
+        "orphan_stats": orphan,
+        "root": root_json,
+        "orphans": orphans_json,
         "other_count": len(other),
     }
 
@@ -365,8 +412,11 @@ def main():
         json.dump(tree_json, f, indent=2, ensure_ascii=False)
 
     print(f"\nWrote:\n  {txt_path}  <- hand this one to Claude\n  {json_path}")
-    print(f"folders: {stats['folders']}   files: {stats['files']}   "
+    print(f"My Drive  -> folders: {stats['folders']}   files: {stats['files']}   "
           f"size: {human_size_clean(stats['bytes'])}")
+    if orphan["folders"] or orphan["files"]:
+        print(f"mirrors+shared -> folders: {orphan['folders']}   "
+              f"files: {orphan['files']}   size: {human_size_clean(orphan['bytes'])}")
 
 
 if __name__ == "__main__":

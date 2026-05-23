@@ -7,6 +7,9 @@ from collections.abc import Sequence
 from dataclasses import dataclass, field
 from typing import TYPE_CHECKING, Any
 
+from pydantic import ValidationError
+
+from vuorse_vortex.firewall import CanonFirewallValidator
 from vuorse_vortex.gpu import require_gpu
 from vuorse_vortex.schemas import MemoryRecord
 from vuorse_vortex.settings import Settings, get_settings
@@ -26,23 +29,23 @@ class QueryResult:
     metadata: dict[str, Any] = field(default_factory=dict)
 
 
-def _normalize_record(record: dict[str, Any] | MemoryRecord) -> dict[str, Any]:
-    """Accept either a ``MemoryRecord`` or a raw dict; return a dict."""
-    if isinstance(record, MemoryRecord):
-        return record.model_dump(mode="json", exclude_none=True)
-    return record
-
-
 class VectorDBBackend:
-    """Abstract vector DB backend that enforces canon firewall on queries.
+    """Abstract vector DB backend that enforces canon firewall on queries AND ingest.
 
     SEALED_CATEGORIES are sourced from Settings.sealed_categories so that
     changes to sealed categories are centralized and consistently enforced
     across ingest and query layers.
+
+    Ingest contract: any subclass that overrides ``ingest()`` must call
+    ``self._validate_for_ingest(records)`` before persisting. The base class
+    raises ``CanonFirewallViolation`` on any sealed-layer record whose
+    behavior flags would expose it as fact or to the user — defense in depth
+    against callers that bypass ``validate_jsonl()``.
     """
 
     def __init__(self, settings: Settings | None = None) -> None:
         self._settings = settings or get_settings()
+        self._firewall = CanonFirewallValidator(settings=self._settings)
 
     @property
     def sealed_categories(self) -> set[str]:
@@ -68,6 +71,39 @@ class VectorDBBackend:
     def ingest(self, records: Sequence[dict[str, Any] | MemoryRecord]) -> int:
         """Ingest records into the vector store. Returns count ingested."""
         return 0
+
+    def _validate_for_ingest(
+        self, records: Sequence[dict[str, Any] | MemoryRecord]
+    ) -> list[MemoryRecord]:
+        """Coerce inputs to MemoryRecord and enforce the canon firewall.
+
+        Returns the validated records as ``MemoryRecord`` instances so the
+        subclass can serialize/encode them without re-validating. Raises
+        ``ValueError`` on schema errors and ``CanonFirewallViolation`` on
+        sealed-layer records whose behavior flags would expose them.
+
+        This is the only sanctioned path between caller-supplied data and a
+        live vector store. ``validate_jsonl()`` does the same checks on the
+        file-ingest path; this method protects every other entry point
+        (notebooks, FastAPI handlers, direct backend usage from tests).
+        """
+        validated: list[MemoryRecord] = []
+        for idx, record in enumerate(records):
+            if isinstance(record, MemoryRecord):
+                model = record
+            else:
+                try:
+                    model = MemoryRecord.model_validate(record)
+                except ValidationError as exc:
+                    raise ValueError(
+                        f"vector ingest rejected record #{idx}: schema error: {exc}"
+                    ) from exc
+            self._firewall.enforce(
+                model,
+                context=f"{type(self).__name__} ingest record #{idx}",
+            )
+            validated.append(model)
+        return validated
 
 
 class ChromaDBBackend(VectorDBBackend):
@@ -113,24 +149,27 @@ class ChromaDBBackend(VectorDBBackend):
         return [vec.tolist() for vec in vectors]
 
     def ingest(self, records: Sequence[dict[str, Any] | MemoryRecord]) -> int:
-        require_gpu("chromadb ingest")
         if not records:
             return 0
 
-        normalized = [_normalize_record(r) for r in records]
-        ids = [str(r["id"]) for r in normalized]
-        documents = [str(r["text"]) for r in normalized]
+        # Firewall BEFORE GPU: a sealed-layer leak attempt should fail loudly
+        # in any environment (including CPU-only CI) rather than depending on
+        # CUDA being available to even discover the violation.
+        validated = self._validate_for_ingest(records)
+
+        require_gpu("chromadb ingest")
+
+        ids = [v.id for v in validated]
+        documents = [v.text for v in validated]
         metadatas: list[dict[str, Any]] = []
-        for r in normalized:
-            meta = r.get("metadata") or {}
-            retrieval = r.get("retrieval") or {}
+        for v in validated:
             metadatas.append(
                 {
-                    "layer": r.get("layer", "unknown"),
-                    "canon_status": meta.get("canon_status", "unknown"),
-                    "visibility": meta.get("visibility", "internal"),
-                    "tags": json.dumps(meta.get("tags", [])),
-                    "priority": int(retrieval.get("priority", 0)),
+                    "layer": v.layer,
+                    "canon_status": v.metadata.canon_status,
+                    "visibility": v.metadata.visibility,
+                    "tags": json.dumps(list(v.metadata.tags)),
+                    "priority": v.retrieval.priority,
                 }
             )
 

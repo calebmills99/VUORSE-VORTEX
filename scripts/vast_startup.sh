@@ -11,7 +11,12 @@ set -euo pipefail
 # Intended image: a Vast.ai PyTorch template. We deliberately do NOT trust the
 # template's preinstalled torch (it's been observed to disappear when uv rebuilds
 # /venv/main against a different Python). Instead we build $REPO_DIR/.venv on
-# Python 3.12 with CUDA-12.4 torch wheels from PyTorch's official index.
+# Python 3.12 with CUDA-13.2 torch wheels from PyTorch's official index.
+#
+# CUDA floor is 13.1+ per project policy. PyTorch publishes wheel channels at
+# major CUDA boundaries (cu128, cu129, cu130, cu132 — there is NO cu131 channel,
+# the upstream skipped 13.1); cu132 is the only published channel that satisfies
+# the 13.1+ floor. Older wheels (cu128 and below) are explicitly out.
 #
 # Common Vast.ai on-start command:
 #   bash /workspace/VUORSE-VORTEX/scripts/vast_startup.sh
@@ -22,7 +27,7 @@ set -euo pipefail
 #   REPO_URL=...                      Defaults to the public VUORSE-VORTEX repo
 #   REPO_DIR=/workspace/VUORSE-VORTEX Repo target; the parent /workspace is chowned
 #   PROJECT_PY=3.12                   Python version uv builds the .venv from
-#   TORCH_INDEX_URL=https://download.pytorch.org/whl/cu124
+#   TORCH_INDEX_URL=https://download.pytorch.org/whl/cu132  (CUDA 13.2; 13.1+ floor)
 #   STARTUP_RUN_CHECKS=1              Run ruff + pytest + frontend lint/build
 #   STARTUP_PULL=1                    git pull existing repo before reinstalling
 
@@ -34,7 +39,7 @@ REPO_URL="${REPO_URL:-https://github.com/calebmills99/VUORSE-VORTEX.git}"
 REPO_DIR="${REPO_DIR:-/workspace/VUORSE-VORTEX}"
 PROJECT_VENV="$REPO_DIR/.venv"
 PROJECT_PY="${PROJECT_PY:-3.12}"
-TORCH_INDEX_URL="${TORCH_INDEX_URL:-https://download.pytorch.org/whl/cu124}"
+TORCH_INDEX_URL="${TORCH_INDEX_URL:-https://download.pytorch.org/whl/cu132}"
 STARTUP_RUN_CHECKS="${STARTUP_RUN_CHECKS:-1}"
 STARTUP_PULL="${STARTUP_PULL:-1}"
 
