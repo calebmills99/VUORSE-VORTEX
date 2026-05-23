@@ -9,6 +9,7 @@ import typer
 from rich.console import Console
 from rich.prompt import Prompt
 
+from vuorse_vortex.debrief_import import extract_strongest_private_theses
 from vuorse_vortex.gpu import require_gpu
 from vuorse_vortex.jsonl import iter_jsonl, validate_jsonl
 from vuorse_vortex.schemas import MemoryRecord
@@ -36,6 +37,9 @@ _EMBED_PATH_ARGUMENT = typer.Argument(
 
 _DEFAULT_WALLED_MD = Path("hooplehopper_totality/debriefing_walled.md")
 _DEFAULT_WALLED_JSONL = Path("hooplehopper_totality/debriefing_walled.jsonl")
+_DEFAULT_DEBRIEF_IMPORT_SOURCE = Path("hooplehopper_totality/debriefing_walled.jsonl")
+_DEFAULT_DEBRIEF_IMPORT_OUTPUT = Path("synthetic_enrichment/private_debrief_theses.jsonl")
+_DEFAULT_CONVERT_JSONL_OUTPUT = Path("converted.jsonl")
 _BUILD_WALLED_MD_ARGUMENT = typer.Argument(
     _DEFAULT_WALLED_MD,
     help="Walled markdown source file.",
@@ -43,6 +47,39 @@ _BUILD_WALLED_MD_ARGUMENT = typer.Argument(
 _BUILD_WALLED_JSONL_ARGUMENT = typer.Argument(
     _DEFAULT_WALLED_JSONL,
     help="JSONL projection target file.",
+)
+_FIREWALL_PATH_ARGUMENT = typer.Argument(
+    ...,
+    help="JSONL file to validate against the canon firewall.",
+)
+_CONVERT_INPUT_PATH_ARGUMENT = typer.Argument(
+    ...,
+    help="Legacy JSONL file to clean.",
+)
+_CONVERT_OUTPUT_PATH_OPTION = typer.Option(
+    _DEFAULT_CONVERT_JSONL_OUTPUT,
+    "--output",
+    help="Destination path for cleaned JSONL.",
+)
+_INDEX_REFRESH_OPTION = typer.Option(
+    False,
+    "--refresh",
+    help="Re-build the full semantic graph.",
+)
+_IMPORT_DEBRIEF_SOURCE_ARGUMENT = typer.Argument(
+    _DEFAULT_DEBRIEF_IMPORT_SOURCE,
+    help="Debrief JSONL source to distill into strongest private theses.",
+)
+_IMPORT_DEBRIEF_OUTPUT_OPTION = typer.Option(
+    _DEFAULT_DEBRIEF_IMPORT_OUTPUT,
+    "--output",
+    help="Target MemoryRecord JSONL path.",
+)
+_IMPORT_DEBRIEF_LIMIT_OPTION = typer.Option(
+    12,
+    "--limit",
+    min=1,
+    help="Number of strongest theses to keep.",
 )
 
 
@@ -121,7 +158,7 @@ def import_debrief_cmd(
 
 
 @app.command("firewall")
-def firewall_cmd(path: Path = typer.Argument(..., help="JSONL file to validate against the canon firewall.")) -> None:
+def firewall_cmd(path: Path = _FIREWALL_PATH_ARGUMENT) -> None:
     """Validate a JSONL file using CanonFirewallValidator.
 
     This is a thin wrapper around `validate-jsonl` that makes the intent
@@ -136,10 +173,8 @@ def firewall_cmd(path: Path = typer.Argument(..., help="JSONL file to validate a
 
 @app.command("convert-jsonl")
 def convert_jsonl_cmd(
-    input_path: Path = typer.Argument(..., help="Legacy JSONL file to clean"),
-    output_path: Path = typer.Option(
-        "converted.jsonl", "--output", help="Destination path for cleaned JSONL"
-    ),
+    input_path: Path = _CONVERT_INPUT_PATH_ARGUMENT,
+    output_path: Path = _CONVERT_OUTPUT_PATH_OPTION,
 ) -> None:
     """Convert a legacy JSONL file to the current MemoryRecord schema.
 
@@ -260,6 +295,32 @@ def synthesize_interactive(
             break
 
 
+
+@app.command("import-debrief-theses")
+def import_debrief_theses(
+    source: Path = _IMPORT_DEBRIEF_SOURCE_ARGUMENT,
+    output: Path = _IMPORT_DEBRIEF_OUTPUT_OPTION,
+    limit: int = _IMPORT_DEBRIEF_LIMIT_OPTION,
+) -> None:
+    """Create repo-native private thesis imports from a debrief JSONL artifact."""
+    try:
+        records = extract_strongest_private_theses(source, output, limit=limit)
+    except (OSError, ValueError) as exc:
+        console.print(f"[red]Import failed:[/red] {exc}")
+        raise typer.Exit(code=1) from exc
+
+    errors = validate_jsonl(output)
+    if errors:
+        for error in errors:
+            console.print(f"[red]{error}[/red]")
+        raise typer.Exit(code=1)
+
+    console.print(
+        f"[green]Imported {len(records)} private theses:[/green] {output} "
+        f"from [cyan]{source}[/cyan]"
+    )
+
+
 @app.command("embed")
 def embed(
     path: Path = _EMBED_PATH_ARGUMENT,
@@ -327,9 +388,8 @@ def query(
         console.print(f"  [dim]layer:[/dim] {result.layer}")
         console.print(f"  {result.text[:200]}")
 
-# Add near the end of src/vuorse_vortex/cli.py
 @app.command("index")
-def index(refresh: bool = typer.Option(False, "--refresh", help="Re‑build the full semantic graph")) -> None:
+def index(refresh: bool = _INDEX_REFRESH_OPTION) -> None:
     """Build or refresh the full LSP/semantic index."""
     from vuorse_vortex.graphd import build_graph, refresh_graph
     if refresh:
