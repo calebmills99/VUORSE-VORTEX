@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 from pathlib import Path
 
 import pytest
@@ -13,6 +14,10 @@ from vuorse_vortex.jsonl import validate_jsonl
 
 def _count_records(path: Path) -> int:
     return sum(1 for line in path.read_text(encoding="utf-8").splitlines() if line.strip())
+
+
+def _strip_ansi(text: str) -> str:
+    return re.sub(r"\x1b\[[0-9;]*m", "", text)
 
 
 def test_synthesize_command_supports_quickstart_flags(
@@ -83,4 +88,4 @@ def test_synthesize_help_documents_quickstart_flags(flag: str) -> None:
     result = runner.invoke(cli.app, ["synthesize", "--help"])
 
     assert result.exit_code == 0
-    assert flag in result.output
+    assert flag in _strip_ansi(result.output)
