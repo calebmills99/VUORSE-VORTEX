@@ -9,6 +9,7 @@ import typer
 from rich.console import Console
 from rich.prompt import Prompt
 
+from vuorse_vortex.debrief_import import extract_strongest_private_theses
 from vuorse_vortex.gpu import require_gpu
 from vuorse_vortex.jsonl import iter_jsonl, validate_jsonl
 from vuorse_vortex.schemas import MemoryRecord
@@ -208,6 +209,39 @@ def synthesize_interactive(
         elif choice == "q":
             console.print("[dim]Quitting interactive mode.[/dim]")
             break
+
+
+
+@app.command("import-debrief-theses")
+def import_debrief_theses(
+    source: Path = typer.Argument(
+        Path("hooplehopper_totality/debriefing_walled.jsonl"),
+        help="Debrief JSONL source to distill into strongest private theses.",
+    ),
+    output: Path = typer.Option(
+        Path("synthetic_enrichment/private_debrief_theses.jsonl"),
+        "--output",
+        help="Target MemoryRecord JSONL path.",
+    ),
+    limit: int = typer.Option(12, "--limit", min=1, help="Number of strongest theses to keep."),
+) -> None:
+    """Create repo-native private thesis imports from a debrief JSONL artifact."""
+    try:
+        records = extract_strongest_private_theses(source, output, limit=limit)
+    except (OSError, ValueError) as exc:
+        console.print(f"[red]Import failed:[/red] {exc}")
+        raise typer.Exit(code=1) from exc
+
+    errors = validate_jsonl(output)
+    if errors:
+        for error in errors:
+            console.print(f"[red]{error}[/red]")
+        raise typer.Exit(code=1)
+
+    console.print(
+        f"[green]Imported {len(records)} private theses:[/green] {output} "
+        f"from [cyan]{source}[/cyan]"
+    )
 
 
 @app.command("embed")
