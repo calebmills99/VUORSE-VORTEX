@@ -70,7 +70,35 @@ def validate_jsonl_command(path: Path) -> None:
             console.print(f"[red]{error}[/red]")
         raise typer.Exit(code=1)
     console.print(f"[green]Valid JSONL:[/green] {path}")
+@app.command("firewall")
+def firewall_cmd(path: Path = typer.Argument(..., help="JSONL file to validate against the canon firewall.")) -> None:
+    """Validate a JSONL file using CanonFirewallValidator.
 
+    This is a thin wrapper around `validate-jsonl` that makes the intent
+    explicit: run the canon‑firewall checks on the supplied file.
+    """
+    errors = validate_jsonl(path)
+    if errors:
+        for error in errors:
+            console.print(f"[red]{error}[/red]")
+        raise typer.Exit(code=1)
+    console.print(f"[green]Firewall validation passed for:[/green] {path}")
+
+@app.command("convert-jsonl")
+def convert_jsonl_cmd(
+    input_path: Path = typer.Argument(..., help="Legacy JSONL file to clean"),
+    output_path: Path = typer.Option(
+        "converted.jsonl", "--output", help="Destination path for cleaned JSONL"
+    ),
+) -> None:
+    """Convert a legacy JSONL file to the current MemoryRecord schema.
+
+    Delegates to the utility in `vuorse_vortex.convert_jsonl`.
+    """
+    from .convert_jsonl import convert_jsonl
+    console.print(f"[yellow]Converting {input_path} → {output_path}...[/yellow]")
+    convert_jsonl(Path(input_path), Path(output_path))
+    console.print(f"[green]Conversion complete.[/green] Output: {output_path}")
 
 @app.command("slay-mode")
 def slay_mode() -> None:
@@ -248,6 +276,17 @@ def query(
         console.print(f"  [dim]id:[/dim] {result.record_id}")
         console.print(f"  [dim]layer:[/dim] {result.layer}")
         console.print(f"  {result.text[:200]}")
+
+# Add near the end of src/vuorse_vortex/cli.py
+@app.command("index")
+def index(refresh: bool = typer.Option(False, "--refresh", help="Re‑build the full semantic graph")) -> None:
+    """Build or refresh the full LSP/semantic index."""
+    from vuorse_vortex.graphd import build_graph, refresh_graph
+    if refresh:
+        refresh_graph()
+    else:
+        build_graph()
+    console.print("[green]Semantic graph built successfully.[/green]")
 
 
 @app.command("build-walled")

@@ -45,6 +45,7 @@ def _opts(**overrides: Any) -> Any:
         "min_reliability": vp.MIN_RELIABILITY,
         "min_compute_cap": vp.MIN_COMPUTE_CAP,
         "countries": list(vp.NA_GEOS),
+        "image": vp.IMAGE,
         "tag": vp.IMAGE_TAG,
         "num_gpus": vp.DEFAULT_NUM_GPUS,
         "max_dph": vp.DEFAULT_MAX_DPH,
@@ -54,6 +55,7 @@ def _opts(**overrides: Any) -> Any:
     }
     defaults.update(overrides)
     return vp.ProvisionOptions(**defaults)
+
 
 
 # --------------------------------------------------------------------------- #
@@ -117,9 +119,11 @@ def test_coerce_template_list_filters_non_dicts() -> None:
 
 def test_ensure_template_reuses_existing_match() -> None:
     client = MagicMock()
+    safe_image = vp.IMAGE.replace("/", "-").replace(":", "-")
+    expected_tpl_name = f"{vp.TEMPLATE_NAME}-{safe_image}-{vp.IMAGE_TAG}"
     client.search_templates.return_value = [
         {"name": "some-other", "hash_id": "zzz"},
-        {"name": vp.TEMPLATE_NAME, "hash_id": "abc123"},
+        {"name": expected_tpl_name, "hash_id": "abc123"},
     ]
 
     hash_id = vp.ensure_template(client, _opts())
@@ -140,7 +144,9 @@ def test_ensure_template_creates_when_missing_with_sdk_compatible_kwargs() -> No
     client.create_template.assert_called_once()
     kwargs = client.create_template.call_args.kwargs
     # SDK-compatible parameter names
-    assert kwargs["name"] == vp.TEMPLATE_NAME
+    safe_image = vp.IMAGE.replace("/", "-").replace(":", "-")
+    expected_tpl_name = f"{vp.TEMPLATE_NAME}-{safe_image}-{vp.IMAGE_TAG}"
+    assert kwargs["name"] == expected_tpl_name
     assert kwargs["image"] == vp.IMAGE
     assert kwargs["image_tag"] == vp.IMAGE_TAG
     assert kwargs["env"] == vp.ENV_FLAGS
@@ -170,11 +176,14 @@ def test_ensure_template_unwraps_wrapped_template_response() -> None:
 
 def test_ensure_template_handles_json_string_search_response() -> None:
     client = MagicMock()
+    safe_image = vp.IMAGE.replace("/", "-").replace(":", "-")
+    expected_tpl_name = f"{vp.TEMPLATE_NAME}-{safe_image}-{vp.IMAGE_TAG}"
     client.search_templates.return_value = (
-        f'[{{"name": "{vp.TEMPLATE_NAME}", "hash_id": "abc"}}]'
+        f'[{{"name": "{expected_tpl_name}", "hash_id": "abc"}}]'
     )
     assert vp.ensure_template(client, _opts()) == "abc"
     client.create_template.assert_not_called()
+
 
 
 def test_ensure_template_exits_when_create_template_returns_no_hash() -> None:
@@ -282,9 +291,12 @@ def _stub_client(
     instance_response: dict[str, Any] | None = None,
 ) -> MagicMock:
     client = MagicMock()
+    safe_image = vp.IMAGE.replace("/", "-").replace(":", "-")
+    expected_tpl_name = f"{vp.TEMPLATE_NAME}-{safe_image}-{vp.IMAGE_TAG}"
     client.search_templates.return_value = templates if templates is not None else [
-        {"name": vp.TEMPLATE_NAME, "hash_id": "tpl-hash"}
+        {"name": expected_tpl_name, "hash_id": "tpl-hash"}
     ]
+
     client.search_offers.return_value = (
         offers
         if offers is not None

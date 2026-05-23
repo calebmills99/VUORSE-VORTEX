@@ -102,6 +102,16 @@ require_cmd sudo
 
 locale-gen en_US.UTF-8 >/dev/null 2>&1 || true
 
+say "Verifying GPU driver visibility..."
+if ! command -v nvidia-smi >/dev/null 2>&1; then
+  fail "EARLY ABORT: nvidia-smi command not found. This Vast instance has no GPU or drivers configured."
+fi
+if ! nvidia-smi >/dev/null 2>&1; then
+  fail "EARLY ABORT: nvidia-smi executed but failed. GPU drivers are not in a healthy state."
+fi
+say "✓ GPU drivers are healthy and visible."
+
+
 # ----------------------------------------------------------------------------
 # Phase 2 — root: create non-root user, mirror SSH keys, chown /workspace
 # ----------------------------------------------------------------------------

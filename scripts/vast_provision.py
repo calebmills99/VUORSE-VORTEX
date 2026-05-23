@@ -185,12 +185,14 @@ class ProvisionOptions:
     min_reliability: float
     min_compute_cap: int
     countries: list[str]
+    image: str
     tag: str
     num_gpus: int
     max_dph: float
     launch: bool
     template_only: bool
     allow_downgrade: bool
+
 
     @property
     def countries_joined(self) -> str:
@@ -237,12 +239,14 @@ def make_client(api_key: str) -> Any:
 
 def ensure_template(client: Any, opts: ProvisionOptions) -> str:
     """Idempotently materialize the VUORSE PyTorch template, returning its hash_id."""
-    console.print(f"[bold magenta]→ Reconciling template[/bold magenta] '{TEMPLATE_NAME}'…")
+    safe_image = opts.image.replace("/", "-").replace(":", "-")
+    tpl_name = f"{TEMPLATE_NAME}-{safe_image}-{opts.tag}"
+    console.print(f"[bold magenta]→ Reconciling template[/bold magenta] '{tpl_name}'…")
     raw = _safe_call(client, "search_templates")
     existing = _coerce_template_list(_normalize_response(raw))
 
     for tpl in existing:
-        if tpl.get("name") == TEMPLATE_NAME:
+        if tpl.get("name") == tpl_name:
             hash_id = str(tpl.get("hash_id") or tpl.get("id") or "")
             if hash_id:
                 console.print(f"  [green]✓[/green] Found existing template hash={hash_id}")
@@ -260,8 +264,8 @@ def ensure_template(client: Any, opts: ProvisionOptions) -> str:
         _safe_call(
             client,
             "create_template",
-            name=TEMPLATE_NAME,
-            image=IMAGE,
+            name=tpl_name,
+            image=opts.image,
             image_tag=opts.tag,
             env=ENV_FLAGS,
             onstart_cmd=ONSTART_CMD,
@@ -272,11 +276,12 @@ def ensure_template(client: Any, opts: ProvisionOptions) -> str:
             direct=True,
             disk_space=float(opts.min_disk),
             desc=(
-                "VUORSE-VORTEX full PyTorch CUDA box: SSH (22) + JupyterLab (8080) + "
-                "XFCE desktop via noVNC (6080) / VNC (5901). CORTEX_REQUIRE_GPU=1 baked in."
+                f"VUORSE-VORTEX PyTorch CUDA box: SSH + JupyterLab + noVNC. "
+                f"Image: {opts.image}:{opts.tag}. CORTEX_REQUIRE_GPU=1 baked in."
             ),
         )
     )
+
     if isinstance(created, dict) and isinstance(created.get("template"), dict):
         created = created["template"]
     if not isinstance(created, dict):
@@ -543,6 +548,9 @@ def provision(
     countries: str = typer.Option(
         ",".join(NA_GEOS), "--countries", help="Comma-separated ISO country codes."
     ),
+    image: str = typer.Option(
+        IMAGE, "--image", help="Container image to run. Defaults to vastai/pytorch."
+    ),
     tag: str = typer.Option(
         IMAGE_TAG, "--tag", help="Pinned image tag. Never use 'latest' (per Vast.ai docs)."
     ),
@@ -574,6 +582,7 @@ def provision(
         min_reliability=min_reliability,
         min_compute_cap=min_compute_cap,
         countries=[c.strip().upper() for c in countries.split(",") if c.strip()],
+        image=image,
         tag=tag,
         num_gpus=num_gpus,
         max_dph=max_dph,
@@ -581,6 +590,7 @@ def provision(
         template_only=template_only,
         allow_downgrade=allow_downgrade,
     )
+
 
     console.print(
         Panel.fit(

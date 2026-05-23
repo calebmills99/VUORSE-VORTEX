@@ -1,6 +1,10 @@
 import json
+import re
 from pathlib import Path
 from collections import Counter
+
+from vuorse_vortex.sifting import clean_concept_name, is_valid_concept_name
+
 
 inp = Path("synthetic_enrichment/generated/canon_corpus_entity_sift_scripted.jsonl")
 out = Path("synthetic_enrichment/generated/weaver_review_packet_001_mythic_and_hooplehopper.md")
@@ -70,7 +74,10 @@ for i, (r, mythic, private, hoople, vorst, vuorse) in enumerate(priority, start=
     if vorst: flags.append("VORST_FEDERSTAHL")
     if vuorse: flags.append("VUORSE")
 
-    title = r.get("title") or r.get("dominant_noun_phrase") or r.get("id")
+    t_raw = r.get("title") or r.get("dominant_noun_phrase") or r.get("id") or ""
+    title = clean_concept_name(t_raw)
+    if not title or not is_valid_concept_name(title):
+        title = t_raw
     body = r.get("summary") or r.get("body") or r.get("content") or ""
     body = str(body).replace("\n", " ").strip()
     if len(body) > 900:
