@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import heapq
 from pathlib import Path
 
 from vuorse_vortex.jsonl import iter_jsonl
@@ -31,23 +32,25 @@ def extract_strongest_private_theses(
     """Extract a top-N, de-duplicated thesis set and write MemoryRecord JSONL.
 
     Private behavior flags are enforced on every emitted record.
+
+    Uses streaming deduplication and heapq.nlargest to keep memory bounded
+    even for large source files.
     """
     if limit < 1:
         msg = "limit must be >= 1"
         raise ValueError(msg)
 
-    source_records: list[MemoryRecord] = []
-    for _, obj in iter_jsonl(source_path):
-        source_records.append(MemoryRecord.model_validate(obj))
-
+    # Streaming deduplication: keep best-scored record per key
     deduped: dict[tuple[str, str], MemoryRecord] = {}
-    for rec in source_records:
+    for _, obj in iter_jsonl(source_path):
+        rec = MemoryRecord.model_validate(obj)
         key = _thesis_key(rec)
         existing = deduped.get(key)
         if existing is None or _score(rec) > _score(existing):
             deduped[key] = rec
 
-    strongest = sorted(deduped.values(), key=_score, reverse=True)[:limit]
+    # Use heapq.nlargest for memory-bounded top-N selection
+    strongest = heapq.nlargest(limit, deduped.values(), key=_score)
 
     imported: list[MemoryRecord] = []
     for idx, rec in enumerate(strongest, start=1):
@@ -70,8 +73,12 @@ def extract_strongest_private_theses(
         )
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(
-        "\n".join(r.model_dump_json(exclude_none=True) for r in imported) + "\n",
-        encoding="utf-8",
-    )
+    # Avoid writing a single blank line when imported is empty
+    if imported:
+        output_path.write_text(
+            "\n".join(r.model_dump_json(exclude_none=True) for r in imported) + "\n",
+            encoding="utf-8",
+        )
+    else:
+        output_path.write_text("", encoding="utf-8")
     return imported
