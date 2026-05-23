@@ -91,3 +91,54 @@ def test_theses_as_jsonl_valid(patch_walled_pool: Path) -> None:
         assert "id" in obj
         assert obj["id"].startswith("chaos_")
         MemoryRecord.model_validate(obj)
+
+
+def test_concept_cleaning_and_filtering() -> None:
+    """Verify that concept sifting functions sanitise and filter metadata/nonsense."""
+    from vuorse_vortex.sifting import clean_concept_name, is_valid_concept_name
+
+    # 1. Test clean_concept_name
+    assert clean_concept_name("2. Series Overview") == "Series Overview"
+    assert clean_concept_name("[LOCKED] The Thread") == "The Thread"
+    assert clean_concept_name("canon_artifacts_md_artifact_note_the_thread_full_224_0116d6a8ed") == "the thread full"
+    assert clean_concept_name("concept_with_underscores") == "concept with underscores"
+
+    # 2. Test is_valid_concept_name
+    assert not is_valid_concept_name("0116d6a8ed")
+    assert not is_valid_concept_name("12345")
+    assert not is_valid_concept_name("document preamble")
+    assert is_valid_concept_name("The Thread")
+    assert is_valid_concept_name("Eli")
+
+    # 3. Test that crystallize cleans titles
+    from vuorse_vortex.schemas import LoreAtom
+    from vuorse_vortex.synthesis import RecordCrystallizer, SynthesisConfig
+    import random
+
+    crystallizer = RecordCrystallizer()
+    atoms = [
+        LoreAtom(
+            concept="canon_artifacts_md_artifact_note_the_thread_full_224_0116d6a8ed",
+            layer_affinity="canon",
+            tags=["thread"],
+            premise_fragment="Premise fragment",
+            synthesis_fragment="Synthesis fragment",
+        ),
+        LoreAtom(
+            concept="[LOCKED] Jake_McCullen",
+            layer_affinity="canon",
+            tags=["jake"],
+            premise_fragment="Premise",
+            synthesis_fragment="Synthesis",
+        )
+    ]
+    config = SynthesisConfig(seed=42)
+    rng = random.Random(42)
+    record = crystallizer.crystallize(atoms, seed=42, record_index=0, config=config, rng=rng)
+
+    assert "0116d6a8ed" not in record.title
+    assert "canon_artifacts" not in record.title
+    assert "[LOCKED]" not in record.title
+    assert "_" not in record.title
+    assert record.title == "The Thread Full / Jake Mccullen"
+

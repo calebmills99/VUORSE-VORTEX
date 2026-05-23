@@ -15,6 +15,7 @@ from vuorse_vortex.schemas import (
     MemoryRecord,
     RetrievalMetadata,
 )
+from vuorse_vortex.sifting import clean_concept_name, is_valid_concept_name
 from vuorse_vortex.walled import load_walled_atoms
 
 _DEFAULT_WALLED_JSONL = Path("hooplehopper_totality/debriefing_walled.jsonl")
@@ -60,6 +61,8 @@ class AtomSampler:
         effective_weights = []
         for atom in self.pool:
             if atom.concept in exclude:
+                continue
+            if not is_valid_concept_name(atom.concept):
                 continue
             base_weight = weights.get(atom.layer_affinity, 1.0)
             noise = self.chaos_field.displacement.get(atom.concept, 0.0)
@@ -107,7 +110,9 @@ class RecordCrystallizer:
             tags.update(atom.tags)
 
         record_id = f"chaos_{seed}_{record_index}_{rng.getrandbits(32):08x}"
-        title = f"{premise_anchor.concept.title()} / {synthesis_driver.concept.title()}"
+        clean_anchor = clean_concept_name(premise_anchor.concept).title()
+        clean_driver = clean_concept_name(synthesis_driver.concept).title()
+        title = f"{clean_anchor} / {clean_driver}"
         text = (
             f"Premise: {premise_anchor.premise_fragment}\n\n"
             f"Synthesis: {synthesis_driver.synthesis_fragment}"
@@ -149,6 +154,8 @@ class ChaosEngine:
             _DEFAULT_WALLED_JSONL,
             preserve_order=config.preserve_atom_order,
         )
+        for atom in self.pool:
+            atom.concept = clean_concept_name(atom.concept)
         self.chaos_field = ChaosField(self.rng, config.chaos_factor, self.pool)
         self.sampler = AtomSampler(self.config, self.chaos_field, self.rng, self.pool)
         self.crystallizer = RecordCrystallizer()
@@ -167,8 +174,12 @@ class ChaosEngine:
             premise = text
             synthesis = text
 
+        concept = clean_concept_name(record.title)
+        if not concept:
+            concept = clean_concept_name(record.id)
+
         atom = LoreAtom(
-            concept=record.id,
+            concept=concept,
             layer_affinity=record.layer,
             tags=record.metadata.tags,
             premise_fragment=premise,

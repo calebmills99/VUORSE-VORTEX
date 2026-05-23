@@ -21,6 +21,8 @@ from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
 
+from vuorse_vortex.sifting import clean_concept_name, is_valid_concept_name
+
 ROOT = Path("/Users/Apple/VUORSE-VORTEX")
 IN_PATH = ROOT / "synthetic_enrichment" / "generated" / "canon_corpus_raw.jsonl"
 OUT_JSONL = ROOT / "synthetic_enrichment" / "generated" / "canon_corpus_semantic_sift.jsonl"
@@ -282,23 +284,25 @@ def harvest_text_blob(rec: dict[str, Any]) -> str:
     return " \n ".join(p for p in pieces if p)
 
 
+
 def primary_entity_name(rec: dict[str, Any]) -> str:
     ents = safe_strs(rec.get("entities"))
     if ents:
-        # Skip generic-only entity strings
         for e in ents:
-            if e.strip():
-                return e.strip()
+            cleaned = clean_concept_name(e)
+            if cleaned and is_valid_concept_name(cleaned):
+                return cleaned
     inner = parse_inner(rec.get("content"))
     title = (inner.get("title") if inner else "") or ""
-    title = title.strip()
-    if title and title.lower() not in {"document preamble", "markdown", "chatgpt said:", "prompt:", "key features include:", "issue recap:", "thought for 7s"}:
-        return title
+    cleaned_title = clean_concept_name(title)
+    if cleaned_title and is_valid_concept_name(cleaned_title):
+        return cleaned_title
     anchor = (rec.get("source_anchor") or "").strip()
-    if anchor:
-        return anchor
-    if title:
-        return title
+    cleaned_anchor = clean_concept_name(anchor)
+    if cleaned_anchor and is_valid_concept_name(cleaned_anchor):
+        return cleaned_anchor
+    if cleaned_title:
+        return cleaned_title
     return ""
 
 
@@ -306,11 +310,13 @@ def secondary_entity_names(rec: dict[str, Any], primary: str) -> list[str]:
     out: list[str] = []
     seen = {primary.lower()}
     for e in safe_strs(rec.get("entities")):
-        e2 = e.strip()
-        if e2 and e2.lower() not in seen:
-            out.append(e2)
-            seen.add(e2.lower())
+        cleaned = clean_concept_name(e)
+        if cleaned and is_valid_concept_name(cleaned):
+            if cleaned.lower() not in seen:
+                out.append(cleaned)
+                seen.add(cleaned.lower())
     return out[:10]
+
 
 
 def entity_override(rec: dict[str, Any]) -> tuple[str, str, str] | None:
