@@ -55,6 +55,14 @@ package = true
 [tool.ruff]
 line-length = 100
 target-version = "py311"
+extend-exclude = [
+  "drive_tree.py",
+  "scripts/*.py",
+  "src/vuorse_vortex/convert_jsonl.py",
+  "src/vuorse_vortex/sifting.py",
+  "tests/test_convert_jsonl.py",
+  "tests/test_synthesis_chaos.py",
+]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B"]
