@@ -70,6 +70,56 @@ def validate_jsonl_command(path: Path) -> None:
             console.print(f"[red]{error}[/red]")
         raise typer.Exit(code=1)
     console.print(f"[green]Valid JSONL:[/green] {path}")
+
+
+@app.command("import-debrief")
+def import_debrief_cmd(
+    session_path: Annotated[
+        Path,
+        typer.Option(
+            "--session",
+            help="Frolic session JSON used to resolve the debrief source.",
+        ),
+    ] = Path(".frolic-session.json"),
+    source_path: Annotated[
+        Path | None,
+        typer.Option(
+            "--source",
+            help="Explicit debrief markdown source. Overrides session resolution.",
+        ),
+    ] = None,
+    output_path: Annotated[
+        Path | None,
+        typer.Option("--output", help="Destination MemoryRecord JSONL path."),
+    ] = None,
+    limit: Annotated[
+        int,
+        typer.Option(
+            "--limit",
+            min=1,
+            help="Maximum strongest debrief theses to import.",
+        ),
+    ] = 8,
+) -> None:
+    """Import private debrief theses into validated MemoryRecord JSONL."""
+    from vuorse_vortex.debrief_import import import_debrief_theses
+
+    try:
+        result = import_debrief_theses(
+            session_path=session_path,
+            source_path=source_path,
+            output_path=output_path,
+            limit=limit,
+        )
+    except Exception as exc:
+        console.print(f"[red]Debrief import failed:[/red] {exc}")
+        raise typer.Exit(code=1) from exc
+
+    console.print(f"[green]Imported {result.record_count} private theses[/green]")
+    console.print(f"[cyan]Source:[/cyan] {result.source_path}")
+    console.print(f"[cyan]Output:[/cyan] {result.output_path}")
+
+
 @app.command("firewall")
 def firewall_cmd(path: Path = typer.Argument(..., help="JSONL file to validate against the canon firewall.")) -> None:
     """Validate a JSONL file using CanonFirewallValidator.

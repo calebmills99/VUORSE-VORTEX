@@ -57,7 +57,14 @@ from rich.table import Table
 
 TEMPLATE_NAME = "vuorse-vortex-full"
 IMAGE = "vastai/pytorch"
-IMAGE_TAG = "cuda-12.4.1-auto"
+# CUDA floor is 13.1+ per project policy. Vast.ai's ``cuda-*-auto`` images cap at
+# ``cuda-13.0.2-auto`` (April 2026 fleet), which is below the floor. The only
+# Vast images that ship CUDA 13.1+ runtime are the ``mini`` variants tagged
+# ``cuda-13.2``. ``mini`` strips the auto-Jupyter convenience layer, so the
+# onstart command below installs jupyterlab + uvicorn explicitly. The image's
+# preinstalled torch is irrelevant — scripts/vast_startup.sh tears it down and
+# rebuilds a project venv against cu132 wheels anyway.
+IMAGE_TAG = "2.11.0-cu130-cuda-13.2-mini-py312-2026-04-15"
 
 MIN_DISK_GB = 500
 MIN_GPU_RAM_GB = 32
@@ -90,10 +97,15 @@ GH_REPO_URL = "https://github.com/calebmills99/VUORSE-VORTEX.git"
 # the onstart reads ${VNC_PASSWORD:-vuorse} so this is just a fallback.
 DEFAULT_VNC_PASSWORD = "vuorse"
 
+# Default JupyterLab token. The ``mini`` image we now use does NOT auto-start
+# Jupyter (unlike the old ``-auto`` image), so the onstart launches it itself
+# with this token. Override per-instance via the Vast.ai env editor.
+DEFAULT_JUPYTER_TOKEN = "vuorse-vortex"
+
 # Port surface for the full template:
 #   22   — SSH (direct)
 #   8000 — FastAPI (vuorse_vortex.api:app)
-#   8080 — Jupyter Lab (vastai/pytorch image auto-starts it when runtype=jupyter*)
+#   8080 — Jupyter Lab (we launch it in onstart since the mini image lacks auto-Jupyter)
 #   6080 — noVNC web client → XFCE desktop on display :1
 #   5901 — raw VNC (TigerVNC) on display :1, for native VNC clients
 ENV_FLAGS = (
@@ -102,6 +114,7 @@ ENV_FLAGS = (
     "-e CUDA_VISIBLE_DEVICES=0 "
     "-e HF_HOME=/workspace/.cache/huggingface "
     f"-e VNC_PASSWORD={DEFAULT_VNC_PASSWORD} "
+    f"-e JUPYTER_TOKEN={DEFAULT_JUPYTER_TOKEN} "
     "-p 22:22 "
     "-p 8000:8000 "
     "-p 8080:8080 "
@@ -142,21 +155,46 @@ DESKTOP_SETUP = (
 # the repo — easy to miss because the desktop and Jupyter would still work.
 # The explicit `test -d ... || exit 1` makes the template bootstrap fail loudly
 # so misconfiguration shows up in the Vast.ai instance logs, not later.
+# JupyterLab boot. The mini-py312-cuda-13.2 image we now use does not auto-start
+# Jupyter (only the old ``-auto`` family did), so we install + launch it from the
+# onstart. We bind to 0.0.0.0 because Vast.ai's port-map proxies external traffic
+# through the container interface; the JUPYTER_TOKEN env (see ENV_FLAGS) gates
+# access. ``setsid`` detaches the process so onstart can complete; output goes
+# to /var/log/jupyterlab.log for debug.
+JUPYTER_LAUNCH = (
+    "mkdir -p /workspace/notebooks; "
+    "setsid nohup jupyter lab "
+    "--no-browser --ip=0.0.0.0 --port=8080 "
+    "--ServerApp.root_dir=/workspace --ServerApp.allow_root=True "
+    '--ServerApp.token="${JUPYTER_TOKEN:-vuorse-vortex}" '
+    "--ServerApp.password='' "
+    ">/var/log/jupyterlab.log 2>&1 < /dev/null &"
+)
+
 ONSTART_CMD = (
     "set -e; "
     "env >> /etc/environment; "
     "curl -LsSf https://astral.sh/uv/install.sh | sh; "
     'export PATH="$HOME/.local/bin:$PATH"; '
+    # cu132 wheels (CUDA 13.2 — satisfies the project's 13.1+ floor). The image
+    # itself ships cuda-13.2 runtime libs; the wheel ships its own bundled libs
+    # too so even if Vast.ai swaps the base image's CUDA toolchain, torch still
+    # finds compatible runtime. Older wheel channels (cu130 and below) violate
+    # the floor and must not be reintroduced here.
+    "uv pip install --system --index-url https://download.pytorch.org/whl/cu132 "
+    "'torch>=2.12'; "
     "uv pip install --system "
-    "'torch>=2.3' 'sentence-transformers>=3.0' 'chromadb>=0.5' 'faiss-cpu>=1.8' "
+    "'sentence-transformers>=3.0' 'chromadb>=0.5' 'faiss-cpu>=1.8' "
     "'pydantic>=2.7' 'typer>=0.12' 'rich>=13.7' 'jsonschema>=4.22' 'orjson>=3.10' "
     "'python-dotenv>=1.0' 'numpy>=1.26' 'tqdm>=4.66' "
-    "'fastapi>=0.136.1' 'uvicorn>=0.47.0' 'jinja2>=3.1.6'; "
+    "'fastapi>=0.136.1' 'uvicorn>=0.47.0' 'jinja2>=3.1.6' "
+    "'jupyterlab>=4.2'; "
     "mkdir -p /workspace && cd /workspace && "
     f"(test -d VUORSE-VORTEX/.git || git clone {GH_REPO_URL}); "
     "test -d /workspace/VUORSE-VORTEX/.git || "
     "{ echo FATAL: VUORSE-VORTEX clone did not produce a git repo at "
     "/workspace/VUORSE-VORTEX; exit 1; }; "
+    f"{JUPYTER_LAUNCH} "
     f"{DESKTOP_SETUP}"
 )
 

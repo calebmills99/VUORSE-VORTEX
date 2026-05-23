@@ -41,6 +41,23 @@ Visibility = Literal[
 EmbeddingWeight = Literal["low", "medium", "high", "critical"]
 
 
+class Provenance(BaseModel):
+    """Where a synthesized record came from, so the chaos lineage stays traceable.
+
+    Root records (walled atoms, hand-authored canon) leave this absent. Chaos
+    Engine outputs must populate it. ``generation`` is the recursion depth:
+    walled atoms = 0, first crystallization = 1, an accept-and-recompound = 2,
+    etc. The Weaver review loop can then refuse to accept records past a
+    chosen depth without explicit acknowledgement.
+    """
+
+    model_config = ConfigDict(extra="forbid")
+
+    parent_atom_ids: list[str] = Field(default_factory=list)
+    generation: int = Field(default=0, ge=0)
+    engine: str | None = None  # e.g. "ChaosEngine" — leaves room for future producers
+
+
 class MemoryMetadata(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
@@ -51,6 +68,7 @@ class MemoryMetadata(BaseModel):
     section: str | None = None
     source_confidence: str | None = None
     layer_affinity: Layer | None = None
+    provenance: Provenance | None = None
 
 
 class RetrievalMetadata(BaseModel):
@@ -91,3 +109,8 @@ class LoreAtom:
     tags: list[str]
     premise_fragment: str
     synthesis_fragment: str
+    # Lineage. Walled atoms and other root sources leave parent_atom_ids empty
+    # and generation=0. Chaos-engine-recompounded atoms carry the concepts of
+    # their parents and one generation deeper than the deepest parent.
+    parent_atom_ids: tuple[str, ...] = ()
+    generation: int = 0

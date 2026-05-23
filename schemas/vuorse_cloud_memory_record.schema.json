@@ -143,6 +143,17 @@
           ],
           "default": null,
           "title": "Layer Affinity"
+        },
+        "provenance": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Provenance"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
         }
       },
       "required": [
@@ -150,6 +161,39 @@
         "visibility"
       ],
       "title": "MemoryMetadata",
+      "type": "object"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "description": "Where a synthesized record came from, so the chaos lineage stays traceable.\n\nRoot records (walled atoms, hand-authored canon) leave this absent. Chaos\nEngine outputs must populate it. ``generation`` is the recursion depth:\nwalled atoms = 0, first crystallization = 1, an accept-and-recompound = 2,\netc. The Weaver review loop can then refuse to accept records past a\nchosen depth without explicit acknowledgement.",
+      "properties": {
+        "parent_atom_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Parent Atom Ids",
+          "type": "array"
+        },
+        "generation": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Generation",
+          "type": "integer"
+        },
+        "engine": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Engine"
+        }
+      },
+      "title": "Provenance",
       "type": "object"
     },
     "RetrievalMetadata": {
