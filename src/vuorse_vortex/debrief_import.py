@@ -7,7 +7,7 @@ import json
 import re
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any
+from typing import Any, cast
 
 from vuorse_vortex.jsonl import iter_jsonl, validate_jsonl
 from vuorse_vortex.schemas import (
@@ -57,9 +57,14 @@ def _slug(value: str) -> str:
 
 def _load_session(session_path: Path) -> dict[str, Any]:
     try:
-        return json.loads(session_path.read_text(encoding="utf-8"))
+        session = json.loads(session_path.read_text(encoding="utf-8"))
     except json.JSONDecodeError as exc:
         raise ValueError(f"Invalid Frolic session JSON: {session_path}: {exc}") from exc
+    if not isinstance(session, dict):
+        raise ValueError(
+            f"Invalid Frolic session JSON: {session_path}: top-level value must be an object"
+        )
+    return cast(dict[str, Any], session)
 
 
 def _event_paths(session: dict[str, Any]) -> list[Path]:
