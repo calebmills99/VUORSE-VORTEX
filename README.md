@@ -59,6 +59,12 @@ Install `uv` on macOS:
 brew install uv
 ```
 
+Install `uv` on Windows (PowerShell):
+
+```powershell
+winget install --id=astral-sh.uv -e
+```
+
 Create the environment:
 
 ```bash
@@ -78,6 +84,15 @@ uv run ruff check .
 uv run pytest
 ```
 
+PowerShell helper scripts are available for Windows workflows:
+
+```powershell
+.\setup_python_interpreter.ps1
+.\convert_and_check.ps1 .\legacy.jsonl .\cleaned.jsonl
+.\scripts\validate_jsonl.ps1 .\synthetic_enrichment\theses.jsonl
+.\scripts\gpu_doctor.ps1
+```
+
 ## GPU Runtime Contract
 
 Deep-learning workloads are GPU-first.
@@ -87,6 +102,13 @@ Use:
 ```bash
 export CORTEX_REQUIRE_GPU=1
 export CORTEX_DEVICE=cuda
+```
+
+PowerShell equivalent:
+
+```powershell
+$env:CORTEX_REQUIRE_GPU = "1"
+$env:CORTEX_DEVICE = "cuda"
 ```
 
 CPU is allowed for JSONL parsing, validation, manifests, git operations, and small diagnostics.
