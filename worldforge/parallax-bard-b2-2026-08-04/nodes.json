@@ -1,0 +1,79 @@
+[
+  {
+    "id": "dj-parallax",
+    "type": "person",
+    "label": "DJ Parallax",
+    "status": "canon",
+    "notes": "HOOK ONLY stub: time-displaced bard, holographic corset, Club Cosmic DJ. Source [p.89]. Era/displace answers in this run are simulation."
+  },
+  {
+    "id": "club-cosmic",
+    "type": "place",
+    "label": "Club Cosmic",
+    "status": "canon",
+    "notes": "Interdimensional drag cabaret, Andromeda fringe; Tier 3. Hosts Parallax; linked to shard-waveform observation."
+  },
+  {
+    "id": "shard-terminal",
+    "type": "artifact",
+    "label": "Club Cosmic shard-waveform terminal",
+    "status": "canon",
+    "notes": "Ancient terminal beneath Club Cosmic for observing shard waveforms across timelines (places.md / seed). Sim treats it as the snag-point of Parallax's landing."
+  },
+  {
+    "id": "federstahl-lattice",
+    "type": "event",
+    "label": "Federstahl Crystal Lattice Incident / diaspora",
+    "status": "canon",
+    "notes": "Erasure + scatter across time; seven fissures. Speakable catastrophe layer only in this run."
+  },
+  {
+    "id": "temporal-diaspora",
+    "type": "force",
+    "label": "Temporal diaspora",
+    "status": "canon",
+    "notes": "Displaced beings forced to translate secret/broken knowledge into art, ritual, resistance of receiving eras."
+  },
+  {
+    "id": "weimar-bard-self",
+    "type": "person",
+    "label": "Parallax-before (Weimar cabaret bard)",
+    "status": "assumption",
+    "notes": "Sim primary: late Weimar Berlin stage bard / cabaret poet-singer c. 1929–1932. Not named in canon. Birth name withheld on purpose."
+  },
+  {
+    "id": "bardic-frequency",
+    "type": "force",
+    "label": "Bardic / sung frequency",
+    "status": "assumption",
+    "notes": "Sim: live performance pitch that accidentally couples to a Federstahl chronogenic side-channel."
+  },
+  {
+    "id": "holographic-corset",
+    "type": "artifact",
+    "label": "Holographic corset",
+    "status": "canon",
+    "notes": "Named in character stub. Sim: Club Cosmic translation of Weimar stage stays/costume into local glamtech."
+  },
+  {
+    "id": "swanblood",
+    "type": "artifact",
+    "label": "Swanblood (song)",
+    "status": "canon",
+    "notes": "HOOK ONLY song reference at Club Cosmic [p.89]. Sim may use as setlist echo, not origin proof."
+  },
+  {
+    "id": "soul-line-pattern",
+    "type": "force",
+    "label": "Hooplehopper soul-line (resistant pattern)",
+    "status": "canon",
+    "notes": "Recurs via resonance/displacement/art. Sim asks whether Parallax is in-pattern or adjacent Lattice flotsam."
+  },
+  {
+    "id": "tier-3-curtain",
+    "type": "secret",
+    "label": "Tier 3 Expansion Realm curtain",
+    "status": "canon",
+    "notes": "Book One Ch VI: Parallax/Club Cosmic stay beyond Season 1 curtain. This sim explores them without dragging Wyoming."
+  }
+]

@@ -1,0 +1,83 @@
+[
+  {
+    "from": "federstahl-lattice",
+    "to": "temporal-diaspora",
+    "mechanism": "ontological erasure scatters persons across time as anomalies",
+    "sign": "-",
+    "lag": "incident → centuries of aftershock",
+    "context": "cosmology.md Lattice / diaspora; speakable layer",
+    "confidence": "high"
+  },
+  {
+    "from": "weimar-bard-self",
+    "to": "bardic-frequency",
+    "mechanism": "cabaret bard sings/speaks at peak resonance during a hostile cultural clampdown",
+    "sign": "+",
+    "lag": "performance-night",
+    "context": "assumption: late Weimar Berlin stage",
+    "confidence": "assumption"
+  },
+  {
+    "from": "bardic-frequency",
+    "to": "federstahl-lattice",
+    "mechanism": "sung frequency accidentally couples to a Federstahl chronogenic side-channel (not a planned Guardian activation)",
+    "sign": "mixed",
+    "lag": "seconds mid-verse",
+    "context": "simulation displacement trigger; Federstahl era proximity is inference, coupling is assumption",
+    "confidence": "assumption"
+  },
+  {
+    "from": "temporal-diaspora",
+    "to": "shard-terminal",
+    "mechanism": "scatter stream misses Earth fissure Guardian landings and snags on Club Cosmic underfloor waveform terminal",
+    "sign": "+",
+    "lag": "subjective instant / exterior timeless",
+    "context": "simulation landing; terminal is canon, snag is assumption",
+    "confidence": "med"
+  },
+  {
+    "from": "shard-terminal",
+    "to": "dj-parallax",
+    "mechanism": "arrival reconstitutes the bard as Club Cosmic's DJ; Archive/cabaret names them Parallax",
+    "sign": "+",
+    "lag": "immediate in club-time",
+    "context": "simulation identity translation",
+    "confidence": "assumption"
+  },
+  {
+    "from": "club-cosmic",
+    "to": "holographic-corset",
+    "mechanism": "local glamtech translates period stage stays into holographic corset",
+    "sign": "+",
+    "lag": "first dressing / first set",
+    "context": "simulation reading of canon costume detail",
+    "confidence": "med"
+  },
+  {
+    "from": "dj-parallax",
+    "to": "club-cosmic",
+    "mechanism": "DJ set tunes frequencies that help keep reality stitched at the cabaret",
+    "sign": "+",
+    "lag": "ongoing nights",
+    "context": "inference from Club Cosmic music/resonance seed + sim role",
+    "confidence": "med"
+  },
+  {
+    "from": "soul-line-pattern",
+    "to": "dj-parallax",
+    "mechanism": "resistant art-against-dullness pattern may claim them whether or not bloodline papers exist",
+    "sign": "mixed",
+    "lag": "recognized after arrival",
+    "context": "open: in-pattern vs adjacent flotsam — primary branch says adjacent-then-adopted",
+    "confidence": "low"
+  },
+  {
+    "from": "tier-3-curtain",
+    "to": "dj-parallax",
+    "mechanism": "Book One keeps Parallax off Season 1 stage; sim stays in Tier 3 pocket",
+    "sign": "-",
+    "lag": "until Weaver lifts curtain",
+    "context": "Book One Ch VI",
+    "confidence": "high"
+  }
+]

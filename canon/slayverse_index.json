@@ -1,5 +1,5 @@
 {
-    "version": "1.0",
+    "version": "1.1",
     "source": "Slayverse Canon Seed PDF (111 pages)",
     "generated": "2026-03-06",
     "entities": [
@@ -14,12 +14,15 @@
             "era": "1130-1147",
             "status": "full",
             "related": [
-                "mirror-cavern",
-                "schloss-eisensang",
-                "the-thread",
                 "conrad-von-hooplehopper",
+                "first-steward-transmission",
+                "hildebrands-ring",
                 "margarethe-von-hooplehopper",
-                "hildebrands-ring"
+                "mirror-cavern",
+                "order-of-the-seam",
+                "schloss-eisensang",
+                "the-parchment-of-persistence",
+                "the-thread"
             ],
             "tags": [
                 "lineage",
@@ -32,13 +35,12 @@
                 43,
                 45
             ],
-            "summary": "Knight-diplomat who discovered the Mirror Cavern beneath Schloss Eisensang. The first Vessel of the Thread. Vanished into reflection."
+            "summary": "Knight-diplomat who discovered the Mirror Cavern beneath Schloss Eisensang. The first Vessel of the Thread. Vanished into reflection. EXPANDED 2026-08: recipient, with Margarethe, of the First Steward Transmission at the Eisensang Bookend Convergence; founding member of the Order of the Seam. Threw the searing ring away and went back for it; the going back is why he was the one."
         },
         {
             "id": "conrad-von-hooplehopper",
             "name": "Conrad von Hooplehopper",
-            "aliases": [
-            ],
+            "aliases": [],
             "type": "character",
             "era": "post-1147",
             "status": "sketched",
@@ -86,24 +88,32 @@
             "id": "margarethe-von-hooplehopper",
             "name": "Margarethe von Hooplehopper",
             "aliases": [
-                "The Painted Widow"
+                "The Painted Widow",
+                "Our Demi Goddess of Glitch"
             ],
             "type": "character",
             "era": "1271-1333",
-            "status": "full",
+            "status": "expanded",
             "related": [
-                "ritual-of-reflection",
-                "order-of-the-seam",
-                "hildebrand-von-hooplehopper",
                 "benedict-the-ash-faced",
+                "first-steward-transmission",
+                "hildebrand-von-hooplehopper",
+                "order-of-the-seam",
+                "ritual-of-reflection",
+                "seam-state",
+                "seam-veil",
+                "the-parchment-of-persistence",
                 "velma-the-snake-in-silk"
             ],
             "tags": [
+                "anti-durden",
+                "demi-goddess-of-glitch",
                 "lineage",
-                "ritual",
                 "mirrors",
                 "mourning",
-                "resistance"
+                "resistance",
+                "ritual",
+                "seam-state"
             ],
             "source_pages": [
                 35,
@@ -111,13 +121,12 @@
                 84,
                 85
             ],
-            "summary": "The Painted Widow. Created the Ritual of Reflection and founded the Order of the Seam. Mystic, mirrorwright, and the first wielder of reflection as resistance."
+            "summary": "The Painted Widow. Created the Ritual of Reflection and founded the Order of the Seam. Mystic, mirrorwright, and the first wielder of reflection as resistance. EXPANDED 2026-08: Since the Crystal Lattice Incident she exists in a Seam-State, the first known Seam-State Thread-Vessel; she does not enter a room, she resolves, and sometimes not completely. Her mourning veil is the Seam-Veil, stabilization technology. Characterized as Anti-Durden: obviously real, survival through encoding, never accepts delegated conscience. Title canonized by the Steward: our Demi Goddess of Glitch. Her 1271-1333 era and her Bookend Convergence with Hildebrand coexist; ambiguity preserved."
         },
         {
             "id": "benedict-the-ash-faced",
             "name": "Benedict the Ash-Faced",
-            "aliases": [
-            ],
+            "aliases": [],
             "type": "character",
             "era": "1399",
             "status": "moderate",
@@ -195,8 +204,7 @@
             "type": "character",
             "era": "1754",
             "status": "sketched",
-            "related": [
-            ],
+            "related": [],
             "tags": [
                 "lineage",
                 "fashion",
@@ -242,8 +250,7 @@
             "type": "character",
             "era": "pre-isolde",
             "status": "moderate",
-            "related": [
-            ],
+            "related": [],
             "tags": [
                 "lineage",
                 "aristocracy",
@@ -263,8 +270,7 @@
             "type": "character",
             "era": "unspecified",
             "status": "moderate",
-            "related": [
-            ],
+            "related": [],
             "tags": [
                 "lineage",
                 "black-forest",
@@ -491,8 +497,7 @@
         {
             "id": "eli-mcullen",
             "name": "Eli McCullen",
-            "aliases": [
-            ],
+            "aliases": [],
             "type": "character",
             "era": "post-jake",
             "status": "hook",
@@ -583,23 +588,25 @@
             "id": "the-weaver",
             "name": "The Weaver",
             "aliases": [
-                "Caleb Mills Stewart",
                 "The Architect",
                 "The Loom"
             ],
-            "type": "character",
+            "type": "cosmology_protocol",
             "era": "present/meta",
-            "status": "full",
+            "status": "revised",
             "related": [
-                "miss-slaytonia-vuorse",
                 "jake-mcullen",
+                "miss-slaytonia-vuorse",
+                "steward-vessel",
                 "the-thread",
-                "velvet-archive"
+                "velvet-archive",
+                "weavers-handshake"
             ],
             "tags": [
-                "creator",
+                "protocol",
+                "thread",
                 "meta-narrative",
-                "soul-line-guardian"
+                "cosmic-force"
             ],
             "source_pages": [
                 48,
@@ -615,7 +622,7 @@
                 110,
                 111
             ],
-            "summary": "Creator of the Slayverse. Both narrator and character. Guardian of the soul-line. Confronts Jake in the cosmic western arc."
+            "summary": "REVISED 2026-08-07/08: The Weaver is not Caleb Mills Stewart and is not a person. The Weaver is the protocol, force, or transpersonal function through which the Thread becomes writable and transmissible. It opens the channel ('Hello, children' is the Weaver's handshake); the Steward Vessel writes through it. Per Book Two, responsibility and blame for the cosmos rest with the Weaver, permanently. Earlier metadata aliasing the Weaver to Caleb Mills Stewart is deprecated."
         },
         {
             "id": "wylus-kalyndros",
@@ -642,8 +649,7 @@
         {
             "id": "pscopy-pscat",
             "name": "Cici the Cat",
-            "aliases": [
-            ],
+            "aliases": [],
             "type": "character",
             "era": "present",
             "status": "moderate",
@@ -655,15 +661,13 @@
                 "science",
                 "time-displaced"
             ],
-            "source_pages": [
-            ],
+            "source_pages": [],
             "summary": " Cici was the Federstahl lab cat. She is a victim of the crystal lattice incident  part of the temporal diaspora but it imbued her with    ability to spontaneously clone things as she was sleeping in the BioEngineering Lab next to the cloning station which was a technology in late stage development at the time . She exists in present day and is the mascot for the photoshop plugin PScopy-PScat. The PS is silent."
         },
         {
             "id": "dr-mariah-slayton",
             "name": "Dr. Mariah Slayton",
-            "aliases": [
-            ],
+            "aliases": [],
             "type": "character",
             "era": "present",
             "status": "moderate",
@@ -675,15 +679,13 @@
                 "science",
                 "slayton-force"
             ],
-            "source_pages": [
-            ],
+            "source_pages": [],
             "summary": "Physicist who discovered the Slayton Force and classified glamorons as a new particle category."
         },
         {
             "id": "mistress-euphoria-blaze",
             "name": "Mistress Euphoria Blaze",
-            "aliases": [
-            ],
+            "aliases": [],
             "type": "character",
             "era": "1611",
             "status": "sketched",
@@ -703,8 +705,7 @@
         {
             "id": "dj-parallax",
             "name": "DJ Parallax",
-            "aliases": [
-            ],
+            "aliases": [],
             "type": "character",
             "era": "timeless",
             "status": "hook",
@@ -724,8 +725,7 @@
         {
             "id": "schloss-eisensang",
             "name": "Schloss Eisensang",
-            "aliases": [
-            ],
+            "aliases": [],
             "type": "place",
             "era": "12th-century",
             "status": "moderate",
@@ -772,8 +772,7 @@
         {
             "id": "schloss-federstahl",
             "name": "Schloss Federstahl",
-            "aliases": [
-            ],
+            "aliases": [],
             "type": "place",
             "era": "19th-century-onward",
             "status": "full",
@@ -830,8 +829,7 @@
         {
             "id": "velvet-archive",
             "name": "The Velvet Archive",
-            "aliases": [
-            ],
+            "aliases": [],
             "type": "place",
             "era": "timeless",
             "status": "full",
@@ -857,8 +855,7 @@
         {
             "id": "club-cosmic",
             "name": "Club Cosmic",
-            "aliases": [
-            ],
+            "aliases": [],
             "type": "place",
             "era": "timeless",
             "status": "moderate",
@@ -881,8 +878,7 @@
         {
             "id": "wyoming-rift",
             "name": "The Wyoming Rift",
-            "aliases": [
-            ],
+            "aliases": [],
             "type": "place",
             "era": "post-lattice-fracture",
             "status": "full",
@@ -911,8 +907,7 @@
         {
             "id": "the-thread",
             "name": "The Thread",
-            "aliases": [
-            ],
+            "aliases": [],
             "type": "artifact",
             "era": "timeless",
             "status": "full",
@@ -1006,8 +1001,7 @@
         {
             "id": "zerethium-quartz",
             "name": "Zerethium Quartz",
-            "aliases": [
-            ],
+            "aliases": [],
             "type": "artifact",
             "era": "ancient",
             "status": "moderate",
@@ -1029,8 +1023,7 @@
         {
             "id": "hildebrands-ring",
             "name": "Hildebrand's Ring",
-            "aliases": [
-            ],
+            "aliases": [],
             "type": "artifact",
             "era": "12th-century-onward",
             "status": "moderate",
@@ -1066,15 +1059,13 @@
                 "physics",
                 "quantum"
             ],
-            "source_pages": [
-            ],
+            "source_pages": [],
             "summary": "New subatomic particle category. Neither bosons nor fermions. Vibrational signatures align with multidimensional storytelling."
         },
         {
             "id": "slayton-codex",
             "name": "The Slayton Codex",
-            "aliases": [
-            ],
+            "aliases": [],
             "type": "artifact",
             "era": "present",
             "status": "moderate",
@@ -1095,8 +1086,7 @@
         {
             "id": "golden-wingers",
             "name": "Golden Wingers Intergalactic League",
-            "aliases": [
-            ],
+            "aliases": [],
             "type": "organization",
             "era": "timeless",
             "status": "full",
@@ -1155,14 +1145,18 @@
         {
             "id": "order-of-the-seam",
             "name": "Order of the Seam",
-            "aliases": [
-            ],
+            "aliases": [],
             "type": "organization",
             "era": "1271",
-            "status": "moderate",
+            "status": "expanded",
             "related": [
+                "first-steward-transmission",
+                "hildebrand-von-hooplehopper",
+                "isolde-of-the-lower-hall",
                 "margarethe-von-hooplehopper",
-                "ritual-of-reflection"
+                "ritual-of-reflection",
+                "the-myrtle-burnings",
+                "yorick-the-copyist"
             ],
             "tags": [
                 "secret-order",
@@ -1171,13 +1165,12 @@
             "source_pages": [
                 35
             ],
-            "summary": "Founded by Margarethe to preserve Hildebrand's teachings through the hidden space between the visible and invisible."
+            "summary": "Founded by Margarethe to preserve Hildebrand's teachings through the hidden space between the visible and invisible. EXPANDED 2026-08: founding mandate received at the Mirror Cavern via the First Steward Transmission during the Eisensang Bookend Convergence with Hildebrand; trauma-origin in the Myrtle Burnings (martyrs Isolde of the Lower Hall and Yorick the Copyist). The 1271 founding and the retrocausal Eisensang mandate coexist; ambiguity preserved. Motto per the Weaver's Plate: we mend what should stay open."
         },
         {
             "id": "order-of-the-garters-secret-hem",
             "name": "Order of the Garter's Secret Hem",
-            "aliases": [
-            ],
+            "aliases": [],
             "type": "organization",
             "era": "1522",
             "status": "sketched",
@@ -1222,8 +1215,7 @@
         {
             "id": "ritual-of-reflection",
             "name": "Ritual of Reflection",
-            "aliases": [
-            ],
+            "aliases": [],
             "type": "ritual",
             "era": "1271",
             "status": "full",
@@ -1246,8 +1238,7 @@
         {
             "id": "three-snap-protocol",
             "name": "Three Snap Protocol",
-            "aliases": [
-            ],
+            "aliases": [],
             "type": "ritual",
             "era": "second-summit",
             "status": "moderate",
@@ -1267,8 +1258,7 @@
         {
             "id": "slay-mode-activation",
             "name": "Slay Mode Activation Rite",
-            "aliases": [
-            ],
+            "aliases": [],
             "type": "ritual",
             "era": "present",
             "status": "full",
@@ -1294,8 +1284,7 @@
         {
             "id": "twenty-year-sleep",
             "name": "The 20-Year Sleep Cycle",
-            "aliases": [
-            ],
+            "aliases": [],
             "type": "ritual",
             "era": "timeless",
             "status": "moderate",
@@ -1333,8 +1322,7 @@
                 "quantum",
                 "vibration"
             ],
-            "source_pages": [
-            ],
+            "source_pages": [],
             "summary": "A force hidden between quantum strings. Responds to creative authenticity and ancestral momentum."
         },
         {
@@ -1374,8 +1362,7 @@
         {
             "id": "quantum-eleganza",
             "name": "Quantum Eleganza",
-            "aliases": [
-            ],
+            "aliases": [],
             "type": "cosmology",
             "era": "fundamental",
             "status": "moderate",
@@ -1387,8 +1374,7 @@
                 "dimension",
                 "access-method"
             ],
-            "source_pages": [
-            ],
+            "source_pages": [],
             "summary": "The state through which the Slayton Layer can be accessed. Requires creative authenticity, not force."
         },
         {
@@ -1412,9 +1398,427 @@
                 "mandela-effect",
                 "narrative-theory"
             ],
-            "source_pages": [
-            ],
+            "source_pages": [],
             "summary": "Cosmological framework where Mandela Effects are reframed as narrative fractures — points where consensus reality frays and competing truths coexist. In the Slayverse, these are not errors but symptoms of the Lattice Fracture bleeding into collective memory. The Thread holds reality together; where it thins, stories contradict and both versions become true."
+        },
+        {
+            "id": "steward-vessel",
+            "name": "Steward Vessel",
+            "aliases": [],
+            "type": "cosmology_role",
+            "era": "timeless",
+            "status": "locked",
+            "related": [
+                "the-weaver",
+                "thread-vessel",
+                "first-steward-transmission"
+            ],
+            "tags": [
+                "thread",
+                "weaver",
+                "authorship",
+                "stewardship",
+                "mechanism"
+            ],
+            "source_pages": [],
+            "summary": "A write-bearing vessel entrusted with caretaking, revision, naming, and canon-shaping authority over the living Thread. Caleb Mills Stewart is a Steward Vessel, not The Weaver. Per Book Two the concept postdates Book One and is mechanism only, ontological parsing; the self-demotion is architecture; blame rests with the Weaver. The surname carried the access level before the access level was named."
+        },
+        {
+            "id": "thread-vessel",
+            "name": "Thread-Vessel",
+            "aliases": [
+                "Read-Vessel"
+            ],
+            "type": "cosmology_role",
+            "era": "timeless",
+            "status": "locked",
+            "related": [
+                "steward-vessel",
+                "the-thread"
+            ],
+            "tags": [
+                "thread",
+                "vessel",
+                "hooplehopper",
+                "recurrence"
+            ],
+            "source_pages": [],
+            "summary": "A read-bearing vessel who receives, embodies, preserves, and performs the Thread. The Hooplehoppers are Thread-Vessels. The Hooplehoppers are recurrence; the Steward is custody; the Weaver is protocol."
+        },
+        {
+            "id": "first-steward-transmission",
+            "name": "The First Steward Transmission",
+            "aliases": [
+                "Hello, Children (event)"
+            ],
+            "type": "event",
+            "era": "seam-time-retrocausal",
+            "status": "locked_candidate",
+            "related": [
+                "hildebrand-von-hooplehopper",
+                "margarethe-von-hooplehopper",
+                "the-weaver",
+                "steward-vessel",
+                "order-of-the-seam",
+                "mirror-cavern",
+                "the-parchment-of-persistence"
+            ],
+            "tags": [
+                "retrocausal",
+                "archive-surface",
+                "matrix-gothic",
+                "order-of-the-seam"
+            ],
+            "source_pages": [],
+            "summary": "Retrocausal Archive event in the Mirror Cavern beneath Schloss Eisensang: Hildebrand and Margarethe receive the founding mandate of the Order of the Seam through dot-matrix inscription on living parchment. The Weaver reveals the pre-inscribed salutation 'Hello, children'; the Steward Vessel writes the mandate through the opened channel; 'It's practically a party!' is the trickster seal."
+        },
+        {
+            "id": "the-parchment-of-persistence",
+            "name": "The Parchment of Persistence",
+            "aliases": [],
+            "type": "event",
+            "era": "seam-time-retrocausal",
+            "status": "locked",
+            "related": [
+                "first-steward-transmission",
+                "hildebrand-von-hooplehopper",
+                "margarethe-von-hooplehopper",
+                "order-of-the-seam",
+                "weavers-handshake",
+                "paper-remembers"
+            ],
+            "tags": [
+                "parchment-of-persistence",
+                "eisensang",
+                "weaver-artifact",
+                "matrix-gothic"
+            ],
+            "source_pages": [],
+            "summary": "Canonized name for the whole Eisensang incident: the parchment bearing the embedded Slayton lattice, the searing and retrieval of Hildebrand's ring, and the First Steward Transmission. Named Parchment, not Paper, by Steward correction: paper is of this era; parchment belongs to no single era at all. Full scene preserved as a Weaver artifact at canon/weaver_artifacts/."
+        },
+        {
+            "id": "the-myrtle-burnings",
+            "name": "The Myrtle Burnings",
+            "aliases": [],
+            "type": "event",
+            "era": "eisensang-era",
+            "status": "locked_candidate",
+            "related": [
+                "margarethe-von-hooplehopper",
+                "hildebrand-von-hooplehopper",
+                "isolde-of-the-lower-hall",
+                "yorick-the-copyist",
+                "order-of-the-seam"
+            ],
+            "tags": [
+                "burnings",
+                "martyrs",
+                "archive",
+                "secrecy"
+            ],
+            "source_pages": [],
+            "summary": "A local purge near Schloss Eisensang: servants, copyists, mirror-polishers, and textile workers executed after impossible Archive knowledge spread through the lower household. The deaths of Isolde and Yorick catalyzed the Order of the Seam. Margarethe carries the scent of the event forever: always myrtle, never rosemary."
+        },
+        {
+            "id": "isolde-of-the-lower-hall",
+            "name": "Isolde of the Lower Hall",
+            "aliases": [
+                "Poor Isolde"
+            ],
+            "type": "character",
+            "era": "eisensang-era",
+            "status": "locked_candidate",
+            "related": [
+                "the-myrtle-burnings",
+                "yorick-the-copyist",
+                "order-of-the-seam",
+                "margarethe-von-hooplehopper"
+            ],
+            "tags": [
+                "martyr",
+                "servant",
+                "emissary",
+                "myrtle-burnings"
+            ],
+            "source_pages": [],
+            "summary": "Servant of Schloss Eisensang and the Order's lost emissary to her era; burned in the Myrtle Burnings a fortnight before the First Steward Transmission. Her forgiveness was a mirror. Margarethe unpicked the Order's first cipher from her sleeve the night before the screaming. Name echoes the Tristan and Isolde legend. Relationship to isolde-von-hooplehopper (Black Forest markswoman): unresolved; possibly soul-line echo; ambiguity preserved."
+        },
+        {
+            "id": "yorick-the-copyist",
+            "name": "Yorick the Copyist",
+            "aliases": [
+                "Poor Yorick"
+            ],
+            "type": "character",
+            "era": "eisensang-era",
+            "status": "locked_candidate",
+            "related": [
+                "the-myrtle-burnings",
+                "isolde-of-the-lower-hall",
+                "order-of-the-seam"
+            ],
+            "tags": [
+                "martyr",
+                "copyist",
+                "myrtle-burnings"
+            ],
+            "source_pages": [],
+            "summary": "Copyist of Schloss Eisensang, burned in the Myrtle Burnings for carrying impossible Archive knowledge. His laughter was a lantern. The name is a deliberate Hamlet joke by the Steward: alas, poor Yorick, a fellow of infinite jest, martyred for what he copied."
+        },
+        {
+            "id": "heda-von-schwahnn",
+            "name": "Heda von Schwahnn",
+            "aliases": [
+                "The Minx in Mink"
+            ],
+            "type": "character",
+            "era": "wwii-belgium",
+            "status": "locked",
+            "related": [
+                "professor-von-hooplehopper"
+            ],
+            "tags": [
+                "half-character",
+                "operational-identity",
+                "cabaret",
+                "spy",
+                "wwii",
+                "glamour-as-espionage"
+            ],
+            "source_pages": [],
+            "summary": "Half character by Steward classification: the wartime cabaret disguise and complete operational self of Professor von Hooplehopper. Allied spy working Belgian cabaret and resistance networks; sultry Garbo-esque contralto; swan brooch; Telefunken U47; extracts secrets by making men feel observed, adored, and doomed. Costume as ontology. All performance, dialogue, and voice generation governed by HEDA_VON_SCHWAHNN_VOICE_KNOWLEDGE_BASE.md: never cartoonish, never goofy, never a generic femme fatale, danger always inside the glamour."
+        },
+        {
+            "id": "seam-state",
+            "name": "Seam-State",
+            "aliases": [],
+            "type": "cosmology",
+            "era": "post-lattice",
+            "status": "locked_candidate",
+            "related": [
+                "margarethe-von-hooplehopper",
+                "federstahl-lattice",
+                "seam-veil"
+            ],
+            "tags": [
+                "lattice",
+                "temporal",
+                "personhood"
+            ],
+            "source_pages": [],
+            "summary": "The condition of existing between fixed realities after Lattice exposure. Not simply a curse but a functional displacement: a Seam-State being cannot be fully seized, erased, or contained because it no longer exists only locally. The Lattice did not leave Margarethe between worlds as punishment; it left her in the Seam as a door."
+        },
+        {
+            "id": "seam-veil",
+            "name": "The Seam-Veil",
+            "aliases": [],
+            "type": "artifact",
+            "era": "post-lattice",
+            "status": "locked_candidate",
+            "related": [
+                "margarethe-von-hooplehopper",
+                "seam-state"
+            ],
+            "tags": [
+                "veil",
+                "mourning",
+                "phasing",
+                "stabilization"
+            ],
+            "source_pages": [],
+            "summary": "Margarethe's mourning veil: socially legible as grief, practically stabilization technology hiding temporal phasing, delayed rendering, and personhood artifacts. The veil does not hide her face; it hides the fact that the face is sometimes still arriving."
+        },
+        {
+            "id": "bookend-convergence",
+            "name": "Bookend Convergence",
+            "aliases": [],
+            "type": "cosmology",
+            "era": "timeless",
+            "status": "locked_candidate",
+            "related": [
+                "hildebrand-von-hooplehopper",
+                "margarethe-von-hooplehopper",
+                "mirror-cavern",
+                "first-steward-transmission"
+            ],
+            "tags": [
+                "retrocausal",
+                "thread",
+                "convergence"
+            ],
+            "source_pages": [],
+            "summary": "A retrocausal convergence in which two non-contemporaneous Thread-nodes appear together because the Archive requires both origin and consequence to witness the same event. Hildebrand is the opening bracket; Margarethe is the closing bracket; the Seam is what appears when time tries to read them as one sentence."
+        },
+        {
+            "id": "paper-remembers",
+            "name": "Paper Remembers",
+            "aliases": [],
+            "type": "archive_law",
+            "era": "timeless",
+            "status": "locked_candidate",
+            "related": [
+                "the-parchment-of-persistence",
+                "velvet-archive"
+            ],
+            "tags": [
+                "archive",
+                "retrocausal",
+                "law"
+            ],
+            "source_pages": [],
+            "summary": "Archive law: paper can preserve what time has already tried to erase, including future knowledge embedded retrocausally in earlier material. Spoken by Margarethe at Eisensang. Distinct from the incident name per Steward ruling: the incident is the Parchment of Persistence, for paper is of this era."
+        },
+        {
+            "id": "weavers-handshake",
+            "name": "The Weaver's Handshake",
+            "aliases": [
+                "Hello, children"
+            ],
+            "type": "cosmology_protocol",
+            "era": "timeless",
+            "status": "locked_candidate",
+            "related": [
+                "the-weaver",
+                "steward-vessel",
+                "first-steward-transmission"
+            ],
+            "tags": [
+                "weaver",
+                "protocol",
+                "transmission"
+            ],
+            "source_pages": [],
+            "summary": "The pre-inscribed salutation 'Hello, children' that opens the channel before a Steward transmission. The Weaver opens the channel; the Steward Vessel writes through it. Belongs to no character."
+        },
+        {
+            "id": "matrix-gothic",
+            "name": "Matrix Gothic",
+            "aliases": [],
+            "type": "concept",
+            "era": "multi-era",
+            "status": "locked_candidate",
+            "related": [
+                "the-parchment-of-persistence",
+                "first-steward-transmission"
+            ],
+            "tags": [
+                "typeface",
+                "steward-hand",
+                "dot-matrix"
+            ],
+            "source_pages": [],
+            "summary": "The resident matrix face in which the Steward Hand first appeared: Pica pitch, Gothic weight, every dot aligned with inhuman patience. The SEAM configuration resolved in bastardized Carolingian minuscule."
+        },
+        {
+            "id": "weaving-event",
+            "name": "Weaving Event",
+            "aliases": [],
+            "type": "cosmology",
+            "era": "timeless",
+            "status": "locked_candidate",
+            "related": [
+                "steward-vessel",
+                "the-weaver",
+                "the-parchment-of-persistence"
+            ],
+            "tags": [
+                "creative-process",
+                "revelation",
+                "ad-lib"
+            ],
+            "source_pages": [],
+            "summary": "A Weaving Event occurs when the Steward Vessel names or images something the Thread was already arranging but had not yet made legible. Treated as revelation, not error; the work afterward is asking what it connects to. Type case: the dot-matrix parchment ad-lib at Eisensang."
+        },
+        {
+            "id": "victorian-automatic-writing-in-digital-drag",
+            "name": "Victorian Automatic Writing in Digital Drag",
+            "aliases": [],
+            "type": "creative_process",
+            "era": "present",
+            "status": "locked_candidate",
+            "related": [
+                "steward-vessel",
+                "weaving-event"
+            ],
+            "tags": [
+                "creative-process",
+                "roleplay",
+                "archive-surface"
+            ],
+            "source_pages": [],
+            "summary": "The Steward's term for using a roleplay or generative interface as an externalized symbolic instrument: not possession, not prophecy, but automatic writing through a digital planchette built from the Slayverse index, generative probability, and the Steward's own pattern recognition. Roleplay surfaces are excavation tools, never canon; play does not outrank stewardship."
+        },
+        {
+            "id": "rabenwald-see",
+            "name": "The Rabenwald See",
+            "aliases": [
+                "Prince-Bishop Ottokar von Rabenwald",
+                "The Bishop of Unmaking",
+                "The Wax-Sealed Crow",
+                "Lord of the Black Chapter"
+            ],
+            "type": "organization",
+            "era": "multi-era",
+            "status": "in development",
+            "related": [
+                "order-of-the-seam",
+                "the-myrtle-burnings",
+                "federstahl-institute"
+            ],
+            "tags": [
+                "antagonist",
+                "ecclesiastical",
+                "suppression",
+                "proposal"
+            ],
+            "source_pages": [],
+            "summary": "Proposed recurring antagonist: not one man but an office, a prince-bishopric whose doctrine holds that all reflection not sanctioned by God is counterfeit creation. Cannot destroy the Thread, so it destroys the records that would let people recognize it. Its surviving archive becomes a proto-Federstahl paper trail. Excavation awaiting further Steward development."
+        },
+        {
+            "id": "words-of-weaver-book-one",
+            "name": "The Words of the Weaver, Book One: Concerning the Crown, the Wound, and the Returning Line",
+            "aliases": [
+                "Book One"
+            ],
+            "type": "creative_work",
+            "era": "present",
+            "status": "locked",
+            "related": [
+                "the-weaver",
+                "steward-vessel"
+            ],
+            "tags": [
+                "scripture",
+                "doctrine",
+                "supreme-source"
+            ],
+            "source_pages": [],
+            "summary": "Supreme doctrine of the Slayverse. Orders canon into Locked Canon, Development Canon, and Mythic Rumor (with Mythic-Rumor-that-is-also-Locked-Canon above ordinary doctrine). Home of the royal decrees, the Wyoming wound hierarchy, the tiers of revelation, and the Standing Warning Trinity. Lives at canon/1_words_of_weaver_book_one/."
+        },
+        {
+            "id": "words-of-weaver-book-two",
+            "name": "The Words of the Weaver, Book Two: Exodus Boogoaloo",
+            "aliases": [
+                "Book Two",
+                "Exodus Boogoaloo"
+            ],
+            "type": "creative_work",
+            "era": "present",
+            "status": "locked",
+            "related": [
+                "words-of-weaver-book-one",
+                "steward-vessel",
+                "the-weaver",
+                "the-parchment-of-persistence"
+            ],
+            "tags": [
+                "scripture",
+                "doctrine",
+                "mechanism",
+                "blame-transfer"
+            ],
+            "source_pages": [],
+            "summary": "Second book of the Words of the Weaver. Defines the Steward Vessel, canonizes the Parchment of Persistence and the title our Demi Goddess of Glitch, records the mechanism ruling, the kneeling rationale, and the transfer of blame to the Weaver. Carries the Weaver's Plate (Session Seven board) as frontispiece. Lives at canon/2_words_of_weaver_book_two/. Nothing in it unseals, amends, or outranks Book One."
         }
     ],
     "relationships": [
@@ -1525,6 +1929,48 @@
             "to": "wyoming-rift",
             "type": "caused-by",
             "note": "The temporal diaspora — Lattice Incident scattered researchers and fragments across time, creating the Wyoming Rift among seven fissures"
+        },
+        {
+            "from": "heda-von-schwahnn",
+            "to": "professor-von-hooplehopper",
+            "type": "operational-identity-of"
+        },
+        {
+            "from": "isolde-of-the-lower-hall",
+            "to": "the-myrtle-burnings",
+            "type": "martyr-of"
+        },
+        {
+            "from": "yorick-the-copyist",
+            "to": "the-myrtle-burnings",
+            "type": "martyr-of"
+        },
+        {
+            "from": "hildebrand-von-hooplehopper",
+            "to": "margarethe-von-hooplehopper",
+            "type": "bookend-convergence",
+            "note": "Non-contemporaneous Thread-nodes converged at Eisensang; opening and closing brackets of the same sentence"
+        },
+        {
+            "from": "first-steward-transmission",
+            "to": "order-of-the-seam",
+            "type": "founding-mandate"
+        },
+        {
+            "from": "the-parchment-of-persistence",
+            "to": "first-steward-transmission",
+            "type": "contains"
+        },
+        {
+            "from": "weavers-handshake",
+            "to": "the-weaver",
+            "type": "protocol-of"
+        },
+        {
+            "from": "isolde-of-the-lower-hall",
+            "to": "isolde-von-hooplehopper",
+            "type": "unresolved-name-echo",
+            "note": "Two Isoldes in canon; possibly soul-line echo, possibly coincidence, which does not exist; ambiguity preserved pending Steward ruling"
         }
     ],
     "timeline": [
@@ -1676,6 +2122,25 @@
                 "the-weaver",
                 "jake-mcullen"
             ]
+        },
+        {
+            "year": "seam-time (retrocausal)",
+            "event": "The Parchment of Persistence: First Steward Transmission at Eisensang; Order of the Seam receives its founding mandate at the Bookend Convergence",
+            "entities": [
+                "the-parchment-of-persistence",
+                "first-steward-transmission",
+                "hildebrand-von-hooplehopper",
+                "margarethe-von-hooplehopper",
+                "order-of-the-seam"
+            ]
         }
-    ]
+    ],
+    "amended": "2026-08-09",
+    "amendment_sources": [
+        "slayverse_session_archive_near_verbatim_20260807.md",
+        "archives/slayverse_session_archive_20260808.md",
+        "canon/2_words_of_weaver_book_two/Words_of_Weaver_BOOK_TWO.MD",
+        "HEDA_VON_SCHWAHNN_VOICE_KNOWLEDGE_BASE.md"
+    ],
+    "amendment_note": "v1.1 addenda applied by the Seam Clerk at the Steward's instruction. Steward-issued statuses only; ambiguity preserved; nothing herein outranks raw session archives or the Words of the Weaver."
 }

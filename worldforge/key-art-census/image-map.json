@@ -1,0 +1,1650 @@
+{
+  "generated": "2026-08-05T03:00:35.3672747-07:00",
+  "status_rule": "all images are design not canon",
+  "primary_roots": [
+    "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images",
+    "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images"
+  ],
+  "counts": {
+    "plates_mapped": 141,
+    "linked": 133,
+    "orphans": 8,
+    "characters_with_design": 11,
+    "characters_gap": 15
+  },
+  "character_coverage": [
+    {
+      "id": "hildebrand-von-hooplehopper",
+      "name": "Hildebrand von Hooplehopper",
+      "design_count": 2,
+      "proximity": "open",
+      "gap": false
+    },
+    {
+      "id": "conrad-von-hooplehopper",
+      "name": "Conrad von Hooplehopper",
+      "design_count": 0,
+      "proximity": "open",
+      "gap": true
+    },
+    {
+      "id": "adelram-von-hooplehopper",
+      "name": "Adelram von Hooplehopper",
+      "design_count": 0,
+      "proximity": "open",
+      "gap": true
+    },
+    {
+      "id": "margarethe-von-hooplehopper",
+      "name": "Margarethe von Hooplehopper",
+      "design_count": 2,
+      "proximity": "open",
+      "gap": false
+    },
+    {
+      "id": "benedict-the-ash-faced",
+      "name": "Benedict the Ash-Faced",
+      "design_count": 0,
+      "proximity": "open",
+      "gap": true
+    },
+    {
+      "id": "velma-the-snake-in-silk",
+      "name": "Velma the Snake in Silk",
+      "design_count": 1,
+      "proximity": "open",
+      "gap": false
+    },
+    {
+      "id": "lysander-von-hooplehopper",
+      "name": "Lysander von Hooplehopper",
+      "design_count": 0,
+      "proximity": "open",
+      "gap": true
+    },
+    {
+      "id": "theresia-von-hooplehopper",
+      "name": "Theresia von Hooplehopper",
+      "design_count": 0,
+      "proximity": "open",
+      "gap": true
+    },
+    {
+      "id": "yssenda-von-hooplehopper",
+      "name": "Yssenda von Hooplehopper",
+      "design_count": 0,
+      "proximity": "open",
+      "gap": true
+    },
+    {
+      "id": "sigismund-von-hooplehopper",
+      "name": "Sigismund von Hooplehopper",
+      "design_count": 0,
+      "proximity": "open",
+      "gap": true
+    },
+    {
+      "id": "isolde-von-hooplehopper",
+      "name": "Isolde von Hooplehopper",
+      "design_count": 0,
+      "proximity": "open",
+      "gap": true
+    },
+    {
+      "id": "ludolf-von-hooplehopper",
+      "name": "Ludolf von Hooplehopper",
+      "design_count": 0,
+      "proximity": "open",
+      "gap": true
+    },
+    {
+      "id": "lisette-von-hooplehopper",
+      "name": "Lisette von Hooplehopper",
+      "design_count": 4,
+      "proximity": "open",
+      "gap": false
+    },
+    {
+      "id": "professor-von-hooplehopper",
+      "name": "Professor Von Hooplehopper",
+      "design_count": 22,
+      "proximity": "near-lock",
+      "gap": false
+    },
+    {
+      "id": "doctor-vorst",
+      "name": "Doctor Vorst",
+      "design_count": 0,
+      "proximity": "open",
+      "gap": true
+    },
+    {
+      "id": "pop",
+      "name": "Pop",
+      "design_count": 5,
+      "proximity": "open",
+      "gap": false
+    },
+    {
+      "id": "jake-mcullen",
+      "name": "Jake McCullen",
+      "design_count": 5,
+      "proximity": "open",
+      "gap": false
+    },
+    {
+      "id": "eli-mcullen",
+      "name": "Eli McCullen",
+      "design_count": 0,
+      "proximity": "open",
+      "gap": true
+    },
+    {
+      "id": "miss-slaytonia-vuorse",
+      "name": "Miss Slaytonia VUORSE",
+      "design_count": 6,
+      "proximity": "open",
+      "gap": false
+    },
+    {
+      "id": "miss-slaytonia-verse",
+      "name": "Miss Slaytonia Verse",
+      "design_count": 0,
+      "proximity": "open",
+      "gap": true
+    },
+    {
+      "id": "the-weaver",
+      "name": "The Weaver",
+      "design_count": 8,
+      "proximity": "open",
+      "gap": false
+    },
+    {
+      "id": "wylus-kalyndros",
+      "name": "Wylus Kalyndros",
+      "design_count": 0,
+      "proximity": "open",
+      "gap": true
+    },
+    {
+      "id": "pscopy-pscat",
+      "name": "Cici the Cat",
+      "design_count": 0,
+      "proximity": "open",
+      "gap": true
+    },
+    {
+      "id": "dr-mariah-slayton",
+      "name": "Dr. Mariah Slayton",
+      "design_count": 2,
+      "proximity": "near-lock",
+      "gap": false
+    },
+    {
+      "id": "mistress-euphoria-blaze",
+      "name": "Mistress Euphoria Blaze",
+      "design_count": 0,
+      "proximity": "open",
+      "gap": true
+    },
+    {
+      "id": "dj-parallax",
+      "name": "DJ Parallax",
+      "design_count": 1,
+      "proximity": "open",
+      "gap": false
+    }
+  ],
+  "gaps": [
+    "conrad-von-hooplehopper",
+    "adelram-von-hooplehopper",
+    "benedict-the-ash-faced",
+    "lysander-von-hooplehopper",
+    "theresia-von-hooplehopper",
+    "yssenda-von-hooplehopper",
+    "sigismund-von-hooplehopper",
+    "isolde-von-hooplehopper",
+    "ludolf-von-hooplehopper",
+    "doctor-vorst",
+    "eli-mcullen",
+    "miss-slaytonia-verse",
+    "wylus-kalyndros",
+    "pscopy-pscat",
+    "mistress-euphoria-blaze"
+  ],
+  "favorites": [
+    "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\the velvet balance.png",
+    "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\thweavergold.jpg",
+    "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\swan lake.png"
+  ],
+  "plates": [
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\2082474b.png",
+      "name": "2082474b.png",
+      "status": "design",
+      "kind": "unknown",
+      "character_id": null,
+      "proximity": "open",
+      "note": "orphan — needs eyes",
+      "link": "orphan"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\20b5fb4d.png",
+      "name": "20b5fb4d.png",
+      "status": "design",
+      "kind": "unknown",
+      "character_id": null,
+      "proximity": "open",
+      "note": "orphan — needs eyes",
+      "link": "orphan"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\2c6c6904.png",
+      "name": "2c6c6904.png",
+      "status": "design",
+      "kind": "unknown",
+      "character_id": null,
+      "proximity": "open",
+      "note": "orphan — needs eyes",
+      "link": "orphan"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\4212a459.png",
+      "name": "4212a459.png",
+      "status": "design",
+      "kind": "unknown",
+      "character_id": null,
+      "proximity": "open",
+      "note": "orphan — needs eyes",
+      "link": "orphan"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\5418db39-c415-4ad7-809c-c24de129d191.png",
+      "name": "5418db39-c415-4ad7-809c-c24de129d191.png",
+      "status": "design",
+      "kind": "unknown",
+      "character_id": null,
+      "proximity": "open",
+      "note": "orphan — needs eyes",
+      "link": "orphan"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\706e1dba-1b70-4721-855d-4434cf8a1e29 - Copy.png",
+      "name": "706e1dba-1b70-4721-855d-4434cf8a1e29 - Copy.png",
+      "status": "design",
+      "kind": "unknown",
+      "character_id": null,
+      "proximity": "open",
+      "note": "orphan — needs eyes",
+      "link": "orphan"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\archive.png",
+      "name": "archive.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "favorite",
+      "note": "Velvet archive / world mood",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\bonnet-two-point-zero1.png",
+      "name": "bonnet-two-point-zero1.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\bonnet-two-point-zero2.png",
+      "name": "bonnet-two-point-zero2.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\bonnet-two-point-zero3.png",
+      "name": "bonnet-two-point-zero3.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\disco weaver.png",
+      "name": "disco weaver.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "the-weaver",
+      "proximity": "open",
+      "note": "Weaver design; thweavergold is steward favorite",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\Elena_Slayton_Press_kit.png",
+      "name": "Elena_Slayton_Press_kit.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "dr-mariah-slayton",
+      "proximity": "near-lock",
+      "note": "Dr Slayton / Elena press kit — confirm Mariah",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\fe79fcf7-3eaa-483c-8b87-6be99ea84e04.png",
+      "name": "fe79fcf7-3eaa-483c-8b87-6be99ea84e04.png",
+      "status": "design",
+      "kind": "unknown",
+      "character_id": null,
+      "proximity": "open",
+      "note": "orphan — needs eyes",
+      "link": "orphan"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\federstahl map.png",
+      "name": "federstahl map.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\Goilden_Wingers_Interglatic_League_DJ_Parallax.png",
+      "name": "Goilden_Wingers_Interglatic_League_DJ_Parallax.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "dj-parallax",
+      "proximity": "open",
+      "note": "DJ Parallax (was orphan until claimed)",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\Hildebrand the Silk-Cloaked Whisperer - The First Vessel (1147).png",
+      "name": "Hildebrand the Silk-Cloaked Whisperer - The First Vessel (1147).png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "hildebrand-von-hooplehopper",
+      "proximity": "open",
+      "note": "Hildebrand",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\Hildebrand.png",
+      "name": "Hildebrand.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "hildebrand-von-hooplehopper",
+      "proximity": "open",
+      "note": "Hildebrand",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\Hooplehopper Legacy Digest - Copy.jpeg",
+      "name": "Hooplehopper Legacy Digest - Copy.jpeg",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "Lineage digest collage — world/meta",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\Hooplehopper Legacy Digest.jpeg",
+      "name": "Hooplehopper Legacy Digest.jpeg",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "Lineage digest collage — world/meta",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\Hopplehopper kit - Copy.png",
+      "name": "Hopplehopper kit - Copy.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "professor-von-hooplehopper",
+      "proximity": "near-lock",
+      "note": "Professor/Heda design pool",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\Hopplehopper kit.png",
+      "name": "Hopplehopper kit.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "professor-von-hooplehopper",
+      "proximity": "near-lock",
+      "note": "Professor/Heda design pool",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\john archive - Copy.png",
+      "name": "john archive - Copy.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "favorite",
+      "note": "Velvet archive / world mood",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\john archive.png",
+      "name": "john archive.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "favorite",
+      "note": "Velvet archive / world mood",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\Lisette von Hooplehopper - Vogue Editorial.png",
+      "name": "Lisette von Hooplehopper - Vogue Editorial.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "lisette-von-hooplehopper",
+      "proximity": "open",
+      "note": "Lisette / swan-line; swan lake is steward favorite",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\Lisette_Fallen_Madonna.png",
+      "name": "Lisette_Fallen_Madonna.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "lisette-von-hooplehopper",
+      "proximity": "open",
+      "note": "Lisette / swan-line; swan lake is steward favorite",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\lisette_tea.png",
+      "name": "lisette_tea.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "lisette-von-hooplehopper",
+      "proximity": "open",
+      "note": "Lisette / swan-line; swan lake is steward favorite",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\Margarethe the Painted Widow - Keeper of the Mirror Rite (1271).png",
+      "name": "Margarethe the Painted Widow - Keeper of the Mirror Rite (1271).png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "margarethe-von-hooplehopper",
+      "proximity": "open",
+      "note": "Margarethe",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\Margartethe.png",
+      "name": "Margartethe.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "margarethe-von-hooplehopper",
+      "proximity": "open",
+      "note": "Margarethe",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\prarie_mother.png",
+      "name": "prarie_mother.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\Prof_Von_Cabaret._Heda.png",
+      "name": "Prof_Von_Cabaret._Heda.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "professor-von-hooplehopper",
+      "proximity": "near-lock",
+      "note": "Professor/Heda design pool",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\Prof_Von_Cabaret._Heda2.png",
+      "name": "Prof_Von_Cabaret._Heda2.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "professor-von-hooplehopper",
+      "proximity": "near-lock",
+      "note": "Professor/Heda design pool",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\Prof_Von_Cabaret._Heda3.png",
+      "name": "Prof_Von_Cabaret._Heda3.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "professor-von-hooplehopper",
+      "proximity": "near-lock",
+      "note": "Professor/Heda design pool",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\Prof_Von_Cabaret._Heda4.png",
+      "name": "Prof_Von_Cabaret._Heda4.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "professor-von-hooplehopper",
+      "proximity": "near-lock",
+      "note": "Professor/Heda design pool",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\Prof_Von_Cabaret._Heda5.png",
+      "name": "Prof_Von_Cabaret._Heda5.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "professor-von-hooplehopper",
+      "proximity": "near-lock",
+      "note": "Professor/Heda design pool",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\Prof_Von_Cabaret._Heda6.png",
+      "name": "Prof_Von_Cabaret._Heda6.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "professor-von-hooplehopper",
+      "proximity": "near-lock",
+      "note": "Professor/Heda design pool",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\Prof_Von_Cabaret._Heda7.png",
+      "name": "Prof_Von_Cabaret._Heda7.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "professor-von-hooplehopper",
+      "proximity": "near-lock",
+      "note": "Professor/Heda design pool",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\Prof_Von_Cabaret.png",
+      "name": "Prof_Von_Cabaret.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "professor-von-hooplehopper",
+      "proximity": "near-lock",
+      "note": "Professor/Heda design pool",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\Prof_Von_Cabaret2.png",
+      "name": "Prof_Von_Cabaret2.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "professor-von-hooplehopper",
+      "proximity": "near-lock",
+      "note": "Professor/Heda design pool",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\Prof_Von_Close_Up.png",
+      "name": "Prof_Von_Close_Up.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "professor-von-hooplehopper",
+      "proximity": "near-lock",
+      "note": "Professor/Heda design pool",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\Prof_Von_Full_Body_Nuetral.png",
+      "name": "Prof_Von_Full_Body_Nuetral.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "professor-von-hooplehopper",
+      "proximity": "near-lock",
+      "note": "Professor/Heda design pool",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\Prof_Von_Full_Body_Profile_Still.png",
+      "name": "Prof_Von_Full_Body_Profile_Still.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "professor-von-hooplehopper",
+      "proximity": "near-lock",
+      "note": "Professor/Heda design pool",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\Prof_Von_Full_Body_Profile.png",
+      "name": "Prof_Von_Full_Body_Profile.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "professor-von-hooplehopper",
+      "proximity": "near-lock",
+      "note": "Professor/Heda design pool",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\Prof_Von_Full_Body_T.png",
+      "name": "Prof_Von_Full_Body_T.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "professor-von-hooplehopper",
+      "proximity": "near-lock",
+      "note": "Professor/Heda design pool",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\Professor_Arrchive.png",
+      "name": "Professor_Arrchive.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "professor-von-hooplehopper",
+      "proximity": "near-lock",
+      "note": "Professor/Heda design pool",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\Professor_Closeup.png",
+      "name": "Professor_Closeup.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "professor-von-hooplehopper",
+      "proximity": "near-lock",
+      "note": "Professor/Heda design pool",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\rolf_lissette - Copy.jpg",
+      "name": "rolf_lissette - Copy.jpg",
+      "status": "design",
+      "kind": "character",
+      "character_id": "professor-von-hooplehopper",
+      "proximity": "near-lock",
+      "note": "Professor/Heda design pool",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\rolf_lissette.jpg",
+      "name": "rolf_lissette.jpg",
+      "status": "design",
+      "kind": "character",
+      "character_id": "professor-von-hooplehopper",
+      "proximity": "near-lock",
+      "note": "Professor/Heda design pool",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\Runway_Gemini_3_Pro_A_single_character_portrait_featuring_070926.png",
+      "name": "Runway_Gemini_3_Pro_A_single_character_portrait_featuring_070926.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "professor-von-hooplehopper",
+      "proximity": "near-lock",
+      "note": "Runway Gemini professor identity — design",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\Slayton_Press_Kit_lab.png",
+      "name": "Slayton_Press_Kit_lab.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "dr-mariah-slayton",
+      "proximity": "near-lock",
+      "note": "Dr Slayton / Elena press kit — confirm Mariah",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\slaytonia_vuorse_oracle.png",
+      "name": "slaytonia_vuorse_oracle.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "miss-slaytonia-vuorse",
+      "proximity": "open",
+      "note": "VUORSE",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\swan lake.png",
+      "name": "swan lake.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "lisette-von-hooplehopper",
+      "proximity": "favorite",
+      "note": "Lisette / swan-line; swan lake is steward favorite",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\the schloss.png",
+      "name": "the schloss.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\the velvet archivve.png",
+      "name": "the velvet archivve.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "favorite",
+      "note": "Velvet archive / world mood",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\the velvet balance.png",
+      "name": "the velvet balance.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "favorite",
+      "note": "Velvet archive / world mood",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\the velvet wig.png",
+      "name": "the velvet wig.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "favorite",
+      "note": "Velvet archive / world mood",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\The_ProfessorsDreams.png",
+      "name": "The_ProfessorsDreams.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "professor-von-hooplehopper",
+      "proximity": "near-lock",
+      "note": "Professor/Heda design pool",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\The_Viper.png",
+      "name": "The_Viper.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "velma-the-snake-in-silk",
+      "proximity": "open",
+      "note": "assumption: may be Velma — verify",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\thweavergold.jpg",
+      "name": "thweavergold.jpg",
+      "status": "design",
+      "kind": "character",
+      "character_id": "the-weaver",
+      "proximity": "favorite",
+      "note": "Weaver design; thweavergold is steward favorite",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\unnamed.jpg",
+      "name": "unnamed.jpg",
+      "status": "design",
+      "kind": "unknown",
+      "character_id": null,
+      "proximity": "open",
+      "note": "orphan — needs eyes",
+      "link": "orphan"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\velvte archive.png",
+      "name": "velvte archive.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "favorite",
+      "note": "Velvet archive / world mood",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\images\\weaver.png",
+      "name": "weaver.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "the-weaver",
+      "proximity": "open",
+      "note": "Weaver design; thweavergold is steward favorite",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\braided-structure.png",
+      "name": "braided-structure.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\character-jake.png",
+      "name": "character-jake.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "jake-mcullen",
+      "proximity": "open",
+      "note": "Western pitch Jake",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\character-pop.png",
+      "name": "character-pop.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "pop",
+      "proximity": "open",
+      "note": "Pop",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\character-vuorse.png",
+      "name": "character-vuorse.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "miss-slaytonia-vuorse",
+      "proximity": "open",
+      "note": "VUORSE",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\character-weaver.png",
+      "name": "character-weaver.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "the-weaver",
+      "proximity": "open",
+      "note": "Weaver design; thweavergold is steward favorite",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\comp-titles.png",
+      "name": "comp-titles.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\cover.png",
+      "name": "cover.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\emotional-spine.png",
+      "name": "emotional-spine.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\leave-behind.png",
+      "name": "leave-behind.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\pilot-scene.png",
+      "name": "pilot-scene.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\roadmap-schloss.png",
+      "name": "roadmap-schloss.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\season-arc.png",
+      "name": "season-arc.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\tone-mood.png",
+      "name": "tone-mood.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\world-lattice.png",
+      "name": "world-lattice.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\world-wyoming.png",
+      "name": "world-wyoming.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\writers-room.png",
+      "name": "writers-room.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\almodovar\\braided-structure.png",
+      "name": "braided-structure.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\almodovar\\character-jake.png",
+      "name": "character-jake.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "jake-mcullen",
+      "proximity": "open",
+      "note": "Western pitch Jake",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\almodovar\\character-pop.png",
+      "name": "character-pop.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "pop",
+      "proximity": "open",
+      "note": "Pop",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\almodovar\\character-vuorse.png",
+      "name": "character-vuorse.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "miss-slaytonia-vuorse",
+      "proximity": "open",
+      "note": "VUORSE",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\almodovar\\character-weaver.png",
+      "name": "character-weaver.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "the-weaver",
+      "proximity": "open",
+      "note": "Weaver design; thweavergold is steward favorite",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\almodovar\\comp-titles.png",
+      "name": "comp-titles.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\almodovar\\cover.png",
+      "name": "cover.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\almodovar\\emotional-spine.png",
+      "name": "emotional-spine.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\almodovar\\leave-behind.png",
+      "name": "leave-behind.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\almodovar\\pilot-scene.png",
+      "name": "pilot-scene.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\almodovar\\roadmap-schloss.png",
+      "name": "roadmap-schloss.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\almodovar\\season-arc.png",
+      "name": "season-arc.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\almodovar\\tone-mood.png",
+      "name": "tone-mood.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\almodovar\\world-lattice.png",
+      "name": "world-lattice.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\almodovar\\world-wyoming.png",
+      "name": "world-wyoming.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\almodovar\\writers-room.png",
+      "name": "writers-room.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\john-waters\\braided-structure.png",
+      "name": "braided-structure.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\john-waters\\character-jake.png",
+      "name": "character-jake.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "jake-mcullen",
+      "proximity": "open",
+      "note": "Western pitch Jake",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\john-waters\\character-pop.png",
+      "name": "character-pop.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "pop",
+      "proximity": "open",
+      "note": "Pop",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\john-waters\\character-vuorse.png",
+      "name": "character-vuorse.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "miss-slaytonia-vuorse",
+      "proximity": "open",
+      "note": "VUORSE",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\john-waters\\character-weaver.png",
+      "name": "character-weaver.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "the-weaver",
+      "proximity": "open",
+      "note": "Weaver design; thweavergold is steward favorite",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\john-waters\\comp-titles.png",
+      "name": "comp-titles.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\john-waters\\cover.png",
+      "name": "cover.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\john-waters\\emotional-spine.png",
+      "name": "emotional-spine.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\john-waters\\leave-behind.png",
+      "name": "leave-behind.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\john-waters\\pilot-scene.png",
+      "name": "pilot-scene.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\john-waters\\roadmap-schloss.png",
+      "name": "roadmap-schloss.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\john-waters\\season-arc.png",
+      "name": "season-arc.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\john-waters\\tone-mood.png",
+      "name": "tone-mood.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\john-waters\\world-lattice.png",
+      "name": "world-lattice.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\john-waters\\world-wyoming.png",
+      "name": "world-wyoming.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\john-waters\\writers-room.png",
+      "name": "writers-room.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\romero\\braided-structure.png",
+      "name": "braided-structure.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\romero\\character-jake.png",
+      "name": "character-jake.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "jake-mcullen",
+      "proximity": "open",
+      "note": "Western pitch Jake",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\romero\\character-pop.png",
+      "name": "character-pop.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "pop",
+      "proximity": "open",
+      "note": "Pop",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\romero\\character-vuorse.png",
+      "name": "character-vuorse.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "miss-slaytonia-vuorse",
+      "proximity": "open",
+      "note": "VUORSE",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\romero\\character-weaver.png",
+      "name": "character-weaver.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "the-weaver",
+      "proximity": "open",
+      "note": "Weaver design; thweavergold is steward favorite",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\romero\\comp-titles.png",
+      "name": "comp-titles.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\romero\\cover.png",
+      "name": "cover.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\romero\\emotional-spine.png",
+      "name": "emotional-spine.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\romero\\leave-behind.png",
+      "name": "leave-behind.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\romero\\pilot-scene.png",
+      "name": "pilot-scene.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\romero\\roadmap-schloss.png",
+      "name": "roadmap-schloss.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\romero\\season-arc.png",
+      "name": "season-arc.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\romero\\tone-mood.png",
+      "name": "tone-mood.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\romero\\world-lattice.png",
+      "name": "world-lattice.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\romero\\world-wyoming.png",
+      "name": "world-wyoming.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\romero\\writers-room.png",
+      "name": "writers-room.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\tarantino\\braided-structure.png",
+      "name": "braided-structure.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\tarantino\\character-jake.png",
+      "name": "character-jake.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "jake-mcullen",
+      "proximity": "open",
+      "note": "Western pitch Jake",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\tarantino\\character-pop.png",
+      "name": "character-pop.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "pop",
+      "proximity": "open",
+      "note": "Pop",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\tarantino\\character-vuorse.png",
+      "name": "character-vuorse.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "miss-slaytonia-vuorse",
+      "proximity": "open",
+      "note": "VUORSE",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\tarantino\\character-weaver.png",
+      "name": "character-weaver.png",
+      "status": "design",
+      "kind": "character",
+      "character_id": "the-weaver",
+      "proximity": "open",
+      "note": "Weaver design; thweavergold is steward favorite",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\tarantino\\comp-titles.png",
+      "name": "comp-titles.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\tarantino\\cover.png",
+      "name": "cover.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\tarantino\\emotional-spine.png",
+      "name": "emotional-spine.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\tarantino\\leave-behind.png",
+      "name": "leave-behind.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\tarantino\\pilot-scene.png",
+      "name": "pilot-scene.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\tarantino\\roadmap-schloss.png",
+      "name": "roadmap-schloss.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\tarantino\\season-arc.png",
+      "name": "season-arc.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\tarantino\\tone-mood.png",
+      "name": "tone-mood.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\tarantino\\world-lattice.png",
+      "name": "world-lattice.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\tarantino\\world-wyoming.png",
+      "name": "world-wyoming.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    },
+    {
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\rift\\slayverse-pitch-deck\\images\\tarantino\\writers-room.png",
+      "name": "writers-room.png",
+      "status": "design",
+      "kind": "world",
+      "character_id": null,
+      "proximity": "open",
+      "note": "World / deck plate",
+      "link": "linked"
+    }
+  ],
+  "large_caches_not_fully_mapped": [
+    {
+      "note": "Wave 0 root-count only",
+      "path": "D:\\runb\\slay-cortex\\your_project",
+      "image_count": 3879
+    },
+    {
+      "note": "Wave 0 root-count only",
+      "path": "D:\\runb\\slay-cortex\\data",
+      "image_count": 1403
+    },
+    {
+      "note": "secondary; map in follow-up if needed",
+      "path": "C:\\runb2\\VUORSE-VORTEX\\Slayverse\\assets",
+      "image_count": 120
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+[
+  {
+    "from": "mother-wound",
+    "to": "jake-mccullen",
+    "mechanism": "inherited grief unspoken drives containment, denial, and refusal",
+    "sign": "-",
+    "lag": "lifelong into Season 1",
+    "context": "Wyoming wound hierarchy step one",
+    "confidence": "high"
+  },
+  {
+    "from": "wyoming-rift",
+    "to": "mother-wound",
+    "mechanism": "land wound and family silence are the same wound, two faces",
+    "sign": "mixed",
+    "lag": "Season 1 arc",
+    "context": "Powder River / McCullen Ranch; Book One Ch V",
+    "confidence": "high"
+  },
+  {
+    "from": "federstahl-lattice",
+    "to": "wyoming-rift",
+    "mechanism": "ontological deletion / temporal diaspora seeds seven fissures; Wyoming is last active/unclaimed",
+    "sign": "-",
+    "lag": "historical (decades to centuries of aftershock)",
+    "context": "speakable catastrophe layer; hidden sabotage claims remain sealed",
+    "confidence": "high"
+  },
+  {
+    "from": "hooplehopper-soul-line",
+    "to": "mother-wound",
+    "mechanism": "mythology must serve the wound, never outrun it; standing warning trinity",
+    "sign": "+",
+    "lag": "continuous when obeyed",
+    "context": "Book One Ch III–IV; Season 1 operating filter",
+    "confidence": "high"
+  },
+  {
+    "from": "weaver",
+    "to": "vuorse",
+    "mechanism": "HITL gate: draft vessels become VUORSE memory only when Weaver breathes on them",
+    "sign": "+",
+    "lag": "per review cycle",
+    "context": "docs/writers-room/HUMAN_IN_THE_LOOP_QUICKSTART.md; synthetic_enrichment/generated → validated",
+    "confidence": "high"
+  },
+  {
+    "from": "sealed-doors",
+    "to": "forge-engine",
+    "mechanism": "code firewall blocks fact-stating and user-reveal for sealed layers",
+    "sign": "-",
+    "lag": "always",
+    "context": "src/vuorse_vortex/settings.py sealed_categories; firewall.py",
+    "confidence": "high"
+  },
+  {
+    "from": "jake-mccullen",
+    "to": "mother-wound",
+    "mechanism": "every Season 1 story choice must move Jake closer to speaking his mother's name aloud",
+    "sign": "+",
+    "lag": "episode to season",
+    "context": "Book One Ch IX load-bearing filter; season-1-spine.md",
+    "confidence": "high"
+  }
+]
