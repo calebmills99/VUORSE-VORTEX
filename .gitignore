@@ -1,69 +1,29 @@
-# Python
-__pycache__/
-*.py[cod]
-*.egg-info/
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
-.venv/
-venv/
+# Runtime state (machine-specific)
+state/session.json
+state/inventory.json
 
-# macOS
+# Project outputs (large/personal)
+projects/*/outputs/
+projects/*/assets/
+
+# Claude Code internals
+.claude/settings.local.json
+
+# Private source material retained outside agent context
+.agent-quarantine/
+
+# OS
+Thumbs.db
+Desktop.ini
 .DS_Store
-.AppleDouble
-._*
 
-# Local app/session state
-.frolic-*.json
-.frolic-session.json
-vuorse_vortex_bootstrap.zip
+# Editor
+.vscode/
+*.swp
+*.swo
+*~
 
-# Secrets
+# Environment
 .env
 .env.*
-!.env.example
-config.local.*
-*_secret.*
-*_secrets.*
-
-# Runtime data
-node_modules/
-embeddings/output/*
-embeddings/indexes/*
-!embeddings/output/.gitkeep
-!embeddings/indexes/.gitkeep
-
-# Large generated artifacts
-*.parquet
-*.faiss
-*.bin
-*.safetensors
-*.pt
-*.ckpt
-*.sqlite
-*.sqlite3
-chromadb/
-
-# Logs / temp
-logs/
-tmp/
-*.log
-*.tmp
-
-# Private local-only scratch
-scratch/
-local_data/
-*.rtf
-
-# Root Vite scaffold drift; real apps live in frontend/ and vuorse-vortex/
-/index.html
-/eslint.config.js
-/public/
-/src/App.css
-/src/App.tsx
-/src/assets/
-/src/index.css
-/src/main.tsx
-/tsconfig.app.json
-/tsconfig.json
-/tsconfig.node.json
+.env.example
