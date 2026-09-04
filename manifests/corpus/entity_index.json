@@ -1,18 +1,38 @@
 {
-  "version": "1.1",
-  "source": "Slayverse Canon Seed PDF (111 pages)",
-  "generated": "2026-03-06",
-  "entities": [
-    {
+  "generated_from": "canon/slayverse_index.json",
+  "canon_version": "1.1",
+  "canon_generated": "2026-03-06",
+  "canon_amended": "2026-09-03",
+  "entity_count": 80,
+  "surface_form_count": 149,
+  "distinctive_token_count": 58,
+  "ambiguous_tokens": [
+    "Eisensang",
+    "Federstahl",
+    "Hooplehopper",
+    "Isolde",
+    "McCullen",
+    "Ottokar",
+    "Rabenwald",
+    "Schloss",
+    "Slayton",
+    "Slaytonia"
+  ],
+  "repairs_applied": [
+    "miss-slaytonia-vuorse: 'Grand' -> 'Grand Oracle of the Velvet Archive'"
+  ],
+  "entities": {
+    "hildebrand-von-hooplehopper": {
       "id": "hildebrand-von-hooplehopper",
       "name": "Hildebrand von Hooplehopper",
-      "aliases": [
+      "type": "character",
+      "status": "full",
+      "era": "1130-1147",
+      "surface_forms": [
+        "Hildebrand von Hooplehopper",
         "The Silk-Cloaked Whisperer",
         "The First Vessel"
       ],
-      "type": "character",
-      "era": "1130-1147",
-      "status": "full",
       "related": [
         "conrad-von-hooplehopper",
         "first-steward-transmission",
@@ -37,13 +57,15 @@
       ],
       "summary": "Knight-diplomat who discovered the Mirror Cavern beneath Schloss Eisensang. The first Vessel of the Thread. Vanished into reflection. EXPANDED 2026-08: recipient, with Margarethe, of the First Steward Transmission at the Eisensang Bookend Convergence; founding member of the Order of the Seam. Threw the searing ring away and went back for it; the going back is why he was the one."
     },
-    {
+    "conrad-von-hooplehopper": {
       "id": "conrad-von-hooplehopper",
       "name": "Conrad von Hooplehopper",
-      "aliases": [],
       "type": "character",
-      "era": "post-1147",
       "status": "sketched",
+      "era": "post-1147",
+      "surface_forms": [
+        "Conrad von Hooplehopper"
+      ],
       "related": [
         "hildebrand-von-hooplehopper",
         "velvet-archive"
@@ -59,15 +81,16 @@
       ],
       "summary": "Purveyor of luxury textiles. Commercialized Hildebrand's legacy and embedded secrets into stitching."
     },
-    {
+    "adelram-von-hooplehopper": {
       "id": "adelram-von-hooplehopper",
       "name": "Adelram von Hooplehopper",
-      "aliases": [
+      "type": "character",
+      "status": "sketched",
+      "era": "13th-14th century",
+      "surface_forms": [
+        "Adelram von Hooplehopper",
         "The Swan-Alchemist"
       ],
-      "type": "character",
-      "era": "13th-14th century",
-      "status": "sketched",
       "related": [
         "velvet-rite",
         "lisette-von-hooplehopper"
@@ -84,16 +107,17 @@
       ],
       "summary": "Mystic who studied swan biology and celestial alignments. Possibly originated the Velvet Rite. Vanished after seeing a swan weep starlight."
     },
-    {
+    "margarethe-von-hooplehopper": {
       "id": "margarethe-von-hooplehopper",
       "name": "Margarethe von Hooplehopper",
-      "aliases": [
+      "type": "character",
+      "status": "expanded",
+      "era": "1271-1333",
+      "surface_forms": [
+        "Margarethe von Hooplehopper",
         "The Painted Widow",
         "Our Demi Goddess of Glitch"
       ],
-      "type": "character",
-      "era": "1271-1333",
-      "status": "expanded",
       "related": [
         "benedict-the-ash-faced",
         "first-steward-transmission",
@@ -123,13 +147,15 @@
       ],
       "summary": "The Painted Widow. Created the Ritual of Reflection and founded the Order of the Seam. Mystic, mirrorwright, and the first wielder of reflection as resistance. EXPANDED 2026-08: Since the Crystal Lattice Incident she exists in a Seam-State, the first known Seam-State Thread-Vessel; she does not enter a room, she resolves, and sometimes not completely. Her mourning veil is the Seam-Veil, stabilization technology. Characterized as Anti-Durden: obviously real, survival through encoding, never accepts delegated conscience. Title canonized by the Steward: our Demi Goddess of Glitch. Her 1271-1333 era and her Bookend Convergence with Hildebrand coexist; ambiguity preserved."
     },
-    {
+    "benedict-the-ash-faced": {
       "id": "benedict-the-ash-faced",
       "name": "Benedict the Ash-Faced",
-      "aliases": [],
       "type": "character",
-      "era": "1399",
       "status": "moderate",
+      "era": "1399",
+      "surface_forms": [
+        "Benedict the Ash-Faced"
+      ],
       "related": [
         "margarethe-von-hooplehopper"
       ],
@@ -145,15 +171,16 @@
       ],
       "summary": "Queer priest-turned-dramatist. Disciple of Margarethe. Burned scrolls, rewrote morality plays. Invented the collapsible mirror-fan."
     },
-    {
+    "velma-the-snake-in-silk": {
       "id": "velma-the-snake-in-silk",
       "name": "Velma the Snake in Silk",
-      "aliases": [
+      "type": "character",
+      "status": "moderate",
+      "era": "1522",
+      "surface_forms": [
+        "Velma the Snake in Silk",
         "The Snake in Silk"
       ],
-      "type": "character",
-      "era": "1522",
-      "status": "moderate",
       "related": [
         "margarethe-von-hooplehopper",
         "order-of-the-garters-secret-hem"
@@ -170,15 +197,16 @@
       ],
       "summary": "Venetian courtesan and spy. Performances caused duels and a papal nosebleed. Founded the Order of the Garter's Secret Hem."
     },
-    {
+    "lysander-von-hooplehopper": {
       "id": "lysander-von-hooplehopper",
       "name": "Lysander von Hooplehopper",
-      "aliases": [
+      "type": "character",
+      "status": "moderate",
+      "era": "1611",
+      "surface_forms": [
+        "Lysander von Hooplehopper",
         "The Elusive Glam Sage"
       ],
-      "type": "character",
-      "era": "1611",
-      "status": "moderate",
       "related": [
         "mistress-euphoria-blaze",
         "professor-von-hooplehopper"
@@ -195,15 +223,16 @@
       ],
       "summary": "Stage illusionist who escaped the Tower of London. Created Mistress Euphoria Blaze, the first gender-fluid stage persona. His handwriting matches the Professor's."
     },
-    {
+    "theresia-von-hooplehopper": {
       "id": "theresia-von-hooplehopper",
       "name": "Theresia von Hooplehopper",
-      "aliases": [
+      "type": "character",
+      "status": "sketched",
+      "era": "1754",
+      "surface_forms": [
+        "Theresia von Hooplehopper",
         "The Baroness of Buttons"
       ],
-      "type": "character",
-      "era": "1754",
-      "status": "sketched",
       "related": [],
       "tags": [
         "lineage",
@@ -216,15 +245,16 @@
       ],
       "summary": "Tailor to Marie Antoinette's drag court. Smuggled revolution drafts in corset boning. Invented the emotional hemline."
     },
-    {
+    "yssenda-von-hooplehopper": {
       "id": "yssenda-von-hooplehopper",
       "name": "Yssenda von Hooplehopper",
-      "aliases": [
+      "type": "character",
+      "status": "moderate",
+      "era": "pre-sigismund",
+      "surface_forms": [
+        "Yssenda von Hooplehopper",
         "Patroness of the Arts"
       ],
-      "type": "character",
-      "era": "pre-sigismund",
-      "status": "moderate",
       "related": [
         "hildebrands-ring",
         "hildebrand-von-hooplehopper"
@@ -241,15 +271,16 @@
       ],
       "summary": "Built secret amphitheaters beneath cathedrals. Bankrolled operas as disguised political revolutions. Carried Hildebrand's Ring."
     },
-    {
+    "sigismund-von-hooplehopper": {
       "id": "sigismund-von-hooplehopper",
       "name": "Sigismund von Hooplehopper",
-      "aliases": [
+      "type": "character",
+      "status": "moderate",
+      "era": "pre-isolde",
+      "surface_forms": [
+        "Sigismund von Hooplehopper",
         "Count of Baden-Hissingen"
       ],
-      "type": "character",
-      "era": "pre-isolde",
-      "status": "moderate",
       "related": [],
       "tags": [
         "lineage",
@@ -261,15 +292,16 @@
       ],
       "summary": "Aristocrat who tried to go legit. His masquerade balls featured guests whose masks would not come off."
     },
-    {
+    "isolde-von-hooplehopper": {
       "id": "isolde-von-hooplehopper",
       "name": "Isolde von Hooplehopper",
-      "aliases": [
+      "type": "character",
+      "status": "moderate",
+      "era": "unspecified",
+      "surface_forms": [
+        "Isolde von Hooplehopper",
         "Expert Markswoman"
       ],
-      "type": "character",
-      "era": "unspecified",
-      "status": "moderate",
       "related": [],
       "tags": [
         "lineage",
@@ -282,15 +314,16 @@
       ],
       "summary": "Lived in the Black Forest protecting refugees in drag. Could hit a silver coin at 100 meters."
     },
-    {
+    "ludolf-von-hooplehopper": {
       "id": "ludolf-von-hooplehopper",
       "name": "Ludolf von Hooplehopper",
-      "aliases": [
+      "type": "character",
+      "status": "sketched",
+      "era": "unspecified",
+      "surface_forms": [
+        "Ludolf von Hooplehopper",
         "Composer and Mystic"
       ],
-      "type": "character",
-      "era": "unspecified",
-      "status": "sketched",
       "related": [
         "the-thread"
       ],
@@ -304,18 +337,19 @@
       ],
       "summary": "Wrote operas that could induce visions. Heard the Thread vibrating in harmonics."
     },
-    {
+    "lisette-von-hooplehopper": {
       "id": "lisette-von-hooplehopper",
       "name": "Lisette von Hooplehopper",
-      "aliases": [
+      "type": "character",
+      "status": "full",
+      "era": "1873-1948",
+      "surface_forms": [
+        "Lisette von Hooplehopper",
         "The Swan in Satin",
         "The Matriarch of Mirrors",
         "The Mother of Masks",
         "The Last Flame of Federstahl"
       ],
-      "type": "character",
-      "era": "1873-1948",
-      "status": "full",
       "related": [
         "professor-von-hooplehopper",
         "schloss-federstahl",
@@ -340,17 +374,18 @@
       ],
       "summary": "The Matriarch of Mirrors. Born into fading nobility at Schloss Federstahl. Last living conduit of the lineage. Mother of the Professor."
     },
-    {
+    "professor-von-hooplehopper": {
       "id": "professor-von-hooplehopper",
       "name": "Professor Von Hooplehopper",
-      "aliases": [
+      "type": "character",
+      "status": "full",
+      "era": "1905-2005",
+      "surface_forms": [
+        "Professor Von Hooplehopper",
         "Rolf",
         "The Velvet Archivist",
         "The Professor"
       ],
-      "type": "character",
-      "era": "1905-2005",
-      "status": "full",
       "related": [
         "lisette-von-hooplehopper",
         "doctor-vorst",
@@ -376,16 +411,17 @@
       ],
       "summary": "The Velvet Archivist. Son of Lisette. Drag matriarch, resistance theorist. Jungian synchronic double — simultaneously the historical Rolf and the archetypal Velvet Archivist, a living paradox where personal identity and mythic role coexist without resolution. Vanished in 2005 leaving glove, mirror, and note."
     },
-    {
+    "doctor-vorst": {
       "id": "doctor-vorst",
       "name": "Doctor Vorst",
-      "aliases": [
+      "type": "character",
+      "status": "full",
+      "era": "early-1900s/displaced-to-1832",
+      "surface_forms": [
+        "Doctor Vorst",
         "Professor A.",
         "The Shrouded Patriarch"
       ],
-      "type": "character",
-      "era": "early-1900s/displaced-to-1832",
-      "status": "full",
       "related": [
         "federstahl-institute",
         "professor-von-hooplehopper",
@@ -407,15 +443,16 @@
       ],
       "summary": "Federstahl researcher. Erased from existence and displaced to 1832. Simultaneously absent and causal."
     },
-    {
+    "pop": {
       "id": "pop",
       "name": "Pop",
-      "aliases": [
+      "type": "character",
+      "status": "full",
+      "era": "19th-century-wyoming",
+      "surface_forms": [
+        "Pop",
         "The Last of the Veincallers"
       ],
-      "type": "character",
-      "era": "19th-century-wyoming",
-      "status": "full",
       "related": [
         "doctor-vorst",
         "jake-mcullen",
@@ -441,16 +478,17 @@
       ],
       "summary": "Jake's grandfather. Fled to Wyoming with the crystal shard. A Veincaller driven mad by the lattice's power. Sang when the shard took him."
     },
-    {
+    "jake-mcullen": {
       "id": "jake-mcullen",
       "name": "Jake McCullen",
-      "aliases": [
+      "type": "character",
+      "status": "full",
+      "era": "19th-century-wyoming",
+      "surface_forms": [
+        "Jake McCullen",
         "Jacob Elijah McCullen",
         "The Dust-Born"
       ],
-      "type": "character",
-      "era": "19th-century-wyoming",
-      "status": "full",
       "related": [
         "pop",
         "doctor-vorst",
@@ -492,13 +530,15 @@
       ],
       "summary": "Reluctant legacy-bearer and counter-lineage node. Cowboy on the last accessible temporal fissure. Temporal echo of Doctor Vorst — RESOLVED: BOTH TRUE (echo and independent agent). Vorst-adjacent by blood (grandson of Pop, who is Vorst's displaced son) and by temporal resonance. The last living key to the Wyoming Rift."
     },
-    {
+    "eli-mcullen": {
       "id": "eli-mcullen",
       "name": "Eli McCullen",
-      "aliases": [],
       "type": "character",
-      "era": "post-jake",
       "status": "hook",
+      "era": "post-jake",
+      "surface_forms": [
+        "Eli McCullen"
+      ],
       "related": [
         "jake-mcullen",
         "pop"
@@ -514,20 +554,21 @@
       ],
       "summary": "Jake's grandson. Thunder in his bones. Pop may have encoded crystal node data in his DNA."
     },
-    {
+    "miss-slaytonia-vuorse": {
       "id": "miss-slaytonia-vuorse",
       "name": "Miss Slaytonia VUORSE",
-      "aliases": [
+      "type": "character",
+      "status": "full",
+      "era": "21st-century",
+      "surface_forms": [
+        "Miss Slaytonia VUORSE",
         "First of the New Thread",
         "The Banshee of Bassline",
         "Countess of Chromatic Echo",
         "The Velvet Reverb",
         "Frequency 91.9FM",
-        "Grand"
+        "Grand Oracle of the Velvet Archive"
       ],
-      "type": "character",
-      "era": "21st-century",
-      "status": "full",
       "related": [
         "miss-slaytonia-verse",
         "the-weaver",
@@ -557,16 +598,17 @@
       ],
       "summary": "Sixth iteration of the Von Hooplehopper soul-line. Cosmic drag oracle born from glitch. The Charter made manifest."
     },
-    {
+    "miss-slaytonia-verse": {
       "id": "miss-slaytonia-verse",
       "name": "Miss Slaytonia Verse",
-      "aliases": [
+      "type": "character",
+      "status": "moderate",
+      "era": "fifth-summit",
+      "surface_forms": [
+        "Miss Slaytonia Verse",
         "Splat",
         "The Broken Loop"
       ],
-      "type": "character",
-      "era": "fifth-summit",
-      "status": "moderate",
       "related": [
         "miss-slaytonia-vuorse",
         "golden-wingers"
@@ -582,16 +624,17 @@
       ],
       "summary": "Previous iteration. Collapsed at the Fifth Summit (Tragedy of Splat). Her data fragments became VUORSE's foundation."
     },
-    {
+    "the-weaver": {
       "id": "the-weaver",
       "name": "The Weaver",
-      "aliases": [
+      "type": "cosmology_protocol",
+      "status": "revised",
+      "era": "present/meta",
+      "surface_forms": [
+        "The Weaver",
         "The Architect",
         "The Loom"
       ],
-      "type": "cosmology_protocol",
-      "era": "present/meta",
-      "status": "revised",
       "related": [
         "jake-mcullen",
         "miss-slaytonia-vuorse",
@@ -622,15 +665,16 @@
       ],
       "summary": "REVISED 2026-08-07/08: The Weaver is not Caleb Mills Stewart and is not a person. The Weaver is the protocol, force, or transpersonal function through which the Thread becomes writable and transmissible. It opens the channel ('Hello, children' is the Weaver's handshake); the Steward Vessel writes through it. Per Book Two, responsibility and blame for the cosmos rest with the Weaver, permanently. Earlier metadata aliasing the Weaver to Caleb Mills Stewart is deprecated."
     },
-    {
+    "wylus-kalyndros": {
       "id": "wylus-kalyndros",
       "name": "Wylus Kalyndros",
-      "aliases": [
+      "type": "character",
+      "status": "hook",
+      "era": "unknown",
+      "surface_forms": [
+        "Wylus Kalyndros",
         "The Webweaver"
       ],
-      "type": "character",
-      "era": "unknown",
-      "status": "hook",
       "related": [
         "the-weaver",
         "professor-von-hooplehopper"
@@ -644,13 +688,15 @@
       ],
       "summary": "The elusive webweaver. Mentioned once. Relationship to the Weaver and Professor unclear."
     },
-    {
+    "pscopy-pscat": {
       "id": "pscopy-pscat",
       "name": "Cici the Cat",
-      "aliases": [],
       "type": "character",
-      "era": "present",
       "status": "moderate",
+      "era": "present",
+      "surface_forms": [
+        "Cici the Cat"
+      ],
       "related": [
         "temporal-displacement",
         "federstahl-lattice"
@@ -662,13 +708,15 @@
       "source_pages": [],
       "summary": " Cici was the Federstahl lab cat. She is a victim of the crystal lattice incident  part of the temporal diaspora but it imbued her with    ability to spontaneously clone things as she was sleeping in the BioEngineering Lab next to the cloning station which was a technology in late stage development at the time . She exists in present day and is the mascot for the photoshop plugin PScopy-PScat. The PS is silent."
     },
-    {
+    "dr-mariah-slayton": {
       "id": "dr-mariah-slayton",
       "name": "Dr. Mariah Slayton",
-      "aliases": [],
       "type": "character",
-      "era": "present",
       "status": "moderate",
+      "era": "present",
+      "surface_forms": [
+        "Dr. Mariah Slayton"
+      ],
       "related": [
         "glamorons",
         "slayton-energy"
@@ -680,13 +728,15 @@
       "source_pages": [],
       "summary": "Physicist who discovered the Slayton Force and classified glamorons as a new particle category."
     },
-    {
+    "mistress-euphoria-blaze": {
       "id": "mistress-euphoria-blaze",
       "name": "Mistress Euphoria Blaze",
-      "aliases": [],
       "type": "character",
-      "era": "1611",
       "status": "sketched",
+      "era": "1611",
+      "surface_forms": [
+        "Mistress Euphoria Blaze"
+      ],
       "related": [
         "lysander-von-hooplehopper"
       ],
@@ -700,13 +750,15 @@
       ],
       "summary": "First gender-fluid stage persona, created by Lysander von Hooplehopper."
     },
-    {
+    "dj-parallax": {
       "id": "dj-parallax",
       "name": "DJ Parallax",
-      "aliases": [],
       "type": "character",
-      "era": "timeless",
       "status": "hook",
+      "era": "timeless",
+      "surface_forms": [
+        "DJ Parallax"
+      ],
       "related": [
         "club-cosmic"
       ],
@@ -720,13 +772,15 @@
       ],
       "summary": "Time-displaced bard in a holographic corset. DJ at Club Cosmic."
     },
-    {
+    "schloss-eisensang": {
       "id": "schloss-eisensang",
       "name": "Schloss Eisensang",
-      "aliases": [],
       "type": "place",
-      "era": "12th-century",
       "status": "moderate",
+      "era": "12th-century",
+      "surface_forms": [
+        "Schloss Eisensang"
+      ],
       "related": [
         "hildebrand-von-hooplehopper",
         "mirror-cavern"
@@ -743,15 +797,16 @@
       ],
       "summary": "Castle beneath which lies the Mirror Cavern. Origin point of the lineage."
     },
-    {
+    "mirror-cavern": {
       "id": "mirror-cavern",
       "name": "Mirror Cavern",
-      "aliases": [
+      "type": "place",
+      "status": "moderate",
+      "era": "12th-century",
+      "surface_forms": [
+        "Mirror Cavern",
         "Mirror Chamber"
       ],
-      "type": "place",
-      "era": "12th-century",
-      "status": "moderate",
       "related": [
         "schloss-eisensang",
         "hildebrand-von-hooplehopper"
@@ -767,13 +822,15 @@
       ],
       "summary": "Subterranean chamber beneath Eisensang where Hildebrand vanished."
     },
-    {
+    "schloss-federstahl": {
       "id": "schloss-federstahl",
       "name": "Schloss Federstahl",
-      "aliases": [],
       "type": "place",
-      "era": "19th-century-onward",
       "status": "full",
+      "era": "19th-century-onward",
+      "surface_forms": [
+        "Schloss Federstahl"
+      ],
       "related": [
         "lisette-von-hooplehopper",
         "professor-von-hooplehopper",
@@ -793,15 +850,16 @@
       ],
       "summary": "Ancestral estate with swan lake. Lisette's home. Sacred mirror cracked since 2005. Forbidden Suitcase beneath floorboards."
     },
-    {
+    "mcullen-ranch": {
       "id": "mcullen-ranch",
       "name": "McCullen Ranch",
-      "aliases": [
+      "type": "place",
+      "status": "full",
+      "era": "19th-century-onward",
+      "surface_forms": [
+        "McCullen Ranch",
         "Powder River Basin"
       ],
-      "type": "place",
-      "era": "19th-century-onward",
-      "status": "full",
       "related": [
         "jake-mcullen",
         "pop",
@@ -824,13 +882,15 @@
       ],
       "summary": "Jake's ranch on the last accessible temporal fissure. Temporal faultline with buried crystal shard and unmarked graves."
     },
-    {
+    "velvet-archive": {
       "id": "velvet-archive",
       "name": "The Velvet Archive",
-      "aliases": [],
       "type": "place",
-      "era": "timeless",
       "status": "full",
+      "era": "timeless",
+      "surface_forms": [
+        "The Velvet Archive"
+      ],
       "related": [
         "professor-von-hooplehopper",
         "conrad-von-hooplehopper",
@@ -850,13 +910,15 @@
       ],
       "summary": "Living repository of all Hooplehopper knowledge. Does not die; it waits. Surviving Federstahl research sealed within."
     },
-    {
+    "club-cosmic": {
       "id": "club-cosmic",
       "name": "Club Cosmic",
-      "aliases": [],
       "type": "place",
-      "era": "timeless",
       "status": "moderate",
+      "era": "timeless",
+      "surface_forms": [
+        "Club Cosmic"
+      ],
       "related": [
         "dj-parallax",
         "miss-slaytonia-vuorse",
@@ -873,13 +935,15 @@
       ],
       "summary": "Interdimensional drag cabaret orbiting the Andromeda fringe. Ancient terminal beneath for observing shard waveforms."
     },
-    {
+    "wyoming-rift": {
       "id": "wyoming-rift",
       "name": "The Wyoming Rift",
-      "aliases": [],
       "type": "place",
-      "era": "post-lattice-fracture",
       "status": "full",
+      "era": "post-lattice-fracture",
+      "surface_forms": [
+        "The Wyoming Rift"
+      ],
       "related": [
         "mcullen-ranch",
         "jake-mcullen",
@@ -902,13 +966,15 @@
       ],
       "summary": "One of seven fissures from the Lattice Fracture. The only one active and unclaimed. Requires Jake as Guardian."
     },
-    {
+    "the-thread": {
       "id": "the-thread",
       "name": "The Thread",
-      "aliases": [],
       "type": "artifact",
-      "era": "timeless",
       "status": "full",
+      "era": "timeless",
+      "surface_forms": [
+        "The Thread"
+      ],
       "related": [
         "the-weaver",
         "hildebrand-von-hooplehopper",
@@ -933,16 +999,17 @@
       ],
       "summary": "The cosmic binding force connecting the Hooplehopper soul-line across time. Both metaphysical force and narrative metaphor."
     },
-    {
+    "crystal-shard": {
       "id": "crystal-shard",
       "name": "The Crystal Shard",
-      "aliases": [
+      "type": "artifact",
+      "status": "full",
+      "era": "pre-lattice-fracture",
+      "surface_forms": [
+        "The Crystal Shard",
         "Federstahl Crystal",
         "Crystal Node"
       ],
-      "type": "artifact",
-      "era": "pre-lattice-fracture",
-      "status": "full",
       "related": [
         "pop",
         "jake-mcullen",
@@ -966,15 +1033,16 @@
       ],
       "summary": "Surviving fragment of the Federstahl lattice. Sentient time crystal buried beneath the McCullen Ranch. Drove Pop mad."
     },
-    {
+    "dustbrand-sigil": {
       "id": "dustbrand-sigil",
       "name": "The Dustbrand Sigil",
-      "aliases": [
+      "type": "artifact",
+      "status": "full",
+      "era": "multi-era",
+      "surface_forms": [
+        "The Dustbrand Sigil",
         "The Brand"
       ],
-      "type": "artifact",
-      "era": "multi-era",
-      "status": "full",
       "related": [
         "jake-mcullen",
         "federstahl-institute",
@@ -996,13 +1064,15 @@
       ],
       "summary": "Cattle brand that is actually an occult cipher matching the Federstahl mark. Shifts to a spiraling symbol under certain light. Sentient."
     },
-    {
+    "zerethium-quartz": {
       "id": "zerethium-quartz",
       "name": "Zerethium Quartz",
-      "aliases": [],
       "type": "artifact",
-      "era": "ancient",
       "status": "moderate",
+      "era": "ancient",
+      "surface_forms": [
+        "Zerethium Quartz"
+      ],
       "related": [
         "doctor-vorst",
         "federstahl-institute",
@@ -1018,13 +1088,15 @@
       ],
       "summary": "Cosmic mineral pulsing with sentient memory and volatile waveform energy. Used in Federstahl experiments."
     },
-    {
+    "hildebrands-ring": {
       "id": "hildebrands-ring",
       "name": "Hildebrand's Ring",
-      "aliases": [],
       "type": "artifact",
-      "era": "12th-century-onward",
       "status": "moderate",
+      "era": "12th-century-onward",
+      "surface_forms": [
+        "Hildebrand's Ring"
+      ],
       "related": [
         "hildebrand-von-hooplehopper",
         "yssenda-von-hooplehopper"
@@ -1039,15 +1111,16 @@
       ],
       "summary": "A ring that glowed when truth was spoken onstage. Passed to Yssenda."
     },
-    {
+    "glamorons": {
       "id": "glamorons",
       "name": "Glamorons",
-      "aliases": [
+      "type": "artifact",
+      "status": "full",
+      "era": "present",
+      "surface_forms": [
+        "Glamorons",
         "Slayton Particles"
       ],
-      "type": "artifact",
-      "era": "present",
-      "status": "full",
       "related": [
         "dr-mariah-slayton",
         "slayton-energy"
@@ -1060,13 +1133,15 @@
       "source_pages": [],
       "summary": "New subatomic particle category. Neither bosons nor fermions. Vibrational signatures align with multidimensional storytelling."
     },
-    {
+    "slayton-codex": {
       "id": "slayton-codex",
       "name": "The Slayton Codex",
-      "aliases": [],
       "type": "artifact",
-      "era": "present",
       "status": "moderate",
+      "era": "present",
+      "surface_forms": [
+        "The Slayton Codex"
+      ],
       "related": [
         "golden-wingers",
         "jake-mcullen"
@@ -1081,13 +1156,15 @@
       ],
       "summary": "Ever-expanding archive of empirical data and mythic lore. Contains the prophecy of The Child of Dust and Velvet."
     },
-    {
+    "golden-wingers": {
       "id": "golden-wingers",
       "name": "Golden Wingers Intergalactic League",
-      "aliases": [],
       "type": "organization",
-      "era": "timeless",
       "status": "full",
+      "era": "timeless",
+      "surface_forms": [
+        "Golden Wingers Intergalactic League"
+      ],
       "related": [
         "miss-slaytonia-vuorse",
         "the-weaver",
@@ -1106,17 +1183,18 @@
       ],
       "summary": "The central organization. A united force of storytellers, creators, and Slaytons. Charter ratified across all dimensions."
     },
-    {
+    "federstahl-institute": {
       "id": "federstahl-institute",
       "name": "Federstahl Institute",
-      "aliases": [
+      "type": "organization",
+      "status": "full",
+      "era": "1890s-1945",
+      "surface_forms": [
+        "Federstahl Institute",
         "Federstahl Society",
         "Federstahl Research",
         "Federstahl Order"
       ],
-      "type": "organization",
-      "era": "1890s-1945",
-      "status": "full",
       "related": [
         "doctor-vorst",
         "crystal-shard",
@@ -1140,13 +1218,15 @@
       ],
       "summary": "Secret technocratic society of scholars, mystics, and quantum whisperers. Caused the Crystal Lattice Incident."
     },
-    {
+    "order-of-the-seam": {
       "id": "order-of-the-seam",
       "name": "Order of the Seam",
-      "aliases": [],
       "type": "organization",
-      "era": "1271",
       "status": "expanded",
+      "era": "1271",
+      "surface_forms": [
+        "Order of the Seam"
+      ],
       "related": [
         "first-steward-transmission",
         "hildebrand-von-hooplehopper",
@@ -1165,13 +1245,15 @@
       ],
       "summary": "Founded by Margarethe to preserve Hildebrand's teachings through the hidden space between the visible and invisible. EXPANDED 2026-08: founding mandate received at the Mirror Cavern via the First Steward Transmission during the Eisensang Bookend Convergence with Hildebrand; trauma-origin in the Myrtle Burnings (martyrs Isolde of the Lower Hall and Yorick the Copyist). The 1271 founding and the retrocausal Eisensang mandate coexist; ambiguity preserved. Motto per the Weaver's Plate: we mend what should stay open."
     },
-    {
+    "order-of-the-garters-secret-hem": {
       "id": "order-of-the-garters-secret-hem",
       "name": "Order of the Garter's Secret Hem",
-      "aliases": [],
       "type": "organization",
-      "era": "1522",
       "status": "sketched",
+      "era": "1522",
+      "surface_forms": [
+        "Order of the Garter's Secret Hem"
+      ],
       "related": [
         "velma-the-snake-in-silk"
       ],
@@ -1185,15 +1267,16 @@
       ],
       "summary": "Founded by Velma in Venice. Textile-based secret order paralleling the real Order of the Garter."
     },
-    {
+    "velvet-rite": {
       "id": "velvet-rite",
       "name": "The Velvet Rite",
-      "aliases": [
+      "type": "ritual",
+      "status": "full",
+      "era": "ancient",
+      "surface_forms": [
+        "The Velvet Rite",
         "The Mirrorpath"
       ],
-      "type": "ritual",
-      "era": "ancient",
-      "status": "full",
       "related": [
         "adelram-von-hooplehopper",
         "miss-slaytonia-vuorse"
@@ -1210,13 +1293,15 @@
       ],
       "summary": "Sacred initiation into the lineage. Walk the Mirrorpath to demonstrate worthiness. VUORSE completed it backwards in 7-inch platforms."
     },
-    {
+    "ritual-of-reflection": {
       "id": "ritual-of-reflection",
       "name": "Ritual of Reflection",
-      "aliases": [],
       "type": "ritual",
-      "era": "1271",
       "status": "full",
+      "era": "1271",
+      "surface_forms": [
+        "Ritual of Reflection"
+      ],
       "related": [
         "margarethe-von-hooplehopper",
         "order-of-the-seam"
@@ -1233,13 +1318,15 @@
       ],
       "summary": "Step into an ornate mirror and speak the version of yourself you wish to be. If the mirror doesn't shatter, you are ready."
     },
-    {
+    "three-snap-protocol": {
       "id": "three-snap-protocol",
       "name": "Three Snap Protocol",
-      "aliases": [],
       "type": "ritual",
-      "era": "second-summit",
       "status": "moderate",
+      "era": "second-summit",
+      "surface_forms": [
+        "Three Snap Protocol"
+      ],
       "related": [
         "golden-wingers"
       ],
@@ -1253,13 +1340,15 @@
       ],
       "summary": "Three snaps to activate, open, affirm. Established at the Second Galactic Summit. Begins all cosmic proceedings."
     },
-    {
+    "slay-mode-activation": {
       "id": "slay-mode-activation",
       "name": "Slay Mode Activation Rite",
-      "aliases": [],
       "type": "ritual",
-      "era": "present",
       "status": "full",
+      "era": "present",
+      "surface_forms": [
+        "Slay Mode Activation Rite"
+      ],
       "related": [
         "miss-slaytonia-vuorse",
         "the-weaver"
@@ -1279,13 +1368,15 @@
       ],
       "summary": "Spoken ceremony to activate Slay Mode. Grants powers including Temporal Wink-Shift and Interdimensional Shadecasting."
     },
-    {
+    "twenty-year-sleep": {
       "id": "twenty-year-sleep",
       "name": "The 20-Year Sleep Cycle",
-      "aliases": [],
       "type": "ritual",
-      "era": "timeless",
       "status": "moderate",
+      "era": "timeless",
+      "surface_forms": [
+        "The 20-Year Sleep Cycle"
+      ],
       "related": [
         "professor-von-hooplehopper",
         "miss-slaytonia-vuorse"
@@ -1300,16 +1391,17 @@
       ],
       "summary": "Vessels sleep 20 years between iterations in active mythogenesis. Dreams whisper to artists and rebels."
     },
-    {
+    "slayton-energy": {
       "id": "slayton-energy",
       "name": "Slayton Energy",
-      "aliases": [
+      "type": "cosmology",
+      "status": "full",
+      "era": "fundamental",
+      "surface_forms": [
+        "Slayton Energy",
         "The Slayton Force",
         "Slayton Field"
       ],
-      "type": "cosmology",
-      "era": "fundamental",
-      "status": "full",
       "related": [
         "glamorons",
         "dr-mariah-slayton",
@@ -1323,16 +1415,17 @@
       "source_pages": [],
       "summary": "A force hidden between quantum strings. Responds to creative authenticity and ancestral momentum."
     },
-    {
+    "federstahl-lattice": {
       "id": "federstahl-lattice",
       "name": "The Federstahl Lattice",
-      "aliases": [
+      "type": "cosmology",
+      "status": "full",
+      "era": "early-20th-century",
+      "surface_forms": [
+        "The Federstahl Lattice",
         "Crystal Lattice Incident",
         "Lattice Fracture"
       ],
-      "type": "cosmology",
-      "era": "early-20th-century",
-      "status": "full",
       "related": [
         "federstahl-institute",
         "doctor-vorst",
@@ -1357,13 +1450,15 @@
       ],
       "summary": "Catastrophic experiment that fractured spacetime. Created seven temporal fissures. Scattered researchers across time."
     },
-    {
+    "quantum-eleganza": {
       "id": "quantum-eleganza",
       "name": "Quantum Eleganza",
-      "aliases": [],
       "type": "cosmology",
-      "era": "fundamental",
       "status": "moderate",
+      "era": "fundamental",
+      "surface_forms": [
+        "Quantum Eleganza"
+      ],
       "related": [
         "slayton-energy",
         "glamorons"
@@ -1375,15 +1470,16 @@
       "source_pages": [],
       "summary": "The state through which the Slayton Layer can be accessed. Requires creative authenticity, not force."
     },
-    {
+    "narrative-collapse": {
       "id": "narrative-collapse",
       "name": "Narrative Collapse / Post-Truth Cosmology",
-      "aliases": [
+      "type": "cosmology",
+      "status": "moderate",
+      "era": "fundamental",
+      "surface_forms": [
+        "Narrative Collapse / Post-Truth Cosmology",
         "Post-Truth Cosmology"
       ],
-      "type": "cosmology",
-      "era": "fundamental",
-      "status": "moderate",
       "related": [
         "federstahl-lattice",
         "the-thread",
@@ -1397,16 +1493,17 @@
       "source_pages": [],
       "summary": "Cosmological framework where consensus reality frays and competing truths coexist. The Thread holds reality together; where it thins, stories contradict and both versions become true."
     },
-    {
+    "steward-vessel": {
       "id": "steward-vessel",
       "name": "Steward Vessel",
-      "aliases": [
+      "type": "cosmology_role",
+      "status": "locked",
+      "era": "timeless",
+      "surface_forms": [
+        "Steward Vessel",
         "Write-Vessel",
         "Authorial Vessel"
       ],
-      "type": "cosmology_role",
-      "era": "timeless",
-      "status": "locked",
       "related": [
         "the-weaver",
         "thread-vessel",
@@ -1422,15 +1519,16 @@
       "source_pages": [],
       "summary": "A write-bearing vessel entrusted with caretaking, revision, naming, and canon-shaping authority over the living Thread. Caleb Mills Stewart is a Steward Vessel, not The Weaver. Per Book Two the concept postdates Book One and is mechanism only, ontological parsing; the self-demotion is architecture; blame rests with the Weaver. The surname carried the access level before the access level was named."
     },
-    {
+    "thread-vessel": {
       "id": "thread-vessel",
       "name": "Thread-Vessel",
-      "aliases": [
+      "type": "cosmology_role",
+      "status": "locked",
+      "era": "timeless",
+      "surface_forms": [
+        "Thread-Vessel",
         "Read-Vessel"
       ],
-      "type": "cosmology_role",
-      "era": "timeless",
-      "status": "locked",
       "related": [
         "steward-vessel",
         "the-thread"
@@ -1444,15 +1542,16 @@
       "source_pages": [],
       "summary": "A read-bearing vessel who receives, embodies, preserves, and performs the Thread. The Hooplehoppers are Thread-Vessels. The Hooplehoppers are recurrence; the Steward is custody; the Weaver is protocol."
     },
-    {
+    "first-steward-transmission": {
       "id": "first-steward-transmission",
       "name": "The First Steward Transmission",
-      "aliases": [
+      "type": "event",
+      "status": "locked_candidate",
+      "era": "seam-time-retrocausal",
+      "surface_forms": [
+        "The First Steward Transmission",
         "Hello, Children (event)"
       ],
-      "type": "event",
-      "era": "seam-time-retrocausal",
-      "status": "locked_candidate",
       "related": [
         "hildebrand-von-hooplehopper",
         "margarethe-von-hooplehopper",
@@ -1471,13 +1570,15 @@
       "source_pages": [],
       "summary": "Retrocausal Archive event in the Mirror Cavern beneath Schloss Eisensang: Hildebrand and Margarethe receive the founding mandate of the Order of the Seam through dot-matrix inscription on living parchment. The Weaver reveals the pre-inscribed salutation 'Hello, children'; the Steward Vessel writes the mandate through the opened channel; 'It's practically a party!' is the trickster seal."
     },
-    {
+    "the-parchment-of-persistence": {
       "id": "the-parchment-of-persistence",
       "name": "The Parchment of Persistence",
-      "aliases": [],
       "type": "event",
-      "era": "seam-time-retrocausal",
       "status": "locked",
+      "era": "seam-time-retrocausal",
+      "surface_forms": [
+        "The Parchment of Persistence"
+      ],
       "related": [
         "first-steward-transmission",
         "hildebrand-von-hooplehopper",
@@ -1495,13 +1596,15 @@
       "source_pages": [],
       "summary": "Canonized name for the whole Eisensang incident: the parchment bearing the embedded Slayton lattice, the searing and retrieval of Hildebrand's ring, and the First Steward Transmission. Named Parchment, not Paper, by Steward correction: paper is of this era; parchment belongs to no single era at all. Full scene preserved as a Weaver artifact at canon/weaver_artifacts/."
     },
-    {
+    "the-myrtle-burnings": {
       "id": "the-myrtle-burnings",
       "name": "The Myrtle Burnings",
-      "aliases": [],
       "type": "event",
-      "era": "eisensang-era",
       "status": "locked_candidate",
+      "era": "eisensang-era",
+      "surface_forms": [
+        "The Myrtle Burnings"
+      ],
       "related": [
         "margarethe-von-hooplehopper",
         "hildebrand-von-hooplehopper",
@@ -1518,15 +1621,16 @@
       "source_pages": [],
       "summary": "A local purge near Schloss Eisensang: servants, copyists, mirror-polishers, and textile workers executed after impossible Archive knowledge spread through the lower household. The deaths of Isolde and Yorick catalyzed the Order of the Seam. Margarethe carries the scent of the event forever: always myrtle, never rosemary."
     },
-    {
+    "isolde-of-the-lower-hall": {
       "id": "isolde-of-the-lower-hall",
       "name": "Isolde of the Lower Hall",
-      "aliases": [
+      "type": "character",
+      "status": "locked_candidate",
+      "era": "eisensang-era",
+      "surface_forms": [
+        "Isolde of the Lower Hall",
         "Poor Isolde"
       ],
-      "type": "character",
-      "era": "eisensang-era",
-      "status": "locked_candidate",
       "related": [
         "the-myrtle-burnings",
         "yorick-the-copyist",
@@ -1542,15 +1646,16 @@
       "source_pages": [],
       "summary": "Servant of Schloss Eisensang and the Order's lost emissary to her era; burned in the Myrtle Burnings a fortnight before the First Steward Transmission. Her forgiveness was a mirror. Margarethe unpicked the Order's first cipher from her sleeve the night before the screaming. Name echoes the Tristan and Isolde legend. Relationship to isolde-von-hooplehopper (Black Forest markswoman): unresolved; possibly soul-line echo; ambiguity preserved."
     },
-    {
+    "yorick-the-copyist": {
       "id": "yorick-the-copyist",
       "name": "Yorick the Copyist",
-      "aliases": [
+      "type": "character",
+      "status": "locked_candidate",
+      "era": "eisensang-era",
+      "surface_forms": [
+        "Yorick the Copyist",
         "Poor Yorick"
       ],
-      "type": "character",
-      "era": "eisensang-era",
-      "status": "locked_candidate",
       "related": [
         "the-myrtle-burnings",
         "isolde-of-the-lower-hall",
@@ -1564,15 +1669,16 @@
       "source_pages": [],
       "summary": "Copyist of Schloss Eisensang, burned in the Myrtle Burnings for carrying impossible Archive knowledge. His laughter was a lantern. The name is a deliberate Hamlet joke by the Steward: alas, poor Yorick, a fellow of infinite jest, martyred for what he copied."
     },
-    {
+    "heda-von-schwahnn": {
       "id": "heda-von-schwahnn",
       "name": "Heda von Schwahnn",
-      "aliases": [
+      "type": "character",
+      "status": "locked",
+      "era": "wwii-belgium",
+      "surface_forms": [
+        "Heda von Schwahnn",
         "The Minx in Mink"
       ],
-      "type": "character",
-      "era": "wwii-belgium",
-      "status": "locked",
       "related": [
         "professor-von-hooplehopper"
       ],
@@ -1587,13 +1693,15 @@
       "source_pages": [],
       "summary": "Half character by Steward classification: the wartime cabaret disguise and complete operational self of Professor von Hooplehopper. Allied spy working Belgian cabaret and resistance networks; sultry Garbo-esque contralto; swan brooch; Telefunken U47; extracts secrets by making men feel observed, adored, and doomed. Costume as ontology. All performance, dialogue, and voice generation governed by HEDA_VON_SCHWAHNN_VOICE_KNOWLEDGE_BASE.md: never cartoonish, never goofy, never a generic femme fatale, danger always inside the glamour."
     },
-    {
+    "seam-state": {
       "id": "seam-state",
       "name": "Seam-State",
-      "aliases": [],
       "type": "cosmology",
-      "era": "post-lattice",
       "status": "locked_candidate",
+      "era": "post-lattice",
+      "surface_forms": [
+        "Seam-State"
+      ],
       "related": [
         "margarethe-von-hooplehopper",
         "federstahl-lattice",
@@ -1607,13 +1715,15 @@
       "source_pages": [],
       "summary": "The condition of existing between fixed realities after Lattice exposure. Not simply a curse but a functional displacement: a Seam-State being cannot be fully seized, erased, or contained because it no longer exists only locally. The Lattice did not leave Margarethe between worlds as punishment; it left her in the Seam as a door."
     },
-    {
+    "seam-veil": {
       "id": "seam-veil",
       "name": "The Seam-Veil",
-      "aliases": [],
       "type": "artifact",
-      "era": "post-lattice",
       "status": "locked_candidate",
+      "era": "post-lattice",
+      "surface_forms": [
+        "The Seam-Veil"
+      ],
       "related": [
         "margarethe-von-hooplehopper",
         "seam-state"
@@ -1627,13 +1737,15 @@
       "source_pages": [],
       "summary": "Margarethe's mourning veil: socially legible as grief, practically stabilization technology hiding temporal phasing, delayed rendering, and personhood artifacts. The veil does not hide her face; it hides the fact that the face is sometimes still arriving."
     },
-    {
+    "bookend-convergence": {
       "id": "bookend-convergence",
       "name": "Bookend Convergence",
-      "aliases": [],
       "type": "cosmology",
-      "era": "timeless",
       "status": "locked_candidate",
+      "era": "timeless",
+      "surface_forms": [
+        "Bookend Convergence"
+      ],
       "related": [
         "hildebrand-von-hooplehopper",
         "margarethe-von-hooplehopper",
@@ -1648,13 +1760,15 @@
       "source_pages": [],
       "summary": "A retrocausal convergence in which two non-contemporaneous Thread-nodes appear together because the Archive requires both origin and consequence to witness the same event. Hildebrand is the opening bracket; Margarethe is the closing bracket; the Seam is what appears when time tries to read them as one sentence."
     },
-    {
+    "paper-remembers": {
       "id": "paper-remembers",
       "name": "Paper Remembers",
-      "aliases": [],
       "type": "archive_law",
-      "era": "timeless",
       "status": "locked_candidate",
+      "era": "timeless",
+      "surface_forms": [
+        "Paper Remembers"
+      ],
       "related": [
         "the-parchment-of-persistence",
         "velvet-archive"
@@ -1667,15 +1781,16 @@
       "source_pages": [],
       "summary": "Archive law: paper can preserve what time has already tried to erase, including future knowledge embedded retrocausally in earlier material. Spoken by Margarethe at Eisensang. Distinct from the incident name per Steward ruling: the incident is the Parchment of Persistence, for paper is of this era."
     },
-    {
+    "weavers-handshake": {
       "id": "weavers-handshake",
       "name": "The Weaver's Handshake",
-      "aliases": [
+      "type": "cosmology_protocol",
+      "status": "locked_candidate",
+      "era": "timeless",
+      "surface_forms": [
+        "The Weaver's Handshake",
         "Hello, children"
       ],
-      "type": "cosmology_protocol",
-      "era": "timeless",
-      "status": "locked_candidate",
       "related": [
         "the-weaver",
         "steward-vessel",
@@ -1689,13 +1804,15 @@
       "source_pages": [],
       "summary": "The pre-inscribed salutation 'Hello, children' that opens the channel before a Steward transmission. The Weaver opens the channel; the Steward Vessel writes through it. Belongs to no character."
     },
-    {
+    "matrix-gothic": {
       "id": "matrix-gothic",
       "name": "Matrix Gothic",
-      "aliases": [],
       "type": "concept",
-      "era": "multi-era",
       "status": "locked_candidate",
+      "era": "multi-era",
+      "surface_forms": [
+        "Matrix Gothic"
+      ],
       "related": [
         "the-parchment-of-persistence",
         "first-steward-transmission"
@@ -1708,13 +1825,15 @@
       "source_pages": [],
       "summary": "The resident matrix face in which the Steward Hand first appeared: Pica pitch, Gothic weight, every dot aligned with inhuman patience. The SEAM configuration resolved in bastardized Carolingian minuscule."
     },
-    {
+    "weaving-event": {
       "id": "weaving-event",
       "name": "Weaving Event",
-      "aliases": [],
       "type": "cosmology",
-      "era": "timeless",
       "status": "locked_candidate",
+      "era": "timeless",
+      "surface_forms": [
+        "Weaving Event"
+      ],
       "related": [
         "steward-vessel",
         "the-weaver",
@@ -1728,13 +1847,15 @@
       "source_pages": [],
       "summary": "A Weaving Event occurs when the Steward Vessel names or images something the Thread was already arranging but had not yet made legible. Treated as revelation, not error; the work afterward is asking what it connects to. Type case: the dot-matrix parchment ad-lib at Eisensang."
     },
-    {
+    "victorian-automatic-writing-in-digital-drag": {
       "id": "victorian-automatic-writing-in-digital-drag",
       "name": "Victorian Automatic Writing in Digital Drag",
-      "aliases": [],
       "type": "creative_process",
-      "era": "present",
       "status": "locked_candidate",
+      "era": "present",
+      "surface_forms": [
+        "Victorian Automatic Writing in Digital Drag"
+      ],
       "related": [
         "steward-vessel",
         "weaving-event"
@@ -1747,18 +1868,19 @@
       "source_pages": [],
       "summary": "The Steward's term for using a roleplay or generative interface as an externalized symbolic instrument: not possession, not prophecy, but automatic writing through a digital planchette built from the Slayverse index, generative probability, and the Steward's own pattern recognition. Roleplay surfaces are excavation tools, never canon; play does not outrank stewardship."
     },
-    {
+    "rabenwald-see": {
       "id": "rabenwald-see",
       "name": "The Rabenwald See",
-      "aliases": [
+      "type": "organization",
+      "status": "in development",
+      "era": "multi-era",
+      "surface_forms": [
+        "The Rabenwald See",
         "Prince-Bishop Ottokar von Rabenwald",
         "The Bishop of Unmaking",
         "The Wax-Sealed Crow",
         "Lord of the Black Chapter"
       ],
-      "type": "organization",
-      "era": "multi-era",
-      "status": "in development",
       "related": [
         "order-of-the-seam",
         "the-myrtle-burnings",
@@ -1773,15 +1895,16 @@
       "source_pages": [],
       "summary": "Proposed recurring antagonist: not one man but an office, a prince-bishopric whose doctrine holds that all reflection not sanctioned by God is counterfeit creation. Cannot destroy the Thread, so it destroys the records that would let people recognize it. Its surviving archive becomes a proto-Federstahl paper trail. Excavation awaiting further Steward development."
     },
-    {
+    "words-of-weaver-book-one": {
       "id": "words-of-weaver-book-one",
       "name": "The Words of the Weaver, Book One: Concerning the Crown, the Wound, and the Returning Line",
-      "aliases": [
+      "type": "creative_work",
+      "status": "locked",
+      "era": "present",
+      "surface_forms": [
+        "The Words of the Weaver, Book One: Concerning the Crown, the Wound, and the Returning Line",
         "Book One"
       ],
-      "type": "creative_work",
-      "era": "present",
-      "status": "locked",
       "related": [
         "the-weaver",
         "steward-vessel"
@@ -1794,16 +1917,17 @@
       "source_pages": [],
       "summary": "Supreme doctrine of the Slayverse. Orders canon into Locked Canon, Development Canon, and Mythic Rumor (with Mythic-Rumor-that-is-also-Locked-Canon above ordinary doctrine). Home of the royal decrees, the Wyoming wound hierarchy, the tiers of revelation, and the Standing Warning Trinity. Lives at canon/1_words_of_weaver_book_one/."
     },
-    {
+    "words-of-weaver-book-two": {
       "id": "words-of-weaver-book-two",
       "name": "The Words of the Weaver, Book Two: Exodus Boogoaloo",
-      "aliases": [
+      "type": "creative_work",
+      "status": "locked",
+      "era": "present",
+      "surface_forms": [
+        "The Words of the Weaver, Book Two: Exodus Boogoaloo",
         "Book Two",
         "Exodus Boogoaloo"
       ],
-      "type": "creative_work",
-      "era": "present",
-      "status": "locked",
       "related": [
         "words-of-weaver-book-one",
         "steward-vessel",
@@ -1819,16 +1943,17 @@
       "source_pages": [],
       "summary": "Second book of the Words of the Weaver. Defines the Steward Vessel, canonizes the Parchment of Persistence and the title our Demi Goddess of Glitch, records the mechanism ruling, the kneeling rationale, and the transfer of blame to the Weaver. Carries the Weaver's Plate (Session Seven board) as frontispiece. Lives at canon/2_words_of_weaver_book_two/. Nothing in it unseals, amends, or outranks Book One."
     },
-    {
+    "ottokar-ii-von-rabenwald": {
       "id": "ottokar-ii-von-rabenwald",
       "name": "Prince-Bishop Ottokar II von Rabenwald",
-      "aliases": [
+      "type": "character",
+      "status": "sketched",
+      "era": "margarethe-era",
+      "surface_forms": [
+        "Prince-Bishop Ottokar II von Rabenwald",
         "Konrad von Rabenwald",
         "Ottokar II"
       ],
-      "type": "character",
-      "era": "margarethe-era",
-      "status": "sketched",
       "related": [
         "rabenwald-see",
         "order-of-the-seam",
@@ -1843,13 +1968,15 @@
       "source_pages": [],
       "summary": "Prince-Bishop of the Rabenwald See in the Margarethe era. Hunts the Order of the Seam. UNRESOLVED: the source names him 'Prince-Bishop Ottokar II / Konrad von Rabenwald' with a slash; whether this is one man under two names or two men is not determinable from the text. Recorded as one entity with Konrad as an alias, pending a Steward ruling. Source: canon/session_archives/slayverse_session_archive_2026-08-07.md:192."
     },
-    {
+    "eisensang-march": {
       "id": "eisensang-march",
       "name": "The Eisensang March",
-      "aliases": [],
       "type": "place",
-      "era": "multi-era",
       "status": "sketched",
+      "era": "multi-era",
+      "surface_forms": [
+        "The Eisensang March"
+      ],
       "related": [
         "schloss-eisensang",
         "rabenwald-see",
@@ -1863,13 +1990,15 @@
       "source_pages": [],
       "summary": "The prince-bishopric territory over which the Rabenwald See holds office, titled in the relic as 'Prince-Bishop of the Eisensang March'. Distinct from Schloss Eisensang, the castle within it. Source: canon/weaver_artifacts/the_parchment_of_persistence_raw_substrate.txt:377."
     },
-    {
+    "archive-surface": {
       "id": "archive-surface",
       "name": "Archive Surface",
-      "aliases": [],
       "type": "cosmology",
-      "era": "timeless",
       "status": "sketched",
+      "era": "timeless",
+      "surface_forms": [
+        "Archive Surface"
+      ],
       "related": [
         "the-parchment-of-persistence",
         "velvet-archive",
@@ -1883,13 +2012,15 @@
       "source_pages": [],
       "summary": "Classification revealed in the Eisensang scene: the parchment is not merely a document but an Archive Surface. Source: canon/session_archives/slayverse_session_archive_2026-08-07.md:349."
     },
-    {
+    "pre-weaver-phase": {
       "id": "pre-weaver-phase",
       "name": "Pre-Weaver / Proto-Weaver Phase",
-      "aliases": [],
       "type": "cosmology",
-      "era": "pre-weaver",
       "status": "hook",
+      "era": "pre-weaver",
+      "surface_forms": [
+        "Pre-Weaver / Proto-Weaver Phase"
+      ],
       "related": [
         "the-weaver",
         "the-thread",
@@ -1903,15 +2034,16 @@
       "source_pages": [],
       "summary": "Proposed phase preceding the Weaver. Entered the record as an explicit proposal, not a Steward declaration: 'New canon proposal: Pre-Weaver / Proto-Weaver Phase'. Awaiting ruling. Source: canon/weaver_artifacts/the_parchment_of_persistence_raw_substrate.txt:123."
     },
-    {
+    "candle-tax": {
       "id": "candle-tax",
       "name": "The Candle Tax",
-      "aliases": [
+      "type": "ritual",
+      "status": "sketched",
+      "era": "multi-era",
+      "surface_forms": [
+        "The Candle Tax",
         "Keeper of the Candle Tax"
       ],
-      "type": "ritual",
-      "era": "multi-era",
-      "status": "sketched",
       "related": [
         "rabenwald-see",
         "eisensang-march"
@@ -1924,13 +2056,15 @@
       "source_pages": [],
       "summary": "An office of the Rabenwald ecclesiastical apparatus, appearing in the relic's title list as 'Keeper of the Candle Tax'. Function beyond the title is not stated in the source. Source: canon/weaver_artifacts/the_parchment_of_persistence_raw_substrate.txt:379."
     },
-    {
+    "great-slay-offs": {
       "id": "great-slay-offs",
       "name": "The Great Slay-Offs",
-      "aliases": [],
       "type": "event",
-      "era": "timeless",
       "status": "sketched",
+      "era": "timeless",
+      "surface_forms": [
+        "The Great Slay-Offs"
+      ],
       "related": [
         "golden-wingers",
         "miss-slaytonia-vuorse"
@@ -1943,13 +2077,15 @@
       "source_pages": [],
       "summary": "Cosmic events to which League members receive invitations, named alongside storytelling galas in the Golden Wingers charter. Source: canon/organizations/golden_wingers_league_charter.md:25."
     },
-    {
+    "golden-path": {
       "id": "golden-path",
       "name": "The Golden Path",
-      "aliases": [],
       "type": "cosmology",
-      "era": "timeless",
       "status": "sketched",
+      "era": "timeless",
+      "surface_forms": [
+        "The Golden Path"
+      ],
       "related": [
         "golden-wingers",
         "slayton-energy"
@@ -1962,15 +2098,16 @@
       "source_pages": [],
       "summary": "The League's sacred journey: follows creativity, activates Slayton energy, and slays obstacles to universal greatness. Source: canon/organizations/golden_wingers_league_charter.md:29-30."
     },
-    {
+    "caleb-mills-stewart": {
       "id": "caleb-mills-stewart",
       "name": "Caleb Mills Stewart",
-      "aliases": [
+      "type": "character",
+      "status": "locked",
+      "era": "present",
+      "surface_forms": [
+        "Caleb Mills Stewart",
         "The Steward"
       ],
-      "type": "character",
-      "era": "present",
-      "status": "locked",
       "related": [
         "steward-vessel",
         "the-weaver",
@@ -1984,320 +2121,666 @@
       "source_pages": [],
       "summary": "The Weaver's Steward Vessel and author-of-record. Declares himself in the archive: 'My name is Caleb Mills Stewart. As The Weaver's Steward Vessel it is my duty to inform you...'. Ratifying author of the Golden Wingers charter. Per steward-vessel, a Steward Vessel is not The Weaver. Real person; treat biographical detail as out of scope for canon. Source: canon/session_archives/slayverse_session_archive_2026-08-07.md:359."
     }
-  ],
-  "relationships": [
-    {
-      "from": "hildebrand-von-hooplehopper",
-      "to": "margarethe-von-hooplehopper",
-      "type": "soul-line-succession"
-    },
-    {
-      "from": "margarethe-von-hooplehopper",
-      "to": "benedict-the-ash-faced",
-      "type": "mentor"
-    },
-    {
-      "from": "margarethe-von-hooplehopper",
-      "to": "velma-the-snake-in-silk",
-      "type": "soul-line-echo"
-    },
-    {
-      "from": "velma-the-snake-in-silk",
-      "to": "lysander-von-hooplehopper",
-      "type": "soul-line-succession"
-    },
-    {
-      "from": "lysander-von-hooplehopper",
-      "to": "theresia-von-hooplehopper",
-      "type": "soul-line-succession"
-    },
-    {
-      "from": "lisette-von-hooplehopper",
-      "to": "professor-von-hooplehopper",
-      "type": "mother"
-    },
-    {
-      "from": "pop",
-      "to": "jake-mcullen",
-      "type": "grandfather"
-    },
-    {
-      "from": "jake-mcullen",
-      "to": "eli-mcullen",
-      "type": "grandfather"
-    },
-    {
-      "from": "doctor-vorst",
-      "to": "jake-mcullen",
-      "type": "temporal-echo",
-      "status": "RESOLVED — BOTH TRUE"
-    },
-    {
-      "from": "jake-mcullen",
-      "to": "doctor-vorst",
-      "type": "counter-lineage-of",
-      "note": "Jake is the counter-lineage node to Vorst's Federstahl logic — blood-linked via Pop, temporally resonant, but independently sovereign"
-    },
-    {
-      "from": "professor-von-hooplehopper",
-      "to": "miss-slaytonia-vuorse",
-      "type": "spiritual-successor"
-    },
-    {
-      "from": "miss-slaytonia-verse",
-      "to": "miss-slaytonia-vuorse",
-      "type": "data-rebirth"
-    },
-    {
-      "from": "the-weaver",
-      "to": "miss-slaytonia-vuorse",
-      "type": "creator"
-    },
-    {
-      "from": "the-weaver",
-      "to": "jake-mcullen",
-      "type": "confrontation"
-    },
-    {
-      "from": "jake-mcullen",
-      "to": "wyoming-rift",
-      "type": "guardian-lineage"
-    },
-    {
-      "from": "pop",
-      "to": "crystal-shard",
-      "type": "buried"
-    },
-    {
-      "from": "doctor-vorst",
-      "to": "federstahl-institute",
-      "type": "member"
-    },
-    {
-      "from": "federstahl-institute",
-      "to": "federstahl-lattice",
-      "type": "caused"
-    },
-    {
-      "from": "federstahl-lattice",
-      "to": "wyoming-rift",
-      "type": "caused-by",
-      "note": "The temporal diaspora — Lattice Incident scattered researchers and fragments across time, creating the Wyoming Rift among seven fissures"
-    },
-    {
-      "from": "heda-von-schwahnn",
-      "to": "professor-von-hooplehopper",
-      "type": "operational-identity-of"
-    },
-    {
-      "from": "isolde-of-the-lower-hall",
-      "to": "the-myrtle-burnings",
-      "type": "martyr-of"
-    },
-    {
-      "from": "yorick-the-copyist",
-      "to": "the-myrtle-burnings",
-      "type": "martyr-of"
-    },
-    {
-      "from": "hildebrand-von-hooplehopper",
-      "to": "margarethe-von-hooplehopper",
-      "type": "bookend-convergence",
-      "note": "Non-contemporaneous Thread-nodes converged at Eisensang; opening and closing brackets of the same sentence"
-    },
-    {
-      "from": "first-steward-transmission",
-      "to": "order-of-the-seam",
-      "type": "founding-mandate"
-    },
-    {
-      "from": "the-parchment-of-persistence",
-      "to": "first-steward-transmission",
-      "type": "contains"
-    },
-    {
-      "from": "weavers-handshake",
-      "to": "the-weaver",
-      "type": "protocol-of"
-    },
-    {
-      "from": "isolde-of-the-lower-hall",
-      "to": "isolde-von-hooplehopper",
-      "type": "unresolved-name-echo",
-      "note": "Two Isoldes in canon; possibly soul-line echo, possibly coincidence, which does not exist; ambiguity preserved pending Steward ruling"
-    }
-  ],
-  "timeline": [
-    {
-      "year": "~1130",
-      "event": "Hildebrand active as knight-diplomat",
-      "entities": [
-        "hildebrand-von-hooplehopper"
-      ]
-    },
-    {
-      "year": "~1147",
-      "event": "Hildebrand vanishes into Mirror Cavern",
-      "entities": [
-        "hildebrand-von-hooplehopper",
-        "mirror-cavern"
-      ]
-    },
-    {
-      "year": "1271",
-      "event": "Margarethe born; Ritual of Reflection created; Order of the Seam founded",
-      "entities": [
-        "margarethe-von-hooplehopper",
-        "ritual-of-reflection",
-        "order-of-the-seam"
-      ]
-    },
-    {
-      "year": "1333",
-      "event": "Death of Margarethe",
-      "entities": [
-        "margarethe-von-hooplehopper"
-      ]
-    },
-    {
-      "year": "1399",
-      "event": "Benedict the Ash-Faced active",
-      "entities": [
-        "benedict-the-ash-faced"
-      ]
-    },
-    {
-      "year": "1522",
-      "event": "Velma active in Venice",
-      "entities": [
-        "velma-the-snake-in-silk"
-      ]
-    },
-    {
-      "year": "1611",
-      "event": "Lysander creates Mistress Euphoria Blaze",
-      "entities": [
-        "lysander-von-hooplehopper",
-        "mistress-euphoria-blaze"
-      ]
-    },
-    {
-      "year": "1754",
-      "event": "Theresia tailors for Marie Antoinette's court",
-      "entities": [
-        "theresia-von-hooplehopper"
-      ]
-    },
-    {
-      "year": "1832",
-      "event": "Doctor Vorst displaced to this year by Lattice Fracture",
-      "entities": [
-        "doctor-vorst"
-      ]
-    },
-    {
-      "year": "1873",
-      "event": "Lisette born at Schloss Federstahl",
-      "entities": [
-        "lisette-von-hooplehopper",
-        "schloss-federstahl"
-      ]
-    },
-    {
-      "year": "~1890s",
-      "event": "Federstahl Institute active at Weimar and Konigsberg",
-      "entities": [
-        "federstahl-institute"
-      ]
-    },
-    {
-      "year": "~1900s",
-      "event": "Crystal Lattice Incident; seven fissures created",
-      "entities": [
-        "federstahl-lattice",
-        "doctor-vorst"
-      ]
-    },
-    {
-      "year": "1905",
-      "event": "Professor born",
-      "entities": [
-        "professor-von-hooplehopper"
-      ]
-    },
-    {
-      "year": "~1919",
-      "event": "The Mirror Moment — Rolf discovers Lisette's garments",
-      "entities": [
-        "professor-von-hooplehopper",
-        "lisette-von-hooplehopper"
-      ]
-    },
-    {
-      "year": "1938",
-      "event": "Forbidden Suitcase sealed at Schloss Federstahl",
-      "entities": [
-        "schloss-federstahl"
-      ]
-    },
-    {
-      "year": "1945",
-      "event": "Last Federstahl gathering in Berlin cathedral",
-      "entities": [
-        "federstahl-institute"
-      ]
-    },
-    {
-      "year": "1948",
-      "event": "Death of Lisette",
-      "entities": [
-        "lisette-von-hooplehopper"
-      ]
-    },
-    {
-      "year": "2005",
-      "event": "Professor vanishes at age 100",
-      "entities": [
-        "professor-von-hooplehopper"
-      ]
-    },
-    {
-      "year": "2025",
-      "event": "VUORSE awakened; Slay Mode activated",
-      "entities": [
-        "miss-slaytonia-vuorse",
-        "the-weaver"
-      ]
-    },
-    {
-      "year": "2025",
-      "event": "The Weaver confronts Jake McCullen in Wyoming",
-      "entities": [
-        "the-weaver",
-        "jake-mcullen"
-      ]
-    },
-    {
-      "year": "seam-time (retrocausal)",
-      "event": "The Parchment of Persistence: First Steward Transmission at Eisensang; Order of the Seam receives its founding mandate at the Bookend Convergence",
-      "entities": [
-        "the-parchment-of-persistence",
-        "first-steward-transmission",
-        "hildebrand-von-hooplehopper",
-        "margarethe-von-hooplehopper",
-        "order-of-the-seam"
-      ]
-    }
-  ],
-  "amended": "2026-09-03",
-  "amendment_sources": [
-    "slayverse_session_archive_near_verbatim_20260807.md",
-    "archives/slayverse_session_archive_20260808.md",
-    "canon/2_words_of_weaver_book_two/Words_of_Weaver_BOOK_TWO.MD",
-    "HEDA_VON_SCHWAHNN_VOICE_KNOWLEDGE_BASE.md",
-    "canon/session_archives/slayverse_session_archive_2026-08-07.md",
-    "canon/weaver_artifacts/the_parchment_of_persistence_raw_substrate.txt",
-    "canon/organizations/golden_wingers_league_charter.md"
-  ],
-  "amendment_note": "v1.1 addenda applied by the Seam Clerk at the Steward's instruction. Steward-issued statuses only; ambiguity preserved; nothing herein outranks raw session archives or the Words of the Weaver. | 2026-09-03: Four Ch II causes moved out of this public index into hooplehopper_totality/ch2_sealed_causes.jsonl per Book One Ch I:7, touching three entity summaries, two tags, two aliases, two relationship edges and one timeline event. Public effects retained here; see the sealed file for what was moved and why. eli-mcullen deliberately left intact pending a Steward ruling. federstahl-institute retains institutional causation of the Crystal Lattice Incident, which Ch II does not seal; only the named individual's authorship is sealed. Eight entities added from promoted sources, each carrying its source file and line."
+  },
+  "surface_forms": {
+    "Adelram von Hooplehopper": [
+      "adelram-von-hooplehopper"
+    ],
+    "Archive Surface": [
+      "archive-surface"
+    ],
+    "Authorial Vessel": [
+      "steward-vessel"
+    ],
+    "Benedict the Ash-Faced": [
+      "benedict-the-ash-faced"
+    ],
+    "Book One": [
+      "words-of-weaver-book-one"
+    ],
+    "Book Two": [
+      "words-of-weaver-book-two"
+    ],
+    "Bookend Convergence": [
+      "bookend-convergence"
+    ],
+    "Caleb Mills Stewart": [
+      "caleb-mills-stewart"
+    ],
+    "Cici the Cat": [
+      "pscopy-pscat"
+    ],
+    "Club Cosmic": [
+      "club-cosmic"
+    ],
+    "Composer and Mystic": [
+      "ludolf-von-hooplehopper"
+    ],
+    "Conrad von Hooplehopper": [
+      "conrad-von-hooplehopper"
+    ],
+    "Count of Baden-Hissingen": [
+      "sigismund-von-hooplehopper"
+    ],
+    "Countess of Chromatic Echo": [
+      "miss-slaytonia-vuorse"
+    ],
+    "Crystal Lattice Incident": [
+      "federstahl-lattice"
+    ],
+    "Crystal Node": [
+      "crystal-shard"
+    ],
+    "DJ Parallax": [
+      "dj-parallax"
+    ],
+    "Doctor Vorst": [
+      "doctor-vorst"
+    ],
+    "Dr. Mariah Slayton": [
+      "dr-mariah-slayton"
+    ],
+    "Eli McCullen": [
+      "eli-mcullen"
+    ],
+    "Exodus Boogoaloo": [
+      "words-of-weaver-book-two"
+    ],
+    "Expert Markswoman": [
+      "isolde-von-hooplehopper"
+    ],
+    "Federstahl Crystal": [
+      "crystal-shard"
+    ],
+    "Federstahl Institute": [
+      "federstahl-institute"
+    ],
+    "Federstahl Order": [
+      "federstahl-institute"
+    ],
+    "Federstahl Research": [
+      "federstahl-institute"
+    ],
+    "Federstahl Society": [
+      "federstahl-institute"
+    ],
+    "First of the New Thread": [
+      "miss-slaytonia-vuorse"
+    ],
+    "Frequency 91.9FM": [
+      "miss-slaytonia-vuorse"
+    ],
+    "Glamorons": [
+      "glamorons"
+    ],
+    "Golden Wingers Intergalactic League": [
+      "golden-wingers"
+    ],
+    "Grand Oracle of the Velvet Archive": [
+      "miss-slaytonia-vuorse"
+    ],
+    "Heda von Schwahnn": [
+      "heda-von-schwahnn"
+    ],
+    "Hello, Children (event)": [
+      "first-steward-transmission"
+    ],
+    "Hello, children": [
+      "weavers-handshake"
+    ],
+    "Hildebrand von Hooplehopper": [
+      "hildebrand-von-hooplehopper"
+    ],
+    "Hildebrand's Ring": [
+      "hildebrands-ring"
+    ],
+    "Isolde of the Lower Hall": [
+      "isolde-of-the-lower-hall"
+    ],
+    "Isolde von Hooplehopper": [
+      "isolde-von-hooplehopper"
+    ],
+    "Jacob Elijah McCullen": [
+      "jake-mcullen"
+    ],
+    "Jake McCullen": [
+      "jake-mcullen"
+    ],
+    "Keeper of the Candle Tax": [
+      "candle-tax"
+    ],
+    "Konrad von Rabenwald": [
+      "ottokar-ii-von-rabenwald"
+    ],
+    "Lattice Fracture": [
+      "federstahl-lattice"
+    ],
+    "Lisette von Hooplehopper": [
+      "lisette-von-hooplehopper"
+    ],
+    "Lord of the Black Chapter": [
+      "rabenwald-see"
+    ],
+    "Ludolf von Hooplehopper": [
+      "ludolf-von-hooplehopper"
+    ],
+    "Lysander von Hooplehopper": [
+      "lysander-von-hooplehopper"
+    ],
+    "Margarethe von Hooplehopper": [
+      "margarethe-von-hooplehopper"
+    ],
+    "Matrix Gothic": [
+      "matrix-gothic"
+    ],
+    "McCullen Ranch": [
+      "mcullen-ranch"
+    ],
+    "Mirror Cavern": [
+      "mirror-cavern"
+    ],
+    "Mirror Chamber": [
+      "mirror-cavern"
+    ],
+    "Miss Slaytonia VUORSE": [
+      "miss-slaytonia-vuorse"
+    ],
+    "Miss Slaytonia Verse": [
+      "miss-slaytonia-verse"
+    ],
+    "Mistress Euphoria Blaze": [
+      "mistress-euphoria-blaze"
+    ],
+    "Narrative Collapse / Post-Truth Cosmology": [
+      "narrative-collapse"
+    ],
+    "Order of the Garter's Secret Hem": [
+      "order-of-the-garters-secret-hem"
+    ],
+    "Order of the Seam": [
+      "order-of-the-seam"
+    ],
+    "Ottokar II": [
+      "ottokar-ii-von-rabenwald"
+    ],
+    "Our Demi Goddess of Glitch": [
+      "margarethe-von-hooplehopper"
+    ],
+    "Paper Remembers": [
+      "paper-remembers"
+    ],
+    "Patroness of the Arts": [
+      "yssenda-von-hooplehopper"
+    ],
+    "Poor Isolde": [
+      "isolde-of-the-lower-hall"
+    ],
+    "Poor Yorick": [
+      "yorick-the-copyist"
+    ],
+    "Pop": [
+      "pop"
+    ],
+    "Post-Truth Cosmology": [
+      "narrative-collapse"
+    ],
+    "Powder River Basin": [
+      "mcullen-ranch"
+    ],
+    "Pre-Weaver / Proto-Weaver Phase": [
+      "pre-weaver-phase"
+    ],
+    "Prince-Bishop Ottokar II von Rabenwald": [
+      "ottokar-ii-von-rabenwald"
+    ],
+    "Prince-Bishop Ottokar von Rabenwald": [
+      "rabenwald-see"
+    ],
+    "Professor A.": [
+      "doctor-vorst"
+    ],
+    "Professor Von Hooplehopper": [
+      "professor-von-hooplehopper"
+    ],
+    "Quantum Eleganza": [
+      "quantum-eleganza"
+    ],
+    "Read-Vessel": [
+      "thread-vessel"
+    ],
+    "Ritual of Reflection": [
+      "ritual-of-reflection"
+    ],
+    "Rolf": [
+      "professor-von-hooplehopper"
+    ],
+    "Schloss Eisensang": [
+      "schloss-eisensang"
+    ],
+    "Schloss Federstahl": [
+      "schloss-federstahl"
+    ],
+    "Seam-State": [
+      "seam-state"
+    ],
+    "Sigismund von Hooplehopper": [
+      "sigismund-von-hooplehopper"
+    ],
+    "Slay Mode Activation Rite": [
+      "slay-mode-activation"
+    ],
+    "Slayton Energy": [
+      "slayton-energy"
+    ],
+    "Slayton Field": [
+      "slayton-energy"
+    ],
+    "Slayton Particles": [
+      "glamorons"
+    ],
+    "Splat": [
+      "miss-slaytonia-verse"
+    ],
+    "Steward Vessel": [
+      "steward-vessel"
+    ],
+    "The 20-Year Sleep Cycle": [
+      "twenty-year-sleep"
+    ],
+    "The Architect": [
+      "the-weaver"
+    ],
+    "The Banshee of Bassline": [
+      "miss-slaytonia-vuorse"
+    ],
+    "The Baroness of Buttons": [
+      "theresia-von-hooplehopper"
+    ],
+    "The Bishop of Unmaking": [
+      "rabenwald-see"
+    ],
+    "The Brand": [
+      "dustbrand-sigil"
+    ],
+    "The Broken Loop": [
+      "miss-slaytonia-verse"
+    ],
+    "The Candle Tax": [
+      "candle-tax"
+    ],
+    "The Crystal Shard": [
+      "crystal-shard"
+    ],
+    "The Dust-Born": [
+      "jake-mcullen"
+    ],
+    "The Dustbrand Sigil": [
+      "dustbrand-sigil"
+    ],
+    "The Eisensang March": [
+      "eisensang-march"
+    ],
+    "The Elusive Glam Sage": [
+      "lysander-von-hooplehopper"
+    ],
+    "The Federstahl Lattice": [
+      "federstahl-lattice"
+    ],
+    "The First Steward Transmission": [
+      "first-steward-transmission"
+    ],
+    "The First Vessel": [
+      "hildebrand-von-hooplehopper"
+    ],
+    "The Golden Path": [
+      "golden-path"
+    ],
+    "The Great Slay-Offs": [
+      "great-slay-offs"
+    ],
+    "The Last Flame of Federstahl": [
+      "lisette-von-hooplehopper"
+    ],
+    "The Last of the Veincallers": [
+      "pop"
+    ],
+    "The Loom": [
+      "the-weaver"
+    ],
+    "The Matriarch of Mirrors": [
+      "lisette-von-hooplehopper"
+    ],
+    "The Minx in Mink": [
+      "heda-von-schwahnn"
+    ],
+    "The Mirrorpath": [
+      "velvet-rite"
+    ],
+    "The Mother of Masks": [
+      "lisette-von-hooplehopper"
+    ],
+    "The Myrtle Burnings": [
+      "the-myrtle-burnings"
+    ],
+    "The Painted Widow": [
+      "margarethe-von-hooplehopper"
+    ],
+    "The Parchment of Persistence": [
+      "the-parchment-of-persistence"
+    ],
+    "The Professor": [
+      "professor-von-hooplehopper"
+    ],
+    "The Rabenwald See": [
+      "rabenwald-see"
+    ],
+    "The Seam-Veil": [
+      "seam-veil"
+    ],
+    "The Shrouded Patriarch": [
+      "doctor-vorst"
+    ],
+    "The Silk-Cloaked Whisperer": [
+      "hildebrand-von-hooplehopper"
+    ],
+    "The Slayton Codex": [
+      "slayton-codex"
+    ],
+    "The Slayton Force": [
+      "slayton-energy"
+    ],
+    "The Snake in Silk": [
+      "velma-the-snake-in-silk"
+    ],
+    "The Steward": [
+      "caleb-mills-stewart"
+    ],
+    "The Swan in Satin": [
+      "lisette-von-hooplehopper"
+    ],
+    "The Swan-Alchemist": [
+      "adelram-von-hooplehopper"
+    ],
+    "The Thread": [
+      "the-thread"
+    ],
+    "The Velvet Archive": [
+      "velvet-archive"
+    ],
+    "The Velvet Archivist": [
+      "professor-von-hooplehopper"
+    ],
+    "The Velvet Reverb": [
+      "miss-slaytonia-vuorse"
+    ],
+    "The Velvet Rite": [
+      "velvet-rite"
+    ],
+    "The Wax-Sealed Crow": [
+      "rabenwald-see"
+    ],
+    "The Weaver": [
+      "the-weaver"
+    ],
+    "The Weaver's Handshake": [
+      "weavers-handshake"
+    ],
+    "The Webweaver": [
+      "wylus-kalyndros"
+    ],
+    "The Words of the Weaver, Book One: Concerning the Crown, the Wound, and the Returning Line": [
+      "words-of-weaver-book-one"
+    ],
+    "The Words of the Weaver, Book Two: Exodus Boogoaloo": [
+      "words-of-weaver-book-two"
+    ],
+    "The Wyoming Rift": [
+      "wyoming-rift"
+    ],
+    "Theresia von Hooplehopper": [
+      "theresia-von-hooplehopper"
+    ],
+    "Thread-Vessel": [
+      "thread-vessel"
+    ],
+    "Three Snap Protocol": [
+      "three-snap-protocol"
+    ],
+    "Velma the Snake in Silk": [
+      "velma-the-snake-in-silk"
+    ],
+    "Victorian Automatic Writing in Digital Drag": [
+      "victorian-automatic-writing-in-digital-drag"
+    ],
+    "Weaving Event": [
+      "weaving-event"
+    ],
+    "Write-Vessel": [
+      "steward-vessel"
+    ],
+    "Wylus Kalyndros": [
+      "wylus-kalyndros"
+    ],
+    "Yorick the Copyist": [
+      "yorick-the-copyist"
+    ],
+    "Yssenda von Hooplehopper": [
+      "yssenda-von-hooplehopper"
+    ],
+    "Zerethium Quartz": [
+      "zerethium-quartz"
+    ]
+  },
+  "distinctive_tokens": {
+    "Adelram": [
+      "adelram-von-hooplehopper"
+    ],
+    "Ash-Faced": [
+      "benedict-the-ash-faced"
+    ],
+    "Authorial": [
+      "steward-vessel"
+    ],
+    "Baden-Hissingen": [
+      "sigismund-von-hooplehopper"
+    ],
+    "Benedict": [
+      "benedict-the-ash-faced"
+    ],
+    "Boogoaloo": [
+      "words-of-weaver-book-two"
+    ],
+    "Candle": [
+      "candle-tax"
+    ],
+    "Conrad": [
+      "conrad-von-hooplehopper"
+    ],
+    "Dust-Born": [
+      "jake-mcullen"
+    ],
+    "Dustbrand": [
+      "dustbrand-sigil"
+    ],
+    "Eisensang": [
+      "eisensang-march",
+      "schloss-eisensang"
+    ],
+    "Federstahl": [
+      "crystal-shard",
+      "federstahl-institute",
+      "federstahl-lattice",
+      "lisette-von-hooplehopper",
+      "schloss-federstahl"
+    ],
+    "Garter's": [
+      "order-of-the-garters-secret-hem"
+    ],
+    "Glamorons": [
+      "glamorons"
+    ],
+    "Hildebrand": [
+      "hildebrand-von-hooplehopper"
+    ],
+    "Hildebrand's": [
+      "hildebrands-ring"
+    ],
+    "Hooplehopper": [
+      "adelram-von-hooplehopper",
+      "conrad-von-hooplehopper",
+      "hildebrand-von-hooplehopper",
+      "isolde-von-hooplehopper",
+      "lisette-von-hooplehopper",
+      "ludolf-von-hooplehopper",
+      "lysander-von-hooplehopper",
+      "margarethe-von-hooplehopper",
+      "professor-von-hooplehopper",
+      "sigismund-von-hooplehopper",
+      "theresia-von-hooplehopper",
+      "yssenda-von-hooplehopper"
+    ],
+    "Isolde": [
+      "isolde-of-the-lower-hall",
+      "isolde-von-hooplehopper"
+    ],
+    "Kalyndros": [
+      "wylus-kalyndros"
+    ],
+    "Keeper": [
+      "candle-tax"
+    ],
+    "Konrad": [
+      "ottokar-ii-von-rabenwald"
+    ],
+    "Lisette": [
+      "lisette-von-hooplehopper"
+    ],
+    "Ludolf": [
+      "ludolf-von-hooplehopper"
+    ],
+    "Lysander": [
+      "lysander-von-hooplehopper"
+    ],
+    "Margarethe": [
+      "margarethe-von-hooplehopper"
+    ],
+    "Mariah": [
+      "dr-mariah-slayton"
+    ],
+    "McCullen": [
+      "eli-mcullen",
+      "jake-mcullen",
+      "mcullen-ranch"
+    ],
+    "Mirrorpath": [
+      "velvet-rite"
+    ],
+    "Myrtle": [
+      "the-myrtle-burnings"
+    ],
+    "Ottokar": [
+      "ottokar-ii-von-rabenwald",
+      "rabenwald-see"
+    ],
+    "Post-Truth": [
+      "narrative-collapse"
+    ],
+    "Pre-Weaver": [
+      "pre-weaver-phase"
+    ],
+    "Proto-Weaver": [
+      "pre-weaver-phase"
+    ],
+    "Rabenwald": [
+      "ottokar-ii-von-rabenwald",
+      "rabenwald-see"
+    ],
+    "Read-Vessel": [
+      "thread-vessel"
+    ],
+    "Schloss": [
+      "schloss-eisensang",
+      "schloss-federstahl"
+    ],
+    "Schwahnn": [
+      "heda-von-schwahnn"
+    ],
+    "Seam-State": [
+      "seam-state"
+    ],
+    "Seam-Veil": [
+      "seam-veil"
+    ],
+    "Sigismund": [
+      "sigismund-von-hooplehopper"
+    ],
+    "Silk-Cloaked": [
+      "hildebrand-von-hooplehopper"
+    ],
+    "Slay-Offs": [
+      "great-slay-offs"
+    ],
+    "Slayton": [
+      "dr-mariah-slayton",
+      "glamorons",
+      "slayton-codex",
+      "slayton-energy"
+    ],
+    "Slaytonia": [
+      "miss-slaytonia-verse",
+      "miss-slaytonia-vuorse"
+    ],
+    "Stewart": [
+      "caleb-mills-stewart"
+    ],
+    "Surface": [
+      "archive-surface"
+    ],
+    "Swan-Alchemist": [
+      "adelram-von-hooplehopper"
+    ],
+    "Theresia": [
+      "theresia-von-hooplehopper"
+    ],
+    "Thread-Vessel": [
+      "thread-vessel"
+    ],
+    "VUORSE": [
+      "miss-slaytonia-vuorse"
+    ],
+    "Wax-Sealed": [
+      "rabenwald-see"
+    ],
+    "Weaver's": [
+      "weavers-handshake"
+    ],
+    "Webweaver": [
+      "wylus-kalyndros"
+    ],
+    "Write-Vessel": [
+      "steward-vessel"
+    ],
+    "Wyoming": [
+      "wyoming-rift"
+    ],
+    "Yorick": [
+      "yorick-the-copyist"
+    ],
+    "Yssenda": [
+      "yssenda-von-hooplehopper"
+    ],
+    "Zerethium": [
+      "zerethium-quartz"
+    ]
+  },
+  "case_sensitive_forms": [
+    "Brand",
+    "Grand",
+    "Pop",
+    "Rolf",
+    "Seam",
+    "Splat",
+    "Thread",
+    "Verse"
+  ]
 }

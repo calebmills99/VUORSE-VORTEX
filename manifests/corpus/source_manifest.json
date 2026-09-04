@@ -1,9 +1,504 @@
 {
   "name": "VUORSE-VORTEX Source Corpus",
   "description": "Manifest for Slayverse lore, canon, roadmap-private material, and synthetic enrichment sources.",
-  "sources": [],
+  "roots": [
+    "canon",
+    "schemas",
+    "agents",
+    "persona",
+    "synthetic_enrichment/validated",
+    "hooplehopper_totality",
+    "roadmap"
+  ],
+  "includes_pdf": false,
+  "includes_finale": false,
+  "source_count": 48,
+  "sealed_source_count": 16,
+  "sources": [
+    {
+      "id": "canon-1-words-of-weaver-book-one-words-of-weaver-book-one",
+      "path": "canon/1_words_of_weaver_book_one/Words_of_Weaver_BOOK_ONE.MD",
+      "title": "Words of Weaver BOOK ONE",
+      "layer": "canon",
+      "visibility": "public",
+      "canon_status": "unknown",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "canon-2-words-of-weaver-book-two-words-of-weaver-book-two-exodus-boogoaloo",
+      "path": "canon/2-words-of_weaver_book_two/Words_of_Weaver_Book_Two_Exodus_Boogoaloo.md",
+      "title": "Words of Weaver Book Two Exodus Boogoaloo",
+      "layer": "canon",
+      "visibility": "public",
+      "canon_status": "unknown",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "canon-2-words-of-weaver-book-two-words-of-weaver-book-two",
+      "path": "canon/2_words_of_weaver_book_two/Words_of_Weaver_BOOK_TWO.MD",
+      "title": "Words of Weaver BOOK TWO",
+      "layer": "canon",
+      "visibility": "public",
+      "canon_status": "unknown",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "canon-artifacts-artifacts",
+      "path": "canon/artifacts/artifacts.md",
+      "title": "artifacts",
+      "layer": "canon",
+      "visibility": "public",
+      "canon_status": "unknown",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "canon-characters-characters",
+      "path": "canon/characters/characters.md",
+      "title": "characters",
+      "layer": "canon",
+      "visibility": "public",
+      "canon_status": "unknown",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "canon-cosmology-cosmology",
+      "path": "canon/cosmology/cosmology.md",
+      "title": "cosmology",
+      "layer": "canon",
+      "visibility": "public",
+      "canon_status": "unknown",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "canon-creative-works-creative-works",
+      "path": "canon/creative_works/creative_works.md",
+      "title": "creative works",
+      "layer": "canon",
+      "visibility": "public",
+      "canon_status": "unknown",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "canon-open-threads-open-threads",
+      "path": "canon/open_threads/open_threads.md",
+      "title": "open threads",
+      "layer": "canon",
+      "visibility": "public",
+      "canon_status": "unknown",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "canon-organizations-golden-wingers-league-charter",
+      "path": "canon/organizations/golden_wingers_league_charter.md",
+      "title": "golden wingers league charter",
+      "layer": "canon",
+      "visibility": "public",
+      "canon_status": "unknown",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "canon-organizations-organizations",
+      "path": "canon/organizations/organizations.md",
+      "title": "organizations",
+      "layer": "canon",
+      "visibility": "public",
+      "canon_status": "unknown",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "canon-places-places",
+      "path": "canon/places/places.md",
+      "title": "places",
+      "layer": "canon",
+      "visibility": "public",
+      "canon_status": "unknown",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "canon-projects-projects",
+      "path": "canon/projects/projects.json",
+      "title": "projects",
+      "layer": "canon",
+      "visibility": "public",
+      "canon_status": "unknown",
+      "source_type": "json",
+      "notes": ""
+    },
+    {
+      "id": "canon-relationships-relationship-map",
+      "path": "canon/relationships/relationship_map.md",
+      "title": "relationship map",
+      "layer": "canon",
+      "visibility": "public",
+      "canon_status": "unknown",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "canon-rituals-rituals",
+      "path": "canon/rituals/rituals.md",
+      "title": "rituals",
+      "layer": "canon",
+      "visibility": "public",
+      "canon_status": "unknown",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "canon-session-archives-slayverse-session-archive-2026-08-07",
+      "path": "canon/session_archives/slayverse_session_archive_2026-08-07.md",
+      "title": "slayverse session archive 2026-08-07",
+      "layer": "canon",
+      "visibility": "public",
+      "canon_status": "unknown",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "canon-slayverse-index",
+      "path": "canon/slayverse_index.json",
+      "title": "slayverse index",
+      "layer": "canon",
+      "visibility": "public",
+      "canon_status": "unknown",
+      "source_type": "json",
+      "notes": ""
+    },
+    {
+      "id": "canon-slayverse-md-records-clean-slayverse-md-records-clean",
+      "path": "canon/slayverse_md_records_clean/slayverse_md_records_clean.jsonl",
+      "title": "slayverse md records clean",
+      "layer": "canon",
+      "visibility": "public",
+      "canon_status": "unknown",
+      "source_type": "jsonl",
+      "notes": "1762 records"
+    },
+    {
+      "id": "canon-story-arcs-story-arcs",
+      "path": "canon/story_arcs/story_arcs.md",
+      "title": "story arcs",
+      "layer": "canon",
+      "visibility": "public",
+      "canon_status": "unknown",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "canon-tv-series-bible-slayverse-tv-series-bible",
+      "path": "canon/TV_Series_Bible/SLAYVERSE_TV_SERIES_BIBLE.md",
+      "title": "SLAYVERSE TV SERIES BIBLE",
+      "layer": "canon",
+      "visibility": "public",
+      "canon_status": "unknown",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "canon-tv-series-bible-timeline-timeline",
+      "path": "canon/TV_Series_Bible/timeline/timeline.md",
+      "title": "timeline",
+      "layer": "canon",
+      "visibility": "public",
+      "canon_status": "unknown",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "canon-weaver-artifacts-the-parchment-of-persistence-raw-substrate",
+      "path": "canon/weaver_artifacts/the_parchment_of_persistence_raw_substrate.txt",
+      "title": "the parchment of persistence raw substrate",
+      "layer": "canon",
+      "visibility": "public",
+      "canon_status": "unknown",
+      "source_type": "text",
+      "notes": ""
+    },
+    {
+      "id": "canon-weaver-artifacts-the-parchment-of-persistence-scene",
+      "path": "canon/weaver_artifacts/the_parchment_of_persistence_scene.md",
+      "title": "the parchment of persistence scene",
+      "layer": "canon",
+      "visibility": "public",
+      "canon_status": "unknown",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "schemas-vuorse-cloud-memory-record-schema",
+      "path": "schemas/vuorse_cloud_memory_record.schema.json",
+      "title": "vuorse cloud memory record.schema",
+      "layer": "rule",
+      "visibility": "internal",
+      "canon_status": "system_rule",
+      "source_type": "json",
+      "notes": ""
+    },
+    {
+      "id": "agents-algo-chaos-algo-chaos",
+      "path": "agents/algo_chaos/Algo_Chaos.md",
+      "title": "Algo Chaos",
+      "layer": "rule",
+      "visibility": "internal",
+      "canon_status": "system_rule",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "agents-canon-extractor-canon-extractor-agent",
+      "path": "agents/canon_extractor/canon_extractor.agent.md",
+      "title": "canon extractor.agent",
+      "layer": "rule",
+      "visibility": "internal",
+      "canon_status": "system_rule",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "agents-embedding-embedding-agent",
+      "path": "agents/embedding/embedding.agent.md",
+      "title": "embedding.agent",
+      "layer": "rule",
+      "visibility": "internal",
+      "canon_status": "system_rule",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "agents-firewall-validator-firewall-validator-agent",
+      "path": "agents/firewall_validator/firewall_validator.agent.md",
+      "title": "firewall validator.agent",
+      "layer": "rule",
+      "visibility": "internal",
+      "canon_status": "system_rule",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "agents-indexer-indexer-agent",
+      "path": "agents/indexer/indexer.agent.md",
+      "title": "indexer.agent",
+      "layer": "rule",
+      "visibility": "internal",
+      "canon_status": "system_rule",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "agents-seam-clerk-seam-clerk-agent",
+      "path": "agents/seam_clerk/seam_clerk.agent.md",
+      "title": "seam clerk.agent",
+      "layer": "rule",
+      "visibility": "internal",
+      "canon_status": "system_rule",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "agents-synthetic-enricher-synthetic-enricher-agent",
+      "path": "agents/synthetic_enricher/synthetic_enricher.agent.md",
+      "title": "synthetic enricher.agent",
+      "layer": "rule",
+      "visibility": "internal",
+      "canon_status": "system_rule",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "agents-writers-room-writers-room-agent",
+      "path": "agents/writers_room/writers-room.agent.md",
+      "title": "writers-room.agent",
+      "layer": "rule",
+      "visibility": "internal",
+      "canon_status": "system_rule",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "persona-heda-von-schwahnn-voice",
+      "path": "persona/heda_von_schwahnn_voice.md",
+      "title": "heda von schwahnn voice",
+      "layer": "persona",
+      "visibility": "behavioral",
+      "canon_status": "unknown",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "synthetic-enrichment-validated-debrief-private-theses-20260523",
+      "path": "synthetic_enrichment/validated/debrief_private_theses_20260523.jsonl",
+      "title": "debrief private theses 20260523",
+      "layer": "hooplehopper_totality",
+      "visibility": "private_to_vuorse",
+      "canon_status": "synthetic_behavioral",
+      "source_type": "jsonl",
+      "notes": "8 records"
+    },
+    {
+      "id": "hooplehopper-totality-acolytes-readme",
+      "path": "hooplehopper_totality/acolytes/README.md",
+      "title": "README",
+      "layer": "hooplehopper_totality",
+      "visibility": "weaver_only",
+      "canon_status": "roadmap_private",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "hooplehopper-totality-ch2-sealed-causes",
+      "path": "hooplehopper_totality/ch2_sealed_causes.jsonl",
+      "title": "ch2 sealed causes",
+      "layer": "hooplehopper_totality",
+      "visibility": "weaver_only",
+      "canon_status": "roadmap_private",
+      "source_type": "jsonl",
+      "notes": "3 records"
+    },
+    {
+      "id": "hooplehopper-totality-debriefing-walled",
+      "path": "hooplehopper_totality/debriefing_walled.jsonl",
+      "title": "debriefing walled",
+      "layer": "hooplehopper_totality",
+      "visibility": "private_to_vuorse",
+      "canon_status": "synthetic_behavioral",
+      "source_type": "jsonl",
+      "notes": "16 records"
+    },
+    {
+      "id": "hooplehopper-totality-debriefing-walled",
+      "path": "hooplehopper_totality/debriefing_walled.md",
+      "title": "debriefing walled",
+      "layer": "hooplehopper_totality",
+      "visibility": "weaver_only",
+      "canon_status": "roadmap_private",
+      "source_type": "markdown",
+      "notes": "id collides with hooplehopper_totality/debriefing_walled.jsonl"
+    },
+    {
+      "id": "hooplehopper-totality-double-agents-readme",
+      "path": "hooplehopper_totality/double_agents/README.md",
+      "title": "README",
+      "layer": "hooplehopper_totality",
+      "visibility": "weaver_only",
+      "canon_status": "roadmap_private",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "hooplehopper-totality-future-protected-readme",
+      "path": "hooplehopper_totality/future_protected/README.md",
+      "title": "README",
+      "layer": "hooplehopper_totality",
+      "visibility": "weaver_only",
+      "canon_status": "roadmap_private",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "hooplehopper-totality-known-readme",
+      "path": "hooplehopper_totality/known/README.md",
+      "title": "README",
+      "layer": "hooplehopper_totality",
+      "visibility": "weaver_only",
+      "canon_status": "roadmap_private",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "hooplehopper-totality-memory-echoes-readme",
+      "path": "hooplehopper_totality/memory_echoes/README.md",
+      "title": "README",
+      "layer": "hooplehopper_totality",
+      "visibility": "weaver_only",
+      "canon_status": "roadmap_private",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "hooplehopper-totality-unknown-readme",
+      "path": "hooplehopper_totality/unknown/README.md",
+      "title": "README",
+      "layer": "hooplehopper_totality",
+      "visibility": "weaver_only",
+      "canon_status": "roadmap_private",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "roadmap-forbidden-suitcase-readme",
+      "path": "roadmap/forbidden_suitcase/README.md",
+      "title": "README",
+      "layer": "roadmap_manifest",
+      "visibility": "private_to_vuorse",
+      "canon_status": "roadmap_private",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "roadmap-handoff-query",
+      "path": "roadmap/Handoff_Query.md",
+      "title": "Handoff Query",
+      "layer": "roadmap_manifest",
+      "visibility": "private_to_vuorse",
+      "canon_status": "roadmap_private",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "roadmap-plan-v1-repo-optimization-review",
+      "path": "roadmap/Plan_v1___Repo_Optimization_Review.md",
+      "title": "Plan v1   Repo Optimization Review",
+      "layer": "roadmap_manifest",
+      "visibility": "private_to_vuorse",
+      "canon_status": "roadmap_private",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "roadmap-season-1-readme",
+      "path": "roadmap/season_1/README.md",
+      "title": "README",
+      "layer": "roadmap_manifest",
+      "visibility": "private_to_vuorse",
+      "canon_status": "roadmap_private",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "roadmap-vorst-readme",
+      "path": "roadmap/vorst/README.md",
+      "title": "README",
+      "layer": "roadmap_manifest",
+      "visibility": "private_to_vuorse",
+      "canon_status": "roadmap_private",
+      "source_type": "markdown",
+      "notes": ""
+    },
+    {
+      "id": "roadmap-weaver-only-readme",
+      "path": "roadmap/weaver_only/README.md",
+      "title": "README",
+      "layer": "roadmap_manifest",
+      "visibility": "private_to_vuorse",
+      "canon_status": "roadmap_private",
+      "source_type": "markdown",
+      "notes": ""
+    }
+  ],
   "notes": [
-    "Populate from Slayverse Lore Compendium materials.",
+    "Generated by vuorse_vortex.indexing.build_source_manifest.",
+    "canon_status 'unknown' means the source does not declare one. Do not guess.",
     "Keep Memory Cortex separate.",
     "Do not invent Jake's mother's name prematurely."
   ]
