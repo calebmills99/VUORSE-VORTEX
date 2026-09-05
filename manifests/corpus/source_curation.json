@@ -1,0 +1,122 @@
+{
+  "name": "VUORSE-VORTEX Source Curation Overlay",
+  "description": "Hand-audited manifest fields that a disk walk cannot re-derive. vuorse_vortex.indexing.build_source_manifest reads this file and joins it onto the walk, so regeneration adds new files and drops removed ones without reverting curated judgement.",
+  "keyed_by": "repo-relative source path, exactly as it appears in source_manifest.json",
+  "fields": [
+    "canon_status",
+    "notes"
+  ],
+  "precedence": [
+    "canon_status declared by a source's own JSONL records outranks this overlay.",
+    "Otherwise this overlay outranks the ROUTES table default.",
+    "Curated notes replace generated notes; generated WARNINGS are always appended."
+  ],
+  "notes": [
+    "Seeded 2026-09-05 from the hand-audited manifests/corpus/source_manifest.json, by diffing it against build_source_manifest(curation_path=None) so that only fields the walk cannot reproduce are recorded here.",
+    "Machine-generated notes ('N records', 'MIXED privacy posture: ...') are not seeded: the builder re-derives them on every run.",
+    "The note 'id collides with hooplehopper_totality/debriefing_walled.jsonl' is not seeded either. It was the swallowed collision report that T1 removed; the builder now disambiguates the id instead of narrating the collision.",
+    "An overlay entry whose path leaves the corpus is reported in ManifestReport.orphaned_curation, never dropped silently."
+  ],
+  "source_count": 29,
+  "sources": {
+    "canon/1_words_of_weaver_book_one/Words_of_Weaver_BOOK_ONE.MD": {
+      "canon_status": "locked",
+      "notes": "Self-declared 'Locked Canon' in frontmatter; corroborated by entity_index.json."
+    },
+    "canon/2_words_of_weaver_book_two/Words_of_Weaver_BOOK_TWO.MD": {
+      "canon_status": "locked",
+      "notes": "Self-declared 'Locked Canon' in frontmatter; corroborated by entity_index.json."
+    },
+    "canon/TV_Series_Bible/SLAYVERSE_TV_SERIES_BIBLE.md": {
+      "canon_status": "locked"
+    },
+    "canon/TV_Series_Bible/timeline/timeline.md": {
+      "canon_status": "locked"
+    },
+    "canon/artifacts/artifacts.md": {
+      "canon_status": "locked"
+    },
+    "canon/characters/characters.md": {
+      "canon_status": "locked"
+    },
+    "canon/characters/sassafras_a_mcgraw_ultimate_origin.json": {
+      "canon_status": "draft",
+      "notes": "Promoted from the Slayverse working archive (Slayverse/json/sassafras_a_mcgraw_ultimate_origin.json) on 2026-09-05. Unique lore with no canon/ counterpart at time of promotion. Draft pending line-by-line review; see Slayverse/ARCHIVE.md."
+    },
+    "canon/cosmology/Theory_of_Everything_Confirmed_.md": {
+      "canon_status": "draft",
+      "notes": "Promoted from the Slayverse working archive (Slayverse/md/Theory_of_Everything_Confirmed_.md) on 2026-09-05. Unique lore with no canon/ counterpart at time of promotion. Draft pending line-by-line review; see Slayverse/ARCHIVE.md."
+    },
+    "canon/cosmology/cosmology.md": {
+      "canon_status": "locked"
+    },
+    "canon/cosmology/slayton_particle_discovery.md": {
+      "canon_status": "draft",
+      "notes": "Promoted from the Slayverse working archive (Slayverse/md/slayton_particle_discovery.md) on 2026-09-05. Unique lore with no canon/ counterpart at time of promotion. Draft pending line-by-line review; see Slayverse/ARCHIVE.md."
+    },
+    "canon/creative_works/creative_works.md": {
+      "canon_status": "draft"
+    },
+    "canon/creative_works/sassafrass_a_mcgraw_texas_hopper_tall_tale.json": {
+      "canon_status": "draft",
+      "notes": "Promoted from the Slayverse working archive (Slayverse/json/sassafrass_a_mcgraw_texas_hopper_tall_tale.json) on 2026-09-05. Unique lore with no canon/ counterpart at time of promotion. Draft pending line-by-line review; see Slayverse/ARCHIVE.md."
+    },
+    "canon/open_threads/Continutity_Audit.md": {
+      "canon_status": "draft",
+      "notes": "Promoted from the Slayverse working archive (Slayverse/json/jsonl/Continutity_Audit.md) on 2026-09-05. Unique lore with no canon/ counterpart at time of promotion. Draft pending line-by-line review; see Slayverse/ARCHIVE.md."
+    },
+    "canon/open_threads/open_threads.md": {
+      "canon_status": "draft"
+    },
+    "canon/organizations/golden_wingers_league_charter.md": {
+      "canon_status": "locked",
+      "notes": "Constitutional document. The Golden Wingers Intergalactic League Charter, v1.0, authored and ratified by Caleb Mills Stewart. This file is the published web edition, retrieved from https://www.golden-wings-robyn.com/league-charter, and retains page furniture from that capture. The structured record of the same charter is golden_wings_intergaltactic_league_charter.json. Cited as source by canon/organizations/organizations.md and canon/creative_works/creative_works.md (both under the stale path 'data/golden_wingers_charter.md')."
+    },
+    "canon/organizations/golden_wings_intergaltactic_league_charter.json": {
+      "canon_status": "locked",
+      "notes": "Constitutional document, structured record. Declares entity id 'golden-wingers-charter', status 'full', ratified across all dimensions, timelines and galaxies; signatories Caleb the Keeper, Robyn of the Gold Wings, and Jock the Wise, Keeper of the 747 Scrolls. Supersedes the web capture in scope: carries initiation rites, notable proclamations, closing invocations and signatories that the capture omits. Resolves the dangling 'golden-wingers -> golden-wingers-charter' reference in relationship_index.json once the corpus is reindexed. Promoted from Slayverse/json/ on 2026-09-05."
+    },
+    "canon/organizations/organizations.md": {
+      "canon_status": "locked"
+    },
+    "canon/places/places.md": {
+      "canon_status": "locked"
+    },
+    "canon/projects/projects.json": {
+      "canon_status": "draft"
+    },
+    "canon/relationships/relationship_map.md": {
+      "canon_status": "locked"
+    },
+    "canon/rituals/rituals.md": {
+      "canon_status": "locked"
+    },
+    "canon/session_archives/slayverse_session_archive_2026-08-07.md": {
+      "canon_status": "draft"
+    },
+    "canon/session_archives/slayverse_session_archive_first_steward_transmission.md": {
+      "canon_status": "draft",
+      "notes": "Promoted from the Slayverse working archive (Slayverse/md/slayverse_session_archive_first_steward_transmission.md) on 2026-09-05. Unique lore with no canon/ counterpart at time of promotion. Draft pending line-by-line review; see Slayverse/ARCHIVE.md."
+    },
+    "canon/slayverse_index.json": {
+      "canon_status": "draft"
+    },
+    "canon/slayverse_md_records_clean/slayverse_md_records_clean.jsonl": {
+      "canon_status": "draft"
+    },
+    "canon/story_arcs/story_arcs.md": {
+      "canon_status": "locked"
+    },
+    "canon/weaver_artifacts/the_parchment_of_persistence_raw_substrate.txt": {
+      "canon_status": "draft"
+    },
+    "canon/weaver_artifacts/the_parchment_of_persistence_scene.md": {
+      "canon_status": "locked",
+      "notes": "Self-declared 'Locked Canon' in frontmatter; corroborated by entity_index.json."
+    },
+    "persona/heda_von_schwahnn_voice.md": {
+      "canon_status": "synthetic_behavioral",
+      "notes": "Voice and performance direction for a locked entity. The entity 'heda-von-schwahnn' is status=locked in manifests/corpus/entity_index.json via canon/slayverse_index.json; the identity facts in this document's Core Identity / Character Essence / Relationship sections are canon at the entity level, not by way of this file. Everything from Voice Description onward is direction only and must not be stated as world fact (visibility=behavioral, policies/disclosure/README.md). Scanned clean for sealed topics: no finale, Jake, mother, Vorst, or future Hooplehopper identities."
+    }
+  }
+}

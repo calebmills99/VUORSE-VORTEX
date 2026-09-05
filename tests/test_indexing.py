@@ -14,6 +14,8 @@ import pytest
 
 from vuorse_vortex.indexing import (
     FINALE_PREFIX,
+    CurationFileError,
+    DuplicateSourceIdError,
     NonMergeableCollapseError,
     build_entity_index,
     build_relationship_index,
@@ -21,6 +23,7 @@ from vuorse_vortex.indexing import (
     is_current,
     is_distinctive,
     iter_source_files,
+    load_source_curation,
     route_for,
     slugify,
 )
@@ -306,3 +309,298 @@ class TestDriftCheck:
         out = Path("manifests/corpus/source_manifest.json")
         manifest, _ = build_source_manifest(["canon"], out_path=out, base=tmp_path)
         assert is_current(tmp_path / out, manifest)
+
+
+class TestSourceIdCollisions:
+    """`x.jsonl` and `x.md` in one routed directory used to mint the same id.
+
+    Regression origin: `hooplehopper_totality/debriefing_walled.{jsonl,md}` both
+    reduced to `hooplehopper-totality-debriefing-walled`. The collision was
+    detected, written into `notes` as prose, and the duplicate row emitted
+    anyway -- which put 8 colliding chunk ids into the cortex index, each one
+    pairing a `private_to_vuorse` chunk with a `weaver_only` chunk.
+    """
+
+    @staticmethod
+    def _same_stem_pair(tmp_path: Path) -> None:
+        canon = tmp_path / "canon"
+        canon.mkdir(parents=True, exist_ok=True)
+        (canon / "debriefing_walled.md").write_text("prose", encoding="utf-8")
+        record = {
+            "layer": "canon",
+            "metadata": {"visibility": "public", "canon_status": "locked"},
+        }
+        (canon / "debriefing_walled.jsonl").write_text(
+            json.dumps(record) + "\n", encoding="utf-8"
+        )
+
+    def test_same_stem_different_suffix_yields_distinct_ids(self, tmp_path: Path) -> None:
+        self._same_stem_pair(tmp_path)
+        manifest, _ = build_source_manifest(
+            ["canon"], out_path=None, base=tmp_path, curation_path=None
+        )
+        ids = [s["id"] for s in manifest["sources"]]
+        assert len(ids) == 2, f"expected both files indexed, got {ids}"
+        assert len(set(ids)) == 2, f"duplicate ids survived: {ids}"
+        # Disambiguation convention borrowed from walled._build_jsonl_text: the
+        # first claimant in walk order keeps the base id, the next takes `-2`.
+        assert ids == ["canon-debriefing-walled", "canon-debriefing-walled-2"]
+
+    def test_ids_are_deterministic_across_two_runs(self, tmp_path: Path) -> None:
+        self._same_stem_pair(tmp_path)
+        first, _ = build_source_manifest(
+            ["canon"], out_path=None, base=tmp_path, curation_path=None
+        )
+        second, _ = build_source_manifest(
+            ["canon"], out_path=None, base=tmp_path, curation_path=None
+        )
+        assert [s["id"] for s in first["sources"]] == [s["id"] for s in second["sources"]]
+        assert [(s["id"], s["path"]) for s in first["sources"]] == [
+            (s["id"], s["path"]) for s in second["sources"]
+        ]
+
+    def test_disambiguated_ids_keep_their_own_visibility(self, tmp_path: Path) -> None:
+        """The two rows must stay two rows, on their own sides of the boundary."""
+        canon = tmp_path / "canon"
+        canon.mkdir(parents=True)
+        (canon / "walled.md").write_text("prose", encoding="utf-8")
+        record = {
+            "layer": "hooplehopper_totality",
+            "metadata": {"visibility": "weaver_only", "canon_status": "roadmap_private"},
+        }
+        (canon / "walled.jsonl").write_text(json.dumps(record) + "\n", encoding="utf-8")
+
+        manifest, _ = build_source_manifest(
+            ["canon"], out_path=None, base=tmp_path, curation_path=None
+        )
+        by_id = {s["id"]: s for s in manifest["sources"]}
+        assert len(by_id) == 2
+        assert by_id["canon-walled"]["visibility"] == "weaver_only"
+        assert by_id["canon-walled-2"]["visibility"] == "public"
+
+    def test_collision_is_reported_not_narrated_into_notes(self, tmp_path: Path) -> None:
+        self._same_stem_pair(tmp_path)
+        manifest, report = build_source_manifest(
+            ["canon"], out_path=None, base=tmp_path, curation_path=None
+        )
+        assert len(report.disambiguated_ids) == 1
+        message = report.disambiguated_ids[0]
+        assert "canon/debriefing_walled.md" in message
+        assert "canon-debriefing-walled-2" in message
+        assert all(
+            "collides" not in (s["notes"] or "") for s in manifest["sources"]
+        ), "a detected collision must not be swallowed into a note on a duplicate row"
+
+    def test_duplicate_ids_raise_rather_than_ship(self) -> None:
+        """The last-line guard: private, but it is the invariant being defended."""
+        from vuorse_vortex.indexing import _assert_unique_ids
+
+        with pytest.raises(DuplicateSourceIdError) as excinfo:
+            _assert_unique_ids(
+                [
+                    {"id": "twin", "path": "canon/a.md"},
+                    {"id": "twin", "path": "canon/b.md"},
+                ],
+                Path("manifests/corpus/source_manifest.json"),
+            )
+        text = str(excinfo.value)
+        assert "twin" in text
+        assert "canon/a.md" in text and "canon/b.md" in text
+        assert "manifests/corpus/source_manifest.json" in text
+
+
+class TestSourceCurationOverlay:
+    """Regeneration must not revert hand-audited `canon_status` and `notes`."""
+
+    CURATION_REL = Path("manifests/corpus/source_curation.json")
+
+    @classmethod
+    def _write_curation(cls, tmp_path: Path, payload: object) -> Path:
+        target = tmp_path / cls.CURATION_REL
+        target.parent.mkdir(parents=True, exist_ok=True)
+        if isinstance(payload, str):
+            target.write_text(payload, encoding="utf-8")
+        else:
+            target.write_text(json.dumps(payload), encoding="utf-8")
+        return cls.CURATION_REL
+
+    def test_route_default_applies_without_an_overlay(self, tmp_path: Path) -> None:
+        """Baseline: this is exactly the state T2 has to stop being permanent."""
+        canon = tmp_path / "canon"
+        canon.mkdir()
+        (canon / "artifacts.md").write_text("x", encoding="utf-8")
+        manifest, report = build_source_manifest(
+            ["canon"], out_path=None, base=tmp_path, curation_path=None
+        )
+        assert manifest["sources"][0]["canon_status"] == "unknown"
+        assert manifest["sources"][0]["notes"] == ""
+        assert report.curated_paths == []
+
+    def test_curation_survives_a_regeneration_round_trip(self, tmp_path: Path) -> None:
+        canon = tmp_path / "canon"
+        canon.mkdir()
+        (canon / "artifacts.md").write_text("x", encoding="utf-8")
+        (canon / "retired.md").write_text("x", encoding="utf-8")
+        provenance = "Self-declared 'Locked Canon' in frontmatter; corroborated by entity_index.json."
+        curation = self._write_curation(
+            tmp_path,
+            {
+                "sources": {
+                    "canon/artifacts.md": {
+                        "canon_status": "locked",
+                        "notes": provenance,
+                    },
+                    "canon/retired.md": {"canon_status": "draft"},
+                }
+            },
+        )
+        out = Path("manifests/corpus/source_manifest.json")
+
+        first, first_report = build_source_manifest(
+            ["canon"], out_path=out, base=tmp_path, curation_path=curation
+        )
+        assert sorted(first_report.curated_paths) == [
+            "canon/artifacts.md",
+            "canon/retired.md",
+        ]
+        assert first_report.orphaned_curation == []
+
+        # The corpus moves on: a file is added, a curated file is removed.
+        (canon / "brand_new.md").write_text("x", encoding="utf-8")
+        (canon / "retired.md").unlink()
+
+        second, second_report = build_source_manifest(
+            ["canon"], out_path=out, base=tmp_path, curation_path=curation
+        )
+        by_path = {s["path"]: s for s in second["sources"]}
+
+        # R3/R4: curated fields survive.
+        assert by_path["canon/artifacts.md"]["canon_status"] == "locked"
+        assert by_path["canon/artifacts.md"]["notes"] == provenance
+        # New sources still appear, at the route default until triaged.
+        assert "canon/brand_new.md" in by_path
+        assert by_path["canon/brand_new.md"]["canon_status"] == "unknown"
+        # Removed sources still drop, and their curation is reported, not hidden.
+        assert "canon/retired.md" not in by_path
+        assert second_report.orphaned_curation == ["canon/retired.md"]
+        # The written file agrees with the returned payload.
+        on_disk = json.loads((tmp_path / out).read_text(encoding="utf-8"))
+        assert on_disk["sources"] == second["sources"]
+        assert first["sources"] != second["sources"]
+
+    def test_curation_does_not_overrule_a_self_declared_status(
+        self, tmp_path: Path
+    ) -> None:
+        """Record metadata is the source speaking for itself; the overlay is not."""
+        canon = tmp_path / "canon"
+        canon.mkdir()
+        record = {
+            "layer": "hooplehopper_totality",
+            "metadata": {"visibility": "weaver_only", "canon_status": "roadmap_private"},
+        }
+        (canon / "records.jsonl").write_text(json.dumps(record) + "\n", encoding="utf-8")
+        curation = self._write_curation(
+            tmp_path, {"sources": {"canon/records.jsonl": {"canon_status": "locked"}}}
+        )
+        manifest, _ = build_source_manifest(
+            ["canon"], out_path=None, base=tmp_path, curation_path=curation
+        )
+        assert manifest["sources"][0]["canon_status"] == "roadmap_private"
+
+    def test_curated_notes_cannot_hide_a_privacy_warning(self, tmp_path: Path) -> None:
+        canon = tmp_path / "canon"
+        canon.mkdir()
+        rows = [
+            {"layer": "canon", "metadata": {"visibility": "public", "canon_status": "locked"}},
+            {
+                "layer": "hooplehopper_totality",
+                "metadata": {"visibility": "weaver_only", "canon_status": "roadmap_private"},
+            },
+        ]
+        (canon / "mixed.jsonl").write_text(
+            "\n".join(json.dumps(r) for r in rows) + "\n", encoding="utf-8"
+        )
+        curation = self._write_curation(
+            tmp_path, {"sources": {"canon/mixed.jsonl": {"notes": "reviewed 2026-09-05"}}}
+        )
+        manifest, report = build_source_manifest(
+            ["canon"], out_path=None, base=tmp_path, curation_path=curation
+        )
+        notes = manifest["sources"][0]["notes"]
+        assert "reviewed 2026-09-05" in notes
+        assert "MIXED privacy posture" in notes
+        assert "canon/mixed.jsonl" in report.mixed_files
+
+    def test_missing_overlay_is_not_an_error(self, tmp_path: Path) -> None:
+        canon = tmp_path / "canon"
+        canon.mkdir()
+        (canon / "artifacts.md").write_text("x", encoding="utf-8")
+        manifest, report = build_source_manifest(
+            ["canon"], out_path=None, base=tmp_path, curation_path=self.CURATION_REL
+        )
+        assert manifest["sources"][0]["canon_status"] == "unknown"
+        assert report.curated_paths == []
+
+    def test_unparseable_overlay_raises_with_the_path_and_reason(
+        self, tmp_path: Path
+    ) -> None:
+        curation = self._write_curation(tmp_path, "{not json")
+        with pytest.raises(CurationFileError) as excinfo:
+            build_source_manifest(
+                ["canon"], out_path=None, base=tmp_path, curation_path=curation
+            )
+        text = str(excinfo.value)
+        assert "source_curation.json" in text
+        assert "line 1" in text
+
+    def test_overlay_without_a_sources_object_raises(self, tmp_path: Path) -> None:
+        curation = self._write_curation(tmp_path, {"sources": ["canon/artifacts.md"]})
+        with pytest.raises(CurationFileError) as excinfo:
+            load_source_curation(curation, base=tmp_path)
+        assert "'sources' object mapping repo-relative path" in str(excinfo.value)
+
+    def test_overlay_entry_with_an_unsupported_field_raises(
+        self, tmp_path: Path
+    ) -> None:
+        curation = self._write_curation(
+            tmp_path, {"sources": {"canon/a.md": {"visibility": "public"}}}
+        )
+        with pytest.raises(CurationFileError) as excinfo:
+            load_source_curation(curation, base=tmp_path)
+        text = str(excinfo.value)
+        assert "canon/a.md" in text
+        assert "visibility" in text
+
+    def test_overlay_entry_with_a_non_string_value_raises(self, tmp_path: Path) -> None:
+        curation = self._write_curation(
+            tmp_path, {"sources": {"canon/a.md": {"canon_status": 7}}}
+        )
+        with pytest.raises(CurationFileError) as excinfo:
+            load_source_curation(curation, base=tmp_path)
+        text = str(excinfo.value)
+        assert "canon_status" in text
+        assert "int" in text
+
+
+class TestShippedCurationOverlay:
+    """The overlay that ships in this repo must be loadable and on-corpus."""
+
+    def test_shipped_overlay_loads_and_matches_the_manifest(self) -> None:
+        repo = Path(__file__).resolve().parents[1]
+        overlay = load_source_curation(base=repo)
+        assert overlay, "manifests/corpus/source_curation.json is empty or missing"
+
+        manifest = json.loads(
+            (repo / "manifests" / "corpus" / "source_manifest.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        by_path = {s["path"]: s for s in manifest["sources"]}
+        unknown = sorted(set(overlay) - set(by_path))
+        assert not unknown, f"overlay curates paths absent from the manifest: {unknown}"
+
+        for rel, curated in overlay.items():
+            if curated.canon_status is not None:
+                assert by_path[rel]["canon_status"] == curated.canon_status, (
+                    f"overlay and manifest disagree on canon_status for {rel}"
+                )

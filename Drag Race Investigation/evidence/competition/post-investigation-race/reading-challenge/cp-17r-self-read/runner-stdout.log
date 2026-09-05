@@ -1,0 +1,33 @@
+{
+  "status": "attention_required",
+  "valid_reflection_count": 4,
+  "queens": [
+    {
+      "drag_name": "Ophelia Overclock",
+      "status": "ready_for_portrait",
+      "failures": []
+    },
+    {
+      "drag_name": "Velvet Vespers",
+      "status": "invalid_reflection",
+      "failures": [
+        "missing_portrait_props"
+      ]
+    },
+    {
+      "drag_name": "Opaline Riot",
+      "status": "ready_for_portrait",
+      "failures": []
+    },
+    {
+      "drag_name": "Saint Static",
+      "status": "ready_for_portrait",
+      "failures": []
+    },
+    {
+      "drag_name": "Mercy Misdemeanor",
+      "status": "ready_for_portrait",
+      "failures": []
+    }
+  ]
+}

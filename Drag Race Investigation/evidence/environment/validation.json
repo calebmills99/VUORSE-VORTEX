@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-08-11T06:43:11.717624+00:00",
+  "status": "passed",
+  "parsed_json_files": 78,
+  "parsed_jsonl_lines": 2182,
+  "parsed_python_files": 23,
+  "expectations": {
+    "azure_response_files": {
+      "actual": 39,
+      "expected": 39
+    },
+    "charter_prompt_files": {
+      "actual": 23,
+      "expected": 23
+    },
+    "identity_prompt_files": {
+      "actual": 19,
+      "expected": 19
+    }
+  },
+  "known_sensitive_fragment_hits": [],
+  "errors": []
+}

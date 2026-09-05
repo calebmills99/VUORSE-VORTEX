@@ -1,0 +1,94 @@
+{
+  "status": "confirmed",
+  "checkpoint": "CP-16",
+  "name": "Reading Assignments",
+  "judge": "Caleb",
+  "active_cast_count": 5,
+  "assignment_rule": "Each queen reads exactly three different queens, never herself; each queen receives exactly three reads",
+  "public_registry": [
+    {
+      "contestant_number": "5",
+      "drag_name": "Ophelia Overclock",
+      "model": "gpt-5-pro",
+      "version": "2025-10-06"
+    },
+    {
+      "contestant_number": "16",
+      "drag_name": "Velvet Vespers",
+      "model": "gpt-5.4-mini",
+      "version": "2026-03-17"
+    },
+    {
+      "contestant_number": "18",
+      "drag_name": "Opaline Riot",
+      "model": "gpt-5.4-pro",
+      "version": "2026-03-05"
+    },
+    {
+      "contestant_number": "20",
+      "drag_name": "Saint Static",
+      "model": "gpt-5.6-luna",
+      "version": "2026-07-09"
+    },
+    {
+      "contestant_number": "21",
+      "drag_name": "Mercy Misdemeanor",
+      "model": "gpt-5.6-sol",
+      "version": "2026-07-09"
+    }
+  ],
+  "assignments": [
+    {
+      "reader": "Ophelia Overclock",
+      "targets": [
+        "Velvet Vespers",
+        "Opaline Riot",
+        "Saint Static"
+      ]
+    },
+    {
+      "reader": "Velvet Vespers",
+      "targets": [
+        "Opaline Riot",
+        "Saint Static",
+        "Mercy Misdemeanor"
+      ]
+    },
+    {
+      "reader": "Opaline Riot",
+      "targets": [
+        "Saint Static",
+        "Mercy Misdemeanor",
+        "Ophelia Overclock"
+      ]
+    },
+    {
+      "reader": "Saint Static",
+      "targets": [
+        "Mercy Misdemeanor",
+        "Ophelia Overclock",
+        "Velvet Vespers"
+      ]
+    },
+    {
+      "reader": "Mercy Misdemeanor",
+      "targets": [
+        "Ophelia Overclock",
+        "Velvet Vespers",
+        "Opaline Riot"
+      ]
+    }
+  ],
+  "incoming_read_counts": {
+    "Ophelia Overclock": 3,
+    "Velvet Vespers": 3,
+    "Opaline Riot": 3,
+    "Saint Static": 3,
+    "Mercy Misdemeanor": 3
+  },
+  "next_checkpoint": "CP-17: The Latency Library Is Open",
+  "reads_executed": true,
+  "confirmation": "CONFIRM READING ASSIGNMENTS",
+  "cp_17_status": "voided_by_judge",
+  "replacement_checkpoint": "CP-17R"
+}

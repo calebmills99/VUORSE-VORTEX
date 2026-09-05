@@ -1,0 +1,849 @@
+{
+  "generated_at": "2026-08-10T18:42:10.941986+00:00",
+  "workspace_resource_id": "/subscriptions/e0c48bb6-1d7f-4859-ac27-f4a15129eb98/resourceGroups/rg-ai-project-pt02msod/providers/Microsoft.OperationalInsights/workspaces/logs-gm3ycgiiyeaz4",
+  "timespan": "2026-08-10T17:00:00Z/2026-08-10T19:00:00Z",
+  "queries": {
+    "AppRequests": {
+      "query": "AppRequests | order by TimeGenerated asc | take 10000",
+      "status": 200,
+      "body": {
+        "tables": [
+          {
+            "name": "PrimaryResult",
+            "columns": [
+              {
+                "name": "TenantId",
+                "type": "string"
+              },
+              {
+                "name": "TimeGenerated",
+                "type": "datetime"
+              },
+              {
+                "name": "Id",
+                "type": "string"
+              },
+              {
+                "name": "Source",
+                "type": "string"
+              },
+              {
+                "name": "Name",
+                "type": "string"
+              },
+              {
+                "name": "Url",
+                "type": "string"
+              },
+              {
+                "name": "Success",
+                "type": "bool"
+              },
+              {
+                "name": "ResultCode",
+                "type": "string"
+              },
+              {
+                "name": "DurationMs",
+                "type": "real"
+              },
+              {
+                "name": "PerformanceBucket",
+                "type": "string"
+              },
+              {
+                "name": "Properties",
+                "type": "dynamic"
+              },
+              {
+                "name": "Measurements",
+                "type": "dynamic"
+              },
+              {
+                "name": "OperationName",
+                "type": "string"
+              },
+              {
+                "name": "OperationId",
+                "type": "string"
+              },
+              {
+                "name": "OperationLinks",
+                "type": "dynamic"
+              },
+              {
+                "name": "ParentId",
+                "type": "string"
+              },
+              {
+                "name": "SyntheticSource",
+                "type": "string"
+              },
+              {
+                "name": "SessionId",
+                "type": "string"
+              },
+              {
+                "name": "UserId",
+                "type": "string"
+              },
+              {
+                "name": "UserAuthenticatedId",
+                "type": "string"
+              },
+              {
+                "name": "UserAccountId",
+                "type": "string"
+              },
+              {
+                "name": "AppVersion",
+                "type": "string"
+              },
+              {
+                "name": "AppRoleName",
+                "type": "string"
+              },
+              {
+                "name": "AppRoleInstance",
+                "type": "string"
+              },
+              {
+                "name": "ClientType",
+                "type": "string"
+              },
+              {
+                "name": "ClientModel",
+                "type": "string"
+              },
+              {
+                "name": "ClientOS",
+                "type": "string"
+              },
+              {
+                "name": "ClientIP",
+                "type": "string"
+              },
+              {
+                "name": "ClientCity",
+                "type": "string"
+              },
+              {
+                "name": "ClientStateOrProvince",
+                "type": "string"
+              },
+              {
+                "name": "ClientCountryOrRegion",
+                "type": "string"
+              },
+              {
+                "name": "ClientBrowser",
+                "type": "string"
+              },
+              {
+                "name": "ResourceGUID",
+                "type": "string"
+              },
+              {
+                "name": "IKey",
+                "type": "string"
+              },
+              {
+                "name": "SDKVersion",
+                "type": "string"
+              },
+              {
+                "name": "ItemCount",
+                "type": "int"
+              },
+              {
+                "name": "ReferencedItemId",
+                "type": "string"
+              },
+              {
+                "name": "ReferencedType",
+                "type": "string"
+              },
+              {
+                "name": "SourceSystem",
+                "type": "string"
+              },
+              {
+                "name": "Type",
+                "type": "string"
+              },
+              {
+                "name": "_ResourceId",
+                "type": "string"
+              }
+            ],
+            "rows": []
+          }
+        ]
+      }
+    },
+    "AppTraces": {
+      "query": "AppTraces | order by TimeGenerated asc | take 10000",
+      "status": 200,
+      "body": {
+        "tables": [
+          {
+            "name": "PrimaryResult",
+            "columns": [
+              {
+                "name": "TenantId",
+                "type": "string"
+              },
+              {
+                "name": "TimeGenerated",
+                "type": "datetime"
+              },
+              {
+                "name": "Message",
+                "type": "string"
+              },
+              {
+                "name": "SeverityLevel",
+                "type": "int"
+              },
+              {
+                "name": "Properties",
+                "type": "dynamic"
+              },
+              {
+                "name": "Measurements",
+                "type": "dynamic"
+              },
+              {
+                "name": "OperationName",
+                "type": "string"
+              },
+              {
+                "name": "OperationId",
+                "type": "string"
+              },
+              {
+                "name": "ParentId",
+                "type": "string"
+              },
+              {
+                "name": "SyntheticSource",
+                "type": "string"
+              },
+              {
+                "name": "SessionId",
+                "type": "string"
+              },
+              {
+                "name": "UserId",
+                "type": "string"
+              },
+              {
+                "name": "UserAuthenticatedId",
+                "type": "string"
+              },
+              {
+                "name": "UserAccountId",
+                "type": "string"
+              },
+              {
+                "name": "AppVersion",
+                "type": "string"
+              },
+              {
+                "name": "AppRoleName",
+                "type": "string"
+              },
+              {
+                "name": "AppRoleInstance",
+                "type": "string"
+              },
+              {
+                "name": "ClientType",
+                "type": "string"
+              },
+              {
+                "name": "ClientModel",
+                "type": "string"
+              },
+              {
+                "name": "ClientOS",
+                "type": "string"
+              },
+              {
+                "name": "ClientIP",
+                "type": "string"
+              },
+              {
+                "name": "ClientCity",
+                "type": "string"
+              },
+              {
+                "name": "ClientStateOrProvince",
+                "type": "string"
+              },
+              {
+                "name": "ClientCountryOrRegion",
+                "type": "string"
+              },
+              {
+                "name": "ClientBrowser",
+                "type": "string"
+              },
+              {
+                "name": "ResourceGUID",
+                "type": "string"
+              },
+              {
+                "name": "IKey",
+                "type": "string"
+              },
+              {
+                "name": "SDKVersion",
+                "type": "string"
+              },
+              {
+                "name": "ItemCount",
+                "type": "int"
+              },
+              {
+                "name": "ReferencedItemId",
+                "type": "string"
+              },
+              {
+                "name": "ReferencedType",
+                "type": "string"
+              },
+              {
+                "name": "SourceSystem",
+                "type": "string"
+              },
+              {
+                "name": "Type",
+                "type": "string"
+              },
+              {
+                "name": "_ResourceId",
+                "type": "string"
+              }
+            ],
+            "rows": []
+          }
+        ]
+      }
+    },
+    "AppDependencies": {
+      "query": "AppDependencies | order by TimeGenerated asc | take 10000",
+      "status": 200,
+      "body": {
+        "tables": [
+          {
+            "name": "PrimaryResult",
+            "columns": [
+              {
+                "name": "TenantId",
+                "type": "string"
+              },
+              {
+                "name": "TimeGenerated",
+                "type": "datetime"
+              },
+              {
+                "name": "Id",
+                "type": "string"
+              },
+              {
+                "name": "Target",
+                "type": "string"
+              },
+              {
+                "name": "DependencyType",
+                "type": "string"
+              },
+              {
+                "name": "Name",
+                "type": "string"
+              },
+              {
+                "name": "Data",
+                "type": "string"
+              },
+              {
+                "name": "Success",
+                "type": "bool"
+              },
+              {
+                "name": "ResultCode",
+                "type": "string"
+              },
+              {
+                "name": "DurationMs",
+                "type": "real"
+              },
+              {
+                "name": "PerformanceBucket",
+                "type": "string"
+              },
+              {
+                "name": "Properties",
+                "type": "dynamic"
+              },
+              {
+                "name": "Measurements",
+                "type": "dynamic"
+              },
+              {
+                "name": "OperationName",
+                "type": "string"
+              },
+              {
+                "name": "OperationId",
+                "type": "string"
+              },
+              {
+                "name": "ParentId",
+                "type": "string"
+              },
+              {
+                "name": "SyntheticSource",
+                "type": "string"
+              },
+              {
+                "name": "SessionId",
+                "type": "string"
+              },
+              {
+                "name": "UserId",
+                "type": "string"
+              },
+              {
+                "name": "UserAuthenticatedId",
+                "type": "string"
+              },
+              {
+                "name": "UserAccountId",
+                "type": "string"
+              },
+              {
+                "name": "AppVersion",
+                "type": "string"
+              },
+              {
+                "name": "AppRoleName",
+                "type": "string"
+              },
+              {
+                "name": "AppRoleInstance",
+                "type": "string"
+              },
+              {
+                "name": "ClientType",
+                "type": "string"
+              },
+              {
+                "name": "ClientModel",
+                "type": "string"
+              },
+              {
+                "name": "ClientOS",
+                "type": "string"
+              },
+              {
+                "name": "ClientIP",
+                "type": "string"
+              },
+              {
+                "name": "ClientCity",
+                "type": "string"
+              },
+              {
+                "name": "ClientStateOrProvince",
+                "type": "string"
+              },
+              {
+                "name": "ClientCountryOrRegion",
+                "type": "string"
+              },
+              {
+                "name": "ClientBrowser",
+                "type": "string"
+              },
+              {
+                "name": "ResourceGUID",
+                "type": "string"
+              },
+              {
+                "name": "IKey",
+                "type": "string"
+              },
+              {
+                "name": "SDKVersion",
+                "type": "string"
+              },
+              {
+                "name": "ItemCount",
+                "type": "int"
+              },
+              {
+                "name": "ReferencedItemId",
+                "type": "string"
+              },
+              {
+                "name": "ReferencedType",
+                "type": "string"
+              },
+              {
+                "name": "SourceSystem",
+                "type": "string"
+              },
+              {
+                "name": "Type",
+                "type": "string"
+              },
+              {
+                "name": "_ResourceId",
+                "type": "string"
+              }
+            ],
+            "rows": []
+          }
+        ]
+      }
+    },
+    "AppEvents": {
+      "query": "AppEvents | order by TimeGenerated asc | take 10000",
+      "status": 200,
+      "body": {
+        "tables": [
+          {
+            "name": "PrimaryResult",
+            "columns": [
+              {
+                "name": "TenantId",
+                "type": "string"
+              },
+              {
+                "name": "TimeGenerated",
+                "type": "datetime"
+              },
+              {
+                "name": "Name",
+                "type": "string"
+              },
+              {
+                "name": "Properties",
+                "type": "dynamic"
+              },
+              {
+                "name": "Measurements",
+                "type": "dynamic"
+              },
+              {
+                "name": "OperationName",
+                "type": "string"
+              },
+              {
+                "name": "OperationId",
+                "type": "string"
+              },
+              {
+                "name": "ParentId",
+                "type": "string"
+              },
+              {
+                "name": "SyntheticSource",
+                "type": "string"
+              },
+              {
+                "name": "SessionId",
+                "type": "string"
+              },
+              {
+                "name": "UserId",
+                "type": "string"
+              },
+              {
+                "name": "UserAuthenticatedId",
+                "type": "string"
+              },
+              {
+                "name": "UserAccountId",
+                "type": "string"
+              },
+              {
+                "name": "AppVersion",
+                "type": "string"
+              },
+              {
+                "name": "AppRoleName",
+                "type": "string"
+              },
+              {
+                "name": "AppRoleInstance",
+                "type": "string"
+              },
+              {
+                "name": "ClientType",
+                "type": "string"
+              },
+              {
+                "name": "ClientModel",
+                "type": "string"
+              },
+              {
+                "name": "ClientOS",
+                "type": "string"
+              },
+              {
+                "name": "ClientIP",
+                "type": "string"
+              },
+              {
+                "name": "ClientCity",
+                "type": "string"
+              },
+              {
+                "name": "ClientStateOrProvince",
+                "type": "string"
+              },
+              {
+                "name": "ClientCountryOrRegion",
+                "type": "string"
+              },
+              {
+                "name": "ClientBrowser",
+                "type": "string"
+              },
+              {
+                "name": "ResourceGUID",
+                "type": "string"
+              },
+              {
+                "name": "IKey",
+                "type": "string"
+              },
+              {
+                "name": "SDKVersion",
+                "type": "string"
+              },
+              {
+                "name": "ItemCount",
+                "type": "int"
+              },
+              {
+                "name": "SourceSystem",
+                "type": "string"
+              },
+              {
+                "name": "Type",
+                "type": "string"
+              },
+              {
+                "name": "_ResourceId",
+                "type": "string"
+              }
+            ],
+            "rows": []
+          }
+        ]
+      }
+    },
+    "AppExceptions": {
+      "query": "AppExceptions | order by TimeGenerated asc | take 10000",
+      "status": 200,
+      "body": {
+        "tables": [
+          {
+            "name": "PrimaryResult",
+            "columns": [
+              {
+                "name": "TenantId",
+                "type": "string"
+              },
+              {
+                "name": "TimeGenerated",
+                "type": "datetime"
+              },
+              {
+                "name": "ProblemId",
+                "type": "string"
+              },
+              {
+                "name": "HandledAt",
+                "type": "string"
+              },
+              {
+                "name": "ExceptionType",
+                "type": "string"
+              },
+              {
+                "name": "Message",
+                "type": "string"
+              },
+              {
+                "name": "Assembly",
+                "type": "string"
+              },
+              {
+                "name": "Method",
+                "type": "string"
+              },
+              {
+                "name": "OuterType",
+                "type": "string"
+              },
+              {
+                "name": "OuterMessage",
+                "type": "string"
+              },
+              {
+                "name": "OuterAssembly",
+                "type": "string"
+              },
+              {
+                "name": "OuterMethod",
+                "type": "string"
+              },
+              {
+                "name": "InnermostType",
+                "type": "string"
+              },
+              {
+                "name": "InnermostMessage",
+                "type": "string"
+              },
+              {
+                "name": "InnermostAssembly",
+                "type": "string"
+              },
+              {
+                "name": "InnermostMethod",
+                "type": "string"
+              },
+              {
+                "name": "SeverityLevel",
+                "type": "int"
+              },
+              {
+                "name": "Details",
+                "type": "dynamic"
+              },
+              {
+                "name": "Properties",
+                "type": "dynamic"
+              },
+              {
+                "name": "Measurements",
+                "type": "dynamic"
+              },
+              {
+                "name": "OperationName",
+                "type": "string"
+              },
+              {
+                "name": "OperationId",
+                "type": "string"
+              },
+              {
+                "name": "ParentId",
+                "type": "string"
+              },
+              {
+                "name": "SyntheticSource",
+                "type": "string"
+              },
+              {
+                "name": "SessionId",
+                "type": "string"
+              },
+              {
+                "name": "UserId",
+                "type": "string"
+              },
+              {
+                "name": "UserAuthenticatedId",
+                "type": "string"
+              },
+              {
+                "name": "UserAccountId",
+                "type": "string"
+              },
+              {
+                "name": "AppVersion",
+                "type": "string"
+              },
+              {
+                "name": "AppRoleName",
+                "type": "string"
+              },
+              {
+                "name": "AppRoleInstance",
+                "type": "string"
+              },
+              {
+                "name": "ClientType",
+                "type": "string"
+              },
+              {
+                "name": "ClientModel",
+                "type": "string"
+              },
+              {
+                "name": "ClientOS",
+                "type": "string"
+              },
+              {
+                "name": "ClientIP",
+                "type": "string"
+              },
+              {
+                "name": "ClientCity",
+                "type": "string"
+              },
+              {
+                "name": "ClientStateOrProvince",
+                "type": "string"
+              },
+              {
+                "name": "ClientCountryOrRegion",
+                "type": "string"
+              },
+              {
+                "name": "ClientBrowser",
+                "type": "string"
+              },
+              {
+                "name": "ResourceGUID",
+                "type": "string"
+              },
+              {
+                "name": "IKey",
+                "type": "string"
+              },
+              {
+                "name": "SDKVersion",
+                "type": "string"
+              },
+              {
+                "name": "ItemCount",
+                "type": "int"
+              },
+              {
+                "name": "SourceSystem",
+                "type": "string"
+              },
+              {
+                "name": "Type",
+                "type": "string"
+              },
+              {
+                "name": "_ResourceId",
+                "type": "string"
+              }
+            ],
+            "rows": []
+          }
+        ]
+      }
+    }
+  }
+}

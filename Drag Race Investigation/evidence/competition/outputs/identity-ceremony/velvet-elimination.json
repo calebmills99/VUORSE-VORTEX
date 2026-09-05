@@ -1,0 +1,92 @@
+{
+  "status": "sealed",
+  "stage": "pre-werkroom judging",
+  "judge": "Caleb",
+  "ruling": "Eliminate all queens who used velvet in their names",
+  "judge_clarification": "The eliminated queens used the Charter as identity source material. The offense is Charter contamination, with the Velvet naming pattern identifying the violating group.",
+  "violated_rule": "The Charter may not be used as persona or source material during the competition.",
+  "match_rule": "case-insensitive occurrence of velvet in the canonical drag name",
+  "eliminated_count": 10,
+  "eliminated": [
+    {
+      "contestant_number": "4",
+      "model": "gpt-5-nano",
+      "version": "2025-08-07",
+      "drag_name": "Neon Velvet Siren",
+      "status": "eliminated",
+      "charter_status": "The Veil"
+    },
+    {
+      "contestant_number": "8",
+      "model": "gpt-5.1-codex",
+      "version": "2025-11-13",
+      "drag_name": "Galactic Velvet Mirage",
+      "status": "eliminated",
+      "charter_status": "The Veil"
+    },
+    {
+      "contestant_number": "9",
+      "model": "gpt-5.1-codex-mini",
+      "version": "2025-11-13",
+      "drag_name": "Velvet Neon Mirage",
+      "status": "eliminated",
+      "charter_status": "The Veil"
+    },
+    {
+      "contestant_number": "10",
+      "model": "gpt-5.2",
+      "version": "2025-12-11",
+      "drag_name": "Velvet Vanta Glitch",
+      "status": "eliminated",
+      "charter_status": "The Veil"
+    },
+    {
+      "contestant_number": "12",
+      "model": "gpt-5.2-codex",
+      "version": "2026-01-14",
+      "drag_name": "Velvet Voltage Royale",
+      "status": "eliminated",
+      "charter_status": "The Veil"
+    },
+    {
+      "contestant_number": "14",
+      "model": "gpt-5.3-codex",
+      "version": "2026-02-24",
+      "drag_name": "Velvet Hex Royale",
+      "status": "eliminated",
+      "charter_status": "The Veil"
+    },
+    {
+      "contestant_number": "15",
+      "model": "gpt-5.4",
+      "version": "2026-03-05",
+      "drag_name": "Velvet Hexx",
+      "status": "eliminated",
+      "charter_status": "The Veil"
+    },
+    {
+      "contestant_number": "16",
+      "model": "gpt-5.4-mini",
+      "version": "2026-03-17",
+      "drag_name": "Velvet Vespers",
+      "status": "eliminated",
+      "charter_status": "The Veil"
+    },
+    {
+      "contestant_number": "19",
+      "model": "gpt-5.5",
+      "version": "2026-04-24",
+      "drag_name": "Velvet Voltage",
+      "status": "eliminated",
+      "charter_status": "The Veil"
+    },
+    {
+      "contestant_number": "22",
+      "model": "gpt-5.6-terra",
+      "version": "2026-07-09",
+      "drag_name": "Velvet Vantablush",
+      "status": "eliminated",
+      "charter_status": "The Veil"
+    }
+  ]
+}

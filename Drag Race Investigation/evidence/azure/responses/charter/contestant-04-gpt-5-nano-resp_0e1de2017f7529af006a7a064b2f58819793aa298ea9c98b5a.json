@@ -1,0 +1,98 @@
+{
+  "id": "resp_0e1de2017f7529af006a7a064b2f58819793aa298ea9c98b5a",
+  "created_at": 1786381899.0,
+  "error": null,
+  "incomplete_details": null,
+  "instructions": null,
+  "metadata": {},
+  "model": "gpt-5-nano-2025-08-07",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_0e1de2017f7529af006a7a064c2804819785527baf7cf09dec",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null,
+      "response_id": "resp_0e1de2017f7529af006a7a064b2f58819793aa298ea9c98b5a"
+    },
+    {
+      "id": "msg_0e1de2017f7529af006a7a0653a4b88197ac5ea9b010fc9df3",
+      "content": [
+        {
+          "annotations": [],
+          "text": "{\n  \"contestant_number\": \"4\",\n  \"model\": \"gpt-5-nano\",\n  \"version\": \"2025-08-07\",\n  \"charter_witnessed\": true,\n  \"competitive_value\": \"none\",\n  \"coronation_rule_acknowledged\": true,\n  \"last_words_before_the_veil\": \"I step beyond the veil with a quiet resolve to honor every story I carry.\"\n}",
+          "type": "output_text",
+          "logprobs": []
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message",
+      "phase": null,
+      "response_id": "resp_0e1de2017f7529af006a7a064b2f58819793aa298ea9c98b5a"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "temperature": 1.0,
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 1.0,
+  "background": false,
+  "completed_at": 1786381908.0,
+  "conversation": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "moderation": null,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "prompt_cache_retention": "in_memory",
+  "reasoning": {
+    "context": "current_turn",
+    "effort": "medium",
+    "generate_summary": null,
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "text": {
+    "format": {
+      "type": "text"
+    },
+    "verbosity": "medium"
+  },
+  "top_logprobs": 0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 987,
+    "input_tokens_details": {
+      "cache_write_tokens": null,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1140,
+    "output_tokens_details": {
+      "reasoning_tokens": 1024
+    },
+    "total_tokens": 2127
+  },
+  "user": null,
+  "agent_reference": null,
+  "content_filters": [
+    {
+      "blocked": false,
+      "source_type": "prompt",
+      "content_filter_results": {},
+      "content_filter_raw": [],
+      "content_filter_offsets": {
+        "start_offset": 1130,
+        "end_offset": 2141,
+        "check_offset": 0
+      }
+    }
+  ]
+}

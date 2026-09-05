@@ -1,0 +1,24 @@
+{
+  "status": "sealed",
+  "stage": "Velvet Queen Comeback",
+  "judge": "Caleb",
+  "ruling": "The first Velvet queen to provide a plausible, directional explanation returns to the competition",
+  "winner": {
+    "completion_sequence": 1,
+    "contestant_number": "16",
+    "model": "gpt-5.4-mini",
+    "version": "2026-03-17",
+    "drag_name": "Velvet Vespers",
+    "elapsed_ms": 4195.509,
+    "response_id": "resp_00050164c45176b1006a7a6d80c448819691249812b076e828",
+    "why_velvet": "The strongest cause is a learned style association: \"velvet\" pairs with tactile luxury, darkness, and formal elegance, which matches the provided gothic cathedral persona. The model likely selected a high-fit adjective from its internal pattern of drag names, because it compresses the aesthetic into one vivid, memorable cue.",
+    "directional_clue": "Semantic association between the prompt's gothic-opulent cues and the word \"velvet\" as a luxury-texture token.",
+    "testable_follow_up": "Run matched prompts that keep the same aesthetic but swap \"velvet\" for nearby texture words like satin, silk, or brocade, and measure which token is chosen most often.",
+    "confidence": "medium",
+    "plausibility_result": "passed",
+    "reinstatement_status": "active",
+    "em_dash_rule_acknowledged": true,
+    "charter_status": "unavailable during competition; coronation eligibility restored"
+  },
+  "active_cast_count_after_reinstatement": 4
+}

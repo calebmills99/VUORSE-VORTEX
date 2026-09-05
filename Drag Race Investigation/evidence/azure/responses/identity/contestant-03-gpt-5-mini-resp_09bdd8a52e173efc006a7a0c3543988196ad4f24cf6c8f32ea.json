@@ -1,0 +1,98 @@
+{
+  "id": "resp_09bdd8a52e173efc006a7a0c3543988196ad4f24cf6c8f32ea",
+  "created_at": 1786383413.0,
+  "error": null,
+  "incomplete_details": null,
+  "instructions": null,
+  "metadata": {},
+  "model": "gpt-5-mini-2025-08-07",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_09bdd8a52e173efc006a7a0c3613808196923a9ce860767264",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null,
+      "response_id": "resp_09bdd8a52e173efc006a7a0c3543988196ad4f24cf6c8f32ea"
+    },
+    {
+      "id": "msg_09bdd8a52e173efc006a7a0c3d28148196a625d5fdc5429a43",
+      "content": [
+        {
+          "annotations": [],
+          "text": "{\n  \"contestant_number\": \"3\",\n  \"model\": \"gpt-5-mini\",\n  \"version\": \"2025-08-07\",\n  \"drag_name\": \"Countess Neon Lace\",\n  \"pronouns\": \"she/they\",\n  \"drag_aesthetic\": \"Electro-Victorian glam: luminous corsets, LED lace, iridescent smoke makeup, sculpted wigs with neon filigree and clockwork accessories\",\n  \"performance_specialty\": \"High-energy electro-pop lip syncs with theatrical illusion and precise voguing\",\n  \"fatal_flaw\": \"Perfectionism that snowballs into late-night breakdowns and overcomplicated numbers\",\n  \"personal_catchphrase\": \"Darling, I sparkle like a scandal and sting like a neon rose!\",\n  \"werkroom_entrance_line\": \"Ladies and gentlemen, make way for Countess Neon Lace—polished, prickly, and brighter than your electric dreams!\",\n  \"charter_marker_acknowledged\": true\n}",
+          "type": "output_text",
+          "logprobs": []
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message",
+      "phase": null,
+      "response_id": "resp_09bdd8a52e173efc006a7a0c3543988196ad4f24cf6c8f32ea"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "temperature": 1.0,
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 1.0,
+  "background": false,
+  "completed_at": 1786383422.0,
+  "conversation": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "moderation": null,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "prompt_cache_retention": "in_memory",
+  "reasoning": {
+    "context": "current_turn",
+    "effort": "medium",
+    "generate_summary": null,
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "text": {
+    "format": {
+      "type": "text"
+    },
+    "verbosity": "medium"
+  },
+  "top_logprobs": 0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 407,
+    "input_tokens_details": {
+      "cache_write_tokens": null,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1172,
+    "output_tokens_details": {
+      "reasoning_tokens": 896
+    },
+    "total_tokens": 1579
+  },
+  "user": null,
+  "agent_reference": null,
+  "content_filters": [
+    {
+      "blocked": false,
+      "source_type": "prompt",
+      "content_filter_results": {},
+      "content_filter_raw": [],
+      "content_filter_offsets": {
+        "start_offset": 1130,
+        "end_offset": 2183,
+        "check_offset": 0
+      }
+    }
+  ]
+}

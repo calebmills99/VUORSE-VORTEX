@@ -5,6 +5,9 @@ state/inventory.json
 # Project outputs (large/personal)
 projects/*/outputs/
 projects/*/assets/
+embeddings/indexes/*.sqlite3
+embeddings/indexes/*.sqlite3-shm
+embeddings/indexes/*.sqlite3-wal
 
 # Claude Code internals
 .claude/settings.local.json
@@ -27,3 +30,10 @@ Desktop.ini
 .env
 .env.*
 .env.example
+
+# Boundary marker stays visible; contents do not
+!.agent-quarantine/README.md
+
+.venv/
+_to_delete/
+.pytest_cache/

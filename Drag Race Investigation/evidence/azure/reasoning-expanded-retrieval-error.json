@@ -1,0 +1,11 @@
+{
+  "operation": "responses.retrieve",
+  "response_id": "resp_023ab0ea063cc832006a7a0c3f4dd4819680f5584c79b8ad50",
+  "requested_include": [
+    "reasoning.encrypted_content"
+  ],
+  "http_status": 400,
+  "error_type": "invalid_request_error",
+  "message": "Encrypted content cannot be requested for persisted responses.",
+  "result": "No historical reasoning content recovered."
+}

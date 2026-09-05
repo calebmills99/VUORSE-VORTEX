@@ -1,0 +1,53 @@
+{
+  "run": "2026-09-05-governance-repair",
+  "edges": [
+    {
+      "from": "policies",
+      "to": "manifest",
+      "mechanism": "deleted doctrine vacates root authority",
+      "sign": "-",
+      "lag": "already realized",
+      "confidence": "high"
+    },
+    {
+      "from": "minter",
+      "to": "manifest",
+      "mechanism": "slugify strips extension -> duplicate id",
+      "sign": "-",
+      "lag": "build-time",
+      "confidence": "high"
+    },
+    {
+      "from": "manifest",
+      "to": "cortex",
+      "mechanism": "chunk_id derives from source id; tiers share one key",
+      "sign": "-",
+      "lag": "one index build",
+      "confidence": "high"
+    },
+    {
+      "from": "minter",
+      "to": "minter",
+      "mechanism": "collision written to notes rather than raised",
+      "sign": "-",
+      "lag": "immediate",
+      "confidence": "high"
+    },
+    {
+      "from": "minter",
+      "to": "curation",
+      "mechanism": "regeneration ignored curated state, reverting canon_status",
+      "sign": "-",
+      "lag": "next rebuild",
+      "confidence": "high"
+    },
+    {
+      "from": "curation",
+      "to": "manifest",
+      "mechanism": "path-keyed overlay survives id renames",
+      "sign": "+",
+      "lag": "every rebuild",
+      "confidence": "high"
+    }
+  ]
+}

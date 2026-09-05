@@ -1,0 +1,26 @@
+[
+  {
+    "line_number": 722,
+    "line": "cat  TheCharter.md"
+  },
+  {
+    "line_number": 11566,
+    "line": "uv run cosmic_md_to_pdf.py \"C:\\runb2\\VUORSE-VORTEX\\archives\\incoming\\league-charter.md\""
+  },
+  {
+    "line_number": 11567,
+    "line": "python cosmic_md_to_pdf.py \"C:\\runb2\\VUORSE-VORTEX\\archives\\incoming\\league-charter.md\""
+  },
+  {
+    "line_number": 11570,
+    "line": "python cosmic_md_to_pdf.py \"C:\\runb2\\VUORSE-VORTEX\\archives\\incoming\\league-charter.md\""
+  },
+  {
+    "line_number": 11571,
+    "line": "python cosmic_md_to_pdf.py D:\\tools\\TheCharter.md"
+  },
+  {
+    "line_number": 11572,
+    "line": "python cosmic_md_to_pdf.py D:\\tools\\charter.md"
+  }
+]

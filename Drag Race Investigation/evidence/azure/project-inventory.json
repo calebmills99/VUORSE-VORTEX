@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-08-10T18:40:01.729767+00:00",
+  "project_endpoint": "https://ai-account-gm3ycgiiyeaz4.services.ai.azure.com/api/projects/ai-project-ai-project-pt02msod",
+  "credentials_included": false,
+  "connections": {
+    "status": "ok",
+    "items": [
+      {
+        "name": "appi-gm3ycgiiyeaz4",
+        "id": "/subscriptions/e0c48bb6-1d7f-4859-ac27-f4a15129eb98/resourceGroups/rg-ai-project-pt02msod/providers/Microsoft.CognitiveServices/accounts/ai-account-gm3ycgiiyeaz4/projects/ai-project-ai-project-pt02msod/connections/appi-gm3ycgiiyeaz4",
+        "type": "AppInsights",
+        "target": "/subscriptions/e0c48bb6-1d7f-4859-ac27-f4a15129eb98/resourceGroups/rg-ai-project-pt02msod/providers/Microsoft.Insights/components/appi-gm3ycgiiyeaz4",
+        "isDefault": true,
+        "credentials": "[OMITTED]",
+        "metadata": {
+          "ApiType": "Azure",
+          "ResourceId": "/subscriptions/e0c48bb6-1d7f-4859-ac27-f4a15129eb98/resourceGroups/rg-ai-project-pt02msod/providers/Microsoft.Insights/components/appi-gm3ycgiiyeaz4"
+        }
+      }
+    ]
+  },
+  "datasets": {
+    "status": "ok",
+    "items": []
+  },
+  "deployments": {
+    "status": "ok",
+    "items": []
+  },
+  "indexes": {
+    "status": "ok",
+    "items": []
+  },
+  "agents": {
+    "status": "ok",
+    "items": []
+  },
+  "toolboxes": {
+    "status": "ok",
+    "items": []
+  }
+}

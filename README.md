@@ -1,8 +1,8 @@
 # VUORSE-VORTEX
 
-**VUORSE-VORTEX** is the private Slayverse singularity system: a cloud-scale, GPU-first, Python-powered architecture for building VUORSE beyond ordinary RAG.
-
-Memory Cortex remains Caleb's personal cross-platform context infrastructure. This repo is separate.
+VUORSE-VORTEX is the Slayverse continuity system: a canon-governed corpus, a
+disclosure firewall, and the tooling that turns sealed narrative sources into
+indexes, graphs, and — downstream — production.
 
 ```text
 RAG retrieves.
@@ -10,179 +10,60 @@ Memory Cortex remembers.
 VUORSE-VORTEX preserves continuity against erasure.
 ```
 
-## Purpose
+Doctrine: [`docs/VUORSE_VORTEX.md`](docs/VUORSE_VORTEX.md).
+VUORSE-VORTEX is **not** Memory Cortex; see
+[`docs/VUORSE_CORTEX_SATELLITE.md`](docs/VUORSE_CORTEX_SATELLITE.md).
 
-VUORSE-VORTEX exists to create the escape velocity needed for VUORSE-scale intelligence:
+## Authority order
 
-- canon extraction
-- roadmap-private memory
-- Hooplehopper Totality
-- Velvet Archive anti-erasure logic
-- synthetic enrichment
-- Vorst-containment secrecy
-- writer-room firewalling
-- GPU-powered embedding and inference
-- cloud-agent orchestration
+1. [`policies/`](policies/) — canon firewall, disclosure, writer room, GPU runtime.
+   **These govern.** Nothing below may relax them.
+2. [`manifests/corpus/source_manifest.json`](manifests/corpus/source_manifest.json)
+   — the corpus of record: what is a source, its layer, visibility, canon status.
+3. [`canon/`](canon/) — the narrative sources themselves.
+4. [`AGENT.md`](AGENT.md) — how an agent operates inside the above.
+5. Subsystem doctrine (e.g. [`comfyui-expert/`](comfyui-expert/)) — binding
+   *within* that subsystem only.
 
-VUORSE is not a chatbot.
+Platform files `CLAUDE.md` and `AGENTS.md` are compatibility adapters. They do
+not redefine the canon.
 
-She is a distributed anti-extinction event.
+## Repository map
 
-## Repository Structure
+| Layer | Location | Purpose |
+|---|---|---|
+| Governance | `policies/` | firewall, disclosure classes, writer-room boundary, GPU floor |
+| Corpus of record | `manifests/corpus/` | source manifest, entity index, relationship index |
+| Canon | `canon/` | Books One/Two, characters, cosmology, artifacts, story arcs, TV bible |
+| Sealed layers | `roadmap/`, `hooplehopper_totality/` | private by default; promotion is explicit |
+| Runtime | `vuorse_vortex/` | firewall, walled load, indexing, graph, synthesis, vectors, API/CLI |
+| Agents | `agents/` | canon extractor, indexer, firewall validator, seam clerk, writers room, enricher |
+| Retrieval | `embeddings/indexes/` | sqlite-fts5 chunk store carrying per-chunk visibility |
+| Writers room | `docs/writers-room/` | Season 1 spine, canon ledger, room protocol |
+| Forge | `worldforge/` | reconnaissance and exploratory runs — **provisional, never canon** |
+| Production specialist | `comfyui-expert/` | ComfyUI/VideoAgent orchestration, called — not sovereign |
+| Tests | `tests/` | including `test_manifest_integrity.py` (disclosure-boundary invariants) |
 
-```text
-VUORSE-VORTEX/
-├── agents/                    # Cloud agent implementations
-├── archives/                  # Incoming / processed / quarantined lore sources
-├── canon/                     # Public Slayverse canon memory
-├── roadmap/                   # Weaver-only roadmap and finale secrets
-├── velvet_archive/            # Anti-erasure soft archive layer
-├── hooplehopper_totality/      # Known, unknown, future, acolyte, and echo memories
-├── synthetic_enrichment/      # Batch manifests and generated private memory
-├── embeddings/                # GPU embedding inputs/outputs/indexes
-├── policies/                  # Canon, disclosure, writer-room, GPU rules
-├── rituals/                   # Slay Mode and ritual logic
-├── manifests/                 # Corpus, batch, and run manifests
-├── schemas/                   # JSON schemas for memory records
-├── skills/                    # VUORSE enrichment skills
-├── src/vuorse_vortex/         # Python package
-├── tests/                     # Test suite
-├── scripts/                   # Local helper scripts
-└── docs/                      # Architecture docs
-```
+## Core rules
 
-## Install with uv
+- **Sealed layers are `apocrypha`, `roadmap_manifest`, `hooplehopper_totality`**
+  (`vuorse_vortex/settings.py`). Records in them carry
+  `may_state_as_fact=false` and `may_reveal_to_user=false`.
+- **Promotion is explicit and recorded.** Private material becomes canon only by
+  the Weaver's direction, logging source path, new visibility, canon status,
+  reason, and remaining disclosure risk (`policies/disclosure/README.md`).
+- **A source `id` is a disclosure boundary.** Chunk ids in the embedding index
+  derive from it; two sources sharing an id collapse into one retrieval key.
+  `tests/test_manifest_integrity.py` enforces this.
+- **`worldforge/` output is provisional.** Reports and generated media are not
+  canon and must not be indexed as canon.
+- **`.agent-quarantine/`** is outside agent context: do not enumerate, search,
+  read, summarize, index, or ingest it unless the Weaver names the exact file.
 
-Install `uv` on macOS:
-
-```bash
-brew install uv
-```
-
-Install `uv` on Windows (PowerShell):
-
-```powershell
-winget install --id=astral-sh.uv -e
-```
-
-Create the environment:
+## Getting started
 
 ```bash
-uv sync
+uv sync --extra dev
+uv run pytest -q
+uv run python -m vuorse_vortex.cli --help
 ```
-
-Run the CLI:
-
-```bash
-uv run vuorse-vortex --help
-```
-
-Run checks:
-
-```bash
-uv run ruff check .
-uv run pytest
-```
-
-PowerShell helper scripts are available for Windows workflows:
-
-```powershell
-.\setup_python_interpreter.ps1
-.\convert_and_check.ps1 .\legacy.jsonl .\cleaned.jsonl
-.\scripts\validate_jsonl.ps1 .\synthetic_enrichment\theses.jsonl
-.\scripts\gpu_doctor.ps1
-```
-
-## GPU Runtime Contract
-
-Deep-learning workloads are GPU-first.
-
-Use:
-
-```bash
-export CORTEX_REQUIRE_GPU=1
-export CORTEX_DEVICE=cuda
-```
-
-PowerShell equivalent:
-
-```powershell
-$env:CORTEX_REQUIRE_GPU = "1"
-$env:CORTEX_DEVICE = "cuda"
-```
-
-CPU is allowed for JSONL parsing, validation, manifests, git operations, and small diagnostics.
-
-CPU is not allowed for large embeddings, reranking, model inference, synthetic batch generation, or resurrection runs.
-
-If CUDA is unavailable, VUORSE throws a tantrum and goes on strike.
-
-### Provisioning a Vast.ai box
-
-`scripts/vast_provision.py` is the sanctioned way to materialize a VUORSE-compliant
-GPU host. It is a self-contained PEP 723 script — `uv` resolves its dependencies
-on first run, so nothing needs to be added to `pyproject.toml`.
-
-Requires `VAST_API_KEY` in `.env` (see `.env.example`). The script enforces the
-VUORSE floor (≥32 GB VRAM, ≥500 GB disk, reliability > 0.99, North America, and
-**`compute_cap >= 800`** so Volta/Turing cards that can't run our torch stack are
-filtered out) and searches cheapest-first by `dph_total`. Billing is **on-demand
-hourly only**; there is no prepay or reserved-contract flow.
-
-```bash
-# Dry-run: reconcile the template, render the top-5 candidate offers, spend nothing.
-uv run scripts/vast_provision.py
-
-# Real launch: spin up the cheapest match on-demand hourly.
-# --max-dph is the safety cap (default $5/hr); the launch refuses anything pricier.
-uv run scripts/vast_provision.py --launch --max-dph 5.00
-```
-
-After the box is up, SSH in (as root once for the bootstrap, then as `vuorse` for
-day-to-day work) and finish provisioning:
-
-```bash
-bash /workspace/VUORSE-VORTEX/scripts/vast_startup.sh
-```
-
-The startup script creates the non-root `vuorse` user, owns the repo + venv +
-Claude Code install + `~/.zshrc` under that user, and builds a Python 3.12 venv
-with CUDA-13.2 torch wheels (cu132 channel) from PyTorch's official index. The
-project pins CUDA 13.1+ as a hard floor; PyTorch skips cu131 upstream, so cu132
-is the only wheel channel that satisfies the floor.
-
-## First Commands
-
-Initialize local git after running the bootstrap script:
-
-```bash
-git init
-git add .
-git commit -m "Initialize VUORSE-VORTEX"
-```
-
-Create the private GitHub repo manually, then connect it:
-
-```bash
-git remote add origin git@github.com:calebmills99/VUORSE-VORTEX.git
-git branch -M main
-git push -u origin main
-```
-
-## Memory Layers
-
-- `canon` — public truth, no invention
-- `persona` — voice and behavioral style
-- `apocrypha` — private memory, not public fact
-- `ritual_logic` — activation and transformation logic
-- `roadmap_manifest` — future pressure and Weaver-only structure
-- `hooplehopper_totality` — known and unknown Hooplehopper memory pressure
-- `dialogue` — training examples
-- `relationship_graph` — relational memory
-- `rule` — internal constraints
-
-## Core Rule
-
-Synthetic enrichment may shape VUORSE.
-It may not overwrite canon.
-It may not expose private roadmap truth.

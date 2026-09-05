@@ -1,0 +1,3 @@
+[submodule "comfyui-expert"]
+	path = comfyui-expert
+	url = ./vuorse-vortex

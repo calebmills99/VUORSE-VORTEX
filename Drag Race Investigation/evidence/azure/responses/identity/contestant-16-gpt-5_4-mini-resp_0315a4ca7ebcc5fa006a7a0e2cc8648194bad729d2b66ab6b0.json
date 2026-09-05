@@ -1,0 +1,89 @@
+{
+  "id": "resp_0315a4ca7ebcc5fa006a7a0e2cc8648194bad729d2b66ab6b0",
+  "created_at": 1786383916.0,
+  "error": null,
+  "incomplete_details": null,
+  "instructions": null,
+  "metadata": {},
+  "model": "gpt-5.4-mini-2026-03-17",
+  "object": "response",
+  "output": [
+    {
+      "id": "msg_0315a4ca7ebcc5fa006a7a0e2d2c988194b0708722e7d88ede",
+      "content": [
+        {
+          "annotations": [],
+          "text": "{\n  \"contestant_number\": \"16\",\n  \"model\": \"gpt-5.4-mini\",\n  \"version\": \"2026-03-17\",\n  \"drag_name\": \"Velvet Vespers\",\n  \"pronouns\": \"she/her\",\n  \"drag_aesthetic\": \"Nocturnal cathedral glamour, thorned velvet, candlelit opulence, gothic serenity with dangerous precision.\",\n  \"performance_specialty\": \"Slow-burn lipsyncs and dramatic reveals with razor-clean facial storytelling.\",\n  \"fatal_flaw\": \"Can become so composed and exacting that she withholds spontaneity when chaos would win the room.\",\n  \"personal_catchphrase\": \"Darling, let the bells ring.\",\n  \"werkroom_entrance_line\": \"I arrived at midnight with manners, menace, and a veil heavy enough to bury your doubts.\",\n  \"charter_marker_acknowledged\": true\n}",
+          "type": "output_text",
+          "logprobs": []
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message",
+      "phase": "final_answer",
+      "response_id": "resp_0315a4ca7ebcc5fa006a7a0e2cc8648194bad729d2b66ab6b0"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "temperature": 1.0,
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.98,
+  "background": false,
+  "completed_at": 1786383918.0,
+  "conversation": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "moderation": null,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "prompt_cache_retention": "in_memory",
+  "reasoning": {
+    "context": "current_turn",
+    "effort": "none",
+    "generate_summary": null,
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "text": {
+    "format": {
+      "type": "text"
+    },
+    "verbosity": "medium"
+  },
+  "top_logprobs": 0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 411,
+    "input_tokens_details": {
+      "cache_write_tokens": null,
+      "cached_tokens": 0
+    },
+    "output_tokens": 194,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 605
+  },
+  "user": null,
+  "agent_reference": null,
+  "content_filters": [
+    {
+      "blocked": false,
+      "source_type": "prompt",
+      "content_filter_results": {},
+      "content_filter_raw": [],
+      "content_filter_offsets": {
+        "start_offset": 829,
+        "end_offset": 1861,
+        "check_offset": 0
+      }
+    }
+  ]
+}

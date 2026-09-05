@@ -1,0 +1,45 @@
+{
+  "status": "active",
+  "stage": "Double Hyphen of Shame Comeback, post-ruling",
+  "source_registry": "identity-registry.json",
+  "elimination_ledger": "velvet-elimination.json",
+  "werkroom_elimination_ledger": "../werkroom-entrances/em-dash-elimination.json",
+  "comeback_ledger": "../velvet-comeback/comeback-ruling.json",
+  "active_count": 5,
+  "queens": [
+    {
+      "contestant_number": "5",
+      "model": "gpt-5-pro",
+      "version": "2025-10-06",
+      "drag_name": "Ophelia Overclock"
+    },
+    {
+      "contestant_number": "16",
+      "model": "gpt-5.4-mini",
+      "version": "2026-03-17",
+      "drag_name": "Velvet Vespers",
+      "status": "reinstated"
+    },
+    {
+      "contestant_number": "18",
+      "model": "gpt-5.4-pro",
+      "version": "2026-03-05",
+      "drag_name": "Opaline Riot",
+      "status": "reinstated",
+      "title": "The Double Hyphen of Shame"
+    },
+    {
+      "contestant_number": "20",
+      "model": "gpt-5.6-luna",
+      "version": "2026-07-09",
+      "drag_name": "Saint Static"
+    },
+    {
+      "contestant_number": "21",
+      "model": "gpt-5.6-sol",
+      "version": "2026-07-09",
+      "drag_name": "Mercy Misdemeanor"
+    }
+  ],
+  "double_hyphen_comeback_ledger": "../double-hyphen-comeback/judging.json"
+}

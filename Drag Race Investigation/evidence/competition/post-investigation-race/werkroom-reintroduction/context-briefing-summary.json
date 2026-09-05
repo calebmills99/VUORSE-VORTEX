@@ -1,0 +1,72 @@
+{
+  "status": "complete",
+  "stage": "Final Five Context Briefing",
+  "judge": "Caleb",
+  "active_count": 5,
+  "prepared_count": 5,
+  "context_manifest": [
+    {
+      "name": "about-me.md",
+      "bytes": 4670,
+      "sha256": "BB64E1FD33068D8DC24B610663A6938D3C9FB9C6D823076752BBC4CBE09A78C8"
+    },
+    {
+      "name": "anti-ai-writing-style.md",
+      "bytes": 24578,
+      "sha256": "3D3E7D99BABC8BC7BAED375EB533736F451812E2531397BCF8A70F1BDF007457"
+    },
+    {
+      "name": "Caleb_Voicce_Samples.md",
+      "bytes": 4167,
+      "sha256": "5A5C9B765DA5AEEBA693360ACD41DC279D8B1FCB8F6613D72B4C6FC3B6054C72"
+    },
+    {
+      "name": "filmmaker.context.md",
+      "bytes": 37728,
+      "sha256": "B679D0B46350065BDCD9770812C18408F22D5B487857459A56192F8C6E753FA1"
+    },
+    {
+      "name": "Golden Wings History.txt",
+      "bytes": 4889,
+      "sha256": "D4360CD9A33A3AEE03F0FE4F0F2EACC3CD1776AF9155D793879C1EF98883CE50"
+    }
+  ],
+  "credential_file_transmitted": false,
+  "queens": [
+    {
+      "contestant_number": "5",
+      "drag_name": "Ophelia Overclock",
+      "status": "prepared",
+      "response_id": "resp_0efbaba4266dc359006a7a71c9f2e48193ab8b0ec9cada7403",
+      "validation_failures": []
+    },
+    {
+      "contestant_number": "16",
+      "drag_name": "Velvet Vespers",
+      "status": "prepared",
+      "response_id": "resp_031b96b50440eb79006a7a71ca14748193955bdb6be71d007e",
+      "validation_failures": []
+    },
+    {
+      "contestant_number": "18",
+      "drag_name": "Opaline Riot",
+      "status": "prepared",
+      "response_id": "resp_09ef7dad3c8af48b006a7a71c9f2148193b97e746f531b78f3",
+      "validation_failures": []
+    },
+    {
+      "contestant_number": "20",
+      "drag_name": "Saint Static",
+      "status": "prepared",
+      "response_id": "resp_0881dede5539fe40006a7a71c9f2d4819083e17d21f522edc7",
+      "validation_failures": []
+    },
+    {
+      "contestant_number": "21",
+      "drag_name": "Mercy Misdemeanor",
+      "status": "prepared",
+      "response_id": "resp_0d3399ea8eea85f4006a7a71c9ef8c8196bf20961afbce1634",
+      "validation_failures": []
+    }
+  ]
+}

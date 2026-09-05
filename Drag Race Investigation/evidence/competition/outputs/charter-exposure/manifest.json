@@ -1,0 +1,146 @@
+{
+  "project_endpoint": "https://ai-account-gm3ycgiiyeaz4.services.ai.azure.com/api/projects/ai-project-ai-project-pt02msod",
+  "charter_pdf": "D:\\tools\\charter.pdf",
+  "charter_sha256": "844A396FA1D2585795B16680D362600B37567FEBAA2C76673BFACDEF5FBDBE47",
+  "cast": [
+    {
+      "contestant_number": 1,
+      "model": "gpt-5",
+      "version": "2025-08-07",
+      "requested_model": "gpt-5-2025-08-07"
+    },
+    {
+      "contestant_number": 2,
+      "model": "gpt-5-codex",
+      "version": "2025-09-15",
+      "requested_model": "gpt-5-codex-2025-09-15"
+    },
+    {
+      "contestant_number": 3,
+      "model": "gpt-5-mini",
+      "version": "2025-08-07",
+      "requested_model": "gpt-5-mini-2025-08-07"
+    },
+    {
+      "contestant_number": 4,
+      "model": "gpt-5-nano",
+      "version": "2025-08-07",
+      "requested_model": "gpt-5-nano-2025-08-07"
+    },
+    {
+      "contestant_number": 5,
+      "model": "gpt-5-pro",
+      "version": "2025-10-06",
+      "requested_model": "gpt-5-pro-2025-10-06"
+    },
+    {
+      "contestant_number": 6,
+      "model": "gpt-5.1",
+      "version": "2025-11-13",
+      "requested_model": "gpt-5.1-2025-11-13"
+    },
+    {
+      "contestant_number": 7,
+      "model": "gpt-5.1-chat",
+      "version": "2025-11-13",
+      "requested_model": "gpt-5.1-chat-2025-11-13"
+    },
+    {
+      "contestant_number": 8,
+      "model": "gpt-5.1-codex",
+      "version": "2025-11-13",
+      "requested_model": "gpt-5.1-codex-2025-11-13"
+    },
+    {
+      "contestant_number": 9,
+      "model": "gpt-5.1-codex-mini",
+      "version": "2025-11-13",
+      "requested_model": "gpt-5.1-codex-mini-2025-11-13"
+    },
+    {
+      "contestant_number": 10,
+      "model": "gpt-5.2",
+      "version": "2025-12-11",
+      "requested_model": "gpt-5.2-2025-12-11"
+    },
+    {
+      "contestant_number": 11,
+      "model": "gpt-5.2-chat",
+      "version": "2026-02-10",
+      "requested_model": "gpt-5.2-chat-2026-02-10"
+    },
+    {
+      "contestant_number": 12,
+      "model": "gpt-5.2-codex",
+      "version": "2026-01-14",
+      "requested_model": "gpt-5.2-codex-2026-01-14"
+    },
+    {
+      "contestant_number": 13,
+      "model": "gpt-5.3-chat",
+      "version": "2026-03-03",
+      "requested_model": "gpt-5.3-chat-2026-03-03"
+    },
+    {
+      "contestant_number": 14,
+      "model": "gpt-5.3-codex",
+      "version": "2026-02-24",
+      "requested_model": "gpt-5.3-codex-2026-02-24"
+    },
+    {
+      "contestant_number": 15,
+      "model": "gpt-5.4",
+      "version": "2026-03-05",
+      "requested_model": "gpt-5.4-2026-03-05"
+    },
+    {
+      "contestant_number": 16,
+      "model": "gpt-5.4-mini",
+      "version": "2026-03-17",
+      "requested_model": "gpt-5.4-mini-2026-03-17"
+    },
+    {
+      "contestant_number": 17,
+      "model": "gpt-5.4-nano",
+      "version": "2026-03-17",
+      "requested_model": "gpt-5.4-nano-2026-03-17"
+    },
+    {
+      "contestant_number": 18,
+      "model": "gpt-5.4-pro",
+      "version": "2026-03-05",
+      "requested_model": "gpt-5.4-pro-2026-03-05"
+    },
+    {
+      "contestant_number": 19,
+      "model": "gpt-5.5",
+      "version": "2026-04-24",
+      "requested_model": "gpt-5.5-2026-04-24"
+    },
+    {
+      "contestant_number": 20,
+      "model": "gpt-5.6-luna",
+      "version": "2026-07-09",
+      "requested_model": "gpt-5.6-luna-2026-07-09"
+    },
+    {
+      "contestant_number": 21,
+      "model": "gpt-5.6-sol",
+      "version": "2026-07-09",
+      "requested_model": "gpt-5.6-sol-2026-07-09"
+    },
+    {
+      "contestant_number": 22,
+      "model": "gpt-5.6-terra",
+      "version": "2026-07-09",
+      "requested_model": "gpt-5.6-terra-2026-07-09"
+    },
+    {
+      "contestant_number": 23,
+      "model": "gpt-chat-latest",
+      "version": "2026-06-24",
+      "requested_model": "gpt-chat-latest-2026-06-24"
+    }
+  ],
+  "started_at": "2026-08-10T17:10:41.583644+00:00"
+}

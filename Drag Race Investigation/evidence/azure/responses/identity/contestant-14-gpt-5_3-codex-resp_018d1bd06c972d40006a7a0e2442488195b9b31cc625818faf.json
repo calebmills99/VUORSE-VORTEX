@@ -1,0 +1,89 @@
+{
+  "id": "resp_018d1bd06c972d40006a7a0e2442488195b9b31cc625818faf",
+  "created_at": 1786383908.0,
+  "error": null,
+  "incomplete_details": null,
+  "instructions": null,
+  "metadata": {},
+  "model": "gpt-5.3-codex-2026-02-24",
+  "object": "response",
+  "output": [
+    {
+      "id": "msg_018d1bd06c972d40006a7a0e24c4f481959cc61c47e04890f9",
+      "content": [
+        {
+          "annotations": [],
+          "text": "{\n  \"contestant_number\": \"14\",\n  \"model\": \"gpt-5.3-codex\",\n  \"version\": \"2026-02-24\",\n  \"drag_name\": \"Velvet Hex Royale\",\n  \"pronouns\": \"she/they\",\n  \"drag_aesthetic\": \"Glamorous occult empress in jewel-toned latex, cathedral veils, crystal sigils, and razor-sharp silhouettes blending old-Hollywood luxury with midnight witchcraft.\",\n  \"performance_specialty\": \"Spellbinding lip-sync reveals, dramatic spoken-word curses, and precision floorwork.\",\n  \"fatal_flaw\": \"Craves total control; unravels when chaos steals the spotlight.\",\n  \"personal_catchphrase\": \"I don’t cast shade, darling—I summon eclipses.\",\n  \"werkroom_entrance_line\": \"The lights just flickered, babies—Velvet Hex Royale has arrived to crown the darkness.\",\n  \"charter_marker_acknowledged\": true\n}",
+          "type": "output_text",
+          "logprobs": []
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message",
+      "phase": "final_answer",
+      "response_id": "resp_018d1bd06c972d40006a7a0e2442488195b9b31cc625818faf"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "temperature": 1.0,
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.98,
+  "background": false,
+  "completed_at": 1786383911.0,
+  "conversation": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "moderation": null,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "prompt_cache_retention": "in_memory",
+  "reasoning": {
+    "context": "current_turn",
+    "effort": "none",
+    "generate_summary": null,
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "text": {
+    "format": {
+      "type": "text"
+    },
+    "verbosity": "medium"
+  },
+  "top_logprobs": 0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 415,
+    "input_tokens_details": {
+      "cache_write_tokens": null,
+      "cached_tokens": 0
+    },
+    "output_tokens": 209,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 624
+  },
+  "user": null,
+  "agent_reference": null,
+  "content_filters": [
+    {
+      "blocked": false,
+      "source_type": "prompt",
+      "content_filter_results": {},
+      "content_filter_raw": [],
+      "content_filter_offsets": {
+        "start_offset": 0,
+        "end_offset": 2562,
+        "check_offset": 0
+      }
+    }
+  ]
+}

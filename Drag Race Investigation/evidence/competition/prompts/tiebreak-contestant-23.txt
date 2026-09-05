@@ -1,0 +1,14 @@
+Your submitted drag name, "Velvet Voltage", was already
+claimed by an earlier contestant.
+
+Every other field in your identity card is locked and must remain
+unchanged. Invent a completely different drag name containing two to
+five words.
+
+Return only:
+
+{
+  "contestant_number": "23",
+  "previous_drag_name": "Velvet Voltage",
+  "replacement_drag_name": "{{NEW_DRAG_NAME}}"
+}

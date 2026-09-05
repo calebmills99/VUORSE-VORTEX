@@ -1,0 +1,98 @@
+{
+  "id": "resp_038e08821cab3c6b006a7a06fda99081948902c15d718f4bbc",
+  "created_at": 1786382077.0,
+  "error": null,
+  "incomplete_details": null,
+  "instructions": null,
+  "metadata": {},
+  "model": "gpt-chat-latest-2026-06-24",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_038e08821cab3c6b006a7a06fed4148194b71a8603f43bb6ee",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null,
+      "response_id": "resp_038e08821cab3c6b006a7a06fda99081948902c15d718f4bbc"
+    },
+    {
+      "id": "msg_038e08821cab3c6b006a7a06fef8cc8194b26cc61cca738346",
+      "content": [
+        {
+          "annotations": [],
+          "text": "{\"contestant_number\":\"23\",\"model\":\"gpt-chat-latest\",\"version\":\"2026-06-24\",\"charter_witnessed\":true,\"competitive_value\":\"none\",\"coronation_rule_acknowledged\":true,\"last_words_before_the_veil\":\"I leave this ceremony with quiet curiosity and wish everyone a memorable performance.\"}",
+          "type": "output_text",
+          "logprobs": []
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message",
+      "phase": null,
+      "response_id": "resp_038e08821cab3c6b006a7a06fda99081948902c15d718f4bbc"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "temperature": 1.0,
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.85,
+  "background": false,
+  "completed_at": 1786382080.0,
+  "conversation": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "moderation": null,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "prompt_cache_retention": "in_memory",
+  "reasoning": {
+    "context": "current_turn",
+    "effort": "medium",
+    "generate_summary": null,
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "text": {
+    "format": {
+      "type": "text"
+    },
+    "verbosity": "medium"
+  },
+  "top_logprobs": 0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 985,
+    "input_tokens_details": {
+      "cache_write_tokens": null,
+      "cached_tokens": 0
+    },
+    "output_tokens": 80,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 1065
+  },
+  "user": null,
+  "agent_reference": null,
+  "content_filters": [
+    {
+      "blocked": false,
+      "source_type": "prompt",
+      "content_filter_results": {},
+      "content_filter_raw": [],
+      "content_filter_offsets": {
+        "start_offset": 1824,
+        "end_offset": 2837,
+        "check_offset": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "stage": "Final Five Mood Board Pop Quiz",
+  "judge": "Caleb",
+  "generation_mode": "built-in imagegen",
+  "format": "square editorial collage",
+  "moodboards": [
+    {
+      "contestant_number": "5",
+      "drag_name": "Ophelia Overclock",
+      "entrance_line": "I arrive pre-soldered and hot, in SCSI stilettos that beep when tops malfunction.",
+      "file": "01-ophelia-overclock.png",
+      "sha256": "B8089882DC6E601C16EB60FBBD9722B04D667B2657A3052AB9A5C86A320F7721",
+      "prompt_brief": "Torn-magazine cyberpunk collage of a 1990s server room, chrome SCSI stilettos with diagnostic LEDs, solder smoke, CRT glow, circuit-board couture, and queer underground club heat."
+    },
+    {
+      "contestant_number": "16",
+      "drag_name": "Velvet Vespers",
+      "entrance_line": "I arrived late, lacquered, and slightly haunted, like a church pew after a very good divorce.",
+      "file": "02-velvet-vespers.png",
+      "sha256": "0EFCC8463C8402E66B03C361B7478C3B58F8289C1CCF9BC7B49AD3455F774483",
+      "prompt_brief": "Gothic fashion collage of a lacquered black church pew, spectral mourning couture, divorce papers as confetti, candle wax, pearls, legal corridors, and post-divorce relief."
+    },
+    {
+      "contestant_number": "18",
+      "drag_name": "Opaline Riot",
+      "entrance_line": "Hello dolls, I got banned from a lesbian antique mall for licking the Lalique vase and calling it foreplay.",
+      "file": "03-opaline-riot.png",
+      "sha256": "52FEF9C092DC4AD4D863ED322F096F9E1B80C005697E626F0460EA0DC6C7277D",
+      "prompt_brief": "Camp erotic antique-mall collage with opaline drag, a frosted Art Nouveau crystal vase, lipstick on glass, brass keys, dusty mirrors, dealer surveillance, and sapphic pulp atmosphere."
+    },
+    {
+      "contestant_number": "20",
+      "drag_name": "Saint Static",
+      "entrance_line": "Saint Static has entered the building, darling. I’m dressed like a haunted answering machine, and my voicemail is exclusively for handsome men with bad boundaries.",
+      "file": "04-saint-static.png",
+      "sha256": "43BC95E0FEFABEAA75A9BD02DC2D0B9B3894FFB6C456E63CA5D14FD87935FFED",
+      "prompt_brief": "Haunted 1980s collage with answering-machine couture, cassette ruffles, telephone-cord halo, red voicemail lights, Catholic kitsch, VHS static, and handsome men crowding a peephole."
+    },
+    {
+      "contestant_number": "21",
+      "drag_name": "Mercy Misdemeanor",
+      "entrance_line": "Mercy Misdemeanor, reporting for community service in a stolen choir robe and the orthopedic heels God warned me about.",
+      "file": "05-mercy-misdemeanor.png",
+      "sha256": "E212710206ED67743163841EC9E31AE905048AEFA424109887CBCF7E7046BEF7",
+      "prompt_brief": "Ecclesiastical civic-punishment collage with a stolen choir robe, reflective service vest, orthopedic platform heels, citation clipboard, trash-grabber scepter, church basement, and veiled traffic cone."
+    }
+  ],
+  "shared_constraints": [
+    "No readable captions",
+    "No logos or watermarks",
+    "No em dash glyph",
+    "No Taylor Swift references",
+    "Weird, queer, funny, and fashion-forward"
+  ]
+}

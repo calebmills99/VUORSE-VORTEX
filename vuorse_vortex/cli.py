@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 from pathlib import Path
 from typing import Annotated, Any
 
@@ -9,6 +10,7 @@ import typer
 from rich.console import Console
 from rich.prompt import Prompt
 
+from vuorse_vortex.cortex import DEFAULT_CORTEX_DB, CortexSatellite
 from vuorse_vortex.debrief_import import extract_strongest_private_theses
 from vuorse_vortex.gpu import require_gpu
 from vuorse_vortex.jsonl import iter_jsonl, validate_jsonl
@@ -27,7 +29,9 @@ from vuorse_vortex.walled import (
 
 app = typer.Typer(help="VUORSE-VORTEX command line interface.")
 vast_app = typer.Typer(help="Vast.ai billing insurance: status, cost, teardown.")
+cortex_app = typer.Typer(help="Project-local Slay Cortex satellite: build, search, stats.")
 app.add_typer(vast_app, name="vast")
+app.add_typer(cortex_app, name="cortex")
 console = Console()
 
 _DEFAULT_THESES_PATH = Path("synthetic_enrichment/theses.jsonl")
@@ -83,6 +87,44 @@ _IMPORT_DEBRIEF_LIMIT_OPTION = typer.Option(
     min=1,
     help="Number of strongest theses to keep.",
 )
+_CORTEX_DB_OPTION = typer.Option(DEFAULT_CORTEX_DB, "--db", help="Satellite SQLite path.")
+_CORTEX_BASE_OPTION = typer.Option(Path("."), "--base", help="VUORSE-VORTEX repository root.")
+_CORTEX_TOP_K_OPTION = typer.Option(10, "--top-k", "-k", min=1, max=50)
+_CORTEX_LAYER_OPTION = typer.Option(None, "--layer", help="Optional non-sealed layer filter.")
+
+
+@cortex_app.command("build")
+def cortex_build(
+    db_path: Path = _CORTEX_DB_OPTION,
+    base: Path = _CORTEX_BASE_OPTION,
+) -> None:
+    """Build the local FTS5 satellite without external embedding calls."""
+    with CortexSatellite(db_path) as satellite:
+        result = satellite.build(base=base)
+    typer.echo(json.dumps(result, indent=2, sort_keys=True))
+
+
+@cortex_app.command("search")
+def cortex_search(
+    query: str = typer.Argument(..., help="Terms to retrieve from the project corpus."),
+    top_k: int = _CORTEX_TOP_K_OPTION,
+    layer: str | None = _CORTEX_LAYER_OPTION,
+    db_path: Path = _CORTEX_DB_OPTION,
+) -> None:
+    """Search indexed VUORSE-VORTEX sources with sealed layers withheld."""
+    with CortexSatellite(db_path) as satellite:
+        hits = satellite.search(query, top_k=top_k, layer=layer)
+    typer.echo(json.dumps([hit.__dict__ for hit in hits], indent=2, sort_keys=True))
+
+
+@cortex_app.command("stats")
+def cortex_stats(
+    db_path: Path = _CORTEX_DB_OPTION,
+) -> None:
+    """Show satellite identity, corpus counts, and retrieval mode."""
+    with CortexSatellite(db_path) as satellite:
+        result = satellite.stats()
+    typer.echo(json.dumps(result, indent=2, sort_keys=True))
 
 
 @app.command()
@@ -510,6 +552,17 @@ def build_index_cmd(
                 console.print(f"  [yellow]unrouted:[/yellow] {path}")
             for path in report.mixed_files:
                 console.print(f"  [red]mixed privacy posture:[/red] {path}")
+            for line in report.disambiguated_ids:
+                console.print(f"  [yellow]id disambiguated:[/yellow] {line}")
+            if report.curated_paths:
+                console.print(
+                    "  [cyan]curation applied:[/cyan] "
+                    f"{len(report.curated_paths)} sources from source_curation.json"
+                )
+            for path in report.orphaned_curation:
+                console.print(
+                    f"  [yellow]curated path no longer on disk:[/yellow] {path}"
+                )
             for note in report.stale_paths:
                 console.print(f"  [yellow]stale:[/yellow] {note}")
             if check and not is_current(SOURCE_MANIFEST_OUT, manifest):

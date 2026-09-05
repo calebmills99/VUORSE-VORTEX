@@ -1,0 +1,33 @@
+{
+  "status": "complete",
+  "submission_count": 5,
+  "valid_submission_count": 5,
+  "total_reads": 15,
+  "queens": [
+    {
+      "drag_name": "Ophelia Overclock",
+      "status": "submitted",
+      "failures": []
+    },
+    {
+      "drag_name": "Velvet Vespers",
+      "status": "submitted",
+      "failures": []
+    },
+    {
+      "drag_name": "Opaline Riot",
+      "status": "submitted",
+      "failures": []
+    },
+    {
+      "drag_name": "Saint Static",
+      "status": "submitted",
+      "failures": []
+    },
+    {
+      "drag_name": "Mercy Misdemeanor",
+      "status": "submitted",
+      "failures": []
+    }
+  ]
+}

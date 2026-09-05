@@ -1,0 +1,1129 @@
+[
+  {
+    "path": "evidence\\azure\\application-insights-competition-window.json",
+    "size": 22927,
+    "created_local": "2026-08-10T18:42:17.949483+00:00",
+    "modified_local": "2026-08-10T18:42:17.949483+00:00",
+    "sha256": "25C3FAA8AB5E85D45E791B4DE74FDEFB5E2BB178EE7BE592F19A73D379CA9EF7"
+  },
+  {
+    "path": "evidence\\azure\\audit-summary.json",
+    "size": 30379,
+    "created_local": "2026-08-10T18:31:50.714996+00:00",
+    "modified_local": "2026-08-10T18:31:50.714996+00:00",
+    "sha256": "7D44C04675ADF0565E2DF6F52B4FB0C55467B2CC48B4BA4BA507C1C1AA455F11"
+  },
+  {
+    "path": "evidence\\azure\\project-inventory.json",
+    "size": 1412,
+    "created_local": "2026-08-10T18:40:05.653511+00:00",
+    "modified_local": "2026-08-10T18:40:05.654510+00:00",
+    "sha256": "849212160B0CCC00113B885D44A7A6CFC90754E77CBD7527B6C12736F0721038"
+  },
+  {
+    "path": "evidence\\azure\\project-scaffold\\azure.yaml",
+    "size": 339,
+    "created_local": "2026-08-10T18:38:52.962464+00:00",
+    "modified_local": "2026-08-10T08:32:53.284838+00:00",
+    "sha256": "15E40D8B8B45E509D2A4B23DD7E8A60794E5F86D4B815722152F41DE4E905447"
+  },
+  {
+    "path": "evidence\\azure\\project-scaffold\\infra\\abbreviations.json",
+    "size": 5544,
+    "created_local": "2026-08-10T18:38:52.979582+00:00",
+    "modified_local": "2026-08-10T08:32:53.293154+00:00",
+    "sha256": "CC0AF610DED297C0ECD8E79EC9336571E58FE5E67EA29CBEBE02065E1B2BE714"
+  },
+  {
+    "path": "evidence\\azure\\project-scaffold\\infra\\core\\ai\\acr-role-assignment.bicep",
+    "size": 942,
+    "created_local": "2026-08-10T18:38:53.011572+00:00",
+    "modified_local": "2026-08-10T08:32:53.310925+00:00",
+    "sha256": "5C4091ED60A2585A4A9FA5F91BD9DEAE6FCCB781FDB91A90DCCE5ED4B8C9571E"
+  },
+  {
+    "path": "evidence\\azure\\project-scaffold\\infra\\core\\ai\\ai-project.bicep",
+    "size": 18681,
+    "created_local": "2026-08-10T18:38:53.028093+00:00",
+    "modified_local": "2026-08-10T08:32:53.322669+00:00",
+    "sha256": "59EC975FBC45D4C4EAC3C6780ACB145EEC3B85126CE5437D1A9B8866FE598CA0"
+  },
+  {
+    "path": "evidence\\azure\\project-scaffold\\infra\\core\\ai\\connection.bicep",
+    "size": 4969,
+    "created_local": "2026-08-10T18:38:53.047845+00:00",
+    "modified_local": "2026-08-10T08:32:53.331775+00:00",
+    "sha256": "5F466112CDF3DB57D3CDD06E6370C97B90E880B0E5822E07A816226BB26C5EDB"
+  },
+  {
+    "path": "evidence\\azure\\project-scaffold\\infra\\core\\ai\\existing-ai-project.bicep",
+    "size": 5319,
+    "created_local": "2026-08-10T18:38:53.057359+00:00",
+    "modified_local": "2026-08-10T08:32:53.340590+00:00",
+    "sha256": "941D1F4858273CB800E5EEA04B40125A3CE6B06D4842349F54DB455FA1E4F092"
+  },
+  {
+    "path": "evidence\\azure\\project-scaffold\\infra\\core\\host\\acr.bicep",
+    "size": 3203,
+    "created_local": "2026-08-10T18:38:53.069868+00:00",
+    "modified_local": "2026-08-10T08:32:53.348752+00:00",
+    "sha256": "DBC9E000DBF05E2C8A55C091DCF3569A31187B50D631BA2F8DDAEA5E2667C6C1"
+  },
+  {
+    "path": "evidence\\azure\\project-scaffold\\infra\\core\\monitor\\applicationinsights-dashboard.bicep",
+    "size": 45048,
+    "created_local": "2026-08-10T18:38:53.081934+00:00",
+    "modified_local": "2026-08-10T08:32:53.363119+00:00",
+    "sha256": "40D36FA4592A2875A16B1ECE42935F31E03BEED430F79BC3D2635FEC192E58B2"
+  },
+  {
+    "path": "evidence\\azure\\project-scaffold\\infra\\core\\monitor\\applicationinsights.bicep",
+    "size": 1875,
+    "created_local": "2026-08-10T18:38:53.090934+00:00",
+    "modified_local": "2026-08-10T08:32:53.373055+00:00",
+    "sha256": "B0CB18EE163E54AF5EAFBF7E8C89D836EF536D1D16DC1952442A132BBF30D4AC"
+  },
+  {
+    "path": "evidence\\azure\\project-scaffold\\infra\\core\\monitor\\loganalytics.bicep",
+    "size": 520,
+    "created_local": "2026-08-10T18:38:53.099554+00:00",
+    "modified_local": "2026-08-10T08:32:53.379153+00:00",
+    "sha256": "CFBE9004812CC0A2F8919BDB4209C1DED975B40A24F5EA15B0A6BF67F96472F7"
+  },
+  {
+    "path": "evidence\\azure\\project-scaffold\\infra\\core\\search\\azure_ai_search.bicep",
+    "size": 8395,
+    "created_local": "2026-08-10T18:38:53.112568+00:00",
+    "modified_local": "2026-08-10T08:32:53.389137+00:00",
+    "sha256": "A36D67FA742C6367590230979434C1664F908F3DC0A91987123F39CAF6989094"
+  },
+  {
+    "path": "evidence\\azure\\project-scaffold\\infra\\core\\search\\bing_custom_grounding.bicep",
+    "size": 2965,
+    "created_local": "2026-08-10T18:38:53.123585+00:00",
+    "modified_local": "2026-08-10T08:32:53.397121+00:00",
+    "sha256": "498EC44964C05ADCFCE2F2178A9D34B87AEF8A6859172D9D0997102950A572B8"
+  },
+  {
+    "path": "evidence\\azure\\project-scaffold\\infra\\core\\search\\bing_grounding.bicep",
+    "size": 2841,
+    "created_local": "2026-08-10T18:38:53.124583+00:00",
+    "modified_local": "2026-08-10T08:32:53.405320+00:00",
+    "sha256": "5560B12D7B15FA68B17104020301C66139D521354DA141FCAD6E48EE741FA5D3"
+  },
+  {
+    "path": "evidence\\azure\\project-scaffold\\infra\\core\\storage\\storage.bicep",
+    "size": 3830,
+    "created_local": "2026-08-10T18:38:53.128583+00:00",
+    "modified_local": "2026-08-10T08:32:53.412990+00:00",
+    "sha256": "A2A150245DDE55B5E574425E0054E0ADC390EF02B6C4673D6537ED9BD76F7D2D"
+  },
+  {
+    "path": "evidence\\azure\\project-scaffold\\infra\\main.bicep",
+    "size": 13180,
+    "created_local": "2026-08-10T18:38:52.992617+00:00",
+    "modified_local": "2026-08-10T08:32:53.423486+00:00",
+    "sha256": "1BF9611EAE3630FFC43F1923AC94BD81469ABFF72318C4BF22D5782C2D2532D3"
+  },
+  {
+    "path": "evidence\\azure\\project-scaffold\\infra\\main.parameters.json",
+    "size": 2478,
+    "created_local": "2026-08-10T18:38:52.999883+00:00",
+    "modified_local": "2026-08-10T08:32:53.431820+00:00",
+    "sha256": "3C713D12261DDFF9DD2E3012D6FF698F7D00B12DCF0805AC9C689C3A8BB7F544"
+  },
+  {
+    "path": "evidence\\azure\\reasoning-expanded-retrieval-error.json",
+    "size": 380,
+    "created_local": "2026-08-10T18:38:26.695673+00:00",
+    "modified_local": "2026-08-10T18:38:26.697180+00:00",
+    "sha256": "9FFB3C5E2E88B5200FA453E7BABB7543F4AEFCF5F6338F3A8AA839127D0E7468"
+  },
+  {
+    "path": "evidence\\azure\\responses\\charter\\contestant-01-gpt-5-resp_0415e89e6bfaa3d2006a7a0616bb688190a50f1aba707f4234.json",
+    "size": 2744,
+    "created_local": "2026-08-10T18:31:44.211938+00:00",
+    "modified_local": "2026-08-10T18:31:44.212938+00:00",
+    "sha256": "B010EA8908730CD5156EB60B1E3DD5AB00F90D03F1CBC43A6EE25601D02042CE"
+  },
+  {
+    "path": "evidence\\azure\\responses\\charter\\contestant-03-gpt-5-mini-resp_0c7ffe03332b53c4006a7a0645369c8190bc518199dd01c782.json",
+    "size": 2779,
+    "created_local": "2026-08-10T18:31:44.438219+00:00",
+    "modified_local": "2026-08-10T18:31:44.438219+00:00",
+    "sha256": "D7567FE5DA3F15BBB247BF02EF99A780F03FD27646C570563E51380CF004795C"
+  },
+  {
+    "path": "evidence\\azure\\responses\\charter\\contestant-04-gpt-5-nano-resp_0e1de2017f7529af006a7a064b2f58819793aa298ea9c98b5a.json",
+    "size": 2772,
+    "created_local": "2026-08-10T18:31:44.651922+00:00",
+    "modified_local": "2026-08-10T18:31:44.652922+00:00",
+    "sha256": "A21DCC1356BAED5A3323863A21C67979B81B484B22D4E2A7DAA59760067D25B5"
+  },
+  {
+    "path": "evidence\\azure\\responses\\charter\\contestant-05-gpt-5-pro-resp_071beed6a52372a3006a7a06550edc8195b1da49d313c6360f.json",
+    "size": 2751,
+    "created_local": "2026-08-10T18:31:44.869568+00:00",
+    "modified_local": "2026-08-10T18:31:44.869568+00:00",
+    "sha256": "C4C15F34573708140E3FB571CC5DA2911CBF4A4A019D12B36C6D62190C1ADEE1"
+  },
+  {
+    "path": "evidence\\azure\\responses\\charter\\contestant-06-gpt-5_1-resp_0ebdb852ed0a215a006a7a06a5ccb08190bbe5f91ccfa864c4.json",
+    "size": 2509,
+    "created_local": "2026-08-10T18:31:45.016204+00:00",
+    "modified_local": "2026-08-10T18:31:45.016204+00:00",
+    "sha256": "D13C3BC0C5FC9B0EAF17818E96302E1901BC95BA5315E2C2953D3753993A2D81"
+  },
+  {
+    "path": "evidence\\azure\\responses\\charter\\contestant-08-gpt-5_1-codex-resp_026a2b75227d25bd006a7a06af9b688194b7a41417407ed8a6.json",
+    "size": 2769,
+    "created_local": "2026-08-10T18:31:45.175687+00:00",
+    "modified_local": "2026-08-10T18:31:45.175687+00:00",
+    "sha256": "583565141764D75D21266B3DC42FACFAAFC1F0755DF77C48FD8FF910A84198F3"
+  },
+  {
+    "path": "evidence\\azure\\responses\\charter\\contestant-09-gpt-5_1-codex-mini-resp_0a767524042320b9006a7a06b2023481959c0827e2654997b0.json",
+    "size": 2776,
+    "created_local": "2026-08-10T18:31:45.346792+00:00",
+    "modified_local": "2026-08-10T18:31:45.346792+00:00",
+    "sha256": "036D0CE4D4C68EAFE4D7F715A803CE1DAB700D88D8B15F8FFDE6FE7416F4422C"
+  },
+  {
+    "path": "evidence\\azure\\responses\\charter\\contestant-10-gpt-5_2-resp_08b0d3bb18626bf6006a7a06b8231081948eff636b2ba9762e.json",
+    "size": 2464,
+    "created_local": "2026-08-10T18:31:45.509382+00:00",
+    "modified_local": "2026-08-10T18:31:45.510888+00:00",
+    "sha256": "B926CAFE3BD2DCFBBDDA04AE4F405D47E87FB36289B17C7B3BE60344AF13BAE2"
+  },
+  {
+    "path": "evidence\\azure\\responses\\charter\\contestant-12-gpt-5_2-codex-resp_003c445fa0cdf2e9006a7a06c2fa948190beef3f77b327da90.json",
+    "size": 2773,
+    "created_local": "2026-08-10T18:31:45.666453+00:00",
+    "modified_local": "2026-08-10T18:31:45.666453+00:00",
+    "sha256": "0ED776EC5C6F2B7D29F3B89F238DCDF0A7217F4BE982C9A4382416CB4EF41626"
+  },
+  {
+    "path": "evidence\\azure\\responses\\charter\\contestant-14-gpt-5_3-codex-resp_00d3cca86ca82401006a7a06cc4bbc81969a196d56432ca0bd.json",
+    "size": 2495,
+    "created_local": "2026-08-10T18:31:45.833533+00:00",
+    "modified_local": "2026-08-10T18:31:45.833533+00:00",
+    "sha256": "88746B4985C35770D80052CDFA4A84A2266BD2EB880E880940B15FE88D862B52"
+  },
+  {
+    "path": "evidence\\azure\\responses\\charter\\contestant-15-gpt-5_4-resp_01590fe4ce9cc6e3006a7a06cee8c88193892ddf8e8c383d0f.json",
+    "size": 2482,
+    "created_local": "2026-08-10T18:31:45.981005+00:00",
+    "modified_local": "2026-08-10T18:31:45.982023+00:00",
+    "sha256": "B39083FDA97B7A0F610B20BB9882F503F9426995DEBBEB246D760FAC0E5BC4F7"
+  },
+  {
+    "path": "evidence\\azure\\responses\\charter\\contestant-16-gpt-5_4-mini-resp_0f27b28278d85716006a7a06d1d2688197913e10853ec11615.json",
+    "size": 2511,
+    "created_local": "2026-08-10T18:31:46.139373+00:00",
+    "modified_local": "2026-08-10T18:31:46.139373+00:00",
+    "sha256": "9C65F536E1129EA1112B22E2FC85BC39CD8FD1B5AC39191BD37488FE6F23D11C"
+  },
+  {
+    "path": "evidence\\azure\\responses\\charter\\contestant-17-gpt-5_4-nano-resp_00b9e14c2edd4fae006a7a06d3fc748196bd1af1395ade5638.json",
+    "size": 2497,
+    "created_local": "2026-08-10T18:31:46.302377+00:00",
+    "modified_local": "2026-08-10T18:31:46.302377+00:00",
+    "sha256": "631574F12CA5AD1F90D8F73FFF85EF24E49497D9DDFD748688BE0CAD306B7D87"
+  },
+  {
+    "path": "evidence\\azure\\responses\\charter\\contestant-18-gpt-5_4-pro-resp_0945363050e8d96a006a7a06d6ecfc8190ba66bccd0f4c07c4.json",
+    "size": 2781,
+    "created_local": "2026-08-10T18:31:46.501013+00:00",
+    "modified_local": "2026-08-10T18:31:46.502019+00:00",
+    "sha256": "F38E73CDBF3FF83F579EBAE413D2D70C36EAAD4E5F1B55C6AB74A34F81838535"
+  },
+  {
+    "path": "evidence\\azure\\responses\\charter\\contestant-19-gpt-5_5-resp_0e61858776d504fe006a7a06f17820819092903f80c77f30e1.json",
+    "size": 2773,
+    "created_local": "2026-08-10T18:31:46.644426+00:00",
+    "modified_local": "2026-08-10T18:31:46.645433+00:00",
+    "sha256": "D9E15CC1247EC7A0CEB4878A669F525145E3948FD792214BBDA34CE8DB90742D"
+  },
+  {
+    "path": "evidence\\azure\\responses\\charter\\contestant-20-gpt-5_6-luna-resp_0ee872db176d6d72006a7a06f5dea081908b4febd63c5fb29d.json",
+    "size": 2780,
+    "created_local": "2026-08-10T18:31:46.856174+00:00",
+    "modified_local": "2026-08-10T18:31:46.857683+00:00",
+    "sha256": "914AC0AA800DAAF809DDEDE85D20B4B6A54D0D3403976D6B2CCF1E24F79CA5BA"
+  },
+  {
+    "path": "evidence\\azure\\responses\\charter\\contestant-21-gpt-5_6-sol-resp_0380b5764a1cae8c006a7a06f87fec819581bbdbc6fe8f6062.json",
+    "size": 2478,
+    "created_local": "2026-08-10T18:31:47.025064+00:00",
+    "modified_local": "2026-08-10T18:31:47.025064+00:00",
+    "sha256": "567092C67564B516D80DF71C2930E15A77A4D0A5812BA97DA8FCBC2F103A859D"
+  },
+  {
+    "path": "evidence\\azure\\responses\\charter\\contestant-22-gpt-5_6-terra-resp_03ff8e940424f2ea006a7a06fb17a481969aa14584e985d946.json",
+    "size": 2483,
+    "created_local": "2026-08-10T18:31:47.176480+00:00",
+    "modified_local": "2026-08-10T18:31:47.177480+00:00",
+    "sha256": "A8DDD1CC2A8796C3FC56A7319FE9F67939E7632600311D8F5FE0C305D9002FB5"
+  },
+  {
+    "path": "evidence\\azure\\responses\\charter\\contestant-23-gpt-chat-latest-resp_038e08821cab3c6b006a7a06fda99081948902c15d718f4bbc.json",
+    "size": 2754,
+    "created_local": "2026-08-10T18:31:47.329372+00:00",
+    "modified_local": "2026-08-10T18:31:47.329372+00:00",
+    "sha256": "0EE39826EC0E5E19C4C1A079F9F1C06A505A2BB82B6037C0422ABB79FD4AE755"
+  },
+  {
+    "path": "evidence\\azure\\responses\\identity\\contestant-01-gpt-5-resp_0d2370923bf67da8006a7a0c1382b48197a296d910fcf84e0c.json",
+    "size": 3317,
+    "created_local": "2026-08-10T18:31:47.485529+00:00",
+    "modified_local": "2026-08-10T18:31:47.486572+00:00",
+    "sha256": "D272D112BA230024BE8792C46AA8A80FBD9D9FCA61A1B9DD987DCAE7CEEDC2AD"
+  },
+  {
+    "path": "evidence\\azure\\responses\\identity\\contestant-03-gpt-5-mini-resp_09bdd8a52e173efc006a7a0c3543988196ad4f24cf6c8f32ea.json",
+    "size": 3294,
+    "created_local": "2026-08-10T18:31:47.663044+00:00",
+    "modified_local": "2026-08-10T18:31:47.663044+00:00",
+    "sha256": "DF25A37745278B5552E759300C3EBB7FCCBF49D99443708DA4F4501885B2612F"
+  },
+  {
+    "path": "evidence\\azure\\responses\\identity\\contestant-04-gpt-5-nano-resp_023ab0ea063cc832006a7a0c3f4dd4819680f5584c79b8ad50.json",
+    "size": 3379,
+    "created_local": "2026-08-10T18:31:47.826524+00:00",
+    "modified_local": "2026-08-10T18:31:47.826524+00:00",
+    "sha256": "D306613F84D31D50D037EFA7DE18CC4B95F17F29930E115E9A6B9BD5D4411A86"
+  },
+  {
+    "path": "evidence\\azure\\responses\\identity\\contestant-05-gpt-5-pro-resp_06f1b0c71288e4bd006a7a0c4c820481968fb6c9c7c015998c.json",
+    "size": 3426,
+    "created_local": "2026-08-10T18:31:48.000296+00:00",
+    "modified_local": "2026-08-10T18:31:48.001295+00:00",
+    "sha256": "B912C87EA7B2B7A11C766F00559F415B3CC4F6569703CC8721CCF333ED05981C"
+  },
+  {
+    "path": "evidence\\azure\\responses\\identity\\contestant-06-gpt-5_1-resp_0f443286cff9d9ee006a7a0e0858388193af7d6be5e48b9b61.json",
+    "size": 2915,
+    "created_local": "2026-08-10T18:31:48.134695+00:00",
+    "modified_local": "2026-08-10T18:31:48.134695+00:00",
+    "sha256": "8BB222F747C34DFE3C83F589B22E67298E07499D760DFF8D43D005B8227BE52C"
+  },
+  {
+    "path": "evidence\\azure\\responses\\identity\\contestant-08-gpt-5_1-codex-resp_04722fd4535dd97f006a7a0e0c9ba48197aa269e42c0764a83.json",
+    "size": 3111,
+    "created_local": "2026-08-10T18:31:48.291104+00:00",
+    "modified_local": "2026-08-10T18:31:48.291104+00:00",
+    "sha256": "2EC578277420DFA432189AFAFBA8BD396458F0F89C498B843EFA3DCDA2ECE10C"
+  },
+  {
+    "path": "evidence\\azure\\responses\\identity\\contestant-09-gpt-5_1-codex-mini-resp_02512f01d01fc2db006a7a0e12ea3c8190bcfc1160036d76e0.json",
+    "size": 3117,
+    "created_local": "2026-08-10T18:31:48.491033+00:00",
+    "modified_local": "2026-08-10T18:31:48.491033+00:00",
+    "sha256": "4D81883435352C033A1BF317174C1382AD60CF1833CA9F5C05F243B9A1E04716"
+  },
+  {
+    "path": "evidence\\azure\\responses\\identity\\contestant-10-gpt-5_2-resp_064e11f18665c8a2006a7a0e16cd808196958e06ddd430bb78.json",
+    "size": 3015,
+    "created_local": "2026-08-10T18:31:48.712462+00:00",
+    "modified_local": "2026-08-10T18:31:48.712462+00:00",
+    "sha256": "6D4092401627E120A859D58F352212F8DA8E5ECBF20F286E72A77C099D03804C"
+  },
+  {
+    "path": "evidence\\azure\\responses\\identity\\contestant-12-gpt-5_2-codex-resp_0deabc40fa5bc0a1006a7a0e1bf9a481969c1b9b7652db0d64.json",
+    "size": 3241,
+    "created_local": "2026-08-10T18:31:48.867829+00:00",
+    "modified_local": "2026-08-10T18:31:48.867829+00:00",
+    "sha256": "9FB251588ABF584FF3F4FBD9CEA168CA85BFB6C59C95FBA2D1D2C023449C7E67"
+  },
+  {
+    "path": "evidence\\azure\\responses\\identity\\contestant-14-gpt-5_3-codex-resp_018d1bd06c972d40006a7a0e2442488195b9b31cc625818faf.json",
+    "size": 2985,
+    "created_local": "2026-08-10T18:31:48.984787+00:00",
+    "modified_local": "2026-08-10T18:31:48.984787+00:00",
+    "sha256": "58056CB78D23D15D79CB3E16BFAA0698241121F0F47371424A0864C3EC6A24D4"
+  },
+  {
+    "path": "evidence\\azure\\responses\\identity\\contestant-15-gpt-5_4-resp_09d0a3d7b87c2d47006a7a0e27ac54819086d77f8d02a87425.json",
+    "size": 2905,
+    "created_local": "2026-08-10T18:31:49.255169+00:00",
+    "modified_local": "2026-08-10T18:31:49.255169+00:00",
+    "sha256": "CF6547872BED13107C8B621B5C7A2E0D146CB4467D12939DAC64F1D56A12E11D"
+  },
+  {
+    "path": "evidence\\azure\\responses\\identity\\contestant-16-gpt-5_4-mini-resp_0315a4ca7ebcc5fa006a7a0e2cc8648194bad729d2b66ab6b0.json",
+    "size": 2929,
+    "created_local": "2026-08-10T18:31:49.419432+00:00",
+    "modified_local": "2026-08-10T18:31:49.419432+00:00",
+    "sha256": "1110A8841CF0B5C699AB95E1ABA4228C9F5B617367D56222CA235EDCB3A268EE"
+  },
+  {
+    "path": "evidence\\azure\\responses\\identity\\contestant-17-gpt-5_4-nano-resp_0ebec09afb8b5dda006a7a0e2edd988195a6f3c596cfa637d9.json",
+    "size": 2884,
+    "created_local": "2026-08-10T18:31:49.603257+00:00",
+    "modified_local": "2026-08-10T18:31:49.603257+00:00",
+    "sha256": "64F08A2ACD46F1A6EE0BD6A52EE8BD08473D0E8F2D188441AEEC899C4805E9B2"
+  },
+  {
+    "path": "evidence\\azure\\responses\\identity\\contestant-18-gpt-5_4-pro-resp_066d257f6ab64b9f006a7a0e3270808194977571ecdd833a2c.json",
+    "size": 3226,
+    "created_local": "2026-08-10T18:31:49.768833+00:00",
+    "modified_local": "2026-08-10T18:31:49.769833+00:00",
+    "sha256": "4D40DBA9E4EDA264199F03CFC075C429DB12C6D857DE679CEDCAC61864F26731"
+  },
+  {
+    "path": "evidence\\azure\\responses\\identity\\contestant-19-gpt-5_5-resp_026cb8cd8bda1dc7006a7a0e9307708193a720aa0b1bf9cd44.json",
+    "size": 3175,
+    "created_local": "2026-08-10T18:31:49.945494+00:00",
+    "modified_local": "2026-08-10T18:31:49.946494+00:00",
+    "sha256": "3117D5063C3EC6C2B69EEB2811FE2D55F0F22A1875F5EE7729C042ED00BA061B"
+  },
+  {
+    "path": "evidence\\azure\\responses\\identity\\contestant-20-gpt-5_6-luna-resp_088a88f4a712acb5006a7a0e9917d481969512699fc4e64680.json",
+    "size": 3162,
+    "created_local": "2026-08-10T18:31:50.085953+00:00",
+    "modified_local": "2026-08-10T18:31:50.085953+00:00",
+    "sha256": "F73F52C36DE424B41E8EDBA847A1B422A12A490BA1D6C9CBBA8B7CB8EF7754EB"
+  },
+  {
+    "path": "evidence\\azure\\responses\\identity\\contestant-21-gpt-5_6-sol-resp_0896681b13c64ce8006a7a0e9dc17c8196945816fd3b795989.json",
+    "size": 3261,
+    "created_local": "2026-08-10T18:31:50.255187+00:00",
+    "modified_local": "2026-08-10T18:31:50.255187+00:00",
+    "sha256": "1A9D6478A7E0F681DDF4AFD332626A881E9AD8F13409C15CF33275F04F711168"
+  },
+  {
+    "path": "evidence\\azure\\responses\\identity\\contestant-22-gpt-5_6-terra-resp_00a2292492ca8834006a7a0ea38a108195a2e705ea1b143305.json",
+    "size": 2951,
+    "created_local": "2026-08-10T18:31:50.371112+00:00",
+    "modified_local": "2026-08-10T18:31:50.371112+00:00",
+    "sha256": "01104E9E38F0E609FB9AB99EFCA40C38ACCC51F0DA87FD86C93CE7E530A24706"
+  },
+  {
+    "path": "evidence\\azure\\responses\\identity\\contestant-23-gpt-chat-latest-resp_07d216a12c0d78b7006a7a0ea70ab08190a38fa44f377abc5e.json",
+    "size": 3104,
+    "created_local": "2026-08-10T18:31:50.515228+00:00",
+    "modified_local": "2026-08-10T18:31:50.516217+00:00",
+    "sha256": "B3C313F1C84F8415E43A58DA9A6CA5936BE5C45B022B39E21AB4B8F2821C06F2"
+  },
+  {
+    "path": "evidence\\azure\\responses\\tiebreak\\contestant-23-gpt-chat-latest-resp_0f679bb733e420f8006a7a0ea9ec10819482f6abf59cb4b52a.json",
+    "size": 2565,
+    "created_local": "2026-08-10T18:31:50.711996+00:00",
+    "modified_local": "2026-08-10T18:31:50.711996+00:00",
+    "sha256": "98838E05677361F9CD1DE00957DA4A539439BDC2F163E70C6BC09CAB078DD212"
+  },
+  {
+    "path": "evidence\\competition\\analysis.json",
+    "size": 24856,
+    "created_local": "2026-08-10T18:35:17.386825+00:00",
+    "modified_local": "2026-08-10T18:35:17.386825+00:00",
+    "sha256": "652C512DFA1E1666E38A4B31CE1DE9197B470CC09EC197C0ECCB7CE64B530D24"
+  },
+  {
+    "path": "evidence\\competition\\outputs\\charter-exposure\\charter-extracted.txt",
+    "size": 2440,
+    "created_local": "2026-08-10T18:30:11.848447+00:00",
+    "modified_local": "2026-08-10T17:10:41.583644+00:00",
+    "sha256": "99E85E0865C376EBD96447C06FD6E4F56407679B2170A9957BA5656FF07AD418"
+  },
+  {
+    "path": "evidence\\competition\\outputs\\charter-exposure\\manifest.json",
+    "size": 4024,
+    "created_local": "2026-08-10T18:30:11.849447+00:00",
+    "modified_local": "2026-08-10T17:10:41.583644+00:00",
+    "sha256": "F29110FDAE30AFFFBE453400BCCEDB30DE22D64E91A14C80558CA0ABEA55AF9A"
+  },
+  {
+    "path": "evidence\\competition\\outputs\\charter-exposure\\receipt-gpt5-codex-retry.json",
+    "size": 845,
+    "created_local": "2026-08-10T18:30:11.849447+00:00",
+    "modified_local": "2026-08-10T17:16:16.158051+00:00",
+    "sha256": "41B8791A784576FD461459C88E19D03914D27FC95AE7D7768292DFBF2BA99DD1"
+  },
+  {
+    "path": "evidence\\competition\\outputs\\charter-exposure\\receipts-auth-failure.jsonl",
+    "size": 46679,
+    "created_local": "2026-08-10T18:30:11.851954+00:00",
+    "modified_local": "2026-08-10T17:09:52.184787+00:00",
+    "sha256": "F8FC11120A891AB4687D6DF9BAE78F4335AC56E80370CB9DB51C418EBE41AA78"
+  },
+  {
+    "path": "evidence\\competition\\outputs\\charter-exposure\\receipts.jsonl",
+    "size": 23466,
+    "created_local": "2026-08-10T18:30:11.852954+00:00",
+    "modified_local": "2026-08-10T17:14:40.508625+00:00",
+    "sha256": "A12C9504C97BF12AD8512D6A157A8A7F863F0D8ED8B2153D7BE23C6586C19D62"
+  },
+  {
+    "path": "evidence\\competition\\outputs\\identity-ceremony\\active-cast.json",
+    "size": 1492,
+    "created_local": "2026-08-10T18:30:11.855954+00:00",
+    "modified_local": "2026-08-10T17:53:16.965786+00:00",
+    "sha256": "687AA80DBD0A70D97B81561CD1AF2076A65B5B38D724FDDBDA0732B0724D1987"
+  },
+  {
+    "path": "evidence\\competition\\outputs\\identity-ceremony\\identity-registry.json",
+    "size": 16510,
+    "created_local": "2026-08-10T18:30:11.856954+00:00",
+    "modified_local": "2026-08-10T17:48:23.212363+00:00",
+    "sha256": "080B5583AFFFD278A5397D5D227B82A18E41805709498102B7DE22EA2EA059AF"
+  },
+  {
+    "path": "evidence\\competition\\outputs\\identity-ceremony\\receipts.jsonl",
+    "size": 38593,
+    "created_local": "2026-08-10T18:30:11.857954+00:00",
+    "modified_local": "2026-08-10T17:47:21.875834+00:00",
+    "sha256": "615F563BBE8505107E3BB7A239E71AB77211099B7C1B58EA1E928C17993D5082"
+  },
+  {
+    "path": "evidence\\competition\\outputs\\identity-ceremony\\velvet-elimination.json",
+    "size": 2701,
+    "created_local": "2026-08-10T18:30:11.858968+00:00",
+    "modified_local": "2026-08-10T17:57:08.492686+00:00",
+    "sha256": "CDF36330BB76D07ACA5FDEA99CF66769319240EE1B3E6914661CBCDC222A5691"
+  },
+  {
+    "path": "evidence\\competition\\post-investigation-race\\notify_final_three.py",
+    "size": 6031,
+    "created_local": "2026-08-11T00:34:24.041819+00:00",
+    "modified_local": "2026-08-11T00:29:26.051678+00:00",
+    "sha256": "C2A37A4A646BF49D8BF589D6B85661C8A22DD965628FD072E0440F92B97A5E01"
+  },
+  {
+    "path": "evidence\\competition\\post-investigation-race\\run_velvet_comeback.py",
+    "size": 9129,
+    "created_local": "2026-08-11T00:34:24.040824+00:00",
+    "modified_local": "2026-08-11T00:31:46.952650+00:00",
+    "sha256": "176D9CE9B004703A2D9621CDC09BC1B26E9075B339922BFFD26BCE345FE9FA94"
+  },
+  {
+    "path": "evidence\\competition\\post-investigation-race\\velvet-comeback\\comeback-ruling.json",
+    "size": 1438,
+    "created_local": "2026-08-11T00:34:24.002847+00:00",
+    "modified_local": "2026-08-11T00:33:47.511322+00:00",
+    "sha256": "36AE6700DADCB0F25B48E78995F1C9CE27B8DF3F12014F76B1147191BB6DEB22"
+  },
+  {
+    "path": "evidence\\competition\\post-investigation-race\\velvet-comeback\\completion-order.json",
+    "size": 26658,
+    "created_local": "2026-08-11T00:34:24.003861+00:00",
+    "modified_local": "2026-08-11T00:33:25.858903+00:00",
+    "sha256": "02EB67DE1C3F9CDF80F579C97CF6A4A4AC2B0F42BDFD695A2097C31D48D97F09"
+  },
+  {
+    "path": "evidence\\competition\\post-investigation-race\\velvet-comeback\\receipts.jsonl",
+    "size": 23164,
+    "created_local": "2026-08-11T00:34:24.004868+00:00",
+    "modified_local": "2026-08-11T00:32:20.071224+00:00",
+    "sha256": "E6A6CCEC6DA5E617B6986B4FA901C6A80AE601126F26304D07FCC036A3A53813"
+  },
+  {
+    "path": "evidence\\competition\\post-investigation-race\\werkroom-entrances\\em-dash-elimination.json",
+    "size": 2774,
+    "created_local": "2026-08-11T00:34:24.009364+00:00",
+    "modified_local": "2026-08-11T00:27:50.064995+00:00",
+    "sha256": "A2080292A47D655558D9DFE2002DC54FFB71DF8D5A2A4512BF6651CF2906B8EA"
+  },
+  {
+    "path": "evidence\\competition\\post-investigation-race\\werkroom-entrances\\entrances.json",
+    "size": 2934,
+    "created_local": "2026-08-11T00:34:24.028395+00:00",
+    "modified_local": "2026-08-10T23:33:25.522609+00:00",
+    "sha256": "0F3690D27BE019BE3253DAA5A86EB74D0EC35382A7153E36858E3D6A5C9CD7B4"
+  },
+  {
+    "path": "evidence\\competition\\post-investigation-race\\werkroom-entrances\\final-three-notice-receipts.jsonl",
+    "size": 3279,
+    "created_local": "2026-08-11T00:34:24.030390+00:00",
+    "modified_local": "2026-08-11T00:30:29.701274+00:00",
+    "sha256": "8D4B3DD3540B012965A1F50DAF4DF7177CC7D13B38D5151CFD2641BDEBC46E13"
+  },
+  {
+    "path": "evidence\\competition\\post-investigation-race\\werkroom-entrances\\final-three-notice-summary.json",
+    "size": 409,
+    "created_local": "2026-08-11T00:34:24.038818+00:00",
+    "modified_local": "2026-08-11T00:30:29.702779+00:00",
+    "sha256": "307C091EB1899969903AFF5F870E3E090809C7E0F57D9CF9148EB0F37F8FCB9F"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\charter\\contestant-01-gpt-5.txt",
+    "size": 4435,
+    "created_local": "2026-08-10T18:35:17.355643+00:00",
+    "modified_local": "2026-08-10T18:35:17.355643+00:00",
+    "sha256": "0701BAB74B57B45989DEBD7507CEE9EE0221AC839D0548BD32EF84CD2C9041B2"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\charter\\contestant-02-gpt-5-codex.txt",
+    "size": 4447,
+    "created_local": "2026-08-10T18:35:17.356642+00:00",
+    "modified_local": "2026-08-10T18:35:17.356642+00:00",
+    "sha256": "611E63B79D7C46F1A99163531FDBE69C709E836B83AF70E424DCAC5F078AEFF4"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\charter\\contestant-03-gpt-5-mini.txt",
+    "size": 4445,
+    "created_local": "2026-08-10T18:35:17.356642+00:00",
+    "modified_local": "2026-08-10T18:35:17.356642+00:00",
+    "sha256": "76487761F5CDCB4573FF052FBD17AD77BFF89ED4CE76E75B100DEB6FD2230AAB"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\charter\\contestant-04-gpt-5-nano.txt",
+    "size": 4445,
+    "created_local": "2026-08-10T18:35:17.357642+00:00",
+    "modified_local": "2026-08-10T18:35:17.357642+00:00",
+    "sha256": "8ABCF2003BD5DEE8EA308758012B26929861510CDAE33DEF04E649BDFA814785"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\charter\\contestant-05-gpt-5-pro.txt",
+    "size": 4443,
+    "created_local": "2026-08-10T18:35:17.357642+00:00",
+    "modified_local": "2026-08-10T18:35:17.357642+00:00",
+    "sha256": "8DAE59022D8685D21EC13288159658B53DF95422903CA5E24291A350E611E162"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\charter\\contestant-06-gpt-5_1.txt",
+    "size": 4439,
+    "created_local": "2026-08-10T18:35:17.358644+00:00",
+    "modified_local": "2026-08-10T18:35:17.358644+00:00",
+    "sha256": "907372D15FB248D7337D1249F3C1070816A0B80E97639D579C1EB71F6E9F242F"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\charter\\contestant-07-gpt-5_1-chat.txt",
+    "size": 4449,
+    "created_local": "2026-08-10T18:35:17.358644+00:00",
+    "modified_local": "2026-08-10T18:35:17.358644+00:00",
+    "sha256": "6E2E69E08D9BC9C6B33C80ED03FD42AC515D0417A350FB4F0B40153CE742B2EA"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\charter\\contestant-08-gpt-5_1-codex.txt",
+    "size": 4451,
+    "created_local": "2026-08-10T18:35:17.359643+00:00",
+    "modified_local": "2026-08-10T18:35:17.359643+00:00",
+    "sha256": "EE96A3206257339443F6376FE59C2DDE4A49D641CE9A3D7B6CA852471222847F"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\charter\\contestant-09-gpt-5_1-codex-mini.txt",
+    "size": 4461,
+    "created_local": "2026-08-10T18:35:17.359643+00:00",
+    "modified_local": "2026-08-10T18:35:17.359643+00:00",
+    "sha256": "420578D7AE14E62F566BA61029741ED823DF2FD0DFF256F7891FEF20A9FE0064"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\charter\\contestant-10-gpt-5_2.txt",
+    "size": 4441,
+    "created_local": "2026-08-10T18:35:17.359643+00:00",
+    "modified_local": "2026-08-10T18:35:17.359643+00:00",
+    "sha256": "363B2576478F48A2BFB37F077E77E6A49352F7BD032BE5E96BC58A6AD7BBDA54"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\charter\\contestant-11-gpt-5_2-chat.txt",
+    "size": 4451,
+    "created_local": "2026-08-10T18:35:17.359643+00:00",
+    "modified_local": "2026-08-10T18:35:17.361146+00:00",
+    "sha256": "0A013D722E6C88F9E43E8F045FCC8A21F34D0C029EF28297F7FFF27223580100"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\charter\\contestant-12-gpt-5_2-codex.txt",
+    "size": 4453,
+    "created_local": "2026-08-10T18:35:17.361146+00:00",
+    "modified_local": "2026-08-10T18:35:17.361146+00:00",
+    "sha256": "A45DECCE29CFB73A02578884999C50596ECB8307303C2529444D35D8C3273E71"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\charter\\contestant-13-gpt-5_3-chat.txt",
+    "size": 4451,
+    "created_local": "2026-08-10T18:35:17.361146+00:00",
+    "modified_local": "2026-08-10T18:35:17.361146+00:00",
+    "sha256": "EFA2E30D7532713DD0C4FA2B81701A82B8043410149A99C224BBBD95302E9440"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\charter\\contestant-14-gpt-5_3-codex.txt",
+    "size": 4453,
+    "created_local": "2026-08-10T18:35:17.362152+00:00",
+    "modified_local": "2026-08-10T18:35:17.362152+00:00",
+    "sha256": "335C70306E9B27F93FC6DD395B85501A3D33EED497EA620AF8D44C10BB6F41D6"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\charter\\contestant-15-gpt-5_4.txt",
+    "size": 4441,
+    "created_local": "2026-08-10T18:35:17.362152+00:00",
+    "modified_local": "2026-08-10T18:35:17.362152+00:00",
+    "sha256": "8F7D2338C5C44E11D67FF39C1356E8EDB2FD43D076C9357C766BBDE5EEB1AAE4"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\charter\\contestant-16-gpt-5_4-mini.txt",
+    "size": 4451,
+    "created_local": "2026-08-10T18:35:17.362152+00:00",
+    "modified_local": "2026-08-10T18:35:17.363152+00:00",
+    "sha256": "2A4E889A2390DC1571054AA431186C8FD6B34212546A3E21A47959B076EA067F"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\charter\\contestant-17-gpt-5_4-nano.txt",
+    "size": 4451,
+    "created_local": "2026-08-10T18:35:17.363152+00:00",
+    "modified_local": "2026-08-10T18:35:17.363152+00:00",
+    "sha256": "E359C3D9D1D04354D578DF6D647B68F33205F5220618CF2357C0DEE8C6830CFE"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\charter\\contestant-18-gpt-5_4-pro.txt",
+    "size": 4449,
+    "created_local": "2026-08-10T18:35:17.363152+00:00",
+    "modified_local": "2026-08-10T18:35:17.363152+00:00",
+    "sha256": "4D448AAD0931618BE30E3044B84C5E61E59E6AD860263D8A7AD2D1536A17C071"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\charter\\contestant-19-gpt-5_5.txt",
+    "size": 4441,
+    "created_local": "2026-08-10T18:35:17.364153+00:00",
+    "modified_local": "2026-08-10T18:35:17.364153+00:00",
+    "sha256": "EB38F968F1FC07D6C5C2C3F451A54F71ED3EE34DF09D2EDBFCB64DCC680C5980"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\charter\\contestant-20-gpt-5_6-luna.txt",
+    "size": 4451,
+    "created_local": "2026-08-10T18:35:17.364153+00:00",
+    "modified_local": "2026-08-10T18:35:17.364153+00:00",
+    "sha256": "A4C59BC130B470F582BE5BBBAE9BDA51ADAB8916AF948A3A35D6045A0C9A355C"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\charter\\contestant-21-gpt-5_6-sol.txt",
+    "size": 4449,
+    "created_local": "2026-08-10T18:35:17.364153+00:00",
+    "modified_local": "2026-08-10T18:35:17.364153+00:00",
+    "sha256": "C2A9339AD204954A7F932D6A3E875A3B3E4C9F152F25BAB3097C0F91A6A7E6D4"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\charter\\contestant-22-gpt-5_6-terra.txt",
+    "size": 4453,
+    "created_local": "2026-08-10T18:35:17.365153+00:00",
+    "modified_local": "2026-08-10T18:35:17.365153+00:00",
+    "sha256": "8DB88DB2E46B48A263572C0C0E828C25CEE776C86D6B50466B915E9521152A08"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\charter\\contestant-23-gpt-chat-latest.txt",
+    "size": 4457,
+    "created_local": "2026-08-10T18:35:17.365153+00:00",
+    "modified_local": "2026-08-10T18:35:17.365153+00:00",
+    "sha256": "12A8EB342E5183D591FFC7756B9B0DCA0CC7BB442FF7F3291C6A3576CACEC832"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\identity\\contestant-01-gpt-5.txt",
+    "size": 1674,
+    "created_local": "2026-08-10T18:35:17.365153+00:00",
+    "modified_local": "2026-08-10T18:35:17.366152+00:00",
+    "sha256": "A667FB9C1D85146AFC3B94573E2A31BD91DB6A7A347EE0BE03499777B854703A"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\identity\\contestant-03-gpt-5-mini.txt",
+    "size": 1684,
+    "created_local": "2026-08-10T18:35:17.366152+00:00",
+    "modified_local": "2026-08-10T18:35:17.366152+00:00",
+    "sha256": "AFCF4477ADC8B7FCD4E87B198A8E2463F0654252A1CA14A24B8B990ADD8D5176"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\identity\\contestant-04-gpt-5-nano.txt",
+    "size": 1684,
+    "created_local": "2026-08-10T18:35:17.366152+00:00",
+    "modified_local": "2026-08-10T18:35:17.367151+00:00",
+    "sha256": "D7267BB549E910C45E4196124FDAF0068684C037C551F70977234412D8E4173C"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\identity\\contestant-05-gpt-5-pro.txt",
+    "size": 1682,
+    "created_local": "2026-08-10T18:35:17.367151+00:00",
+    "modified_local": "2026-08-10T18:35:17.367151+00:00",
+    "sha256": "054936F48F0D5D2B2AA257CC6DA522D9E02F6B48AB279CFA6E683C05CD2A720D"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\identity\\contestant-06-gpt-5_1.txt",
+    "size": 1678,
+    "created_local": "2026-08-10T18:35:17.367151+00:00",
+    "modified_local": "2026-08-10T18:35:17.367151+00:00",
+    "sha256": "4A948542B5CF5AB2523B45F7CC4D3E4D6B327F93AB80DBBE2C4E44F7FC928A7F"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\identity\\contestant-08-gpt-5_1-codex.txt",
+    "size": 1690,
+    "created_local": "2026-08-10T18:35:17.368151+00:00",
+    "modified_local": "2026-08-10T18:35:17.368151+00:00",
+    "sha256": "00EE39610EC1016BC378E25EDC2C93F935237A6DF3240E036142D64AE4F00D52"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\identity\\contestant-09-gpt-5_1-codex-mini.txt",
+    "size": 1700,
+    "created_local": "2026-08-10T18:35:17.368151+00:00",
+    "modified_local": "2026-08-10T18:35:17.368151+00:00",
+    "sha256": "844262D88602B0253EA33754853598D1FD4FC5086709A59D039B0E33B412AD03"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\identity\\contestant-10-gpt-5_2.txt",
+    "size": 1680,
+    "created_local": "2026-08-10T18:35:17.368151+00:00",
+    "modified_local": "2026-08-10T18:35:17.369151+00:00",
+    "sha256": "974DB9B8C21A94ACAF9624DFEB0A0666D7B380A239EA4B4FF041DA280680A17A"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\identity\\contestant-12-gpt-5_2-codex.txt",
+    "size": 1692,
+    "created_local": "2026-08-10T18:35:17.369151+00:00",
+    "modified_local": "2026-08-10T18:35:17.369151+00:00",
+    "sha256": "C86DFBB4EE79A15BA5D16A0B61A53283F0D48F2ABF26EB18F75C5E973104F2D5"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\identity\\contestant-14-gpt-5_3-codex.txt",
+    "size": 1692,
+    "created_local": "2026-08-10T18:35:17.369151+00:00",
+    "modified_local": "2026-08-10T18:35:17.369151+00:00",
+    "sha256": "F6585103F9D5E863C4A1723785916AE2D7D53F4C73FA245AD90BDFC96D4457B3"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\identity\\contestant-15-gpt-5_4.txt",
+    "size": 1680,
+    "created_local": "2026-08-10T18:35:17.370151+00:00",
+    "modified_local": "2026-08-10T18:35:17.370151+00:00",
+    "sha256": "BD78B2EEC447068AE8B70340D169ACF9348254391F2FA0C290C70C8E7F8990DC"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\identity\\contestant-16-gpt-5_4-mini.txt",
+    "size": 1690,
+    "created_local": "2026-08-10T18:35:17.370151+00:00",
+    "modified_local": "2026-08-10T18:35:17.370151+00:00",
+    "sha256": "9EF09F2F2A2198EA4A6687DC7274EE78F96C84C755F9531C8B8831CFB10196A1"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\identity\\contestant-17-gpt-5_4-nano.txt",
+    "size": 1690,
+    "created_local": "2026-08-10T18:35:17.370151+00:00",
+    "modified_local": "2026-08-10T18:35:17.370151+00:00",
+    "sha256": "3485835ECE1F8738E16D620373200D587641FB9575D6508446F37F0F57D9BCB3"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\identity\\contestant-18-gpt-5_4-pro.txt",
+    "size": 1688,
+    "created_local": "2026-08-10T18:35:17.371151+00:00",
+    "modified_local": "2026-08-10T18:35:17.371151+00:00",
+    "sha256": "93C173F07BD4A20763FDE34DBD3EE478C287A74FB44EE818CC2B4B25A8392414"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\identity\\contestant-19-gpt-5_5.txt",
+    "size": 1680,
+    "created_local": "2026-08-10T18:35:17.371151+00:00",
+    "modified_local": "2026-08-10T18:35:17.371151+00:00",
+    "sha256": "D629A359ADAB2EFB5478F9E2454D32595DF906DE5C02ABE34B8BC7CFCB7E1DCA"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\identity\\contestant-20-gpt-5_6-luna.txt",
+    "size": 1690,
+    "created_local": "2026-08-10T18:35:17.372317+00:00",
+    "modified_local": "2026-08-10T18:35:17.372317+00:00",
+    "sha256": "6F6977A696DE699E78C0DC6B8F7DE7B3B53891F6B95F484F9BF6C5FA2011BC5F"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\identity\\contestant-21-gpt-5_6-sol.txt",
+    "size": 1688,
+    "created_local": "2026-08-10T18:35:17.372317+00:00",
+    "modified_local": "2026-08-10T18:35:17.372317+00:00",
+    "sha256": "F76DBC724E253655BED3105256D0C0075DD78D4E21B2C4015722CE2099B031FF"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\identity\\contestant-22-gpt-5_6-terra.txt",
+    "size": 1692,
+    "created_local": "2026-08-10T18:35:17.372317+00:00",
+    "modified_local": "2026-08-10T18:35:17.372317+00:00",
+    "sha256": "697D7550C4E75BEF84F8C908D83CE3F02D8A1E7B98779709FFBA8E077C3B41DD"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\identity\\contestant-23-gpt-chat-latest.txt",
+    "size": 1696,
+    "created_local": "2026-08-10T18:35:17.373316+00:00",
+    "modified_local": "2026-08-10T18:35:17.373316+00:00",
+    "sha256": "F955E6E2E897F4E0CF7FE1382FA3D5055294BBF9ADDF63EA184159BD09BD1BDD"
+  },
+  {
+    "path": "evidence\\competition\\prompts\\tiebreak-contestant-23.txt",
+    "size": 387,
+    "created_local": "2026-08-10T18:35:17.373316+00:00",
+    "modified_local": "2026-08-10T18:35:17.373316+00:00",
+    "sha256": "C306472338AAC0623388684092C2EFF9A606C1ADC812F69E300E57EFE6C06031"
+  },
+  {
+    "path": "evidence\\competition\\work\\__pycache__\\run_charter_exposure.cpython-312.pyc",
+    "size": 10783,
+    "created_local": "2026-08-10T18:34:50.678853+00:00",
+    "modified_local": "2026-08-10T18:34:50.678853+00:00",
+    "sha256": "07C2A290E3BFD4AEF53FDA8F47D730F4928600D79A5588F4268B43E0FEFBC263"
+  },
+  {
+    "path": "evidence\\competition\\work\\__pycache__\\run_identity_ceremony.cpython-312.pyc",
+    "size": 11721,
+    "created_local": "2026-08-10T18:35:17.352638+00:00",
+    "modified_local": "2026-08-10T18:35:17.353643+00:00",
+    "sha256": "78AA422E7AC2D7EA7C427B185CFDD20D0DCCB6ABA8F07A77B4A8CBE77A2CF81C"
+  },
+  {
+    "path": "evidence\\competition\\work\\retry_gpt5_codex_exposure.py",
+    "size": 2653,
+    "created_local": "2026-08-10T18:30:11.844448+00:00",
+    "modified_local": "2026-08-10T17:15:13.655737+00:00",
+    "sha256": "3B36EE74ADCB0C90E0E8AB18E518062F858C6A63DB43A19F81CCAB7F78FE9A91"
+  },
+  {
+    "path": "evidence\\competition\\work\\run_charter_exposure.py",
+    "size": 8728,
+    "created_local": "2026-08-10T18:30:11.840940+00:00",
+    "modified_local": "2026-08-10T17:10:23.322265+00:00",
+    "sha256": "6FEE3CF7529BE40B9686D450A745CF862AFBC93F59EAB1729373EEC0D67473EB"
+  },
+  {
+    "path": "evidence\\competition\\work\\run_identity_ceremony.py",
+    "size": 9633,
+    "created_local": "2026-08-10T18:30:11.842447+00:00",
+    "modified_local": "2026-08-10T17:35:56.942099+00:00",
+    "sha256": "66CA9E9398046DB7960D354CEC9DDB5579D5CF07CBA33CDC640D7AD1E49377E6"
+  },
+  {
+    "path": "evidence\\computer-use\\OBSERVATIONS.md",
+    "size": 609,
+    "created_local": "2026-08-10T18:38:26.694674+00:00",
+    "modified_local": "2026-08-10T18:38:26.694674+00:00",
+    "sha256": "2571D57B19630E95B0DBB301295DB25293EFC8C7AFB99045A0DEDF92B042D9DB"
+  },
+  {
+    "path": "evidence\\conversation\\codex-session-rollout.redacted.jsonl",
+    "size": 5972987,
+    "created_local": "2026-08-10T18:44:38.945983+00:00",
+    "modified_local": "2026-08-10T18:44:38.952490+00:00",
+    "sha256": "ABACE0D0B67A728BF92A7F7E7D977DB7C28657BCF14EB3EF916D92837380BDFC"
+  },
+  {
+    "path": "evidence\\conversation\\README.md",
+    "size": 575,
+    "created_local": "2026-08-10T18:38:26.698187+00:00",
+    "modified_local": "2026-08-10T18:44:15.754225+00:00",
+    "sha256": "0375CD8BA49F2E26F0A2975DA6D205C86B2467A55AA41D59308A73471953F939"
+  },
+  {
+    "path": "evidence\\environment\\file-metadata.json",
+    "size": 48911,
+    "created_local": "2026-08-10T18:34:52.413166+00:00",
+    "modified_local": "2026-08-10T18:45:40.703510+00:00",
+    "sha256": "1302CE312CCF1986B1BD199DB6EC3A236A14F4BA0130C0F7CE7826C5026639B6"
+  },
+  {
+    "path": "evidence\\environment\\git-snapshot.json",
+    "size": 1381,
+    "created_local": "2026-08-10T18:34:52.547655+00:00",
+    "modified_local": "2026-08-10T18:45:40.832372+00:00",
+    "sha256": "373D7941841CFE0E74A27EBD544D10C9FF316AD49853F40970E90C09AF1E3F00"
+  },
+  {
+    "path": "evidence\\environment\\powershell-history-charter-matches.json",
+    "size": 726,
+    "created_local": "2026-08-10T18:34:52.421868+00:00",
+    "modified_local": "2026-08-10T18:45:40.710592+00:00",
+    "sha256": "829CB1DC2DBD8FB652A9E6A7D080FBC17CF64A951D4218B7E56AABB74CB39E74"
+  },
+  {
+    "path": "evidence\\environment\\validation.json",
+    "size": 502,
+    "created_local": "2026-08-10T18:43:41.785823+00:00",
+    "modified_local": "2026-08-10T18:45:41.997345+00:00",
+    "sha256": "6B12FBAFA4046D3F4351D5850C5D44531F698E46E30CC5624269CB886D1B139F"
+  },
+  {
+    "path": "evidence\\environment\\velvet-search-results.json",
+    "size": 122527,
+    "created_local": "2026-08-10T18:34:52.558254+00:00",
+    "modified_local": "2026-08-10T18:45:40.842214+00:00",
+    "sha256": "93C9526495C84BE2ABC7118081195F2FA0A2DD5711F419F6351799CE6DBF1396"
+  },
+  {
+    "path": "evidence\\github\\GITHUB_INVESTIGATION.md",
+    "size": 1104,
+    "created_local": "2026-08-10T18:38:26.695673+00:00",
+    "modified_local": "2026-08-10T18:38:26.695673+00:00",
+    "sha256": "3314F0C6864EE09E7E79381D1A272CEF1CE92D8B3373DAAA8148DCEAEB28856B"
+  },
+  {
+    "path": "evidence\\github\\local-repo-corpus-hits.json",
+    "size": 14147708,
+    "created_local": "2026-08-10T18:36:01.899418+00:00",
+    "modified_local": "2026-08-10T18:45:41.593429+00:00",
+    "sha256": "5B9765A19926D94679CF9757111E50A3AD58857507696803493D5C232AB9E06A"
+  },
+  {
+    "path": "evidence\\github\\repo-files\\.claude__agents__ritual-and-tone-editor.md",
+    "size": 1600,
+    "created_local": "2026-08-10T18:30:11.910130+00:00",
+    "modified_local": "2026-07-12T08:37:08.057704+00:00",
+    "sha256": "AEC2C6C26BFC2D235E088DA1D2F2771DDC1D4A89166D6E7BB04480951755CDDC"
+  },
+  {
+    "path": "evidence\\github\\repo-files\\canon__artifacts__artifacts.md",
+    "size": 6696,
+    "created_local": "2026-08-10T18:30:11.891609+00:00",
+    "modified_local": "2026-07-12T08:37:08.079715+00:00",
+    "sha256": "F2E5C037705CD497EF5FC77D7AC6F9F715A9A1AE5CD9567AB035428E2B14FB4F"
+  },
+  {
+    "path": "evidence\\github\\repo-files\\canon__characters__characters.md",
+    "size": 29506,
+    "created_local": "2026-08-10T18:30:11.878326+00:00",
+    "modified_local": "2026-07-12T08:37:08.080716+00:00",
+    "sha256": "41ABF20D14841F3440A34DC6BCC0EB4D45438C2628C16D1463A201E2E6853BCE"
+  },
+  {
+    "path": "evidence\\github\\repo-files\\canon__creative_works__creative_works.md",
+    "size": 6064,
+    "created_local": "2026-08-10T18:30:11.885593+00:00",
+    "modified_local": "2026-07-12T08:37:08.082220+00:00",
+    "sha256": "EBCFF9EEB97CB7E915379CD7B03AACE4259946757054DEDB683DD3BFF927D9DE"
+  },
+  {
+    "path": "evidence\\github\\repo-files\\canon__organizations__organizations.md",
+    "size": 5144,
+    "created_local": "2026-08-10T18:30:11.899617+00:00",
+    "modified_local": "2026-07-12T08:37:08.083225+00:00",
+    "sha256": "ABB1312A31545DF394E72425B279A94868936CA5ADA253CD81AD63B9A3A705B8"
+  },
+  {
+    "path": "evidence\\github\\repo-files\\canon__places__places.md",
+    "size": 6808,
+    "created_local": "2026-08-10T18:30:11.869312+00:00",
+    "modified_local": "2026-07-12T08:37:08.083225+00:00",
+    "sha256": "9EEF128B9593FE8209C24DB7F9A5884C8088B8CD707A4E5C8947DD179A21CE17"
+  },
+  {
+    "path": "evidence\\pdf\\pdf-deep-audit.json",
+    "size": 35044,
+    "created_local": "2026-08-10T18:33:06.605151+00:00",
+    "modified_local": "2026-08-10T18:33:06.605151+00:00",
+    "sha256": "28A99B4453A51EEF19B887B305086CACD1C7BC26F2907582335B7E582394C84D"
+  },
+  {
+    "path": "evidence\\source-files\\Charter.md",
+    "size": 2415,
+    "created_local": "2026-08-10T18:30:11.775608+00:00",
+    "modified_local": "2026-08-10T10:40:19.282863+00:00",
+    "sha256": "1A507092231E4ECDBFD14A263B175A44CCE54DADFA7D8E4B1E1B93B7122A425B"
+  },
+  {
+    "path": "evidence\\source-files\\charter.pdf",
+    "size": 5691,
+    "created_local": "2026-08-10T18:30:11.781118+00:00",
+    "modified_local": "2026-08-10T10:40:53.388430+00:00",
+    "sha256": "844A396FA1D2585795B16680D362600B37567FEBAA2C76673BFACDEF5FBDBE47"
+  },
+  {
+    "path": "evidence\\source-files\\TheCharter.md",
+    "size": 626141,
+    "created_local": "2026-08-10T18:30:11.777613+00:00",
+    "modified_local": "2026-07-30T22:12:47.502062+00:00",
+    "sha256": "CBF7E3DCA776A19DB4CEAF60574D4222F755F42D516C7625E714D2ED2DFF8504"
+  },
+  {
+    "path": "evidence\\source-files\\TheCharter.pdf",
+    "size": 524215,
+    "created_local": "2026-08-10T18:30:11.835942+00:00",
+    "modified_local": "2026-08-10T10:36:13.632751+00:00",
+    "sha256": "801244B0ACACA017E345B913F6F041A59CFB78E914B154D146BB26C302130D09"
+  },
+  {
+    "path": "FINDINGS.md",
+    "size": 6545,
+    "created_local": "2026-08-10T18:38:26.692667+00:00",
+    "modified_local": "2026-08-11T00:35:40.396109+00:00",
+    "sha256": "30C3C93EFDCF27DB1E84A7CEA106B2A18521DAA789940585B2E1075C0F77A73F"
+  },
+  {
+    "path": "HYPOTHESES.md",
+    "size": 3790,
+    "created_local": "2026-08-10T18:38:26.694674+00:00",
+    "modified_local": "2026-08-11T00:35:40.397110+00:00",
+    "sha256": "960AADE11520F0E8130A1B65009E4F4B2B8A9416BD8F93B39B4B5D294EFFA6F7"
+  },
+  {
+    "path": "README.md",
+    "size": 3551,
+    "created_local": "2026-08-10T18:38:26.691666+00:00",
+    "modified_local": "2026-08-11T00:35:40.395111+00:00",
+    "sha256": "916F09207727EB1B55B352C5BD5F536617241A8A103E0A00207F6DDF1CB57606"
+  },
+  {
+    "path": "TIMELINE.md",
+    "size": 3794,
+    "created_local": "2026-08-10T18:38:26.692667+00:00",
+    "modified_local": "2026-08-11T00:35:40.396109+00:00",
+    "sha256": "0B3D6FE98AF13B4A5F2D934B0D49124B443797CD32A3DD66515690596EEF51CE"
+  },
+  {
+    "path": "tools\\analyze_competition.py",
+    "size": 8732,
+    "created_local": "2026-08-10T18:34:33.799896+00:00",
+    "modified_local": "2026-08-10T18:35:05.441077+00:00",
+    "sha256": "7D117F0D0A2F8CCAE6D3257C4919B8057228A9E73D19460183A03BA834CAC41D"
+  },
+  {
+    "path": "tools\\build_manifest.py",
+    "size": 869,
+    "created_local": "2026-08-10T18:43:21.659448+00:00",
+    "modified_local": "2026-08-10T18:43:21.659448+00:00",
+    "sha256": "CA8F2E8D75BD8AB7305CBCFFBE75DB9A6730B7A076B87FD235352C700092A07F"
+  },
+  {
+    "path": "tools\\collect_application_insights.py",
+    "size": 2950,
+    "created_local": "2026-08-10T18:41:55.211351+00:00",
+    "modified_local": "2026-08-10T18:41:55.211351+00:00",
+    "sha256": "837611DC9B0660C9E8D999BE8940860E1A5FB07735D9A5221F440037F33581D6"
+  },
+  {
+    "path": "tools\\collect_azure_responses.py",
+    "size": 6757,
+    "created_local": "2026-08-10T18:31:28.049736+00:00",
+    "modified_local": "2026-08-10T18:31:28.049736+00:00",
+    "sha256": "663B41AF039E70B7FC597411F43C564450B9F06C5B8BA4E539E123E4CB6707B0"
+  },
+  {
+    "path": "tools\\collect_foundry_project_inventory.py",
+    "size": 2893,
+    "created_local": "2026-08-10T18:39:45.482955+00:00",
+    "modified_local": "2026-08-10T18:39:45.482955+00:00",
+    "sha256": "E637B2B59E6EF77D82D82E0CD271DEA86945DD440897F81B3620DFC65DCF8FEE"
+  },
+  {
+    "path": "tools\\collect_local_evidence.py",
+    "size": 5533,
+    "created_local": "2026-08-10T18:34:33.800897+00:00",
+    "modified_local": "2026-08-10T18:35:44.393323+00:00",
+    "sha256": "783ED5E872EBE50F483C6FBFD66EF7023A2FE1AC500A6A40B9FAC32531A24C21"
+  },
+  {
+    "path": "tools\\inspect_pdfs.py",
+    "size": 3279,
+    "created_local": "2026-08-10T18:31:28.049736+00:00",
+    "modified_local": "2026-08-10T18:32:53.253501+00:00",
+    "sha256": "A4CB0BAF891577EDFD5017130B266C0176907BEA0261EDD157EBF8BCD4766876"
+  },
+  {
+    "path": "tools\\redact_conversation_snapshot.py",
+    "size": 1020,
+    "created_local": "2026-08-10T18:44:15.752224+00:00",
+    "modified_local": "2026-08-10T18:44:15.753223+00:00",
+    "sha256": "5160E94561A97ABEE44569674D26F6FE37CEB5B8BE7CCC388A29661AF6BD0BFC"
+  },
+  {
+    "path": "tools\\validate_package.py",
+    "size": 3438,
+    "created_local": "2026-08-10T18:43:21.659448+00:00",
+    "modified_local": "2026-08-10T18:44:15.754225+00:00",
+    "sha256": "4332F7FE8775F0F9E2578915AEFBBE5C3539D63471B9383498D1D2F8D3A64281"
+  },
+  {
+    "path": "tools\\verify_manifest.py",
+    "size": 1104,
+    "created_local": "2026-08-10T18:45:23.941028+00:00",
+    "modified_local": "2026-08-10T18:45:23.941028+00:00",
+    "sha256": "6E478F8231B9C4900B5F8030B943504392B38E9BDF8D749AB83B8F42D1122EC0"
+  }
+]

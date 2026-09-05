@@ -24,5 +24,5 @@ $interpreterPath = "$projectRoot\.venv\Scripts\python.exe"
 }
 "@ | Set-Content -Path $settingsPath -Encoding utf8
 
-Write-Host "VS Code settings written to $settingsPath"
+Write-Host "settings written to $settingsPath"
 Write-Host "Setup complete. Restart VS Code to pick up the new interpreter."

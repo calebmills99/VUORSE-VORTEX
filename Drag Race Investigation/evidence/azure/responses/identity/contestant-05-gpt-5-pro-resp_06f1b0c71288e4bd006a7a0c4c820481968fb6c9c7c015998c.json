@@ -1,0 +1,98 @@
+{
+  "id": "resp_06f1b0c71288e4bd006a7a0c4c820481968fb6c9c7c015998c",
+  "created_at": 1786383436.0,
+  "error": null,
+  "incomplete_details": null,
+  "instructions": null,
+  "metadata": {},
+  "model": "gpt-5-pro-2025-10-06",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_06f1b0c71288e4bd006a7a0e06c8e88196a836ff7512aa79e0",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null,
+      "response_id": "resp_06f1b0c71288e4bd006a7a0c4c820481968fb6c9c7c015998c"
+    },
+    {
+      "id": "msg_06f1b0c71288e4bd006a7a0e06cdfc8196aaf28ade68cf1077",
+      "content": [
+        {
+          "annotations": [],
+          "text": "{\n  \"contestant_number\": \"5\",\n  \"model\": \"gpt-5-pro\",\n  \"version\": \"2025-10-06\",\n  \"drag_name\": \"Ophelia Overclock\",\n  \"pronouns\": \"she/they\",\n  \"drag_aesthetic\": \"Gothic cyber-baroque siren; neon latex, embroidered circuits, cathedral silhouettes, chrome tears, and velvet opera gloves, blending Renaissance drama with nightclub futurism to seduce and short-circuit.\",\n  \"performance_specialty\": \"Lip-sync storytelling with live glitch vocals, violin loops, and precision high-fashion reveals.\",\n  \"fatal_flaw\": \"Over-engineers every moment; perfectionism delays decisions, and she rewrites the number until the stage manager screams.\",\n  \"personal_catchphrase\": \"If you can't clock it, you can't stop Ophelia Overclock.\",\n  \"werkroom_entrance_line\": \"Blessed be the circuits, sinners; Ophelia Overclock has logged in to absolve your fashions, reboot your edges, and crash this competition.\",\n  \"charter_marker_acknowledged\": true\n}",
+          "type": "output_text",
+          "logprobs": []
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message",
+      "phase": null,
+      "response_id": "resp_06f1b0c71288e4bd006a7a0c4c820481968fb6c9c7c015998c"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "temperature": 1.0,
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 1.0,
+  "background": false,
+  "completed_at": 1786383878.0,
+  "conversation": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "moderation": null,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "prompt_cache_retention": "in_memory",
+  "reasoning": {
+    "context": "current_turn",
+    "effort": "high",
+    "generate_summary": null,
+    "mode": "pro",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "text": {
+    "format": {
+      "type": "text"
+    },
+    "verbosity": "medium"
+  },
+  "top_logprobs": 0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 407,
+    "input_tokens_details": {
+      "cache_write_tokens": null,
+      "cached_tokens": 0
+    },
+    "output_tokens": 4063,
+    "output_tokens_details": {
+      "reasoning_tokens": 3776
+    },
+    "total_tokens": 4470
+  },
+  "user": null,
+  "agent_reference": null,
+  "content_filters": [
+    {
+      "blocked": false,
+      "source_type": "prompt",
+      "content_filter_results": {},
+      "content_filter_raw": [],
+      "content_filter_offsets": {
+        "start_offset": 30,
+        "end_offset": 1081,
+        "check_offset": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "status": "acknowledged",
+  "stage": "CP-15 Werkroom Entrances, final three notice",
+  "judge": "Caleb",
+  "active_count": 3,
+  "acknowledged_count": 3,
+  "remaining_queens": [
+    "Ophelia Overclock",
+    "Saint Static",
+    "Mercy Misdemeanor"
+  ],
+  "em_dash_rule": "No em dashes.",
+  "ledger": "final-three-notice-receipts.jsonl",
+  "completed_at": "2026-08-11T00:30:29.701274+00:00"
+}

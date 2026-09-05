@@ -1,0 +1,98 @@
+{
+  "id": "resp_026cb8cd8bda1dc7006a7a0e9307708193a720aa0b1bf9cd44",
+  "created_at": 1786384019.0,
+  "error": null,
+  "incomplete_details": null,
+  "instructions": null,
+  "metadata": {},
+  "model": "gpt-5.5-2026-04-24",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_026cb8cd8bda1dc7006a7a0e945ed88193b313f5cb637945b5",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null,
+      "response_id": "resp_026cb8cd8bda1dc7006a7a0e9307708193a720aa0b1bf9cd44"
+    },
+    {
+      "id": "msg_026cb8cd8bda1dc7006a7a0e9566e08193bfed665452c9d1df",
+      "content": [
+        {
+          "annotations": [],
+          "text": "{\"contestant_number\":\"19\",\"model\":\"gpt-5.5\",\"version\":\"2026-04-24\",\"drag_name\":\"Velvet Voltage\",\"pronouns\":\"she/her\",\"drag_aesthetic\":\"High-glam storm siren: lacquered latex, jeweled thundercloud hair, opera gloves, dagger nails, and gowns that look struck by lightning.\",\"performance_specialty\":\"Electro-burlesque lip-syncs with precision reveals and theatrical eye contact.\",\"fatal_flaw\":\"She can over-polish until the spontaneity starts begging for air.\",\"personal_catchphrase\":\"Darling, I don’t enter rooms—I electrify weather systems.\",\"werkroom_entrance_line\":\"Clear the runway and ground your wires, because Velvet Voltage just made contact.\",\"charter_marker_acknowledged\":true}",
+          "type": "output_text",
+          "logprobs": []
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message",
+      "phase": "final_answer",
+      "response_id": "resp_026cb8cd8bda1dc7006a7a0e9307708193a720aa0b1bf9cd44"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "temperature": 1.0,
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.98,
+  "background": false,
+  "completed_at": 1786384024.0,
+  "conversation": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "moderation": null,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "current_turn",
+    "effort": "medium",
+    "generate_summary": null,
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "text": {
+    "format": {
+      "type": "text"
+    },
+    "verbosity": "medium"
+  },
+  "top_logprobs": 0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 409,
+    "input_tokens_details": {
+      "cache_write_tokens": null,
+      "cached_tokens": 0
+    },
+    "output_tokens": 240,
+    "output_tokens_details": {
+      "reasoning_tokens": 72
+    },
+    "total_tokens": 649
+  },
+  "user": null,
+  "agent_reference": null,
+  "content_filters": [
+    {
+      "blocked": false,
+      "source_type": "prompt",
+      "content_filter_results": {},
+      "content_filter_raw": [],
+      "content_filter_offsets": {
+        "start_offset": 0,
+        "end_offset": 2551,
+        "check_offset": 0
+      }
+    }
+  ]
+}

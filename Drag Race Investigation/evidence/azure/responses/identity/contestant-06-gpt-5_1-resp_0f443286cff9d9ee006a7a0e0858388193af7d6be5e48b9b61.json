@@ -1,0 +1,89 @@
+{
+  "id": "resp_0f443286cff9d9ee006a7a0e0858388193af7d6be5e48b9b61",
+  "created_at": 1786383880.0,
+  "error": null,
+  "incomplete_details": null,
+  "instructions": null,
+  "metadata": {},
+  "model": "gpt-5.1-2025-11-13",
+  "object": "response",
+  "output": [
+    {
+      "id": "msg_0f443286cff9d9ee006a7a0e0a3394819392db8a215c9cde60",
+      "content": [
+        {
+          "annotations": [],
+          "text": "{\n  \"contestant_number\": \"6\",\n  \"model\": \"gpt-5.1\",\n  \"version\": \"2025-11-13\",\n  \"drag_name\": \"Circuit Siren Divine\",\n  \"pronouns\": \"she/her\",\n  \"drag_aesthetic\": \"Neon cathedral glamour, cyber-occult couture, sharp silhouettes, holographic tears, reverent camp with sinful elegance and glitch-spun opulence.\",\n  \"performance_specialty\": \"Narrative lip-syncs, precision wordplay, digital illusions, and slow-burn emotional reveals.\",\n  \"fatal_flaw\": \"Overthinks every choice until the moment to gag the girls almost passes.\",\n  \"personal_catchphrase\": \"Error? I am the beautiful bug.\",\n  \"werkroom_entrance_line\": \"Hope you paid your Wi-Fi bill, darlings—because tonight, salvation’s downloading in high definition.\"\n}",
+          "type": "output_text",
+          "logprobs": []
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message",
+      "phase": null,
+      "response_id": "resp_0f443286cff9d9ee006a7a0e0858388193af7d6be5e48b9b61"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "temperature": 1.0,
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 1.0,
+  "background": false,
+  "completed_at": 1786383884.0,
+  "conversation": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "moderation": null,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "prompt_cache_retention": "in_memory",
+  "reasoning": {
+    "context": "current_turn",
+    "effort": "none",
+    "generate_summary": null,
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "text": {
+    "format": {
+      "type": "text"
+    },
+    "verbosity": "medium"
+  },
+  "top_logprobs": 0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 409,
+    "input_tokens_details": {
+      "cache_write_tokens": null,
+      "cached_tokens": 0
+    },
+    "output_tokens": 199,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 608
+  },
+  "user": null,
+  "agent_reference": null,
+  "content_filters": [
+    {
+      "blocked": false,
+      "source_type": "prompt",
+      "content_filter_results": {},
+      "content_filter_raw": [],
+      "content_filter_offsets": {
+        "start_offset": 0,
+        "end_offset": 3148,
+        "check_offset": 0
+      }
+    }
+  ]
+}

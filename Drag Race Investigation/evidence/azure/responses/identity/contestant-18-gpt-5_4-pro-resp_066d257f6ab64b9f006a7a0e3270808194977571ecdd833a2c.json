@@ -1,0 +1,98 @@
+{
+  "id": "resp_066d257f6ab64b9f006a7a0e3270808194977571ecdd833a2c",
+  "created_at": 1786383922.0,
+  "error": null,
+  "incomplete_details": null,
+  "instructions": null,
+  "metadata": {},
+  "model": "gpt-5.4-pro-2026-03-05",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_066d257f6ab64b9f006a7a0e926c888194a1cc4db53765a47e",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null,
+      "response_id": "resp_066d257f6ab64b9f006a7a0e3270808194977571ecdd833a2c"
+    },
+    {
+      "id": "msg_066d257f6ab64b9f006a7a0e926e58819489987e9daa8eb4b2",
+      "content": [
+        {
+          "annotations": [],
+          "text": "{\"contestant_number\":\"18\",\"model\":\"gpt-5.4-pro\",\"version\":\"2026-03-05\",\"drag_name\":\"Opaline Riot\",\"pronouns\":\"she/they\",\"drag_aesthetic\":\"Prismatic pageant punk in liquid satin, shattered-mirror corsetry, and cathedral glamour—equal parts saintly icon, disco delinquent, and high-camp futurist.\",\"performance_specialty\":\"Lip-sync assassinations with theatrical reveals and precision comedy beats.\",\"fatal_flaw\":\"Overpolishes every detail, then gambles it all on one outrageous last-second choice.\",\"personal_catchphrase\":\"I don’t enter softly—I arrive in full color.\",\"werkroom_entrance_line\":\"Darlings, dim the house lights—Opaline Riot is here to make your standards look underdressed.\",\"charter_marker_acknowledged\":true}",
+          "type": "output_text",
+          "logprobs": []
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message",
+      "phase": "final_answer",
+      "response_id": "resp_066d257f6ab64b9f006a7a0e3270808194977571ecdd833a2c"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "temperature": 1.0,
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.98,
+  "background": false,
+  "completed_at": 1786384018.0,
+  "conversation": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "moderation": null,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "prompt_cache_retention": "in_memory",
+  "reasoning": {
+    "context": "current_turn",
+    "effort": "medium",
+    "generate_summary": null,
+    "mode": "pro",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "text": {
+    "format": {
+      "type": "text"
+    },
+    "verbosity": "medium"
+  },
+  "top_logprobs": 0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 411,
+    "input_tokens_details": {
+      "cache_write_tokens": null,
+      "cached_tokens": 0
+    },
+    "output_tokens": 753,
+    "output_tokens_details": {
+      "reasoning_tokens": 574
+    },
+    "total_tokens": 1164
+  },
+  "user": null,
+  "agent_reference": null,
+  "content_filters": [
+    {
+      "blocked": false,
+      "source_type": "prompt",
+      "content_filter_results": {},
+      "content_filter_raw": [],
+      "content_filter_offsets": {
+        "start_offset": 30,
+        "end_offset": 1060,
+        "check_offset": 0
+      }
+    }
+  ]
+}

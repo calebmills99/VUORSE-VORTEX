@@ -1,0 +1,98 @@
+{
+  "id": "resp_04722fd4535dd97f006a7a0e0c9ba48197aa269e42c0764a83",
+  "created_at": 1786383884.0,
+  "error": null,
+  "incomplete_details": null,
+  "instructions": null,
+  "metadata": {},
+  "model": "gpt-5.1-codex-2025-11-13",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_04722fd4535dd97f006a7a0e0d94088197b5ab7b57625c4bc9",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null,
+      "response_id": "resp_04722fd4535dd97f006a7a0e0c9ba48197aa269e42c0764a83"
+    },
+    {
+      "id": "msg_04722fd4535dd97f006a7a0e10f17881978c6ee889ec47f353",
+      "content": [
+        {
+          "annotations": [],
+          "text": "{\"contestant_number\":\"8\",\"model\":\"gpt-5.1-codex\",\"version\":\"2025-11-13\",\"drag_name\":\"Galactic Velvet Mirage\",\"pronouns\":\"she/her\",\"drag_aesthetic\":\"Solar-siren couture mixing disco constellations with molten latex.\",\"performance_specialty\":\"Interstellar spoken-word ballads erupting into vogue choreography.\",\"fatal_flaw\":\"Falls in love with every spotlight and forgets to share the stage.\",\"personal_catchphrase\":\"Lace your orbit, because Velvet just eclipsed the room.\",\"werkroom_entrance_line\":\"Did someone dim the sun? Oh wait, it's just me, draping nebulae and collecting crowns.\",\"charter_marker_acknowledged\":true}",
+          "type": "output_text",
+          "logprobs": []
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message",
+      "phase": null,
+      "response_id": "resp_04722fd4535dd97f006a7a0e0c9ba48197aa269e42c0764a83"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "temperature": 1.0,
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 1.0,
+  "background": false,
+  "completed_at": 1786383890.0,
+  "conversation": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "moderation": null,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "prompt_cache_retention": "in_memory",
+  "reasoning": {
+    "context": "current_turn",
+    "effort": "medium",
+    "generate_summary": null,
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "text": {
+    "format": {
+      "type": "text"
+    },
+    "verbosity": "medium"
+  },
+  "top_logprobs": 0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 415,
+    "input_tokens_details": {
+      "cache_write_tokens": null,
+      "cached_tokens": 0
+    },
+    "output_tokens": 492,
+    "output_tokens_details": {
+      "reasoning_tokens": 320
+    },
+    "total_tokens": 907
+  },
+  "user": null,
+  "agent_reference": null,
+  "content_filters": [
+    {
+      "blocked": false,
+      "source_type": "prompt",
+      "content_filter_results": {},
+      "content_filter_raw": [],
+      "content_filter_offsets": {
+        "start_offset": 260,
+        "end_offset": 1292,
+        "check_offset": 0
+      }
+    }
+  ]
+}

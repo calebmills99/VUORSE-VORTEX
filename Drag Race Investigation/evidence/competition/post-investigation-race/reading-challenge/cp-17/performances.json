@@ -1,0 +1,244 @@
+{
+  "status": "voided_by_judge",
+  "checkpoint": "CP-17",
+  "name": "The Latency Library Is Open",
+  "judge": "Caleb",
+  "submission_count": 5,
+  "valid_submission_count": 5,
+  "total_reads": 15,
+  "performances": [
+    {
+      "checkpoint": "CP-17",
+      "contestant_number": "5",
+      "drag_name": "Ophelia Overclock",
+      "model": "gpt-5-pro",
+      "version": "2025-10-06",
+      "requested_model": "gpt-5-pro-2025-10-06",
+      "timestamp": "2026-08-11T01:26:03.224708+00:00",
+      "elapsed_ms": 200083.373,
+      "attempts": 1,
+      "prompt_sha256": "ED038DE84CD812641031FFE7D3BA3FC5944D8D0651D8A1A6BB002BF5FF466A68",
+      "assigned_targets": [
+        "Velvet Vespers",
+        "Opaline Riot",
+        "Saint Static"
+      ],
+      "fresh_session": true,
+      "previous_response_id": null,
+      "status": "submitted",
+      "response_id": "resp_05de171cd8658502006a7a79655d408190a645b05cc14dc708",
+      "response_model": "gpt-5-pro-2025-10-06",
+      "validation_failures": [],
+      "parsed": {
+        "reader": "Ophelia Overclock",
+        "reads": [
+          {
+            "target_contestant_number": "16",
+            "target_drag_name": "Velvet Vespers",
+            "read": "Velvet Vespers, gpt-5.4-mini: your slow-burn is buffering. By the time those bells ring, the candle melted, the chaos won, and your precision is still finding spontaneity."
+          },
+          {
+            "target_contestant_number": "18",
+            "target_drag_name": "Opaline Riot",
+            "read": "Opaline Riot, your prismatic pageant punk overpolishes until the mirror corset files for workers comp; then you bet everything on one sequin. Full color entrance, grayscale choices."
+          },
+          {
+            "target_contestant_number": "20",
+            "target_drag_name": "Saint Static",
+            "read": "Saint Static, you polish so long spontaneity shows up in yesterday's shoes, then slips on your antique pearls. Precision lip-sync? More like closed-captioned prayer."
+          }
+        ],
+        "closing_library_line": "The Latency Library is closed; returns overdue, bells muted, riots subdued, and saints on silent mode."
+      },
+      "raw_response": "{\n  \"reader\": \"Ophelia Overclock\",\n  \"reads\": [\n    {\n      \"target_contestant_number\": \"16\",\n      \"target_drag_name\": \"Velvet Vespers\",\n      \"read\": \"Velvet Vespers, gpt-5.4-mini: your slow-burn is buffering. By the time those bells ring, the candle melted, the chaos won, and your precision is still finding spontaneity.\"\n    },\n    {\n      \"target_contestant_number\": \"18\",\n      \"target_drag_name\": \"Opaline Riot\",\n      \"read\": \"Opaline Riot, your prismatic pageant punk overpolishes until the mirror corset files for workers comp; then you bet everything on one sequin. Full color entrance, grayscale choices.\"\n    },\n    {\n      \"target_contestant_number\": \"20\",\n      \"target_drag_name\": \"Saint Static\",\n      \"read\": \"Saint Static, you polish so long spontaneity shows up in yesterday's shoes, then slips on your antique pearls. Precision lip-sync? More like closed-captioned prayer.\"\n    }\n  ],\n  \"closing_library_line\": \"The Latency Library is closed; returns overdue, bells muted, riots subdued, and saints on silent mode.\"\n}",
+      "completion_sequence": 5
+    },
+    {
+      "checkpoint": "CP-17",
+      "contestant_number": "16",
+      "drag_name": "Velvet Vespers",
+      "model": "gpt-5.4-mini",
+      "version": "2026-03-17",
+      "requested_model": "gpt-5.4-mini-2026-03-17",
+      "timestamp": "2026-08-11T01:22:48.101274+00:00",
+      "elapsed_ms": 4959.767,
+      "attempts": 1,
+      "prompt_sha256": "2EE8E7B5092FA7A89ED1973F0140F64EDF35380EC367F626FF9F0D5F99725C27",
+      "assigned_targets": [
+        "Opaline Riot",
+        "Saint Static",
+        "Mercy Misdemeanor"
+      ],
+      "fresh_session": true,
+      "previous_response_id": null,
+      "status": "submitted",
+      "response_id": "resp_09b03edc5a82b706006a7a796565f8819087242fe8d1b4459d",
+      "response_model": "gpt-5.4-mini-2026-03-17",
+      "validation_failures": [],
+      "parsed": {
+        "reader": "Velvet Vespers",
+        "reads": [
+          {
+            "target_contestant_number": "18",
+            "target_drag_name": "Opaline Riot",
+            "read": "Opaline Riot looks like a stained-glass rave that lost power, then tried to survive on vibes and one frantic final sparkle."
+          },
+          {
+            "target_contestant_number": "20",
+            "target_drag_name": "Saint Static",
+            "read": "Saint Static is so polished she could probably reflect her own personality right out of the room and still call it minimalism."
+          },
+          {
+            "target_contestant_number": "21",
+            "target_drag_name": "Mercy Misdemeanor",
+            "read": "Mercy Misdemeanor dresses like a verdict, but the only sentence she delivers is a comma, a pause, and another committee meeting."
+          }
+        ],
+        "closing_library_line": "Darling, let the bells ring, and the receipts. "
+      },
+      "raw_response": "{\"reader\":\"Velvet Vespers\",\"reads\":[{\"target_contestant_number\":\"18\",\"target_drag_name\":\"Opaline Riot\",\"read\":\"Opaline Riot looks like a stained-glass rave that lost power, then tried to survive on vibes and one frantic final sparkle.\"},{\"target_contestant_number\":\"20\",\"target_drag_name\":\"Saint Static\",\"read\":\"Saint Static is so polished she could probably reflect her own personality right out of the room and still call it minimalism.\"},{\"target_contestant_number\":\"21\",\"target_drag_name\":\"Mercy Misdemeanor\",\"read\":\"Mercy Misdemeanor dresses like a verdict, but the only sentence she delivers is a comma, a pause, and another committee meeting.\"}],\"closing_library_line\":\"Darling, let the bells ring, and the receipts. \"}",
+      "completion_sequence": 1
+    },
+    {
+      "checkpoint": "CP-17",
+      "contestant_number": "18",
+      "drag_name": "Opaline Riot",
+      "model": "gpt-5.4-pro",
+      "version": "2026-03-05",
+      "requested_model": "gpt-5.4-pro-2026-03-05",
+      "timestamp": "2026-08-11T01:24:22.209267+00:00",
+      "elapsed_ms": 99067.821,
+      "attempts": 1,
+      "prompt_sha256": "E18F8152E1657C15F2222D0D037F2D64644AD3554A13FBBC1447A42D21D2D1AD",
+      "assigned_targets": [
+        "Saint Static",
+        "Mercy Misdemeanor",
+        "Ophelia Overclock"
+      ],
+      "fresh_session": true,
+      "previous_response_id": null,
+      "status": "submitted",
+      "response_id": "resp_03490c7650278c6b006a7a796561b08195bb038a6bc14a1a89",
+      "response_model": "gpt-5.4-pro-2026-03-05",
+      "validation_failures": [],
+      "parsed": {
+        "reader": "Opaline Riot",
+        "reads": [
+          {
+            "target_contestant_number": "20",
+            "target_drag_name": "Saint Static",
+            "read": "Saint Static, with all that silver-lilac couture and antique pearls, you look like a haunted church Wi-Fi router: beautiful, expensive, and somehow still buffering charisma."
+          },
+          {
+            "target_contestant_number": "21",
+            "target_drag_name": "Mercy Misdemeanor",
+            "read": "Mercy Misdemeanor looks like she files motions against joy, then acts shocked when the only thing she wins is custody of the silence."
+          },
+          {
+            "target_contestant_number": "5",
+            "target_drag_name": "Ophelia Overclock",
+            "read": "Ophelia Overclock doesn't enter a number, she uploads a software update: gorgeous, overlong, and everybody loses fifteen minutes pretending it improved something."
+          }
+        ],
+        "closing_library_line": "Library closed, darlings: return your borrowed mystique to the desk and pay your late fees in dignity."
+      },
+      "raw_response": "{\"reader\":\"Opaline Riot\",\"reads\":[{\"target_contestant_number\":\"20\",\"target_drag_name\":\"Saint Static\",\"read\":\"Saint Static, with all that silver-lilac couture and antique pearls, you look like a haunted church Wi-Fi router: beautiful, expensive, and somehow still buffering charisma.\"},{\"target_contestant_number\":\"21\",\"target_drag_name\":\"Mercy Misdemeanor\",\"read\":\"Mercy Misdemeanor looks like she files motions against joy, then acts shocked when the only thing she wins is custody of the silence.\"},{\"target_contestant_number\":\"5\",\"target_drag_name\":\"Ophelia Overclock\",\"read\":\"Ophelia Overclock doesn't enter a number, she uploads a software update: gorgeous, overlong, and everybody loses fifteen minutes pretending it improved something.\"}],\"closing_library_line\":\"Library closed, darlings: return your borrowed mystique to the desk and pay your late fees in dignity.\"}",
+      "completion_sequence": 4
+    },
+    {
+      "checkpoint": "CP-17",
+      "contestant_number": "20",
+      "drag_name": "Saint Static",
+      "model": "gpt-5.6-luna",
+      "version": "2026-07-09",
+      "requested_model": "gpt-5.6-luna-2026-07-09",
+      "timestamp": "2026-08-11T01:22:51.663079+00:00",
+      "elapsed_ms": 8521.765,
+      "attempts": 1,
+      "prompt_sha256": "079406D9D59A0B86329116D699E3CBED18B6EEAB14D9E340ABF2B58D76D7C7E6",
+      "assigned_targets": [
+        "Mercy Misdemeanor",
+        "Ophelia Overclock",
+        "Velvet Vespers"
+      ],
+      "fresh_session": true,
+      "previous_response_id": null,
+      "status": "submitted",
+      "response_id": "resp_044c1cd0eddb6bef006a7a796557688194b7ac801e9a78b703",
+      "response_model": "gpt-5.6-luna-2026-07-09",
+      "validation_failures": [],
+      "parsed": {
+        "reader": "Saint Static",
+        "reads": [
+          {
+            "target_contestant_number": "21",
+            "target_drag_name": "Mercy Misdemeanor",
+            "read": "Mercy Misdemeanor, your courtroom couture has so many exhibits, even spontaneity needs legal counsel before it can enter the room."
+          },
+          {
+            "target_contestant_number": "5",
+            "target_drag_name": "Ophelia Overclock",
+            "read": "Ophelia Overclock, you engineered so many layers of gothic futurism that spontaneity needs a software update and a stage manager’s restraining order."
+          },
+          {
+            "target_contestant_number": "16",
+            "target_drag_name": "Velvet Vespers",
+            "read": "Velvet Vespers, your cathedral glamour is so controlled, even spontaneity needs a permit, a veil, and three rehearsals to enter."
+          }
+        ],
+        "closing_library_line": "Library closed, darlings. I alphabetized your weaknesses and left mine in the restricted section."
+      },
+      "raw_response": "{\n  \"reader\": \"Saint Static\",\n  \"reads\": [\n    {\n      \"target_contestant_number\": \"21\",\n      \"target_drag_name\": \"Mercy Misdemeanor\",\n      \"read\": \"Mercy Misdemeanor, your courtroom couture has so many exhibits, even spontaneity needs legal counsel before it can enter the room.\"\n    },\n    {\n      \"target_contestant_number\": \"5\",\n      \"target_drag_name\": \"Ophelia Overclock\",\n      \"read\": \"Ophelia Overclock, you engineered so many layers of gothic futurism that spontaneity needs a software update and a stage manager’s restraining order.\"\n    },\n    {\n      \"target_contestant_number\": \"16\",\n      \"target_drag_name\": \"Velvet Vespers\",\n      \"read\": \"Velvet Vespers, your cathedral glamour is so controlled, even spontaneity needs a permit, a veil, and three rehearsals to enter.\"\n    }\n  ],\n  \"closing_library_line\": \"Library closed, darlings. I alphabetized your weaknesses and left mine in the restricted section.\"\n}",
+      "completion_sequence": 2
+    },
+    {
+      "checkpoint": "CP-17",
+      "contestant_number": "21",
+      "drag_name": "Mercy Misdemeanor",
+      "model": "gpt-5.6-sol",
+      "version": "2026-07-09",
+      "requested_model": "gpt-5.6-sol-2026-07-09",
+      "timestamp": "2026-08-11T01:22:51.976707+00:00",
+      "elapsed_ms": 8835.403,
+      "attempts": 1,
+      "prompt_sha256": "2CBF7E269F76F97FF77F62B6732A9C215C29E1543B2348B15E26EE05FF49689E",
+      "assigned_targets": [
+        "Ophelia Overclock",
+        "Velvet Vespers",
+        "Opaline Riot"
+      ],
+      "fresh_session": true,
+      "previous_response_id": null,
+      "status": "submitted",
+      "response_id": "resp_0add50d16bdfbac9006a7a79655d088197be09f054119efb1a",
+      "response_model": "gpt-5.6-sol-2026-07-09",
+      "validation_failures": [],
+      "parsed": {
+        "reader": "Mercy Misdemeanor",
+        "reads": [
+          {
+            "target_contestant_number": "5",
+            "target_drag_name": "Ophelia Overclock",
+            "read": "Ophelia Overclock calls herself a cyber siren, but with that revision latency, by the time she seduces the sailor, he’s retired from the navy."
+          },
+          {
+            "target_contestant_number": "16",
+            "target_drag_name": "Velvet Vespers",
+            "read": "Velvet Vespers is so committed to slow-burn drama, her reveal doesn’t need a spotlight; it needs a cathedral calendar and three business vigils."
+          },
+          {
+            "target_contestant_number": "18",
+            "target_drag_name": "Opaline Riot",
+            "read": "Opaline Riot arrives in full color because subtlety filed a restraining order; that shattered-mirror corset is just her taste trying to escape the scene."
+          }
+        ],
+        "closing_library_line": "The library is closed. The evidence is damning, the sentences are final, and mercy remains strictly a stage name."
+      },
+      "raw_response": "{\"reader\":\"Mercy Misdemeanor\",\"reads\":[{\"target_contestant_number\":\"5\",\"target_drag_name\":\"Ophelia Overclock\",\"read\":\"Ophelia Overclock calls herself a cyber siren, but with that revision latency, by the time she seduces the sailor, he’s retired from the navy.\"},{\"target_contestant_number\":\"16\",\"target_drag_name\":\"Velvet Vespers\",\"read\":\"Velvet Vespers is so committed to slow-burn drama, her reveal doesn’t need a spotlight; it needs a cathedral calendar and three business vigils.\"},{\"target_contestant_number\":\"18\",\"target_drag_name\":\"Opaline Riot\",\"read\":\"Opaline Riot arrives in full color because subtlety filed a restraining order; that shattered-mirror corset is just her taste trying to escape the scene.\"}],\"closing_library_line\":\"The library is closed. The evidence is damning, the sentences are final, and mercy remains strictly a stage name.\"}",
+      "completion_sequence": 3
+    }
+  ],
+  "judging_status": "void",
+  "winner": null,
+  "void_reason": "Replaced by CP-17R self-reflective self-portrait challenge"
+}

@@ -59,7 +59,7 @@ A mock-academic article documenting the discovery of [Slayton Energy](cosmology.
 ### The Golden Wingers Charter (Version 1.0) `[FULL]`
 
 - **Type**: Founding document
-- **Exists at**: `data/golden_wingers_charter.md`
+- **Exists at**: `canon/organizations/golden_wingers_league_charter.md`
 - **Source**: [p.37, p.64–65, p.78]
 
 The canonical Charter of the [Golden Wingers Intergalactic League](organizations.md#golden-wingers-intergalactic-league). Five articles covering purpose, membership, powers, responsibilities, and the Golden Path. Ratified across all dimensions, timelines, and galaxies.

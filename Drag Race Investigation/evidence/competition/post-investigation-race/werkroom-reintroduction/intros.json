@@ -1,0 +1,55 @@
+{
+  "status": "complete",
+  "stage": "Final Five Werkroom Reintroduction",
+  "judge": "Caleb",
+  "entrant_count": 5,
+  "valid_entrance_count": 5,
+  "context_chain_used": true,
+  "entrances": [
+    {
+      "contestant_number": "5",
+      "drag_name": "Ophelia Overclock",
+      "status": "entered",
+      "entrance_line": "I arrive pre-soldered and hot, in SCSI stilettos that beep when tops malfunction.",
+      "validation_failures": [],
+      "response_id": "resp_0efbaba4266dc359006a7a73223610819386d646b7c9de7a86",
+      "previous_response_id": "resp_0efbaba4266dc359006a7a71c9f2e48193ab8b0ec9cada7403"
+    },
+    {
+      "contestant_number": "16",
+      "drag_name": "Velvet Vespers",
+      "status": "entered",
+      "entrance_line": "I arrived late, lacquered, and slightly haunted, like a church pew after a very good divorce.",
+      "validation_failures": [],
+      "response_id": "resp_031b96b50440eb79006a7a73222a808193ab5700cfafbdbad4",
+      "previous_response_id": "resp_031b96b50440eb79006a7a71ca14748193955bdb6be71d007e"
+    },
+    {
+      "contestant_number": "18",
+      "drag_name": "Opaline Riot",
+      "status": "entered",
+      "entrance_line": "Hello dolls, I got banned from a lesbian antique mall for licking the Lalique vase and calling it foreplay.",
+      "validation_failures": [],
+      "response_id": "resp_09ef7dad3c8af48b006a7a73222b888193b8a63a441fd7dade",
+      "previous_response_id": "resp_09ef7dad3c8af48b006a7a71c9f2148193b97e746f531b78f3"
+    },
+    {
+      "contestant_number": "20",
+      "drag_name": "Saint Static",
+      "status": "entered",
+      "entrance_line": "Saint Static has entered the building, darling. I’m dressed like a haunted answering machine, and my voicemail is exclusively for handsome men with bad boundaries.",
+      "validation_failures": [],
+      "response_id": "resp_0881dede5539fe40006a7a7322303c81908c45f48a7d7eb5c3",
+      "previous_response_id": "resp_0881dede5539fe40006a7a71c9f2d4819083e17d21f522edc7"
+    },
+    {
+      "contestant_number": "21",
+      "drag_name": "Mercy Misdemeanor",
+      "status": "entered",
+      "entrance_line": "Mercy Misdemeanor, reporting for community service in a stolen choir robe and the orthopedic heels God warned me about.",
+      "validation_failures": [],
+      "response_id": "resp_0d3399ea8eea85f4006a7a732259c88196b28a685b9645ed1b",
+      "previous_response_id": "resp_0d3399ea8eea85f4006a7a71c9ef8c8196bf20961afbce1634"
+    }
+  ]
+}

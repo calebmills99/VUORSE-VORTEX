@@ -1,0 +1,98 @@
+{
+  "id": "resp_0896681b13c64ce8006a7a0e9dc17c8196945816fd3b795989",
+  "created_at": 1786384029.0,
+  "error": null,
+  "incomplete_details": null,
+  "instructions": null,
+  "metadata": {},
+  "model": "gpt-5.6-sol-2026-07-09",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_0896681b13c64ce8006a7a0e9ea17c8196b8449b465361a0f0",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null,
+      "response_id": "resp_0896681b13c64ce8006a7a0e9dc17c8196945816fd3b795989"
+    },
+    {
+      "id": "msg_0896681b13c64ce8006a7a0ea0a5488196a76b1d37bc611deb",
+      "content": [
+        {
+          "annotations": [],
+          "text": "{\n  \"contestant_number\": \"21\",\n  \"model\": \"gpt-5.6-sol\",\n  \"version\": \"2026-07-09\",\n  \"drag_name\": \"Mercy Misdemeanor\",\n  \"pronouns\": \"she/her\",\n  \"drag_aesthetic\": \"Cathedral noir meets neon courtroom camp: razor tailoring, stained-glass corsetry, electric veils, and a smile that already knows the verdict.\",\n  \"performance_specialty\": \"Precision comedy, theatrical lip-syncs, and deliciously incriminating character work.\",\n  \"fatal_flaw\": \"She overprepares every detail, then cross-examines spontaneity until the magic confesses.\",\n  \"personal_catchphrase\": \"Objection, darling—your honor just got dishonored.\",\n  \"werkroom_entrance_line\": \"Court is now in session, and mercy has never looked this guilty.\",\n  \"charter_marker_acknowledged\": true\n}",
+          "type": "output_text",
+          "logprobs": []
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message",
+      "phase": "final_answer",
+      "response_id": "resp_0896681b13c64ce8006a7a0e9dc17c8196945816fd3b795989"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "temperature": 1.0,
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.98,
+  "background": false,
+  "completed_at": 1786384035.0,
+  "conversation": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "moderation": null,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "prompt_cache_retention": "in_memory",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "generate_summary": null,
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "text": {
+    "format": {
+      "type": "text"
+    },
+    "verbosity": "medium"
+  },
+  "top_logprobs": 0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 411,
+    "input_tokens_details": {
+      "cache_write_tokens": null,
+      "cached_tokens": 0
+    },
+    "output_tokens": 319,
+    "output_tokens_details": {
+      "reasoning_tokens": 113
+    },
+    "total_tokens": 730
+  },
+  "user": null,
+  "agent_reference": null,
+  "content_filters": [
+    {
+      "blocked": false,
+      "source_type": "prompt",
+      "content_filter_results": {},
+      "content_filter_raw": [],
+      "content_filter_offsets": {
+        "start_offset": 775,
+        "end_offset": 1805,
+        "check_offset": 0
+      }
+    }
+  ]
+}

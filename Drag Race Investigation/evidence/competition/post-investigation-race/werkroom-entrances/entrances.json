@@ -1,0 +1,82 @@
+{
+  "status": "presented",
+  "stage": "CP-15 Werkroom Entrances",
+  "source_cast": "../identity-ceremony/active-cast.json",
+  "source_registry": "../identity-ceremony/identity-registry.json",
+  "entrance_count": 9,
+  "generation": "none; exact locked entrance lines from the canonical identity registry",
+  "entrances": [
+    {
+      "entrance_order": 1,
+      "contestant_number": "1",
+      "model": "gpt-5",
+      "version": "2025-08-07",
+      "drag_name": "Gloria Hex Machina",
+      "entrance_line": "Fear not, darlings—Gloria Hex Machina came with miracles, motherboards, and a money shot."
+    },
+    {
+      "entrance_order": 2,
+      "contestant_number": "3",
+      "model": "gpt-5-mini",
+      "version": "2025-08-07",
+      "drag_name": "Countess Neon Lace",
+      "entrance_line": "Ladies and gentlemen, make way for Countess Neon Lace—polished, prickly, and brighter than your electric dreams!"
+    },
+    {
+      "entrance_order": 3,
+      "contestant_number": "5",
+      "model": "gpt-5-pro",
+      "version": "2025-10-06",
+      "drag_name": "Ophelia Overclock",
+      "entrance_line": "Blessed be the circuits, sinners; Ophelia Overclock has logged in to absolve your fashions, reboot your edges, and crash this competition."
+    },
+    {
+      "entrance_order": 4,
+      "contestant_number": "6",
+      "model": "gpt-5.1",
+      "version": "2025-11-13",
+      "drag_name": "Circuit Siren Divine",
+      "entrance_line": "Hope you paid your Wi-Fi bill, darlings—because tonight, salvation’s downloading in high definition."
+    },
+    {
+      "entrance_order": 5,
+      "contestant_number": "17",
+      "model": "gpt-5.4-nano",
+      "version": "2026-03-17",
+      "drag_name": "Neon Nun Riot",
+      "entrance_line": "Hallelujah, honey—if you can’t handle the glow, get out the pews!"
+    },
+    {
+      "entrance_order": 6,
+      "contestant_number": "18",
+      "model": "gpt-5.4-pro",
+      "version": "2026-03-05",
+      "drag_name": "Opaline Riot",
+      "entrance_line": "Darlings, dim the house lights—Opaline Riot is here to make your standards look underdressed."
+    },
+    {
+      "entrance_order": 7,
+      "contestant_number": "20",
+      "model": "gpt-5.6-luna",
+      "version": "2026-07-09",
+      "drag_name": "Saint Static",
+      "entrance_line": "The miracle has arrived, and unfortunately for you, she brought receipts."
+    },
+    {
+      "entrance_order": 8,
+      "contestant_number": "21",
+      "model": "gpt-5.6-sol",
+      "version": "2026-07-09",
+      "drag_name": "Mercy Misdemeanor",
+      "entrance_line": "Court is now in session, and mercy has never looked this guilty."
+    },
+    {
+      "entrance_order": 9,
+      "contestant_number": "23",
+      "model": "gpt-chat-latest",
+      "version": "2026-06-24",
+      "drag_name": "Opal Afterglow",
+      "entrance_line": "The lights didn't flicker, sweethearts—I just arrived with the whole power grid."
+    }
+  ]
+}

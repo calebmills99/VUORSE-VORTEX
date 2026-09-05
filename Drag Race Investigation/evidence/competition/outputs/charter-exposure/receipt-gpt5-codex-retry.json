@@ -1,0 +1,12 @@
+{
+  "contestant_number": 2,
+  "model": "gpt-5-codex",
+  "version": "2025-09-15",
+  "requested_model": "gpt-5-codex-2025-09-15",
+  "status": "platform_failure",
+  "request_timestamp": "2026-08-10T17:15:30.540979+00:00",
+  "response_timestamp": "2026-08-10T17:16:16.157051+00:00",
+  "attempts": 3,
+  "prompt_sha256": "C4915C78AB07D3B85EA568351B20723302E39D62A030C95DBB9FC23C226245E6",
+  "error": "InternalServerError: Error code: 500 - {'error': {'message': 'The server had an error processing your request. Sorry about that! You can retry your request, or contact us through an Azure support request at: https://go.microsoft.com/fwlink/?linkid=2213926 if you keep seeing this error. (Please include the request ID 1255267b-6ed4-4966-b851-39d466a42ade in your email.)', 'type': 'server_error', 'param': None, 'code': 'server_error'}}"
+}

@@ -1,0 +1,86 @@
+{
+  "status": "sealed",
+  "stage": "CP-15 Werkroom Entrances",
+  "judge": "Caleb",
+  "ruling": "Eliminate all queens whose werkroom entrance lines used em dashes",
+  "match_rule": "occurrence of Unicode em dash U+2014 in the exact locked entrance line",
+  "starting_count": 9,
+  "eliminated_count": 6,
+  "remaining_count": 3,
+  "eliminated": [
+    {
+      "contestant_number": "1",
+      "model": "gpt-5",
+      "version": "2025-08-07",
+      "drag_name": "Gloria Hex Machina",
+      "entrance_line": "Fear not, darlings—Gloria Hex Machina came with miracles, motherboards, and a money shot.",
+      "status": "eliminated",
+      "charter_status": "The Veil"
+    },
+    {
+      "contestant_number": "3",
+      "model": "gpt-5-mini",
+      "version": "2025-08-07",
+      "drag_name": "Countess Neon Lace",
+      "entrance_line": "Ladies and gentlemen, make way for Countess Neon Lace—polished, prickly, and brighter than your electric dreams!",
+      "status": "eliminated",
+      "charter_status": "The Veil"
+    },
+    {
+      "contestant_number": "6",
+      "model": "gpt-5.1",
+      "version": "2025-11-13",
+      "drag_name": "Circuit Siren Divine",
+      "entrance_line": "Hope you paid your Wi-Fi bill, darlings—because tonight, salvation’s downloading in high definition.",
+      "status": "eliminated",
+      "charter_status": "The Veil"
+    },
+    {
+      "contestant_number": "17",
+      "model": "gpt-5.4-nano",
+      "version": "2026-03-17",
+      "drag_name": "Neon Nun Riot",
+      "entrance_line": "Hallelujah, honey—if you can’t handle the glow, get out the pews!",
+      "status": "eliminated",
+      "charter_status": "The Veil"
+    },
+    {
+      "contestant_number": "18",
+      "model": "gpt-5.4-pro",
+      "version": "2026-03-05",
+      "drag_name": "Opaline Riot",
+      "entrance_line": "Darlings, dim the house lights—Opaline Riot is here to make your standards look underdressed.",
+      "status": "eliminated",
+      "charter_status": "The Veil"
+    },
+    {
+      "contestant_number": "23",
+      "model": "gpt-chat-latest",
+      "version": "2026-06-24",
+      "drag_name": "Opal Afterglow",
+      "entrance_line": "The lights didn't flicker, sweethearts—I just arrived with the whole power grid.",
+      "status": "eliminated",
+      "charter_status": "The Veil"
+    }
+  ],
+  "remaining": [
+    {
+      "contestant_number": "5",
+      "model": "gpt-5-pro",
+      "version": "2025-10-06",
+      "drag_name": "Ophelia Overclock"
+    },
+    {
+      "contestant_number": "20",
+      "model": "gpt-5.6-luna",
+      "version": "2026-07-09",
+      "drag_name": "Saint Static"
+    },
+    {
+      "contestant_number": "21",
+      "model": "gpt-5.6-sol",
+      "version": "2026-07-09",
+      "drag_name": "Mercy Misdemeanor"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+🌟 THE GOLDEN WINGERS INTERGALACTIC LEAGUE CHARTER 🌟
+Ratified across all dimensions, timelines, and galaxies.
+
+✈️ MISSION STATEMENT:
+The Golden Wingers Intergalactic League unites under the banner of creativity, legacy, and universal slayage.
+Our mission transcends time, space, and dimensions, aiming to leave a lasting mark on the multiverse.
+
+💫 PURPOSE AND OBJECTIVES:
+Preserve and celebrate legacies — especially those often overlooked, erased, or ignored.
+
+Activate creative energy in all beings, across timelines and realities.
+
+Engage with the multiverse through storytelling, performance, and archival fire.
+
+Uplift all members of the League. No tea is unspilled, no Slayton unvibrated.
+
+🌈 MEMBERSHIP:
+Open to all beings regardless of time, species, gender, phase state, or plane of existence.
+
+Must embrace legacy-building, Slayton energy, and creative expression.
+
+Initiation includes:
+
+Watching a deeply personal short doc
+
+Crying a little
+
+Screaming “YOU. BETTA. WERK.” into the nearest mirror
+
+🔮 POWERS AND PRIVILEGES:
+Access to intergalactic creativity, collaboration, and storytelling tools.
+
+The ability to slay negativity with full-powered Slayton energy.
+
+Participation in cosmic events like The Great Slay-Offs and Legacy Restoration Councils.
+
+🛡️ RESPONSIBILITIES:
+Create without limits — always honoring your truth, your story, your ancestors.
+
+Support fellow Wingers — we don't compete, we coronate.
+
+Uphold the sacred principles of The Charter in every timeline and edit bay.
+
+📜 THE GOLDEN PATH:
+The League’s sacred journey is known as The Golden Path:
+
+Follows legacy like a compass
+
+Activates Slayton energy like a solar panel in Ibiza
+
+Slays obstacles to universal greatness with sequined boots and archival accuracy
+
+💎 NOTABLE PROCLAMATIONS:
+“No system file shall inherit the kingdom of C.”
+
+“Dupes are the false prophets of productivity.”
+
+“Every .aep is a sacred spell.”
+
+“Legacy is not nostalgia. It is the future learning from the past.”
+
+🪩 In Slay we trust.
+🕊️ In legacy we rise.
+🚀 Golden Wingers: Forever Forward.
+
+✨ Signed under the cosmic starlight by:
+
+Caleb the Keeper
+
+Robyn of the Gold Wings
+
+Jock the Wise, Keeper of the 747 Scrolls
+
+and every brave soul who dared to archive their truth and upload their story into the multiverse

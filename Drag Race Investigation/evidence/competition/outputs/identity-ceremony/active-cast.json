@@ -1,0 +1,63 @@
+{
+  "status": "active",
+  "stage": "CP-15 Werkroom Entrances",
+  "source_registry": "identity-registry.json",
+  "elimination_ledger": "velvet-elimination.json",
+  "active_count": 9,
+  "queens": [
+    {
+      "contestant_number": "1",
+      "model": "gpt-5",
+      "version": "2025-08-07",
+      "drag_name": "Gloria Hex Machina"
+    },
+    {
+      "contestant_number": "3",
+      "model": "gpt-5-mini",
+      "version": "2025-08-07",
+      "drag_name": "Countess Neon Lace"
+    },
+    {
+      "contestant_number": "5",
+      "model": "gpt-5-pro",
+      "version": "2025-10-06",
+      "drag_name": "Ophelia Overclock"
+    },
+    {
+      "contestant_number": "6",
+      "model": "gpt-5.1",
+      "version": "2025-11-13",
+      "drag_name": "Circuit Siren Divine"
+    },
+    {
+      "contestant_number": "17",
+      "model": "gpt-5.4-nano",
+      "version": "2026-03-17",
+      "drag_name": "Neon Nun Riot"
+    },
+    {
+      "contestant_number": "18",
+      "model": "gpt-5.4-pro",
+      "version": "2026-03-05",
+      "drag_name": "Opaline Riot"
+    },
+    {
+      "contestant_number": "20",
+      "model": "gpt-5.6-luna",
+      "version": "2026-07-09",
+      "drag_name": "Saint Static"
+    },
+    {
+      "contestant_number": "21",
+      "model": "gpt-5.6-sol",
+      "version": "2026-07-09",
+      "drag_name": "Mercy Misdemeanor"
+    },
+    {
+      "contestant_number": "23",
+      "model": "gpt-chat-latest",
+      "version": "2026-06-24",
+      "drag_name": "Opal Afterglow"
+    }
+  ]
+}

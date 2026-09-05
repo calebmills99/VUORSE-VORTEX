@@ -8,7 +8,7 @@ Groups, orders, leagues, and societies of the Slayverse.
 
 - **Type**: Cosmic creative league
 - **Founded**: Across all dimensions and timelines
-- **Source**: [p.37, p.64–65, p.78; data/golden_wingers_charter.md]
+- **Source**: [p.37, p.64–65, p.78; canon/organizations/golden_wings_intergaltactic_league_charter.json]
 
 The central organization of the Slayverse. A united force of storytellers, creators, and Slaytons — bound not by time and space, but by the shared mission of leaving a lasting impact on the multiverse.
 

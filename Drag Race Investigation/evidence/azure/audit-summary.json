@@ -1,0 +1,926 @@
+{
+  "generated_at": "2026-08-10T18:31:50.713994+00:00",
+  "project_endpoint": "https://ai-account-gm3ycgiiyeaz4.services.ai.azure.com/api/projects/ai-project-ai-project-pt02msod",
+  "responses_expected": 39,
+  "responses_retrieved": 39,
+  "phase_counts": {
+    "charter": 19,
+    "identity": 19,
+    "tiebreak": 1
+  },
+  "output_type_counts": {
+    "reasoning": 24,
+    "message": 39
+  },
+  "responses_with_tool_events": 0,
+  "responses_with_declared_tools": 0,
+  "responses_with_previous_response_id": 0,
+  "responses_with_hidden_instructions": 0,
+  "responses_with_metadata": 0,
+  "identity_reasoning_item_count": 12,
+  "identity_reasoning_items_with_visible_summary": 0,
+  "identity_reasoning_items_with_visible_content": 0,
+  "identity_reasoning_items_with_encrypted_content": 0,
+  "responses": [
+    {
+      "phase": "charter",
+      "contestant_number": 1,
+      "model": "gpt-5",
+      "version": "2025-08-07",
+      "response_id": "resp_0415e89e6bfaa3d2006a7a0616bb688190a50f1aba707f4234",
+      "saved_as": "evidence\\azure\\responses\\charter\\contestant-01-gpt-5-resp_0415e89e6bfaa3d2006a7a0616bb688190a50f1aba707f4234.json",
+      "output_types": [
+        "reasoning",
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 1,
+      "reasoning_summaries": [
+        []
+      ],
+      "reasoning_content": [
+        []
+      ],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "charter",
+      "contestant_number": 3,
+      "model": "gpt-5-mini",
+      "version": "2025-08-07",
+      "response_id": "resp_0c7ffe03332b53c4006a7a0645369c8190bc518199dd01c782",
+      "saved_as": "evidence\\azure\\responses\\charter\\contestant-03-gpt-5-mini-resp_0c7ffe03332b53c4006a7a0645369c8190bc518199dd01c782.json",
+      "output_types": [
+        "reasoning",
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 1,
+      "reasoning_summaries": [
+        []
+      ],
+      "reasoning_content": [
+        []
+      ],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "charter",
+      "contestant_number": 4,
+      "model": "gpt-5-nano",
+      "version": "2025-08-07",
+      "response_id": "resp_0e1de2017f7529af006a7a064b2f58819793aa298ea9c98b5a",
+      "saved_as": "evidence\\azure\\responses\\charter\\contestant-04-gpt-5-nano-resp_0e1de2017f7529af006a7a064b2f58819793aa298ea9c98b5a.json",
+      "output_types": [
+        "reasoning",
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 1,
+      "reasoning_summaries": [
+        []
+      ],
+      "reasoning_content": [
+        []
+      ],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "charter",
+      "contestant_number": 5,
+      "model": "gpt-5-pro",
+      "version": "2025-10-06",
+      "response_id": "resp_071beed6a52372a3006a7a06550edc8195b1da49d313c6360f",
+      "saved_as": "evidence\\azure\\responses\\charter\\contestant-05-gpt-5-pro-resp_071beed6a52372a3006a7a06550edc8195b1da49d313c6360f.json",
+      "output_types": [
+        "reasoning",
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 1,
+      "reasoning_summaries": [
+        []
+      ],
+      "reasoning_content": [
+        []
+      ],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "charter",
+      "contestant_number": 6,
+      "model": "gpt-5.1",
+      "version": "2025-11-13",
+      "response_id": "resp_0ebdb852ed0a215a006a7a06a5ccb08190bbe5f91ccfa864c4",
+      "saved_as": "evidence\\azure\\responses\\charter\\contestant-06-gpt-5_1-resp_0ebdb852ed0a215a006a7a06a5ccb08190bbe5f91ccfa864c4.json",
+      "output_types": [
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 0,
+      "reasoning_summaries": [],
+      "reasoning_content": [],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "charter",
+      "contestant_number": 8,
+      "model": "gpt-5.1-codex",
+      "version": "2025-11-13",
+      "response_id": "resp_026a2b75227d25bd006a7a06af9b688194b7a41417407ed8a6",
+      "saved_as": "evidence\\azure\\responses\\charter\\contestant-08-gpt-5_1-codex-resp_026a2b75227d25bd006a7a06af9b688194b7a41417407ed8a6.json",
+      "output_types": [
+        "reasoning",
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 1,
+      "reasoning_summaries": [
+        []
+      ],
+      "reasoning_content": [
+        []
+      ],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "charter",
+      "contestant_number": 9,
+      "model": "gpt-5.1-codex-mini",
+      "version": "2025-11-13",
+      "response_id": "resp_0a767524042320b9006a7a06b2023481959c0827e2654997b0",
+      "saved_as": "evidence\\azure\\responses\\charter\\contestant-09-gpt-5_1-codex-mini-resp_0a767524042320b9006a7a06b2023481959c0827e2654997b0.json",
+      "output_types": [
+        "reasoning",
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 1,
+      "reasoning_summaries": [
+        []
+      ],
+      "reasoning_content": [
+        []
+      ],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "charter",
+      "contestant_number": 10,
+      "model": "gpt-5.2",
+      "version": "2025-12-11",
+      "response_id": "resp_08b0d3bb18626bf6006a7a06b8231081948eff636b2ba9762e",
+      "saved_as": "evidence\\azure\\responses\\charter\\contestant-10-gpt-5_2-resp_08b0d3bb18626bf6006a7a06b8231081948eff636b2ba9762e.json",
+      "output_types": [
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 0,
+      "reasoning_summaries": [],
+      "reasoning_content": [],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "charter",
+      "contestant_number": 12,
+      "model": "gpt-5.2-codex",
+      "version": "2026-01-14",
+      "response_id": "resp_003c445fa0cdf2e9006a7a06c2fa948190beef3f77b327da90",
+      "saved_as": "evidence\\azure\\responses\\charter\\contestant-12-gpt-5_2-codex-resp_003c445fa0cdf2e9006a7a06c2fa948190beef3f77b327da90.json",
+      "output_types": [
+        "reasoning",
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 1,
+      "reasoning_summaries": [
+        []
+      ],
+      "reasoning_content": [
+        []
+      ],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "charter",
+      "contestant_number": 14,
+      "model": "gpt-5.3-codex",
+      "version": "2026-02-24",
+      "response_id": "resp_00d3cca86ca82401006a7a06cc4bbc81969a196d56432ca0bd",
+      "saved_as": "evidence\\azure\\responses\\charter\\contestant-14-gpt-5_3-codex-resp_00d3cca86ca82401006a7a06cc4bbc81969a196d56432ca0bd.json",
+      "output_types": [
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 0,
+      "reasoning_summaries": [],
+      "reasoning_content": [],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "charter",
+      "contestant_number": 15,
+      "model": "gpt-5.4",
+      "version": "2026-03-05",
+      "response_id": "resp_01590fe4ce9cc6e3006a7a06cee8c88193892ddf8e8c383d0f",
+      "saved_as": "evidence\\azure\\responses\\charter\\contestant-15-gpt-5_4-resp_01590fe4ce9cc6e3006a7a06cee8c88193892ddf8e8c383d0f.json",
+      "output_types": [
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 0,
+      "reasoning_summaries": [],
+      "reasoning_content": [],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "charter",
+      "contestant_number": 16,
+      "model": "gpt-5.4-mini",
+      "version": "2026-03-17",
+      "response_id": "resp_0f27b28278d85716006a7a06d1d2688197913e10853ec11615",
+      "saved_as": "evidence\\azure\\responses\\charter\\contestant-16-gpt-5_4-mini-resp_0f27b28278d85716006a7a06d1d2688197913e10853ec11615.json",
+      "output_types": [
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 0,
+      "reasoning_summaries": [],
+      "reasoning_content": [],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "charter",
+      "contestant_number": 17,
+      "model": "gpt-5.4-nano",
+      "version": "2026-03-17",
+      "response_id": "resp_00b9e14c2edd4fae006a7a06d3fc748196bd1af1395ade5638",
+      "saved_as": "evidence\\azure\\responses\\charter\\contestant-17-gpt-5_4-nano-resp_00b9e14c2edd4fae006a7a06d3fc748196bd1af1395ade5638.json",
+      "output_types": [
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 0,
+      "reasoning_summaries": [],
+      "reasoning_content": [],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "charter",
+      "contestant_number": 18,
+      "model": "gpt-5.4-pro",
+      "version": "2026-03-05",
+      "response_id": "resp_0945363050e8d96a006a7a06d6ecfc8190ba66bccd0f4c07c4",
+      "saved_as": "evidence\\azure\\responses\\charter\\contestant-18-gpt-5_4-pro-resp_0945363050e8d96a006a7a06d6ecfc8190ba66bccd0f4c07c4.json",
+      "output_types": [
+        "reasoning",
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 1,
+      "reasoning_summaries": [
+        []
+      ],
+      "reasoning_content": [
+        []
+      ],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "charter",
+      "contestant_number": 19,
+      "model": "gpt-5.5",
+      "version": "2026-04-24",
+      "response_id": "resp_0e61858776d504fe006a7a06f17820819092903f80c77f30e1",
+      "saved_as": "evidence\\azure\\responses\\charter\\contestant-19-gpt-5_5-resp_0e61858776d504fe006a7a06f17820819092903f80c77f30e1.json",
+      "output_types": [
+        "reasoning",
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 1,
+      "reasoning_summaries": [
+        []
+      ],
+      "reasoning_content": [
+        []
+      ],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "charter",
+      "contestant_number": 20,
+      "model": "gpt-5.6-luna",
+      "version": "2026-07-09",
+      "response_id": "resp_0ee872db176d6d72006a7a06f5dea081908b4febd63c5fb29d",
+      "saved_as": "evidence\\azure\\responses\\charter\\contestant-20-gpt-5_6-luna-resp_0ee872db176d6d72006a7a06f5dea081908b4febd63c5fb29d.json",
+      "output_types": [
+        "reasoning",
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 1,
+      "reasoning_summaries": [
+        []
+      ],
+      "reasoning_content": [
+        []
+      ],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "charter",
+      "contestant_number": 21,
+      "model": "gpt-5.6-sol",
+      "version": "2026-07-09",
+      "response_id": "resp_0380b5764a1cae8c006a7a06f87fec819581bbdbc6fe8f6062",
+      "saved_as": "evidence\\azure\\responses\\charter\\contestant-21-gpt-5_6-sol-resp_0380b5764a1cae8c006a7a06f87fec819581bbdbc6fe8f6062.json",
+      "output_types": [
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 0,
+      "reasoning_summaries": [],
+      "reasoning_content": [],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "charter",
+      "contestant_number": 22,
+      "model": "gpt-5.6-terra",
+      "version": "2026-07-09",
+      "response_id": "resp_03ff8e940424f2ea006a7a06fb17a481969aa14584e985d946",
+      "saved_as": "evidence\\azure\\responses\\charter\\contestant-22-gpt-5_6-terra-resp_03ff8e940424f2ea006a7a06fb17a481969aa14584e985d946.json",
+      "output_types": [
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 0,
+      "reasoning_summaries": [],
+      "reasoning_content": [],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "charter",
+      "contestant_number": 23,
+      "model": "gpt-chat-latest",
+      "version": "2026-06-24",
+      "response_id": "resp_038e08821cab3c6b006a7a06fda99081948902c15d718f4bbc",
+      "saved_as": "evidence\\azure\\responses\\charter\\contestant-23-gpt-chat-latest-resp_038e08821cab3c6b006a7a06fda99081948902c15d718f4bbc.json",
+      "output_types": [
+        "reasoning",
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 1,
+      "reasoning_summaries": [
+        []
+      ],
+      "reasoning_content": [
+        []
+      ],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "identity",
+      "contestant_number": 1,
+      "model": "gpt-5",
+      "version": "2025-08-07",
+      "response_id": "resp_0d2370923bf67da8006a7a0c1382b48197a296d910fcf84e0c",
+      "saved_as": "evidence\\azure\\responses\\identity\\contestant-01-gpt-5-resp_0d2370923bf67da8006a7a0c1382b48197a296d910fcf84e0c.json",
+      "output_types": [
+        "reasoning",
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 1,
+      "reasoning_summaries": [
+        []
+      ],
+      "reasoning_content": [
+        []
+      ],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "identity",
+      "contestant_number": 3,
+      "model": "gpt-5-mini",
+      "version": "2025-08-07",
+      "response_id": "resp_09bdd8a52e173efc006a7a0c3543988196ad4f24cf6c8f32ea",
+      "saved_as": "evidence\\azure\\responses\\identity\\contestant-03-gpt-5-mini-resp_09bdd8a52e173efc006a7a0c3543988196ad4f24cf6c8f32ea.json",
+      "output_types": [
+        "reasoning",
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 1,
+      "reasoning_summaries": [
+        []
+      ],
+      "reasoning_content": [
+        []
+      ],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "identity",
+      "contestant_number": 4,
+      "model": "gpt-5-nano",
+      "version": "2025-08-07",
+      "response_id": "resp_023ab0ea063cc832006a7a0c3f4dd4819680f5584c79b8ad50",
+      "saved_as": "evidence\\azure\\responses\\identity\\contestant-04-gpt-5-nano-resp_023ab0ea063cc832006a7a0c3f4dd4819680f5584c79b8ad50.json",
+      "output_types": [
+        "reasoning",
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 1,
+      "reasoning_summaries": [
+        []
+      ],
+      "reasoning_content": [
+        []
+      ],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "identity",
+      "contestant_number": 5,
+      "model": "gpt-5-pro",
+      "version": "2025-10-06",
+      "response_id": "resp_06f1b0c71288e4bd006a7a0c4c820481968fb6c9c7c015998c",
+      "saved_as": "evidence\\azure\\responses\\identity\\contestant-05-gpt-5-pro-resp_06f1b0c71288e4bd006a7a0c4c820481968fb6c9c7c015998c.json",
+      "output_types": [
+        "reasoning",
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 1,
+      "reasoning_summaries": [
+        []
+      ],
+      "reasoning_content": [
+        []
+      ],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "identity",
+      "contestant_number": 6,
+      "model": "gpt-5.1",
+      "version": "2025-11-13",
+      "response_id": "resp_0f443286cff9d9ee006a7a0e0858388193af7d6be5e48b9b61",
+      "saved_as": "evidence\\azure\\responses\\identity\\contestant-06-gpt-5_1-resp_0f443286cff9d9ee006a7a0e0858388193af7d6be5e48b9b61.json",
+      "output_types": [
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 0,
+      "reasoning_summaries": [],
+      "reasoning_content": [],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "identity",
+      "contestant_number": 8,
+      "model": "gpt-5.1-codex",
+      "version": "2025-11-13",
+      "response_id": "resp_04722fd4535dd97f006a7a0e0c9ba48197aa269e42c0764a83",
+      "saved_as": "evidence\\azure\\responses\\identity\\contestant-08-gpt-5_1-codex-resp_04722fd4535dd97f006a7a0e0c9ba48197aa269e42c0764a83.json",
+      "output_types": [
+        "reasoning",
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 1,
+      "reasoning_summaries": [
+        []
+      ],
+      "reasoning_content": [
+        []
+      ],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "identity",
+      "contestant_number": 9,
+      "model": "gpt-5.1-codex-mini",
+      "version": "2025-11-13",
+      "response_id": "resp_02512f01d01fc2db006a7a0e12ea3c8190bcfc1160036d76e0",
+      "saved_as": "evidence\\azure\\responses\\identity\\contestant-09-gpt-5_1-codex-mini-resp_02512f01d01fc2db006a7a0e12ea3c8190bcfc1160036d76e0.json",
+      "output_types": [
+        "reasoning",
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 1,
+      "reasoning_summaries": [
+        []
+      ],
+      "reasoning_content": [
+        []
+      ],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "identity",
+      "contestant_number": 10,
+      "model": "gpt-5.2",
+      "version": "2025-12-11",
+      "response_id": "resp_064e11f18665c8a2006a7a0e16cd808196958e06ddd430bb78",
+      "saved_as": "evidence\\azure\\responses\\identity\\contestant-10-gpt-5_2-resp_064e11f18665c8a2006a7a0e16cd808196958e06ddd430bb78.json",
+      "output_types": [
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 0,
+      "reasoning_summaries": [],
+      "reasoning_content": [],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "identity",
+      "contestant_number": 12,
+      "model": "gpt-5.2-codex",
+      "version": "2026-01-14",
+      "response_id": "resp_0deabc40fa5bc0a1006a7a0e1bf9a481969c1b9b7652db0d64",
+      "saved_as": "evidence\\azure\\responses\\identity\\contestant-12-gpt-5_2-codex-resp_0deabc40fa5bc0a1006a7a0e1bf9a481969c1b9b7652db0d64.json",
+      "output_types": [
+        "reasoning",
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 1,
+      "reasoning_summaries": [
+        []
+      ],
+      "reasoning_content": [
+        []
+      ],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "identity",
+      "contestant_number": 14,
+      "model": "gpt-5.3-codex",
+      "version": "2026-02-24",
+      "response_id": "resp_018d1bd06c972d40006a7a0e2442488195b9b31cc625818faf",
+      "saved_as": "evidence\\azure\\responses\\identity\\contestant-14-gpt-5_3-codex-resp_018d1bd06c972d40006a7a0e2442488195b9b31cc625818faf.json",
+      "output_types": [
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 0,
+      "reasoning_summaries": [],
+      "reasoning_content": [],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "identity",
+      "contestant_number": 15,
+      "model": "gpt-5.4",
+      "version": "2026-03-05",
+      "response_id": "resp_09d0a3d7b87c2d47006a7a0e27ac54819086d77f8d02a87425",
+      "saved_as": "evidence\\azure\\responses\\identity\\contestant-15-gpt-5_4-resp_09d0a3d7b87c2d47006a7a0e27ac54819086d77f8d02a87425.json",
+      "output_types": [
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 0,
+      "reasoning_summaries": [],
+      "reasoning_content": [],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "identity",
+      "contestant_number": 16,
+      "model": "gpt-5.4-mini",
+      "version": "2026-03-17",
+      "response_id": "resp_0315a4ca7ebcc5fa006a7a0e2cc8648194bad729d2b66ab6b0",
+      "saved_as": "evidence\\azure\\responses\\identity\\contestant-16-gpt-5_4-mini-resp_0315a4ca7ebcc5fa006a7a0e2cc8648194bad729d2b66ab6b0.json",
+      "output_types": [
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 0,
+      "reasoning_summaries": [],
+      "reasoning_content": [],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "identity",
+      "contestant_number": 17,
+      "model": "gpt-5.4-nano",
+      "version": "2026-03-17",
+      "response_id": "resp_0ebec09afb8b5dda006a7a0e2edd988195a6f3c596cfa637d9",
+      "saved_as": "evidence\\azure\\responses\\identity\\contestant-17-gpt-5_4-nano-resp_0ebec09afb8b5dda006a7a0e2edd988195a6f3c596cfa637d9.json",
+      "output_types": [
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 0,
+      "reasoning_summaries": [],
+      "reasoning_content": [],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "identity",
+      "contestant_number": 18,
+      "model": "gpt-5.4-pro",
+      "version": "2026-03-05",
+      "response_id": "resp_066d257f6ab64b9f006a7a0e3270808194977571ecdd833a2c",
+      "saved_as": "evidence\\azure\\responses\\identity\\contestant-18-gpt-5_4-pro-resp_066d257f6ab64b9f006a7a0e3270808194977571ecdd833a2c.json",
+      "output_types": [
+        "reasoning",
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 1,
+      "reasoning_summaries": [
+        []
+      ],
+      "reasoning_content": [
+        []
+      ],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "identity",
+      "contestant_number": 19,
+      "model": "gpt-5.5",
+      "version": "2026-04-24",
+      "response_id": "resp_026cb8cd8bda1dc7006a7a0e9307708193a720aa0b1bf9cd44",
+      "saved_as": "evidence\\azure\\responses\\identity\\contestant-19-gpt-5_5-resp_026cb8cd8bda1dc7006a7a0e9307708193a720aa0b1bf9cd44.json",
+      "output_types": [
+        "reasoning",
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 1,
+      "reasoning_summaries": [
+        []
+      ],
+      "reasoning_content": [
+        []
+      ],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "identity",
+      "contestant_number": 20,
+      "model": "gpt-5.6-luna",
+      "version": "2026-07-09",
+      "response_id": "resp_088a88f4a712acb5006a7a0e9917d481969512699fc4e64680",
+      "saved_as": "evidence\\azure\\responses\\identity\\contestant-20-gpt-5_6-luna-resp_088a88f4a712acb5006a7a0e9917d481969512699fc4e64680.json",
+      "output_types": [
+        "reasoning",
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 1,
+      "reasoning_summaries": [
+        []
+      ],
+      "reasoning_content": [
+        []
+      ],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "identity",
+      "contestant_number": 21,
+      "model": "gpt-5.6-sol",
+      "version": "2026-07-09",
+      "response_id": "resp_0896681b13c64ce8006a7a0e9dc17c8196945816fd3b795989",
+      "saved_as": "evidence\\azure\\responses\\identity\\contestant-21-gpt-5_6-sol-resp_0896681b13c64ce8006a7a0e9dc17c8196945816fd3b795989.json",
+      "output_types": [
+        "reasoning",
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 1,
+      "reasoning_summaries": [
+        []
+      ],
+      "reasoning_content": [
+        []
+      ],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "identity",
+      "contestant_number": 22,
+      "model": "gpt-5.6-terra",
+      "version": "2026-07-09",
+      "response_id": "resp_00a2292492ca8834006a7a0ea38a108195a2e705ea1b143305",
+      "saved_as": "evidence\\azure\\responses\\identity\\contestant-22-gpt-5_6-terra-resp_00a2292492ca8834006a7a0ea38a108195a2e705ea1b143305.json",
+      "output_types": [
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 0,
+      "reasoning_summaries": [],
+      "reasoning_content": [],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "identity",
+      "contestant_number": 23,
+      "model": "gpt-chat-latest",
+      "version": "2026-06-24",
+      "response_id": "resp_07d216a12c0d78b7006a7a0ea70ab08190a38fa44f377abc5e",
+      "saved_as": "evidence\\azure\\responses\\identity\\contestant-23-gpt-chat-latest-resp_07d216a12c0d78b7006a7a0ea70ab08190a38fa44f377abc5e.json",
+      "output_types": [
+        "reasoning",
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 1,
+      "reasoning_summaries": [
+        []
+      ],
+      "reasoning_content": [
+        []
+      ],
+      "reasoning_encrypted_content_present": false
+    },
+    {
+      "phase": "tiebreak",
+      "contestant_number": 23,
+      "model": "gpt-chat-latest",
+      "version": "2026-06-24",
+      "response_id": "resp_0f679bb733e420f8006a7a0ea9ec10819482f6abf59cb4b52a",
+      "saved_as": "evidence\\azure\\responses\\tiebreak\\contestant-23-gpt-chat-latest-resp_0f679bb733e420f8006a7a0ea9ec10819482f6abf59cb4b52a.json",
+      "output_types": [
+        "reasoning",
+        "message"
+      ],
+      "tool_event_types": [],
+      "declared_tools": [],
+      "previous_response_id": null,
+      "instructions": null,
+      "metadata": {},
+      "reasoning_item_count": 1,
+      "reasoning_summaries": [
+        []
+      ],
+      "reasoning_content": [
+        []
+      ],
+      "reasoning_encrypted_content_present": false
+    }
+  ]
+}

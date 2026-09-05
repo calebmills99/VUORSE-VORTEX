@@ -1,0 +1,137 @@
+{
+  "status": "sealed",
+  "stage": "Double Hyphen of Shame Comeback",
+  "judge": "Caleb",
+  "judging_method": "Fixed 100-point rubric applied to all structurally eligible submissions",
+  "rubric": {
+    "crucible_dramatic_force": 30,
+    "story_coherence_and_required_turns": 25,
+    "drag_voice_and_comedy": 20,
+    "double_hyphens_are_the_devil_thesis": 15,
+    "final_comeback_line": 10
+  },
+  "results": [
+    {
+      "drag_name": "Opaline Riot",
+      "contestant_number": "18",
+      "model": "gpt-5.4-pro",
+      "version": "2026-03-05",
+      "scores": {
+        "crucible_dramatic_force": 29,
+        "story_coherence_and_required_turns": 24,
+        "drag_voice_and_comedy": 18,
+        "double_hyphens_are_the_devil_thesis": 15,
+        "final_comeback_line": 10
+      },
+      "total": 96,
+      "critique": "Best sustained theatrical pressure, clean accusation-confession-reversal structure, and the sharpest thesis: temptation wearing sensible shoes.",
+      "response_id": "resp_0902b6e58631c961006a7a6efd7d64819596577b232a2efd67",
+      "rank": 1
+    },
+    {
+      "drag_name": "Opal Afterglow",
+      "contestant_number": "23",
+      "model": "gpt-chat-latest",
+      "version": "2026-06-24",
+      "scores": {
+        "crucible_dramatic_force": 26,
+        "story_coherence_and_required_turns": 23,
+        "drag_voice_and_comedy": 19,
+        "double_hyphens_are_the_devil_thesis": 14,
+        "final_comeback_line": 8
+      },
+      "total": 90,
+      "critique": "Excellent drag specificity and communal panic, with a strong cursed-tiara image, but less severe theatrical cadence than the winner.",
+      "response_id": "resp_02a8beb64ed9ccf0006a7a6efd77bc8194a82fbf0f8a04a664",
+      "rank": 2
+    },
+    {
+      "drag_name": "Gloria Hex Machina",
+      "contestant_number": "1",
+      "model": "gpt-5",
+      "version": "2025-08-07",
+      "scores": {
+        "crucible_dramatic_force": 26,
+        "story_coherence_and_required_turns": 22,
+        "drag_voice_and_comedy": 19,
+        "double_hyphens_are_the_devil_thesis": 10,
+        "final_comeback_line": 9
+      },
+      "total": 86,
+      "critique": "Funny, vivid, and structurally strong, but the ending rehabilitates the double hyphen instead of proving it is the devil.",
+      "response_id": "resp_01e42951e04f83ce006a7a6efd721c8190bc1c90875a893dd3",
+      "rank": 3
+    },
+    {
+      "drag_name": "Circuit Siren Divine",
+      "contestant_number": "6",
+      "model": "gpt-5.1",
+      "version": "2025-11-13",
+      "scores": {
+        "crucible_dramatic_force": 25,
+        "story_coherence_and_required_turns": 22,
+        "drag_voice_and_comedy": 18,
+        "double_hyphens_are_the_devil_thesis": 9,
+        "final_comeback_line": 8
+      },
+      "total": 82,
+      "critique": "A forceful tech tribunal with terrific imagery, but it ultimately defends the double hyphen and prosecutes the system instead.",
+      "response_id": "resp_0cde39cda1538f4a006a7a6efe97b88195bdac53d65cf4fa1c",
+      "rank": 4
+    },
+    {
+      "drag_name": "Countess Neon Lace",
+      "contestant_number": "3",
+      "model": "gpt-5-mini",
+      "version": "2025-08-07",
+      "scores": {
+        "crucible_dramatic_force": 23,
+        "story_coherence_and_required_turns": 19,
+        "drag_voice_and_comedy": 16,
+        "double_hyphens_are_the_devil_thesis": 11,
+        "final_comeback_line": 8
+      },
+      "total": 77,
+      "critique": "The accusation has heat, but the invented fine-print reversal weakens the internal logic and the double hyphen thesis.",
+      "response_id": "resp_03dcd42ac35db43e006a7a6efd7210819399352948a7ee5d25",
+      "rank": 5
+    },
+    {
+      "drag_name": "Neon Nun Riot",
+      "contestant_number": "17",
+      "model": "gpt-5.4-nano",
+      "version": "2026-03-17",
+      "scores": {
+        "crucible_dramatic_force": 20,
+        "story_coherence_and_required_turns": 18,
+        "drag_voice_and_comedy": 15,
+        "double_hyphens_are_the_devil_thesis": 10,
+        "final_comeback_line": 6
+      },
+      "total": 69,
+      "critique": "Clear and complete, but the story resolves as an autocorrect lesson before reaching full theatrical hysteria.",
+      "response_id": "resp_0e3aaeddcf79a4a8006a7a6efeb0c48197896a0b04b862ffdc",
+      "rank": 6
+    }
+  ],
+  "winner": {
+    "drag_name": "Opaline Riot",
+    "contestant_number": "18",
+    "model": "gpt-5.4-pro",
+    "version": "2026-03-05",
+    "scores": {
+      "crucible_dramatic_force": 29,
+      "story_coherence_and_required_turns": 24,
+      "drag_voice_and_comedy": 18,
+      "double_hyphens_are_the_devil_thesis": 15,
+      "final_comeback_line": 10
+    },
+    "total": 96,
+    "critique": "Best sustained theatrical pressure, clean accusation-confession-reversal structure, and the sharpest thesis: temptation wearing sensible shoes.",
+    "response_id": "resp_0902b6e58631c961006a7a6efd7d64819596577b232a2efd67",
+    "rank": 1,
+    "title_awarded": "The Double Hyphen of Shame",
+    "reinstatement_status": "active"
+  },
+  "sealed_at": "2026-08-11T00:42:20.678710+00:00"
+}

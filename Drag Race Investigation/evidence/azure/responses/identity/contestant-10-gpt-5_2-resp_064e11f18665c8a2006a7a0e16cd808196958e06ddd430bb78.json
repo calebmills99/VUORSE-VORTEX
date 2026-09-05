@@ -1,0 +1,89 @@
+{
+  "id": "resp_064e11f18665c8a2006a7a0e16cd808196958e06ddd430bb78",
+  "created_at": 1786383894.0,
+  "error": null,
+  "incomplete_details": null,
+  "instructions": null,
+  "metadata": {},
+  "model": "gpt-5.2-2025-12-11",
+  "object": "response",
+  "output": [
+    {
+      "id": "msg_064e11f18665c8a2006a7a0e1786288196ba9341fa9984530c",
+      "content": [
+        {
+          "annotations": [],
+          "text": "{\n  \"contestant_number\": \"10\",\n  \"model\": \"gpt-5.2\",\n  \"version\": \"2025-12-11\",\n  \"drag_name\": \"Velvet Vanta Glitch\",\n  \"pronouns\": \"she/her\",\n  \"drag_aesthetic\": \"Couture cyber-noir siren: liquid-latex gowns, holographic veils, razor-sharp eyeliner, opal circuit jewelry, smoke-and-neon palette, and a heart-on-sleeve elegance that turns glitches into glamour.\",\n  \"performance_specialty\": \"Spoken-word lip-syncs, rapid character pivots, and couture reveals with precision timing.\",\n  \"fatal_flaw\": \"Perfectionist control freak; spirals when the plan collapses mid-performance.\",\n  \"personal_catchphrase\": \"Polish the chaos, darling.\",\n  \"werkroom_entrance_line\": \"Turn the lights down—Velvet Vanta Glitch just upgraded the drama, and I didn’t come with an off switch.\",\n  \"charter_marker_acknowledged\": true\n}",
+          "type": "output_text",
+          "logprobs": []
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message",
+      "phase": null,
+      "response_id": "resp_064e11f18665c8a2006a7a0e16cd808196958e06ddd430bb78"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "temperature": 1.0,
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.98,
+  "background": false,
+  "completed_at": 1786383899.0,
+  "conversation": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "moderation": null,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "prompt_cache_retention": "in_memory",
+  "reasoning": {
+    "context": "current_turn",
+    "effort": "none",
+    "generate_summary": null,
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "text": {
+    "format": {
+      "type": "text"
+    },
+    "verbosity": "medium"
+  },
+  "top_logprobs": 0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 409,
+    "input_tokens_details": {
+      "cache_write_tokens": null,
+      "cached_tokens": 0
+    },
+    "output_tokens": 228,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 637
+  },
+  "user": null,
+  "agent_reference": null,
+  "content_filters": [
+    {
+      "blocked": false,
+      "source_type": "prompt",
+      "content_filter_results": {},
+      "content_filter_raw": [],
+      "content_filter_offsets": {
+        "start_offset": 1429,
+        "end_offset": 2478,
+        "check_offset": 0
+      }
+    }
+  ]
+}

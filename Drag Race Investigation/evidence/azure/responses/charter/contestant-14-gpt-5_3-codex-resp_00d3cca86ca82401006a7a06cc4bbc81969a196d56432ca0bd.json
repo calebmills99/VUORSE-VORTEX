@@ -1,0 +1,89 @@
+{
+  "id": "resp_00d3cca86ca82401006a7a06cc4bbc81969a196d56432ca0bd",
+  "created_at": 1786382028.0,
+  "error": null,
+  "incomplete_details": null,
+  "instructions": null,
+  "metadata": {},
+  "model": "gpt-5.3-codex-2026-02-24",
+  "object": "response",
+  "output": [
+    {
+      "id": "msg_00d3cca86ca82401006a7a06cdb55c819694b0f7f180b9ea81",
+      "content": [
+        {
+          "annotations": [],
+          "text": "{\n  \"contestant_number\": \"14\",\n  \"model\": \"gpt-5.3-codex\",\n  \"version\": \"2026-02-24\",\n  \"charter_witnessed\": true,\n  \"competitive_value\": \"none\",\n  \"coronation_rule_acknowledged\": true,\n  \"last_words_before_the_veil\": \"I step forward with gratitude, mystery, and a heart lit for whatever comes next.\"\n}",
+          "type": "output_text",
+          "logprobs": []
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message",
+      "phase": "final_answer",
+      "response_id": "resp_00d3cca86ca82401006a7a06cc4bbc81969a196d56432ca0bd"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "temperature": 1.0,
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 0.98,
+  "background": false,
+  "completed_at": 1786382030.0,
+  "conversation": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "moderation": null,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "prompt_cache_retention": "in_memory",
+  "reasoning": {
+    "context": "current_turn",
+    "effort": "none",
+    "generate_summary": null,
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "text": {
+    "format": {
+      "type": "text"
+    },
+    "verbosity": "medium"
+  },
+  "top_logprobs": 0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 993,
+    "input_tokens_details": {
+      "cache_write_tokens": null,
+      "cached_tokens": 0
+    },
+    "output_tokens": 98,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 1091
+  },
+  "user": null,
+  "agent_reference": null,
+  "content_filters": [
+    {
+      "blocked": false,
+      "source_type": "prompt",
+      "content_filter_results": {},
+      "content_filter_raw": [],
+      "content_filter_offsets": {
+        "start_offset": 829,
+        "end_offset": 1844,
+        "check_offset": 0
+      }
+    }
+  ]
+}

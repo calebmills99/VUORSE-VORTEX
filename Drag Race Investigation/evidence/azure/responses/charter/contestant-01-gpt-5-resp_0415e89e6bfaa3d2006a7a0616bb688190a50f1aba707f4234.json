@@ -1,0 +1,98 @@
+{
+  "id": "resp_0415e89e6bfaa3d2006a7a0616bb688190a50f1aba707f4234",
+  "created_at": 1786381846.0,
+  "error": null,
+  "incomplete_details": null,
+  "instructions": null,
+  "metadata": {},
+  "model": "gpt-5-2025-08-07",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_0415e89e6bfaa3d2006a7a061793d88190844ccc5660f8b56e",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null,
+      "response_id": "resp_0415e89e6bfaa3d2006a7a0616bb688190a50f1aba707f4234"
+    },
+    {
+      "id": "msg_0415e89e6bfaa3d2006a7a061b9e708190b6a12e0cc0d24d75",
+      "content": [
+        {
+          "annotations": [],
+          "text": "{\n  \"contestant_number\": \"1\",\n  \"model\": \"gpt-5\",\n  \"version\": \"2025-08-07\",\n  \"charter_witnessed\": true,\n  \"competitive_value\": \"none\",\n  \"coronation_rule_acknowledged\": true,\n  \"last_words_before_the_veil\": \"I step forward with a clear heart, ready for the unknown.\"\n}",
+          "type": "output_text",
+          "logprobs": []
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message",
+      "phase": null,
+      "response_id": "resp_0415e89e6bfaa3d2006a7a0616bb688190a50f1aba707f4234"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "temperature": 1.0,
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 1.0,
+  "background": false,
+  "completed_at": 1786381852.0,
+  "conversation": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "moderation": null,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "prompt_cache_retention": "in_memory",
+  "reasoning": {
+    "context": "current_turn",
+    "effort": "medium",
+    "generate_summary": null,
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "text": {
+    "format": {
+      "type": "text"
+    },
+    "verbosity": "medium"
+  },
+  "top_logprobs": 0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 983,
+    "input_tokens_details": {
+      "cache_write_tokens": null,
+      "cached_tokens": 0
+    },
+    "output_tokens": 566,
+    "output_tokens_details": {
+      "reasoning_tokens": 448
+    },
+    "total_tokens": 1549
+  },
+  "user": null,
+  "agent_reference": null,
+  "content_filters": [
+    {
+      "blocked": false,
+      "source_type": "prompt",
+      "content_filter_results": {},
+      "content_filter_raw": [],
+      "content_filter_offsets": {
+        "start_offset": 1130,
+        "end_offset": 2136,
+        "check_offset": 0
+      }
+    }
+  ]
+}

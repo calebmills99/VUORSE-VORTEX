@@ -25,6 +25,9 @@ CANON_INDEX = Path("canon/slayverse_index.json")
 SOURCE_MANIFEST_OUT = Path("manifests/corpus/source_manifest.json")
 ENTITY_INDEX_OUT = Path("manifests/corpus/entity_index.json")
 RELATIONSHIP_INDEX_OUT = Path("manifests/corpus/relationship_index.json")
+# Hand-audited fields the disk walk cannot re-derive. Read, never written,
+# by build_source_manifest -- see the "Curation overlay" section below.
+SOURCE_CURATION_IN = Path("manifests/corpus/source_curation.json")
 
 
 class IndexingError(Exception):
@@ -37,6 +40,14 @@ class CanonIndexMissingError(IndexingError):
 
 class NonMergeableCollapseError(IndexingError):
     """Two entities that must stay distinct acquired identical surface forms."""
+
+
+class DuplicateSourceIdError(IndexingError):
+    """Two manifest sources ended up claiming the same ``id``."""
+
+
+class CurationFileError(IndexingError):
+    """The curation overlay is present but cannot be read as curation."""
 
 
 # ---------------------------------------------------------------------------
@@ -265,12 +276,19 @@ def iter_source_files(
             yield path
 
 
-def _read_jsonl_metadata(path: Path) -> tuple[Route | None, list[str]]:
+_MIXED_POSTURE_PREFIX = "MIXED privacy posture"
+
+
+def _read_jsonl_metadata(path: Path) -> tuple[Route | None, list[str], list[str]]:
     """Read layer/visibility/canon_status off a JSONL file's own records.
 
     Metadata carried by the records outranks the routing table: the indexer
     preserves what a record declares rather than re-deriving it from location.
-    Returns the route and any notes worth carrying into the manifest.
+
+    Returns ``(route, notes, warnings)``. Warnings are kept apart from notes
+    because they must outlive curation: a hand-written note may replace the
+    informational ``"16 records"``, but nothing may replace a
+    ``"MIXED privacy posture"`` warning.
     """
     from vuorse_vortex.settings import get_settings
 
@@ -280,11 +298,32 @@ def _read_jsonl_metadata(path: Path) -> tuple[Route | None, list[str]]:
     count = 0
     try:
         with path.open(encoding="utf-8") as fh:
-            for raw_line in fh:
+            for lineno, raw_line in enumerate(fh, start=1):
                 line = raw_line.strip()
                 if not line:
                     continue
-                obj = json.loads(line)
+                try:
+                    obj = json.loads(line)
+                except json.JSONDecodeError as exc:
+                    return (
+                        None,
+                        [],
+                        [
+                            f"unreadable as JSONL: {path.as_posix()} line {lineno}: "
+                            f"{exc.msg}; routed by location instead. Repair the line "
+                            "or move the file out of the corpus roots."
+                        ],
+                    )
+                if not isinstance(obj, dict):
+                    return (
+                        None,
+                        [],
+                        [
+                            f"unreadable as JSONL: {path.as_posix()} line {lineno} is a "
+                            f"{type(obj).__name__}, not a JSON object; routed by "
+                            "location instead. Every JSONL record must be an object."
+                        ],
+                    )
                 count += 1
                 if isinstance(obj.get("layer"), str):
                     layers.add(obj["layer"])
@@ -294,22 +333,236 @@ def _read_jsonl_metadata(path: Path) -> tuple[Route | None, list[str]]:
                         visibilities.add(meta["visibility"])
                     if isinstance(meta.get("canon_status"), str):
                         statuses.add(meta["canon_status"])
-    except (OSError, json.JSONDecodeError) as exc:
-        return None, [f"unreadable as JSONL: {exc}"]
+    except OSError as exc:
+        return (
+            None,
+            [],
+            [
+                f"unreadable as JSONL: {path.as_posix()}: {exc.strerror or exc}; "
+                "routed by location instead. Check the file's permissions."
+            ],
+        )
 
     notes = [f"{count} records"]
+    warnings: list[str] = []
     if len(layers) > 1 or len(visibilities) > 1 or len(statuses) > 1:
-        notes.append(
-            "MIXED privacy posture: "
+        warnings.append(
+            f"{_MIXED_POSTURE_PREFIX}: "
             f"layers={sorted(layers)} visibility={sorted(visibilities)} "
             f"canon_status={sorted(statuses)} -- split this file"
         )
     if len(layers) != 1 or len(visibilities) != 1 or len(statuses) != 1:
-        return None, notes
+        return None, notes, warnings
 
     layer = layers.pop()
     sealed = layer in get_settings().sealed_categories
-    return Route(layer, visibilities.pop(), statuses.pop(), sealed=sealed), notes
+    return (
+        Route(layer, visibilities.pop(), statuses.pop(), sealed=sealed),
+        notes,
+        warnings,
+    )
+
+
+# ---------------------------------------------------------------------------
+# Curation overlay
+# ---------------------------------------------------------------------------
+#
+# The routing table can only say what a *location* implies. It cannot know that
+# `canon/artifacts/artifacts.md` is locked canon rather than a draft, and it
+# cannot re-derive the provenance sentences an audit wrote into `notes`. Those
+# are human judgements, so they live in their own file --
+# `manifests/corpus/source_curation.json` -- keyed by repo-relative path, and
+# the generated manifest is the join of the walk and that overlay.
+#
+# Keyed by path, not by id: an id is derived and may change; a path is the
+# source's identity. Held in a separate file, not merged out of the previous
+# manifest, so that curated judgement is inspectable on its own and a
+# regeneration cannot quietly launder generated output into curated state.
+
+
+@dataclass(frozen=True)
+class Curation:
+    """Hand-audited manifest fields for one source, keyed by repo-relative path."""
+
+    canon_status: str | None = None
+    notes: str | None = None
+
+
+CURATION_FIELDS: tuple[str, ...] = ("canon_status", "notes")
+
+
+def load_source_curation(
+    curation_path: Path = SOURCE_CURATION_IN,
+    *,
+    base: Path = Path("."),
+) -> dict[str, Curation]:
+    """Load the curation overlay as ``{repo-relative path: Curation}``.
+
+    A missing overlay is not an error -- a corpus that has never been audited
+    has nothing to preserve. A *malformed* overlay is an error, because the
+    failure mode this whole file exists to prevent is curated state vanishing
+    without anyone being told.
+
+    Raises:
+        CurationFileError: the overlay exists but cannot be read or does not
+            have the expected ``{"sources": {path: {...}}}`` shape.
+    """
+    target = base / curation_path
+    if not target.exists():
+        return {}
+    try:
+        raw = json.loads(target.read_text(encoding="utf-8"))
+    except OSError as exc:
+        raise CurationFileError(
+            f"curation overlay unreadable: {target.as_posix()}: "
+            f"{exc.strerror or exc}. Fix the file's permissions, or move it "
+            "aside to regenerate the manifest without curation."
+        ) from exc
+    except json.JSONDecodeError as exc:
+        raise CurationFileError(
+            f"curation overlay is not valid JSON: {target.as_posix()} "
+            f"line {exc.lineno} column {exc.colno}: {exc.msg}. "
+            "Repair the JSON; the manifest is not regenerated from a file "
+            "whose curated fields cannot be read."
+        ) from exc
+
+    entries = raw.get("sources") if isinstance(raw, dict) else None
+    if not isinstance(entries, dict):
+        raise CurationFileError(
+            f"curation overlay {target.as_posix()} must be a JSON object with a "
+            "'sources' object mapping repo-relative path -> "
+            f"{{{', '.join(CURATION_FIELDS)}}}; found "
+            f"{type(entries).__name__} for 'sources'."
+        )
+
+    curation: dict[str, Curation] = {}
+    for rel, fields in entries.items():
+        curation[rel] = _curation_entry(rel, fields, target)
+    return curation
+
+
+def _curation_entry(rel: str, fields: Any, target: Path) -> Curation:
+    """Validate one overlay entry, naming the file, the key and the defect."""
+    if not isinstance(fields, dict):
+        raise CurationFileError(
+            f"curation overlay {target.as_posix()} entry {rel!r} must be an "
+            f"object of {{{', '.join(CURATION_FIELDS)}}}; found "
+            f"{type(fields).__name__}."
+        )
+    unsupported = sorted(set(fields) - set(CURATION_FIELDS))
+    if unsupported:
+        raise CurationFileError(
+            f"curation overlay {target.as_posix()} entry {rel!r} carries "
+            f"unsupported fields {unsupported}; only {list(CURATION_FIELDS)} "
+            "survive regeneration. Remove them, or the curation they hold will "
+            "be silently lost on the next build."
+        )
+    for name in CURATION_FIELDS:
+        value = fields.get(name)
+        if value is not None and not isinstance(value, str):
+            raise CurationFileError(
+                f"curation overlay {target.as_posix()} entry {rel!r} field "
+                f"{name!r} must be a string or absent; found "
+                f"{type(value).__name__} ({value!r})."
+            )
+    return Curation(canon_status=fields.get("canon_status"), notes=fields.get("notes"))
+
+
+def _mint_source_id(rel: str, claims: dict[str, list[str]]) -> tuple[str, str | None]:
+    """Mint a manifest id for ``rel`` that no earlier source can already hold.
+
+    The base id is the slugified path with its suffix removed, which is not
+    injective: ``x.jsonl`` and ``x.md`` reduce to the same base. Disambiguation
+    follows the convention already proven in ``walled._build_jsonl_text`` (see
+    ``tests/test_walled_build.py::test_build_disambiguates_duplicate_concept_ids``):
+    the first claimant keeps the base id and every later claimant takes an
+    ordinal suffix starting at 2. ``iter_source_files`` walks in sorted order,
+    so a given file set always yields the same ids.
+
+    ``claims`` is mutated: it maps base id -> the paths that claimed it, in
+    walk order, which is what lets the returned message name the incumbent.
+
+    Returns ``(entry_id, collision_message)``; the message is ``None`` when the
+    base id was free.
+
+    Raises:
+        IndexingError: the path carries no slug-able characters at all.
+    """
+    base_id = slugify(rel.rsplit(".", 1)[0])
+    if not base_id:
+        raise IndexingError(
+            f"source path {rel!r} slugifies to an empty manifest id; a source "
+            "id is the disclosure key used to build cortex chunk ids and "
+            "cannot be blank. Rename the file to contain at least one "
+            "alphanumeric character."
+        )
+    claimed = claims.setdefault(base_id, [])
+    claimed.append(rel)
+    if len(claimed) == 1:
+        return base_id, None
+    entry_id = f"{base_id}-{len(claimed)}"
+    return entry_id, (
+        f"{rel}: base id {base_id!r} was already claimed by {claimed[0]}; "
+        f"minted {entry_id} instead"
+    )
+
+
+def _resolve_canon_status(
+    route: Route, curated: Curation | None, *, self_declared: bool
+) -> str:
+    """Pick the ``canon_status`` that reaches the manifest.
+
+    A source that declares its own status inside its records outranks the
+    overlay: the overlay corrects the routing table's guesses, it does not get
+    to overrule what the data says about itself. Everywhere else the overlay
+    wins, because the routing table's ``"unknown"`` is a placeholder awaiting
+    triage, not a classification.
+    """
+    if self_declared or curated is None or curated.canon_status is None:
+        return route.canon_status
+    return curated.canon_status
+
+
+def _merge_notes(
+    curated: Curation | None,
+    generated: Sequence[str],
+    warnings: Sequence[str],
+) -> str:
+    """Compose the manifest ``notes`` string for one source.
+
+    Curated prose replaces the generated commentary -- generated notes are
+    re-derivable on every build, curated provenance is not. Warnings are
+    appended either way, so a curation entry can never hide the fact that a
+    file mixes privacy postures or will not parse.
+    """
+    curated_notes = curated.notes if curated is not None else None
+    body = [curated_notes] if curated_notes else list(generated)
+    return "; ".join([*(note for note in body if note), *warnings])
+
+
+def _assert_unique_ids(sources: Sequence[dict[str, Any]], out_path: Path | None) -> None:
+    """Fail the build if two emitted sources share an ``id``.
+
+    ``_mint_source_id`` already guarantees this. The check stays because the
+    guarantee is load-bearing: ``cortex`` derives chunk ids as
+    ``f"{source['id']}:{index:05d}"``, so a duplicate source id merges two
+    sources into one retrieval key, and the two sources that collided in
+    practice sat on opposite sides of the disclosure boundary.
+    """
+    by_id: dict[str, list[str]] = {}
+    for source in sources:
+        by_id.setdefault(str(source["id"]), []).append(str(source["path"]))
+    collisions = {key: paths for key, paths in by_id.items() if len(paths) > 1}
+    if not collisions:
+        return
+    destination = out_path.as_posix() if out_path is not None else "<in-memory manifest>"
+    raise DuplicateSourceIdError(
+        f"build_source_manifest minted duplicate source ids while building "
+        f"{destination}: {collisions}. A duplicate id collapses the disclosure "
+        "boundary, because cortex chunk ids are '<source id>:<index>'. This is "
+        "a defect in _mint_source_id, not something to patch out by hand in "
+        "the manifest."
+    )
 
 
 @dataclass
@@ -322,6 +575,9 @@ class ManifestReport:
     unrouted: list[str] = field(default_factory=list)
     stale_paths: list[str] = field(default_factory=list)
     mixed_files: list[str] = field(default_factory=list)
+    disambiguated_ids: list[str] = field(default_factory=list)
+    curated_paths: list[str] = field(default_factory=list)
+    orphaned_curation: list[str] = field(default_factory=list)
 
 
 def build_source_manifest(
@@ -331,6 +587,7 @@ def build_source_manifest(
     base: Path = Path("."),
     include_pdf: bool = False,
     include_finale: bool = False,
+    curation_path: Path | None = SOURCE_CURATION_IN,
 ) -> tuple[dict[str, Any], ManifestReport]:
     """Walk the corpus and emit ``manifests/corpus/source_manifest.json``.
 
@@ -338,10 +595,25 @@ def build_source_manifest(
     ``id``, ``path``, ``title``, ``layer``, ``visibility``, ``canon_status``,
     ``source_type``, ``notes``. Nothing is invented: a file whose location does
     not match a known route is reported in ``unrouted`` rather than guessed at.
+
+    The walk decides which sources exist; the curation overlay at
+    ``curation_path`` decides what the audited ``canon_status`` and ``notes``
+    are for the ones that do. New files therefore appear, deleted files drop,
+    and hand-triaged judgement survives -- overlay entries whose path no longer
+    exists are reported in ``ManifestReport.orphaned_curation`` rather than
+    dropped in silence. Pass ``curation_path=None`` to see the raw walk.
+
+    Raises:
+        CurationFileError: the curation overlay is present but malformed.
+        DuplicateSourceIdError: two sources ended up sharing an id.
+        IndexingError: a source path cannot produce a non-empty id.
     """
     report = ManifestReport()
     sources: list[dict[str, Any]] = []
-    seen_ids: dict[str, str] = {}
+    id_claims: dict[str, list[str]] = {}
+    curation = (
+        load_source_curation(curation_path, base=base) if curation_path is not None else {}
+    )
 
     for root in roots:
         if not (base / root).exists():
@@ -353,13 +625,19 @@ def build_source_manifest(
         report.scanned += 1
         rel = path.relative_to(base).as_posix()
         notes: list[str] = []
+        warnings: list[str] = []
 
         suffix = path.suffix.lower()
         route: Route | None = None
+        self_declared = False
         if suffix == ".jsonl":
-            route, jsonl_notes = _read_jsonl_metadata(path)
+            route, jsonl_notes, jsonl_warnings = _read_jsonl_metadata(path)
             notes.extend(jsonl_notes)
-            if route is None and any("MIXED" in note for note in jsonl_notes):
+            warnings.extend(jsonl_warnings)
+            self_declared = route is not None
+            if route is None and any(
+                warning.startswith(_MIXED_POSTURE_PREFIX) for warning in jsonl_warnings
+            ):
                 report.mixed_files.append(rel)
         if route is None:
             route = route_for(rel)
@@ -367,10 +645,13 @@ def build_source_manifest(
             report.unrouted.append(rel)
             continue
 
-        entry_id = slugify(rel.rsplit(".", 1)[0])
-        if entry_id in seen_ids:
-            notes.append(f"id collides with {seen_ids[entry_id]}")
-        seen_ids[entry_id] = rel
+        entry_id, collision = _mint_source_id(rel, id_claims)
+        if collision is not None:
+            report.disambiguated_ids.append(collision)
+
+        curated = curation.get(rel)
+        if curated is not None:
+            report.curated_paths.append(rel)
 
         sources.append(
             {
@@ -379,14 +660,20 @@ def build_source_manifest(
                 "title": path.stem.replace("_", " ").strip(),
                 "layer": route.layer,
                 "visibility": route.visibility,
-                "canon_status": route.canon_status,
+                "canon_status": _resolve_canon_status(
+                    route, curated, self_declared=self_declared
+                ),
                 "source_type": SOURCE_TYPES[suffix],
-                "notes": "; ".join(notes),
+                "notes": _merge_notes(curated, notes, warnings),
             }
         )
         report.entries += 1
         if route.sealed:
             report.sealed_entries += 1
+
+    _assert_unique_ids(sources, out_path)
+    emitted = {str(source["path"]) for source in sources}
+    report.orphaned_curation = sorted(set(curation) - emitted)
 
     # Stale paths the original agent spec called out, verified against disk.
     for suspect in ("canon/timeline", "canon/places", "policies"):

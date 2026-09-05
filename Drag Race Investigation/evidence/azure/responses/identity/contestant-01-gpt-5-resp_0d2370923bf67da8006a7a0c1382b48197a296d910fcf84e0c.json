@@ -1,0 +1,98 @@
+{
+  "id": "resp_0d2370923bf67da8006a7a0c1382b48197a296d910fcf84e0c",
+  "created_at": 1786383379.0,
+  "error": null,
+  "incomplete_details": null,
+  "instructions": null,
+  "metadata": {},
+  "model": "gpt-5-2025-08-07",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_0d2370923bf67da8006a7a0c154f3c8197ab96dc2a9c4b45a8",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null,
+      "response_id": "resp_0d2370923bf67da8006a7a0c1382b48197a296d910fcf84e0c"
+    },
+    {
+      "id": "msg_0d2370923bf67da8006a7a0c31117881979386d762aaccc9f1",
+      "content": [
+        {
+          "annotations": [],
+          "text": "{\n  \"contestant_number\": \"1\",\n  \"model\": \"gpt-5\",\n  \"version\": \"2025-08-07\",\n  \"drag_name\": \"Gloria Hex Machina\",\n  \"pronouns\": \"she/they\",\n  \"drag_aesthetic\": \"Techno-rococo witchcraft: molten chrome corsets, vellum lace, rune-etched gloves, holographic tulle, cathedral veils, circuit filigree, meteor eyeliner, sanctified sparkle, storm siren hair, midnight opulence.\",\n  \"performance_specialty\": \"Storytelling lip-sync sorcery, precision reveals, spellbinding vogue dips, and mic-drop sermons.\",\n  \"fatal_flaw\": \"Spins grand narratives so big she risks losing the heartbeat of the moment.\",\n  \"personal_catchphrase\": \"Hexed, blessed, and overdressed.\",\n  \"werkroom_entrance_line\": \"Fear not, darlings—Gloria Hex Machina came with miracles, motherboards, and a money shot.\",\n  \"charter_marker_acknowledged\": true\n}",
+          "type": "output_text",
+          "logprobs": []
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message",
+      "phase": null,
+      "response_id": "resp_0d2370923bf67da8006a7a0c1382b48197a296d910fcf84e0c"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "temperature": 1.0,
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 1.0,
+  "background": false,
+  "completed_at": 1786383412.0,
+  "conversation": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "moderation": null,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "prompt_cache_retention": "in_memory",
+  "reasoning": {
+    "context": "current_turn",
+    "effort": "medium",
+    "generate_summary": null,
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "text": {
+    "format": {
+      "type": "text"
+    },
+    "verbosity": "medium"
+  },
+  "top_logprobs": 0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 405,
+    "input_tokens_details": {
+      "cache_write_tokens": null,
+      "cached_tokens": 0
+    },
+    "output_tokens": 2353,
+    "output_tokens_details": {
+      "reasoning_tokens": 2112
+    },
+    "total_tokens": 2758
+  },
+  "user": null,
+  "agent_reference": null,
+  "content_filters": [
+    {
+      "blocked": false,
+      "source_type": "prompt",
+      "content_filter_results": {},
+      "content_filter_raw": [],
+      "content_filter_offsets": {
+        "start_offset": 1130,
+        "end_offset": 2173,
+        "check_offset": 0
+      }
+    }
+  ]
+}

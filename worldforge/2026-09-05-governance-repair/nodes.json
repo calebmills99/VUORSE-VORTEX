@@ -1,0 +1,54 @@
+{
+  "run": "2026-09-05-governance-repair",
+  "nodes": [
+    {
+      "id": "policies",
+      "label": "Governance doctrine",
+      "kind": "institution",
+      "path": "policies/",
+      "state": "restored (13 files)"
+    },
+    {
+      "id": "manifest",
+      "label": "Corpus of record",
+      "kind": "artifact",
+      "path": "manifests/corpus/source_manifest.json",
+      "state": "54 sources / 54 unique ids"
+    },
+    {
+      "id": "minter",
+      "label": "Id minter",
+      "kind": "mechanism",
+      "path": "vuorse_vortex/indexing.py",
+      "state": "collision-proof"
+    },
+    {
+      "id": "cortex",
+      "label": "Retrieval index",
+      "kind": "artifact",
+      "path": "embeddings/indexes/vuorse_cortex.sqlite3",
+      "state": "6910 chunks / 6910 unique"
+    },
+    {
+      "id": "curation",
+      "label": "Curation overlay",
+      "kind": "artifact",
+      "path": "manifests/corpus/source_curation.json",
+      "state": "29 entries, keyed by path"
+    },
+    {
+      "id": "sealed",
+      "label": "Sealed layers",
+      "kind": "boundary",
+      "path": "roadmap/, hooplehopper_totality/",
+      "state": "16 sources, cited by path only"
+    },
+    {
+      "id": "steward",
+      "label": "Caleb (Steward)",
+      "kind": "actor",
+      "path": null,
+      "state": "sole promotion authority"
+    }
+  ]
+}

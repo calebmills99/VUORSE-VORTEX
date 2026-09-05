@@ -1,0 +1,98 @@
+{
+  "id": "resp_023ab0ea063cc832006a7a0c3f4dd4819680f5584c79b8ad50",
+  "created_at": 1786383423.0,
+  "error": null,
+  "incomplete_details": null,
+  "instructions": null,
+  "metadata": {},
+  "model": "gpt-5-nano-2025-08-07",
+  "object": "response",
+  "output": [
+    {
+      "id": "rs_023ab0ea063cc832006a7a0c3ffd9c81969a2c68c88fec6733",
+      "summary": [],
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": null,
+      "status": null,
+      "response_id": "resp_023ab0ea063cc832006a7a0c3f4dd4819680f5584c79b8ad50"
+    },
+    {
+      "id": "msg_023ab0ea063cc832006a7a0c4a24f88196b1dd045e973ba98d",
+      "content": [
+        {
+          "annotations": [],
+          "text": "{\n  \"contestant_number\": \"4\",\n  \"model\": \"gpt-5-nano\",\n  \"version\": \"2025-08-07\",\n  \"drag_name\": \"Neon Velvet Siren\",\n  \"pronouns\": \"she/they\",\n  \"drag_aesthetic\": \"Chromatic futurism meets ballroom nostalgia. Iridescent lashes, chrome corset, cybernetic sleeves, holographic sequins that shift with the crowd. Velvet smoke, electric heartbeat, and neon whispers.\",\n  \"performance_specialty\": \"Fierce lip-sync, precision voguing, shimmering storytelling through chrome-edged choreography.\",\n  \"fatal_flaw\": \"Overthinks the runway, overprepares props, risks flashback moments and stumbles if tempo slips.\",\n  \"personal_catchphrase\": \"Glitz with grit, darling—read the room, serve the truth.\",\n  \"werkroom_entrance_line\": \"I am Neon Velvet Siren, streaming chrome dreams through velvet night—watch me bend light and break the stage.\",\n  \"charter_marker_acknowledged\": true\n}",
+          "type": "output_text",
+          "logprobs": []
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message",
+      "phase": null,
+      "response_id": "resp_023ab0ea063cc832006a7a0c3f4dd4819680f5584c79b8ad50"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "temperature": 1.0,
+  "tool_choice": "auto",
+  "tools": [],
+  "top_p": 1.0,
+  "background": false,
+  "completed_at": 1786383436.0,
+  "conversation": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "moderation": null,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": null,
+  "prompt_cache_options": null,
+  "prompt_cache_retention": "in_memory",
+  "reasoning": {
+    "context": "current_turn",
+    "effort": "medium",
+    "generate_summary": null,
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "status": "completed",
+  "text": {
+    "format": {
+      "type": "text"
+    },
+    "verbosity": "medium"
+  },
+  "top_logprobs": 0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 409,
+    "input_tokens_details": {
+      "cache_write_tokens": null,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1767,
+    "output_tokens_details": {
+      "reasoning_tokens": 1472
+    },
+    "total_tokens": 2176
+  },
+  "user": null,
+  "agent_reference": null,
+  "content_filters": [
+    {
+      "blocked": false,
+      "source_type": "prompt",
+      "content_filter_results": {},
+      "content_filter_raw": [],
+      "content_filter_offsets": {
+        "start_offset": 1130,
+        "end_offset": 2183,
+        "check_offset": 0
+      }
+    }
+  ]
+}
