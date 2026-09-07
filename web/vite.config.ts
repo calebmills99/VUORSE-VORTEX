@@ -1,5 +1,4 @@
- import { defineConfig, type HtmlTagDescriptor, type Plugin } from "vite"
-// Trigger server restart
+import { defineConfig, type HtmlTagDescriptor, type Plugin } from "vite"
 import react from "@vitejs/plugin-react"
 import tailwindcss from "@tailwindcss/vite"
 import path from "node:path"
