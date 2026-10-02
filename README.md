@@ -68,7 +68,13 @@ winget install --id=astral-sh.uv -e
 Create the environment:
 
 ```bash
-uv sync
+uv sync --extra dev
+```
+
+Add GPU dependencies when you need embedding/inference tooling:
+
+```bash
+uv sync --extra dev --extra gpu
 ```
 
 Run the CLI:
