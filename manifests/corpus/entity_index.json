@@ -3,9 +3,9 @@
   "canon_version": "1.1",
   "canon_generated": "2026-03-06",
   "canon_amended": "2026-09-03",
-  "entity_count": 80,
-  "surface_form_count": 149,
-  "distinctive_token_count": 58,
+  "entity_count": 81,
+  "surface_form_count": 151,
+  "distinctive_token_count": 59,
   "ambiguous_tokens": [
     "Eisensang",
     "Federstahl",
@@ -37,6 +37,7 @@
         "conrad-von-hooplehopper",
         "first-steward-transmission",
         "hildebrands-ring",
+        "the-thumper",
         "margarethe-von-hooplehopper",
         "mirror-cavern",
         "order-of-the-seam",
@@ -68,6 +69,7 @@
       ],
       "related": [
         "hildebrand-von-hooplehopper",
+        "the-thumper",
         "velvet-archive"
       ],
       "tags": [
@@ -79,7 +81,7 @@
         43,
         45
       ],
-      "summary": "Purveyor of luxury textiles. Commercialized Hildebrand's legacy and embedded secrets into stitching."
+      "summary": "Purveyor of luxury textiles. Direct recurrence of Hildebrand: a lane switch under a nom de plume, not a second soul. Holds audience inside The Thumper."
     },
     "adelram-von-hooplehopper": {
       "id": "adelram-von-hooplehopper",
@@ -1110,6 +1112,35 @@
         56
       ],
       "summary": "A ring that glowed when truth was spoken onstage. Passed to Yssenda."
+    },
+    "the-thumper": {
+      "id": "the-thumper",
+      "name": "The Thumper",
+      "type": "artifact",
+      "status": "moderate",
+      "era": "post-1147",
+      "surface_forms": [
+        "The Thumper",
+        "The Portable Mechanized Wardrobe"
+      ],
+      "related": [
+        "hildebrand-von-hooplehopper",
+        "conrad-von-hooplehopper",
+        "isolde-of-the-lower-hall",
+        "yorick-the-copyist",
+        "the-myrtle-burnings"
+      ],
+      "tags": [
+        "wardrobe",
+        "disguise",
+        "trauma",
+        "myrtle-burnings"
+      ],
+      "source_pages": [
+        43,
+        45
+      ],
+      "summary": "Five-hundred-pound mechanized wardrobe. Conrad holds audience inside it. Physical body of the trauma of Isolde of the Lower Hall and Yorick the Copyist. Hildebrand never forgot them."
     },
     "glamorons": {
       "id": "glamorons",
@@ -2504,6 +2535,12 @@
     "The Thread": [
       "the-thread"
     ],
+    "The Thumper": [
+      "the-thumper"
+    ],
+    "The Portable Mechanized Wardrobe": [
+      "the-thumper"
+    ],
     "The Velvet Archive": [
       "velvet-archive"
     ],
@@ -2744,6 +2781,9 @@
     ],
     "Thread-Vessel": [
       "thread-vessel"
+    ],
+    "Thumper": [
+      "the-thumper"
     ],
     "VUORSE": [
       "miss-slaytonia-vuorse"

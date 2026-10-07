@@ -1,0 +1,74 @@
+[
+  {
+    "from": "mirror-cavern",
+    "to": "hildebrand",
+    "mechanism": "He vanishes into the chamber under Schloss Eisensang; the public record ends",
+    "sign": "mixed",
+    "lag": "1147, immediate",
+    "context": "Founding mystery. Folio treats the chamber as a settled retrocausal wound; cosmology still pending.",
+    "confidence": "high"
+  },
+  {
+    "from": "hildebrand",
+    "to": "conrad",
+    "mechanism": "Direct recurrence: no diversion, no elsewhere. Same vessel switches lanes into the nom de plume Conrad.",
+    "sign": "+",
+    "lag": "immediate, as seen from the old lane; decades of the new lane follow",
+    "context": "Steward ruling. Direct means he did not go anywhere else. Identity is a false second person; route is a lane change. The folio's phrase stands.",
+    "confidence": "high"
+  },
+  {
+    "from": "the-thumper",
+    "to": "family-fiction",
+    "mechanism": "The box is the trauma in matter. Isolde of the Lower Hall and Yorick the Copyist were burned; he never forgot. The lane switch gives the haunting a 500-pound body he can haul and hide in.",
+    "sign": "+",
+    "lag": "continuous through Conrad's office",
+    "context": "Steward ruling, this session. Martyrs are Isolde of the Lower Hall and Yorick the Copyist, not the Black Forest markswoman. Index already has Hildebrand carrying her screams in his ribs.",
+    "confidence": "high"
+  },
+  {
+    "from": "conrad",
+    "to": "margarethe",
+    "mechanism": "His maneuver was direct, a lane switch. Hers is the first diversion: an elsewhere, then a return.",
+    "sign": "+",
+    "lag": "from the Conrad lane into 1271",
+    "context": "Two kinds of recurrence. The folio was right to call his direct. It should not use the same bare word for hers.",
+    "confidence": "high"
+  },
+  {
+    "from": "margarethe",
+    "to": "velma",
+    "mechanism": "Eyes recur; a parallel order (Secret Hem) restitches the Seam in Venice",
+    "sign": "+",
+    "lag": "1333 to 1522",
+    "context": "Soul-line evidence already locked in kind, if not in this pairing's proof.",
+    "confidence": "med"
+  },
+  {
+    "from": "lysander",
+    "to": "lattice-future",
+    "mechanism": "Handwriting said to match the Professor's — a late node recognized in an early hand",
+    "sign": "+",
+    "lag": "1611 read from the 20th century",
+    "context": "Retrocausal recognition. Same family of claim as the cavern, softer evidence.",
+    "confidence": "low"
+  },
+  {
+    "from": "yssenda",
+    "to": "hildebrands-ring",
+    "mechanism": "Ring glows when truth is spoken onstage; she bankrolls revolutions disguised as opera",
+    "sign": "+",
+    "lag": "unstated era",
+    "context": "Artifact entry agrees she carried it. Shakespeare authorship is a separate, weaker sentence in the same bio.",
+    "confidence": "high"
+  },
+  {
+    "from": "adelram",
+    "to": "later-undated",
+    "mechanism": "Swan as dimensional messenger prefigures Lisette's swan lake, which this folio does not contain",
+    "sign": "+",
+    "lag": "centuries, thematic",
+    "context": "Folio already names Lisette as thematic successor. Lisette lives in the second folio.",
+    "confidence": "low"
+  }
+]

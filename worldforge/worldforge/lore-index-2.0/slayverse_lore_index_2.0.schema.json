@@ -1,0 +1,1262 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://slayverse.local/schemas/lore-index-2.1.schema.json",
+  "title": "Slayverse Lore Index 2.1 (Governed Seam Schema)",
+  "description": "Repository-synchronized entity-statement-provenance model for the Slayverse. It preserves Book One governance, sealed-layer behavior, explicit record namespaces, PROV-style provenance, EDTF time, first-class events, and repository-aware validation.",
+  "type": "object",
+  "required": [
+    "version",
+    "title",
+    "generated",
+    "schema",
+    "namespaces",
+    "governance",
+    "repository_sync",
+    "agents",
+    "sources",
+    "activities",
+    "entities",
+    "events",
+    "relationships",
+    "lineages",
+    "documents",
+    "timeline",
+    "open_for_the_steward",
+    "validation",
+    "changelog"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "title": {
+      "type": "string"
+    },
+    "codename": {
+      "type": "string"
+    },
+    "generated": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "supersedes": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string"
+        },
+        "file": {
+          "type": "string"
+        },
+        "generated": {
+          "type": "string"
+        },
+        "migration": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "schema": {
+      "type": "object",
+      "required": [
+        "name",
+        "vocabularies"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "design_sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/DesignSource"
+          }
+        },
+        "vocabularies": {
+          "type": "object"
+        },
+        "validation": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "namespaces": {
+      "$ref": "#/$defs/NamespaceContract"
+    },
+    "governance": {
+      "$ref": "#/$defs/GovernanceContract"
+    },
+    "repository_sync": {
+      "$ref": "#/$defs/RepositorySync"
+    },
+    "agents": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/Agent"
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/Source"
+      }
+    },
+    "activities": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/Activity"
+      }
+    },
+    "entities": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/Entity"
+      }
+    },
+    "events": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/Event"
+      }
+    },
+    "relationships": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/Relationship"
+      }
+    },
+    "lineages": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/Lineage"
+      }
+    },
+    "documents": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/Document"
+      }
+    },
+    "timeline": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/TimelineEntry"
+      }
+    },
+    "changelog": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/ChangelogEntry"
+      }
+    },
+    "open_for_the_steward": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/OpenQuestion"
+      }
+    },
+    "validation": {
+      "$ref": "#/$defs/Validation"
+    }
+  },
+  "$defs": {
+    "Id": {
+      "type": "string",
+      "pattern": "^[a-z0-9:][a-z0-9:._-]*$"
+    },
+    "NamespaceSpec": {
+      "type": "object",
+      "required": [
+        "canonical_prefix",
+        "storage"
+      ],
+      "properties": {
+        "canonical_prefix": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]*:$"
+        },
+        "storage": {
+          "enum": [
+            "qualified",
+            "collection-local"
+          ]
+        },
+        "reference_fields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "NamespaceContract": {
+      "type": "object",
+      "required": [
+        "version",
+        "collections",
+        "legacy_aliases"
+      ],
+      "properties": {
+        "version": {
+          "type": "string"
+        },
+        "collections": {
+          "type": "object",
+          "minProperties": 9,
+          "additionalProperties": {
+            "$ref": "#/$defs/NamespaceSpec"
+          }
+        },
+        "legacy_aliases": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "BehaviorPolicy": {
+      "type": "object",
+      "required": [
+        "may_state_as_fact",
+        "may_use_for_voice",
+        "may_reveal_to_user"
+      ],
+      "properties": {
+        "may_state_as_fact": {
+          "type": "boolean"
+        },
+        "may_use_for_voice": {
+          "type": "boolean"
+        },
+        "may_reveal_to_user": {
+          "type": "boolean"
+        },
+        "allowed_surface_form": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "GovernanceContract": {
+      "type": "object",
+      "required": [
+        "controlling_doctrine",
+        "canon_authorities",
+        "training_layer_access_labels",
+        "sealed_layer_behavior",
+        "risk_annotations",
+        "review_rule"
+      ],
+      "properties": {
+        "controlling_doctrine": {
+          "const": "Book One, Chapter I"
+        },
+        "canon_authorities": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "locked_canon",
+              "development_canon",
+              "mythic_rumor",
+              "mythic_rumor_and_locked_canon"
+            ]
+          }
+        },
+        "training_layer_access_labels": {
+          "type": "array",
+          "minItems": 7,
+          "maxItems": 7,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "[PUBLIC_SURFACE]",
+              "[WRITERS_ROOM]",
+              "[VUORSE_PRIVATE]",
+              "[WEAVER_ONLY]",
+              "[APPROVED_FOR_JSONL]",
+              "[REVISE_WITH_WEAVER_NOTES]",
+              "[REJECTED]"
+            ]
+          }
+        },
+        "sealed_layer_behavior": {
+          "$ref": "#/$defs/BehaviorPolicy"
+        },
+        "risk_annotations": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "reconciled_contradiction",
+              "unresolved_contradiction",
+              "exploratory_not_canon",
+              "in_world_myth",
+              "deliberate_temporal_instability",
+              "do_not_resolve"
+            ]
+          }
+        },
+        "review_rule": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "RepositorySync": {
+      "type": "object",
+      "required": [
+        "manifest",
+        "governed_roots",
+        "digest_algorithm",
+        "revision_policy",
+        "excluded_manifest_source_ids"
+      ],
+      "properties": {
+        "manifest": {
+          "type": "string"
+        },
+        "governed_roots": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "digest_algorithm": {
+          "const": "sha256"
+        },
+        "revision_policy": {
+          "enum": [
+            "validate-current-worktree",
+            "require-recorded-revision"
+          ]
+        },
+        "excluded_manifest_source_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "EntityType": {
+      "enum": [
+        "character",
+        "place",
+        "organization",
+        "artifact",
+        "document",
+        "ritual",
+        "cosmology",
+        "phenomenon",
+        "persona",
+        "doctrine",
+        "work"
+      ]
+    },
+    "Status": {
+      "enum": [
+        "full",
+        "moderate",
+        "sketched",
+        "hook"
+      ],
+      "description": "Development depth (kept from 1.2)."
+    },
+    "Seal": {
+      "enum": [
+        "sealed",
+        "candidate",
+        "proposed",
+        "deprecated"
+      ],
+      "description": "Canon lock state. Only the Steward Vessel seals."
+    },
+    "CanonTier": {
+      "enum": [
+        "primary-pdf",
+        "creator-supplement",
+        "oral-canon",
+        "meta-canon",
+        "session-archive",
+        "production-record",
+        "gray-eye"
+      ],
+      "description": "Source class of the record."
+    },
+    "Epistemic": {
+      "enum": [
+        "canon",
+        "declared",
+        "inference",
+        "assumption",
+        "simulation",
+        "counterfactual",
+        "record"
+      ],
+      "description": "Gray Eye label. canon: established in lore. declared: stated by the Steward Vessel, not yet integrated. inference: reasonable reading of canon. assumption: declared premise for a run. simulation: generated outcome. counterfactual: known not to belong to the timeline. record: real-world documentary fact."
+    },
+    "Rank": {
+      "enum": [
+        "preferred",
+        "normal",
+        "deprecated"
+      ],
+      "description": "Wikidata-style rank among statements of one property."
+    },
+    "TimeMode": {
+      "enum": [
+        "instant",
+        "span",
+        "approximate",
+        "relative",
+        "displaced",
+        "timeless",
+        "present",
+        "meta",
+        "fundamental",
+        "multi",
+        "deep-past",
+        "seam",
+        "unknown"
+      ]
+    },
+    "TemporalRelation": {
+      "enum": [
+        "before",
+        "after",
+        "meets",
+        "met-by",
+        "overlaps",
+        "overlapped-by",
+        "starts",
+        "started-by",
+        "during",
+        "contains",
+        "finishes",
+        "finished-by",
+        "equals",
+        "retrocausal",
+        "bookend",
+        "seam-coincident",
+        "timeless-enacts"
+      ],
+      "description": "Allen's 13 interval relations plus four Slayverse extensions for non-linear time."
+    },
+    "Names": {
+      "type": "object",
+      "required": [
+        "preferred"
+      ],
+      "properties": {
+        "preferred": {
+          "type": "string"
+        },
+        "alternates": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "hidden": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "deprecated": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "value",
+              "reason"
+            ],
+            "properties": {
+              "value": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              },
+              "provenance": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/ProvRef"
+                }
+              }
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "Time": {
+      "type": "object",
+      "required": [
+        "mode",
+        "display"
+      ],
+      "properties": {
+        "mode": {
+          "$ref": "#/$defs/TimeMode"
+        },
+        "edtf": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Library of Congress Extended Date/Time Format: ~ approximate, ? uncertain, X unspecified digit, / interval, .. open end."
+        },
+        "display": {
+          "type": "string"
+        },
+        "relative_to": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "relation": {
+          "type": "string"
+        },
+        "qualifiers": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ProvRef": {
+      "type": "object",
+      "minProperties": 1,
+      "properties": {
+        "source": {
+          "$ref": "#/$defs/Id"
+        },
+        "pages": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "section": {
+          "type": "string"
+        },
+        "activity": {
+          "$ref": "#/$defs/Id"
+        },
+        "agent": {
+          "$ref": "#/$defs/Id"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Statement": {
+      "type": "object",
+      "required": [
+        "id",
+        "property",
+        "value",
+        "rank",
+        "epistemic",
+        "provenance"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "property": {
+          "type": "string"
+        },
+        "value": {},
+        "rank": {
+          "$ref": "#/$defs/Rank"
+        },
+        "epistemic": {
+          "$ref": "#/$defs/Epistemic"
+        },
+        "qualifiers": {
+          "type": "object"
+        },
+        "provenance": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/ProvRef"
+          }
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Entity": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "names",
+        "status",
+        "seal",
+        "canon_tier",
+        "time",
+        "summary",
+        "provenance",
+        "statements"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Id"
+        },
+        "type": {
+          "$ref": "#/$defs/EntityType"
+        },
+        "names": {
+          "$ref": "#/$defs/Names"
+        },
+        "status": {
+          "$ref": "#/$defs/Status"
+        },
+        "seal": {
+          "$ref": "#/$defs/Seal"
+        },
+        "canon_tier": {
+          "$ref": "#/$defs/CanonTier"
+        },
+        "time": {
+          "$ref": "#/$defs/Time"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "related": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "provenance": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/ProvRef"
+          }
+        },
+        "statements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Statement"
+          }
+        },
+        "legacy_type": {
+          "type": "string"
+        },
+        "details": {
+          "type": "object"
+        },
+        "migrated_from": {
+          "type": "object"
+        },
+        "source_note": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Participant": {
+      "type": "object",
+      "required": [
+        "entity",
+        "role"
+      ],
+      "properties": {
+        "entity": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "TemporalLink": {
+      "type": "object",
+      "required": [
+        "relation",
+        "to"
+      ],
+      "properties": {
+        "relation": {
+          "$ref": "#/$defs/TemporalRelation"
+        },
+        "to": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Event": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "names",
+        "time",
+        "participants",
+        "seal",
+        "canon_tier",
+        "epistemic",
+        "provenance"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Id"
+        },
+        "type": {
+          "type": "string"
+        },
+        "names": {
+          "$ref": "#/$defs/Names"
+        },
+        "time": {
+          "$ref": "#/$defs/Time"
+        },
+        "place": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "participants": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Participant"
+          }
+        },
+        "summary": {
+          "type": "string",
+          "description": "Optional. Omitted when it would only repeat names.preferred."
+        },
+        "seal": {
+          "$ref": "#/$defs/Seal"
+        },
+        "canon_tier": {
+          "$ref": "#/$defs/CanonTier"
+        },
+        "epistemic": {
+          "$ref": "#/$defs/Epistemic"
+        },
+        "provenance": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/ProvRef"
+          }
+        },
+        "statements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Statement"
+          }
+        },
+        "temporal_relations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/TemporalLink"
+          }
+        },
+        "migrated_from": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Relationship": {
+      "type": "object",
+      "required": [
+        "id",
+        "from",
+        "to",
+        "type",
+        "rank",
+        "epistemic",
+        "seal",
+        "provenance"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "from": {
+          "type": "string"
+        },
+        "to": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "rank": {
+          "$ref": "#/$defs/Rank"
+        },
+        "epistemic": {
+          "$ref": "#/$defs/Epistemic"
+        },
+        "seal": {
+          "$ref": "#/$defs/Seal"
+        },
+        "qualifiers": {
+          "type": "object"
+        },
+        "provenance": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/ProvRef"
+          }
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Agent": {
+      "type": "object",
+      "required": [
+        "id",
+        "prov_type",
+        "name",
+        "role"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Id"
+        },
+        "prov_type": {
+          "enum": [
+            "Person",
+            "Organization",
+            "SoftwareAgent",
+            "slay:Protocol",
+            "unknown"
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "acted_on_behalf_of": {
+          "type": "string"
+        },
+        "entity": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Source": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "title"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Id"
+        },
+        "type": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "repository_path": {
+          "type": "string",
+          "pattern": "^(?![A-Za-z]:)(?!/)(?!.*\\\\).+$"
+        },
+        "manifest_source_id": {
+          "type": "string"
+        },
+        "availability": {
+          "enum": [
+            "repository",
+            "external",
+            "unavailable"
+          ]
+        },
+        "url": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        },
+        "pages": {
+          "type": "integer"
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Activity": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "agents"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Id"
+        },
+        "type": {
+          "type": "string"
+        },
+        "started": {
+          "type": "string"
+        },
+        "ended": {
+          "type": "string"
+        },
+        "agents": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "used": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "generated": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "summary": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "TimelineEntry": {
+      "type": "object",
+      "required": [
+        "event",
+        "sort_key",
+        "display"
+      ],
+      "properties": {
+        "event": {
+          "type": "string"
+        },
+        "sort_key": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "display": {
+          "type": "string"
+        },
+        "mode": {
+          "$ref": "#/$defs/TimeMode"
+        },
+        "label": {
+          "type": "string"
+        },
+        "epistemic": {
+          "$ref": "#/$defs/Epistemic"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DesignSource": {
+      "type": "object",
+      "required": [
+        "standard",
+        "url",
+        "borrowed"
+      ],
+      "properties": {
+        "standard": {
+          "type": "string"
+        },
+        "steward": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "borrowed": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ChangelogEntry": {
+      "type": "object",
+      "required": [
+        "version",
+        "date",
+        "changes"
+      ],
+      "properties": {
+        "version": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        },
+        "codename": {
+          "type": "string"
+        },
+        "changes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "counts": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Lineage": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "type",
+        "status",
+        "description",
+        "members",
+        "seal",
+        "canon_tier",
+        "provenance"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Id"
+        },
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/$defs/Status"
+        },
+        "description": {
+          "type": "string"
+        },
+        "members": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "notes": {
+          "type": "string"
+        },
+        "seal": {
+          "$ref": "#/$defs/Seal"
+        },
+        "canon_tier": {
+          "$ref": "#/$defs/CanonTier"
+        },
+        "provenance": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/ProvRef"
+          }
+        }
+      }
+    },
+    "Document": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "seal",
+        "canon_tier",
+        "provenance"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/Id"
+        },
+        "document_type": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "entity_ref": {
+          "type": "string"
+        },
+        "governs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "preserved_by": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "archived_with": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "signatories": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "source_note": {
+          "type": "string"
+        },
+        "seal": {
+          "$ref": "#/$defs/Seal"
+        },
+        "canon_tier": {
+          "$ref": "#/$defs/CanonTier"
+        },
+        "provenance": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/ProvRef"
+          }
+        }
+      }
+    },
+    "OpenQuestion": {
+      "type": "object",
+      "required": [
+        "id",
+        "about",
+        "question",
+        "epistemic"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "about": {
+          "type": "string"
+        },
+        "question": {
+          "type": "string"
+        },
+        "epistemic": {
+          "$ref": "#/$defs/Epistemic"
+        }
+      }
+    },
+    "Validation": {
+      "type": "object",
+      "required": [
+        "validator",
+        "date",
+        "status",
+        "valid",
+        "errors"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "validator": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "pending",
+            "passed",
+            "failed"
+          ]
+        },
+        "valid": {
+          "type": "boolean"
+        },
+        "errors": {
+          "type": "integer"
+        },
+        "checks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -17,6 +17,7 @@
         "conrad-von-hooplehopper",
         "first-steward-transmission",
         "hildebrands-ring",
+        "the-thumper",
         "margarethe-von-hooplehopper",
         "mirror-cavern",
         "order-of-the-seam",
@@ -46,6 +47,7 @@
       "status": "sketched",
       "related": [
         "hildebrand-von-hooplehopper",
+        "the-thumper",
         "velvet-archive"
       ],
       "tags": [
@@ -57,7 +59,7 @@
         43,
         45
       ],
-      "summary": "Purveyor of luxury textiles. Commercialized Hildebrand's legacy and embedded secrets into stitching."
+      "summary": "Purveyor of luxury textiles. Direct recurrence of Hildebrand: a lane switch under a nom de plume, not a second soul. Holds audience inside The Thumper."
     },
     {
       "id": "adelram-von-hooplehopper",
@@ -1038,6 +1040,34 @@
         56
       ],
       "summary": "A ring that glowed when truth was spoken onstage. Passed to Yssenda."
+    },
+    {
+      "id": "the-thumper",
+      "name": "The Thumper",
+      "aliases": [
+        "The Portable Mechanized Wardrobe"
+      ],
+      "type": "artifact",
+      "era": "post-1147",
+      "status": "moderate",
+      "related": [
+        "hildebrand-von-hooplehopper",
+        "conrad-von-hooplehopper",
+        "isolde-of-the-lower-hall",
+        "yorick-the-copyist",
+        "the-myrtle-burnings"
+      ],
+      "tags": [
+        "wardrobe",
+        "disguise",
+        "trauma",
+        "myrtle-burnings"
+      ],
+      "source_pages": [
+        43,
+        45
+      ],
+      "summary": "Five-hundred-pound mechanized wardrobe. Conrad holds audience inside it. Physical body of the trauma of Isolde of the Lower Hall and Yorick the Copyist. Hildebrand never forgot them."
     },
     {
       "id": "glamorons",
