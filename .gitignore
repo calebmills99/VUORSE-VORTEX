@@ -21,6 +21,7 @@ Desktop.ini
 .DS_Store
 
 # Editor
+.cursor/
 .vscode/
 *.swp
 *.swo
@@ -35,5 +36,14 @@ Desktop.ini
 !.agent-quarantine/README.md
 
 .venv/
+.venv-*/
 _to_delete/
 .pytest_cache/
+__pycache__/
+*.py[cod]
+node_modules/
+web/node_modules/
+web/dist/
+*.bak
+.frolic-backup-*.json
+.frolic-session.json

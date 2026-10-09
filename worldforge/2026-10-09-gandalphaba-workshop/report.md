@@ -56,9 +56,8 @@ handoffs.
 - The current lore-index path is named `lore-index-2.0`, while the JSON file
   declares version `2.1.1` and the schema title declares Slayverse Lore Index
   2.1.
-- The earlier 2026-10-09 full inventory report identified three canon files not
+- The earlier 2026-10-09 full inventory report identified two canon files not
   covered by the source manifest and not cited by the Seam Index:
-  `canon/1_words_of_weaver_book_one/Jenna Maroney.md`,
   `canon/characters/characters_first_folio.md`, and
   `canon/characters/characters_second_folio.md`. This pass observed current
   manifest entries for the First Folio and Second Folio; it did not perform a

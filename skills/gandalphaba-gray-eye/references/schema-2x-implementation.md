@@ -111,8 +111,6 @@ Known inventory pressure points from the 2026-10-09 full inventory:
   in the source manifest.
 - `canon/characters/characters_second_folio.md` is a canon file not represented
   in the source manifest.
-- `canon/1_words_of_weaver_book_one/Jenna Maroney.md` is a canon file not
-  represented in the source manifest.
 - The Seam Index has repository-path coverage for its repository sources but
   also contains non-file sources such as `src:gray-eye` and external standards.
 

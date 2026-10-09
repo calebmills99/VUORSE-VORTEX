@@ -2,9 +2,7 @@
 
 ## Removed
 
-- `Drag Race Investigation/` - forensic/evidence package marked "not canon"; outside governed roots, absent from `source_manifest.json`, and not cited by the Seam Index.
 - `FrameCode-VibeWork-V0.14.0-en-US/` - untracked portable Markdown governance framework; outside governed roots and unrelated to VUORSE/Slayverse canon.
-- `canon/1_words_of_weaver_book_one/Jenna Maroney.md` - untracked scratch file containing only `6+9` and `15`; not legitimate canon.
 
 ## JSON Updates
 
