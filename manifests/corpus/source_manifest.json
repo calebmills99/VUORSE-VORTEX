@@ -12,7 +12,7 @@
   ],
   "includes_pdf": false,
   "includes_finale": false,
-  "source_count": 54,
+  "source_count": 49,
   "sealed_source_count": 16,
   "sources": [
     {
@@ -21,7 +21,7 @@
       "title": "Words of Weaver BOOK ONE",
       "layer": "canon",
       "visibility": "public",
-      "canon_status": "locked",
+      "canon_status": "draft",
       "source_type": "markdown",
       "notes": "Self-declared 'Locked Canon' in frontmatter; corroborated by entity_index.json."
     },
@@ -31,7 +31,7 @@
       "title": "Words of Weaver BOOK TWO",
       "layer": "canon",
       "visibility": "public",
-      "canon_status": "locked",
+      "canon_status": "draft",
       "source_type": "markdown",
       "notes": "Self-declared 'Locked Canon' in frontmatter; corroborated by entity_index.json."
     },
@@ -41,7 +41,7 @@
       "title": "artifacts",
       "layer": "canon",
       "visibility": "public",
-      "canon_status": "locked",
+      "canon_status": "draft",
       "source_type": "markdown",
       "notes": ""
     },
@@ -51,9 +51,29 @@
       "title": "characters",
       "layer": "canon",
       "visibility": "public",
-      "canon_status": "locked",
+      "canon_status": "draft",
       "source_type": "markdown",
       "notes": ""
+    },
+    {
+      "id": "canon-characters-characters-first-folio",
+      "path": "canon/characters/characters_first_folio.md",
+      "title": "characters first folio",
+      "layer": "canon",
+      "visibility": "public",
+      "canon_status": "draft",
+      "source_type": "markdown",
+      "notes": "Character roster folio partition. Complements canon/characters/characters.md."
+    },
+    {
+      "id": "canon-characters-characters-second-folio",
+      "path": "canon/characters/characters_second_folio.md",
+      "title": "characters second folio",
+      "layer": "canon",
+      "visibility": "public",
+      "canon_status": "draft",
+      "source_type": "markdown",
+      "notes": "Character roster folio partition. Complements canon/characters/characters.md."
     },
     {
       "id": "canon-cosmology-cosmology",
@@ -61,7 +81,7 @@
       "title": "cosmology",
       "layer": "canon",
       "visibility": "public",
-      "canon_status": "locked",
+      "canon_status": "draft",
       "source_type": "markdown",
       "notes": ""
     },
@@ -91,7 +111,7 @@
       "title": "golden wingers league charter",
       "layer": "canon",
       "visibility": "public",
-      "canon_status": "locked",
+      "canon_status": "draft",
       "source_type": "markdown",
       "notes": "Constitutional document. The Golden Wingers Intergalactic League Charter, v1.0, authored and ratified by Caleb Mills Stewart. This file is the published web edition, retrieved from https://www.golden-wings-robyn.com/league-charter, and retains page furniture from that capture. The structured record of the same charter is golden_wings_intergaltactic_league_charter.json. Cited as source by canon/organizations/organizations.md and canon/creative_works/creative_works.md (both under the stale path 'data/golden_wingers_charter.md')."
     },
@@ -101,7 +121,7 @@
       "title": "organizations",
       "layer": "canon",
       "visibility": "public",
-      "canon_status": "locked",
+      "canon_status": "draft",
       "source_type": "markdown",
       "notes": ""
     },
@@ -111,7 +131,7 @@
       "title": "places",
       "layer": "canon",
       "visibility": "public",
-      "canon_status": "locked",
+      "canon_status": "draft",
       "source_type": "markdown",
       "notes": ""
     },
@@ -131,7 +151,7 @@
       "title": "relationship map",
       "layer": "canon",
       "visibility": "public",
-      "canon_status": "locked",
+      "canon_status": "draft",
       "source_type": "markdown",
       "notes": ""
     },
@@ -141,7 +161,7 @@
       "title": "rituals",
       "layer": "canon",
       "visibility": "public",
-      "canon_status": "locked",
+      "canon_status": "draft",
       "source_type": "markdown",
       "notes": ""
     },
@@ -181,7 +201,7 @@
       "title": "story arcs",
       "layer": "canon",
       "visibility": "public",
-      "canon_status": "locked",
+      "canon_status": "draft",
       "source_type": "markdown",
       "notes": ""
     },
@@ -191,7 +211,7 @@
       "title": "SLAYVERSE TV SERIES BIBLE",
       "layer": "canon",
       "visibility": "public",
-      "canon_status": "locked",
+      "canon_status": "draft",
       "source_type": "markdown",
       "notes": ""
     },
@@ -201,7 +221,7 @@
       "title": "timeline",
       "layer": "canon",
       "visibility": "public",
-      "canon_status": "locked",
+      "canon_status": "draft",
       "source_type": "markdown",
       "notes": ""
     },
@@ -221,7 +241,7 @@
       "title": "the parchment of persistence scene",
       "layer": "canon",
       "visibility": "public",
-      "canon_status": "locked",
+      "canon_status": "draft",
       "source_type": "markdown",
       "notes": "Self-declared 'Locked Canon' in frontmatter; corroborated by entity_index.json."
     },
@@ -484,76 +504,6 @@
       "canon_status": "roadmap_private",
       "source_type": "markdown",
       "notes": ""
-    },
-    {
-      "id": "canon-characters-sassafras-a-mcgraw-ultimate-origin",
-      "path": "canon/characters/sassafras_a_mcgraw_ultimate_origin.json",
-      "title": "sassafras a mcgraw ultimate origin",
-      "layer": "canon",
-      "visibility": "public",
-      "canon_status": "draft",
-      "source_type": "json",
-      "notes": "Promoted from the Slayverse working archive (Slayverse/json/sassafras_a_mcgraw_ultimate_origin.json) on 2026-09-05. Unique lore with no canon/ counterpart at time of promotion. Draft pending line-by-line review; see Slayverse/ARCHIVE.md."
-    },
-    {
-      "id": "canon-creative-works-sassafrass-a-mcgraw-texas-hopper-tall-tale",
-      "path": "canon/creative_works/sassafrass_a_mcgraw_texas_hopper_tall_tale.json",
-      "title": "sassafrass a mcgraw texas hopper tall tale",
-      "layer": "canon",
-      "visibility": "public",
-      "canon_status": "draft",
-      "source_type": "json",
-      "notes": "Promoted from the Slayverse working archive (Slayverse/json/sassafrass_a_mcgraw_texas_hopper_tall_tale.json) on 2026-09-05. Unique lore with no canon/ counterpart at time of promotion. Draft pending line-by-line review; see Slayverse/ARCHIVE.md."
-    },
-    {
-      "id": "canon-organizations-golden-wings-intergaltactic-league-charter",
-      "path": "canon/organizations/golden_wings_intergaltactic_league_charter.json",
-      "title": "golden wings intergaltactic league charter",
-      "layer": "canon",
-      "visibility": "public",
-      "canon_status": "locked",
-      "source_type": "json",
-      "notes": "Constitutional document, structured record. Declares entity id 'golden-wingers-charter', status 'full', ratified across all dimensions, timelines and galaxies; signatories Caleb the Keeper, Robyn of the Gold Wings, and Jock the Wise, Keeper of the 747 Scrolls. Supersedes the web capture in scope: carries initiation rites, notable proclamations, closing invocations and signatories that the capture omits. Resolves the dangling 'golden-wingers -> golden-wingers-charter' reference in relationship_index.json once the corpus is reindexed. Promoted from Slayverse/json/ on 2026-09-05."
-    },
-    {
-      "id": "canon-cosmology-slayton-particle-discovery",
-      "path": "canon/cosmology/slayton_particle_discovery.md",
-      "title": "slayton particle discovery",
-      "layer": "canon",
-      "visibility": "public",
-      "canon_status": "draft",
-      "source_type": "markdown",
-      "notes": "Promoted from the Slayverse working archive (Slayverse/md/slayton_particle_discovery.md) on 2026-09-05. Unique lore with no canon/ counterpart at time of promotion. Draft pending line-by-line review; see Slayverse/ARCHIVE.md."
-    },
-    {
-      "id": "canon-cosmology-theory-of-everything-confirmed",
-      "path": "canon/cosmology/Theory_of_Everything_Confirmed_.md",
-      "title": "Theory of Everything Confirmed",
-      "layer": "canon",
-      "visibility": "public",
-      "canon_status": "draft",
-      "source_type": "markdown",
-      "notes": "Promoted from the Slayverse working archive (Slayverse/md/Theory_of_Everything_Confirmed_.md) on 2026-09-05. Unique lore with no canon/ counterpart at time of promotion. Draft pending line-by-line review; see Slayverse/ARCHIVE.md."
-    },
-    {
-      "id": "canon-session-archives-slayverse-session-archive-first-steward-transmission",
-      "path": "canon/session_archives/slayverse_session_archive_first_steward_transmission.md",
-      "title": "slayverse session archive first steward transmission",
-      "layer": "canon",
-      "visibility": "public",
-      "canon_status": "draft",
-      "source_type": "markdown",
-      "notes": "Promoted from the Slayverse working archive (Slayverse/md/slayverse_session_archive_first_steward_transmission.md) on 2026-09-05. Unique lore with no canon/ counterpart at time of promotion. Draft pending line-by-line review; see Slayverse/ARCHIVE.md."
-    },
-    {
-      "id": "canon-open-threads-continutity-audit",
-      "path": "canon/open_threads/Continutity_Audit.md",
-      "title": "Continutity Audit",
-      "layer": "canon",
-      "visibility": "public",
-      "canon_status": "draft",
-      "source_type": "markdown",
-      "notes": "Promoted from the Slayverse working archive (Slayverse/json/jsonl/Continutity_Audit.md) on 2026-09-05. Unique lore with no canon/ counterpart at time of promotion. Draft pending line-by-line review; see Slayverse/ARCHIVE.md."
     }
   ],
   "notes": [

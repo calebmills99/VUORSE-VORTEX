@@ -1,4 +1,3 @@
-
 ### Lisette von Hooplehopper `[FULL]`
 - **Aliases**: The Swan in Satin, The Matriarch of Mirrors, The Mother of Masks, The Last Flame of Federstahl
 - **Era**: 1873–1948

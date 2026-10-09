@@ -91,6 +91,13 @@ _CORTEX_DB_OPTION = typer.Option(DEFAULT_CORTEX_DB, "--db", help="Satellite SQLi
 _CORTEX_BASE_OPTION = typer.Option(Path("."), "--base", help="VUORSE-VORTEX repository root.")
 _CORTEX_TOP_K_OPTION = typer.Option(10, "--top-k", "-k", min=1, max=50)
 _CORTEX_LAYER_OPTION = typer.Option(None, "--layer", help="Optional non-sealed layer filter.")
+_DEFAULT_LORE_INDEX = Path(
+    "worldforge/worldforge/lore-index-2.0/slayverse_lore_index_2.0.json"
+)
+_DEFAULT_LORE_SCHEMA = Path(
+    "worldforge/worldforge/lore-index-2.0/slayverse_lore_index_2.0.schema.json"
+)
+_DEFAULT_SOURCE_MANIFEST = Path("manifests/corpus/source_manifest.json")
 
 
 @cortex_app.command("build")
@@ -151,6 +158,29 @@ def validate_jsonl_command(path: Path) -> None:
             console.print(f"[red]{error}[/red]")
         raise typer.Exit(code=1)
     console.print(f"[green]Valid JSONL:[/green] {path}")
+
+
+@app.command("validate-lore-index")
+def validate_lore_index_command(
+    index_path: Path = typer.Argument(_DEFAULT_LORE_INDEX),
+    schema_path: Path = typer.Option(_DEFAULT_LORE_SCHEMA, "--schema"),
+    manifest_path: Path = typer.Option(_DEFAULT_SOURCE_MANIFEST, "--manifest"),
+    repo_root: Path = typer.Option(Path("."), "--repo-root"),
+) -> None:
+    """Validate the Seam Index against schema, governance, and repository state."""
+    from vuorse_vortex.lore_index import validate_lore_index
+
+    errors = validate_lore_index(
+        index_path,
+        schema_path,
+        manifest_path,
+        repo_root=repo_root,
+    )
+    if errors:
+        for error in errors:
+            console.print(f"[red]{error}[/red]")
+        raise typer.Exit(code=1)
+    console.print(f"[green]Valid repository-synchronized lore index:[/green] {index_path}")
 
 
 @app.command("import-debrief")

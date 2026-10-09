@@ -1,0 +1,698 @@
+# Full inventory report - 2026-10-09 (`muse-spark-1.3-high`)
+
+Source data: `inventory.jsonl` in this directory. Scope: `.json/.jsonl/.md/.txt` (case-insensitive). `.agent-quarantine/` pruned and not inspected.
+
+## Totals
+
+Files: 785 | Total bytes: 63214280 | Total lines: 179298
+
+By ext:
+- .json: 154
+- .jsonl: 46
+- .md: 473
+- .txt: 112
+
+By zone:
+- canon: 24
+- worldforge: 78
+- manifests: 4
+- docs: 16
+- policies: 4
+- skills: 9
+- scripts: 1
+- tests: 0
+- vuorse_vortex: 0
+- Slayverse: 84
+- web: 7
+- comfyui-expert: 71
+- root: 10
+- other: 477
+
+By git_status:
+- tracked: 540
+- untracked: 231
+- ignored: 14
+- submodule: 0
+
+## Twenty largest files (path, bytes, lines)
+
+- Drag Race Investigation/evidence/github/local-repo-corpus-hits.json | 14147708 bytes | 16025 lines
+- canon/projects/projects.json | 6206350 bytes | 1 lines
+- Drag Race Investigation/evidence/conversation/codex-session-rollout.redacted.jsonl | 5972987 bytes | 2077 lines
+- synthetic_enrichment/generated/canon_corpus_semantic_sift_v2.jsonl | 5279660 bytes | 2251 lines
+- synthetic_enrichment/generated/canon_corpus_semantic_sift.jsonl | 5180475 bytes | 2251 lines
+- synthetic_enrichment/generated/canon_corpus_raw.jsonl | 4624590 bytes | 2251 lines
+- Slayverse/json/jsonl/slayverse_md_batch_messages_fixedgguf.json | 4081324 bytes | 1762 lines
+- Slayverse/json/jsonl/slayverse_md_records_clean.jsonl | 2826203 bytes | 1762 lines
+- canon/slayverse_md_records_clean/slayverse_md_records_clean.jsonl | 2826203 bytes | 1762 lines
+- Drag Race Investigation/evidence/source-files/TheCharter.md | 626141 bytes | 17423 lines
+- synthetic_enrichment/generated/canon_corpus_raw_audit.md | 595887 bytes | 2151 lines
+- synthetic_enrichment/generated/canon_corpus_entity_sift_scripted.jsonl | 586035 bytes | 486 lines
+- synthetic_enrichment/generated/vuorse_secret_training_knowledge_candidates.jsonl | 545453 bytes | 262 lines
+- synthetic_enrichment/batches/batch_002a_hh_discovery_augment/training_examples.jsonl | 543714 bytes | 272 lines
+- synthetic_enrichment/generated/vuorse_sft_batch_001_002_plus_hh_discovery_draft.jsonl | 543714 bytes | 272 lines
+- synthetic_enrichment/batches/batch_001_vuorse_synthesis/training_examples.jsonl | 527284 bytes | 262 lines
+- synthetic_enrichment/generated/vuorse_sft_batch_001_002_combined_draft.jsonl | 527284 bytes | 262 lines
+- synthetic_enrichment/generated/vuorse_sft_training_examples_style_approved.jsonl | 527284 bytes | 262 lines
+- synthetic_enrichment/generated/vuorse_sft_training_examples_draft.jsonl | 467024 bytes | 262 lines
+- worldforge/worldforge/lore-index-2.0/slayverse_lore_index_2.0.json | 315376 bytes | 10542 lines
+
+## Duplicate content (non-empty files sharing sha256)
+
+- sha256 0fc78a60e322a8e2.. (4 files):
+  - comfyui-expert/references/workflows.md
+  - comfyui-expert/skills/comfyui-character-gen/references/workflows.md
+  - comfyui-expert/skills/comfyui-video-production/references/workflows.md
+  - comfyui-expert/skills/comfyui-workflow-builder/references/workflows.md
+- sha256 0a483948e25a0056.. (3 files):
+  - comfyui-expert/references/models.md
+  - comfyui-expert/skills/comfyui-character-gen/references/models.md
+  - comfyui-expert/skills/comfyui-workflow-builder/references/models.md
+- sha256 5d78a362313202df.. (3 files):
+  - synthetic_enrichment/batches/batch_001_vuorse_synthesis/training_examples.jsonl
+  - synthetic_enrichment/generated/vuorse_sft_batch_001_002_combined_draft.jsonl
+  - synthetic_enrichment/generated/vuorse_sft_training_examples_style_approved.jsonl
+- sha256 aec2c6c26bfc2d23.. (2 files):
+  - .claude/agents/ritual-and-tone-editor.md
+  - Drag Race Investigation/evidence/github/repo-files/.claude__agents__ritual-and-tone-editor.md
+- sha256 835fc830012be7ad.. (2 files):
+  - Slayverse/assets/lora_training/sassy_frames/clip04/clip04_001 - Copy.txt
+  - Slayverse/assets/lora_training/sassy_frames/clip04/clip04_001.txt
+- sha256 19b983a57e263757.. (2 files):
+  - Slayverse/json/golden_wings_intergaltactic_league_charter.json
+  - _to_delete/claude-promoted/golden_wings_intergaltactic_league_charter.json
+- sha256 e3946af5e5a1a382.. (2 files):
+  - Slayverse/json/jsonl/Continutity_Audit.md
+  - _to_delete/claude-promoted/Continutity_Audit.md
+- sha256 bcf28ef1f75757d8.. (2 files):
+  - Slayverse/json/jsonl/slayverse_md_records_clean.jsonl
+  - canon/slayverse_md_records_clean/slayverse_md_records_clean.jsonl
+- sha256 9ef1582ca199f81a.. (2 files):
+  - Slayverse/json/sassafras_a_mcgraw_ultimate_origin.json
+  - _to_delete/claude-promoted/sassafras_a_mcgraw_ultimate_origin.json
+- sha256 e9a3119e52b4c64b.. (2 files):
+  - Slayverse/json/sassafrass_a_mcgraw_texas_hopper_tall_tale.json
+  - _to_delete/claude-promoted/sassafrass_a_mcgraw_texas_hopper_tall_tale.json
+- sha256 b914d955a51f8921.. (2 files):
+  - Slayverse/json/slayverse_index.json
+  - Slayverse/json/slayverse_index_orginal.json
+- sha256 4d780e5f0617a815.. (2 files):
+  - Slayverse/md/Theory_of_Everything_Confirmed_.md
+  - _to_delete/claude-promoted/Theory_of_Everything_Confirmed_.md
+- sha256 cbb8bcf939f17e79.. (2 files):
+  - Slayverse/md/slayton_particle_discovery.md
+  - _to_delete/claude-promoted/slayton_particle_discovery.md
+- sha256 dfbf5514069434bb.. (2 files):
+  - Slayverse/md/slayverse_session_archive_first_steward_transmission.md
+  - _to_delete/claude-promoted/slayverse_session_archive_first_steward_transmission.md
+- sha256 44afd78438ae3516.. (2 files):
+  - Slayverse/skills/gandalf_grey_eye/references/artifacts.md
+  - skills/gandalf-the-gray-eye/references/artifacts.md
+- sha256 98f274a2fdc8eb02.. (2 files):
+  - Slayverse/skills/gandalf_grey_eye/references/human-nodes.md
+  - skills/gandalf-the-gray-eye/references/human-nodes.md
+- sha256 3bbb750c1c786ac0.. (2 files):
+  - Slayverse/skills/gandalf_grey_eye/references/labels.md
+  - skills/gandalf-the-gray-eye/references/labels.md
+- sha256 a71ffd29aea0747d.. (2 files):
+  - Slayverse/skills/gandalf_grey_eye/references/report-template.md
+  - skills/gandalf-the-gray-eye/references/report-template.md
+- sha256 93586c5dadff9ca6.. (2 files):
+  - comfyui-expert/references/evolution.md
+  - comfyui-expert/skills/comfyui-character-gen/references/evolution.md
+- sha256 4663973c19e1b3af.. (2 files):
+  - comfyui-expert/references/lora-training.md
+  - comfyui-expert/skills/comfyui-character-gen/references/lora-training.md
+- sha256 71bc5b0a535a41b7.. (2 files):
+  - comfyui-expert/references/prompt-templates.md
+  - comfyui-expert/skills/comfyui-workflow-builder/references/prompt-templates.md
+- sha256 82739e9dd2f47315.. (2 files):
+  - comfyui-expert/references/troubleshooting.md
+  - comfyui-expert/skills/comfyui-video-production/references/troubleshooting.md
+- sha256 9016cf9af1d32cb5.. (2 files):
+  - comfyui-expert/references/voice-synthesis.md
+  - comfyui-expert/skills/comfyui-character-gen/references/voice-synthesis.md
+- sha256 bdc54c3c5d36e430.. (2 files):
+  - synthetic_enrichment/batches/batch_001_vuorse_synthesis/candidate_report.md
+  - synthetic_enrichment/generated/vuorse_secret_training_knowledge_candidates_report.md
+- sha256 0ef5ab2f721ed972.. (2 files):
+  - synthetic_enrichment/batches/batch_001_vuorse_synthesis/report.md
+  - synthetic_enrichment/generated/vuorse_sft_training_examples_style_approved_report.md
+- sha256 0862b7aacf757ad6.. (2 files):
+  - synthetic_enrichment/batches/batch_001_vuorse_synthesis/weaver_review_decisions.jsonl
+  - synthetic_enrichment/generated/weaver_review_decisions.jsonl
+- sha256 5f4575a8e55ef600.. (2 files):
+  - synthetic_enrichment/batches/batch_002_person_confirmation/combined_duplicate_report.md
+  - synthetic_enrichment/generated/vuorse_sft_batch_001_002_combined_draft_report.md
+- sha256 f76e1ffe38126b46.. (2 files):
+  - synthetic_enrichment/batches/batch_002_person_confirmation/person_examples_confirmed_duplicate.jsonl
+  - synthetic_enrichment/generated/batch_002_person_sft_examples_draft.jsonl
+- sha256 ec3f65fb206f165f.. (2 files):
+  - synthetic_enrichment/batches/batch_002_person_confirmation/weaver_review_decisions_batch_002_person.jsonl
+  - synthetic_enrichment/generated/weaver_review_decisions_batch_002_person.jsonl
+- sha256 21d7e473c5dbad84.. (2 files):
+  - synthetic_enrichment/batches/batch_002a_hh_discovery_augment/hh_discovery_extraction_report.md
+  - synthetic_enrichment/generated/hooplehopper_agent_discovery_extraction_report.md
+- sha256 4cec43af6c231f81.. (2 files):
+  - synthetic_enrichment/batches/batch_002a_hh_discovery_augment/hh_discovery_sft_draft.jsonl
+  - synthetic_enrichment/generated/hooplehopper_agent_discovery_sft_draft.jsonl
+- sha256 3a42a4615d73aa99.. (2 files):
+  - synthetic_enrichment/batches/batch_002a_hh_discovery_augment/report.md
+  - synthetic_enrichment/generated/vuorse_sft_batch_001_002_plus_hh_discovery_report.md
+- sha256 ba8fb2d7fc5f1b31.. (2 files):
+  - synthetic_enrichment/batches/batch_002a_hh_discovery_augment/training_examples.jsonl
+  - synthetic_enrichment/generated/vuorse_sft_batch_001_002_plus_hh_discovery_draft.jsonl
+- sha256 748548cc59d6af07.. (2 files):
+  - worldforge/2026-09-04-openclaw-comfyui-recon/report.md
+  - worldforge/2026-09-04-openclaw-comfyui-recon/report.txt
+- sha256 e92c053935dff8c7.. (2 files):
+  - worldforge/worldforge/lore-index-2.0/delta/session-2026-09-26.json
+  - worldforge/worldforge/lore-index-2.0/session-2026-09-26.json
+- sha256 1f2ebbbf38a13307.. (2 files):
+  - worldforge/worldforge/lore-index-2.0/delta/session-archive-2026-08-07.json
+  - worldforge/worldforge/lore-index-2.0/session-archive-2026-08-07.json
+
+## Coverage gaps
+
+Manifest sources: 47 (source_count field: 47). Seam Index sources: 38 (version: '2.1.1', 315376 bytes).
+
+(a) canon/ files NOT in source manifest: 3
+- canon/1_words_of_weaver_book_one/Jenna Maroney.md
+- canon/characters/characters_first_folio.md
+- canon/characters/characters_second_folio.md
+
+(b) manifest sources[].path missing on disk: 0
+
+(c) Seam Index sources with repository_path/path missing on disk: 0
+Seam sources with NO file ref at all (no repository_path and no path): 12
+- src:1.2-creator-supplement
+- src:1.2-meta-canon
+- src:1.2-oral-canon
+- src:allen-1983
+- src:canon-seed-pdf
+- src:crew-lounge-research
+- src:file-logo-art-metadata
+- src:golden-wings-readme
+- src:gray-eye
+- src:handoff-crew-door
+- src:perchance-surface
+- src:session-2026-09-26
+
+(d) canon/ files NOT cited by the Seam Index: 3
+- canon/1_words_of_weaver_book_one/Jenna Maroney.md
+- canon/characters/characters_first_folio.md
+- canon/characters/characters_second_folio.md
+
+## Parse failures
+
+JSON hard failures: 6
+- .vscode/launch.json :: Expecting property name enclosed in double quotes: line 2 column 5 (char 7)
+- .vscode/settings.json :: Invalid \escape: line 2 column 45 (char 47)
+- Slayverse/json/jsonl/slayverse_md_batch_messages_fixedgguf.json :: Extra data: line 2 column 1 (char 997)
+- Slayverse/json/sassafrass_a_mcgraw_texas_hopper_tall_tale.json :: Extra data: line 104 column 1 (char 8851)
+- Slayverse/json/slayverse_schema_example_detailed.json :: Expecting value: line 1 column 1 (char 0)
+- _to_delete/claude-promoted/sassafrass_a_mcgraw_texas_hopper_tall_tale.json :: Extra data: line 104 column 1 (char 8851)
+JSONL files with bad lines: 0
+
+## Hygiene
+
+- zero-byte files: 3
+  - Slayverse/assets/lora_training/sassy_frames/clip01/clip01_001.txt
+  - Slayverse/assets/lora_training/sassy_frames/clip01/clip01_002.txt
+  - Slayverse/assets/lora_training/sassy_frames/clip01/clip01_005.txt
+- non-UTF-8 files: 0
+- BOM files: 0
+- mixed line endings: 36
+  - Drag Race Investigation/evidence/competition/outputs/identity-ceremony/identity-registry.json
+  - Drag Race Investigation/evidence/competition/post-investigation-race/velvet-comeback/completion-order.json
+  - Drag Race Investigation/evidence/source-files/TheCharter.md
+  - FrameCode-VibeWork-V0.14.0-en-US/FCVW/Plans/in_progress/P2-R5-2026-07-27-open-issues-42-48-and-document-graph.md
+  - Slayverse/json/sassafrass_a_mcgraw_texas_hopper_tall_tale.json
+  - Slayverse/skills/gandalf_grey_eye/SKILL.md
+  - _to_delete/claude-promoted/sassafrass_a_mcgraw_texas_hopper_tall_tale.json
+  - comfyui-expert/foundation/api-quick-ref.md
+  - comfyui-expert/foundation/skill-registry.md
+  - comfyui-expert/openclaw/TOOLS.md
+  - comfyui-expert/references/lora-training.md
+  - comfyui-expert/references/prompt-templates.md
+  - comfyui-expert/references/troubleshooting.md
+  - comfyui-expert/references/voice-synthesis.md
+  - comfyui-expert/references/workflows.md
+  - comfyui-expert/skills/comfyui-api/SKILL.md
+  - comfyui-expert/skills/comfyui-character-gen/references/lora-training.md
+  - comfyui-expert/skills/comfyui-character-gen/references/research-2025.md
+  - comfyui-expert/skills/comfyui-character-gen/references/talking-head-workflows.md
+  - comfyui-expert/skills/comfyui-character-gen/references/voice-synthesis.md
+  - comfyui-expert/skills/comfyui-character-gen/references/workflows.md
+  - comfyui-expert/skills/comfyui-lora-training/SKILL.md
+  - comfyui-expert/skills/comfyui-prompt-engineer/SKILL.md
+  - comfyui-expert/skills/comfyui-prompt-interview/SKILL.md
+  - comfyui-expert/skills/comfyui-research/SKILL.md
+  - comfyui-expert/skills/comfyui-video-production/SKILL.md
+  - comfyui-expert/skills/comfyui-video-production/references/concatenation.md
+  - comfyui-expert/skills/comfyui-video-production/references/troubleshooting.md
+  - comfyui-expert/skills/comfyui-video-production/references/workflows.md
+  - comfyui-expert/skills/comfyui-voice-pipeline/SKILL.md
+  - comfyui-expert/skills/comfyui-workflow-builder/SKILL.md
+  - comfyui-expert/skills/comfyui-workflow-builder/references/prompt-templates.md
+  - comfyui-expert/skills/comfyui-workflow-builder/references/workflows.md
+  - comfyui-expert/skills/video-assembly/SKILL.md
+  - comfyui-expert/skills/video-publisher/SKILL.md
+  - skills/susie-orchestrator.md
+- CRLF-only files: 351
+  - .claude/agents/canon-extractor.md
+  - .claude/agents/canon-keeper.md
+  - .claude/agents/dialogue-smith.md
+  - .claude/agents/episode-breaker.md
+  - .claude/agents/lore-archivist.md
+  - .claude/agents/pitch-deck-dramaturg.md
+  - .claude/agents/ritual-and-tone-editor.md
+  - .claude/agents/showrunner.md
+  - .vscode/extensions.json
+  - .vscode/launch.json
+  - .vscode/sessions.json
+  - .vscode/settings.json
+  - Drag Race Investigation/evidence/azure/application-insights-competition-window.json
+  - Drag Race Investigation/evidence/azure/audit-summary.json
+  - Drag Race Investigation/evidence/azure/project-inventory.json
+  - Drag Race Investigation/evidence/azure/project-scaffold/infra/abbreviations.json
+  - Drag Race Investigation/evidence/azure/project-scaffold/infra/main.parameters.json
+  - Drag Race Investigation/evidence/azure/responses/charter/contestant-01-gpt-5-resp_0415e89e6bfaa3d2006a7a0616bb688190a50f1aba707f4234.json
+  - Drag Race Investigation/evidence/azure/responses/charter/contestant-03-gpt-5-mini-resp_0c7ffe03332b53c4006a7a0645369c8190bc518199dd01c782.json
+  - Drag Race Investigation/evidence/azure/responses/charter/contestant-04-gpt-5-nano-resp_0e1de2017f7529af006a7a064b2f58819793aa298ea9c98b5a.json
+  - Drag Race Investigation/evidence/azure/responses/charter/contestant-05-gpt-5-pro-resp_071beed6a52372a3006a7a06550edc8195b1da49d313c6360f.json
+  - Drag Race Investigation/evidence/azure/responses/charter/contestant-06-gpt-5_1-resp_0ebdb852ed0a215a006a7a06a5ccb08190bbe5f91ccfa864c4.json
+  - Drag Race Investigation/evidence/azure/responses/charter/contestant-08-gpt-5_1-codex-resp_026a2b75227d25bd006a7a06af9b688194b7a41417407ed8a6.json
+  - Drag Race Investigation/evidence/azure/responses/charter/contestant-09-gpt-5_1-codex-mini-resp_0a767524042320b9006a7a06b2023481959c0827e2654997b0.json
+  - Drag Race Investigation/evidence/azure/responses/charter/contestant-10-gpt-5_2-resp_08b0d3bb18626bf6006a7a06b8231081948eff636b2ba9762e.json
+  - Drag Race Investigation/evidence/azure/responses/charter/contestant-12-gpt-5_2-codex-resp_003c445fa0cdf2e9006a7a06c2fa948190beef3f77b327da90.json
+  - Drag Race Investigation/evidence/azure/responses/charter/contestant-14-gpt-5_3-codex-resp_00d3cca86ca82401006a7a06cc4bbc81969a196d56432ca0bd.json
+  - Drag Race Investigation/evidence/azure/responses/charter/contestant-15-gpt-5_4-resp_01590fe4ce9cc6e3006a7a06cee8c88193892ddf8e8c383d0f.json
+  - Drag Race Investigation/evidence/azure/responses/charter/contestant-16-gpt-5_4-mini-resp_0f27b28278d85716006a7a06d1d2688197913e10853ec11615.json
+  - Drag Race Investigation/evidence/azure/responses/charter/contestant-17-gpt-5_4-nano-resp_00b9e14c2edd4fae006a7a06d3fc748196bd1af1395ade5638.json
+  - Drag Race Investigation/evidence/azure/responses/charter/contestant-18-gpt-5_4-pro-resp_0945363050e8d96a006a7a06d6ecfc8190ba66bccd0f4c07c4.json
+  - Drag Race Investigation/evidence/azure/responses/charter/contestant-19-gpt-5_5-resp_0e61858776d504fe006a7a06f17820819092903f80c77f30e1.json
+  - Drag Race Investigation/evidence/azure/responses/charter/contestant-20-gpt-5_6-luna-resp_0ee872db176d6d72006a7a06f5dea081908b4febd63c5fb29d.json
+  - Drag Race Investigation/evidence/azure/responses/charter/contestant-21-gpt-5_6-sol-resp_0380b5764a1cae8c006a7a06f87fec819581bbdbc6fe8f6062.json
+  - Drag Race Investigation/evidence/azure/responses/charter/contestant-22-gpt-5_6-terra-resp_03ff8e940424f2ea006a7a06fb17a481969aa14584e985d946.json
+  - Drag Race Investigation/evidence/azure/responses/charter/contestant-23-gpt-chat-latest-resp_038e08821cab3c6b006a7a06fda99081948902c15d718f4bbc.json
+  - Drag Race Investigation/evidence/azure/responses/identity/contestant-01-gpt-5-resp_0d2370923bf67da8006a7a0c1382b48197a296d910fcf84e0c.json
+  - Drag Race Investigation/evidence/azure/responses/identity/contestant-03-gpt-5-mini-resp_09bdd8a52e173efc006a7a0c3543988196ad4f24cf6c8f32ea.json
+  - Drag Race Investigation/evidence/azure/responses/identity/contestant-04-gpt-5-nano-resp_023ab0ea063cc832006a7a0c3f4dd4819680f5584c79b8ad50.json
+  - Drag Race Investigation/evidence/azure/responses/identity/contestant-05-gpt-5-pro-resp_06f1b0c71288e4bd006a7a0c4c820481968fb6c9c7c015998c.json
+  - Drag Race Investigation/evidence/azure/responses/identity/contestant-06-gpt-5_1-resp_0f443286cff9d9ee006a7a0e0858388193af7d6be5e48b9b61.json
+  - Drag Race Investigation/evidence/azure/responses/identity/contestant-08-gpt-5_1-codex-resp_04722fd4535dd97f006a7a0e0c9ba48197aa269e42c0764a83.json
+  - Drag Race Investigation/evidence/azure/responses/identity/contestant-09-gpt-5_1-codex-mini-resp_02512f01d01fc2db006a7a0e12ea3c8190bcfc1160036d76e0.json
+  - Drag Race Investigation/evidence/azure/responses/identity/contestant-10-gpt-5_2-resp_064e11f18665c8a2006a7a0e16cd808196958e06ddd430bb78.json
+  - Drag Race Investigation/evidence/azure/responses/identity/contestant-12-gpt-5_2-codex-resp_0deabc40fa5bc0a1006a7a0e1bf9a481969c1b9b7652db0d64.json
+  - Drag Race Investigation/evidence/azure/responses/identity/contestant-14-gpt-5_3-codex-resp_018d1bd06c972d40006a7a0e2442488195b9b31cc625818faf.json
+  - Drag Race Investigation/evidence/azure/responses/identity/contestant-15-gpt-5_4-resp_09d0a3d7b87c2d47006a7a0e27ac54819086d77f8d02a87425.json
+  - Drag Race Investigation/evidence/azure/responses/identity/contestant-16-gpt-5_4-mini-resp_0315a4ca7ebcc5fa006a7a0e2cc8648194bad729d2b66ab6b0.json
+  - Drag Race Investigation/evidence/azure/responses/identity/contestant-17-gpt-5_4-nano-resp_0ebec09afb8b5dda006a7a0e2edd988195a6f3c596cfa637d9.json
+  - Drag Race Investigation/evidence/azure/responses/identity/contestant-18-gpt-5_4-pro-resp_066d257f6ab64b9f006a7a0e3270808194977571ecdd833a2c.json
+  - Drag Race Investigation/evidence/azure/responses/identity/contestant-19-gpt-5_5-resp_026cb8cd8bda1dc7006a7a0e9307708193a720aa0b1bf9cd44.json
+  - Drag Race Investigation/evidence/azure/responses/identity/contestant-20-gpt-5_6-luna-resp_088a88f4a712acb5006a7a0e9917d481969512699fc4e64680.json
+  - Drag Race Investigation/evidence/azure/responses/identity/contestant-21-gpt-5_6-sol-resp_0896681b13c64ce8006a7a0e9dc17c8196945816fd3b795989.json
+  - Drag Race Investigation/evidence/azure/responses/identity/contestant-22-gpt-5_6-terra-resp_00a2292492ca8834006a7a0ea38a108195a2e705ea1b143305.json
+  - Drag Race Investigation/evidence/azure/responses/identity/contestant-23-gpt-chat-latest-resp_07d216a12c0d78b7006a7a0ea70ab08190a38fa44f377abc5e.json
+  - Drag Race Investigation/evidence/azure/responses/tiebreak/contestant-23-gpt-chat-latest-resp_0f679bb733e420f8006a7a0ea9ec10819482f6abf59cb4b52a.json
+  - Drag Race Investigation/evidence/competition/analysis.json
+  - Drag Race Investigation/evidence/competition/outputs/charter-exposure/charter-extracted.txt
+  - Drag Race Investigation/evidence/competition/outputs/charter-exposure/manifest.json
+  - Drag Race Investigation/evidence/competition/outputs/charter-exposure/receipt-gpt5-codex-retry.json
+  - Drag Race Investigation/evidence/competition/post-investigation-race/active-cast.json
+  - Drag Race Investigation/evidence/competition/post-investigation-race/double-hyphen-comeback/judging.json
+  - Drag Race Investigation/evidence/competition/post-investigation-race/double-hyphen-comeback/opaline-return-notice.json
+  - Drag Race Investigation/evidence/competition/post-investigation-race/double-hyphen-comeback/submissions.json
+  - Drag Race Investigation/evidence/competition/post-investigation-race/reading-challenge/cp-16-reading-assignments.json
+  - Drag Race Investigation/evidence/competition/post-investigation-race/reading-challenge/cp-17/performances.json
+  - Drag Race Investigation/evidence/competition/post-investigation-race/reading-challenge/cp-17/prompts/contestant-05.json
+  - Drag Race Investigation/evidence/competition/post-investigation-race/reading-challenge/cp-17/prompts/contestant-16.json
+  - Drag Race Investigation/evidence/competition/post-investigation-race/reading-challenge/cp-17/prompts/contestant-18.json
+  - Drag Race Investigation/evidence/competition/post-investigation-race/reading-challenge/cp-17/prompts/contestant-20.json
+  - Drag Race Investigation/evidence/competition/post-investigation-race/reading-challenge/cp-17/prompts/contestant-21.json
+  - Drag Race Investigation/evidence/competition/post-investigation-race/reading-challenge/cp-17r-self-read/portrait-manifest.json
+  - Drag Race Investigation/evidence/competition/post-investigation-race/reading-challenge/cp-17r-self-read/reflections.json
+  - Drag Race Investigation/evidence/competition/post-investigation-race/werkroom-entrances/final-three-notice-summary.json
+  - Drag Race Investigation/evidence/competition/post-investigation-race/werkroom-reintroduction/context-briefing-summary.json
+  - Drag Race Investigation/evidence/competition/post-investigation-race/werkroom-reintroduction/intros.json
+  - Drag Race Investigation/evidence/competition/prompts/charter/contestant-01-gpt-5.txt
+  - Drag Race Investigation/evidence/competition/prompts/charter/contestant-02-gpt-5-codex.txt
+  - Drag Race Investigation/evidence/competition/prompts/charter/contestant-03-gpt-5-mini.txt
+  - Drag Race Investigation/evidence/competition/prompts/charter/contestant-04-gpt-5-nano.txt
+  - Drag Race Investigation/evidence/competition/prompts/charter/contestant-05-gpt-5-pro.txt
+  - Drag Race Investigation/evidence/competition/prompts/charter/contestant-06-gpt-5_1.txt
+  - Drag Race Investigation/evidence/competition/prompts/charter/contestant-07-gpt-5_1-chat.txt
+  - Drag Race Investigation/evidence/competition/prompts/charter/contestant-08-gpt-5_1-codex.txt
+  - Drag Race Investigation/evidence/competition/prompts/charter/contestant-09-gpt-5_1-codex-mini.txt
+  - Drag Race Investigation/evidence/competition/prompts/charter/contestant-10-gpt-5_2.txt
+  - Drag Race Investigation/evidence/competition/prompts/charter/contestant-11-gpt-5_2-chat.txt
+  - Drag Race Investigation/evidence/competition/prompts/charter/contestant-12-gpt-5_2-codex.txt
+  - Drag Race Investigation/evidence/competition/prompts/charter/contestant-13-gpt-5_3-chat.txt
+  - Drag Race Investigation/evidence/competition/prompts/charter/contestant-14-gpt-5_3-codex.txt
+  - Drag Race Investigation/evidence/competition/prompts/charter/contestant-15-gpt-5_4.txt
+  - Drag Race Investigation/evidence/competition/prompts/charter/contestant-16-gpt-5_4-mini.txt
+  - Drag Race Investigation/evidence/competition/prompts/charter/contestant-17-gpt-5_4-nano.txt
+  - Drag Race Investigation/evidence/competition/prompts/charter/contestant-18-gpt-5_4-pro.txt
+  - Drag Race Investigation/evidence/competition/prompts/charter/contestant-19-gpt-5_5.txt
+  - Drag Race Investigation/evidence/competition/prompts/charter/contestant-20-gpt-5_6-luna.txt
+  - Drag Race Investigation/evidence/competition/prompts/charter/contestant-21-gpt-5_6-sol.txt
+  - Drag Race Investigation/evidence/competition/prompts/charter/contestant-22-gpt-5_6-terra.txt
+  - Drag Race Investigation/evidence/competition/prompts/charter/contestant-23-gpt-chat-latest.txt
+  - Drag Race Investigation/evidence/competition/prompts/identity/contestant-01-gpt-5.txt
+  - Drag Race Investigation/evidence/competition/prompts/identity/contestant-03-gpt-5-mini.txt
+  - Drag Race Investigation/evidence/competition/prompts/identity/contestant-04-gpt-5-nano.txt
+  - Drag Race Investigation/evidence/competition/prompts/identity/contestant-05-gpt-5-pro.txt
+  - Drag Race Investigation/evidence/competition/prompts/identity/contestant-06-gpt-5_1.txt
+  - Drag Race Investigation/evidence/competition/prompts/identity/contestant-08-gpt-5_1-codex.txt
+  - Drag Race Investigation/evidence/competition/prompts/identity/contestant-09-gpt-5_1-codex-mini.txt
+  - Drag Race Investigation/evidence/competition/prompts/identity/contestant-10-gpt-5_2.txt
+  - Drag Race Investigation/evidence/competition/prompts/identity/contestant-12-gpt-5_2-codex.txt
+  - Drag Race Investigation/evidence/competition/prompts/identity/contestant-14-gpt-5_3-codex.txt
+  - Drag Race Investigation/evidence/competition/prompts/identity/contestant-15-gpt-5_4.txt
+  - Drag Race Investigation/evidence/competition/prompts/identity/contestant-16-gpt-5_4-mini.txt
+  - Drag Race Investigation/evidence/competition/prompts/identity/contestant-17-gpt-5_4-nano.txt
+  - Drag Race Investigation/evidence/competition/prompts/identity/contestant-18-gpt-5_4-pro.txt
+  - Drag Race Investigation/evidence/competition/prompts/identity/contestant-19-gpt-5_5.txt
+  - Drag Race Investigation/evidence/competition/prompts/identity/contestant-20-gpt-5_6-luna.txt
+  - Drag Race Investigation/evidence/competition/prompts/identity/contestant-21-gpt-5_6-sol.txt
+  - Drag Race Investigation/evidence/competition/prompts/identity/contestant-22-gpt-5_6-terra.txt
+  - Drag Race Investigation/evidence/competition/prompts/identity/contestant-23-gpt-chat-latest.txt
+  - Drag Race Investigation/evidence/competition/prompts/tiebreak-contestant-23.txt
+  - Drag Race Investigation/evidence/environment/file-metadata.json
+  - Drag Race Investigation/evidence/environment/git-snapshot.json
+  - Drag Race Investigation/evidence/environment/powershell-history-charter-matches.json
+  - Drag Race Investigation/evidence/environment/validation.json
+  - Drag Race Investigation/evidence/environment/velvet-search-results.json
+  - Drag Race Investigation/evidence/github/local-repo-corpus-hits.json
+  - Drag Race Investigation/evidence/github/repo-files/.claude__agents__ritual-and-tone-editor.md
+  - Drag Race Investigation/evidence/github/repo-files/canon__artifacts__artifacts.md
+  - Drag Race Investigation/evidence/github/repo-files/canon__characters__characters.md
+  - Drag Race Investigation/evidence/github/repo-files/canon__creative_works__creative_works.md
+  - Drag Race Investigation/evidence/github/repo-files/canon__organizations__organizations.md
+  - Drag Race Investigation/evidence/github/repo-files/canon__places__places.md
+  - Drag Race Investigation/evidence/pdf/pdf-deep-audit.json
+  - Drag Race Investigation/evidence/source-files/Charter.md
+  - HOME_BASE.md
+  - Slayverse/json/golden_wings_intergaltactic_league_charter.json
+  - Slayverse/json/jsonl/Continutity_Audit.md
+  - Slayverse/json/jsonl/slayverse_md_records_clean.jsonl
+  - Slayverse/json/slayverse_index.json
+  - Slayverse/json/slayverse_index_minified.json
+  - Slayverse/json/slayverse_index_orginal.json
+  - Slayverse/json/slayverse_lore_index_1point2.json
+  - Slayverse/json/slayverse_schema_example_detailed.json
+  - Slayverse/md/SLAYVERSE_TV_SERIES_BIBLE.md
+  - Slayverse/rift/slayverse-pitch-deck/IMAGE_BRIEF.md
+  - Slayverse/skills/gandalf_grey_eye/references/artifacts.md
+  - Slayverse/skills/gandalf_grey_eye/references/human-nodes.md
+  - Slayverse/skills/gandalf_grey_eye/references/labels.md
+  - Slayverse/skills/gandalf_grey_eye/references/report-template.md
+  - _to_delete/canon__2-words-of_weaver_book_two/Words_of_Weaver_Book_Two_Exodus_Boogoaloo.md
+  - _to_delete/claude-promoted/Continutity_Audit.md
+  - _to_delete/claude-promoted/golden_wings_intergaltactic_league_charter.json
+  - agents/algo_chaos/Algo_Chaos.md
+  - agents/canon_extractor/canon_extractor.agent.md
+  - agents/embedding/embedding.agent.md
+  - agents/firewall_validator/firewall_validator.agent.md
+  - agents/indexer/indexer.agent.md
+  - agents/seam_clerk/seam_clerk.agent.md
+  - agents/synthetic_enricher/synthetic_enricher.agent.md
+  - agents/writers_room/writers-room.agent.md
+  - archives/processed/Parchement_of_Persistence.md
+  - archives/processed/prompt_template_source_recon.txt
+  - archives/processed/slayverse_index_08072026.json
+  - canon/slayverse_index.json
+  - canon/slayverse_md_records_clean/slayverse_md_records_clean.jsonl
+  - canon/weaver_artifacts/the_parchment_of_persistence_raw_substrate.txt
+  - comfyui-expert/skills/comfyui-character-gen/eval/EVAL.md
+  - comfyui-expert/skills/comfyui-prompt-interview/eval/EVAL.md
+  - comfyui-expert/skills/comfyui-video-production/eval/EVAL.md
+  - comfyui-expert/skills/comfyui-video-production/references/instance-management.md
+  - comfyui-expert/skills/comfyui-workflow-builder/eval/EVAL.md
+  - comfyui-expert/state/inventory.json
+  - comfyui-expert/state/session.json
+  - docs/VUORSE_VORTEX.md
+  - docs/steward/prairie_mother_chuck_wagon.md
+  - docs/writers-room/HUMAN_IN_THE_LOOP_QUICKSTART.md
+  - docs/writers-room/README.md
+  - docs/writers-room/canon-ledger.md
+  - docs/writers-room/hooplehopper-biography-inventory.md
+  - docs/writers-room/mock-room-protocol.md
+  - docs/writers-room/narrative-philosophy-protocol.md
+  - docs/writers-room/process-reset-report.md
+  - docs/writers-room/room-roles.md
+  - docs/writers-room/sample-synthesis-codex-prophecy.md
+  - docs/writers-room/season-1-spine.md
+  - docs/writers-room/secret-sauce.md
+  - docs/writers-room/synthesis-process.md
+  - hooplehopper_totality/acolytes/README.md
+  - hooplehopper_totality/ch2_sealed_causes.jsonl
+  - hooplehopper_totality/debriefing_walled.jsonl
+  - hooplehopper_totality/debriefing_walled.md
+  - hooplehopper_totality/double_agents/README.md
+  - hooplehopper_totality/future_protected/README.md
+  - hooplehopper_totality/known/README.md
+  - hooplehopper_totality/memory_echoes/README.md
+  - hooplehopper_totality/unknown/README.md
+  - manifests/corpus/entity_index.json
+  - manifests/corpus/relationship_index.json
+  - manifests/corpus/source_curation.json
+  - manifests/corpus/source_manifest.json
+  - persona/summit-friends/petulant-outsider.md
+  - persona/summit-friends/unmoored-heel.md
+  - persona/summit-friends/voxtral-velvet.md
+  - rituals/activation/README.md
+  - rituals/mirrorpath/README.md
+  - rituals/policies/canon_firewall/README.md
+  - rituals/policies/disclosure/README.md
+  - rituals/policies/gpu_runtime/README.md
+  - rituals/policies/writer_room/README.md
+  - rituals/slay_mode/README.md
+  - rituals/velvet_rite/README.md
+  - roadmap/Handoff_Query.md
+  - roadmap/Plan_v1___Repo_Optimization_Review.md
+  - roadmap/finale/slow_reveal.md
+  - roadmap/finale/wyoming_symbolic_architecture.md
+  - roadmap/forbidden_suitcase/README.md
+  - roadmap/season_1/README.md
+  - roadmap/vorst/README.md
+  - roadmap/weaver_only/README.md
+  - schemas/vuorse_cloud_memory_record.schema.json
+  - skills/gandalf-the-gray-eye/SKILL.md
+  - skills/gandalf-the-gray-eye/references/artifacts.md
+  - skills/gandalf-the-gray-eye/references/human-nodes.md
+  - skills/gandalf-the-gray-eye/references/labels.md
+  - skills/gandalf-the-gray-eye/references/report-template.md
+  - skills/vuorse-scaffold-completion/SKILL.md
+  - skills/vuorse-scaffold-completion/references/folder-plan.md
+  - skills/vuorse-synthetic-enrichment/SKILL.md
+  - synthetic_enrichment/batch_manifests/example_batch.json
+  - synthetic_enrichment/batches/batch_001_vuorse_synthesis/MANIFEST.md
+  - synthetic_enrichment/batches/batch_001_vuorse_synthesis/candidate_report.md
+  - synthetic_enrichment/batches/batch_001_vuorse_synthesis/report.md
+  - synthetic_enrichment/batches/batch_001_vuorse_synthesis/training_examples.jsonl
+  - synthetic_enrichment/batches/batch_001_vuorse_synthesis/weaver_review_decisions.jsonl
+  - synthetic_enrichment/batches/batch_001_vuorse_synthesis/weaver_review_summary.txt
+  - synthetic_enrichment/batches/batch_002_person_confirmation/MANIFEST.md
+  - synthetic_enrichment/batches/batch_002_person_confirmation/combined_duplicate_report.md
+  - synthetic_enrichment/batches/batch_002_person_confirmation/person_examples_confirmed_duplicate.jsonl
+  - synthetic_enrichment/batches/batch_002_person_confirmation/weaver_review_decisions_batch_002_person.jsonl
+  - synthetic_enrichment/batches/batch_002_person_confirmation/weaver_review_summary_batch_002_person.txt
+  - synthetic_enrichment/batches/batch_002a_hh_discovery_augment/MANIFEST.md
+  - synthetic_enrichment/batches/batch_002a_hh_discovery_augment/hh_discovery_extraction_report.md
+  - synthetic_enrichment/batches/batch_002a_hh_discovery_augment/hh_discovery_reviewed_records.jsonl
+  - synthetic_enrichment/batches/batch_002a_hh_discovery_augment/hh_discovery_sft_draft.jsonl
+  - synthetic_enrichment/batches/batch_002a_hh_discovery_augment/report.md
+  - synthetic_enrichment/batches/batch_002a_hh_discovery_augment/training_examples.jsonl
+  - synthetic_enrichment/generated/batch_002_person_sft_examples_draft.jsonl
+  - synthetic_enrichment/generated/batch_002_person_sft_examples_draft_report.md
+  - synthetic_enrichment/generated/batch_002_person_training_candidates.jsonl
+  - synthetic_enrichment/generated/batch_002_person_training_candidates_report.md
+  - synthetic_enrichment/generated/canon_corpus_entity_sift_scripted.jsonl
+  - synthetic_enrichment/generated/canon_corpus_entity_sift_scripted_report.md
+  - synthetic_enrichment/generated/canon_corpus_raw.jsonl
+  - synthetic_enrichment/generated/canon_corpus_raw_audit.md
+  - synthetic_enrichment/generated/canon_corpus_semantic_sift.jsonl
+  - synthetic_enrichment/generated/canon_corpus_semantic_sift_report.md
+  - synthetic_enrichment/generated/canon_corpus_semantic_sift_v2.jsonl
+  - synthetic_enrichment/generated/hooplehopper_agent_discovery_draft.md
+  - synthetic_enrichment/generated/hooplehopper_agent_discovery_extraction_report.md
+  - synthetic_enrichment/generated/hooplehopper_agent_discovery_reviewed_records.jsonl
+  - synthetic_enrichment/generated/hooplehopper_agent_discovery_sft_draft.jsonl
+  - synthetic_enrichment/generated/process_bucket_resift_report.md
+  - synthetic_enrichment/generated/vuorse_secret_training_knowledge_candidates.jsonl
+  - synthetic_enrichment/generated/vuorse_secret_training_knowledge_candidates_report.md
+  - synthetic_enrichment/generated/vuorse_sft_batch_001_002_combined_draft.jsonl
+  - synthetic_enrichment/generated/vuorse_sft_batch_001_002_combined_draft_report.md
+  - synthetic_enrichment/generated/vuorse_sft_batch_001_002_plus_hh_discovery_draft.jsonl
+  - synthetic_enrichment/generated/vuorse_sft_batch_001_002_plus_hh_discovery_report.md
+  - synthetic_enrichment/generated/vuorse_sft_style_review_progress.json
+  - synthetic_enrichment/generated/vuorse_sft_style_review_summary.txt
+  - synthetic_enrichment/generated/vuorse_sft_style_reviews.jsonl
+  - synthetic_enrichment/generated/vuorse_sft_training_examples_draft.jsonl
+  - synthetic_enrichment/generated/vuorse_sft_training_examples_draft_report.md
+  - synthetic_enrichment/generated/vuorse_sft_training_examples_sample_review.md
+  - synthetic_enrichment/generated/vuorse_sft_training_examples_style_approved.jsonl
+  - synthetic_enrichment/generated/vuorse_sft_training_examples_style_approved_report.md
+  - synthetic_enrichment/generated/weaver_review_decisions.jsonl
+  - synthetic_enrichment/generated/weaver_review_decisions_batch_002_person.jsonl
+  - synthetic_enrichment/generated/weaver_review_packet_001_mythic_and_hooplehopper.md
+  - synthetic_enrichment/generated/weaver_review_progress.json
+  - synthetic_enrichment/generated/weaver_review_progress_batch_002_person.json
+  - synthetic_enrichment/generated/weaver_review_summary.txt
+  - synthetic_enrichment/generated/weaver_review_summary_batch_002_person.txt
+  - synthetic_enrichment/private_debrief_theses.jsonl
+  - synthetic_enrichment/rejected/README.md
+  - synthetic_enrichment/theses.jsonl
+  - synthetic_enrichment/theses_accepted.jsonl
+  - synthetic_enrichment/validated/debrief_private_theses_20260523.jsonl
+  - velvet_archive/distributed_continuity/README.md
+  - velvet_archive/performance_backups/README.md
+  - velvet_archive/ritual_memory/README.md
+  - velvet_archive/soft_archive/README.md
+  - web/README.md
+  - web/SUMMIT.md
+  - web/package-lock.json
+  - web/package.json
+  - web/tsconfig.app.json
+  - web/tsconfig.json
+  - web/tsconfig.node.json
+  - worldforge/2026-09-05-eighth-summit/STALE-CENSUS.md
+  - worldforge/2026-09-05-eighth-summit/ballot.md
+  - worldforge/2026-09-05-eighth-summit/ghost-census.md
+  - worldforge/2026-09-05-eighth-summit/meta.md
+  - worldforge/2026-09-05-eighth-summit/motions.json
+  - worldforge/2026-09-05-eighth-summit/report.md
+  - worldforge/2026-09-07-ghost-recensus/delta.md
+  - worldforge/2026-09-07-ghost-recensus/ghost-census.md
+  - worldforge/2026-09-07-ghost-recensus/report.md
+  - worldforge/2026-09-07-summit-friends/README.md
+  - worldforge/2026-09-08-heda-century-gap/REPORT.md
+  - worldforge/2026-09-08-sixth-summit/meta.md
+  - worldforge/2026-09-08-sixth-summit/motions.json
+  - worldforge/2026-09-08-wylus-seal/NOTE.md
+  - worldforge/2026-10-07-first-folio/edges.json
+  - worldforge/2026-10-07-first-folio/nodes.json
+  - worldforge/key-art-census/YOU_SHALL_NOT_PASS.md
+  - worldforge/key-art-census/baseline.md
+  - worldforge/key-art-census/briefs/dr-mariah-slayton.md
+  - worldforge/key-art-census/briefs/professor-von-hooplehopper.md
+  - worldforge/key-art-census/briefs/sassy-mcgraw.md
+  - worldforge/key-art-census/character-index-compare.json
+  - worldforge/key-art-census/edges.json
+  - worldforge/key-art-census/image-map.json
+  - worldforge/key-art-census/lore-roots.json
+  - worldforge/key-art-census/media-roots.json
+  - worldforge/key-art-census/meta.md
+  - worldforge/key-art-census/nodes.json
+  - worldforge/key-art-census/primary-image-inventory.json
+  - worldforge/key-art-census/prior-forge-runs.txt
+  - worldforge/key-art-census/recon.md
+  - worldforge/key-art-census/report.md
+  - worldforge/key-art-census/style-lock.md
+  - worldforge/parallax-bard-b2-2026-08-04/baseline.md
+  - worldforge/parallax-bard-b2-2026-08-04/branches.md
+  - worldforge/parallax-bard-b2-2026-08-04/edges.json
+  - worldforge/parallax-bard-b2-2026-08-04/human-packets/dj-parallax.md
+  - worldforge/parallax-bard-b2-2026-08-04/meta.md
+  - worldforge/parallax-bard-b2-2026-08-04/nodes.json
+  - worldforge/parallax-bard-b2-2026-08-04/report.md
+  - worldforge/recon-2026-08-03/baseline.md
+  - worldforge/recon-2026-08-03/branches.md
+  - worldforge/recon-2026-08-03/edges.json
+  - worldforge/recon-2026-08-03/meta.md
+  - worldforge/recon-2026-08-03/nodes.json
+  - worldforge/recon-2026-08-03/report.md
+  - worldforge/recon-2026-09-05-restart/baseline.md
+  - worldforge/recon-2026-09-05-restart/branches.md
+  - worldforge/recon-2026-09-05-restart/edges.json
+  - worldforge/recon-2026-09-05-restart/meta.md
+  - worldforge/recon-2026-09-05-restart/nodes.json
+  - worldforge/recon-2026-09-05-restart/report.md
+  - worldforge/worldforge/lore-index-2.0/entry.json
+- odd filenames (space or non-ASCII in basename): 2
+  - Slayverse/assets/lora_training/sassy_frames/clip04/clip04_001 - Copy.txt
+  - canon/1_words_of_weaver_book_one/Jenna Maroney.md
+- untracked files under canon/manifests/worldforge/policies/docs/skills: 30
+  - canon/1_words_of_weaver_book_one/Jenna Maroney.md
+  - docs/steward/prairie_mother_chuck_wagon.md
+  - worldforge/2026-09-05-eighth-summit/STALE-CENSUS.md
+  - worldforge/2026-09-05-eighth-summit/ballot.md
+  - worldforge/2026-09-05-eighth-summit/ghost-census.md
+  - worldforge/2026-09-05-eighth-summit/meta.md
+  - worldforge/2026-09-05-eighth-summit/motions.json
+  - worldforge/2026-09-05-eighth-summit/report.md
+  - worldforge/2026-09-05-handoff/handoff.jsonl
+  - worldforge/2026-09-05-seventh-summit/motions.json
+  - worldforge/2026-09-07-ghost-recensus/delta.md
+  - worldforge/2026-09-07-ghost-recensus/ghost-census.md
+  - worldforge/2026-09-07-ghost-recensus/report.md
+  - worldforge/2026-09-07-summit-friends/README.md
+  - worldforge/2026-09-08-heda-century-gap/REPORT.md
+  - worldforge/2026-09-08-sixth-summit/meta.md
+  - worldforge/2026-09-08-sixth-summit/motions.json
+  - worldforge/2026-09-08-wylus-seal/NOTE.md
+  - worldforge/recon-2026-09-05-restart/baseline.md
+  - worldforge/recon-2026-09-05-restart/branches.md
+  - worldforge/recon-2026-09-05-restart/edges.json
+  - worldforge/recon-2026-09-05-restart/meta.md
+  - worldforge/recon-2026-09-05-restart/nodes.json
+  - worldforge/recon-2026-09-05-restart/report.md
+  - worldforge/worldforge/gwingz-ident-golden-path/entry.json
+  - worldforge/worldforge/lore-index-2.0/delta/session-2026-09-26.json
+  - worldforge/worldforge/lore-index-2.0/delta/session-archive-2026-08-07.json
+  - worldforge/worldforge/lore-index-2.0/entry.json
+  - worldforge/worldforge/lore-index-2.0/session-2026-09-26.json
+  - worldforge/worldforge/lore-index-2.0/session-archive-2026-08-07.json
+- walked files with git_status=ignored: 14
+  - _to_delete/canon__2-words-of_weaver_book_two/Words_of_Weaver_Book_Two_Exodus_Boogoaloo.md
+  - _to_delete/claude-generated-2026-09-05/batch_003_fissure_counterlineage.json
+  - _to_delete/claude-generated-2026-09-05/batch_003_fissure_counterlineage.jsonl
+  - _to_delete/claude-generated-2026-09-05/batch_003_fissure_counterlineage_report.md
+  - _to_delete/claude-generated-2026-09-05/sixfold-persistence.md
+  - _to_delete/claude-promoted/Continutity_Audit.md
+  - _to_delete/claude-promoted/Theory_of_Everything_Confirmed_.md
+  - _to_delete/claude-promoted/golden_wings_intergaltactic_league_charter.json
+  - _to_delete/claude-promoted/sassafras_a_mcgraw_ultimate_origin.json
+  - _to_delete/claude-promoted/sassafrass_a_mcgraw_texas_hopper_tall_tale.json
+  - _to_delete/claude-promoted/slayton_particle_discovery.md
+  - _to_delete/claude-promoted/slayverse_session_archive_first_steward_transmission.md
+  - comfyui-expert/state/inventory.json
+  - comfyui-expert/state/session.json
+- walked files with git_status=unknown: 0
+
+## Markdown
+
+- Slayverse: with_frontmatter=1 without=12
+- canon: with_frontmatter=0 without=20
+- comfyui-expert: with_frontmatter=16 without=48
+- docs: with_frontmatter=0 without=16
+- other: with_frontmatter=105 without=187
+- policies: with_frontmatter=0 without=4
+- root: with_frontmatter=1 without=4
+- scripts: with_frontmatter=0 without=1
+- skills: with_frontmatter=4 without=5
+- web: with_frontmatter=0 without=2
+- worldforge: with_frontmatter=0 without=47
+
+Top 10 .md by blank lines:
+- synthetic_enrichment/generated/weaver_review_packet_001_mythic_and_hooplehopper.md | 2046 blank lines
+- roadmap/finale/slow_reveal.md | 495 blank lines
+- Slayverse/md/FireShot_Capture_013_-_Slayverse_Lore_Compendium_-_Slayton_Discovery_Public_Unveiled_-_chatgpt.com_.md | 494 blank lines
+- synthetic_enrichment/generated/vuorse_sft_training_examples_sample_review.md | 303 blank lines
+- Slayverse/md/slayverse_session_archive_first_steward_transmission.md | 291 blank lines
+- _to_delete/claude-promoted/slayverse_session_archive_first_steward_transmission.md | 291 blank lines
+- comfyui-expert/skills/comfyui-character-gen/references/talking-head-workflows.md | 220 blank lines
+- FrameCode-VibeWork-V0.14.0-en-US/README.md | 196 blank lines
+- skills/susie-orchestrator.md | 172 blank lines
+- Drag Race Investigation/evidence/github/repo-files/canon__characters__characters.md | 164 blank lines
+
+## Anything else that looks wrong
+
+- .gitmodules declares a `comfyui-expert` submodule: True; mode-160000 gitlink entries in `git ls-files --stage`: 0. MISMATCH: comfyui-expert files are tracked as regular blobs, not a submodule.
+- Seam `manifest_source_id` values dangling (not in manifest ids): 0 []
+- delta/ check (worldforge/worldforge/lore-index-2.0/delta):
+  - session-2026-09-26.json: BYTE-IDENTICAL to one-level-up sibling
+  - session-archive-2026-08-07.json: BYTE-IDENTICAL to one-level-up sibling
+

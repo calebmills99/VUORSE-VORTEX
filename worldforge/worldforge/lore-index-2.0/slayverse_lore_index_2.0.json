@@ -475,6 +475,24 @@
       "availability": "repository"
     },
     {
+      "id": "src:repo:canon-characters-characters-first-folio",
+      "type": "repository-document",
+      "title": "Slayverse Characters First Folio",
+      "repository_path": "canon/characters/characters_first_folio.md",
+      "manifest_source_id": "canon-characters-characters-first-folio",
+      "availability": "repository",
+      "note": "Character roster folio partition. Complements canon/characters/characters.md."
+    },
+    {
+      "id": "src:repo:canon-characters-characters-second-folio",
+      "type": "repository-document",
+      "title": "Slayverse Characters Second Folio",
+      "repository_path": "canon/characters/characters_second_folio.md",
+      "manifest_source_id": "canon-characters-characters-second-folio",
+      "availability": "repository",
+      "note": "Character roster folio partition. Complements canon/characters/characters.md."
+    },
+    {
       "id": "src:repo:canon-cosmology-cosmology",
       "type": "repository-document",
       "title": "Slayverse Cosmology",
