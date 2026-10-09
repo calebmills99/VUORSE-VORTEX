@@ -66,4 +66,10 @@ not redefine the canon.
 uv sync --extra dev
 uv run pytest -q
 uv run python -m vuorse_vortex.cli --help
+uv run vuorse-vortex validate-lore-index
 ```
+
+`validate-lore-index` checks the WorldForge Seam Index against Draft 2020-12,
+Book One governance, global identity and reference invariants, and the corpus
+source manifest. It fails when a governed `canon/` source is missing from the
+index or its repository-relative path drifts.

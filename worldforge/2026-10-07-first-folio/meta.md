@@ -1,5 +1,4 @@
 # Setup — 2026-10-07-first-folio
-
 - **Change point:** Steward splits the character roster and seals **Characters (First Folio)** at Ludolf. Inside that folio, Conrad’s unnamed portable wardrobe becomes **The Thumper** (mechanized; linked to `artifacts.md#the-thumper`), and the rumor-list gains beastiality. The folio also states the Mirror Cavern *is now understood* as a retrocausal wound.
 - **Cutoff:** Corpus as held before this forge. Parent roster `canon/characters/characters.md` still carries the unsplit text. Cosmology locks on soul-line vs bloodline stand. Mirror Cavern retrocausality remains `[PENDING REVIEW]` in cosmology, places, and timeline.
 - **Interval:** ~1130 (Hildebrand active) through Ludolf (era unstated; after Isolde in folio order). Forward glance only as far as the second folio’s door: Lisette, 1873.

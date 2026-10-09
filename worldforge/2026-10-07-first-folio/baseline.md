@@ -1,5 +1,4 @@
 # Baseline — canon anchors
-
 - Soul-line, not dynasty. “Blood reproduces. The soul-line recurs.” “They do not descend. They return.” `canon` — `canon/characters/characters_first_folio.md`; `canon/cosmology/cosmology.md` (Soul-Line vs Bloodline, `[LOCKED]`).
 - Family as protective fiction. Public genealogy is cover. `[LOCKED]` `canon` — folio header; `canon/cosmology/cosmology.md`.
 - Temporal braid / erased beings compelled to oppose domination in the craft of their century. `[LOCKED]` `canon` — cosmology “New Canon”; repeated in the folio header.
