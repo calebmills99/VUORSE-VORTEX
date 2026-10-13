@@ -468,7 +468,9 @@ def _curation_entry(rel: str, fields: Any, target: Path) -> Curation:
     return Curation(canon_status=fields.get("canon_status"), notes=fields.get("notes"))
 
 
-def _mint_source_id(rel: str, claims: dict[str, list[str]]) -> tuple[str, str | None]:
+def _mint_source_id(
+    rel: str, claims: dict[str, list[str]], minted: dict[str, str]
+) -> tuple[str, str | None]:
     """Mint a manifest id for ``rel`` that no earlier source can already hold.
 
     The base id is the slugified path with its suffix removed, which is not
@@ -479,8 +481,14 @@ def _mint_source_id(rel: str, claims: dict[str, list[str]]) -> tuple[str, str | 
     ordinal suffix starting at 2. ``iter_source_files`` walks in sorted order,
     so a given file set always yields the same ids.
 
+    An ordinal can itself be some other file's natural id (``x-2.md`` slugifies
+    to the same id as the second claimant of ``x``), so the suffix advances past
+    every id already minted rather than trusting the claim count alone.
+
     ``claims`` is mutated: it maps base id -> the paths that claimed it, in
-    walk order, which is what lets the returned message name the incumbent.
+    walk order. ``minted`` is mutated too: it maps every id handed out so far
+    -> the path holding it, which is what lets the returned message name the
+    incumbent.
 
     Returns ``(entry_id, collision_message)``; the message is ``None`` when the
     base id was free.
@@ -498,11 +506,16 @@ def _mint_source_id(rel: str, claims: dict[str, list[str]]) -> tuple[str, str | 
         )
     claimed = claims.setdefault(base_id, [])
     claimed.append(rel)
-    if len(claimed) == 1:
+    ordinal = len(claimed)
+    entry_id = base_id if ordinal == 1 else f"{base_id}-{ordinal}"
+    while entry_id in minted:
+        ordinal += 1
+        entry_id = f"{base_id}-{ordinal}"
+    minted[entry_id] = rel
+    if entry_id == base_id:
         return base_id, None
-    entry_id = f"{base_id}-{len(claimed)}"
     return entry_id, (
-        f"{rel}: base id {base_id!r} was already claimed by {claimed[0]}; "
+        f"{rel}: base id {base_id!r} was already claimed by {minted[base_id]}; "
         f"minted {entry_id} instead"
     )
 
@@ -611,6 +624,7 @@ def build_source_manifest(
     report = ManifestReport()
     sources: list[dict[str, Any]] = []
     id_claims: dict[str, list[str]] = {}
+    minted_ids: dict[str, str] = {}
     curation = (
         load_source_curation(curation_path, base=base) if curation_path is not None else {}
     )
@@ -645,7 +659,7 @@ def build_source_manifest(
             report.unrouted.append(rel)
             continue
 
-        entry_id, collision = _mint_source_id(rel, id_claims)
+        entry_id, collision = _mint_source_id(rel, id_claims, minted_ids)
         if collision is not None:
             report.disambiguated_ids.append(collision)
 

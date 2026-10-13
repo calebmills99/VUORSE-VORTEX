@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v3
       - name: Install
-        run: uv sync --extra dev
+        run: uv sync --extra dev --extra cortex
       - name: Ruff
         run: uv run ruff check .
       - name: Walled freshness

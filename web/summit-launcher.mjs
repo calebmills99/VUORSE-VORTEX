@@ -181,14 +181,31 @@ async function ollamaReply(model, system, userText) {
   return (data.message?.content || data.response || '').trim()
 }
 
-function cors(res) {
-  res.setHeader('Access-Control-Allow-Origin', '*')
+// The web app reaches this server through the Vite proxy, so a browser request
+// carries a localhost Origin. Any other Origin is a different website trying to
+// spawn seats or post to the chamber, and is refused before it is handled.
+// Requests with no Origin (curl, scripts) are not from a web page.
+const LOCAL_HOSTS = new Set(['localhost', '127.0.0.1', '[::1]'])
+
+function originAllowed(origin) {
+  if (!origin) return true
+  try {
+    return LOCAL_HOSTS.has(new URL(origin).hostname)
+  } catch {
+    return false
+  }
+}
+
+function cors(req, res) {
+  if (req.headers.origin) {
+    res.setHeader('Access-Control-Allow-Origin', req.headers.origin)
+    res.setHeader('Vary', 'Origin')
+  }
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
 }
 
 function json(res, status, body) {
-  cors(res)
   res.writeHead(status, { 'Content-Type': 'application/json' })
   res.end(JSON.stringify(body))
 }
@@ -239,8 +256,14 @@ async function readBody(req) {
 }
 
 const server = createServer(async (req, res) => {
+  if (!originAllowed(req.headers.origin)) {
+    res.writeHead(403, { 'Content-Type': 'application/json' })
+    res.end(JSON.stringify({ ok: false, error: 'origin not allowed' }))
+    return
+  }
+  cors(req, res)
+
   if (req.method === 'OPTIONS') {
-    cors(res)
     res.writeHead(204)
     res.end()
     return

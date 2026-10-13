@@ -378,6 +378,31 @@ class TestSourceIdCollisions:
         assert by_id["canon-walled"]["visibility"] == "weaver_only"
         assert by_id["canon-walled-2"]["visibility"] == "public"
 
+    def test_ordinal_skips_an_id_another_file_holds_naturally(self, tmp_path: Path) -> None:
+        """`x-2.md` mints `canon-x-2` on its own, so the second `x` claimant cannot."""
+        canon = tmp_path / "canon"
+        canon.mkdir(parents=True)
+        for name in ("x-2.md", "x.md"):
+            (canon / name).write_text("prose", encoding="utf-8")
+        record = {
+            "layer": "canon",
+            "metadata": {"visibility": "public", "canon_status": "draft"},
+        }
+        (canon / "x.jsonl").write_text(json.dumps(record) + "\n", encoding="utf-8")
+
+        manifest, report = build_source_manifest(
+            ["canon"], out_path=None, base=tmp_path, curation_path=None
+        )
+        assert {s["path"]: s["id"] for s in manifest["sources"]} == {
+            "canon/x-2.md": "canon-x-2",
+            "canon/x.jsonl": "canon-x",
+            "canon/x.md": "canon-x-3",
+        }
+        assert report.disambiguated_ids == [
+            "canon/x.md: base id 'canon-x' was already claimed by canon/x.jsonl; "
+            "minted canon-x-3 instead"
+        ]
+
     def test_collision_is_reported_not_narrated_into_notes(self, tmp_path: Path) -> None:
         self._same_stem_pair(tmp_path)
         manifest, report = build_source_manifest(

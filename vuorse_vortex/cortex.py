@@ -165,7 +165,12 @@ class CortexSatellite:
         chunk_chars: int = DEFAULT_CHUNK_CHARS,
         overlap_chars: int = DEFAULT_CHUNK_OVERLAP,
     ) -> dict[str, Any]:
-        """Rebuild the satellite from routed sources, excluding PDFs and finale material."""
+        """Rebuild the satellite from routed sources, excluding PDFs and finale material.
+
+        A JSONL file whose records mix privacy postures is withheld entirely. The
+        manifest can only route such a file by its location, so indexing it would
+        file every record, sealed ones included, under that location's layer.
+        """
 
         if chunk_chars < 200:
             raise ValueError("chunk_chars must be at least 200")
@@ -183,9 +188,12 @@ class CortexSatellite:
         rows: list[tuple[str, str, str, str, str, str, str]] = []
         sealed = set(self.settings.sealed_categories)
         sealed_chunks = 0
+        mixed = set(report.mixed_files)
 
         for source in manifest["sources"]:
             source_path = str(source["path"])
+            if source_path in mixed:
+                continue
             path = base / source_path
             chunk_index = 0
             for document in _source_documents(path, str(source["source_type"])):

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
 from vuorse_vortex.cortex import CortexSatellite
@@ -50,3 +51,29 @@ def test_build_is_deterministic_and_replaces_old_content(tmp_path: Path) -> None
 def test_empty_query_returns_no_hits(tmp_path: Path) -> None:
     with CortexSatellite(tmp_path / "satellite.sqlite3") as satellite:
         assert satellite.search(" ... ") == []
+
+
+def test_build_withholds_a_jsonl_file_that_mixes_privacy_postures(tmp_path: Path) -> None:
+    rows = [
+        {
+            "layer": "canon",
+            "metadata": {"visibility": "public", "canon_status": "draft"},
+            "text": "The Velvet Hall stands open to every pilgrim.",
+        },
+        {
+            "layer": "hooplehopper_totality",
+            "metadata": {"visibility": "weaver_only", "canon_status": "roadmap_private"},
+            "text": "The Velvet Hall hides the sealed lattice key.",
+        },
+    ]
+    _write(tmp_path / "canon" / "ledger.jsonl", "\n".join(json.dumps(r) for r in rows) + "\n")
+
+    with CortexSatellite(tmp_path / "satellite.sqlite3") as satellite:
+        built = satellite.build(base=tmp_path, roots=("canon",), chunk_chars=240)
+        lattice_hits = satellite.search("lattice", top_k=10)
+        hall_hits = satellite.search("Velvet Hall", top_k=10)
+
+    assert built["mixed_files"] == ["canon/ledger.jsonl"]
+    assert built["chunk_count"] == 0
+    assert lattice_hits == []
+    assert hall_hits == []
