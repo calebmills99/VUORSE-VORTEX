@@ -441,7 +441,9 @@ class TestSourceCurationOverlay:
         canon.mkdir()
         (canon / "artifacts.md").write_text("x", encoding="utf-8")
         (canon / "retired.md").write_text("x", encoding="utf-8")
-        provenance = "Self-declared 'Locked Canon' in frontmatter; corroborated by entity_index.json."
+        provenance = (
+            "Self-declared 'Locked Canon' in frontmatter; corroborated by entity_index.json."
+        )
         curation = self._write_curation(
             tmp_path,
             {

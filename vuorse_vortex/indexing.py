@@ -766,8 +766,7 @@ def build_entity_index(
             else:
                 forms.append(alias)
 
-        seen: set[str] = set()
-        forms = [f for f in forms if not (f in seen or seen.add(f))]
+        forms = list(dict.fromkeys(forms))
 
         entities[eid] = {
             "id": eid,

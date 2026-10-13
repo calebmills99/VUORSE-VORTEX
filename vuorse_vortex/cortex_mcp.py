@@ -22,7 +22,7 @@ READ_ONLY_ANNOTATIONS = ToolAnnotations(
 )
 
 
-@server.list_tools()  # type: ignore[no-untyped-call,untyped-decorator]
+@server.list_tools()  # type: ignore[untyped-decorator]
 async def list_tools() -> list[Tool]:
     return [
         Tool(

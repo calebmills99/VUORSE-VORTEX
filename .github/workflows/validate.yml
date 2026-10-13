@@ -21,7 +21,7 @@ jobs:
       - name: Tests
         run: uv run pytest
       - name: Mypy
-        run: uv run mypy src
+        run: uv run mypy vuorse_vortex
 
   frontend:
     runs-on: ubuntu-latest

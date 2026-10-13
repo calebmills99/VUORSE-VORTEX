@@ -98,6 +98,10 @@ _DEFAULT_LORE_SCHEMA = Path(
     "worldforge/worldforge/lore-index-2.0/slayverse_lore_index_2.0.schema.json"
 )
 _DEFAULT_SOURCE_MANIFEST = Path("manifests/corpus/source_manifest.json")
+_LORE_INDEX_ARGUMENT = typer.Argument(_DEFAULT_LORE_INDEX)
+_LORE_SCHEMA_OPTION = typer.Option(_DEFAULT_LORE_SCHEMA, "--schema")
+_LORE_MANIFEST_OPTION = typer.Option(_DEFAULT_SOURCE_MANIFEST, "--manifest")
+_LORE_REPO_ROOT_OPTION = typer.Option(Path("."), "--repo-root")
 
 
 @cortex_app.command("build")
@@ -162,10 +166,10 @@ def validate_jsonl_command(path: Path) -> None:
 
 @app.command("validate-lore-index")
 def validate_lore_index_command(
-    index_path: Path = typer.Argument(_DEFAULT_LORE_INDEX),
-    schema_path: Path = typer.Option(_DEFAULT_LORE_SCHEMA, "--schema"),
-    manifest_path: Path = typer.Option(_DEFAULT_SOURCE_MANIFEST, "--manifest"),
-    repo_root: Path = typer.Option(Path("."), "--repo-root"),
+    index_path: Path = _LORE_INDEX_ARGUMENT,
+    schema_path: Path = _LORE_SCHEMA_OPTION,
+    manifest_path: Path = _LORE_MANIFEST_OPTION,
+    repo_root: Path = _LORE_REPO_ROOT_OPTION,
 ) -> None:
     """Validate the Seam Index against schema, governance, and repository state."""
     from vuorse_vortex.lore_index import validate_lore_index
@@ -642,8 +646,10 @@ def build_index_cmd(
 
     if check:
         if drifted:
-            for path in drifted:
-                console.print(f"[red]Drifted:[/red] {path} is not current with its sources.")
+            for drifted_path in drifted:
+                console.print(
+                    f"[red]Drifted:[/red] {drifted_path} is not current with its sources."
+                )
             raise typer.Exit(code=1)
         console.print("[green]All requested indexes are up to date.[/green]")
         return
