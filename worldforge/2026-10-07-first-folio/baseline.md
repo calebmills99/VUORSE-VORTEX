@@ -1,0 +1,16 @@
+# Baseline — canon anchors
+- Soul-line, not dynasty. “Blood reproduces. The soul-line recurs.” “They do not descend. They return.” `canon` — `canon/characters/characters_first_folio.md`; `canon/cosmology/cosmology.md` (Soul-Line vs Bloodline, `[LOCKED]`).
+- Family as protective fiction. Public genealogy is cover. `[LOCKED]` `canon` — folio header; `canon/cosmology/cosmology.md`.
+- Temporal braid / erased beings compelled to oppose domination in the craft of their century. `[LOCKED]` `canon` — cosmology “New Canon”; repeated in the folio header.
+- Hildebrand ~1130–1147; vanishes into the Mirror Cavern under Schloss Eisensang; first written Hooplehopper; Volume I of “Pillars of the Gods.” `canon` — folio; `canon/TV_Series_Bible/timeline/timeline.md`.
+- Mirror Cavern *may be* a retrocausal wound of the Federstahl Lattice fracture; earliest human encounter with a future catastrophe. `[PENDING REVIEW]` `canon` — `canon/cosmology/cosmology.md`, `canon/places/places.md`, timeline ~1147 note.
+- Folio states the same wound as fact: “is now understood.” `canon` as folio wording — `characters_first_folio.md` — but it outruns the pending flag. Tension, not a second lock.
+- Conrad in parent roster: purveyor; audience inside an **unnamed** portable wardrobe; sunlight “distempers”; rumors of warlock-magicke, alchemy, demonology, faeries, vampirism; amber-scented coinpurses. `canon` — `canon/characters/characters.md`.
+- Conrad in the folio: same office, wardrobe named **The Thumper**, called mechanized, link `artifacts.md#the-thumper`; rumor list adds beastiality. `canon` as folio text only. No matching artifact entry. `canon` gap — `canon/artifacts/artifacts.md` has Hildebrand’s Ring, the Thread, Zerethium, and no Thumper.
+- Conrad canon-note: may be Hildebrand still living, ~70 years, no new wrinkles, grey hair. `canon` — both roster files. Spelling “becuase / forbearer” preserved in source.
+- Margarethe 1271–1333; “not born, but returned”; relationship line calls her the first known recurrence; canon note still says bloodline vs soulline “remains debated.” `canon` — folio. The debate sentence is stale against the `[LOCKED]` cosmology resolution. `inference`
+- Chain after her, as dated: Benedict 1399, Velma 1522, Lysander 1611, Theresia 1754. Yssenda, Sigismund, Isolde, Ludolf undated. `canon` — folio + timeline (through Theresia).
+- Yssenda carries Hildebrand’s Ring; ring glows when truth is spoken onstage. Shakespeare ghostwriter sentence and “Second best bed” quote sit in the bio. `canon` as roster text — both `characters.md` and the folio. Not a lock. Not new to the split.
+- Hildebrand’s Ring: grew hot before the Weaver’s first communication with the Order of the Seam. `canon` — `canon/artifacts/artifacts.md`.
+- Second folio begins at Lisette (1873–1948), “last known Blooded Hooplehopper,” mother of the Professor. `canon` — `canon/characters/characters_second_folio.md`. Outside this interval except as the door the first folio refuses to open.
+- Vorst / Lattice: catastrophe annuls persons from the record and disperses them as the soul-line. `[LOCKED]` `canon` — cosmology. This is the future that the cavern, if promoted, would be echoing backward.

@@ -40,10 +40,14 @@ lsp = [
   "websockets>=12.0",
   "watchdog>=4.0",
 ]
+cortex = [
+    "mcp>=1.9,<2",
+]
 
 
 [project.scripts]
 vuorse-vortex = "vuorse_vortex.cli:app"
+vuorse-cortex = "vuorse_vortex.cortex_mcp:main"
 
 [build-system]
 requires = ["hatchling"]

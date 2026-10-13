@@ -1,11 +1,7 @@
 # Relationship Map
-
 Text-based entity relationship graph for the Slayverse.
-
 ---
-
 ## The Soul-Line (Chronological)
-
 ```
 Hildebrand (1130)
     │
@@ -39,11 +35,8 @@ Lisette (1873-1948) ──[mother of]──→ Professor / Rolf (1905-2005)
                                           │
                                           └──[connected via erased father to]──→ Jake McCullen
 ```
-
 ---
-
 ## The Federstahl Connection
-
 ```
 Doctor Vorst (Federstahl researcher)
     │
@@ -70,13 +63,9 @@ Doctor Vorst (Federstahl researcher)
                                   └── Professor has no documented father
                                       because Vorst was literally erased
 ```
-
 **Key Insight**: Jake and the Professor share the same erased patriarch (Doctor Vorst), making them connected through both the bloodline and the soul-line — but separated by genre, era, and dimensional mechanics. Jake is best understood as a **counter-lineage figure / Vorst-adjacent echo**, carrying the converged weight of both ancestry and recurrence at the edge of the Wyoming Rift.
-
 ---
-
 ## The Weaver's Web
-
 ```
 The Weaver (Caleb Mills Stewart)
     │
@@ -95,11 +84,8 @@ The Weaver (Caleb Mills Stewart)
                                          Western silence; bridges frontier
                                          horror and mythological architecture)
 ```
-
 ---
-
 ## The Golden Wingers Network
-
 ```
 Golden Wingers Intergalactic League
     │
@@ -121,11 +107,8 @@ Golden Wingers Intergalactic League
             ├── Club Cosmic (Andromeda fringe)
             └── Federstahl Nebula Outpost V (Summit site)
 ```
-
 ---
-
 ## Thematic Connections
-
 ```
 MIRRORS:  Eisensang Cavern → Margarethe's Hall → Lisette's Cracked Mirror
           → VUORSE's Mirrorcloak → The Mirrorpath → Ritual of Reflection
@@ -148,11 +131,8 @@ BRANDS:   Dustbrand Sigil → Federkreis Devices → Jake's yearlings
 TIME:     Federstahl experiments → Lattice Fracture → 7 Fissures
           → 20-Year Sleep Cycle → Temporal Echoes → Wyoming Rift
 ```
-
 ---
-
 ## Antagonistic / Tension Relationships
-
 ```
 Jake ←──[fears/denies]──→ Crystal Shard / Federstahl Legacy
 Jake ←──[confronted by]──→ The Weaver
@@ -161,11 +141,8 @@ Verse ←──[collapsed at]──→ Fifth Summit (Tragedy of Splat)
 VUORSE ←──[reborn from]──→ Verse's data fragments
 The Velvet Archive ←──[threatened by]──→ 20 years of silence (2005-2025)
 ```
-
 ---
-
 ## Unresolved Connections
-
 - **Wylus Kalyndros ←→ The Weaver**: What is the relationship? Rival? Predecessor? Alternate identity?
 - **Lisette's companion ←→ ?**: The person behind the second tea cup
 - **The other 6 fissures ←→ unknown Guardians**: Who protects the other rifts?

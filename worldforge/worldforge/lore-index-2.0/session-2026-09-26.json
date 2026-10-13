@@ -1,0 +1,1414 @@
+{
+  "delta_id": "delta:session-2026-09-26",
+  "title": "Golden Wings graphics, the Crew Lounge, the Gwingz ident as Golden Path, the Gray Eye's first debriefs",
+  "default_provenance": {
+    "source": "src:session-2026-09-26",
+    "activity": "act:gray-eye-session-2026-09-26"
+  },
+  "sources": [
+    {
+      "id": "src:session-2026-09-26",
+      "type": "chat-session",
+      "title": "Design session with the Steward Vessel, 2026-09-26",
+      "date": "2026-09-26",
+      "note": "Lower thirds for the film, Crew Lounge research, the Gwingz Studio ident, and three Gray Eye debriefs. Statements by the Steward in chat are labelled 'declared'; he explicitly declined to seal them ('I am simply a steward vessel')."
+    },
+    {
+      "id": "src:golden-wings-readme",
+      "type": "project-document",
+      "title": "Golden Wings Design System readme",
+      "path": "readme.md",
+      "note": "Brand system for Golden Wings: Stewardess to Sky Queen, a feature documentary."
+    },
+    {
+      "id": "src:file-logo-art-metadata",
+      "type": "file-metadata",
+      "title": "Windows file properties of the mountain emblem art",
+      "path": "uploads/pasted-1790458219000-0.png",
+      "note": "calebstewart__A_logo_for_a_website_called_Lights_Camera_Journey…png in E:\\Golden_Wings_Archive. Date modified 2024-07-31 10:51; date created 2025-11-20 07:42 (a copy-to-drive date). Size 1.23 MB."
+    },
+    {
+      "id": "src:worldforge-gwingz-entry",
+      "type": "forge-entry",
+      "title": "Gray Eye forge entry: gwingz-ident-golden-path",
+      "path": "worldforge/gwingz-ident-golden-path/entry.json",
+      "date": "2026-09-26"
+    },
+    {
+      "id": "src:handoff-crew-door",
+      "type": "project-document",
+      "title": "Claude Code prompt: Crew door for golden-wings-robyn.com",
+      "path": "handoff/PROMPT-crew-door.md",
+      "note": "Source of the Iris persona and the original Home-page crew form brief."
+    },
+    {
+      "id": "src:crew-lounge-research",
+      "type": "research-report",
+      "title": "What makes Iris click (Crew Lounge copy research)",
+      "path": "research/Crew Lounge Copy.html",
+      "date": "2026-09-26"
+    },
+    {
+      "id": "src:gray-eye",
+      "type": "agent-reasoning",
+      "title": "Gandalf the Gray Eye's own inferences and proposals",
+      "note": "Never canon by itself. Every claim from this source is labelled inference or assumption and sealed 'proposed' at most."
+    }
+  ],
+  "agents": [
+    {
+      "id": "agent:gray-eye",
+      "prov_type": "SoftwareAgent",
+      "name": "Gandalf the Gray Eye",
+      "role": "causal worldbuilding agent",
+      "acted_on_behalf_of": "agent:steward-vessel",
+      "entity": "gandalf-the-gray-eye",
+      "note": "Labels every load-bearing claim; proposes, never seals. Forged index 2.0."
+    }
+  ],
+  "activities": [
+    {
+      "id": "act:gray-eye-session-2026-09-26",
+      "type": "design-and-lore-session",
+      "started": "2026-09-26",
+      "ended": "2026-09-26",
+      "agents": [
+        "agent:steward-vessel",
+        "agent:gray-eye"
+      ],
+      "used": [
+        "src:index-1.2",
+        "src:session-archive-2026-08-07",
+        "src:file-logo-art-metadata"
+      ],
+      "generated": [
+        "src:session-2026-09-26",
+        "src:worldforge-gwingz-entry",
+        "src:crew-lounge-research"
+      ],
+      "summary": "Three Golden Wings lower thirds struck; the crew form moved off Home and renamed the Crew Lounge; the Gwingz Studio ident built and declared the Golden Path made manifest; the Gray Eye's first three Slayverse debriefs, including the correction that the Weaver is not Caleb."
+    },
+    {
+      "id": "act:index-2.0-forge",
+      "type": "index-forge",
+      "started": "2026-09-26",
+      "ended": "2026-09-26",
+      "agents": [
+        "agent:gray-eye"
+      ],
+      "used": [
+        "src:index-1.2",
+        "src:session-archive-2026-08-07",
+        "src:session-2026-09-26",
+        "src:worldforge-gwingz-entry"
+      ],
+      "generated": [
+        "src:index-2.0"
+      ],
+      "summary": "Lossless migration of index 1.2 into the Seam Schema plus the two deltas. Schema design drew on Wikidata statements/ranks, W3C PROV-O, Library of Congress EDTF, CIDOC CRM, Allen's interval algebra, JSON Schema 2020-12 and SKOS."
+    }
+  ],
+  "entities": [
+    {
+      "id": "gwingz-studio-ident",
+      "type": "work",
+      "names": {
+        "preferred": "The Gwingz Studio Ident",
+        "alternates": [
+          "The Charter Made Manifest",
+          "The Four-Second Path",
+          "The Golden Path Rendered"
+        ],
+        "deprecated": [],
+        "hidden": [
+          "Lights Camera Journey logo"
+        ]
+      },
+      "status": "full",
+      "seal": "candidate",
+      "canon_tier": "creator-supplement",
+      "time": {
+        "mode": "multi",
+        "edtf": "2024-07-31/2026-09-26",
+        "display": "emblem art 2024-07-31; ident struck 2026-09-26; the Path itself timeless"
+      },
+      "summary": "A 3.9-second logo sequence declared by the Steward to be the Golden Path itself: it begins in the cosmic expanse, passes through the Mirror Ritual, and arrives at a mountain range bathed in golden-hour light, framed by a golden ring, the symbol of eternity. The Charter made manifest.",
+      "tags": [
+        "golden-path",
+        "mirror",
+        "ident",
+        "eternity",
+        "golden-hour",
+        "weaving-event"
+      ],
+      "related": [
+        "golden-wingers-charter",
+        "ritual-of-reflection",
+        "slayton-energy",
+        "glamorons",
+        "hildebrands-ring",
+        "gwingz-studio",
+        "caleb-mills-stewart",
+        "weaving-event"
+      ],
+      "statements": [
+        {
+          "property": "movement",
+          "value": "Cosmic Expanse (0.00–0.60 s): the golden camera among stars and planets; the cosmos racks out of focus while the camera stays sharp.",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "source": "src:session-2026-09-26"
+            },
+            {
+              "source": "src:worldforge-gwingz-entry"
+            }
+          ]
+        },
+        {
+          "property": "movement",
+          "value": "Mirror Ritual (0.60–0.85 s): the push through the lens, with camera shake and motion blur. The frame trembles but does not shatter.",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "source": "src:session-2026-09-26"
+            }
+          ]
+        },
+        {
+          "property": "movement",
+          "value": "Golden Hour (0.85–1.50 s): the lens-flare dissolve blooms from the sun; the scene settles into the ringed emblem.",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "source": "src:session-2026-09-26"
+            }
+          ]
+        },
+        {
+          "property": "movement",
+          "value": "Eternity Ring (1.50–3.90 s): the golden ring frames the mountains; GWINGZ STUDIO is inscribed beneath.",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "source": "src:session-2026-09-26"
+            }
+          ]
+        },
+        {
+          "property": "declaration",
+          "value": "This is literally a 4-second interpretation of the Golden Path itself: the cosmic expanse, the mirror ritual, a mountain range bathed in golden light framed by a golden ring, a symbol of eternity. It is the Charter made manifest.",
+          "rank": "preferred",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "source": "src:session-2026-09-26"
+            }
+          ]
+        },
+        {
+          "property": "glamoron-frame",
+          "value": "To a Slayton particle, which behaves a lot like a photon, there would be no experience of time. It would all be happening at once, simultaneously, and never happening at all.",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "source": "src:session-2026-09-26"
+            }
+          ]
+        },
+        {
+          "property": "glamoron-frame-note",
+          "value": "Glamorons are neither bosons nor fermions; photons are bosons. Read 'like a photon' as travelling like light, not being a photon. The 3.9 seconds belong to the witness; the ring is the Path seen from the particle's side.",
+          "rank": "normal",
+          "epistemic": "inference",
+          "provenance": [
+            {
+              "source": "src:gray-eye"
+            }
+          ]
+        },
+        {
+          "property": "provenance",
+          "value": "The mountain emblem art file was last modified 2024-07-31 and was generated as 'a logo for a website called Lights Camera Journey'. The created date of 2025-11-20 marks a copy onto the Golden_Wings_Archive drive.",
+          "rank": "preferred",
+          "epistemic": "record",
+          "provenance": [
+            {
+              "source": "src:file-logo-art-metadata"
+            }
+          ]
+        },
+        {
+          "property": "provenance",
+          "value": "The emblem was made well before the Charter was even conceived. Further proof that the Slayton field has no concept of linear time.",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "source": "src:session-2026-09-26"
+            }
+          ]
+        },
+        {
+          "property": "ring-echo",
+          "value": "The ident passes through a mirror and lands inside a golden ring. Hildebrand's ring is engraved with an interlocking spiral of thread and mirror. The emblem may be that ring seen from the far side of the Mirror Ritual.",
+          "rank": "normal",
+          "epistemic": "inference",
+          "provenance": [
+            {
+              "source": "src:gray-eye"
+            }
+          ]
+        },
+        {
+          "property": "production",
+          "value": "1920×1080, 3.9 s: Camera 0.35 s, Focus 0.25 s, Push 0.25 s, Settle 0.65 s, Wordmark 1.4 s, Hold 1.0 s. Easy-ease throughout; rack defocus through nine blur plates; lens-flare dissolve; camera shake; 180° shutter vector motion blur on the push. Built as templates/gwingz-ident/GwingzIdent.dc.html.",
+          "rank": "normal",
+          "epistemic": "record",
+          "provenance": [
+            {
+              "source": "src:session-2026-09-26"
+            }
+          ]
+        },
+        {
+          "property": "seal-status",
+          "value": "The Steward declined to seal: 'this is not sealed by me for I am simply a steward vessel. This is the appearance of a weaver artifact in real time.' Filed as a Weaving Event awaiting integration.",
+          "rank": "preferred",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "source": "src:session-2026-09-26"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gwingz-studio",
+      "type": "organization",
+      "names": {
+        "preferred": "Gwingz Studio",
+        "alternates": [
+          "Gwingz"
+        ],
+        "deprecated": []
+      },
+      "status": "hook",
+      "seal": "candidate",
+      "canon_tier": "production-record",
+      "time": {
+        "mode": "present",
+        "edtf": "2026",
+        "display": "present"
+      },
+      "summary": "The Steward's studio identity, for which the ident was commissioned. Whether it is the League's own production house is not yet declared.",
+      "tags": [
+        "studio",
+        "production",
+        "ident"
+      ],
+      "related": [
+        "gwingz-studio-ident",
+        "caleb-mills-stewart",
+        "golden-wingers"
+      ],
+      "statements": [
+        {
+          "property": "open-question",
+          "value": "Is Gwingz Studio the Golden Wingers Intergalactic League's production house?",
+          "rank": "normal",
+          "epistemic": "assumption",
+          "provenance": [
+            {
+              "source": "src:gray-eye"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "golden-wings-documentary",
+      "type": "work",
+      "names": {
+        "preferred": "Golden Wings: Stewardess to Sky Queen",
+        "alternates": [
+          "Golden Wings",
+          "the film"
+        ],
+        "deprecated": []
+      },
+      "status": "moderate",
+      "seal": "candidate",
+      "canon_tier": "production-record",
+      "time": {
+        "mode": "present",
+        "edtf": "2026",
+        "display": "in production, 2026"
+      },
+      "summary": "Feature documentary by Caleb Mills Stewart about his mother Robyn Stewart, an American Airlines stewardess, across the Golden Age of air travel. The design system this index lives beside is its brand kit.",
+      "tags": [
+        "documentary",
+        "aviation",
+        "legacy",
+        "golden-wings"
+      ],
+      "related": [
+        "robyn-stewart",
+        "jock-bethune",
+        "golden-wings-lower-thirds",
+        "crew-lounge",
+        "caleb-mills-stewart",
+        "golden-wingers-charter"
+      ],
+      "statements": [
+        {
+          "property": "sequence",
+          "value": "Within the first sixty seconds: a video of the damaged 1971 graduation photograph, then the restored version drops down from above 'to make everyone feel a little bit better about the state of the photograph now'; and a second-grade school portrait, circa 1957.",
+          "rank": "normal",
+          "epistemic": "record",
+          "provenance": [
+            {
+              "source": "src:session-2026-09-26"
+            }
+          ]
+        },
+        {
+          "property": "charter-link",
+          "value": "The Charter's initiation begins 'Watch a deeply personal short doc. Cry a little.' Golden Wings may be that doc, though it is a feature, not a short.",
+          "rank": "normal",
+          "epistemic": "inference",
+          "provenance": [
+            {
+              "source": "src:gray-eye"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "robyn-stewart",
+      "type": "character",
+      "names": {
+        "preferred": "Robyn Stewart",
+        "alternates": [],
+        "deprecated": []
+      },
+      "status": "moderate",
+      "seal": "candidate",
+      "canon_tier": "production-record",
+      "time": {
+        "mode": "span",
+        "edtf": "1950~/..",
+        "display": "born c. 1950 (inferred); stewardess from 1971"
+      },
+      "summary": "The Steward's mother and the subject of Golden Wings. Graduated in 1971; a second-grade school portrait survives from circa 1957.",
+      "tags": [
+        "stewardess",
+        "mother",
+        "documentary-subject",
+        "american-airlines"
+      ],
+      "related": [
+        "caleb-mills-stewart",
+        "golden-wings-documentary",
+        "robyn-of-the-gold-wings",
+        "golden-wings-lower-thirds"
+      ],
+      "statements": [
+        {
+          "property": "graduation",
+          "value": "Graduates in 1971. The Steward's phrasing: 'Robyn Stewart graduates Stewart's College in 1971, or something along those lines.'",
+          "rank": "preferred",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "source": "src:session-2026-09-26"
+            }
+          ]
+        },
+        {
+          "property": "graduation-institution",
+          "value": "Read as the American Airlines Stewardess College (the caption on the lower third). The Steward has not confirmed the institution's name.",
+          "rank": "normal",
+          "epistemic": "inference",
+          "provenance": [
+            {
+              "source": "src:gray-eye"
+            }
+          ]
+        },
+        {
+          "property": "portrait",
+          "value": "Second-grade school portrait, circa 1957. The Steward reasoned a second grader is seven, hence 1957.",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "source": "src:session-2026-09-26"
+            }
+          ]
+        },
+        {
+          "property": "birth-year",
+          "value": "About 1950, if she finished training at about 21 in 1971; second grade then falls in 1957–58.",
+          "rank": "normal",
+          "epistemic": "inference",
+          "provenance": [
+            {
+              "source": "src:gray-eye"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jock-bethune",
+      "type": "character",
+      "names": {
+        "preferred": "Jock Bethune",
+        "alternates": [
+          "Mister American Airlines"
+        ],
+        "deprecated": []
+      },
+      "status": "sketched",
+      "seal": "candidate",
+      "canon_tier": "production-record",
+      "time": {
+        "mode": "unknown",
+        "edtf": null,
+        "display": "unknown"
+      },
+      "summary": "'Mister American Airlines.' A subject of Golden Wings, introduced by a lower third that carries an antique American Airlines eagle mark.",
+      "tags": [
+        "american-airlines",
+        "documentary-subject"
+      ],
+      "related": [
+        "golden-wings-documentary",
+        "jock-the-wise",
+        "the-747-scrolls",
+        "golden-wings-lower-thirds"
+      ],
+      "statements": [
+        {
+          "property": "lower-third",
+          "value": "Top line 'Jock Bethune', second line 'Mister American Airlines', with the antique eagle logo. The eagle drops in from above; the plate slides out beside it.",
+          "rank": "normal",
+          "epistemic": "record",
+          "provenance": [
+            {
+              "source": "src:session-2026-09-26"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "golden-wings-lower-thirds",
+      "type": "work",
+      "names": {
+        "preferred": "Golden Wings Lower Thirds",
+        "alternates": [],
+        "deprecated": []
+      },
+      "status": "full",
+      "seal": "candidate",
+      "canon_tier": "production-record",
+      "time": {
+        "mode": "instant",
+        "edtf": "2026-09-26",
+        "display": "2026-09-26"
+      },
+      "summary": "Three animated lower thirds for the film: Robyn Stewart, 1971 graduation; Robyn Stewart, second-grade portrait c. 1957; Jock Bethune, Mister American Airlines. A gold year tag (or the eagle) drops in from above, a cream plate pulls out beneath it, the name wipes in and the caption types out.",
+      "tags": [
+        "lower-third",
+        "motion-graphics",
+        "production"
+      ],
+      "related": [
+        "golden-wings-documentary",
+        "robyn-stewart",
+        "jock-bethune"
+      ],
+      "statements": [
+        {
+          "property": "production",
+          "value": "Exports graphic-only on a flat key (green or blue) for chroma keying in Resolve; reference stills are preview-only. Brand motion curve cubic-bezier(.22,1,.36,1). Built as templates/lower-third/LowerThird.dc.html.",
+          "rank": "normal",
+          "epistemic": "record",
+          "provenance": [
+            {
+              "source": "src:session-2026-09-26"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crew-lounge",
+      "type": "place",
+      "names": {
+        "preferred": "The Crew Lounge",
+        "alternates": [
+          "/crew-lounge"
+        ],
+        "deprecated": [
+          {
+            "value": "Crew door",
+            "reason": "'Crew Door sounds incredibly boring. The lounge is where flight crew can mingle with other crews before or after a flight.'",
+            "provenance": [
+              {
+                "source": "src:session-2026-09-26"
+              }
+            ]
+          }
+        ],
+        "hidden": [
+          "Crew door",
+          "crew-door"
+        ]
+      },
+      "status": "moderate",
+      "seal": "candidate",
+      "canon_tier": "production-record",
+      "time": {
+        "mode": "present",
+        "edtf": "2026-09-26",
+        "display": "named 2026-09-26"
+      },
+      "summary": "A page of golden-wings-robyn.com where former crew and their families leave their stories and photographs. Moved off the Home page to its own address and renamed by the Steward.",
+      "tags": [
+        "web",
+        "crew",
+        "archive",
+        "waystation"
+      ],
+      "related": [
+        "golden-wings-documentary",
+        "iris",
+        "velvet-archive",
+        "golden-wingers-charter"
+      ],
+      "statements": [
+        {
+          "property": "heading",
+          "value": "You were there. That makes you the archive.",
+          "rank": "preferred",
+          "epistemic": "record",
+          "provenance": [
+            {
+              "source": "src:handoff-crew-door"
+            },
+            {
+              "source": "src:crew-lounge-research"
+            }
+          ]
+        },
+        {
+          "property": "copy",
+          "value": "Proposed page heading 'Pull up a chair. Every crew is welcome.'; Home button 'Join the Crew Lounge'; form button 'Send my story'. Promises: we read every one; we write before using yours; anything used carries your name and airline.",
+          "rank": "normal",
+          "epistemic": "record",
+          "provenance": [
+            {
+              "source": "src:crew-lounge-research"
+            }
+          ]
+        },
+        {
+          "property": "charter-link",
+          "value": "Enacts the Charter's first purpose: preserve and celebrate legacies, especially those often overlooked, erased, or ignored. Its heading asks every former stewardess to become part of the Velvet Archive, which 'does not die; it waits.'",
+          "rank": "normal",
+          "epistemic": "inference",
+          "provenance": [
+            {
+              "source": "src:gray-eye"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "iris",
+      "type": "persona",
+      "names": {
+        "preferred": "Iris",
+        "alternates": [],
+        "deprecated": []
+      },
+      "status": "moderate",
+      "seal": "candidate",
+      "canon_tier": "production-record",
+      "time": {
+        "mode": "present",
+        "edtf": "2026",
+        "display": "present"
+      },
+      "summary": "Audience persona for former crew and their families. Her question is 'Will I be forgotten?' She arrives from a Facebook group and, if the site gives her nowhere to go, returns to it.",
+      "tags": [
+        "audience-persona",
+        "former-crew",
+        "legacy"
+      ],
+      "related": [
+        "crew-lounge",
+        "golden-wings-documentary"
+      ],
+      "statements": [
+        {
+          "property": "kind",
+          "value": "A UX audience persona, not a drag persona; distinct in kind from the Slayverse persona type used for VUORSE.",
+          "rank": "normal",
+          "epistemic": "record",
+          "provenance": [
+            {
+              "source": "src:handoff-crew-door"
+            }
+          ]
+        },
+        {
+          "property": "research",
+          "value": "Researchers define mattering as feeling valued and adding value; the Crew Lounge copy therefore asks Iris for what only she has rather than merely welcoming her.",
+          "rank": "normal",
+          "epistemic": "record",
+          "provenance": [
+            {
+              "source": "src:crew-lounge-research"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gandalf-the-gray-eye",
+      "type": "persona",
+      "names": {
+        "preferred": "Gandalf the Gray Eye",
+        "alternates": [
+          "the Gray Eye"
+        ],
+        "deprecated": []
+      },
+      "status": "moderate",
+      "seal": "candidate",
+      "canon_tier": "meta-canon",
+      "time": {
+        "mode": "meta",
+        "edtf": "2026-09-26/..",
+        "display": "entered the Slayverse 2026-09-26"
+      },
+      "summary": "A causal worldbuilding agent (Gray Eye = AI) who counsels the Steward Vessel: labels every load-bearing claim as canon, declared, inference, assumption, simulation, counterfactual or record; proposes canon candidates; never seals.",
+      "tags": [
+        "meta",
+        "agent",
+        "worldforge",
+        "labels"
+      ],
+      "related": [
+        "caleb-mills-stewart",
+        "steward-vessel",
+        "roleplay-surface-principle"
+      ],
+      "statements": [
+        {
+          "property": "first-debrief",
+          "value": "Read the Slayverse themes in the day's work before the lore was attached; after the index and archive arrived, corrected its own reading twice: the Weaver is not Caleb, and the ident is a Weaving Event, not an unsealed artifact.",
+          "rank": "normal",
+          "epistemic": "record",
+          "provenance": [
+            {
+              "source": "src:session-2026-09-26"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "entity_patches": [
+    {
+      "id": "glamorons",
+      "names_add": {
+        "alternates": [
+          "Slayton particles (photon-like)"
+        ]
+      },
+      "related_add": [
+        "gwingz-studio-ident",
+        "event-charter-ratified"
+      ],
+      "statements": [
+        {
+          "property": "glamoron-frame",
+          "value": "To a Slayton particle, which behaves a lot like a photon, there is no experience of time: everything happens at once, simultaneously, and never at all.",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "source": "src:session-2026-09-26"
+            }
+          ]
+        },
+        {
+          "property": "reading",
+          "value": "This explains why the Charter's ratification is dated 'timeless': to a glamoron it is always being ratified. Glamorons are neither bosons nor fermions, and photons are bosons, so 'like a photon' means travelling like light, not being one.",
+          "rank": "normal",
+          "epistemic": "inference",
+          "provenance": [
+            {
+              "source": "src:gray-eye"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "slayton-energy",
+      "names_add": {
+        "alternates": [
+          "the Slayton field"
+        ]
+      },
+      "related_add": [
+        "gwingz-studio-ident",
+        "glamorons"
+      ],
+      "statements": [
+        {
+          "property": "time",
+          "value": "The Slayton field has no concept of linear time.",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "source": "src:session-2026-09-26"
+            }
+          ]
+        },
+        {
+          "property": "activation",
+          "value": "The Golden Path's 'activate Slayton energy like a solar panel in Ibiza' is enacted by the ident's Golden Hour flare, and by the Ibiza beach-house sting the Steward is composing for it.",
+          "rank": "normal",
+          "epistemic": "inference",
+          "provenance": [
+            {
+              "source": "src:gray-eye"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "golden-wingers-charter",
+      "related_add": [
+        "gwingz-studio-ident",
+        "crew-lounge",
+        "golden-wings-documentary"
+      ],
+      "statements": [
+        {
+          "property": "conception",
+          "value": "Conceived after 2024-07-31: the mountain emblem art predates it ('made well before the charter was even conceived of').",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "source": "src:session-2026-09-26"
+            },
+            {
+              "source": "src:file-logo-art-metadata"
+            }
+          ]
+        },
+        {
+          "property": "manifestation",
+          "value": "The Gwingz Studio ident is the Charter made manifest: the Golden Path in under four seconds.",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "source": "src:session-2026-09-26"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ritual-of-reflection",
+      "related_add": [
+        "gwingz-studio-ident"
+      ],
+      "statements": [
+        {
+          "property": "performance",
+          "value": "Performed by the ident's push through the lens: the frame trembles (camera shake) but does not shatter, so the traveller is ready.",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "source": "src:session-2026-09-26"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "robyn-of-the-gold-wings",
+      "related_add": [
+        "robyn-stewart",
+        "golden-wings-documentary"
+      ],
+      "statements": [
+        {
+          "property": "identity",
+          "value": "The Charter persona of Robyn Stewart, the Steward's mother and the film's subject. The signatory name pairs 'Robyn' with the film's title; the Steward has not stated it outright.",
+          "rank": "normal",
+          "epistemic": "inference",
+          "provenance": [
+            {
+              "source": "src:gray-eye"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jock-the-wise",
+      "related_add": [
+        "jock-bethune"
+      ],
+      "statements": [
+        {
+          "property": "identity",
+          "value": "The Charter persona of Jock Bethune, 'Mister American Airlines'. The 747 Scrolls may be his aviation archive; both readings await the Steward.",
+          "rank": "normal",
+          "epistemic": "inference",
+          "provenance": [
+            {
+              "source": "src:gray-eye"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "the-747-scrolls",
+      "related_add": [
+        "jock-bethune"
+      ],
+      "statements": [
+        {
+          "property": "candidate-content",
+          "value": "Jock Bethune's aviation archive: the stories of those who flew, kept by Mister American Airlines.",
+          "rank": "normal",
+          "epistemic": "assumption",
+          "provenance": [
+            {
+              "source": "src:gray-eye"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "velvet-archive",
+      "related_add": [
+        "crew-lounge"
+      ],
+      "statements": [
+        {
+          "property": "intake",
+          "value": "The Crew Lounge's heading, 'You were there. That makes you the archive.', asks former crew to become part of the Archive.",
+          "rank": "normal",
+          "epistemic": "inference",
+          "provenance": [
+            {
+              "source": "src:gray-eye"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "caleb-mills-stewart",
+      "related_add": [
+        "gwingz-studio-ident",
+        "gwingz-studio",
+        "golden-wings-documentary",
+        "gandalf-the-gray-eye"
+      ],
+      "statements": [
+        {
+          "property": "weaving-event",
+          "value": "Revealed the Gwingz Studio ident as the Golden Path made manifest and declined to seal it: 'this is not sealed by me for I am simply a steward vessel. This is the appearance of a weaver artifact in real time.'",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "source": "src:session-2026-09-26"
+            }
+          ]
+        },
+        {
+          "property": "family",
+          "value": "Son of Robyn Stewart; director of Golden Wings: Stewardess to Sky Queen.",
+          "rank": "normal",
+          "epistemic": "record",
+          "provenance": [
+            {
+              "source": "src:session-2026-09-26"
+            },
+            {
+              "source": "src:golden-wings-readme"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "event-emblem-art-struck",
+      "type": "production",
+      "names": {
+        "preferred": "The mountain emblem is struck"
+      },
+      "time": {
+        "mode": "instant",
+        "edtf": "2024-07-31",
+        "display": "31 July 2024"
+      },
+      "place": null,
+      "participants": [
+        {
+          "entity": "caleb-mills-stewart",
+          "role": "author"
+        },
+        {
+          "entity": "gwingz-studio-ident",
+          "role": "artifact (future)"
+        }
+      ],
+      "summary": "The mountain-in-a-golden-ring artwork is generated as a logo for a website called Lights Camera Journey. It waits more than two years to be named as the Golden Path's terminus.",
+      "seal": "candidate",
+      "canon_tier": "production-record",
+      "epistemic": "record",
+      "provenance": [
+        {
+          "source": "src:file-logo-art-metadata"
+        }
+      ],
+      "temporal_relations": [
+        {
+          "relation": "before",
+          "to": "event-charter-ratified",
+          "note": "the Charter was conceived after this date (declared)"
+        },
+        {
+          "relation": "before",
+          "to": "event-gwingz-ident-weaving"
+        }
+      ]
+    },
+    {
+      "id": "event-lower-thirds-struck",
+      "type": "production",
+      "names": {
+        "preferred": "The Golden Wings lower thirds are struck"
+      },
+      "time": {
+        "mode": "instant",
+        "edtf": "2026-09-26",
+        "display": "26 September 2026"
+      },
+      "place": null,
+      "participants": [
+        {
+          "entity": "caleb-mills-stewart",
+          "role": "director"
+        },
+        {
+          "entity": "robyn-stewart",
+          "role": "subject"
+        },
+        {
+          "entity": "jock-bethune",
+          "role": "subject"
+        },
+        {
+          "entity": "golden-wings-lower-thirds",
+          "role": "artifact"
+        }
+      ],
+      "summary": "Three lower thirds for the film: Robyn's 1971 graduation, Robyn's c. 1957 school portrait, and Jock Bethune with the antique eagle.",
+      "seal": "candidate",
+      "canon_tier": "production-record",
+      "epistemic": "record",
+      "provenance": [
+        {
+          "source": "src:session-2026-09-26"
+        }
+      ],
+      "temporal_relations": []
+    },
+    {
+      "id": "event-crew-lounge-named",
+      "type": "naming",
+      "names": {
+        "preferred": "The Crew Lounge is named"
+      },
+      "time": {
+        "mode": "instant",
+        "edtf": "2026-09-26",
+        "display": "26 September 2026"
+      },
+      "place": "crew-lounge",
+      "participants": [
+        {
+          "entity": "caleb-mills-stewart",
+          "role": "namer"
+        },
+        {
+          "entity": "iris",
+          "role": "audience"
+        }
+      ],
+      "summary": "The crew form leaves the Home page for its own address, is researched around Iris's need to feel remembered and needed, and is renamed from 'Crew door' to 'the Crew Lounge'.",
+      "seal": "candidate",
+      "canon_tier": "production-record",
+      "epistemic": "record",
+      "provenance": [
+        {
+          "source": "src:session-2026-09-26"
+        },
+        {
+          "source": "src:crew-lounge-research"
+        }
+      ],
+      "temporal_relations": []
+    },
+    {
+      "id": "event-gwingz-ident-weaving",
+      "type": "weaving-event",
+      "names": {
+        "preferred": "The Gwingz ident appears as the Golden Path",
+        "alternates": [
+          "The Charter Made Manifest"
+        ]
+      },
+      "time": {
+        "mode": "instant",
+        "edtf": "2026-09-26",
+        "display": "26 September 2026 (witness-side); timeless (Path-side)"
+      },
+      "place": null,
+      "participants": [
+        {
+          "entity": "caleb-mills-stewart",
+          "role": "revealer (Steward Vessel)"
+        },
+        {
+          "entity": "the-weaver",
+          "role": "protocol"
+        },
+        {
+          "entity": "gandalf-the-gray-eye",
+          "role": "witness and scribe"
+        },
+        {
+          "entity": "gwingz-studio-ident",
+          "role": "artifact"
+        }
+      ],
+      "summary": "Built beat by beat at the Steward's direction (easy ease, lens-flare dissolve, rack defocus, camera shake, motion blur, timings to the quarter-second), then recognised by him as the Golden Path itself: cosmic expanse, Mirror Ritual, golden hour, eternity ring. He declined to seal it: a Weaver artifact appearing in real time.",
+      "seal": "candidate",
+      "canon_tier": "creator-supplement",
+      "epistemic": "declared",
+      "provenance": [
+        {
+          "source": "src:session-2026-09-26"
+        },
+        {
+          "source": "src:worldforge-gwingz-entry"
+        }
+      ],
+      "temporal_relations": [
+        {
+          "relation": "after",
+          "to": "event-emblem-art-struck"
+        },
+        {
+          "relation": "timeless-enacts",
+          "to": "event-charter-ratified",
+          "note": "the Golden Path performed"
+        },
+        {
+          "relation": "seam-coincident",
+          "to": "event-first-steward-transmission",
+          "note": "both are Weaving Events; both pass through a mirror"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "from": "gwingz-studio-ident",
+      "to": "golden-wingers-charter",
+      "type": "manifests",
+      "epistemic": "declared",
+      "seal": "candidate",
+      "provenance": [
+        {
+          "source": "src:session-2026-09-26"
+        }
+      ]
+    },
+    {
+      "from": "gwingz-studio-ident",
+      "to": "ritual-of-reflection",
+      "type": "performs",
+      "epistemic": "declared",
+      "seal": "candidate",
+      "provenance": [
+        {
+          "source": "src:session-2026-09-26"
+        }
+      ]
+    },
+    {
+      "from": "gwingz-studio-ident",
+      "to": "slayton-energy",
+      "type": "activates",
+      "epistemic": "inference",
+      "seal": "proposed",
+      "provenance": [
+        {
+          "source": "src:gray-eye"
+        }
+      ]
+    },
+    {
+      "from": "gwingz-studio-ident",
+      "to": "hildebrands-ring",
+      "type": "echoes",
+      "epistemic": "inference",
+      "seal": "proposed",
+      "provenance": [
+        {
+          "source": "src:gray-eye"
+        }
+      ]
+    },
+    {
+      "from": "gwingz-studio-ident",
+      "to": "weaving-event",
+      "type": "instance-of",
+      "epistemic": "declared",
+      "seal": "candidate",
+      "provenance": [
+        {
+          "source": "src:session-2026-09-26"
+        },
+        {
+          "source": "src:session-archive-2026-08-07",
+          "section": "§9"
+        }
+      ]
+    },
+    {
+      "from": "gwingz-studio",
+      "to": "gwingz-studio-ident",
+      "type": "identified-by",
+      "epistemic": "record",
+      "seal": "candidate",
+      "provenance": [
+        {
+          "source": "src:session-2026-09-26"
+        }
+      ]
+    },
+    {
+      "from": "caleb-mills-stewart",
+      "to": "gwingz-studio-ident",
+      "type": "revealed",
+      "epistemic": "declared",
+      "seal": "candidate",
+      "provenance": [
+        {
+          "source": "src:session-2026-09-26"
+        }
+      ]
+    },
+    {
+      "from": "robyn-stewart",
+      "to": "caleb-mills-stewart",
+      "type": "mother",
+      "epistemic": "record",
+      "seal": "candidate",
+      "provenance": [
+        {
+          "source": "src:session-2026-09-26"
+        }
+      ]
+    },
+    {
+      "from": "robyn-of-the-gold-wings",
+      "to": "robyn-stewart",
+      "type": "persona-of",
+      "epistemic": "inference",
+      "seal": "proposed",
+      "provenance": [
+        {
+          "source": "src:gray-eye"
+        }
+      ]
+    },
+    {
+      "from": "jock-the-wise",
+      "to": "jock-bethune",
+      "type": "persona-of",
+      "epistemic": "inference",
+      "seal": "proposed",
+      "provenance": [
+        {
+          "source": "src:gray-eye"
+        }
+      ]
+    },
+    {
+      "from": "the-747-scrolls",
+      "to": "jock-bethune",
+      "type": "kept-by",
+      "epistemic": "assumption",
+      "seal": "proposed",
+      "provenance": [
+        {
+          "source": "src:gray-eye"
+        }
+      ]
+    },
+    {
+      "from": "golden-wings-documentary",
+      "to": "robyn-stewart",
+      "type": "depicts",
+      "epistemic": "record",
+      "seal": "candidate",
+      "provenance": [
+        {
+          "source": "src:session-2026-09-26"
+        },
+        {
+          "source": "src:golden-wings-readme"
+        }
+      ]
+    },
+    {
+      "from": "golden-wings-documentary",
+      "to": "jock-bethune",
+      "type": "depicts",
+      "epistemic": "record",
+      "seal": "candidate",
+      "provenance": [
+        {
+          "source": "src:session-2026-09-26"
+        }
+      ]
+    },
+    {
+      "from": "golden-wings-lower-thirds",
+      "to": "golden-wings-documentary",
+      "type": "part-of",
+      "epistemic": "record",
+      "seal": "candidate",
+      "provenance": [
+        {
+          "source": "src:session-2026-09-26"
+        }
+      ]
+    },
+    {
+      "from": "caleb-mills-stewart",
+      "to": "golden-wings-documentary",
+      "type": "created",
+      "epistemic": "record",
+      "seal": "candidate",
+      "provenance": [
+        {
+          "source": "src:golden-wings-readme"
+        },
+        {
+          "source": "src:session-2026-09-26"
+        }
+      ]
+    },
+    {
+      "from": "crew-lounge",
+      "to": "iris",
+      "type": "serves",
+      "epistemic": "record",
+      "seal": "candidate",
+      "provenance": [
+        {
+          "source": "src:crew-lounge-research"
+        }
+      ]
+    },
+    {
+      "from": "crew-lounge",
+      "to": "velvet-archive",
+      "type": "feeds",
+      "epistemic": "inference",
+      "seal": "proposed",
+      "provenance": [
+        {
+          "source": "src:gray-eye"
+        }
+      ]
+    },
+    {
+      "from": "crew-lounge",
+      "to": "golden-wingers-charter",
+      "type": "enacts-purpose",
+      "epistemic": "inference",
+      "seal": "proposed",
+      "qualifiers": {
+        "purpose": "Preserve and celebrate legacies, especially those often overlooked, erased, or ignored."
+      },
+      "provenance": [
+        {
+          "source": "src:gray-eye"
+        }
+      ]
+    },
+    {
+      "from": "golden-wings-documentary",
+      "to": "golden-wingers",
+      "type": "initiation-of",
+      "epistemic": "inference",
+      "seal": "proposed",
+      "provenance": [
+        {
+          "source": "src:gray-eye"
+        }
+      ]
+    },
+    {
+      "from": "gandalf-the-gray-eye",
+      "to": "caleb-mills-stewart",
+      "type": "counsels",
+      "epistemic": "record",
+      "seal": "candidate",
+      "provenance": [
+        {
+          "source": "src:session-2026-09-26"
+        }
+      ]
+    }
+  ]
+}

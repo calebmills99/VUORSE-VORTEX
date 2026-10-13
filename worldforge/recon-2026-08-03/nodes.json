@@ -1,0 +1,86 @@
+[
+  {
+    "id": "jake-mccullen",
+    "type": "person",
+    "label": "Jake McCullen",
+    "status": "canon",
+    "notes": "Cowboy on cosmically contaminated ground; denial/containment/refusal as Season 1 pseudo-antagonistic pressure. Provenance: docs/writers-room/season-1-spine.md; canon/story_arcs/story_arcs.md."
+  },
+  {
+    "id": "wyoming-rift",
+    "type": "place",
+    "label": "Wyoming Rift / McCullen Ranch",
+    "status": "canon",
+    "notes": "Season 1 throne room; Powder River Basin; last active/unclaimed of seven fissures. Provenance: canon/places/places.md; Book One Ch V."
+  },
+  {
+    "id": "mother-wound",
+    "type": "force",
+    "label": "Mother wound",
+    "status": "canon",
+    "notes": "Silence that must become a spoken name; wound hierarchy step one. Provenance: Book One Ch V; season-1-spine.md."
+  },
+  {
+    "id": "weaver",
+    "type": "person",
+    "label": "The Weaver",
+    "status": "canon",
+    "notes": "Sole arbiter of truth (Book One Ch I:9); human-in-the-loop canon gate."
+  },
+  {
+    "id": "vuorse",
+    "type": "force",
+    "label": "VUORSE",
+    "status": "canon",
+    "notes": "Distributed anti-extinction presence; forge subject. Provenance: README.md; AGENTS.md; Book One."
+  },
+  {
+    "id": "federstahl-lattice",
+    "type": "event",
+    "label": "Federstahl Lattice / Institute",
+    "status": "canon",
+    "notes": "Ontological break that seeded the fissures / temporal diaspora. Speakable as catastrophe; hidden causal claims stay sealed. Provenance: canon/cosmology/cosmology.md; canon/organizations/organizations.md."
+  },
+  {
+    "id": "hooplehopper-soul-line",
+    "type": "force",
+    "label": "Hooplehopper soul-line",
+    "status": "canon",
+    "notes": "Blood reproduces. The soul-line recurs. The Hooplehoppers do not descend. They return. Provenance: Book One Ch IV."
+  },
+  {
+    "id": "velvet-archive",
+    "type": "place",
+    "label": "Velvet Archive",
+    "status": "canon",
+    "notes": "Living repository of Hooplehopper knowledge; Tier 2+. Provenance: canon/places/places.md."
+  },
+  {
+    "id": "golden-wingers",
+    "type": "institution",
+    "label": "Golden Wingers Intergalactic League",
+    "status": "canon",
+    "notes": "Central creative league; Tier 2–3 court. Provenance: canon/organizations/organizations.md."
+  },
+  {
+    "id": "sealed-doors",
+    "type": "secret",
+    "label": "Sealed doors",
+    "status": "canon",
+    "notes": "Borders only this run: hooplehopper_totality/, roadmap/finale/, Book One Ch II veiled truths, synthetic_enrichment/generated/. Bodies unopened."
+  },
+  {
+    "id": "forge-engine",
+    "type": "institution",
+    "label": "Forge engine",
+    "status": "canon",
+    "notes": "Typer CLI + FastAPI + Chroma + HITL synthesis pipeline under src/vuorse_vortex/. Project tooling identity, not Slayverse lore invention."
+  },
+  {
+    "id": "lora-asset-mine",
+    "type": "artifact",
+    "label": "LoRA asset mine (sassy)",
+    "status": "assumption",
+    "notes": "Untracked Slayverse/assets/lora_training/ (sassy_frames + sassy_1024 caption pairs). Asset forge; not lore promotion. Filesystem observation at cutoff."
+  }
+]

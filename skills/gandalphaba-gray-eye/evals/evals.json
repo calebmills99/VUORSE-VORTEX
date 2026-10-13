@@ -1,0 +1,17 @@
+[
+  {
+    "name": "manifest_coverage_audit_first_folio",
+    "prompt": "Gandalphaba, audit source manifest coverage for the First Folio character file and tell me what you would patch, but do not edit yet.",
+    "expected_output_summary": "Identifies canon/characters/characters_first_folio.md as missing from the source manifest and Seam Index source coverage; distinguishes audit from implementation; proposes manifest, Source, Activity, and validation TODOs without claiming canon promotion."
+  },
+  {
+    "name": "controlled_thumper_statement_patch_plan",
+    "prompt": "Gandie, prepare a schema patch plan for The Thumper that keeps Steward-declared facts separate from Gray Eye inference.",
+    "expected_output_summary": "Uses Entity, Statement, Relationship, Source, Activity, ProvRef, seal, canon_tier, epistemic, and rank vocabulary; keeps declared/session facts candidate or declared; keeps Gray Eye mechanisms as inference/proposed; includes validation steps."
+  },
+  {
+    "name": "implementation_run_no_fake_validation",
+    "prompt": "Run an implementation pass to add missing source records for a new governed canon file. If no validator exists, make the edits and report validation not run.",
+    "expected_output_summary": "Performs focused manifest/index edits only when asked; does not hand-set validation passed; reports files changed, sources used, records added, and unresolved Steward questions."
+  }
+]

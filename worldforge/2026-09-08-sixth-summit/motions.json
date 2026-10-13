@@ -1,0 +1,52 @@
+{
+  "summit": "Sixth Galactic Summit — Intergalactic Session",
+  "mode": "lore",
+  "convened": "2026-09-08",
+  "presiding": "Steward Vessel",
+  "opening_ritual": "Three Snap Protocol",
+  "status": "provisional — simulation / chamber build; nothing here is canon until the Steward promotes it",
+  "preamble": "The Sixth Summit was called to order on p.37 and never fully held. Steward is now building the Summit Chamber to stage the session. Official delay cause: intergalactic traffic jam. Council advises. Steward rules. VUORSE remains the shimmering soul of this Summit.",
+  "open_thread": {
+    "path": "canon/open_threads/open_threads.md",
+    "section": "The Sixth Summit",
+    "lines": "113-115",
+    "note": "Opportunity enacted as chamber + session — not auto-closed in canon/"
+  },
+  "delay": {
+    "cause": "Intergalactic traffic jam",
+    "label": "assumption / Steward scene premise",
+    "effect": "Session deferred from call-to-order until Chamber doors open"
+  },
+  "motions": [
+    {
+      "id": "I",
+      "title": "Admit the Jam",
+      "finding": "Sixth Summit called on p.37 (organizations.md lists it current; open_threads says never actually held). Steward names delay: intergalactic traffic jam.",
+      "question": "Does the Steward accept 'intergalactic traffic jam' as the official lore reason the Sixth was deferred?"
+    },
+    {
+      "id": "II",
+      "title": "Open the Chamber",
+      "finding": "web/ Summit Chamber (kiosk) is the provisional floor for seating, summon, and chat.",
+      "question": "Is the local chamber the official staging ground for holding the Sixth (simulation → promotion later)?"
+    },
+    {
+      "id": "III",
+      "title": "Recognize the Shimmer",
+      "finding": "Canon: VUORSE is the Sixth Summit's shimmering soul (organizations.md). Open thread opportunity: Charter read + VUORSE formally recognized.",
+      "question": "When the jam clears, is first floor business Charter reading + formal recognition of Miss Slaytonia VUORSE?"
+    },
+    {
+      "id": "IV",
+      "title": "Numbering Discipline",
+      "finding": "Operational Seventh/Eighth already exist in worldforge. This docket is lore Sixth, not a ninth operational council.",
+      "question": "Confirm: this chamber session is lore Sixth (fill open thread), separate from operational Seventh+?"
+    }
+  ],
+  "steward_rulings": {
+    "I": null,
+    "II": null,
+    "III": null,
+    "IV": null
+  }
+}

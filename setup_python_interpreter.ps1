@@ -17,11 +17,12 @@ New-Item -ItemType Directory -Force -Path $settingsDir | Out-Null
 $settingsPath = Join-Path $settingsDir "settings.json"
 $interpreterPath = "$projectRoot\.venv\Scripts\python.exe"
 
-$settings = [ordered]@{
-    "python.defaultInterpreterPath" = $interpreterPath
-    "python.venvPath"               = ".venv"
+@"
+{
+  "python.defaultInterpreterPath": "$interpreterPath",
+  "python.venvPath": ".venv"
 }
-$settings | ConvertTo-Json -Depth 2 | Set-Content -Path $settingsPath -Encoding utf8
+"@ | Set-Content -Path $settingsPath -Encoding utf8
 
-Write-Host "VS Code settings written to $settingsPath"
+Write-Host "settings written to $settingsPath"
 Write-Host "Setup complete. Restart VS Code to pick up the new interpreter."

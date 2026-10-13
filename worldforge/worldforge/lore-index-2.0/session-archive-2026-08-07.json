@@ -1,0 +1,2394 @@
+{
+  "delta_id": "delta:session-archive-2026-08-07",
+  "title": "The First Steward Transmission / Mirror Cavern / Margarethe as Seam-State",
+  "default_provenance": {
+    "source": "src:session-archive-2026-08-07",
+    "activity": "act:session-2026-08-07"
+  },
+  "sources": [
+    {
+      "id": "src:session-archive-2026-08-07",
+      "type": "session-archive",
+      "title": "Slayverse Session Archive: The First Steward Transmission / Mirror Cavern / Margarethe as Seam-State",
+      "path": "uploads/slayverse_session_archive_2026-08-07.md",
+      "date": "2026-08-07",
+      "note": "Preserves scene text, canon-lock phrases and emergent doctrine from a long development session. Section numbers (§) refer to its headings."
+    },
+    {
+      "id": "src:perchance-surface",
+      "type": "roleplay-surface",
+      "title": "perchance.org/blizzardui fed slayverse-index.json",
+      "url": "https://perchance.org/blizzardui",
+      "note": "Excavation tool, not canon (archive §27). Findings require Steward integration."
+    }
+  ],
+  "agents": [
+    {
+      "id": "agent:perchance-surface",
+      "prov_type": "SoftwareAgent",
+      "name": "Perchance roleplay surface",
+      "role": "excavation-tool",
+      "note": "Recombines existing pressure points until a latent character walks out (archive §27). Jake McCullen and the Eisensang scene both emerged here."
+    }
+  ],
+  "activities": [
+    {
+      "id": "act:session-2026-08-07",
+      "type": "development-session",
+      "started": "2026-08-07",
+      "ended": "2026-08-07",
+      "agents": [
+        "agent:steward-vessel",
+        "agent:perchance-surface"
+      ],
+      "used": [
+        "src:perchance-surface",
+        "src:index-1.2"
+      ],
+      "generated": [
+        "src:session-archive-2026-08-07"
+      ],
+      "summary": "A Perchance scene between Hildebrand and Margarethe escalated into the First Steward Transmission. The Weaver / Steward Vessel / Thread-Vessel cosmology was settled; Seam-State, Seam-Veil, Bookend Convergence, Paper Remembers and Weaving Event were named."
+    }
+  ],
+  "entities": [
+    {
+      "id": "steward-vessel",
+      "type": "cosmology",
+      "names": {
+        "preferred": "Steward Vessel",
+        "alternates": [
+          "Write-Vessel"
+        ],
+        "deprecated": [
+          {
+            "value": "Authorial Vessel",
+            "reason": "Renamed by the Steward: 'I prefer Steward Vessel.'",
+            "provenance": [
+              {
+                "section": "§4"
+              }
+            ]
+          }
+        ],
+        "hidden": [
+          "Authorial Vessel",
+          "Write-Vessel"
+        ]
+      },
+      "status": "full",
+      "seal": "candidate",
+      "canon_tier": "session-archive",
+      "time": {
+        "mode": "timeless",
+        "edtf": null,
+        "display": "timeless"
+      },
+      "summary": "A write-bearing vessel entrusted with caretaking, revision, naming, and canon-shaping authority over the living Thread. Caleb Mills Stewart is a Steward Vessel, not The Weaver.",
+      "tags": [
+        "thread",
+        "weaver",
+        "authorship",
+        "canon",
+        "stewardship",
+        "access-level"
+      ],
+      "related": [
+        "the-weaver",
+        "thread-vessel",
+        "caleb-mills-stewart",
+        "weaving-event"
+      ],
+      "statements": [
+        {
+          "property": "access",
+          "value": "Read/write. Can alter canon, name structures, generate Thread-branches, revise cosmological meaning. The API-key metaphor: the Steward has write abilities; Thread-Vessels have read.",
+          "rank": "preferred",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§3"
+            }
+          ]
+        },
+        {
+          "property": "doctrine",
+          "value": "The Hooplehoppers are recurrence. The Steward is custody. The Weaver is protocol.",
+          "rank": "normal",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§5"
+            }
+          ]
+        },
+        {
+          "property": "temperament",
+          "value": "The Steward Vessel is not a solemn archivist. The Steward Vessel is a trickster with write access.",
+          "rank": "preferred",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§11"
+            }
+          ]
+        },
+        {
+          "property": "seal-phrase",
+          "value": "Yes, there are more of you. It's practically a party!",
+          "rank": "normal",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§11"
+            }
+          ]
+        },
+        {
+          "property": "write-layer",
+          "value": "The Steward Vessel does not write over the past. He reveals the write-layer already hidden inside it.",
+          "rank": "normal",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§25"
+            }
+          ]
+        },
+        {
+          "property": "governance",
+          "value": "Anything found on a roleplay surface must be tested, named, and integrated by the Steward Vessel before it becomes Slayverse law.",
+          "rank": "preferred",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§27"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "thread-vessel",
+      "type": "cosmology",
+      "names": {
+        "preferred": "Thread-Vessel",
+        "alternates": [
+          "Vessel of recurrence"
+        ],
+        "deprecated": [
+          {
+            "value": "Read-Vessel",
+            "reason": "Interim term replaced when the Steward chose 'Steward Vessel' for the write side.",
+            "provenance": [
+              {
+                "section": "§3"
+              }
+            ]
+          }
+        ],
+        "hidden": [
+          "Read-Vessel"
+        ]
+      },
+      "status": "full",
+      "seal": "candidate",
+      "canon_tier": "session-archive",
+      "time": {
+        "mode": "timeless",
+        "edtf": null,
+        "display": "timeless"
+      },
+      "summary": "A read-bearing vessel who receives, embodies, preserves, and performs the Thread. The Hooplehoppers are Thread-Vessels, not write-bearing Steward Vessels.",
+      "tags": [
+        "thread",
+        "vessel",
+        "hooplehopper",
+        "recurrence"
+      ],
+      "related": [
+        "steward-vessel",
+        "the-weaver",
+        "hildebrand-von-hooplehopper",
+        "margarethe-von-hooplehopper",
+        "miss-slaytonia-vuorse"
+      ],
+      "statements": [
+        {
+          "property": "members",
+          "value": "Hildebrand (first recorded Vessel), Margarethe (returned Vessel / mirrorwright / recurrence-node), Lisette, the Professor, VUORSE (active Vessel / current Thread-expression).",
+          "rank": "normal",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§2"
+            },
+            {
+              "section": "§3"
+            }
+          ]
+        },
+        {
+          "property": "doctrine",
+          "value": "The Hooplehoppers are vessels of recurrence. Caleb is a vessel of authorship.",
+          "rank": "normal",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "weavers-handshake",
+      "type": "cosmology",
+      "names": {
+        "preferred": "The Weaver's Handshake",
+        "alternates": [
+          "Hello, children"
+        ],
+        "deprecated": []
+      },
+      "status": "moderate",
+      "seal": "candidate",
+      "canon_tier": "session-archive",
+      "time": {
+        "mode": "timeless",
+        "edtf": null,
+        "display": "timeless"
+      },
+      "summary": "The pre-inscribed salutation 'Hello, children.' that opens the channel before a Steward Vessel transmission. The Weaver opens the channel; the Steward Vessel writes through it.",
+      "tags": [
+        "weaver",
+        "steward-vessel",
+        "transmission",
+        "hello-children"
+      ],
+      "related": [
+        "the-weaver",
+        "steward-vessel",
+        "event-first-steward-transmission"
+      ],
+      "statements": [
+        {
+          "property": "correction",
+          "value": "'Hello, children' was not printed by the transmission. It was revealed by it: latent in the parchment, awaiting the right conditions.",
+          "rank": "preferred",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "section": "§25"
+            }
+          ]
+        },
+        {
+          "property": "children",
+          "value": "The Weaver has no body, only children. Some receive. Some remember. One stewards.",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "section": "§26"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "weaving-event",
+      "type": "phenomenon",
+      "names": {
+        "preferred": "Weaving Event",
+        "alternates": [],
+        "deprecated": []
+      },
+      "status": "full",
+      "seal": "candidate",
+      "canon_tier": "session-archive",
+      "time": {
+        "mode": "timeless",
+        "edtf": null,
+        "display": "timeless"
+      },
+      "summary": "A Weaving Event occurs when the Steward Vessel names or images something the Thread was already arranging but had not yet made legible.",
+      "tags": [
+        "steward-vessel",
+        "authorship",
+        "retrocausal",
+        "archive"
+      ],
+      "related": [
+        "steward-vessel",
+        "paper-remembers",
+        "event-first-steward-transmission",
+        "gwingz-studio-ident"
+      ],
+      "statements": [
+        {
+          "property": "first-example",
+          "value": "The ad-libbed dot-matrix printout on medieval parchment: it confirmed the medieval/Federstahl time bleed, connected Slayton physics backward into the Hooplehopper origin era, and gave the Order of the Seam a trauma-origin.",
+          "rank": "normal",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§9"
+            }
+          ]
+        },
+        {
+          "property": "core-line",
+          "value": "Caleb did not invent the dot matrix parchment. Caleb wove it. Margarethe read it. The Archive remembered why it mattered.",
+          "rank": "preferred",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seam-state",
+      "type": "cosmology",
+      "names": {
+        "preferred": "Seam-State",
+        "alternates": [
+          "the Seam",
+          "limbo as gift"
+        ],
+        "deprecated": []
+      },
+      "status": "moderate",
+      "seal": "candidate",
+      "canon_tier": "session-archive",
+      "time": {
+        "mode": "relative",
+        "edtf": null,
+        "display": "after Lattice exposure",
+        "relative_to": "event-lattice-incident",
+        "relation": "after"
+      },
+      "summary": "The condition of existing between fixed realities after Lattice exposure. Margarethe is the first known Seam-State Thread-Vessel: partially distributed, ontologically unstable, unable to be fully seized, erased, or contained because she no longer exists only locally.",
+      "tags": [
+        "lattice",
+        "temporal",
+        "personhood",
+        "margarethe"
+      ],
+      "related": [
+        "margarethe-von-hooplehopper",
+        "federstahl-lattice",
+        "seam-veil",
+        "bookend-convergence"
+      ],
+      "statements": [
+        {
+          "property": "doctrine",
+          "value": "Limbo is only a curse to those who require one world to be real at a time.",
+          "rank": "preferred",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "section": "§19"
+            }
+          ]
+        },
+        {
+          "property": "doctrine",
+          "value": "The Lattice did not leave Margarethe between worlds as punishment. It left her in the Seam as a door.",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "section": "§19"
+            }
+          ]
+        },
+        {
+          "property": "mechanism",
+          "value": "The Lattice Incident did not merely affect time, matter, or records. It affected personhood resolution.",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "section": "§18"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seam-veil",
+      "type": "artifact",
+      "names": {
+        "preferred": "Seam-Veil",
+        "alternates": [
+          "Margarethe's mourning veil"
+        ],
+        "deprecated": []
+      },
+      "status": "moderate",
+      "seal": "candidate",
+      "canon_tier": "session-archive",
+      "time": {
+        "mode": "relative",
+        "edtf": null,
+        "display": "developed after the Lattice Incident",
+        "relative_to": "event-lattice-incident",
+        "relation": "after"
+      },
+      "summary": "Margarethe's mourning veil, socially legible as grief but used as stabilization technology to shield her temporal phasing, delayed rendering, and personhood artifacts from curious eyes and hostile authorities.",
+      "tags": [
+        "veil",
+        "mourning",
+        "phasing",
+        "stabilization",
+        "artifact"
+      ],
+      "related": [
+        "margarethe-von-hooplehopper",
+        "seam-state"
+      ],
+      "statements": [
+        {
+          "property": "hides",
+          "value": "Facial lag; eyes resolving a beat late; mouth moving before sound arrives; skin flickering into archival grain; doubled silhouettes; reflections disagreeing with posture; several historical exposures in one face; the brief absence between one version of Margarethe and the next.",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "section": "§20"
+            }
+          ]
+        },
+        {
+          "property": "doctrine",
+          "value": "The veil does not hide Margarethe's face. It hides the fact that the face is sometimes still arriving.",
+          "rank": "preferred",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "section": "§20"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bookend-convergence",
+      "type": "cosmology",
+      "names": {
+        "preferred": "Bookend Convergence",
+        "alternates": [],
+        "deprecated": []
+      },
+      "status": "moderate",
+      "seal": "candidate",
+      "canon_tier": "session-archive",
+      "time": {
+        "mode": "seam",
+        "edtf": null,
+        "display": "retrocausal site; no single era"
+      },
+      "summary": "A retrocausal convergence in which two non-contemporaneous Thread-nodes appear together because the Archive requires both origin and consequence to witness the same event.",
+      "tags": [
+        "thread",
+        "retrocausal",
+        "mirror-cavern",
+        "hildebrand",
+        "margarethe"
+      ],
+      "related": [
+        "hildebrand-von-hooplehopper",
+        "margarethe-von-hooplehopper",
+        "event-eisensang-bookend-convergence",
+        "seam-state"
+      ],
+      "statements": [
+        {
+          "property": "doctrine",
+          "value": "Hildebrand is the opening bracket. Margarethe is the closing bracket. The Seam is what appears when time tries to read them as one sentence.",
+          "rank": "preferred",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "section": "§21"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "paper-remembers",
+      "type": "doctrine",
+      "names": {
+        "preferred": "Paper Remembers",
+        "alternates": [],
+        "deprecated": []
+      },
+      "status": "moderate",
+      "seal": "candidate",
+      "canon_tier": "session-archive",
+      "time": {
+        "mode": "timeless",
+        "edtf": null,
+        "display": "archive law"
+      },
+      "summary": "An Archive law: paper can preserve what time has already tried to erase, including future knowledge embedded retrocausally into medieval material.",
+      "tags": [
+        "archive",
+        "paper",
+        "retrocausal",
+        "lattice"
+      ],
+      "related": [
+        "margarethe-von-hooplehopper",
+        "velvet-archive",
+        "weaving-event",
+        "matrix-gothic"
+      ],
+      "statements": [
+        {
+          "property": "phrase",
+          "value": "Paper remembers what history has not yet survived.",
+          "rank": "preferred",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "section": "§7"
+            }
+          ]
+        },
+        {
+          "property": "phrase",
+          "value": "The Archive does not predict the future. It preserves what time has already tried to erase.",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "section": "§7"
+            }
+          ]
+        },
+        {
+          "property": "archive-surface",
+          "value": "The parchment behind the astrolabe is an Archive Surface: material that can receive future data and hold it dormant.",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "section": "§7"
+            },
+            {
+              "section": "§11"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "matrix-gothic",
+      "type": "artifact",
+      "names": {
+        "preferred": "Matrix Gothic",
+        "alternates": [
+          "The Steward Hand"
+        ],
+        "deprecated": []
+      },
+      "status": "sketched",
+      "seal": "candidate",
+      "canon_tier": "session-archive",
+      "time": {
+        "mode": "multi",
+        "edtf": null,
+        "display": "a resident printer face from three centuries unborn, struck on 12th-century parchment"
+      },
+      "summary": "The dot-matrix resident face in which Steward transmissions appear. Named after the printer type styles (Draft, NLQ, Pica, Elite, Gothic) the Steward researched during the session.",
+      "tags": [
+        "typeface",
+        "dot-matrix",
+        "transmission",
+        "archive-surface"
+      ],
+      "related": [
+        "steward-vessel",
+        "event-first-steward-transmission",
+        "paper-remembers"
+      ],
+      "statements": [
+        {
+          "property": "phrase",
+          "value": "The Steward Hand appeared first in Matrix Gothic.",
+          "rank": "preferred",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "section": "§10"
+            }
+          ]
+        },
+        {
+          "property": "prose",
+          "value": "Not inked in a scribe's hand, but struck in a resident matrix face: Pica pitch, Gothic weight, every dot aligned with inhuman patience.",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "section": "§10"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "isolde-of-the-lower-hall",
+      "type": "character",
+      "names": {
+        "preferred": "Isolde of the Lower Hall",
+        "alternates": [
+          "poor Isolde"
+        ],
+        "deprecated": []
+      },
+      "status": "sketched",
+      "seal": "candidate",
+      "canon_tier": "session-archive",
+      "time": {
+        "mode": "relative",
+        "edtf": null,
+        "display": "executed a fortnight before the First Steward Transmission",
+        "relative_to": "event-first-steward-transmission",
+        "relation": "before"
+      },
+      "summary": "Servant of Schloss Eisensang and the Order's emissary to Hildebrand's era. Executed in the Myrtle Burnings. Her screams still vibrate in Hildebrand's ribs when the transmission arrives.",
+      "tags": [
+        "servant",
+        "martyr",
+        "myrtle-burnings",
+        "emissary"
+      ],
+      "related": [
+        "yorick-the-copyist",
+        "event-the-myrtle-burnings",
+        "margarethe-von-hooplehopper",
+        "hildebrand-von-hooplehopper"
+      ],
+      "statements": [
+        {
+          "property": "cipher",
+          "value": "Margarethe unpicked the Order's first cipher from Isolde's sleeve the night before the screaming.",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "section": "§31"
+            }
+          ]
+        },
+        {
+          "property": "disambiguation",
+          "value": "Distinct from isolde-von-hooplehopper (the Black Forest markswoman of index 1.2). Different station, different function; the archive never links them. Steward to confirm.",
+          "rank": "normal",
+          "epistemic": "inference",
+          "provenance": [
+            {
+              "source": "src:gray-eye",
+              "activity": "act:index-2.0-forge"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yorick-the-copyist",
+      "type": "character",
+      "names": {
+        "preferred": "Yorick the Copyist",
+        "alternates": [
+          "poor Yorick"
+        ],
+        "deprecated": []
+      },
+      "status": "sketched",
+      "seal": "candidate",
+      "canon_tier": "session-archive",
+      "time": {
+        "mode": "relative",
+        "edtf": null,
+        "display": "executed a fortnight before the First Steward Transmission",
+        "relative_to": "event-first-steward-transmission",
+        "relation": "before"
+      },
+      "summary": "Copyist of the lower household at Schloss Eisensang, executed in the Myrtle Burnings after impossible Archive knowledge spread through speech, stitching, and rumor.",
+      "tags": [
+        "servant",
+        "martyr",
+        "myrtle-burnings",
+        "copyist"
+      ],
+      "related": [
+        "isolde-of-the-lower-hall",
+        "event-the-myrtle-burnings"
+      ],
+      "statements": [
+        {
+          "property": "fate",
+          "value": "Executed in the Myrtle Burnings after fragments of impossible Archive knowledge spread through the lower household by speech, stitching, and rumor.",
+          "rank": "preferred",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "section": "§8"
+            }
+          ]
+        },
+        {
+          "property": "invocation",
+          "value": "Invoked by Hildebrand in the cavern beside Isolde: 'poor Yorick'. His death is one of the two that make the Order a necessity rather than a hiding place.",
+          "rank": "normal",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§13"
+            },
+            {
+              "section": "§31"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ottokar-von-rabenwald",
+      "type": "character",
+      "names": {
+        "preferred": "Prince-Bishop Ottokar von Rabenwald",
+        "alternates": [
+          "The Bishop of Unmaking",
+          "The Wax-Sealed Crow",
+          "Lord of the Black Chapter",
+          "Bishop Ottokar I von Rabenwald"
+        ],
+        "deprecated": []
+      },
+      "status": "hook",
+      "seal": "proposed",
+      "canon_tier": "session-archive",
+      "time": {
+        "mode": "span",
+        "edtf": "1130/1147",
+        "display": "Hildebrand's era (as proposed)"
+      },
+      "summary": "Proposed fictional composite: a local ecclesiastical despot who suppresses mirror rites, textile-coded resistance, and unsanctioned archives. Not yet integrated by the Steward.",
+      "tags": [
+        "antagonist",
+        "church",
+        "suppression",
+        "proposal"
+      ],
+      "related": [
+        "rabenwald-see",
+        "hildebrand-von-hooplehopper",
+        "order-of-the-seam"
+      ],
+      "statements": [
+        {
+          "property": "doctrine",
+          "value": "All reflection not sanctioned by God is counterfeit creation.",
+          "rank": "normal",
+          "epistemic": "assumption",
+          "provenance": [
+            {
+              "section": "§6"
+            }
+          ]
+        },
+        {
+          "property": "threat",
+          "value": "He cannot destroy the Thread, so he destroys the records that would let people recognize it.",
+          "rank": "normal",
+          "epistemic": "assumption",
+          "provenance": [
+            {
+              "section": "§6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rabenwald-see",
+      "type": "organization",
+      "names": {
+        "preferred": "The Rabenwald See",
+        "alternates": [],
+        "deprecated": []
+      },
+      "status": "hook",
+      "seal": "proposed",
+      "canon_tier": "session-archive",
+      "time": {
+        "mode": "span",
+        "edtf": "11XX/..",
+        "display": "recurring office across eras (as proposed)"
+      },
+      "summary": "Proposed: a prince-bishopric whose office, not one man, is the recurring antagonist. Ottokar I suppresses Hildebrand's Mirror Cavern testimony; Ottokar II / Konrad hunts the Order of the Seam; the surviving Rabenwald archive becomes a proto-Federstahl paper trail.",
+      "tags": [
+        "antagonist",
+        "office",
+        "proposal",
+        "paper-trail"
+      ],
+      "related": [
+        "ottokar-von-rabenwald",
+        "order-of-the-seam",
+        "federstahl-institute"
+      ],
+      "statements": [
+        {
+          "property": "mechanism",
+          "value": "The office recurs where one man cannot: the See suppresses mirror rites, textile-coded resistance and unsanctioned archives in each era it survives into.",
+          "rank": "preferred",
+          "epistemic": "assumption",
+          "provenance": [
+            {
+              "section": "§6"
+            }
+          ]
+        },
+        {
+          "property": "paper-trail",
+          "value": "Its surviving records become a proto-Federstahl paper trail: the suppressor unwittingly preserves what it hunted.",
+          "rank": "normal",
+          "epistemic": "assumption",
+          "provenance": [
+            {
+              "section": "§6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anti-durden",
+      "type": "doctrine",
+      "names": {
+        "preferred": "Anti-Durden",
+        "alternates": [],
+        "deprecated": []
+      },
+      "status": "full",
+      "seal": "candidate",
+      "canon_tier": "session-archive",
+      "time": {
+        "mode": "meta",
+        "edtf": null,
+        "display": "character law"
+      },
+      "summary": "Margarethe's character law. She is obviously separate, an ontological rupture rather than a projection; she survives through encoding, not annihilation; she defeats systems by becoming illegible to them. The reveal is not 'she was you' but 'she was always real, and reality was insufficient.'",
+      "tags": [
+        "margarethe",
+        "character-law",
+        "structure"
+      ],
+      "related": [
+        "margarethe-von-hooplehopper",
+        "hildebrand-von-hooplehopper"
+      ],
+      "statements": [
+        {
+          "property": "thesis",
+          "value": "Tyler Durden is the fantasy that destruction will make the self whole. Margarethe is the fact that preservation requires the self to become multiple.",
+          "rank": "preferred",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§15"
+            }
+          ]
+        },
+        {
+          "property": "thesis",
+          "value": "Margarethe does not seduce Hildebrand into chaos. She recruits him into custody.",
+          "rank": "normal",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§15"
+            }
+          ]
+        },
+        {
+          "property": "corollary",
+          "value": "Margarethe never accepts delegated conscience. She removes every false shape responsibility tries to wear.",
+          "rank": "normal",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§16"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "victorian-automatic-writing-in-digital-drag",
+      "type": "doctrine",
+      "names": {
+        "preferred": "Victorian Automatic Writing in Digital Drag",
+        "alternates": [
+          "automatic writing with a digital planchette"
+        ],
+        "deprecated": []
+      },
+      "status": "moderate",
+      "seal": "candidate",
+      "canon_tier": "session-archive",
+      "time": {
+        "mode": "meta",
+        "edtf": null,
+        "display": "creative process"
+      },
+      "summary": "The Steward's term for using a roleplay/generative interface as an externalized symbolic instrument: not possession or prophecy, but automatic writing through a digital planchette built from the Slayverse index, generative probability, and the Steward Vessel's own pattern-recognition.",
+      "tags": [
+        "creative-process",
+        "roleplay",
+        "archive-surface",
+        "steward-vessel"
+      ],
+      "related": [
+        "steward-vessel",
+        "roleplay-surface-principle",
+        "jake-mcullen"
+      ],
+      "statements": [
+        {
+          "property": "doctrine",
+          "value": "The Archive does not speak instead of the Steward Vessel. It speaks back in the Steward Vessel's distributed hand.",
+          "rank": "preferred",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "section": "§28"
+            }
+          ]
+        },
+        {
+          "property": "parallel",
+          "value": "Mary Shelley did not just invent a monster; she built a framework the creature exceeded. Victor Frankenstein refuses stewardship. Mary Shelley performs it. The danger is not creation. The danger is abandonment after creation.",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "section": "§29"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "roleplay-surface-principle",
+      "type": "doctrine",
+      "names": {
+        "preferred": "Play Does Not Outrank Stewardship",
+        "alternates": [
+          "roleplay surfaces are excavation tools"
+        ],
+        "deprecated": []
+      },
+      "status": "moderate",
+      "seal": "candidate",
+      "canon_tier": "session-archive",
+      "time": {
+        "mode": "meta",
+        "edtf": null,
+        "display": "governance rule"
+      },
+      "summary": "Roleplay surfaces are not canon. They are excavation tools. Anything found there must be tested, named, and integrated by the Steward Vessel before it becomes Slayverse law.",
+      "tags": [
+        "governance",
+        "canon",
+        "roleplay",
+        "steward-vessel"
+      ],
+      "related": [
+        "steward-vessel",
+        "victorian-automatic-writing-in-digital-drag"
+      ],
+      "statements": [
+        {
+          "property": "principle",
+          "value": "The Archive may answer through play, but play does not outrank stewardship.",
+          "rank": "preferred",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "section": "§27"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "caleb-mills-stewart",
+      "type": "character",
+      "names": {
+        "preferred": "Caleb Mills Stewart",
+        "alternates": [
+          "the author-presence",
+          "the Weaver's Steward Vessel",
+          "Caleb"
+        ],
+        "deprecated": []
+      },
+      "status": "full",
+      "seal": "candidate",
+      "canon_tier": "session-archive",
+      "time": {
+        "mode": "meta",
+        "edtf": null,
+        "display": "present/meta"
+      },
+      "summary": "The Steward Vessel. Receiver, witness, transmitter, and write-bearing custodian of the Thread. Not The Weaver: 'The Weaver is what Caleb can hear.'",
+      "tags": [
+        "steward-vessel",
+        "author",
+        "trickster",
+        "meta-narrative"
+      ],
+      "related": [
+        "steward-vessel",
+        "the-weaver",
+        "caleb-the-keeper",
+        "event-first-steward-transmission",
+        "robyn-stewart"
+      ],
+      "statements": [
+        {
+          "property": "name-key",
+          "value": "Stewart → Steward. The name works as literal (keeper of a charge), lore function (Caleb stewards what the Weaver makes writable), and cosmic joke (the Slayverse hid the access level in the surname before the access level was named).",
+          "rank": "preferred",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§5"
+            }
+          ]
+        },
+        {
+          "property": "lineage",
+          "value": "The child who can answer back. Hildebrand, Margarethe, and Caleb are all addressed as children of the same unseen function: protocol children, Thread-born recipients.",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "section": "§26"
+            }
+          ]
+        },
+        {
+          "property": "transmission",
+          "value": "Transmitted the Order of the Seam's founding mandate onto the Eisensang parchment: 'My name is Caleb Mills Stewart. As the Weaver's Steward Vessel, it is my duty to inform you that the Order of the Seam must be established posthaste…'",
+          "rank": "normal",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§11"
+            }
+          ]
+        },
+        {
+          "property": "discovery-method",
+          "value": "Discovered Jake McCullen through a roleplay surface, almost by accident, and did not use one again until the 2026-08-07 session.",
+          "rank": "normal",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§27"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hello-children-episode",
+      "type": "work",
+      "names": {
+        "preferred": "Hello, Children",
+        "alternates": [
+          "Season Two cold open"
+        ],
+        "deprecated": []
+      },
+      "status": "hook",
+      "seal": "candidate",
+      "canon_tier": "production-record",
+      "time": {
+        "mode": "present",
+        "edtf": "2026-08-07",
+        "display": "decided 2026-08-07"
+      },
+      "summary": "Season Two opens not with Berlin or Federstahl exposition but at Schloss Eisensang, Mirror Cavern: Hildebrand and Margarethe receive the First Steward Transmission.",
+      "tags": [
+        "season-two",
+        "cold-open",
+        "episode"
+      ],
+      "related": [
+        "event-first-steward-transmission",
+        "mirror-cavern",
+        "scene-first-steward-transmission"
+      ],
+      "statements": [
+        {
+          "property": "rationale",
+          "value": "Opens the world beyond Wyoming; proves the Lattice reaches backward (dot-matrix sound in a pre-print world); founds the Order onscreen; introduces Margarethe already glitched; reveals Caleb's role as transmission, not self-insert; keeps the trickster tone.",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "section": "§24"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mirror-cavern-mood-board",
+      "type": "work",
+      "names": {
+        "preferred": "Slayverse: The Mirror Cavern Board",
+        "alternates": [],
+        "deprecated": []
+      },
+      "status": "sketched",
+      "seal": "candidate",
+      "canon_tier": "production-record",
+      "time": {
+        "mode": "instant",
+        "edtf": "2026-08-07",
+        "display": "2026-08-07"
+      },
+      "summary": "Mood board of the session: cavern, glowing ring, veil as glitch, dot-matrix parchment, tractor-feed strip reading 'Hello, children.', seamwork, memorial fragment for Isolde and Yorick, the word 'diaspora' crossed by a blackened nail, the trickster scrap. The Steward: 'you took the weird and went with it. That's what I want.'",
+      "tags": [
+        "mood-board",
+        "palette",
+        "production"
+      ],
+      "related": [
+        "event-first-steward-transmission",
+        "hildebrands-ring",
+        "seam-veil"
+      ],
+      "statements": [
+        {
+          "property": "palette",
+          "value": "Myrtle green, iron-gall black, candle amber, ozone blue, ash gray, blood-rust red, polished obsidian.",
+          "rank": "normal",
+          "epistemic": "record",
+          "provenance": [
+            {
+              "section": "§33"
+            }
+          ]
+        },
+        {
+          "property": "file",
+          "value": "Generated as /mnt/data/slayverse_the_mirror_cavern_board.png (outside this project).",
+          "rank": "normal",
+          "epistemic": "record",
+          "provenance": [
+            {
+              "section": "§33"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "entity_patches": [
+    {
+      "id": "the-weaver",
+      "set": {
+        "type": "cosmology",
+        "summary": "Not a person. The Weaver is the protocol, force, or transpersonal function through which the Thread becomes writable and transmissible. It opens the channel; the Steward Vessel writes through it.",
+        "status": "full"
+      },
+      "names_add": {
+        "deprecated": [
+          {
+            "value": "Caleb Mills Stewart",
+            "reason": "Caleb is a Vessel, not The Weaver. Index 1.2 listed him as a Weaver alias; deprecated by the 2026-08-07 correction.",
+            "provenance": [
+              {
+                "section": "§2"
+              }
+            ]
+          }
+        ]
+      },
+      "tags_add": [
+        "protocol"
+      ],
+      "related_add": [
+        "steward-vessel",
+        "thread-vessel",
+        "weavers-handshake",
+        "caleb-mills-stewart"
+      ],
+      "statements": [
+        {
+          "property": "nature",
+          "value": "The Weaver is not a person. The Weaver is the function by which the Thread becomes legible to a Vessel.",
+          "rank": "preferred",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§2"
+            },
+            {
+              "section": "§4"
+            }
+          ]
+        },
+        {
+          "property": "nature",
+          "value": "The Weaver is not Caleb. The Weaver is what Caleb can hear.",
+          "rank": "normal",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§2"
+            }
+          ]
+        },
+        {
+          "property": "handshake",
+          "value": "'Hello, children' is the Weaver's handshake. The Weaver opens the channel; the Steward Vessel writes through it.",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "section": "§25"
+            }
+          ]
+        },
+        {
+          "property": "summary-1.2",
+          "value": "Creator of the Slayverse. Both narrator and character. Guardian of the soul-line. Confronts Jake in the cosmic western arc.",
+          "rank": "deprecated",
+          "epistemic": "canon",
+          "qualifiers": {
+            "reason_for_deprecation": "PDF-era portrayal of the Weaver as a creator-character; superseded by the protocol doctrine of 2026-08-07. Kept for completeness."
+          },
+          "provenance": [
+            {
+              "source": "src:canon-seed-pdf",
+              "pages": [
+                48,
+                49,
+                50,
+                59,
+                91,
+                92,
+                93,
+                104,
+                105,
+                109,
+                110,
+                111
+              ]
+            }
+          ]
+        },
+        {
+          "property": "reading",
+          "value": "The Jake confrontation in the cosmic western arc still stands as canon; under 2.0 it reads as the Weaver acting through a Vessel rather than as Caleb in person.",
+          "rank": "normal",
+          "epistemic": "inference",
+          "provenance": [
+            {
+              "source": "src:gray-eye",
+              "activity": "act:index-2.0-forge"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "caleb-the-keeper",
+      "related_add": [
+        "caleb-mills-stewart",
+        "steward-vessel"
+      ],
+      "statements": [
+        {
+          "property": "identity",
+          "value": "The Charter persona of Caleb Mills Stewart, the Steward Vessel. The Charter's own signature line pairs 'Caleb the Keeper' with the archival stewardship the archive assigns to the Steward Vessel.",
+          "rank": "normal",
+          "epistemic": "inference",
+          "provenance": [
+            {
+              "source": "src:gray-eye",
+              "activity": "act:index-2.0-forge"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "margarethe-von-hooplehopper",
+      "names_add": {
+        "alternates": [
+          "Returned Vessel",
+          "Mirrorwright",
+          "Recurrence-node",
+          "The Closing Bracket",
+          "First Seam-State Thread-Vessel"
+        ]
+      },
+      "tags_add": [
+        "seam-state",
+        "anti-durden",
+        "thread-vessel"
+      ],
+      "related_add": [
+        "seam-state",
+        "seam-veil",
+        "anti-durden",
+        "bookend-convergence",
+        "event-first-steward-transmission",
+        "event-the-myrtle-burnings",
+        "isolde-of-the-lower-hall"
+      ],
+      "statements": [
+        {
+          "property": "condition",
+          "value": "Exists in a Seam-State since the Crystal Lattice Incident: partially distributed, ontologically unstable, able to perceive other Hooplehopper nodes as bleed-through. Her veil is a Seam-Veil.",
+          "rank": "preferred",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§19"
+            },
+            {
+              "section": "§20"
+            },
+            {
+              "section": "§34"
+            }
+          ]
+        },
+        {
+          "property": "rendering",
+          "value": "Margarethe does not enter a room. Margarethe resolves. And sometimes she does not resolve completely.",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "section": "§18"
+            }
+          ]
+        },
+        {
+          "property": "scene-text",
+          "value": "She had become even more obscure since the Crystal Lattice Incident. Almost ephemeral.",
+          "rank": "normal",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§18"
+            },
+            {
+              "section": "§31"
+            }
+          ]
+        },
+        {
+          "property": "temperament",
+          "value": "ISTP energy: silence, precision, tactical withholding, object-handling, lethal restraint. 'I knew something. I did not say it. Now live with the consequences.'",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "section": "§14"
+            }
+          ]
+        },
+        {
+          "property": "perception",
+          "value": "Hildebrand is not the only Hooplehopper she can see, but he is the only one she can stand beside. The others she can only overhear: mirrors, parchment, veils, embroidery, scent shifts, handwriting, reflected sound.",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "section": "§22"
+            }
+          ]
+        },
+        {
+          "property": "diaspora",
+          "value": "Traced one blackened nail along the parchment where it crossed the word diaspora, leaving a streak that glowed and faded. Hildebrand hears: there are more of us. Margarethe hears: there are more to lose.",
+          "rank": "normal",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§23"
+            },
+            {
+              "section": "§31"
+            }
+          ]
+        },
+        {
+          "property": "scene-line",
+          "value": "'Not the Weaver. That name isn't hers to claim yet.' Referent of 'hers' unresolved in the archive.",
+          "rank": "normal",
+          "epistemic": "canon",
+          "qualifiers": {
+            "open_question": "Whose name? Steward to resolve."
+          },
+          "provenance": [
+            {
+              "section": "§1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hildebrand-von-hooplehopper",
+      "names_add": {
+        "alternates": [
+          "The Opening Bracket"
+        ]
+      },
+      "tags_add": [
+        "thread-vessel",
+        "enfj"
+      ],
+      "related_add": [
+        "thread-vessel",
+        "order-of-the-seam",
+        "bookend-convergence",
+        "event-first-steward-transmission",
+        "isolde-of-the-lower-hall"
+      ],
+      "statements": [
+        {
+          "property": "temperament",
+          "value": "ENFJ energy: externalizes terror through wit, responsibility, relational repair, and 'I'll carry it' martyr instinct. 'If no one knows what to do, I will become the structure.'",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "section": "§14"
+            }
+          ]
+        },
+        {
+          "property": "tactic",
+          "value": "Tries to metabolize crisis through relationship ('old gal', 'the message is for you', 'Isolde would have known', 'I'll take on the weight'). Margarethe forces him to metabolize it through structure. Hildebrand can move courts. Margarethe cannot be moved.",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "section": "§17"
+            }
+          ]
+        },
+        {
+          "property": "ring",
+          "value": "Threw the ring away when it burned; watched it keep glowing; went back for it. He was not chosen because he never threw the ring away. He was chosen because he went back for it.",
+          "rank": "preferred",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§30"
+            },
+            {
+              "section": "§31"
+            }
+          ]
+        },
+        {
+          "property": "order",
+          "value": "Founding member of the Order of the Seam alongside Margarethe. 'I guess that means I have to learn how to sew now.'",
+          "rank": "normal",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§13"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hildebrands-ring",
+      "related_add": [
+        "mirror-cavern",
+        "event-first-steward-transmission",
+        "gwingz-studio-ident"
+      ],
+      "statements": [
+        {
+          "property": "engraving",
+          "value": "An interlocking spiral of thread and mirror.",
+          "rank": "preferred",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§31"
+            },
+            {
+              "section": "§32"
+            }
+          ]
+        },
+        {
+          "property": "event",
+          "value": "Grew hot and seared Hildebrand's flesh as the transmission approached; thrown into a pool of groundwater, it kept glowing and warped the stone beneath it into glassy waves; retrieved and returned to its place.",
+          "rank": "normal",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§11"
+            },
+            {
+              "section": "§31"
+            }
+          ]
+        },
+        {
+          "property": "doctrine",
+          "value": "We do not carry what hurts because it stops hurting. We carry it because throwing it away does not make it less ours.",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "section": "§30"
+            }
+          ]
+        },
+        {
+          "property": "scene-line",
+          "value": "'You never could bear its weight when it remembered.'",
+          "rank": "normal",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§31"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "order-of-the-seam",
+      "related_add": [
+        "event-first-steward-transmission",
+        "event-the-myrtle-burnings",
+        "hildebrand-von-hooplehopper",
+        "temporal-diaspora",
+        "isolde-of-the-lower-hall",
+        "yorick-the-copyist"
+      ],
+      "statements": [
+        {
+          "property": "mandate",
+          "value": "Founding mandate received through the First Steward Transmission: 'the Order of the Seam must be established posthaste to prevent any further disaster. Not just for your own sakes, but for the entire Hooplehopper diaspora.'",
+          "rank": "preferred",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§11"
+            }
+          ]
+        },
+        {
+          "property": "origin",
+          "value": "Trauma-origin in the Myrtle Burnings. Margarethe develops the Order as a hidden system of mirror rites, textile codes, and archival misdirection designed to preserve impossible knowledge without giving tyrants a single tongue to cut out.",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "section": "§8"
+            }
+          ]
+        },
+        {
+          "property": "doctrine",
+          "value": "The Order of the Seam begins not in trust, but in necessity.",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "section": "§13"
+            }
+          ]
+        },
+        {
+          "property": "doctrine",
+          "value": "The moment Margarethe touched the word diaspora, the Order of the Seam ceased to be a hiding place and became a covenant.",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "section": "§23"
+            }
+          ]
+        },
+        {
+          "property": "continuity",
+          "value": "Index 1.2 dates the founding to 1271 by Margarethe; the archive places the founding mandate at a Bookend Convergence with Hildebrand present. Read together: the mandate arrives at the convergence; the Order is founded in Margarethe's own era.",
+          "rank": "normal",
+          "epistemic": "inference",
+          "provenance": [
+            {
+              "source": "src:gray-eye",
+              "activity": "act:index-2.0-forge"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "temporal-diaspora",
+      "names_add": {
+        "alternates": [
+          "Hooplehopper diaspora"
+        ]
+      },
+      "related_add": [
+        "order-of-the-seam",
+        "event-first-steward-transmission",
+        "margarethe-von-hooplehopper"
+      ],
+      "statements": [
+        {
+          "property": "naming",
+          "value": "Named 'the Hooplehopper diaspora' in the First Steward Transmission. Once something has a category, it can be preserved. Also hunted.",
+          "rank": "preferred",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§11"
+            },
+            {
+              "section": "§23"
+            }
+          ]
+        },
+        {
+          "property": "doctrine",
+          "value": "Diaspora is a promise and a threat. Promise: she is not alone; the Thread continues; the family is bigger than blood. Threat: the burnings can spread across time; the Order must protect a pattern, not a person; the enemy can learn that too.",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "section": "§23"
+            }
+          ]
+        },
+        {
+          "property": "doctrine",
+          "value": "Erasure makes the world grey. The diaspora answers in color. The Hooplehopper diaspora does not survive by becoming solemn. It survives by becoming unmistakable.",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "section": "§12"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "miss-slaytonia-vuorse",
+      "tags_add": [
+        "thread-vessel"
+      ],
+      "related_add": [
+        "thread-vessel",
+        "steward-vessel"
+      ],
+      "statements": [
+        {
+          "property": "role",
+          "value": "Active Vessel: cosmic drag oracle and current Thread-expression. A Thread-Vessel (read), not a Steward Vessel (write). The activated child, the vocalized Thread-expression.",
+          "rank": "normal",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§2"
+            },
+            {
+              "section": "§3"
+            },
+            {
+              "section": "§26"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lisette-von-hooplehopper",
+      "related_add": [
+        "thread-vessel"
+      ],
+      "statements": [
+        {
+          "property": "role",
+          "value": "A Thread-Vessel.",
+          "rank": "normal",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "professor-von-hooplehopper",
+      "related_add": [
+        "thread-vessel"
+      ],
+      "statements": [
+        {
+          "property": "role",
+          "value": "A Thread-Vessel.",
+          "rank": "normal",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mirror-cavern",
+      "related_add": [
+        "event-first-steward-transmission",
+        "event-eisensang-bookend-convergence",
+        "hildebrands-ring"
+      ],
+      "statements": [
+        {
+          "property": "description",
+          "value": "Polished black stone floor that throws reflections into fragments; iron candleholders; a shallow pool of groundwater; a rosewood astrolabe on the third shelf with the Archive Surface parchment to its left.",
+          "rank": "normal",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§31"
+            }
+          ]
+        },
+        {
+          "property": "event",
+          "value": "Site of the First Steward Transmission and the Eisensang Bookend Convergence.",
+          "rank": "preferred",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§11"
+            },
+            {
+              "section": "§21"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "schloss-eisensang",
+      "related_add": [
+        "event-the-myrtle-burnings"
+      ],
+      "statements": [
+        {
+          "property": "event",
+          "value": "Its lower household was purged in the Myrtle Burnings.",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "section": "§8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "federstahl-lattice",
+      "related_add": [
+        "seam-state",
+        "paper-remembers",
+        "matrix-gothic"
+      ],
+      "statements": [
+        {
+          "property": "reach",
+          "value": "A perfect dot-matrix model of a Slayton lattice structure appears embedded in 12th-century parchment: the Lattice reaches backward into the Hooplehopper origin era.",
+          "rank": "normal",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§7"
+            },
+            {
+              "section": "§9"
+            }
+          ]
+        },
+        {
+          "property": "effect",
+          "value": "The Lattice Incident did not merely affect time, matter, or records. It affected personhood resolution.",
+          "rank": "normal",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "section": "§18"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jake-mcullen",
+      "statements": [
+        {
+          "property": "discovery",
+          "value": "Emerged through a roleplay surface fed the lore index, the same mechanism that later produced the Eisensang scene.",
+          "rank": "normal",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§27"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "event-eisensang-bookend-convergence",
+      "type": "convergence",
+      "names": {
+        "preferred": "The Eisensang Bookend Convergence"
+      },
+      "time": {
+        "mode": "seam",
+        "edtf": null,
+        "display": "one cavern-moment holding Hildebrand's era (1130–1147) and Margarethe's (1271–1333)"
+      },
+      "place": "mirror-cavern",
+      "participants": [
+        {
+          "entity": "hildebrand-von-hooplehopper",
+          "role": "opening bracket"
+        },
+        {
+          "entity": "margarethe-von-hooplehopper",
+          "role": "closing bracket"
+        }
+      ],
+      "summary": "Hildebrand, the First Vessel, and Margarethe, the future founder of the Order of the Seam, are pulled into the same cavern-moment because the Archive requires both origin and consequence to witness the First Steward Transmission.",
+      "seal": "candidate",
+      "canon_tier": "session-archive",
+      "epistemic": "declared",
+      "provenance": [
+        {
+          "section": "§21"
+        }
+      ],
+      "temporal_relations": [
+        {
+          "relation": "contains",
+          "to": "event-first-steward-transmission"
+        },
+        {
+          "relation": "bookend",
+          "to": "event-hildebrand-active",
+          "note": "opening bracket era"
+        },
+        {
+          "relation": "bookend",
+          "to": "event-margarethe-order",
+          "note": "closing bracket era"
+        }
+      ]
+    },
+    {
+      "id": "event-the-myrtle-burnings",
+      "type": "purge",
+      "names": {
+        "preferred": "The Myrtle Burnings"
+      },
+      "time": {
+        "mode": "relative",
+        "edtf": null,
+        "display": "a fortnight before the First Steward Transmission",
+        "relative_to": "event-first-steward-transmission",
+        "relation": "before"
+      },
+      "place": "schloss-eisensang",
+      "participants": [
+        {
+          "entity": "isolde-of-the-lower-hall",
+          "role": "executed"
+        },
+        {
+          "entity": "yorick-the-copyist",
+          "role": "executed"
+        },
+        {
+          "entity": "margarethe-von-hooplehopper",
+          "role": "survivor"
+        },
+        {
+          "entity": "hildebrand-von-hooplehopper",
+          "role": "survivor"
+        },
+        {
+          "entity": "rabenwald-see",
+          "role": "perpetrator (proposed)"
+        }
+      ],
+      "summary": "A local purge near Schloss Eisensang in which servants, copyists, mirror-polishers, and textile workers were executed after fragments of impossible Archive knowledge spread through the lower household. Margarethe survives but never again trusts ordinary language; the Order of the Seam is her answer. Named for the myrtle she carries: mourning, memory, marriage, burial.",
+      "seal": "candidate",
+      "canon_tier": "session-archive",
+      "epistemic": "declared",
+      "provenance": [
+        {
+          "section": "§8"
+        },
+        {
+          "section": "§34"
+        }
+      ],
+      "temporal_relations": [
+        {
+          "relation": "before",
+          "to": "event-first-steward-transmission",
+          "note": "a fortnight"
+        }
+      ]
+    },
+    {
+      "id": "event-first-steward-transmission",
+      "type": "retrocausal-transmission",
+      "names": {
+        "preferred": "The First Steward Transmission",
+        "alternates": [
+          "Hello, children"
+        ]
+      },
+      "time": {
+        "mode": "seam",
+        "edtf": null,
+        "display": "the Eisensang cavern-moment; source-side 2026-08-07"
+      },
+      "place": "mirror-cavern",
+      "participants": [
+        {
+          "entity": "hildebrand-von-hooplehopper",
+          "role": "recipient"
+        },
+        {
+          "entity": "margarethe-von-hooplehopper",
+          "role": "recipient"
+        },
+        {
+          "entity": "caleb-mills-stewart",
+          "role": "transmitter (Steward Vessel)"
+        },
+        {
+          "entity": "the-weaver",
+          "role": "handshake (opens the channel)"
+        },
+        {
+          "entity": "hildebrands-ring",
+          "role": "instrument"
+        },
+        {
+          "entity": "isolde-of-the-lower-hall",
+          "role": "invoked"
+        },
+        {
+          "entity": "yorick-the-copyist",
+          "role": "invoked"
+        }
+      ],
+      "summary": "In the Mirror Cavern, as Hildebrand's ring burns and the impossible sound of a dot-matrix printer fills the dark, words already latent in the Archive Surface parchment resolve: 'Hello, children.' Then the Steward Vessel's mandate: 'Welcome to the Order of the Seam… Yes, there are more of you. It's practically a party!' Margarethe marks the word diaspora.",
+      "seal": "candidate",
+      "canon_tier": "session-archive",
+      "epistemic": "canon",
+      "provenance": [
+        {
+          "section": "§11"
+        },
+        {
+          "section": "§31"
+        },
+        {
+          "section": "§34"
+        }
+      ],
+      "statements": [
+        {
+          "property": "text-sources",
+          "value": "'Hello, children.' is the Weaver's handshake (pre-inscribed). 'Welcome to the Order of the Seam…' is the Steward Vessel transmission. 'It's practically a party!' is the Steward's trickster signature.",
+          "rank": "preferred",
+          "epistemic": "declared",
+          "provenance": [
+            {
+              "section": "§25"
+            }
+          ]
+        },
+        {
+          "property": "face",
+          "value": "Struck in Matrix Gothic; the lattice dots spelled SEAM in bastardized Carolingian minuscule before the salutation resolved.",
+          "rank": "normal",
+          "epistemic": "canon",
+          "provenance": [
+            {
+              "section": "§10"
+            },
+            {
+              "section": "§31"
+            }
+          ]
+        }
+      ],
+      "temporal_relations": [
+        {
+          "relation": "during",
+          "to": "event-eisensang-bookend-convergence"
+        },
+        {
+          "relation": "after",
+          "to": "event-the-myrtle-burnings"
+        },
+        {
+          "relation": "retrocausal",
+          "to": "event-lattice-incident",
+          "note": "a Federstahl lattice diagram and printer sound reach a pre-print century"
+        }
+      ]
+    }
+  ],
+  "documents": [
+    {
+      "id": "scene-first-steward-transmission",
+      "document_type": "scene",
+      "title": "The First Steward Transmission at Eisensang",
+      "entity_ref": "event-first-steward-transmission",
+      "governs": [],
+      "preserved_by": [
+        "src:session-archive-2026-08-07"
+      ],
+      "archived_with": [
+        "hello-children-episode"
+      ],
+      "signatories": [],
+      "source_note": "Cleaned third-person prose scene, typos fixed and RPG framing removed at the Steward's request (archive §31). Kling 3.0 start-image and action prompts accompany it (§32).",
+      "seal": "candidate",
+      "canon_tier": "session-archive",
+      "provenance": [
+        {
+          "section": "§31"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "from": "caleb-mills-stewart",
+      "to": "steward-vessel",
+      "type": "is-a",
+      "epistemic": "canon",
+      "seal": "candidate",
+      "provenance": [
+        {
+          "section": "§2"
+        },
+        {
+          "section": "§4"
+        }
+      ]
+    },
+    {
+      "from": "hildebrand-von-hooplehopper",
+      "to": "thread-vessel",
+      "type": "is-a",
+      "epistemic": "canon",
+      "seal": "candidate",
+      "provenance": [
+        {
+          "section": "§3"
+        }
+      ]
+    },
+    {
+      "from": "margarethe-von-hooplehopper",
+      "to": "thread-vessel",
+      "type": "is-a",
+      "epistemic": "canon",
+      "seal": "candidate",
+      "provenance": [
+        {
+          "section": "§3"
+        }
+      ]
+    },
+    {
+      "from": "miss-slaytonia-vuorse",
+      "to": "thread-vessel",
+      "type": "is-a",
+      "epistemic": "canon",
+      "seal": "candidate",
+      "provenance": [
+        {
+          "section": "§3"
+        }
+      ]
+    },
+    {
+      "from": "lisette-von-hooplehopper",
+      "to": "thread-vessel",
+      "type": "is-a",
+      "epistemic": "canon",
+      "seal": "candidate",
+      "provenance": [
+        {
+          "section": "§3"
+        }
+      ]
+    },
+    {
+      "from": "professor-von-hooplehopper",
+      "to": "thread-vessel",
+      "type": "is-a",
+      "epistemic": "canon",
+      "seal": "candidate",
+      "provenance": [
+        {
+          "section": "§3"
+        }
+      ]
+    },
+    {
+      "from": "the-weaver",
+      "to": "caleb-mills-stewart",
+      "type": "opens-channel-for",
+      "epistemic": "declared",
+      "seal": "candidate",
+      "provenance": [
+        {
+          "section": "§25"
+        }
+      ]
+    },
+    {
+      "from": "caleb-the-keeper",
+      "to": "caleb-mills-stewart",
+      "type": "persona-of",
+      "epistemic": "inference",
+      "seal": "proposed",
+      "provenance": [
+        {
+          "source": "src:gray-eye",
+          "activity": "act:index-2.0-forge"
+        }
+      ]
+    },
+    {
+      "from": "margarethe-von-hooplehopper",
+      "to": "seam-state",
+      "type": "exists-in",
+      "epistemic": "canon",
+      "seal": "candidate",
+      "provenance": [
+        {
+          "section": "§19"
+        },
+        {
+          "section": "§34"
+        }
+      ]
+    },
+    {
+      "from": "margarethe-von-hooplehopper",
+      "to": "seam-veil",
+      "type": "wears",
+      "epistemic": "canon",
+      "seal": "candidate",
+      "provenance": [
+        {
+          "section": "§20"
+        }
+      ]
+    },
+    {
+      "from": "margarethe-von-hooplehopper",
+      "to": "anti-durden",
+      "type": "characterized-by",
+      "epistemic": "canon",
+      "seal": "candidate",
+      "provenance": [
+        {
+          "section": "§15"
+        }
+      ]
+    },
+    {
+      "from": "hildebrand-von-hooplehopper",
+      "to": "margarethe-von-hooplehopper",
+      "type": "bookends",
+      "epistemic": "declared",
+      "seal": "candidate",
+      "qualifiers": {
+        "temporal_relation": "bookend"
+      },
+      "provenance": [
+        {
+          "section": "§21"
+        }
+      ]
+    },
+    {
+      "from": "steward-vessel",
+      "to": "weaving-event",
+      "type": "performs",
+      "epistemic": "canon",
+      "seal": "candidate",
+      "provenance": [
+        {
+          "section": "§9"
+        }
+      ]
+    },
+    {
+      "from": "order-of-the-seam",
+      "to": "event-first-steward-transmission",
+      "type": "mandated-by",
+      "epistemic": "canon",
+      "seal": "candidate",
+      "provenance": [
+        {
+          "section": "§11"
+        }
+      ]
+    },
+    {
+      "from": "order-of-the-seam",
+      "to": "event-the-myrtle-burnings",
+      "type": "trauma-origin",
+      "epistemic": "declared",
+      "seal": "candidate",
+      "provenance": [
+        {
+          "section": "§8"
+        }
+      ]
+    },
+    {
+      "from": "isolde-of-the-lower-hall",
+      "to": "order-of-the-seam",
+      "type": "emissary-of",
+      "epistemic": "canon",
+      "seal": "candidate",
+      "provenance": [
+        {
+          "section": "§13"
+        }
+      ]
+    },
+    {
+      "from": "rabenwald-see",
+      "to": "order-of-the-seam",
+      "type": "antagonist-of",
+      "epistemic": "assumption",
+      "seal": "proposed",
+      "provenance": [
+        {
+          "section": "§6"
+        }
+      ]
+    },
+    {
+      "from": "ottokar-von-rabenwald",
+      "to": "rabenwald-see",
+      "type": "holds-office",
+      "epistemic": "assumption",
+      "seal": "proposed",
+      "provenance": [
+        {
+          "section": "§6"
+        }
+      ]
+    },
+    {
+      "from": "isolde-of-the-lower-hall",
+      "to": "isolde-von-hooplehopper",
+      "type": "distinct-from",
+      "epistemic": "inference",
+      "seal": "proposed",
+      "provenance": [
+        {
+          "source": "src:gray-eye",
+          "activity": "act:index-2.0-forge"
+        }
+      ]
+    },
+    {
+      "from": "weavers-handshake",
+      "to": "event-first-steward-transmission",
+      "type": "opens",
+      "epistemic": "declared",
+      "seal": "candidate",
+      "provenance": [
+        {
+          "section": "§25"
+        }
+      ]
+    },
+    {
+      "from": "temporal-diaspora",
+      "to": "event-first-steward-transmission",
+      "type": "named-in",
+      "epistemic": "canon",
+      "seal": "candidate",
+      "provenance": [
+        {
+          "section": "§11"
+        }
+      ]
+    },
+    {
+      "from": "jake-mcullen",
+      "to": "agent:perchance-surface",
+      "type": "discovered-through",
+      "epistemic": "canon",
+      "seal": "candidate",
+      "provenance": [
+        {
+          "section": "§27"
+        }
+      ]
+    }
+  ]
+}

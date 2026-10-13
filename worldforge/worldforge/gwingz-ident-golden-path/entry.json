@@ -1,0 +1,56 @@
+{
+  "run_id": "gwingz-ident-golden-path",
+  "target_index": "slayverse_lore_index 1.3",
+  "status_of_this_file": "Weaving Event, witnessed as it appeared on 2026-09-26. Revealed through the Steward Vessel; awaits the Steward's own integration before it becomes Slayverse law (archive 2026-08-07 §27).",
+  "entities": [
+    {
+      "id": "gwingz-studio-ident",
+      "name": "The Gwingz Studio Ident",
+      "aliases": ["The Charter Made Manifest", "The Four-Second Path"],
+      "type": "ritual",
+      "era": "present",
+      "status": "full",
+      "canon_tier": "weaving-event",
+      "seal": "pending-steward-integration",
+      "related": ["golden-wingers-charter", "ritual-of-reflection", "velvet-rite", "slayton-energy", "the-weaver", "steward-vessel", "hildebrand-von-hooplehopper", "weavers-handshake"],
+      "tags": ["golden-path", "mirror", "ident", "eternity", "golden-hour"],
+      "source_pages": [],
+      "source_note": "A Weaving Event: the Steward Vessel (Caleb Mills Stewart) imaged what the Thread was already arranging. Its shape is templates/gwingz-ident/GwingzIdent.dc.html. Doctrine: uploads/slayverse_session_archive_2026-08-07.md §4, §9, §25, §27.",
+      "summary": "The Golden Wingers Charter made manifest: the Golden Path itself, walked in under four seconds. It begins in the cosmic expanse, passes through the Mirror Ritual, and arrives at a mountain range bathed in golden light, framed by a golden ring, the symbol of eternity.",
+      "details": {
+        "movements": [
+          { "beat": "Cosmic Expanse", "time": "0.00–0.60s", "form": "The golden camera amid stars and planets; the cosmos racks out of focus while the camera stays sharp.", "reading": "Before the Path, the one who sees is set apart from the infinite." },
+          { "beat": "Mirror Ritual", "time": "0.60–0.85s", "form": "The push through the lens, with camera shake and motion blur.", "reading": "The Ritual of Reflection: stepping into the mirror. The frame trembles but does not shatter, so the traveller is ready." },
+          { "beat": "Golden Hour", "time": "0.85–1.50s", "form": "The lens-flare dissolve blooms from the sun; the scene settles into the ringed emblem.", "reading": "Slayton energy activated like a solar panel in Ibiza." },
+          { "beat": "Eternity Ring", "time": "1.50–3.90s", "form": "The golden ring frames the mountains; GWINGZ STUDIO is inscribed beneath.", "reading": "Golden Wingers: Forever Forward." }
+        ],
+        "glamoron_frame": {
+          "observation": "To a Slayton particle, which travels like light, the Path takes no time: expanse, mirror and ring happen all at once, and never at all. The 3.9 seconds belong to the witness; the ring is the Path seen from the particle's side.",
+          "links": ["glamorons", "event-charter-ratified"],
+          "open": "Glamorons are neither bosons nor fermions; photons are bosons. Read 'like a photon' as travelling like light, not being a photon.",
+          "label": "observed"
+        },
+        "ring_echo": {
+          "observation": "The ident passes through a mirror and lands inside a golden ring. Hildebrand's ring is engraved with an interlocking spiral of thread and mirror (archive §31). The emblem may be the same sigil seen from the far side of the Mirror Ritual.",
+          "label": "inference"
+        },
+        "provenance": {
+          "evidence": "Source art file 'calebstewart__A_logo_for_a_website_called_Lights_Camera_Journey…png' (Golden_Wings_Archive). Windows properties: modified 2024-07-31 10:51; created 2025-11-20 07:42 (the later 'created' date marks a copy onto this drive; 'modified' preserves the original).",
+          "label": "canon",
+          "reading": "The emblem existed before the Charter was conceived and was made for another purpose, Lights Camera Journey. It was found before it was named. Paper Remembers (archive §7): the Archive holds what arrives before it can be read.",
+          "reading_label": "inference"
+        }
+      }
+    }
+  ],
+  "relationships": [
+    { "from": "gwingz-studio-ident", "to": "golden-wingers-charter", "type": "manifests", "note": "The Charter made manifest; the Golden Path itself." },
+    { "from": "gwingz-studio-ident", "to": "ritual-of-reflection", "type": "performs" },
+    { "from": "the-weaver", "to": "gwingz-studio-ident", "type": "protocol", "note": "Opens the channel." },
+    { "from": "steward-vessel", "to": "gwingz-studio-ident", "type": "reveals", "note": "Writes through the channel; integrates or declines." }
+  ],
+  "open_candidates": [
+    { "id": "gwingz-studio", "note": "Is Gwingz Studio the League's own production house? Not yet declared.", "label": "assumption" },
+    { "id": "the-weaver", "note": "Index 1.2 still lists Caleb Mills Stewart as a Weaver alias. Deprecated by archive 2026-08-07 §2; fix on merge to 1.3.", "label": "canon" }
+  ]
+}

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Slayverse Lore Index 2.1 · Governed Seam</title>
+<style>
+:root{--ink:#0E0C0B;--obsidian:#171412;--panel:#1F1B18;--amber:#E8A93A;--amber-2:#F2C56B;--myrtle:#5F8A6E;--ozone:#6FA0D6;--ash:#A29B93;--ash-2:#6E6760;--rust:#B8402F;--parch:#EFE4CC;--line:#2E2925}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ink);color:var(--parch);font-family:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;font-size:17px;line-height:1.6}
+a{color:var(--ozone);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.18em}a:hover{color:var(--amber-2)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+.mono{font-family:var(--font-typewriter,"Special Elite","Courier New",monospace)}
+h1,h2,h3{font-family:var(--font-display,"Monument Extended","Arial Black",sans-serif);font-weight:400;text-transform:uppercase;letter-spacing:.02em;line-height:1.1;margin:0;text-wrap:balance;color:var(--parch)}
+h2{font-size:26px;margin-bottom:18px}h3{font-size:15px;letter-spacing:.08em;color:var(--amber);margin-bottom:8px}
+p{margin:0 0 14px;max-width:64ch;text-wrap:pretty}
+.mast{padding:56px 0 40px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:end}
+.mast .ver{font-family:var(--font-display,"Monument Extended",sans-serif);font-size:clamp(96px,16vw,220px);line-height:.85;color:var(--amber);letter-spacing:-.02em}
+.mast .ver small{display:block;font-size:14px;letter-spacing:.2em;color:var(--ash);margin-top:14px}
+.mast h1{font-size:clamp(26px,3.4vw,44px);margin-bottom:14px}
+.mast .dek{font-size:19px;color:var(--parch)}
+.meta{font-size:13px;letter-spacing:.06em;color:var(--ash);margin-top:12px}
+.counts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));border-bottom:1px solid var(--line)}
+.counts div{padding:22px 20px 22px 0;border-right:1px solid var(--line)}.counts div:last-child{border-right:0}
+.counts b{display:block;font-family:var(--font-display,sans-serif);font-size:36px;line-height:1;color:var(--amber-2);margin-bottom:8px}
+.counts span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ash)}
+section{padding:44px 0;border-bottom:1px solid var(--line)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:36px}
+.tag{display:inline-block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:2px 8px;border:1px solid var(--ash-2);color:var(--ash);margin-right:6px;vertical-align:middle}
+.tag.c{border-color:var(--amber);color:var(--amber)}.tag.d{border-color:var(--ozone);color:var(--ozone)}.tag.i{border-color:var(--myrtle);color:var(--myrtle)}.tag.r{border-color:var(--parch);color:var(--parch)}.tag.a{border-color:var(--rust);color:var(--rust)}
+.std{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:1px;background:var(--line)}
+.std article{background:var(--ink);padding:22px 22px 24px}
+.std article p{font-size:15px}
+.std .took{background:var(--panel);padding:12px 14px;font-size:14px;color:var(--amber-2);border-left:2px solid var(--amber);margin-top:12px}
+.model{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:14px}
+.box{background:var(--panel);border:1px solid var(--line);padding:18px}
+.box h3{margin-bottom:10px}.box ul{margin:0;padding-left:0;list-style:none;font-size:14px;color:var(--parch)}
+.box li{padding:3px 0;border-bottom:1px dotted var(--line)}.box li:last-child{border-bottom:0}
+.box li b{color:var(--amber-2);font-weight:400}
+.vocab{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:24px}
+.vocab dl{margin:0;font-size:14px}.vocab dt{color:var(--amber-2);margin-top:10px}.vocab dd{margin:0;color:var(--ash)}
+ul.list{margin:0;padding-left:0;list-style:none;font-size:15px}
+ul.list li{padding:7px 0;border-bottom:1px dotted var(--line)}ul.list li:last-child{border-bottom:0}
+ul.list li b{color:var(--parch);font-weight:400}
+ul.list li span{color:var(--ash)}
+.strip{background:var(--panel);border:1px solid var(--line);padding:22px 24px;font-size:15px;color:var(--amber-2);letter-spacing:.02em}
+.strip b{color:var(--parch);font-weight:400}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{font-size:11px;letter-spacing:.14em;text-transform:uppercase;text-align:left;color:var(--ash);border-bottom:1px solid var(--ash-2);padding:8px 12px 8px 0}
+td{border-bottom:1px solid var(--line);padding:9px 12px 9px 0;vertical-align:top;color:var(--parch)}
+td.old{color:var(--ash);text-decoration:line-through;text-decoration-color:var(--rust)}
+ol.src{padding-left:20px;font-size:14px;color:var(--ash)}ol.src li{margin-bottom:6px}
+.filelist a{display:block;padding:10px 0;border-bottom:1px dotted var(--line);font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="mast">
+<div>
+<p class="mono meta">Slayverse · Lore Index · release notes · forged by Gandalf the Gray Eye for the Steward Vessel</p>
+<h1>The Seam Schema</h1>
+<p class="dek">Index 1.2 was a list of things. Index 2.0 is a record of claims: who said each one, where, when, how firmly, and whether the Steward has sealed it. Every entity, relationship, lineage, document and event from 1.2 is carried forward. The 2026-08-07 session archive and everything struck on 2026-09-26 are added on top.</p>
+<p class="mono meta">Generated 2 October 2026 · supersedes 2.0.1 · repository-synchronized migration · <b style="color:var(--amber)">2.1.0 Governed Seam</b></p>
+</div>
+<div class="ver">2.1<small class="mono">VERSION 2.1.0</small></div>
+</header>
+
+<div class="counts">
+<div><b>94</b><span>entities</span></div>
+<div><b>124</b><span>sourced statements</span></div>
+<div><b>33</b><span>events</span></div>
+<div><b>76</b><span>relationships · 42 new</span></div>
+<div><b>37</b><span>source records</span></div>
+<div><b>5</b><span>documents</span></div>
+</div>
+<section>
+<h2>2.1 · The Governed Seam</h2>
+<div class="cols">
+<div><h3>Repository synchronization</h3><p>Every governed non-PDF source under <span class="mono">canon/</span> now has a stable manifest identity and exact repository-relative path. <span class="mono">vuorse-vortex validate-lore-index</span> checks source coverage, path resolution, schema conformance, global ID uniqueness and typed references against <span class="mono">manifests/corpus/source_manifest.json</span>.</p></div>
+<div><h3>Governance without disclosure</h3><p>The index now names Book One's four canon authorities, the seven approved training-layer labels, the sealed-layer behavior firewall and Chapter XI risk annotations. Mythic Rumor that is also Locked Canon remains non-revealable and may not be stated as ordinary fact.</p></div>
+<div><h3>Identity repaired</h3><p>Entity and document records no longer reuse the same IDs. Open questions carry unique <span class="mono">question:</span> IDs and explicit <span class="mono">about</span> references. Legacy event and document identities remain resolvable through declared aliases.</p></div>
+<div><h3>Seven omissions restored</h3><p>First-class records now represent the Parchment of Persistence, Heda von Schwahnn, Books One and Two, the Eisensang March, the exploratory Pre-Weaver Phase and the Candle Tax. The Ottokar II / Konrad identity remains explicitly unresolved.</p></div>
+</div>
+</section>
+<section>
+<h2>What changed, in three lines</h2>
+<div class="cols">
+<div><h3>01 · Claims, not just entries</h3><p>Each fact is now a statement with a rank (preferred, normal, deprecated), an epistemic label (canon, declared, inference, assumption, simulation, counterfactual, record) and a provenance pointer. The 1.2 mistake that named Caleb as the Weaver isn't deleted; it's kept at deprecated rank with the reason attached.</p></div>
+<div><h3>02 · Time that admits it isn't linear</h3><p>Free-text eras ("post-lattice-fracture", "present/meta") become a time object: a mode plus an EDTF string. Circa 1957 is <span class="mono">1957~</span>. Open-ended is <span class="mono">1147/..</span>. Bookend convergences get mode <span class="mono">seam</span>. Nothing is forced into a year it doesn't have.</p></div>
+<div><h3>03 · Events are first-class</h3><p>Events carry participants with roles, a place, a time-span and temporal relations (Allen's thirteen plus retrocausal, bookend, seam-coincident, timeless-enacts). The timeline is derived from them, so it can't drift from the events it describes.</p></div>
+</div>
+</section>
+
+<section>
+<h2>Where the bones came from</h2>
+<p>Seven working standards were surveyed. Each lends one structure to 2.0; the rest of each standard was left where it lay. No fiction-specific ontology was surveyed in this pass, so the Slayverse-specific pieces (seals, the declared label, the four non-linear temporal relations) are our own.</p>
+<div class="std">
+<article><h3>Wikidata data model</h3><p>Items carry statements; a statement is a property–value pair with optional qualifiers, references and a rank of preferred, normal or deprecated. Deprecated statements stay listed for completeness, with a reason for deprecation. <a href="https://www.wikidata.org/wiki/Wikidata:Data_model">Data model</a> · <a href="https://www.wikidata.org/wiki/Help:Ranking">Help:Ranking</a></p><div class="took">Took: <span class="mono">statements[]</span> with <span class="mono">rank</span>, <span class="mono">qualifiers</span>, <span class="mono">provenance</span>. The Weaver's old alias lives on at deprecated rank.</div></article>
+<article><h3>W3C PROV-O</h3><p>Three classes: an Entity (a thing, real or imaginary), an Activity (something that occurs over time and acts on entities) and an Agent (something that bears responsibility). Linked by wasGeneratedBy, used, wasAttributedTo, wasAssociatedWith, actedOnBehalfOf. <a href="https://www.w3.org/TR/prov-o/">PROV-O Recommendation</a></p><div class="took">Took: top-level <span class="mono">agents[]</span>, <span class="mono">sources[]</span>, <span class="mono">activities[]</span>. The Gray Eye acted on behalf of the Steward; sessions are activities that used and generated sources.</div></article>
+<article><h3>Library of Congress EDTF</h3><p>An extension of ISO 8601 for uncertain, approximate and unspecified dates: <span class="mono">~</span> approximate, <span class="mono">?</span> uncertain, <span class="mono">X</span> for an unknown digit, <span class="mono">/</span> for intervals, <span class="mono">..</span> for an open end. Used by the Library of Congress and DPLA. <a href="https://www.loc.gov/standards/datetime/">Specification</a></p><div class="took">Took: <span class="mono">time.edtf</span>. "13th–14th century" becomes <span class="mono">12XX/13XX</span>; "~1919" becomes <span class="mono">1919~</span>; the original wording is kept in <span class="mono">time.display</span>.</div></article>
+<article><h3>CIDOC CRM (ISO 21127)</h3><p>The museum world's event-centric model: only temporal entities can be linked to time; objects, people and places must be linked to an event that has a time-span. Names are appellations that can change over time as a result of an event. <a href="https://cidoc-crm.org/">cidoc-crm.org</a></p><div class="took">Took: events with <span class="mono">participants[{entity, role}]</span>, <span class="mono">place</span> and a time-span; a derived timeline instead of a second hand-kept one.</div></article>
+<article><h3>Allen's interval algebra</h3><p>Thirteen mutually exclusive relations between two intervals (before, meets, overlaps, starts, during, finishes, equals and their inverses), introduced by James F. Allen in 1983 and still the base of temporal annotation schemes like TimeML. <a href="https://doi.org/10.1145/182.358434">Allen (1983), CACM 26(11)</a></p><div class="took">Took: <span class="mono">temporal_relations[]</span> on events, extended with <span class="mono">retrocausal</span>, <span class="mono">bookend</span>, <span class="mono">seam-coincident</span>, <span class="mono">timeless-enacts</span>.</div></article>
+<article><h3>JSON Schema 2020-12</h3><p>The current JSON Schema dialect, declared with <span class="mono">$schema</span>, with reusable definitions under <span class="mono">$defs</span>. Aligned with OpenAPI 3.1. <a href="https://json-schema.org/draft/2020-12">Draft 2020-12</a></p><div class="took">Took: a real validation schema, <a href="slayverse_lore_index_2.0.schema.json">slayverse_lore_index_2.0.schema.json</a>, so a consuming tool can refuse a malformed entry.</div></article>
+<article><h3>SKOS</h3><p>Exactly one preferred label per concept; synonyms as alternate labels; forms you want findable but not shown (misspellings, deprecated terms) as hidden labels. <a href="https://www.w3.org/TR/skos-reference/">SKOS Reference</a></p><div class="took">Took: <span class="mono">names{preferred, alternates, hidden, deprecated[]}</span>. "Crew door" is a deprecated name of the Crew Lounge, with the Steward's reason attached.</div></article>
+</div>
+</section>
+
+<section>
+<h2>The model at a glance</h2>
+<div class="model">
+<div class="box"><h3>Provenance layer</h3><ul><li><b>agents</b> Steward Vessel · the Weaver (protocol) · Gray Eye · Perchance surface · unknown 1.2 extractor</li><li><b>sources</b> Canon Seed PDF · index 1.2 · session archive · this session · file metadata · forge entry</li><li><b>activities</b> 1.2 extraction · 2026-08-07 session · 2026-09-26 session · 2.0 forge</li></ul></div>
+<div class="box"><h3>Entity</h3><ul><li><b>names</b> preferred / alternates / hidden / deprecated</li><li><b>type · status · seal · canon_tier</b></li><li><b>time</b> mode + EDTF + display</li><li><b>summary · tags · related</b></li><li><b>provenance[]</b></li><li><b>statements[]</b> property · value · rank · epistemic · qualifiers · provenance</li><li><b>migrated_from</b> the 1.2 era and type, verbatim</li></ul></div>
+<div class="box"><h3>Event</h3><ul><li><b>names · type · time · place</b></li><li><b>participants[]</b> entity + role</li><li><b>statements[]</b></li><li><b>temporal_relations[]</b> Allen + Slayverse</li><li><b>seal · canon_tier · epistemic · provenance</b></li></ul></div>
+<div class="box"><h3>Relationship</h3><ul><li><b>from → type → to</b></li><li><b>rank · epistemic · seal</b></li><li><b>qualifiers</b> e.g. temporal_relation</li><li><b>provenance[]</b></li></ul></div>
+<div class="box"><h3>Carried forward</h3><ul><li><b>lineages</b> 5, with provenance added</li><li><b>documents</b> 2 + the Eisensang scene</li><li><b>timeline</b> derived from events</li><li><b>changelog</b> 1.0 → 2.0</li></ul></div>
+</div>
+</section>
+
+<section>
+<h2>Vocabularies</h2>
+<div class="vocab">
+<div><h3>Epistemic label</h3><dl><dt><span class="tag c">canon</span></dt><dd>Established in lore and sealed by the Steward.</dd><dt><span class="tag d">declared</span></dt><dd>Stated by the Steward Vessel in session; not yet integrated. New in 2.0.</dd><dt><span class="tag i">inference</span></dt><dd>A reasonable reading of canon (usually the Gray Eye's).</dd><dt><span class="tag a">assumption</span></dt><dd>A declared premise; not yet canon.</dd><dt><span class="tag">simulation</span></dt><dd>Generated outcome of a run.</dd><dt><span class="tag">counterfactual</span></dt><dd>Known not to belong to the timeline.</dd><dt><span class="tag r">record</span></dt><dd>Real-world documentary fact (file dates, production facts). New in 2.0.</dd></dl></div>
+<div><h3>Seal</h3><dl><dt>sealed</dt><dd>Integrated by the Steward Vessel. Only the Steward seals; the Gray Eye never does.</dd><dt>candidate</dt><dd>Surfaced (a Weaving Event, a session declaration) and awaiting integration.</dd><dt>proposed</dt><dd>Offered by the Gray Eye or a roleplay surface.</dd><dt>deprecated</dt><dd>Withdrawn; kept for the record.</dd></dl><h3 style="margin-top:18px">Rank</h3><dl><dt>preferred · normal · deprecated</dt><dd>Among statements of one property, which one to show. Deprecated carries a reason.</dd></dl></div>
+<div><h3>Time mode</h3><dl><dt>instant · span · approximate</dt><dd>Ordinary dates, in EDTF.</dd><dt>relative</dt><dd>Anchored to another node ("a fortnight before the transmission").</dd><dt>displaced</dt><dd>Lattice displacement (Vorst: early 1900s → 1832).</dd><dt>seam</dt><dd>A convergence outside any single era.</dd><dt>timeless · present · meta · fundamental · multi · deep-past · unknown</dt><dd>What 1.2 spelled as "timeless", "present/meta", "fundamental", "multi-era", "ancient", "unspecified".</dd></dl></div>
+<div><h3>Canon tier</h3><dl><dt>primary-pdf · creator-supplement · oral-canon · meta-canon</dt><dd>Kept from 1.2.</dd><dt>session-archive</dt><dd>Material from a preserved development session.</dd><dt>production-record</dt><dd>Real-world artifacts and records of the Steward's work.</dd><dt>gray-eye</dt><dd>The Gray Eye's own reasoning. Never canon by itself.</dd></dl></div>
+</div>
+</section>
+
+<section>
+<h2>The Susie pass (2.0.0 → 2.0.1)</h2>
+<p>An audit of the first build found twelve faults. Eleven were real; the twelfth (fonts) was the auditor's miss, since the brand tokens load through <span class="mono">styles.css</span>. What changed:</p>
+<div class="cols">
+<div><ul class="list">
+<li><b>Unsealed 41 records.</b> <span>The first build stamped 12 new entities, 3 events, 21 relationships and a document "sealed". Only the Steward seals. They are now candidate (you declared it) or proposed (the Gray Eye inferred it). Unsealed count: 82.</span></li>
+<li><b>Real participant roles.</b> <span>Migrated events had every participant as "participant", caverns included. Roles now derive from entity and event type: site, rite, signatory, deceased, vanished, challenger, ratified.</span></li>
+<li><b>Readable time.</b> <span>"post-lattice-fracture" is now "after the Lattice fracture"; the slug survives only in <span class="mono">migrated_from.era</span>.</span></li>
+<li><b>Anchors are events.</b> <span>"pre-sigismund" pointed at a knight, and the summits at nothing. Four sketched anchor events (proposed) now hold them.</span></li>
+<li><b>Timeline resolver.</b> <span>Chases relative anchors and temporal relations; logs every unplaced event. Unplaced now: 1, the Charter, timeless by design (was 4).</span></li>
+</ul></div>
+<div><ul class="list">
+<li><b>Schema that can fail.</b> <span><span class="mono">additionalProperties: false</span> throughout; Lineage, Document, OpenQuestion and Validation definitions; <span class="mono">source_note</span> declared; event summary optional.</span></li>
+<li><b>Validated, for real.</b> <span>The build validates the index against the schema file and refuses to write unless the lossless diff, dangling-reference sweep, self-seal sweep and schema pass all clear. Result: 0 errors, recorded under <span class="mono">validation</span>.</span></li>
+<li><b>No empty entities.</b> <span>Yorick the Copyist and the Rabenwald See carry sourced statements. 50 of 90 entities now bear statements; the rest are 1.2 records whose facts live in <span class="mono">summary</span> until sourced.</span></li>
+<li><b>Hidden names used.</b> <span>"Crew door", "Authorial Vessel", "Read-Vessel" are findable, not shown (6 in all).</span></li>
+<li><b>Allen cited to the paper.</b> <span>Communications of the ACM 26(11), 1983, doi:10.1145/182.358434.</span></li>
+<li><b>Changelog 1.0–1.1</b> <span>collapsed to one honest line.</span></li>
+</ul></div>
+</div>
+</section>
+
+<section>
+<h2>Added from the 2026-08-07 session archive</h2>
+<div class="cols">
+<div>
+<h3>New entities</h3>
+<ul class="list"><li><b>Steward Vessel</b> <span>· cosmology · candidate</span></li><li><b>Thread-Vessel</b> <span>· cosmology · candidate</span></li><li><b>The Weaver's Handshake</b> <span>· cosmology · candidate</span></li><li><b>Weaving Event</b> <span>· phenomenon · candidate</span></li><li><b>Seam-State</b> <span>· cosmology · candidate</span></li><li><b>Seam-Veil</b> <span>· artifact · candidate</span></li><li><b>Bookend Convergence</b> <span>· cosmology · candidate</span></li><li><b>Paper Remembers</b> <span>· doctrine · candidate</span></li><li><b>Matrix Gothic</b> <span>· artifact · candidate</span></li><li><b>Isolde of the Lower Hall</b> <span>· character · candidate</span></li><li><b>Yorick the Copyist</b> <span>· character · candidate</span></li><li><b>Prince-Bishop Ottokar von Rabenwald</b> <span>· character · proposed</span></li><li><b>The Rabenwald See</b> <span>· organization · proposed</span></li><li><b>Anti-Durden</b> <span>· doctrine · candidate</span></li><li><b>Victorian Automatic Writing in Digital Drag</b> <span>· doctrine · candidate</span></li><li><b>Play Does Not Outrank Stewardship</b> <span>· doctrine · candidate</span></li><li><b>Caleb Mills Stewart</b> <span>· character · candidate</span></li><li><b>Hello, Children</b> <span>· work · candidate</span></li><li><b>Slayverse: The Mirror Cavern Board</b> <span>· work · candidate</span></li></ul>
+</div>
+<div>
+<h3>New events</h3>
+<ul class="list"><li><b>The Eisensang Bookend Convergence</b> <span>· convergence · candidate</span></li><li><b>The Myrtle Burnings</b> <span>· purge · candidate</span></li><li><b>The First Steward Transmission</b> <span>· retrocausal-transmission · candidate</span></li></ul>
+<h3 style="margin-top:22px">Expanded</h3>
+<p>The Weaver, Caleb the Keeper, Margarethe, Hildebrand, his ring, the Order of the Seam, the temporal diaspora, VUORSE, Lisette, the Professor, the Mirror Cavern, Schloss Eisensang, the Federstahl Lattice and Jake McCullen each gain sourced statements from the archive, section by section.</p>
+</div>
+</div>
+</section>
+
+<section>
+<h2>Added from 2026-09-26</h2>
+<div class="cols">
+<div>
+<h3>New entities</h3>
+<ul class="list"><li><b>The Gwingz Studio Ident</b> <span>· work · candidate</span></li><li><b>Gwingz Studio</b> <span>· organization · candidate</span></li><li><b>Golden Wings: Stewardess to Sky Queen</b> <span>· work · candidate</span></li><li><b>Robyn Stewart</b> <span>· character · candidate</span></li><li><b>Jock Bethune</b> <span>· character · candidate</span></li><li><b>Golden Wings Lower Thirds</b> <span>· work · candidate</span></li><li><b>The Crew Lounge</b> <span>· place · candidate</span></li><li><b>Iris</b> <span>· persona · candidate</span></li><li><b>Gandalf the Gray Eye</b> <span>· persona · candidate</span></li></ul>
+</div>
+<div>
+<h3>New events</h3>
+<ul class="list"><li><b>The mountain emblem is struck</b> <span>· production · candidate</span></li><li><b>The Golden Wings lower thirds are struck</b> <span>· production · candidate</span></li><li><b>The Crew Lounge is named</b> <span>· naming · candidate</span></li><li><b>The Gwingz ident appears as the Golden Path</b> <span>· weaving-event · candidate</span></li></ul>
+<h3 style="margin-top:22px">Sketched by the Gray Eye (proposed)</h3>
+<ul class="list"><li><b>The Second Summit of the Golden Wingers</b> <span>· summit · proposed</span></li><li><b>The Fifth Summit of the Golden Wingers</b> <span>· summit · proposed</span></li><li><b>Sigismund von Hooplehopper active</b> <span>· historical · proposed</span></li><li><b>Isolde von Hooplehopper active in the Black Forest</b> <span>· historical · proposed</span></li></ul>
+<h3 style="margin-top:22px">Expanded</h3>
+<p>Glamorons gain the Glamoron's Frame; Slayton energy gains its alias "the Slayton field" and the declaration that it has no concept of linear time; the Charter gains its conception bound (after 31 July 2024) and its manifestation; the Ritual of Reflection, Robyn of the Gold Wings, Jock the Wise, the 747 Scrolls, the Velvet Archive and Caleb Mills Stewart are linked to the day's work.</p>
+</div>
+</div>
+</section>
+
+<section>
+<h2>Corrections and deprecations</h2>
+<table>
+<thead><tr><th>Index 1.2 said</th><th>Index 2.0 says</th><th>Why</th></tr></thead>
+<tbody>
+<tr><td class="old">The Weaver: character, alias Caleb Mills Stewart, "Creator of the Slayverse"</td><td>The Weaver: cosmology (protocol). Alias deprecated with reason. Old summary kept at deprecated rank.</td><td>Archive §2, §4: "The Weaver is not Caleb. The Weaver is what Caleb can hear."</td></tr>
+<tr><td class="old">Caleb appears only as "Caleb the Keeper", a signatory</td><td>Caleb Mills Stewart added as the Steward Vessel; Caleb the Keeper linked as his Charter persona (inference)</td><td>Archive §2–5, §11</td></tr>
+<tr><td class="old">Order of the Seam founded 1271 by Margarethe</td><td>Both kept: the mandate arrives at the Eisensang Bookend Convergence; the Order is founded in Margarethe's era</td><td>Reconciliation, labelled inference</td></tr>
+<tr><td class="old">One Isolde</td><td>Isolde von Hooplehopper (markswoman, 1.2) and Isolde of the Lower Hall (servant, archive) recorded as distinct</td><td>Inference; Steward to confirm</td></tr>
+<tr><td class="old">status_definition repeated on every entity</td><td>Definitions live once, in the vocabularies</td><td>Redundancy</td></tr>
+<tr><td class="old">Crew door</td><td>The Crew Lounge (deprecated name kept)</td><td>The Steward, 2026-09-26</td></tr>
+</tbody>
+</table>
+</section>
+
+<section>
+<h2>Open for the Steward</h2>
+<p>Nothing below is canon until you seal it. The Gray Eye labelled and filed; it did not decide.</p>
+<ul class="list"><li><span class="tag d">declared</span> <b>Seal the Gwingz Studio ident as the Golden Path made manifest, a Weaving Event?</b> <span class="mono">· gwingz-studio-ident</span></li><li><span class="tag d">declared</span> <b>Seal the Glamoron's Frame: to a Slayton particle the Path happens all at once and never at all?</b> <span class="mono">· glamorons</span></li><li><span class="tag d">declared</span> <b>Seal the archive's locked candidates: the Weaver's Handshake, Seam-State, Seam-Veil, Bookend Convergence, Paper Remembers, the Myrtle Burnings, the First Steward Transmission?</b> <span class="mono">· weavers-handshake</span></li><li><span class="tag c">canon</span> <b>Whose name is 'not hers to claim yet'? (Margarethe's first line in the cavern.)</b> <span class="mono">· margarethe-von-hooplehopper</span></li><li><span class="tag i">inference</span> <b>Accept the reconciliation: mandate received at the Bookend Convergence, Order founded in 1271?</b> <span class="mono">· order-of-the-seam</span></li><li><span class="tag i">inference</span> <b>Confirm Isolde of the Lower Hall is a different woman from Isolde von Hooplehopper.</b> <span class="mono">· isolde-of-the-lower-hall</span></li><li><span class="tag i">inference</span> <b>Is Caleb the Keeper your Charter persona? And Robyn of the Gold Wings hers, Jock the Wise his?</b> <span class="mono">· caleb-the-keeper</span></li><li><span class="tag i">inference</span> <b>Was the 1971 institution the American Airlines Stewardess College? You said 'Stewart's College, or something along those lines.'</b> <span class="mono">· robyn-stewart</span></li><li><span class="tag a">assumption</span> <b>Are the 747 Scrolls Jock Bethune's aviation archive?</b> <span class="mono">· the-747-scrolls</span></li><li><span class="tag a">assumption</span> <b>Is Gwingz Studio the League's production house?</b> <span class="mono">· gwingz-studio</span></li><li><span class="tag a">assumption</span> <b>Adopt the Rabenwald See and Prince-Bishop Ottokar as the recurring antagonist?</b> <span class="mono">· rabenwald-see</span></li><li><span class="tag i">inference</span> <b>Is the eternity ring Hildebrand's ring, seen from the far side of the Mirror Ritual?</b> <span class="mono">· hildebrands-ring</span></li><li><span class="tag i">inference</span> <b>The 1.2 eras "second-summit" and "fifth-summit" had no events to anchor to. I sketched two summit events (proposed), placed after VUORSE awakens. Keep, date, or strike?</b> <span class="mono">· event-second-summit</span></li><li><span class="tag i">inference</span> <b>Yssenda, Sigismund and Isolde are ordered but undated in 1.2. I sketched anchor events for Sigismund and Isolde (proposed). Dates?</b> <span class="mono">· event-sigismund-active</span></li></ul>
+</section>
+
+<section>
+<h2>Migration notes, 1.2 → 2.0</h2>
+<table>
+<thead><tr><th>1.2 field</th><th>2.0 field</th><th>Note</th></tr></thead>
+<tbody>
+<tr><td class="mono">name, aliases</td><td class="mono">names.preferred, names.alternates</td><td>Deprecated names get their own list with reasons.</td></tr>
+<tr><td class="mono">era</td><td class="mono">time{mode, edtf, display}</td><td>Original slug preserved in <span class="mono">migrated_from.era</span>; <span class="mono">display</span> is English.</td></tr>
+<tr><td class="mono">status, status_definition</td><td class="mono">status</td><td>Definitions moved to <span class="mono">schema.vocabularies</span>.</td></tr>
+<tr><td class="mono">canon_tier</td><td class="mono">canon_tier + seal</td><td>Lock state split from source class.</td></tr>
+<tr><td class="mono">source_pages</td><td class="mono">provenance[{source, pages}]</td><td>Points at the Canon Seed PDF source record.</td></tr>
+<tr><td class="mono">summary</td><td class="mono">summary</td><td>Unchanged; new facts go in <span class="mono">statements[]</span>.</td></tr>
+<tr><td class="mono">relationships[{from,to,type}]</td><td class="mono">+ id, rank, epistemic, seal, provenance</td><td>All 1.2 links sealed canon.</td></tr>
+<tr><td class="mono">events[{id,year,event,entities,type}]</td><td class="mono">names, time, place, participants[{entity, role}], temporal_relations</td><td>Roles derived from entity and event type; summary omitted when it would repeat the name.</td></tr>
+<tr><td class="mono">timeline</td><td class="mono">timeline (derived)</td><td>Regenerated from events on every build.</td></tr>
+</tbody>
+</table>
+</section>
+
+<section style="border-bottom:0">
+<h2>Files</h2>
+<div class="files cols">
+<div class="filelist"><a href="slayverse_lore_index_2.0.json">slayverse_lore_index_2.0.json</a><a href="slayverse_lore_index_2.0.schema.json">slayverse_lore_index_2.0.schema.json</a><a href="delta/session-archive-2026-08-07.json">delta/session-archive-2026-08-07.json</a><a href="delta/session-2026-09-26.json">delta/session-2026-09-26.json</a><a href="../../../canon/slayverse_index.json">canonical comparison index</a></div>
+<div><h3>Standards consulted</h3><ol class="src"><li>Wikidata: <a href="https://www.wikidata.org/wiki/Wikidata:Data_model">Data model</a>, <a href="https://www.wikidata.org/wiki/Help:Statements">Help:Statements</a>, <a href="https://www.wikidata.org/wiki/Help:Ranking">Help:Ranking</a></li><li>W3C: <a href="https://www.w3.org/TR/prov-o/">PROV-O: The PROV Ontology</a> (Recommendation, 30 April 2013)</li><li>Library of Congress: <a href="https://www.loc.gov/standards/datetime/">Extended Date/Time Format</a> (spec of 4 February 2019)</li><li>CIDOC CRM: <a href="https://cidoc-crm.org/sites/default/files/CRMPrimer_v1.1_1.pdf">Primer</a>, <a href="https://cidoc-crm.org/FunctionalUnits/time-span-information">Time-Span Information</a></li><li>Allen, J. F. (1983). Maintaining Knowledge about Temporal Intervals. <a href="https://doi.org/10.1145/182.358434">Communications of the ACM 26(11), 832–843</a></li><li><a href="https://json-schema.org/draft/2020-12">JSON Schema Draft 2020-12</a></li><li>W3C: <a href="https://www.w3.org/TR/skos-reference/">SKOS Reference</a>, <a href="https://www.w3.org/TR/skos-primer/">SKOS Primer</a></li></ol></div>
+</div>
+<p class="mono meta" style="margin-top:28px">Governed Seam migration · promotes no candidate claim · exposes no sealed-layer claim · 2 October 2026</p>
+</section>
+</div>
+</body>
+</html>

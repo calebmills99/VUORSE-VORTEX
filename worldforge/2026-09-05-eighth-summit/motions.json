@@ -1,0 +1,59 @@
+{
+  "summit": "Eighth Galactic Summit",
+  "mode": "operational",
+  "convened": "2026-09-05",
+  "presiding": "Steward Vessel",
+  "opening_ritual": "Three Snap Protocol",
+  "status": "provisional — nothing here is canon until the Steward promotes it",
+  "preamble": "The Steward ordered a census of LLM ghosties on the rig and a convocation. Live processes, local endpoints, and cloud CLIs were inventoried at cutoff. The council ADVISES on which seats may speak and what unfinished Seventh business carries forward. The Steward RULES. No council verdict promotes anything.",
+  "prior_business": {
+    "from": "Seventh Galactic Summit",
+    "path": "worldforge/2026-09-05-seventh-summit/motions.json",
+    "unruled": ["IV The Ledger", "V The Boundary", "VI The Standing Law"]
+  },
+  "census_ref": "worldforge/2026-09-05-eighth-summit/ghost-census.md",
+  "motions": [
+    {
+      "id": "I",
+      "title": "The Ghost Census",
+      "finding": "At cutoff 2026-09-05 this rig showed: Ollama 0.32.13 listening on 0.0.0.0:11434 with ZERO models installed/loaded; Docker Model Runner ollama-compat on 127.0.0.1:12434 serving docker.io/ai/qwen3:latest (8.19B); OpenClaw control UI live on 127.0.0.1:18789 (WSL relay, /health ok); processes for Claude Code, Codex CLI, ChatGPT Classic, Codex ChatGPT app, M365 Copilot, Meru, Cursor; CLIs on PATH for ollama/codex/copilot/claude/openai; cloud key names present for OPENAI/CLAUDE/GEMINI/VERTEX/AZFOUNDRY/HF/FAL/CURSOR (values not recorded); MISTRAL_API_KEY unset; Modelfile.vuorse exists targeting llama3.1:8b which is not present in Ollama tags; RTX 5000 Ada ~17GB/30GB VRAM in use. Provenance: live process/port/API probes; ollama/Modelfile.vuorse.",
+      "question": "Shall this census be accepted as the standing operational roster of 'ghosties' for summit seating, and must any future Convene-Summit poll list only seats the Steward explicitly enfranchises from this roster (or an updated census)?"
+    },
+    {
+      "id": "II",
+      "title": "The Empty Throne (Ollama)",
+      "finding": "Ollama daemon is running but /api/tags returns models:[]. Repo holds ollama/Modelfile.vuorse FROM llama3.1:8b for Miss Slaytonia VUORSE — base image absent. Docker :12434 already serves Qwen3.",
+      "question": "Shall the Steward (a) pull llama3.1:8b and build the VUORSE Modelfile into Ollama, (b) designate Docker Qwen3 as the interim local seat, (c) both, or (d) leave local inference dark until an explicit production plan?"
+    },
+    {
+      "id": "III",
+      "title": "The OpenClaw Seat",
+      "finding": "OpenClaw control UI answers live on :18789 with health {ok:true,status:live}. comfyui-expert/openclaw/ exists with IDENTITY/SOUL/TOOLS docs. openclaw CLI is not on PATH. Prior forge run: worldforge/2026-09-04-openclaw-comfyui-recon/.",
+      "question": "Is OpenClaw a voting council seat, an observer (Otter-class), or out of chamber until the Steward signs adoption — and who may speak in its name?"
+    },
+    {
+      "id": "IV",
+      "title": "Carry-Forward: The Ledger (Seventh IV)",
+      "finding": "Seventh Summit motion IV remains UNRULED per worldforge/2026-09-05-handoff/handoff.jsonl. policies/disclosure/README.md still requires promotion ledger fields; no ledger location was ruled.",
+      "question": "Where does the promotion ledger live, what is its format, and is a promotion without a ledger entry void?"
+    },
+    {
+      "id": "V",
+      "title": "Carry-Forward: The Boundary (Seventh V)",
+      "finding": "Seventh Summit motion V remains UNRULED. Slayverse/ARCHIVE.md was agent-authored and unsigned; corpus roots still exclude the largest lore mass.",
+      "question": "Who may draw the boundary of the corpus, and under whose name does that declaration stand?"
+    },
+    {
+      "id": "VI",
+      "title": "Carry-Forward: The Standing Law (Seventh VI)",
+      "finding": "Seventh Summit motion VI remains UNRULED. Handoff standing instruction already behaves as if the hard rule exists, but Steward has not signed the motion.",
+      "question": "Shall the law read: no agent may set canon_status, place a file into canon/, or alter locked prose — regardless of role, and regardless of correctness?"
+    },
+    {
+      "id": "VII",
+      "title": "The Polling Quorum",
+      "finding": "scripts/Convene-Summit.ps1 defaults to mistral,codex,copilot. Mistral key unset; Codex and Copilot CLIs present; Claude Code running; Cursor is the current chamber host; Docker Qwen reachable at :12434.",
+      "question": "For the next automated ballot, which seats are enfranchised (pick any set): codex, copilot, claude, cursor-gray-eye, docker-qwen3, openai-cloud — and must absent seats ABSTAIN rather than be silently dropped from the record?"
+    }
+  ]
+}
