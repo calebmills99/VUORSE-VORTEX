@@ -1,0 +1,93 @@
+[
+  {
+    "id": "vuorse-vortex-root",
+    "type": "institution",
+    "label": "VUORSE-VORTEX continuity system",
+    "status": "canon",
+    "notes": "Canon-governed corpus + disclosure firewall + tooling. README.md / AGENT.md."
+  },
+  {
+    "id": "policies-layer",
+    "type": "institution",
+    "label": "policies/ governance layer",
+    "status": "canon",
+    "notes": "Outranks AGENT.md. Present on disk at cutoff after September restore."
+  },
+  {
+    "id": "source-manifest",
+    "type": "artifact",
+    "label": "source_manifest.json",
+    "status": "canon",
+    "notes": "47 sources, 16 sealed, 0 locked at cutoff."
+  },
+  {
+    "id": "book-one",
+    "type": "artifact",
+    "label": "Words of Weaver Book One",
+    "status": "canon",
+    "notes": "Supreme narrative doctrine path."
+  },
+  {
+    "id": "book-two",
+    "type": "artifact",
+    "label": "Words of Weaver Book Two",
+    "status": "canon",
+    "notes": "Present under canon/2_words_of_weaver_book_two/."
+  },
+  {
+    "id": "season-1-wound",
+    "type": "force",
+    "label": "Season 1 Wyoming / mother wound",
+    "status": "canon",
+    "notes": "Still the writers-room entry filter; finale cause sealed."
+  },
+  {
+    "id": "sealed-borders",
+    "type": "secret",
+    "label": "Sealed borders",
+    "status": "canon",
+    "notes": "hooplehopper_totality/, roadmap/, synthetic_enrichment/generated/, .agent-quarantine/."
+  },
+  {
+    "id": "comfyui-expert",
+    "type": "institution",
+    "label": "comfyui-expert / VideoAgent",
+    "status": "canon",
+    "notes": "Subsystem with own doctrine; must not capture root throne."
+  },
+  {
+    "id": "fcvw",
+    "type": "artifact",
+    "label": "FrameCode-VibeWork V0.14.0",
+    "status": "assumption",
+    "notes": "Present at root; handoff: DISCOVERED-NOT-ADOPTED — plan before change."
+  },
+  {
+    "id": "august-forge-map",
+    "type": "artifact",
+    "label": "August Gray Eye map (retired)",
+    "status": "canon",
+    "notes": "worldforge/recon-2026-08-03 + parallax-bard-b2 — historical only after this restart."
+  },
+  {
+    "id": "september-crisis-layer",
+    "type": "event",
+    "label": "2026-09-05 governance crisis / repair",
+    "status": "assumption",
+    "notes": "Witnessed via reassessment + handoff: policy wipe/restore, overreach ejections, summit unruled motions. Operational, not lore."
+  },
+  {
+    "id": "dj-parallax",
+    "type": "person",
+    "label": "DJ Parallax",
+    "status": "canon",
+    "notes": "Still HOOK ONLY open thread; August sim not promoted."
+  },
+  {
+    "id": "steward",
+    "type": "person",
+    "label": "Steward / Weaver promotion authority",
+    "status": "canon",
+    "notes": "Sole promotion authority; agents counsel, do not crown."
+  }
+]

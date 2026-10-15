@@ -1,0 +1,114 @@
+[
+  {
+    "id": "hildebrand",
+    "type": "person",
+    "label": "Hildebrand von Hooplehopper",
+    "status": "canon",
+    "notes": "Public span ~1130–1147. Silk-Cloaked Whisperer, First Vessel. Vanishes into the Mirror Cavern."
+  },
+  {
+    "id": "conrad",
+    "type": "person",
+    "label": "Conrad von Hooplehopper",
+    "status": "canon",
+    "notes": "Direct recurrence of Hildebrand: no diversion, a lane switch. False as a second person. Nom de plume plus the 500-pound disguise."
+  },
+  {
+    "id": "myrtle-burnings",
+    "type": "event",
+    "label": "The Myrtle Burnings",
+    "status": "canon",
+    "notes": "Purge at Schloss Eisensang. Isolde of the Lower Hall and Yorick the Copyist burned. Their deaths make the Order a necessity. Session-archive / locked_candidate. Not the Black Forest Isolde."
+  },
+  {
+    "id": "the-thumper",
+    "type": "artifact",
+    "label": "The Thumper",
+    "status": "canon",
+    "notes": "Entered in canon/artifacts/artifacts.md and the indexes, 2026-10-07. Five-hundred-pound disguise and the body of the Myrtle Burnings trauma."
+  },
+  {
+    "id": "mirror-cavern",
+    "type": "place",
+    "label": "Mirror Cavern",
+    "status": "canon",
+    "notes": "Pending-review retrocausal wound in cosmology, places, timeline. Folio speaks of it as settled."
+  },
+  {
+    "id": "family-fiction",
+    "type": "secret",
+    "label": "Family as protective fiction",
+    "status": "canon",
+    "notes": "LOCKED. Blood is the public story. Recurrence is the private one."
+  },
+  {
+    "id": "margarethe",
+    "type": "person",
+    "label": "Margarethe von Hooplehopper",
+    "status": "canon",
+    "notes": "1271–1333. Painted Widow. Ritual of Reflection. Order of the Seam. Called first return."
+  },
+  {
+    "id": "adelram",
+    "type": "person",
+    "label": "Adelram von Hooplehopper",
+    "status": "canon",
+    "notes": "Sketched. Swan-alchemist. Document order sits before Margarethe; era tag is post-Conrad, 13th–14th c., so he may overlap or follow her."
+  },
+  {
+    "id": "benedict",
+    "type": "person",
+    "label": "Benedict the Ash-Faced",
+    "status": "canon",
+    "notes": "1399. Disciple. Performance carries the Seam forward. Not named a vessel."
+  },
+  {
+    "id": "velma",
+    "type": "person",
+    "label": "Velma the Snake in Silk",
+    "status": "canon",
+    "notes": "1522. Eyes said to be Margarethe's. Parallel order: Garter's Secret Hem."
+  },
+  {
+    "id": "lysander",
+    "type": "person",
+    "label": "Lysander von Hooplehopper",
+    "status": "canon",
+    "notes": "1611. Mistress Euphoria Blaze. Handwriting said to match the Professor's."
+  },
+  {
+    "id": "theresia",
+    "type": "person",
+    "label": "Theresia von Hooplehopper",
+    "status": "canon",
+    "notes": "1754. Sketched. Emotional hemline. Corset-boning as courier."
+  },
+  {
+    "id": "yssenda",
+    "type": "person",
+    "label": "Yssenda von Hooplehopper",
+    "status": "canon",
+    "notes": "Era blank except pre-Sigismund. Ring-bearer. Shakespeare ghostwriter sentence is roster color, not a lock."
+  },
+  {
+    "id": "hildebrands-ring",
+    "type": "artifact",
+    "label": "Hildebrand's Ring",
+    "status": "canon",
+    "notes": "Glows at spoken truth onstage. Heats before the Weaver addresses the Order of the Seam."
+  },
+  {
+    "id": "later-undated",
+    "type": "person",
+    "label": "Sigismund, Isolde, Ludolf",
+    "status": "canon",
+    "notes": "Moderate / sketched. No years. Folio order is the only sequence: legit aristocrat, markswoman, harmonic composer. Ludolf closes Folio I."
+  },
+  {
+    "id": "lattice-future",
+    "type": "event",
+    "label": "Federstahl Lattice fracture",
+    "status": "canon",
+    "notes": "LOCKED as the annulment that disperses persons into the soul-line. If the cavern promotes, this is the catastrophe echoing into 1147."
+  }
+]

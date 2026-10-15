@@ -1,0 +1,83 @@
+[
+  {
+    "from": "policies-layer",
+    "to": "vuorse-vortex-root",
+    "mechanism": "governance outranks agent adapters and subsystem doctrine",
+    "sign": "+",
+    "lag": "always",
+    "context": "README.md / AGENT.md authority order",
+    "confidence": "high"
+  },
+  {
+    "from": "source-manifest",
+    "to": "vuorse-vortex-root",
+    "mechanism": "corpus of record defines what may be indexed/sealed; zero locks blocks fact-assertion via promotion rules",
+    "sign": "mixed",
+    "lag": "until Steward locks",
+    "context": "live manifest 2026-09-05; AGENT.md unknown≠canon",
+    "confidence": "high"
+  },
+  {
+    "from": "book-one",
+    "to": "season-1-wound",
+    "mechanism": "narrative doctrine crowns wound-first Season 1 filter",
+    "sign": "+",
+    "lag": "continuous",
+    "context": "Book One Ch III–VI / writers-room spine",
+    "confidence": "high"
+  },
+  {
+    "from": "sealed-borders",
+    "to": "vuorse-vortex-root",
+    "mechanism": "firewall + disclosure policy block fact-stating / user-reveal",
+    "sign": "-",
+    "lag": "always",
+    "context": "policies/disclosure; settings sealed_categories",
+    "confidence": "high"
+  },
+  {
+    "from": "comfyui-expert",
+    "to": "vuorse-vortex-root",
+    "mechanism": "subsystem doctrine binds inside VideoAgent only; must not overwrite root identity",
+    "sign": "mixed",
+    "lag": "ongoing tension if root files confuse",
+    "context": "AGENT.md subsystem clause; September reassessment",
+    "confidence": "med"
+  },
+  {
+    "from": "september-crisis-layer",
+    "to": "policies-layer",
+    "mechanism": "working-tree wipe then restore from HEAD; doctrine presence recovered",
+    "sign": "+",
+    "lag": "same day repair",
+    "context": "handoff hand-012; live policies present",
+    "confidence": "med"
+  },
+  {
+    "from": "steward",
+    "to": "source-manifest",
+    "mechanism": "only Steward may promote / lock / place canon; agent overreach ejected",
+    "sign": "+",
+    "lag": "per explicit act",
+    "context": "handoff hand-020..023, hand-070; AGENT.md promotion doctrine",
+    "confidence": "high"
+  },
+  {
+    "from": "august-forge-map",
+    "to": "vuorse-vortex-root",
+    "mechanism": "restart retires August map as working baseline; history kept on disk",
+    "sign": "-",
+    "lag": "this run",
+    "context": "Steward start-over; assumption",
+    "confidence": "assumption"
+  },
+  {
+    "from": "fcvw",
+    "to": "vuorse-vortex-root",
+    "mechanism": "discovered tooling already encodes plan-before-change / ownership roles; not yet adopted",
+    "sign": "mixed",
+    "lag": "until Phase 1 assessment",
+    "context": "handoff hand-031",
+    "confidence": "med"
+  }
+]

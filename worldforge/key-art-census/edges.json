@@ -1,0 +1,38 @@
+[
+  {
+    "from": "you-shall-not-pass-gate",
+    "to": "genmedia-pipeline",
+    "mechanism": "no design-lock means no new character plate",
+    "sign": "+",
+    "lag": "immediate",
+    "context": "key-art-census",
+    "confidence": "assumption"
+  },
+  {
+    "from": "design-drift",
+    "to": "identity-collapse",
+    "mechanism": "unmapped forks and orphans compete as if each were truth",
+    "sign": "+",
+    "lag": "cumulative across generations",
+    "context": "Slayverse image libraries",
+    "confidence": "high"
+  },
+  {
+    "from": "wave0-recon",
+    "to": "image-map",
+    "mechanism": "root inventory enables claiming orphans and naming gaps",
+    "sign": "+",
+    "lag": "same session",
+    "context": "key-art-census",
+    "confidence": "high"
+  },
+  {
+    "from": "professor-design-pool",
+    "to": "heda-von-schwann",
+    "mechanism": "dual-look design for one lore character id",
+    "sign": "+",
+    "lag": "n/a",
+    "context": "near-lock",
+    "confidence": "assumption"
+  }
+]

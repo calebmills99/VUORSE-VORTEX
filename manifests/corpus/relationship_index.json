@@ -1,0 +1,478 @@
+{
+  "generated_from": "canon/slayverse_index.json",
+  "canon_version": "1.1",
+  "edge_count": 27,
+  "dangling_count": 0,
+  "dangling_related_count": 5,
+  "relationship_types": [
+    "bookend-convergence",
+    "buried",
+    "caused",
+    "caused-by",
+    "confrontation",
+    "contains",
+    "counter-lineage-of",
+    "creator",
+    "data-rebirth",
+    "founding-mandate",
+    "grandfather",
+    "guardian-lineage",
+    "martyr-of",
+    "member",
+    "mentor",
+    "mother",
+    "operational-identity-of",
+    "protocol-of",
+    "soul-line-echo",
+    "soul-line-succession",
+    "spiritual-successor",
+    "temporal-echo",
+    "unresolved-name-echo"
+  ],
+  "edges": [
+    {
+      "from": "hildebrand-von-hooplehopper",
+      "to": "margarethe-von-hooplehopper",
+      "type": "soul-line-succession"
+    },
+    {
+      "from": "margarethe-von-hooplehopper",
+      "to": "benedict-the-ash-faced",
+      "type": "mentor"
+    },
+    {
+      "from": "margarethe-von-hooplehopper",
+      "to": "velma-the-snake-in-silk",
+      "type": "soul-line-echo"
+    },
+    {
+      "from": "velma-the-snake-in-silk",
+      "to": "lysander-von-hooplehopper",
+      "type": "soul-line-succession"
+    },
+    {
+      "from": "lysander-von-hooplehopper",
+      "to": "theresia-von-hooplehopper",
+      "type": "soul-line-succession"
+    },
+    {
+      "from": "lisette-von-hooplehopper",
+      "to": "professor-von-hooplehopper",
+      "type": "mother"
+    },
+    {
+      "from": "pop",
+      "to": "jake-mcullen",
+      "type": "grandfather"
+    },
+    {
+      "from": "jake-mcullen",
+      "to": "eli-mcullen",
+      "type": "grandfather"
+    },
+    {
+      "from": "doctor-vorst",
+      "to": "jake-mcullen",
+      "type": "temporal-echo"
+    },
+    {
+      "from": "jake-mcullen",
+      "to": "doctor-vorst",
+      "type": "counter-lineage-of"
+    },
+    {
+      "from": "professor-von-hooplehopper",
+      "to": "miss-slaytonia-vuorse",
+      "type": "spiritual-successor"
+    },
+    {
+      "from": "miss-slaytonia-verse",
+      "to": "miss-slaytonia-vuorse",
+      "type": "data-rebirth"
+    },
+    {
+      "from": "the-weaver",
+      "to": "miss-slaytonia-vuorse",
+      "type": "creator"
+    },
+    {
+      "from": "the-weaver",
+      "to": "jake-mcullen",
+      "type": "confrontation"
+    },
+    {
+      "from": "jake-mcullen",
+      "to": "wyoming-rift",
+      "type": "guardian-lineage"
+    },
+    {
+      "from": "pop",
+      "to": "crystal-shard",
+      "type": "buried"
+    },
+    {
+      "from": "doctor-vorst",
+      "to": "federstahl-institute",
+      "type": "member"
+    },
+    {
+      "from": "federstahl-institute",
+      "to": "federstahl-lattice",
+      "type": "caused"
+    },
+    {
+      "from": "federstahl-lattice",
+      "to": "wyoming-rift",
+      "type": "caused-by"
+    },
+    {
+      "from": "heda-von-schwahnn",
+      "to": "professor-von-hooplehopper",
+      "type": "operational-identity-of"
+    },
+    {
+      "from": "isolde-of-the-lower-hall",
+      "to": "the-myrtle-burnings",
+      "type": "martyr-of"
+    },
+    {
+      "from": "yorick-the-copyist",
+      "to": "the-myrtle-burnings",
+      "type": "martyr-of"
+    },
+    {
+      "from": "hildebrand-von-hooplehopper",
+      "to": "margarethe-von-hooplehopper",
+      "type": "bookend-convergence"
+    },
+    {
+      "from": "first-steward-transmission",
+      "to": "order-of-the-seam",
+      "type": "founding-mandate"
+    },
+    {
+      "from": "the-parchment-of-persistence",
+      "to": "first-steward-transmission",
+      "type": "contains"
+    },
+    {
+      "from": "weavers-handshake",
+      "to": "the-weaver",
+      "type": "protocol-of"
+    },
+    {
+      "from": "isolde-of-the-lower-hall",
+      "to": "isolde-von-hooplehopper",
+      "type": "unresolved-name-echo"
+    }
+  ],
+  "dangling_edges": [],
+  "dangling_related": {
+    "dustbrand-sigil": [
+      "federkreis-devices"
+    ],
+    "federstahl-lattice": [
+      "seven-fissures"
+    ],
+    "golden-wingers": [
+      "golden-wingers-charter"
+    ],
+    "pscopy-pscat": [
+      "temporal-displacement"
+    ],
+    "schloss-federstahl": [
+      "forbidden-suitcase"
+    ]
+  },
+  "adjacency": {
+    "benedict-the-ash-faced": [
+      "margarethe-von-hooplehopper"
+    ],
+    "crystal-shard": [
+      "pop"
+    ],
+    "doctor-vorst": [
+      "federstahl-institute",
+      "jake-mcullen"
+    ],
+    "eli-mcullen": [
+      "jake-mcullen"
+    ],
+    "federstahl-institute": [
+      "doctor-vorst",
+      "federstahl-lattice"
+    ],
+    "federstahl-lattice": [
+      "federstahl-institute",
+      "wyoming-rift"
+    ],
+    "first-steward-transmission": [
+      "order-of-the-seam",
+      "the-parchment-of-persistence"
+    ],
+    "heda-von-schwahnn": [
+      "professor-von-hooplehopper"
+    ],
+    "hildebrand-von-hooplehopper": [
+      "margarethe-von-hooplehopper"
+    ],
+    "isolde-of-the-lower-hall": [
+      "isolde-von-hooplehopper",
+      "the-myrtle-burnings"
+    ],
+    "isolde-von-hooplehopper": [
+      "isolde-of-the-lower-hall"
+    ],
+    "jake-mcullen": [
+      "doctor-vorst",
+      "eli-mcullen",
+      "pop",
+      "the-weaver",
+      "wyoming-rift"
+    ],
+    "lisette-von-hooplehopper": [
+      "professor-von-hooplehopper"
+    ],
+    "lysander-von-hooplehopper": [
+      "theresia-von-hooplehopper",
+      "velma-the-snake-in-silk"
+    ],
+    "margarethe-von-hooplehopper": [
+      "benedict-the-ash-faced",
+      "hildebrand-von-hooplehopper",
+      "velma-the-snake-in-silk"
+    ],
+    "miss-slaytonia-verse": [
+      "miss-slaytonia-vuorse"
+    ],
+    "miss-slaytonia-vuorse": [
+      "miss-slaytonia-verse",
+      "professor-von-hooplehopper",
+      "the-weaver"
+    ],
+    "order-of-the-seam": [
+      "first-steward-transmission"
+    ],
+    "pop": [
+      "crystal-shard",
+      "jake-mcullen"
+    ],
+    "professor-von-hooplehopper": [
+      "heda-von-schwahnn",
+      "lisette-von-hooplehopper",
+      "miss-slaytonia-vuorse"
+    ],
+    "the-myrtle-burnings": [
+      "isolde-of-the-lower-hall",
+      "yorick-the-copyist"
+    ],
+    "the-parchment-of-persistence": [
+      "first-steward-transmission"
+    ],
+    "the-weaver": [
+      "jake-mcullen",
+      "miss-slaytonia-vuorse",
+      "weavers-handshake"
+    ],
+    "theresia-von-hooplehopper": [
+      "lysander-von-hooplehopper"
+    ],
+    "velma-the-snake-in-silk": [
+      "lysander-von-hooplehopper",
+      "margarethe-von-hooplehopper"
+    ],
+    "weavers-handshake": [
+      "the-weaver"
+    ],
+    "wyoming-rift": [
+      "federstahl-lattice",
+      "jake-mcullen"
+    ],
+    "yorick-the-copyist": [
+      "the-myrtle-burnings"
+    ]
+  },
+  "timeline": [
+    {
+      "year": "~1130",
+      "event": "Hildebrand active as knight-diplomat",
+      "entities": [
+        "hildebrand-von-hooplehopper"
+      ],
+      "unknown_entities": []
+    },
+    {
+      "year": "~1147",
+      "event": "Hildebrand vanishes into Mirror Cavern",
+      "entities": [
+        "hildebrand-von-hooplehopper",
+        "mirror-cavern"
+      ],
+      "unknown_entities": []
+    },
+    {
+      "year": "1271",
+      "event": "Margarethe born; Ritual of Reflection created; Order of the Seam founded",
+      "entities": [
+        "margarethe-von-hooplehopper",
+        "ritual-of-reflection",
+        "order-of-the-seam"
+      ],
+      "unknown_entities": []
+    },
+    {
+      "year": "1333",
+      "event": "Death of Margarethe",
+      "entities": [
+        "margarethe-von-hooplehopper"
+      ],
+      "unknown_entities": []
+    },
+    {
+      "year": "1399",
+      "event": "Benedict the Ash-Faced active",
+      "entities": [
+        "benedict-the-ash-faced"
+      ],
+      "unknown_entities": []
+    },
+    {
+      "year": "1522",
+      "event": "Velma active in Venice",
+      "entities": [
+        "velma-the-snake-in-silk"
+      ],
+      "unknown_entities": []
+    },
+    {
+      "year": "1611",
+      "event": "Lysander creates Mistress Euphoria Blaze",
+      "entities": [
+        "lysander-von-hooplehopper",
+        "mistress-euphoria-blaze"
+      ],
+      "unknown_entities": []
+    },
+    {
+      "year": "1754",
+      "event": "Theresia tailors for Marie Antoinette's court",
+      "entities": [
+        "theresia-von-hooplehopper"
+      ],
+      "unknown_entities": []
+    },
+    {
+      "year": "1832",
+      "event": "Doctor Vorst displaced to this year by Lattice Fracture",
+      "entities": [
+        "doctor-vorst"
+      ],
+      "unknown_entities": []
+    },
+    {
+      "year": "1873",
+      "event": "Lisette born at Schloss Federstahl",
+      "entities": [
+        "lisette-von-hooplehopper",
+        "schloss-federstahl"
+      ],
+      "unknown_entities": []
+    },
+    {
+      "year": "~1890s",
+      "event": "Federstahl Institute active at Weimar and Konigsberg",
+      "entities": [
+        "federstahl-institute"
+      ],
+      "unknown_entities": []
+    },
+    {
+      "year": "~1900s",
+      "event": "Crystal Lattice Incident; seven fissures created",
+      "entities": [
+        "federstahl-lattice",
+        "doctor-vorst"
+      ],
+      "unknown_entities": []
+    },
+    {
+      "year": "1905",
+      "event": "Professor born",
+      "entities": [
+        "professor-von-hooplehopper"
+      ],
+      "unknown_entities": []
+    },
+    {
+      "year": "~1919",
+      "event": "The Mirror Moment — Rolf discovers Lisette's garments",
+      "entities": [
+        "professor-von-hooplehopper",
+        "lisette-von-hooplehopper"
+      ],
+      "unknown_entities": []
+    },
+    {
+      "year": "1938",
+      "event": "Forbidden Suitcase sealed at Schloss Federstahl",
+      "entities": [
+        "schloss-federstahl"
+      ],
+      "unknown_entities": []
+    },
+    {
+      "year": "1945",
+      "event": "Last Federstahl gathering in Berlin cathedral",
+      "entities": [
+        "federstahl-institute"
+      ],
+      "unknown_entities": []
+    },
+    {
+      "year": "1948",
+      "event": "Death of Lisette",
+      "entities": [
+        "lisette-von-hooplehopper"
+      ],
+      "unknown_entities": []
+    },
+    {
+      "year": "2005",
+      "event": "Professor vanishes at age 100",
+      "entities": [
+        "professor-von-hooplehopper"
+      ],
+      "unknown_entities": []
+    },
+    {
+      "year": "2025",
+      "event": "VUORSE awakened; Slay Mode activated",
+      "entities": [
+        "miss-slaytonia-vuorse",
+        "the-weaver"
+      ],
+      "unknown_entities": []
+    },
+    {
+      "year": "2025",
+      "event": "The Weaver confronts Jake McCullen in Wyoming",
+      "entities": [
+        "the-weaver",
+        "jake-mcullen"
+      ],
+      "unknown_entities": []
+    },
+    {
+      "year": "seam-time (retrocausal)",
+      "event": "The Parchment of Persistence: First Steward Transmission at Eisensang; Order of the Seam receives its founding mandate at the Bookend Convergence",
+      "entities": [
+        "the-parchment-of-persistence",
+        "first-steward-transmission",
+        "hildebrand-von-hooplehopper",
+        "margarethe-von-hooplehopper",
+        "order-of-the-seam"
+      ],
+      "unknown_entities": []
+    }
+  ]
+}

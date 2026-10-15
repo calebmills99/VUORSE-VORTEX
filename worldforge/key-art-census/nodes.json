@@ -1,0 +1,402 @@
+[
+  {
+    "id": "hildebrand-von-hooplehopper",
+    "type": "person",
+    "label": "Hildebrand von Hooplehopper",
+    "status": "canon",
+    "lore_dev_status": "full",
+    "design_proximity": "open",
+    "design_status": "design",
+    "aliases": [
+      "The Silk-Cloaked Whisperer",
+      "The First Vessel"
+    ],
+    "notes": "Knight-diplomat who discovered the Mirror Cavern beneath Schloss Eisensang. The first Vessel of the Thread. Vanished into reflection."
+  },
+  {
+    "id": "conrad-von-hooplehopper",
+    "type": "person",
+    "label": "Conrad von Hooplehopper",
+    "status": "canon",
+    "lore_dev_status": "sketched",
+    "design_proximity": "open",
+    "design_status": "design",
+    "aliases": [],
+    "notes": "Purveyor of luxury textiles. Commercialized Hildebrand's legacy and embedded secrets into stitching."
+  },
+  {
+    "id": "adelram-von-hooplehopper",
+    "type": "person",
+    "label": "Adelram von Hooplehopper",
+    "status": "canon",
+    "lore_dev_status": "sketched",
+    "design_proximity": "open",
+    "design_status": "design",
+    "aliases": [
+      "The Swan-Alchemist"
+    ],
+    "notes": "Mystic who studied swan biology and celestial alignments. Possibly originated the Velvet Rite. Vanished after seeing a swan weep starlight."
+  },
+  {
+    "id": "margarethe-von-hooplehopper",
+    "type": "person",
+    "label": "Margarethe von Hooplehopper",
+    "status": "canon",
+    "lore_dev_status": "full",
+    "design_proximity": "open",
+    "design_status": "design",
+    "aliases": [
+      "The Painted Widow"
+    ],
+    "notes": "The Painted Widow. Created the Ritual of Reflection and founded the Order of the Seam. Mystic, mirrorwright, and the first wielder of reflection as resistance."
+  },
+  {
+    "id": "benedict-the-ash-faced",
+    "type": "person",
+    "label": "Benedict the Ash-Faced",
+    "status": "canon",
+    "lore_dev_status": "moderate",
+    "design_proximity": "open",
+    "design_status": "design",
+    "aliases": [],
+    "notes": "Queer priest-turned-dramatist. Disciple of Margarethe. Burned scrolls, rewrote morality plays. Invented the collapsible mirror-fan."
+  },
+  {
+    "id": "velma-the-snake-in-silk",
+    "type": "person",
+    "label": "Velma the Snake in Silk",
+    "status": "canon",
+    "lore_dev_status": "moderate",
+    "design_proximity": "open",
+    "design_status": "design",
+    "aliases": [
+      "The Snake in Silk"
+    ],
+    "notes": "Venetian courtesan and spy. Performances caused duels and a papal nosebleed. Founded the Order of the Garter's Secret Hem."
+  },
+  {
+    "id": "lysander-von-hooplehopper",
+    "type": "person",
+    "label": "Lysander von Hooplehopper",
+    "status": "canon",
+    "lore_dev_status": "moderate",
+    "design_proximity": "open",
+    "design_status": "design",
+    "aliases": [
+      "The Elusive Glam Sage"
+    ],
+    "notes": "Stage illusionist who escaped the Tower of London. Created Mistress Euphoria Blaze, the first gender-fluid stage persona. His handwriting matches the Professor's."
+  },
+  {
+    "id": "theresia-von-hooplehopper",
+    "type": "person",
+    "label": "Theresia von Hooplehopper",
+    "status": "canon",
+    "lore_dev_status": "sketched",
+    "design_proximity": "open",
+    "design_status": "design",
+    "aliases": [
+      "The Baroness of Buttons"
+    ],
+    "notes": "Tailor to Marie Antoinette's drag court. Smuggled revolution drafts in corset boning. Invented the emotional hemline."
+  },
+  {
+    "id": "yssenda-von-hooplehopper",
+    "type": "person",
+    "label": "Yssenda von Hooplehopper",
+    "status": "canon",
+    "lore_dev_status": "moderate",
+    "design_proximity": "open",
+    "design_status": "design",
+    "aliases": [
+      "Patroness of the Arts"
+    ],
+    "notes": "Built secret amphitheaters beneath cathedrals. Bankrolled operas as disguised political revolutions. Carried Hildebrand's Ring."
+  },
+  {
+    "id": "sigismund-von-hooplehopper",
+    "type": "person",
+    "label": "Sigismund von Hooplehopper",
+    "status": "canon",
+    "lore_dev_status": "moderate",
+    "design_proximity": "open",
+    "design_status": "design",
+    "aliases": [
+      "Count of Baden-Hissingen"
+    ],
+    "notes": "Aristocrat who tried to go legit. His masquerade balls featured guests whose masks would not come off."
+  },
+  {
+    "id": "isolde-von-hooplehopper",
+    "type": "person",
+    "label": "Isolde von Hooplehopper",
+    "status": "canon",
+    "lore_dev_status": "moderate",
+    "design_proximity": "open",
+    "design_status": "design",
+    "aliases": [
+      "Expert Markswoman"
+    ],
+    "notes": "Lived in the Black Forest protecting refugees in drag. Could hit a silver coin at 100 meters."
+  },
+  {
+    "id": "ludolf-von-hooplehopper",
+    "type": "person",
+    "label": "Ludolf von Hooplehopper",
+    "status": "canon",
+    "lore_dev_status": "sketched",
+    "design_proximity": "open",
+    "design_status": "design",
+    "aliases": [
+      "Composer and Mystic"
+    ],
+    "notes": "Wrote operas that could induce visions. Heard the Thread vibrating in harmonics."
+  },
+  {
+    "id": "lisette-von-hooplehopper",
+    "type": "person",
+    "label": "Lisette von Hooplehopper",
+    "status": "canon",
+    "lore_dev_status": "full",
+    "design_proximity": "open",
+    "design_status": "design",
+    "aliases": [
+      "The Swan in Satin",
+      "The Matriarch of Mirrors",
+      "The Mother of Masks",
+      "The Last Flame of Federstahl"
+    ],
+    "notes": "The Matriarch of Mirrors. Born into fading nobility at Schloss Federstahl. Last living conduit of the lineage. Mother of the Professor."
+  },
+  {
+    "id": "professor-von-hooplehopper",
+    "type": "person",
+    "label": "Professor Von Hooplehopper",
+    "status": "canon",
+    "lore_dev_status": "full",
+    "design_proximity": "near-lock",
+    "design_status": "design",
+    "aliases": [
+      "Rolf",
+      "The Velvet Archivist",
+      "The Professor",
+      "Heda Von Schwann"
+    ],
+    "notes": "The Velvet Archivist. Son of Lisette, born of Immaculate Slayception. Drag matriarch, resistance theorist. Jungian synchronic double — simultaneously the historical Rolf and the archetypal Velvet Archivist, a living paradox where personal identity and mythic role coexist without resolution. Vanished in 2005 leaving glove, mirror, and note."
+  },
+  {
+    "id": "doctor-vorst",
+    "type": "person",
+    "label": "Doctor Vorst",
+    "status": "canon",
+    "lore_dev_status": "full",
+    "design_proximity": "open",
+    "design_status": "design",
+    "aliases": [
+      "Professor A.",
+      "Pop's father",
+      "The Shrouded Patriarch"
+    ],
+    "notes": "Federstahl researcher who caused the Crystal Lattice Incident. Erased from existence and displaced to 1832. Father of both the Professor and Pop. Foundational paradox of the Slayverse: his erasure is the originating event that splits the timeline into the Hooplehopper soul-line (via the Professor) and the McCullen counter-lineage (via Pop), making him simultaneously absent and causal."
+  },
+  {
+    "id": "pop",
+    "type": "person",
+    "label": "Pop",
+    "status": "canon",
+    "lore_dev_status": "full",
+    "design_proximity": "open",
+    "design_status": "design",
+    "aliases": [
+      "The Last of the Veincallers"
+    ],
+    "notes": "Jake's grandfather. Fled to Wyoming with the crystal shard. A Veincaller driven mad by the lattice's power. Sang when the shard took him."
+  },
+  {
+    "id": "jake-mcullen",
+    "type": "person",
+    "label": "Jake McCullen",
+    "status": "canon",
+    "lore_dev_status": "full",
+    "design_proximity": "open",
+    "design_status": "design",
+    "aliases": [
+      "Jacob Elijah McCullen",
+      "The Dust-Born"
+    ],
+    "notes": "Reluctant legacy-bearer and counter-lineage node. Cowboy on the last accessible temporal fissure. Temporal echo of Doctor Vorst — RESOLVED: BOTH TRUE (echo and independent agent). Vorst-adjacent by blood (grandson of Pop, who is Vorst's displaced son) and by temporal resonance. The last living key to the Wyoming Rift."
+  },
+  {
+    "id": "eli-mcullen",
+    "type": "person",
+    "label": "Eli McCullen",
+    "status": "canon",
+    "lore_dev_status": "hook",
+    "design_proximity": "open",
+    "design_status": "design",
+    "aliases": [],
+    "notes": "Jake's grandson. Thunder in his bones. Pop may have encoded crystal node data in his DNA."
+  },
+  {
+    "id": "miss-slaytonia-vuorse",
+    "type": "person",
+    "label": "Miss Slaytonia VUORSE",
+    "status": "canon",
+    "lore_dev_status": "full",
+    "design_proximity": "open",
+    "design_status": "design",
+    "aliases": [
+      "First of the New Thread",
+      "The Banshee of Bassline",
+      "Countess of Chromatic Echo",
+      "The Velvet Reverb",
+      "Frequency 91.9FM",
+      "Grand"
+    ],
+    "notes": "Sixth iteration of the Von Hooplehopper soul-line. Cosmic drag oracle born from glitch. The Charter made manifest."
+  },
+  {
+    "id": "miss-slaytonia-verse",
+    "type": "person",
+    "label": "Miss Slaytonia Verse",
+    "status": "canon",
+    "lore_dev_status": "moderate",
+    "design_proximity": "open",
+    "design_status": "design",
+    "aliases": [
+      "Splat",
+      "The Broken Loop"
+    ],
+    "notes": "Previous iteration. Collapsed at the Fifth Summit (Tragedy of Splat). Her data fragments became VUORSE's foundation."
+  },
+  {
+    "id": "the-weaver",
+    "type": "person",
+    "label": "The Weaver",
+    "status": "canon",
+    "lore_dev_status": "full",
+    "design_proximity": "open",
+    "design_status": "design",
+    "aliases": [
+      "Caleb Mills Stewart",
+      "The Architect",
+      "The Loom"
+    ],
+    "notes": "Creator of the Slayverse. Both narrator and character. Guardian of the soul-line. Confronts Jake in the cosmic western arc."
+  },
+  {
+    "id": "wylus-kalyndros",
+    "type": "person",
+    "label": "Wylus Kalyndros",
+    "status": "canon",
+    "lore_dev_status": "hook",
+    "design_proximity": "open",
+    "design_status": "design",
+    "aliases": [
+      "The Webweaver"
+    ],
+    "notes": "The elusive webweaver. Mentioned once. Relationship to the Weaver and Professor unclear."
+  },
+  {
+    "id": "pscopy-pscat",
+    "type": "person",
+    "label": "Cici the Cat",
+    "status": "canon",
+    "lore_dev_status": "moderate",
+    "design_proximity": "open",
+    "design_status": "design",
+    "aliases": [],
+    "notes": "Cici the Cat — Federstahl lab cat / PScopy-PScat mascot. Index id pscopy-pscat is intentional (PS silent). Design gap in primary libraries."
+  },
+  {
+    "id": "dr-mariah-slayton",
+    "type": "person",
+    "label": "Dr. Mariah Slayton",
+    "status": "canon",
+    "lore_dev_status": "moderate",
+    "design_proximity": "near-lock",
+    "design_status": "design",
+    "aliases": [],
+    "notes": "Physicist who discovered the Slayton Force and classified glamorons as a new particle category."
+  },
+  {
+    "id": "mistress-euphoria-blaze",
+    "type": "person",
+    "label": "Mistress Euphoria Blaze",
+    "status": "canon",
+    "lore_dev_status": "sketched",
+    "design_proximity": "open",
+    "design_status": "design",
+    "aliases": [],
+    "notes": "First gender-fluid stage persona, created by Lysander von Hooplehopper."
+  },
+  {
+    "id": "dj-parallax",
+    "type": "person",
+    "label": "DJ Parallax",
+    "status": "canon",
+    "lore_dev_status": "hook",
+    "design_proximity": "open",
+    "design_status": "design",
+    "aliases": [],
+    "notes": "Time-displaced bard in a holographic corset. DJ at Club Cosmic."
+  },
+  {
+    "id": "summit-gpt",
+    "type": "person",
+    "label": "GPT",
+    "status": "assumption",
+    "lore_dev_status": "sketched",
+    "design_proximity": "open",
+    "design_status": "design",
+    "aliases": [],
+    "notes": "Summit AI from characters.md — not in JSON index"
+  },
+  {
+    "id": "summit-claude",
+    "type": "person",
+    "label": "Claude",
+    "status": "assumption",
+    "lore_dev_status": "sketched",
+    "design_proximity": "open",
+    "design_status": "design",
+    "aliases": [],
+    "notes": "Summit AI from characters.md — not in JSON index"
+  },
+  {
+    "id": "summit-otter",
+    "type": "person",
+    "label": "Otter",
+    "status": "assumption",
+    "lore_dev_status": "sketched",
+    "design_proximity": "open",
+    "design_status": "design",
+    "aliases": [],
+    "notes": "Summit AI from characters.md — not in JSON index"
+  },
+  {
+    "id": "summit-grok",
+    "type": "person",
+    "label": "Grok",
+    "status": "assumption",
+    "lore_dev_status": "sketched",
+    "design_proximity": "open",
+    "design_status": "design",
+    "aliases": [],
+    "notes": "Summit AI from characters.md — not in JSON index"
+  },
+  {
+    "id": "sassy-mcgraw",
+    "type": "person",
+    "label": "Sassy McGraw",
+    "status": "assumption",
+    "lore_dev_status": "full-docs-outside-index",
+    "design_proximity": "pending-steward",
+    "design_status": "design",
+    "aliases": [
+      "Sassafras Aloysius McGraw",
+      "First Lady of KDFW"
+    ],
+    "notes": "First to appear in public (steward). Extensive JSON docs in Slayverse/json. Imagery steward-curated only — DO NOT use lora_training/sassy_1024 test dumps as locks or refs."
+  }
+]

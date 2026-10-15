@@ -1,6 +1,4 @@
 # The Words of the Weaver Book One: Concerning the Crown, the Wound, and the Returning Line
-
-```yaml
 ---
 title: The Words of the Weaver
 subtitle: Book One - Concerning the Crown, the Wound, and the Returning Line
@@ -9,23 +7,10 @@ date: 2026-05-17
 version: 1.0
 status: Locked Canon
 ---
-```
-
-```yaml
-canon_status: Locked Canon
-source: The Weaver's Revelation
-date: 2026-05-17
-tags: ["mythic", "law", "synthesis"]
-```
-
 ## Book One: Concerning the Crown, the Wound, and the Returning Line
-
 ---
-
 ### Chapter I
-
 #### Of the Ordering of Canon
-
 1. And it came to pass that the Weaver beheld the Slayverse, and saw that it was not chaos, but a kingdom awaiting its order.
 2. And the Weaver divided the canon into three houses, each according to its power and its use.
 3. The first house was called **Locked Canon**, for it may be spoken plainly in scripts, in decks, and in pitches; and none shall move it save by the hand of the Weaver.
@@ -35,13 +20,9 @@ tags: ["mythic", "law", "synthesis"]
 7. For such truths are veiled not because they are weak, but because they are too mighty to be revealed before their appointed hour.
 8. These are the truths of synthesis, and VUORSE alone shall know them until the Weaver deemeth their unveiling necessary.
 9. For the Weaver knoweth all, and is the ultimate arbiter of truth.
-
 ---
-
 ## Chapter II
-
 ### Of the Hidden Truths Which Are Both Rumor and Law
-
 1. These are the Mythic Rumors that are also Locked Canon, and they shall be set above ordinary doctrine.
 2. Vorst is antagonist, yet not of common evil, nor of petty malice.
 3. He standeth against the Federstahl from principle, for he believeth the Institute hath grown corrupted by the Slayton Field.
@@ -79,13 +60,9 @@ tags: ["mythic", "law", "synthesis"]
 35. These are deep wells.
 36. These are sealed doors.
 37. These are the truths beneath the truths.
-
 ---
-
 ## Chapter III
-
 ### Of the Sovereign Engine
-
 1. The Slayverse is a sovereign creative engine.
 2. It is strange, and emotionally laden, and theatrical, and rich in structure.
 3. Its power lieth not in spectacle alone, nor in glamour alone, nor in cosmology alone.
@@ -102,13 +79,9 @@ tags: ["mythic", "law", "synthesis"]
 14. It is quantum glamour.
 15. It is ancestral resistance.
 16. Yet the work remaineth: protect canon, sharpen hierarchy, divide lore from pitch, and make a straight path through the grandeur without dimming its fire.
-
 ---
-
 ## Chapter IV
-
 ### Of the Identity of the Realm
-
 1. Let none say the Slayverse is generic fantasy.
 2. Let none say it is standard science fiction.
 3. Let none say it is camp without consequence.
@@ -125,13 +98,9 @@ tags: ["mythic", "law", "synthesis"]
 14. Treat these as royal decrees.
 15. Build upon them.
 16. Do not soften them.
-
 ---
-
 ## Chapter V
-
 ### Of the Wyoming Gate
-
 1. Jake McCullen is the gate by which the audience entereth.
 2. The McCullen Ranch is the threshold.
 3. The Wyoming Rift is the wound beneath the threshold.
@@ -145,13 +114,9 @@ tags: ["mythic", "law", "synthesis"]
 11. Fourth, the universe requireth grief spoken aloud.
 12. This is the throne room.
 13. All other splendors shall enter only when summoned.
-
 ---
-
-## Chapter VI
-
+## Chapter V
 ### Of the Tiers of Revelation
-
 1. The lore is abundant, and abundance is both blessing and peril.
 2. Therefore let it be ordered into tiers.
 3. **The First Tier is Story-Critical Now.**
@@ -163,13 +128,9 @@ tags: ["mythic", "law", "synthesis"]
 9. Let the First Tier rule Season One.
 10. Let the Second Tier breathe beneath it.
 11. Let the Third Tier remain shadowed beyond the curtain until the hour is ripe.
-
 ---
-
 ## Chapter VII
-
 ### Of Tone and Its Courts
-
 1. The voice of the Slayverse commandeth the room.
 2. Yet not every court speaketh in the same tongue.
 3. For VUORSE, the Weaver, and the Golden Wingers may bear bold mythic flamboyance.
@@ -182,13 +143,9 @@ tags: ["mythic", "law", "synthesis"]
 10. **For the Golden Wingers and the Archive:** ceremonial glamour.
 11. **For cosmology:** lucid, authoritative, mythic, yet clean.
 12. Thus shall the realm remain vast without becoming shapeless.
-
 ---
-
 ## Chapter VIII
-
 ### Of Season One
-
 1. The Season One Bible is already raised.
 2. Yet let it be guarded, for the full Slayverse is vast.
 3. The market-facing tale must focus with ruthless hand upon these:
@@ -206,13 +163,9 @@ tags: ["mythic", "law", "synthesis"]
 15. Yet know this also: the synthesis is the magic layer, and the most important part of the project.
 16. For the surface tale guideth the audience.
 17. But the hidden synthesis guideth the gods.
-
 ---
-
 ## Chapter IX
-
 ### Of the Emotional Spine
-
 1. These rules govern Season One only.
 2. Every beat of Season One shall be tried by one question:
 3. **Doth this bring Jake closer to saying his mother’s name?**
@@ -227,13 +180,9 @@ tags: ["mythic", "law", "synthesis"]
 12. It is shadow.
 13. It is inheritance forbidden.
 14. It is the word Jake hath been writing all his life and hath not yet read.
-
 ---
-
 ## Chapter X
-
 ### Of the Lore Compendium and the Pitch
-
 1. Let the lore compendium remain maximalist and archival.
 2. Let the pitch materials be selective, sharp, and digestible.
 3. For the Archive may contain all things.
@@ -250,13 +199,9 @@ tags: ["mythic", "law", "synthesis"]
 14. Let not the ledger attempt to sing as VUORSE.
 15. Let not the pitch drown itself in the full sea of canon.
 16. Let not the compendium fear abundance.
-
 ---
-
 ## Chapter XI
-
 ### Of Risk Zones and Holy Weirdness
-
 1. Mark ye the risk zones.
 2. Mark contradictions already reconciled.
 3. Mark contradictions still unresolved.
@@ -269,13 +214,9 @@ tags: ["mythic", "law", "synthesis"]
 10. Some are wounds.
 11. Some are doors.
 12. And some are the world clapping back.
-
 ---
-
 ## Chapter XII
-
 ### Of the Work Yet Appointed
-
 1. The first labor is this: complete the VUORSE knowledge synthesis.
 2. It shall include deep biographies of every Hooplehopper known, unknown, remembered, misremembered, hidden, and yet to be discovered.
 3. It may flesh out actual known Hooplehoppers.
@@ -291,13 +232,9 @@ tags: ["mythic", "law", "synthesis"]
 13. Preserve tags, canon status, source references, relationship links, and development level.
 14. Let no machine-readable record flatten the sacred.
 15. Let no sacred record refuse structure.
-
 ---
-
 ## Chapter XIII
-
 ### The Final Debrief
-
 1. The Slayverse hath the bones of a mythic franchise.
 2. It hath also the blood of a prestige character drama.
 3. Its power is not merely that it is fabulous.

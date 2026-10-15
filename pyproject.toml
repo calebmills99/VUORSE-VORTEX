@@ -40,10 +40,14 @@ lsp = [
   "websockets>=12.0",
   "watchdog>=4.0",
 ]
+cortex = [
+    "mcp>=1.9,<2",
+]
 
 
 [project.scripts]
 vuorse-vortex = "vuorse_vortex.cli:app"
+vuorse-cortex = "vuorse_vortex.cortex_mcp:main"
 
 [build-system]
 requires = ["hatchling"]
@@ -56,10 +60,12 @@ package = true
 line-length = 100
 target-version = "py311"
 extend-exclude = [
+  "Slayverse",
+  "worldforge",
   "drive_tree.py",
   "scripts/*.py",
-  "src/vuorse_vortex/convert_jsonl.py",
-  "src/vuorse_vortex/sifting.py",
+  "vuorse_vortex/convert_jsonl.py",
+  "vuorse_vortex/sifting.py",
   "tests/test_convert_jsonl.py",
   "tests/test_synthesis_chaos.py",
 ]

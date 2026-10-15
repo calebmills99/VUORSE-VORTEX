@@ -1,0 +1,83 @@
+{
+  "run_id": "lore-index-2.0",
+  "target_index": "slayverse_lore_index 2.1.0",
+  "status_of_this_file": "WorldForge production record for the Lore Index 2.1.0 governed repository-sync migration. This file records the forge run; it seals no lore and promotes no candidate claims.",
+  "canon_effect": {
+    "classification": "production-record",
+    "controlling_doctrine": "Book One, Chapter I, verses 3-9",
+    "seals_lore": false,
+    "promotes_claims": false
+  },
+  "activity": {
+    "id": "act:index-2.1-governance-migration",
+    "type": "repository-sync-and-governance-migration",
+    "started": "2026-10-02",
+    "ended": "2026-10-02",
+    "agents": [
+      "agent:copilot-lore-archivist"
+    ],
+    "used": [
+      "src:index-2.0",
+      "src:repo:canon-slayverse-index",
+      "src:repo:canon-1-words-of-weaver-book-one-words-of-weaver-book-one",
+      "src:repo:canon-2-words-of-weaver-book-two-words-of-weaver-book-two",
+      "src:repo:canon-weaver-artifacts-the-parchment-of-persistence-raw-substrate",
+      "src:repo:canon-weaver-artifacts-the-parchment-of-persistence-scene",
+      "src:repo:canon-organizations-golden-wingers-league-charter"
+    ],
+    "generated": [
+      "src:index-2.0"
+    ],
+    "summary": "Added repository synchronization, explicit namespaces, governance and firewall contracts, unique identities, and source-grounded first-class omission records without promoting candidate lore or exposing sealed truths."
+  },
+  "artifacts": [
+    {
+      "path": "slayverse_lore_index_2.0.json",
+      "role": "index",
+      "version": "2.1.0"
+    },
+    {
+      "path": "slayverse_lore_index_2.0.schema.json",
+      "role": "validation-schema",
+      "dialect": "JSON Schema Draft 2020-12"
+    },
+    {
+      "path": "delta/session-archive-2026-08-07.json",
+      "role": "source-delta"
+    },
+    {
+      "path": "delta/session-2026-09-26.json",
+      "role": "source-delta"
+    },
+    {
+      "path": "Lore Index 2.0 Release Notes.html",
+      "role": "release-notes"
+    }
+  ],
+  "validation": {
+    "date": "2026-10-02T02:44:13.905-07:00",
+    "status": "pending",
+    "valid": false,
+    "errors": 0,
+    "checks": [
+      "Draft 2020-12 schema validation",
+      "global id uniqueness",
+      "typed dangling-reference sweep",
+      "repository source-manifest coverage and path resolution",
+      "Book One governance and sealed-behavior firewall",
+      "timeline placement log",
+      "runtime execution pending: uv run vuorse-vortex validate-lore-index"
+    ]
+  },
+  "counts": {
+    "sources": 37,
+    "entities": 94,
+    "statements": 124,
+    "events": 33,
+    "relationships": 76,
+    "lineages": 5,
+    "documents": 5,
+    "open_questions": 15,
+    "timeline_unplaced": 1
+  }
+}
