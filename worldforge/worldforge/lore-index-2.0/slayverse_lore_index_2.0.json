@@ -296,25 +296,25 @@
       "note": "Identity not recorded in the 1.2 file; presumed an AI-assisted extraction directed by the Steward (assumption)."
     },
     {
-      "id": "agent:perchance-surface",
+      "id": "agent:roleplay-surface",
       "prov_type": "SoftwareAgent",
-      "name": "Perchance roleplay surface",
+      "name": "roleplay surface",
       "role": "excavation-tool",
       "note": "Recombines existing pressure points until a latent character walks out (archive §27). Jake McCullen and the Eisensang scene both emerged here."
     },
     {
       "id": "agent:gray-eye",
       "prov_type": "SoftwareAgent",
-      "name": "Gandalf the Gray Eye",
+      "name": "Gandalphaba the Gray Eye",
       "role": "causal worldbuilding agent",
       "acted_on_behalf_of": "agent:steward-vessel",
-      "entity": "gandalf-the-gray-eye",
+      "entity": "gandalphaba-the-gray-eye",
       "note": "Labels every load-bearing claim; proposes, never seals. Forged index 2.0."
     },
     {
-      "id": "agent:copilot-lore-archivist",
-      "prov_type": "SoftwareAgent",
-      "name": "Copilot Lore Archivist",
+      "id": "agent:slaygentic-lore-archivist",
+      "prov_type": "SyntheticAgent",
+      "name": "Slaygentic Lore Archivist",
       "role": "repository synchronization and schema implementation; drafts and validates, never seals",
       "acted_on_behalf_of": "agent:steward-vessel"
     }
@@ -429,7 +429,7 @@
     {
       "id": "src:gray-eye",
       "type": "agent-reasoning",
-      "title": "Gandalf the Gray Eye's own inferences and proposals",
+      "title": "Gandalphaba the Gray Eye's own inferences and proposals",
       "note": "Never canon by itself. Every claim from this source is labelled inference or assumption and sealed 'proposed' at most."
     },
     {
@@ -453,7 +453,7 @@
     {
       "id": "src:repo:canon-2-words-of-weaver-book-two-words-of-weaver-book-two",
       "type": "repository-document",
-      "title": "The Words of the Weaver, Book Two",
+      "title": "The Words of the Weaver, Book Two: Exodus Boogaloo",
       "repository_path": "canon/2_words_of_weaver_book_two/Words_of_Weaver_BOOK_TWO.MD",
       "manifest_source_id": "canon-2-words-of-weaver-book-two-words-of-weaver-book-two",
       "availability": "repository"
@@ -3055,7 +3055,7 @@
       "id": "crystal-shard",
       "type": "artifact",
       "names": {
-        "preferred": "The Crystal Shard",
+        "preferred": "The Extant Shards",
         "alternates": [
           "Federstahl Crystal",
           "Crystal Node"
@@ -3072,7 +3072,7 @@
         "relative_to": "event-lattice-incident",
         "relation": "before"
       },
-      "summary": "Surviving fragment of the Federstahl Lattice. Sentient time crystal buried beneath the McCullen Ranch. Drove Pop mad.",
+      "summary": "Surviving fragments of zetherium quartz from the Federstahl Lattice. Sentient time crystals that can't stand containment. Some are buried beneath the McCullen Ranch. Drove Pop mad.",
       "tags": [
         "sentient",
         "crystal",
