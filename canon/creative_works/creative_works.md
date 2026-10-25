@@ -32,7 +32,19 @@ A supplemental document for "Agents of the Archive, Activated in the Sixth Summi
 - **Type**: In-universe scientific paper
 - **Exists at**: `Slayverse/md/slayton_particle_discovery.md`
 - **Source**: External to seed PDF
-A mock-academic article documenting the discovery of [Slayton Energy](cosmology.md#slayton-energy--the-slayton-force) by Dr. Mariah Slayton. Written in the style of a peer-reviewed paper but with characteristic Slayverse flair. Covers glamorons, the Slayton Layer, Quantum Eleganza, and the Cosmic Snap.
+A mock-academic article documenting the discovery of [Slayton Energy](cosmology.md#slayton-energy--the-slayton-force) by Dr. Mariah Slayton. Written in the style of a peer-reviewed paper but with characteristic Slayverse flair. Covers glamorons, the Slayton Layer, Quantum Eleganza, and the Cosmic Snap. The earlier of the two in-universe papers; the CERN paper below gives the laboratory account.
+---
+### Observation of the Glamuron `[FULL]`
+- **Type**: In-universe scientific paper (CERN-PH-EP/2026-017, European Physical Journal C)
+- **Exists at**: `canon/cosmology/Observation of the Glamuron.md` (transcription of the PDF beside it; figures in `canon/cosmology/glamuron-figures/`)
+- **Source**: External to seed PDF; dated October 3, 2026
+[Dr. Elena Slayton](characters.md#dr-mariah-slayton) and [Dr. Jean-Michel Tout-le-Monde](characters.md#dr-jean-michel-tout-le-monde), for the ATLAS-Phono Collaboration. Reports the glamuron as a morphophononic quasi-particle and defines the [Slayton Field](cosmology.md#the-slayton-field), the [coherence-aesthetic index](cosmology.md#the-coherence-aesthetic-index-c_a), the three-snap key, energy conservation, and the [splat event](cosmology.md#the-splat-event), then ends in full drag: "Let every peer review be a kiki." Reference [7] reads "Ask yo mama."
+---
+### T News Wire: Morning Realness Edition `[FULL]`
+- **Type**: In-universe press story
+- **Exists at**: `canon/cosmology/Theory_of_Everything_Confirmed_.md`
+- **Source**: External to seed PDF
+The wire report on the Slayton confirmation at the [New Atlantis Research Facility](organizations.md#new-atlantis-research-facility): Dr. Slayton's spelling ruling, the press-conference heckler and the "CERN burn," and the folk sightings of glamorons in the aurora, in déjà vu, and in missing socks.
 ---
 ### The Golden Wingers Charter (Version 1.0) `[FULL]`
 - **Type**: Founding document

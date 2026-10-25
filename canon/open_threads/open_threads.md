@@ -53,6 +53,12 @@ Undeveloped hooks, contradictions, gaps, and opportunities for expansion.
 ### Spelling: Hooplehopper vs. Huppelhopper
 - Both spellings used interchangeably throughout the seed text
 - **Resolution**: This catalog standardizes to "Hooplehopper"; "Huppelhopper" is treated as an archaic or European variant
+### Glamoron classification: new category vs. spin-0 boson
+- The discovery note classes glamorons as neither bosons nor fermions [Slayverse/md/slayton_particle_discovery.md]; the CERN paper classes the glamuron as a neutral spin-0 bosonic quasi-particle [`canon/cosmology/Observation of the Glamuron.md`, §2.2.1]
+- **Resolution needed**: both are in-universe publications; the paper is the later and the peer-reviewed one. Preserved until ruled.
+### The Federstahl Institute in the 2026 acknowledgements
+- The CERN paper thanks the Federstahl Institute for support [`canon/cosmology/Observation of the Glamuron.md`, Acknowledgements]; canon's last recorded Federstahl gathering is 1945 [organizations.md]
+- **Resolution needed**: a surviving Institute, a successor using the name, or an in-universe joke. Book One Ch. XI: some contradictions are doors.
 ### The Lattice Incident Timeline
 - Page 97: Described as happening in the "1930s-1940s" (final years of Weimar Republic — but Weimar ended 1933)
 - Page 98: Retconned to researchers being pushed back to "the early 1800s"

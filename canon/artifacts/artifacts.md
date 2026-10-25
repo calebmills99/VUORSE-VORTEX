@@ -79,7 +79,12 @@ Also invented by Benedict. A garment with a hidden compartment for a dagger.
 ### Slayton Particles / Glamorons `[FULL]`
 - **Type**: Subatomic particles
 - **Source**: [Slayverse/md/slayton_particle_discovery.md]
-See [Cosmology > Glamorons](cosmology.md#glamorons). An entirely new particle category — neither bosons nor fermions. Their vibrational signatures align with multidimensional storytelling and "fluctuating fabulousness." Discovered by [Dr. Mariah Slayton](characters.md#dr-mariah-slayton).
+See [Cosmology > Glamorons](cosmology.md#glamorons). An entirely new particle category — neither bosons nor fermions in the discovery note; a spin-0 bosonic quasi-particle in the 2026 CERN paper. Their vibrational signatures align with multidimensional storytelling and "fluctuating fabulousness." Discovered by [Dr. Mariah Slayton](characters.md#dr-mariah-slayton).
+---
+### Slayton Matter `[FULL]`
+- **Type**: Programmable meta-phononic substrate
+- **Source**: [`canon/cosmology/Observation of the Glamuron.md`, §3.1, Appendix A.1; `canon/cosmology/Theory_of_Everything_Confirmed_.md`]
+The engineered material in which the [Slayton Field](cosmology.md#the-slayton-field) lives: mesoporous silica (SBA-15) functionalized with APTES, loaded with 15 nm gold nanoparticles and barium titanate nanowires grown in place, potassium-doped and annealed, built up in layers to make "hot zones." Stable for six months in an inert atmosphere. The wire describes it in the wild as orbs that float like disco balls and filigree that redesigns itself when you clap. Appendix A.1: "maintain biometric cleanliness and avoid static electricity during assembly."
 ---
 ### The Slayton Codex `[MODERATE]`
 - **Type**: Archive / record
