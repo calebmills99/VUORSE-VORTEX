@@ -1,7 +1,7 @@
 {
   "generated_from": "canon/slayverse_index.json",
   "canon_version": "1.1",
-  "edge_count": 27,
+  "edge_count": 29,
   "dangling_count": 0,
   "dangling_related_count": 5,
   "relationship_types": [
@@ -14,6 +14,8 @@
     "counter-lineage-of",
     "creator",
     "data-rebirth",
+    "erased-father",
+    "father",
     "founding-mandate",
     "grandfather",
     "guardian-lineage",
@@ -164,6 +166,16 @@
       "from": "isolde-of-the-lower-hall",
       "to": "isolde-von-hooplehopper",
       "type": "unresolved-name-echo"
+    },
+    {
+      "from": "doctor-vorst",
+      "to": "professor-von-hooplehopper",
+      "type": "erased-father"
+    },
+    {
+      "from": "doctor-vorst",
+      "to": "pop",
+      "type": "father"
     }
   ],
   "dangling_edges": [],
@@ -193,7 +205,9 @@
     ],
     "doctor-vorst": [
       "federstahl-institute",
-      "jake-mcullen"
+      "jake-mcullen",
+      "pop",
+      "professor-von-hooplehopper"
     ],
     "eli-mcullen": [
       "jake-mcullen"
@@ -255,9 +269,11 @@
     ],
     "pop": [
       "crystal-shard",
+      "doctor-vorst",
       "jake-mcullen"
     ],
     "professor-von-hooplehopper": [
+      "doctor-vorst",
       "heda-von-schwahnn",
       "lisette-von-hooplehopper",
       "miss-slaytonia-vuorse"
@@ -397,7 +413,7 @@
     },
     {
       "year": "1905",
-      "event": "Professor born",
+      "event": "Professor born (Immaculate Slayception)",
       "entities": [
         "professor-von-hooplehopper"
       ],

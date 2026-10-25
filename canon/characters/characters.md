@@ -121,7 +121,7 @@ She was at once courtesan and cloistered nun. A recluse who threw masquerade bal
 - **Era**: Not specified
 - **Role**: Musical mystic
 - **Source**: [p.56]
-**Bio**: Wrote operas that could induce visions. Some say he heard the Thread vibrating in harmonics.
+**Bio**: Wrote operas that could induce visions. Some say he heard the Thread vibrating in harmonics, and the Weaver in his dreams, directing him note by note. His piece "Swanblood Cantata" was performed once before being banned by three monarchies; his scores are hidden in old music boxes across Europe. [Seed: Hooplehopper Legacy Digest, in `canon/projects/projects.json`]
 ---
 ### Lisette von Hooplehopper `[FULL]`
 - **Aliases**: The Swan in Satin, The Matriarch of Mirrors, The Mother of Masks, The Last Flame of Federstahl
@@ -289,7 +289,7 @@ The Weaver is both diegetic (appears in the Jake/Wyoming narrative as a characte
 - **Aliases**: None
 - **Era**: Present/near-future (in-universe)
 - **Role**: Physicist who discovered the Slayton Force
-- **Source**: [docs/slayton_particle_discovery.md]
+- **Source**: [Slayverse/md/slayton_particle_discovery.md]
 **Bio**: Visionary physicist whose theoretical brilliance led to the discovery of the Slayton Force — an energy field hidden between strings of the quantum realm. She classified Slaytons as an entirely new particle category: [glamorons](cosmology.md#glamorons). Key quote: "We may be witnessing a bridge between cosmic fundamentals and the human spirit. Sometimes, hunny, the universe decides it's time for everyone to level up."
 ---
 ### DJ Parallax `[HOOK ONLY]`

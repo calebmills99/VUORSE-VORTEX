@@ -78,12 +78,12 @@ Also invented by Benedict. A garment with a hidden compartment for a dagger.
 ---
 ### Slayton Particles / Glamorons `[FULL]`
 - **Type**: Subatomic particles
-- **Source**: [docs/slayton_particle_discovery.md]
+- **Source**: [Slayverse/md/slayton_particle_discovery.md]
 See [Cosmology > Glamorons](cosmology.md#glamorons). An entirely new particle category — neither bosons nor fermions. Their vibrational signatures align with multidimensional storytelling and "fluctuating fabulousness." Discovered by [Dr. Mariah Slayton](characters.md#dr-mariah-slayton).
 ---
 ### The Slayton Codex `[MODERATE]`
 - **Type**: Archive / record
-- **Source**: [docs/slayton_particle_discovery.md, p.102]
+- **Source**: [Slayverse/md/slayton_particle_discovery.md, p.102]
 An ever-expanding archive within the [Golden Wingers Intergalactic League](organizations.md#golden-wingers-intergalactic-league). Records both empirical data and mythic lore — evidence that cultures across time have sensed the Slayton Force. Contains the prophecy of "The Child of Dust and Velvet" [p.102].  DJ Parralax  is said to be its scribe.
 ---
 ### Federkreis Devices `[SKETCHED]`

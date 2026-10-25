@@ -627,6 +627,33 @@
       "repository_path": "canon/weaver_artifacts/the_parchment_of_persistence_scene.md",
       "manifest_source_id": "canon-weaver-artifacts-the-parchment-of-persistence-scene",
       "availability": "repository"
+    },
+    {
+      "id": "src:repo:canon-cosmology-observation-of-the-glamuron",
+      "type": "repository-document",
+      "title": "Observation of the Glamuron (CERN paper transcription)",
+      "repository_path": "canon/cosmology/Observation of the Glamuron.md",
+      "manifest_source_id": "canon-cosmology-observation-of-the-glamuron",
+      "availability": "repository",
+      "note": "In-universe CERN paper, CERN-PH-EP/2026-017, lead author Dr. Elena Slayton. Dr. Slayton is one person across the Mariah and Elena spellings per Steward ruling 2026-10-25."
+    },
+    {
+      "id": "src:repo:canon-cosmology-theory-of-everything-confirmed",
+      "type": "repository-document",
+      "title": "Theory of Everything Confirmed (T News Wire)",
+      "repository_path": "canon/cosmology/Theory_of_Everything_Confirmed_.md",
+      "manifest_source_id": "canon-cosmology-theory-of-everything-confirmed",
+      "availability": "repository",
+      "note": "In-universe press story announcing Slayton matter; companion to the Glamuron paper."
+    },
+    {
+      "id": "src:repo:canon-characters-characters-core-folio",
+      "type": "repository-document",
+      "title": "Slayverse Characters Core Folio",
+      "repository_path": "canon/characters/characters_core_folio.md",
+      "manifest_source_id": "canon-characters-characters-core-folio",
+      "availability": "repository",
+      "note": "Character roster folio partition (Lisette through Eli). Complements canon/characters/characters.md."
     }
   ],
   "activities": [
@@ -10554,6 +10581,13 @@
       "date": "before 2026-03-06",
       "changes": [
         "Predecessors of 1.2; contents not recorded in the 1.2 file."
+      ]
+    },
+    {
+      "version": "2.1.1",
+      "date": "2026-10-25",
+      "changes": [
+        "Added src:repo Source records for three governed canon files that the source manifest now covers: the Glamuron paper, the Theory of Everything wire, and the characters core folio. No entity, statement, or seal changes."
       ]
     }
   ]

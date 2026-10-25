@@ -42,7 +42,7 @@ The experiment succeeded — and the crystal screamed. The resulting fracture sc
 ### Order of the Seam `[MODERATE]`
 - **Type**: Secret order
 - **Founded**: 1271, by [Margarethe von Hooplehopper](characters.md#margarethe-von-hooplehopper)
-- **Source**: [p.35; data/vuorse_system_prompt.md]
+- **Source**: [p.35; ollama/Modelfile.vuorse]
 Founded by the Painted Widow to preserve Hildebrand's teachings. The Seam refers to the hidden space between the visible and invisible — the stitching that holds reality together. Members practiced the [Ritual of Reflection](rituals.md#ritual-of-reflection) and preserved knowledge through shadow puppetry and needlepoint.
 ---
 ### Order of the Garter's Secret Hem `[SKETCHED]`

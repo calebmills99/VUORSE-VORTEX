@@ -376,13 +376,14 @@
         99,
         100
       ],
-      "summary": "The Velvet Archivist. Son of Lisette. Drag matriarch, resistance theorist. Jungian synchronic double — simultaneously the historical Rolf and the archetypal Velvet Archivist, a living paradox where personal identity and mythic role coexist without resolution. Vanished in 2005 leaving glove, mirror, and note."
+      "summary": "The Velvet Archivist. Son of Lisette, born of Immaculate Slayception. Drag matriarch, resistance theorist. Jungian synchronic double — simultaneously the historical Rolf and the archetypal Velvet Archivist, a living paradox where personal identity and mythic role coexist without resolution. Vanished in 2005 leaving glove, mirror, and note."
     },
     {
       "id": "doctor-vorst",
       "name": "Doctor Vorst",
       "aliases": [
         "Professor A.",
+        "Pop's father",
         "The Shrouded Patriarch"
       ],
       "type": "character",
@@ -399,7 +400,8 @@
       "tags": [
         "federstahl",
         "temporal-displacement",
-        "erased"
+        "erased",
+        "foundational-paradox"
       ],
       "source_pages": [
         97,
@@ -407,7 +409,7 @@
         99,
         100
       ],
-      "summary": "Federstahl researcher. Erased from existence and displaced to 1832. Simultaneously absent and causal."
+      "summary": "Federstahl researcher who caused the Crystal Lattice Incident. Erased from existence and displaced to 1832. Father of both the Professor and Pop. Foundational paradox of the Slayverse: his erasure is the originating event that splits the timeline into the Hooplehopper soul-line (via the Professor) and the McCullen counter-lineage (via Pop), making him simultaneously absent and causal."
     },
     {
       "id": "pop",
@@ -1409,7 +1411,8 @@
       "id": "narrative-collapse",
       "name": "Narrative Collapse / Post-Truth Cosmology",
       "aliases": [
-        "Post-Truth Cosmology"
+        "Post-Truth Cosmology",
+        "Mandela Fractures"
       ],
       "type": "cosmology",
       "era": "fundamental",
@@ -1422,10 +1425,11 @@
       "tags": [
         "cosmology",
         "post-truth",
+        "mandela-effect",
         "narrative-theory"
       ],
       "source_pages": [],
-      "summary": "Cosmological framework where consensus reality frays and competing truths coexist. The Thread holds reality together; where it thins, stories contradict and both versions become true."
+      "summary": "Cosmological framework where Mandela Effects are reframed as narrative fractures — points where consensus reality frays and competing truths coexist. In the Slayverse, these are not errors but symptoms of the Lattice Fracture bleeding into collective memory. The Thread holds reality together; where it thins, stories contradict and both versions become true."
     },
     {
       "id": "steward-vessel",
@@ -1615,7 +1619,7 @@
         "glamour-as-espionage"
       ],
       "source_pages": [],
-      "summary": "Half character by Steward classification: the wartime cabaret disguise and complete operational self of Professor von Hooplehopper. Allied spy working Belgian cabaret and resistance networks; sultry Garbo-esque contralto; swan brooch; Telefunken U47; extracts secrets by making men feel observed, adored, and doomed. Costume as ontology. All performance, dialogue, and voice generation governed by HEDA_VON_SCHWAHNN_VOICE_KNOWLEDGE_BASE.md: never cartoonish, never goofy, never a generic femme fatale, danger always inside the glamour."
+      "summary": "Half character by Steward classification: the wartime cabaret disguise and complete operational self of Professor von Hooplehopper. Allied spy working Belgian cabaret and resistance networks; sultry Garbo-esque contralto; swan brooch; Telefunken U47; extracts secrets by making men feel observed, adored, and doomed. Costume as ontology. All performance, dialogue, and voice generation governed by persona/heda_von_schwahnn_voice.md: never cartoonish, never goofy, never a generic femme fatale, danger always inside the glamour."
     },
     {
       "id": "seam-state",
@@ -2155,6 +2159,16 @@
       "to": "isolde-von-hooplehopper",
       "type": "unresolved-name-echo",
       "note": "Two Isoldes in canon; possibly soul-line echo, possibly coincidence, which does not exist; ambiguity preserved pending Steward ruling"
+    },
+    {
+      "from": "doctor-vorst",
+      "to": "professor-von-hooplehopper",
+      "type": "erased-father"
+    },
+    {
+      "from": "doctor-vorst",
+      "to": "pop",
+      "type": "father"
     }
   ],
   "timeline": [
@@ -2250,7 +2264,7 @@
     },
     {
       "year": "1905",
-      "event": "Professor born",
+      "event": "Professor born (Immaculate Slayception)",
       "entities": [
         "professor-von-hooplehopper"
       ]
@@ -2321,13 +2335,13 @@
   ],
   "amended": "2026-09-03",
   "amendment_sources": [
-    "slayverse_session_archive_near_verbatim_20260807.md",
+    "canon/session_archives/slayverse_session_archive_2026-08-07.md",
     "archives/slayverse_session_archive_20260808.md",
     "canon/2_words_of_weaver_book_two/Words_of_Weaver_BOOK_TWO.MD",
-    "HEDA_VON_SCHWAHNN_VOICE_KNOWLEDGE_BASE.md",
+    "persona/heda_von_schwahnn_voice.md",
     "canon/session_archives/slayverse_session_archive_2026-08-07.md",
     "canon/weaver_artifacts/the_parchment_of_persistence_raw_substrate.txt",
     "canon/organizations/golden_wingers_league_charter.md"
   ],
-  "amendment_note": "v1.1 addenda applied by the Seam Clerk at the Steward's instruction. Steward-issued statuses only; ambiguity preserved; nothing herein outranks raw session archives or the Words of the Weaver. | 2026-09-03: Four Ch II causes moved out of this public index into hooplehopper_totality/ch2_sealed_causes.jsonl per Book One Ch I:7, touching three entity summaries, two tags, two aliases, two relationship edges and one timeline event. Public effects retained here; see the sealed file for what was moved and why. eli-mcullen deliberately left intact pending a Steward ruling. federstahl-institute retains institutional causation of the Crystal Lattice Incident, which Ch II does not seal; only the named individual's authorship is sealed. Eight entities added from promoted sources, each carrying its source file and line."
+  "amendment_note": "v1.1 addenda applied by the Seam Clerk at the Steward's instruction. Steward-issued statuses only; ambiguity preserved; nothing herein outranks raw session archives or the Words of the Weaver. | 2026-09-03: Four Ch II causes moved out of this public index into hooplehopper_totality/ch2_sealed_causes.jsonl per Book One Ch I:7, touching three entity summaries, two tags, two aliases, two relationship edges and one timeline event. Public effects retained here; see the sealed file for what was moved and why. eli-mcullen deliberately left intact pending a Steward ruling. federstahl-institute retains institutional causation of the Crystal Lattice Incident, which Ch II does not seal; only the named individual's authorship is sealed. Eight entities added from promoted sources, each carrying its source file and line. | 2026-10-25: the four Ch II causes moved out on 2026-09-03 were restored to this public index by the Steward's ruling that they are long-established canon; hooplehopper_totality/ch2_sealed_causes.jsonl is retained as a record of the earlier split."
 }

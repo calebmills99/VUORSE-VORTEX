@@ -9,7 +9,7 @@ Undeveloped hooks, contradictions, gaps, and opportunities for expansion.
 - **Steward seal**: The Weaver does not repeat itself. Do **not** treat Wylus as a rival cosmological authority, a second Weaver, or an open “same vs distinct” identity puzzle for writers’ rooms.
 - **Opportunity**: Leave the name as Expansion-Realm shadow. Stage presence without asking the forbidden question. Catalog entries that reopen “are they the same entity?” contradict Book One — retire those framings.
 ### Eli McCullen `[HOOK ONLY]`
-- **Source**: [p.93, p.96, docs/SLAYVERSE_CHAT_03142026.json]
+- **Source**: [p.93, p.96, Slayverse/json/SLAYVERSE_CHAT_03142026.json@2026-03-16_110102]
 - Jake's grandson. "Thunder in his bones." Pop may have encoded the crystal node's core command structure in Eli's DNA — making Eli not merely a future-generation hook but a **living lattice key**. If true, his body carries the activation sequence for the Wyoming Rift, and his arc becomes inseparable from the Codex Prophecy.
 - **Opportunity**: Eli could be the bridge character for a modern-day continuation of the Jake arc. His DNA encoding raises the stakes: he is both heir and instrument, and any faction aware of the lattice will seek him.
 ### Lisette's Unnamed Companion `[HOOK ONLY]`
@@ -20,7 +20,7 @@ Undeveloped hooks, contradictions, gaps, and opportunities for expansion.
 - **Source**: [p.89]
 - A time-displaced bard. How were they displaced? What era are they from?
 ### Dr. Gerald Pritchard `[HOOK ONLY]`
-- **Source**: [docs/slayton_particle_discovery.md]
+- **Source**: [Slayverse/md/slayton_particle_discovery.md]
 - The skeptic whose wig was snatched. Could be developed as an antagonist to the Slayton science.
 ---
 ## Undeveloped Locations
@@ -76,6 +76,7 @@ Undeveloped hooks, contradictions, gaps, and opportunities for expansion.
 ### The Gap Between Theresia (1754) and Lisette (1873)
 - Over a century of lineage is unaccounted for
 - **Opportunity**: One or more generations could fill this gap — Napoleonic era, Industrial Revolution, etc.
+- **Seed-only names**: the Hooplehopper Legacy Digest (in `canon/projects/projects.json`) names Eberhardt the Dandy Diplomat (1812) and Ansgar, Lisette's partner (1901). Neither is in canon: Eberhardt sits inside the gap that Book One Ch. II vv.30–31 rules on, and Ansgar conflicts with Book One Ch. II vv.19–20 on Lisette's companion. Preserved here as seed material, not promoted.
 ### The Professor's 100 Years (1905-2005)
 - We have his youth (Mirror Moment at 14) and hints of his later influence (Bowie, Mercury, Vienna)
 - **Gap**: What happened during WWI, WWII, the Cold War? How did he survive? Did he use the 20-Year Sleep?

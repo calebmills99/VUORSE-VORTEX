@@ -4,8 +4,8 @@
   "canon_generated": "2026-03-06",
   "canon_amended": "2026-09-03",
   "entity_count": 81,
-  "surface_form_count": 151,
-  "distinctive_token_count": 59,
+  "surface_form_count": 153,
+  "distinctive_token_count": 63,
   "ambiguous_tokens": [
     "Eisensang",
     "Federstahl",
@@ -411,7 +411,7 @@
         99,
         100
       ],
-      "summary": "The Velvet Archivist. Son of Lisette. Drag matriarch, resistance theorist. Jungian synchronic double — simultaneously the historical Rolf and the archetypal Velvet Archivist, a living paradox where personal identity and mythic role coexist without resolution. Vanished in 2005 leaving glove, mirror, and note."
+      "summary": "The Velvet Archivist. Son of Lisette, born of Immaculate Slayception. Drag matriarch, resistance theorist. Jungian synchronic double — simultaneously the historical Rolf and the archetypal Velvet Archivist, a living paradox where personal identity and mythic role coexist without resolution. Vanished in 2005 leaving glove, mirror, and note."
     },
     "doctor-vorst": {
       "id": "doctor-vorst",
@@ -422,6 +422,7 @@
       "surface_forms": [
         "Doctor Vorst",
         "Professor A.",
+        "Pop's father",
         "The Shrouded Patriarch"
       ],
       "related": [
@@ -435,7 +436,8 @@
       "tags": [
         "federstahl",
         "temporal-displacement",
-        "erased"
+        "erased",
+        "foundational-paradox"
       ],
       "source_pages": [
         97,
@@ -443,7 +445,7 @@
         99,
         100
       ],
-      "summary": "Federstahl researcher. Erased from existence and displaced to 1832. Simultaneously absent and causal."
+      "summary": "Federstahl researcher who caused the Crystal Lattice Incident. Erased from existence and displaced to 1832. Father of both the Professor and Pop. Foundational paradox of the Slayverse: his erasure is the originating event that splits the timeline into the Hooplehopper soul-line (via the Professor) and the McCullen counter-lineage (via Pop), making him simultaneously absent and causal."
     },
     "pop": {
       "id": "pop",
@@ -1509,7 +1511,8 @@
       "era": "fundamental",
       "surface_forms": [
         "Narrative Collapse / Post-Truth Cosmology",
-        "Post-Truth Cosmology"
+        "Post-Truth Cosmology",
+        "Mandela Fractures"
       ],
       "related": [
         "federstahl-lattice",
@@ -1519,10 +1522,11 @@
       "tags": [
         "cosmology",
         "post-truth",
+        "mandela-effect",
         "narrative-theory"
       ],
       "source_pages": [],
-      "summary": "Cosmological framework where consensus reality frays and competing truths coexist. The Thread holds reality together; where it thins, stories contradict and both versions become true."
+      "summary": "Cosmological framework where Mandela Effects are reframed as narrative fractures — points where consensus reality frays and competing truths coexist. In the Slayverse, these are not errors but symptoms of the Lattice Fracture bleeding into collective memory. The Thread holds reality together; where it thins, stories contradict and both versions become true."
     },
     "steward-vessel": {
       "id": "steward-vessel",
@@ -1722,7 +1726,7 @@
         "glamour-as-espionage"
       ],
       "source_pages": [],
-      "summary": "Half character by Steward classification: the wartime cabaret disguise and complete operational self of Professor von Hooplehopper. Allied spy working Belgian cabaret and resistance networks; sultry Garbo-esque contralto; swan brooch; Telefunken U47; extracts secrets by making men feel observed, adored, and doomed. Costume as ontology. All performance, dialogue, and voice generation governed by HEDA_VON_SCHWAHNN_VOICE_KNOWLEDGE_BASE.md: never cartoonish, never goofy, never a generic femme fatale, danger always inside the glamour."
+      "summary": "Half character by Steward classification: the wartime cabaret disguise and complete operational self of Professor von Hooplehopper. Allied spy working Belgian cabaret and resistance networks; sultry Garbo-esque contralto; swan brooch; Telefunken U47; extracts secrets by making men feel observed, adored, and doomed. Costume as ontology. All performance, dialogue, and voice generation governed by persona/heda_von_schwahnn_voice.md: never cartoonish, never goofy, never a generic femme fatale, danger always inside the glamour."
     },
     "seam-state": {
       "id": "seam-state",
@@ -2298,6 +2302,9 @@
     "Lysander von Hooplehopper": [
       "lysander-von-hooplehopper"
     ],
+    "Mandela Fractures": [
+      "narrative-collapse"
+    ],
     "Margarethe von Hooplehopper": [
       "margarethe-von-hooplehopper"
     ],
@@ -2351,6 +2358,9 @@
     ],
     "Pop": [
       "pop"
+    ],
+    "Pop's father": [
+      "doctor-vorst"
     ],
     "Post-Truth Cosmology": [
       "narrative-collapse"
@@ -2499,6 +2509,9 @@
     "The Parchment of Persistence": [
       "the-parchment-of-persistence"
     ],
+    "The Portable Mechanized Wardrobe": [
+      "the-thumper"
+    ],
     "The Professor": [
       "professor-von-hooplehopper"
     ],
@@ -2536,9 +2549,6 @@
       "the-thread"
     ],
     "The Thumper": [
-      "the-thumper"
-    ],
-    "The Portable Mechanized Wardrobe": [
       "the-thumper"
     ],
     "The Velvet Archive": [
@@ -2698,6 +2708,9 @@
     "Lysander": [
       "lysander-von-hooplehopper"
     ],
+    "Mandela": [
+      "narrative-collapse"
+    ],
     "Margarethe": [
       "margarethe-von-hooplehopper"
     ],
@@ -2709,6 +2722,9 @@
       "jake-mcullen",
       "mcullen-ranch"
     ],
+    "Mechanized": [
+      "the-thumper"
+    ],
     "Mirrorpath": [
       "velvet-rite"
     ],
@@ -2718,6 +2734,9 @@
     "Ottokar": [
       "ottokar-ii-von-rabenwald",
       "rabenwald-see"
+    ],
+    "Portable": [
+      "the-thumper"
     ],
     "Post-Truth": [
       "narrative-collapse"
@@ -2787,6 +2806,9 @@
     ],
     "VUORSE": [
       "miss-slaytonia-vuorse"
+    ],
+    "Wardrobe": [
+      "the-thumper"
     ],
     "Wax-Sealed": [
       "rabenwald-see"
