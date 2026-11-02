@@ -8,7 +8,7 @@ on:
 
 jobs:
   python:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v3
@@ -24,7 +24,7 @@ jobs:
         run: uv run mypy src
 
   frontend:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     defaults:
       run:
         working-directory: web
