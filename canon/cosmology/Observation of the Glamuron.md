@@ -1,12 +1,44 @@
+<!--
+Transcribed from "Observation of the Glamuron-Discovery of a Morphophononic Quasi-Particle and the Slayton Field.pdf"
+(27 pages; pages 18 to 27 are blank). Text, emphasis, and lists come from the PDF's text layer; equations are
+rebuilt in LaTeX from the rendered pages. Cover art and figures are cropped from the PDF into glamuron-figures/.
+-->
+
+CERN-PH-EP/2026-017
+
+October 3, 2026
+
+# OBSERVATION OF THE GLAMURON
+
+*Discovery of a Morphophononic Quasi-Particle and the Slayton Field*
+
+Dr. Elena Slayton
+
+Dr. Jean-Michel Tout-le-Monde
+
+*for the ATLAS-Phono Collaboration*
+
+![Cover illustration](glamuron-figures/cover.jpg)
+
+European Organization for Nuclear Research (CERN)
+
+Geneva, Switzerland
+
+Published in *European Physical Journal C*
+
+---
+
 # Observation of the Glamuron: Discovery of a Morphophononic Quasi-Particle and the Slayton Field
 
-**Authors:** Dr. Elena Slayton; Co-author Dr. Jean-Michel Tout-le-Monde, for the ATLAS-Phono Collaboration  
-**Affiliation:** CERN, Geneva, Switzerland  
-**Date:** October 3rd, 2026
+Dr. Elena Slayton; Co-author Dr. Jean-Michel Tout-le-Monde, for the ATLAS-Phono Collaboration
+
+*CERN, Geneva, Switzerland*
+
+October 3rd, 2026
 
 ## Abstract
 
-We report the experimental observation of the glamuron ($\mathrm{Gm}^{-1}$), a neutral bosonic quasi-particle mediating morphophononic interactions in Slayton matter. The glamuron is the fundamental constituent of the Slayton Field, a programmable quantum-phononic system embedded within engineered nanostructured substrates. We demonstrate that Slayton matter, composed of densely packed glamurons and conventional matter, exhibits resonant energy amplification and pattern formation in response to coherent acoustic and biometric inputs. The discovery confirms the existence of a measurable "coherence-aesthetic index" ($C_A$), which quantifies the degree of organized vibrational energy in the system. We establish the physical basis for the Slayton Field’s operational protocols, including the three-snap resonance trigger and the safety mechanisms governing energy conservation and coherence collapse. These results provide a testable framework for the study of emergent morphophononic phenomena and open new avenues for controlled energy transformation and programmable matter.
+We report the experimental observation of the glamuron ($\text{Gm}^{-1}$), a neutral bosonic quasi-particle mediating morphophononic interactions in Slayton matter. The glamuron is the fundamental constituent of the Slayton Field, a programmable quantum-phononic system embedded within engineered nanostructured substrates. We demonstrate that Slayton matter, composed of densely packed glamurons and conventional matter, exhibits resonant energy amplification and pattern formation in response to coherent acoustic and biometric inputs. The discovery confirms the existence of a measurable "coherence-aesthetic index" ($C_A$), which quantifies the degree of organized vibrational energy in the system. We establish the physical basis for the Slayton Field’s operational protocols, including the three-snap resonance trigger and the safety mechanisms governing energy conservation and coherence collapse. These results provide a testable framework for the study of emergent morphophononic phenomena and open new avenues for controlled energy transformation and programmable matter.
 
 ## 1. Introduction
 
@@ -44,18 +76,18 @@ By relating morphophononic condensation to established principles of phase trans
 
 ### 2.2 The Glamuron Hypothesis
 
-We propose the existence of the glamuron ($\mathrm{Gm}^{-1}$), a novel quasi-particle arising from the collective excitation of the morphophononic condensate. The glamuron emerges as the elementary excitation mediating the interaction between structured acoustic signals and the programmable matter of the Slayton Field.
+We propose the existence of the glamuron ($\text{Gm}^{-1}$), a novel quasi-particle arising from the collective excitation of the morphophononic condensate. The glamuron emerges as the elementary excitation mediating the interaction between structured acoustic signals and the programmable matter of the Slayton Field.
 
 #### 2.2.1 Definition and Quantum Numbers
 
-The glamuron is hypothesized to be a neutral, integer-spin (spin-0) boson with negligible rest mass ($\sim 10^{-30}\ \mathrm{eV}/c^2$). Its defining characteristic is a new quantum number, the aesthetic charge ($\hbar_a$), which quantifies the degree to which the particle couples to both vibrational energy and biometric coherence signals. This aesthetic charge is not conserved in isolation but manifests as a collective property in the morphophononic condensate, analogous to how color charge is confined in QCD.
+The glamuron is hypothesized to be a neutral, integer-spin (spin-0) boson with negligible rest mass ($\sim 10^{-30}\ \text{eV}/c^2$). Its defining characteristic is a new quantum number, the aesthetic charge ($\hbar_a$), which quantifies the degree to which the particle couples to both vibrational energy and biometric coherence signals. This aesthetic charge is not conserved in isolation but manifests as a collective property in the morphophononic condensate, analogous to how color charge is confined in QCD.
 
 #### 2.2.2 Effective Field Theory
 
 We model the glamuron within an extended Lagrangian density that augments the standard phonon Hamiltonian with interaction terms sensitive to both frequency modulation and biometric coherence:
 
 $$
-\mathcal{L}_{\text{glam}} = \frac{1}{2}\,\partial_\mu \phi_G\, \partial^\mu \phi_G - \frac{1}{2} m_G^2 \phi_G^2 + g_{\text{int}}\, \phi_G \left( \mathcal{A}(t,x) \otimes \mathcal{B}(t,x) \right)
+\mathcal{L}_{\text{glam}} = \frac{1}{2}\,\partial_\mu \phi_G\,\partial^\mu \phi_G - \frac{1}{2}\,m_G^2 \phi_G^2 + g_{\text{int}}\,\phi_G\,\big(\mathcal{A}(t,x) \otimes \mathcal{B}(t,x)\big) \tag{1}
 $$
 
 where:
@@ -100,7 +132,7 @@ To bridge the qualitative notion of "aesthetic coherence" with quantitative, exp
 The coherence-aesthetic index is defined as:
 
 $$
-C_A = \alpha \cdot \mathcal{C}_{\text{acoustic}} \cdot \mathcal{C}_{\text{biometric}}
+C_A = \alpha \cdot \mathcal{C}_{\text{acoustic}} \cdot \mathcal{C}_{\text{biometric}} \tag{2}
 $$
 
 where:
@@ -122,15 +154,10 @@ Acoustic coherence is evaluated using the following metrics:
 Mathematically, we define:
 
 $$
-\mathcal{C}_{\text{acoustic}} =
-\left[ 1 - \frac{\sigma_{\Delta f}}{\langle f \rangle} \right]
-\cdot
-\left[ \frac{\text{SNR}_{\text{spectral}}}{\text{SNR}_{\text{baseline}}} \right]
-\cdot
-f_{\text{formant\_consistency}}
+\mathcal{C}_{\text{acoustic}} = \left[1 - \frac{\sigma_{\Delta f}}{\langle f \rangle}\right] \cdot \left[\frac{\text{SNR}_{\text{spectral}}}{\text{SNR}_{\text{baseline}}}\right] \cdot f_{\text{formant\_consistency}} \tag{3}
 $$
 
-where $\sigma_{\Delta f}$ is the standard deviation of the instantaneous frequency, $\langle f \rangle$ is the mean frequency, and $f_{\text{formant\_consistency}}$ is a metric in $[0,1]$ assessing the similarity of formant tracks across the input.
+where $\sigma_{\Delta f}$ is the standard deviation of the instantaneous frequency, $\langle f \rangle$ is the mean frequency, and $f_{\text{formant\_consistency}}$ is a metric in $[0, 1]$ assessing the similarity of formant tracks across the input.
 
 #### 2.3.3 Biometric Coherence ($\mathcal{C}_{\text{biometric}}$)
 
@@ -143,12 +170,7 @@ Biometric coherence is quantified using sensor data from the speaker:
 We compute:
 
 $$
-\mathcal{C}_{\text{biometric}} =
-\left[ 1 - \frac{\sigma_{\text{microtremor}}}{\langle \text{microtremor} \rangle} \right]
-\cdot
-\left[ 1 - \frac{\sigma_{\text{HR}}}{\langle \text{HR} \rangle} \right]
-\cdot
-\delta_{\text{vocal-onset}}
+\mathcal{C}_{\text{biometric}} = \left[1 - \frac{\sigma_{\text{microtremor}}}{\langle \text{microtremor} \rangle}\right] \cdot \left[1 - \frac{\sigma_{\text{HR}}}{\langle \text{HR} \rangle}\right] \cdot \delta_{\text{vocal-onset}} \tag{4}
 $$
 
 where $\sigma_{\text{microtremor}}$ and $\sigma_{\text{HR}}$ are the standard deviations of the microtremor amplitude and heart rate, respectively, and $\delta_{\text{vocal-onset}}$ is an indicator function (0 or 1) for whether vocal onset is temporally aligned with biometric events.
@@ -159,8 +181,9 @@ The individual coherence terms are computed in real time using digital signal pr
 
 We have validated $C_A$ as a predictor of Slayton Field activation by correlating it with observed output energy and macroscopic pattern formation. As shown in Figure 2.3, a threshold $C_A > 0.7$ robustly distinguishes between full-field activation and partial or null response.
 
-> **Figure 2.3:**  
-> Correlation between measured $C_A$ and normalized output energy in Slayton matter. The sharp transition at $C_A \approx 0.7$ marks the onset of energy amplification.
+![Figure 2.3: Normalized output energy versus coherence-aesthetic index](glamuron-figures/figure-2-3.png)
+
+**Figure 2.3:** Correlation between measured $C_A$ and normalized output energy in Slayton matter. The sharp transition at $C_A \approx 0.7$ marks the onset of energy amplification.
 
 #### 2.3.5 Interpretation
 
@@ -180,14 +203,10 @@ Slayton matter is synthesized via a multi-step nanofabrication process, combinin
 
 ##### 3.1.1.1 Nanostructure Embedding
 
-1. **Surface Functionalization:**  
-   Mesoporous silica templates are functionalized with silane coupling agents (e.g., aminopropyltriethoxysilane, APTES) to provide reactive sites for attachment of colloidal nanoparticles.
-2. **Nanoparticle Incorporation:**  
-   Gold and piezoelectric barium titanate (BaTiO₃) nanoparticles are synthesized via standard sol-gel and hydrothermal methods, respectively, and introduced into the functionalized matrix by capillary infiltration and centrifugal deposition.
-3. **In Situ Growth:**  
-   An alternative route involves in situ growth of BaTiO₃ nanowires within the pore channels using a hydrothermal process at 150°C for 24 hours.
-4. **Doping and Annealing:**  
-   Selective ion implantation and low-temperature annealing (≤ 500°C) are used to tailor the electronic and phononic properties of the composite, optimizing the coupling between nanostructures and the phononic background.
+1. **Surface Functionalization:** Mesoporous silica templates are functionalized with silane coupling agents (e.g., aminopropyltriethoxysilane, APTES) to provide reactive sites for attachment of colloidal nanoparticles.
+2. **Nanoparticle Incorporation:** Gold and piezoelectric barium titanate (BaTiO₃) nanoparticles are synthesized via standard sol-gel and hydrothermal methods, respectively, and introduced into the functionalized matrix by capillary infiltration and centrifugal deposition.
+3. **In Situ Growth:** An alternative route involves in situ growth of BaTiO₃ nanowires within the pore channels using a hydrothermal process at 150°C for 24 hours.
+4. **Doping and Annealing:** Selective ion implantation and low-temperature annealing (≤ 500°C) are used to tailor the electronic and phononic properties of the composite, optimizing the coupling between nanostructures and the phononic background.
 
 ##### 3.1.1.2 Morphophononic Layering
 
@@ -197,25 +216,18 @@ To create regions with tunable glamuron responsiveness, multiple layers of diffe
 
 The micro- and nanostructure of Slayton matter is characterized using a suite of analytical tools:
 
-- **Scanning Electron Microscopy (SEM):**  
-  High-resolution images confirm the successful integration of nanoparticles within the porous network and verify uniformity across sample batches.
-- **Transmission Electron Microscopy (TEM):**  
-  Used to examine the interface between silica, gold, and BaTiO₃ components at the nanoscale.
-- **X-ray Diffraction (XRD):**  
-  Confirms the crystallinity and orientation of piezoelectric phases, which are critical for efficient vibrational coupling.
-- **BET Surface Area Analysis:**  
-  Brunauer–Emmett–Teller measurements assess pore size distribution and accessible surface area, key factors in acoustic wave propagation and glamuron excitation.
-- **Raman Spectroscopy:**  
-  Used to probe the vibrational modes of embedded nanostructures and verify chemical integrity post-fabrication.
+- **Scanning Electron Microscopy (SEM):** High-resolution images confirm the successful integration of nanoparticles within the porous network and verify uniformity across sample batches.
+- **Transmission Electron Microscopy (TEM):** Used to examine the interface between silica, gold, and BaTiO₃ components at the nanoscale.
+- **X-ray Diffraction (XRD):** Confirms the crystallinity and orientation of piezoelectric phases, which are critical for efficient vibrational coupling.
+- **BET Surface Area Analysis:** Brunauer–Emmett–Teller measurements assess pore size distribution and accessible surface area, key factors in acoustic wave propagation and glamuron excitation.
+- **Raman Spectroscopy:** Used to probe the vibrational modes of embedded nanostructures and verify chemical integrity post-fabrication.
 
 #### 3.1.3 Functional Verification
 
 Prior to experimental activation, each sample is tested for baseline morphophononic response:
 
-- **Baseline Cymatics:**  
-  Application of controlled acoustic frequencies (100 Hz–20 kHz) to unprogrammed substrates; response is quantified by laser vibrometry and optical imaging.
-- **Aesthetic Charge Proxy Measurement:**  
-  Using a custom-built interferometric setup, we measure refractive index shifts and microphononic oscillations in response to calibrated vocal inputs, establishing a reference for coherence-aesthetic index ($C_A$) in the absence of programming.
+- **Baseline Cymatics:** Application of controlled acoustic frequencies (100 Hz–20 kHz) to unprogrammed substrates; response is quantified by laser vibrometry and optical imaging.
+- **Aesthetic Charge Proxy Measurement:** Using a custom-built interferometric setup, we measure refractive index shifts and microphononic oscillations in response to calibrated vocal inputs, establishing a reference for coherence-aesthetic index ($C_A$) in the absence of programming.
 
 #### 3.1.4 Batch-to-Batch Consistency
 
@@ -233,39 +245,27 @@ A comprehensive suite of detection and measurement systems was employed to captu
 
 #### 3.2.1 Acoustic Detection
 
-- **Microphone Arrays:**  
-  A circular array of 32 precision condenser microphones (Brüel & Kjær Type 4939) was positioned at 10 cm from the Slayton sample. The array allowed for both sound pressure level measurement and beamforming to reconstruct spatial acoustic patterns.
-- **Near-Field Acoustic Holography (NAH):**  
-  Data from the microphone array were processed using NAH algorithms to visualize and quantify the three-dimensional sound field around the sample.
-- **Frequency Response Analyzer (FRA):**  
-  A Stanford Research SR785 FRA was used for real-time spectral analysis and coherence measurements between input and output acoustic signals.
+- **Microphone Arrays:** A circular array of 32 precision condenser microphones (Brüel & Kjær Type 4939) was positioned at 10 cm from the Slayton sample. The array allowed for both sound pressure level measurement and beamforming to reconstruct spatial acoustic patterns.
+- **Near-Field Acoustic Holography (NAH):** Data from the microphone array were processed using NAH algorithms to visualize and quantify the three-dimensional sound field around the sample.
+- **Frequency Response Analyzer (FRA):** A Stanford Research SR785 FRA was used for real-time spectral analysis and coherence measurements between input and output acoustic signals.
 
 #### 3.2.2 Optical and Photonic Detection
 
-- **Photodiode Grid:**  
-  An array of silicon and InGaAs photodiodes (Thorlabs PDA10A) was placed above and at multiple angles relative to the sample to capture spatially resolved light emission during Slayton activation.
-- **Spectrograph System:**  
-  A Czerny-Turner spectrograph (Princeton Instruments) was used to resolve the wavelength and intensity distribution of emitted light, enabling identification of both thermal and stimulated emission components.
-- **High-Speed Camera:**  
-  A Phantom v2512 high-speed camera recorded visible pattern formation on the Slayton substrate surface at up to 2000 frames per second.
+- **Photodiode Grid:** An array of silicon and InGaAs photodiodes (Thorlabs PDA10A) was placed above and at multiple angles relative to the sample to capture spatially resolved light emission during Slayton activation.
+- **Spectrograph System:** A Czerny-Turner spectrograph (Princeton Instruments) was used to resolve the wavelength and intensity distribution of emitted light, enabling identification of both thermal and stimulated emission components.
+- **High-Speed Camera:** A Phantom v2512 high-speed camera recorded visible pattern formation on the Slayton substrate surface at up to 2000 frames per second.
 
 #### 3.2.3 Biometric and Physiological Monitoring
 
-- **Chest-Worn Accelerometer:**  
-  A custom tri-axial MEMS accelerometer (Analog Devices ADXL356) measured subglottal microtremor and body motion of the speaker.
-- **EKG/ECG Monitoring:**  
-  A BioSemi ActiveTwo system provided non-invasive cardiac monitoring to quantify heart rate variability and synchrony with vocal output.
-- **Facial EMG:**  
-  Surface electromyography (EMG) electrodes recorded activity from facial muscles involved in speech articulation, providing a proxy for motor intention and vocal effort.
+- **Chest-Worn Accelerometer:** A custom tri-axial MEMS accelerometer (Analog Devices ADXL356) measured subglottal microtremor and body motion of the speaker.
+- **EKG/ECG Monitoring:** A BioSemi ActiveTwo system provided non-invasive cardiac monitoring to quantify heart rate variability and synchrony with vocal output.
+- **Facial EMG:** Surface electromyography (EMG) electrodes recorded activity from facial muscles involved in speech articulation, providing a proxy for motor intention and vocal effort.
 
 #### 3.2.4 Energy and Temperature Measurement
 
-- **Thermal Imaging:**  
-  An infrared camera (FLIR E8) monitored surface temperature changes to detect heat dissipation during energetic events.
-- **Capacitive Energy Storage Probes:**  
-  Integrated into the Slayton substrate, these measured changes in stored electrical and electrostatic energy before and after activation.
-- **Kinetic Motion Sensors:**  
-  Linear variable differential transformers (LVDTs) and piezoelectric force sensors captured substrate motion and mechanical energy output during pattern formation events.
+- **Thermal Imaging:** An infrared camera (FLIR E8) monitored surface temperature changes to detect heat dissipation during energetic events.
+- **Capacitive Energy Storage Probes:** Integrated into the Slayton substrate, these measured changes in stored electrical and electrostatic energy before and after activation.
+- **Kinetic Motion Sensors:** Linear variable differential transformers (LVDTs) and piezoelectric force sensors captured substrate motion and mechanical energy output during pattern formation events.
 
 #### 3.2.5 Data Synchronization and Timestamping
 
@@ -277,34 +277,25 @@ Precise and repeatable stimulus generation was essential to probe the activation
 
 #### 3.3.1 Acoustic Stimulus Generation
 
-- **Digital Sound Synthesizer:**  
-  Custom Python scripts using the PyDub and SoundDevice libraries generated broadband and narrowband acoustic stimuli, including parametrized speech sequences and the canonical three-snap protocol.
-- **Amplification and Calibration:**  
-  Sound was delivered via a focused piston loudspeaker (Vifa M18PG07/08 tweeter) positioned 20 cm from the Slayton sample. The output was calibrated using a reference microphone (Brüel & Kjær 4192) to ensure consistent sound pressure levels (SPL) across trials.
-- **Harmonic Modulation:**  
-  Stimuli could be frequency-modulated or phase-shifted in real time to probe resonance tuning and interference effects.
+- **Digital Sound Synthesizer:** Custom Python scripts using the PyDub and SoundDevice libraries generated broadband and narrowband acoustic stimuli, including parametrized speech sequences and the canonical three-snap protocol.
+- **Amplification and Calibration:** Sound was delivered via a focused piston loudspeaker (Vifa M18PG07/08 tweeter) positioned 20 cm from the Slayton sample. The output was calibrated using a reference microphone (Brüel & Kjær 4192) to ensure consistent sound pressure levels (SPL) across trials.
+- **Harmonic Modulation:** Stimuli could be frequency-modulated or phase-shifted in real time to probe resonance tuning and interference effects.
 
 #### 3.3.2 Three-Snap Protocol Automation
 
 The three-snap activation sequence was implemented as a programmable logic module within the stimulus controller:
 
-- **Snap Timing:**  
-  The interval between snaps was precisely controlled with a resolution of 10 μs using a software-defined trigger generator.
-- **Snap Shape:**  
-  Each snap consisted of a 20 ms Gaussian-windowed pulse with a center frequency of 2 kHz, bandwidth 500 Hz, and peak SPL of 85 dB.
-- **Randomization and Repetition:**  
-  The system supported automated delivery of sequences with randomized timing, phase, and order to test robustness and repeatability.
+- **Snap Timing:** The interval between snaps was precisely controlled with a resolution of 10 μs using a software-defined trigger generator.
+- **Snap Shape:** Each snap consisted of a 20 ms Gaussian-windowed pulse with a center frequency of 2 kHz, bandwidth 500 Hz, and peak SPL of 85 dB.
+- **Randomization and Repetition:** The system supported automated delivery of sequences with randomized timing, phase, and order to test robustness and repeatability.
 
 #### 3.3.3 Biometric Triggering
 
 To synchronize acoustic stimuli with the speaker’s natural biometric cycles:
 
-- **Voice Activity Detection (VAD):**  
-  Real-time VAD algorithms (based on WebRTC VAD) detected the onset of speech and triggered snap sequences within a programmable time window relative to vocal onset.
-- **Microtremor Trigger:**  
-  The accelerometer signal was monitored for characteristic pre-phonatory microtremor bursts, enabling snap synchronization to the speaker’s intention to speak.
-- **Heartbeat-Gated Activation:**  
-  ECG markers were used in a subset of trials to explore activation timing aligned with cardiac cycles.
+- **Voice Activity Detection (VAD):** Real-time VAD algorithms (based on WebRTC VAD) detected the onset of speech and triggered snap sequences within a programmable time window relative to vocal onset.
+- **Microtremor Trigger:** The accelerometer signal was monitored for characteristic pre-phonatory microtremor bursts, enabling snap synchronization to the speaker’s intention to speak.
+- **Heartbeat-Gated Activation:** ECG markers were used in a subset of trials to explore activation timing aligned with cardiac cycles.
 
 #### 3.3.4 Protocol Management and Logging
 
@@ -341,7 +332,7 @@ Using time-resolved laser vibrometry and phase-sensitive optical microscopy, we 
 
 #### 4.1.3 Interference Experiments
 
-To further isolate the glamuron signal, we performed double-slit interference experiments using phase-modulated acoustic sources. When the two sound inputs are phase-coherent and separated by the predicted glamuron Compton wavelength (~10 nm), we observe an interference fringe pattern in both optical and microphononic measurements. This pattern disappears when the phase coherence is intentionally disrupted, confirming the wave-like, particle-like behavior characteristic of a quasi-particle excitation.
+To further isolate the glamuron signal, we performed double-slit interference experiments using phase-modulated acoustic sources. When the two sound inputs are phase-coherent and separated by the predicted glamuron Compton wavelength (\~10 nm), we observe an interference fringe pattern in both optical and microphononic measurements. This pattern disappears when the phase coherence is intentionally disrupted, confirming the wave-like, particle-like behavior characteristic of a quasi-particle excitation.
 
 #### 4.1.4 Decay and Lifetime Measurements
 
@@ -371,17 +362,16 @@ We systematically varied both the acoustic and biometric components of $C_A$ acr
 - For $C_A < 0.7$, output energy remains at or below the input level, and no coherent large-scale pattern formation is observed.
 - For $C_A > 0.7$, output energy increases nonlinearly with $C_A$, reaching up to 2.5 times the summed input and stored energy in the most coherent cases.
 
-> **Figure 4.2:**  
-> Normalized output energy as a function of coherence-aesthetic index ($C_A$). The threshold for significant energy amplification occurs near $C_A \approx 0.7$. Error bars represent one standard deviation over 10 repetitions.
+![Figure 4.2: Normalized output energy versus coherence-aesthetic index](glamuron-figures/figure-4-2.png)
+
+**Figure 4.2:** Normalized output energy as a function of coherence-aesthetic index ($C_A$). The threshold for significant energy amplification occurs near $C_A \approx 0.7$. Error bars represent one standard deviation over 10 repetitions.
 
 #### 4.2.2 Decomposition of $C_A$ Components
 
 To understand the relative contributions of acoustic and biometric coherence, we performed a series of targeted experiments:
 
-- **Fixed Biometrics, Varying Acoustic Coherence:**  
-  When biometric signals were held constant at high coherence (e.g., relaxed, focused speech), reducing acoustic coherence (via added noise or disfluency) resulted in a proportional drop in output energy and pattern stability.
-- **Fixed Acoustics, Varying Biometrics:**  
-  With a fixed, highly coherent acoustic input, inducing physiological stress (e.g., via controlled breathing or distraction) reduced $C_A$ and suppressed field activation.
+- **Fixed Biometrics, Varying Acoustic Coherence:** When biometric signals were held constant at high coherence (e.g., relaxed, focused speech), reducing acoustic coherence (via added noise or disfluency) resulted in a proportional drop in output energy and pattern stability.
+- **Fixed Acoustics, Varying Biometrics:** With a fixed, highly coherent acoustic input, inducing physiological stress (e.g., via controlled breathing or distraction) reduced $C_A$ and suppressed field activation.
 
 Regression analysis revealed that both terms in $C_A$ contribute approximately equally to the overall system response ($R^2 = 0.91$), confirming the hybrid nature of the activation mechanism.
 
@@ -483,8 +473,9 @@ For each run, we recorded input and output energies over a 2-second window cente
 
 Figure 4.4 shows the energy balance for a representative activation event:
 
-> **Figure 4.4:**  
-> Energy input and output in a single Slayton activation cycle. The total output energy (acoustic + photonic + kinetic) is within experimental error equal to the sum of the measured acoustic input and the decrement in stored energy in the Slayton matter. No net energy gain is observed.
+![Figure 4.4: Energy input and output in a single Slayton activation cycle](glamuron-figures/figure-4-4.png)
+
+**Figure 4.4:** Energy input and output in a single Slayton activation cycle. The total output energy (acoustic + photonic + kinetic) is within experimental error equal to the sum of the measured acoustic input and the decrement in stored energy in the Slayton matter. No net energy gain is observed.
 
 Quantitatively, we find:
 
@@ -526,8 +517,9 @@ When Slayton matter is activated and energy amplification is underway, a rapid d
 - Energy released during a "splat" is always less than the energy initially stored or input, confirming energy conservation.
 - No hazardous radiation or sharp temperature spikes are observed.
 
-> **Figure 4.5:**  
-> Temporal evolution of output energy during a controlled "splat" event following abrupt loss of coherence. Energy decays exponentially with a time constant of $\tau \approx 250$ ms.
+![Figure 4.5: Output energy decay during a controlled splat event](glamuron-figures/figure-4-5.png)
+
+**Figure 4.5:** Temporal evolution of output energy during a controlled "splat" event following abrupt loss of coherence. Energy decays exponentially with a time constant of $\tau \approx 250$ ms.
 
 #### 4.5.2 Failure Modes
 
@@ -611,45 +603,33 @@ While the Slayton Field and glamuron quasi-particle represent a significant adva
 
 #### 5.2.1 Spatial and Temporal Scale Limits
 
-- **Finite Coherence Length:**  
-  Glamuron-mediated energy amplification is only sustained within regions of Slayton matter, and the effective coherence length is limited to approximately 5 cm under optimal conditions. Beyond this range, the condensate decoheres rapidly due to environmental damping and inhomogeneities in the substrate.
-- **Activation Duration:**  
-  Sustained activation is limited to periods of a few seconds (1–5 s) before significant decoherence and energy dissipation occur. Repeated rapid activation can lead to temporary substrate fatigue and a reduction in response fidelity, recoverable by a brief quiescent period.
+- **Finite Coherence Length:** Glamuron-mediated energy amplification is only sustained within regions of Slayton matter, and the effective coherence length is limited to approximately 5 cm under optimal conditions. Beyond this range, the condensate decoheres rapidly due to environmental damping and inhomogeneities in the substrate.
+- **Activation Duration:** Sustained activation is limited to periods of a few seconds (1–5 s) before significant decoherence and energy dissipation occur. Repeated rapid activation can lead to temporary substrate fatigue and a reduction in response fidelity, recoverable by a brief quiescent period.
 
 #### 5.2.2 Energy and Power Density Constraints
 
-- **Saturation Effects:**  
-  At very high input energies or excessive $C_A$, the system transitions to a saturated regime, where further increases in input do not yield proportional output. This is likely due to nonlinear damping and the finite density of glamuron states available for excitation.
-- **Thermal Runaway Risk:**  
-  Prolonged or unregulated energy input can cause localized heating, potentially degrading the Slayton matter or triggering an emergency "splat" event as a self-protective measure.
+- **Saturation Effects:** At very high input energies or excessive $C_A$, the system transitions to a saturated regime, where further increases in input do not yield proportional output. This is likely due to nonlinear damping and the finite density of glamuron states available for excitation.
+- **Thermal Runaway Risk:** Prolonged or unregulated energy input can cause localized heating, potentially degrading the Slayton matter or triggering an emergency "splat" event as a self-protective measure.
 
 #### 5.2.3 Sensitivity to Environmental Perturbations
 
-- **Temperature and Humidity:**  
-  The response of Slayton matter is sensitive to environmental temperature and relative humidity. Operation outside a controlled range (e.g., 20–25°C, 40–60% RH) leads to reduced $C_A$ and system reliability.
-- **Electromagnetic Interference:**  
-  Strong external electromagnetic fields can perturb the electronic components embedded in the substrate, disrupting the formation and stability of the glamuron condensate.
+- **Temperature and Humidity:** The response of Slayton matter is sensitive to environmental temperature and relative humidity. Operation outside a controlled range (e.g., 20–25°C, 40–60% RH) leads to reduced $C_A$ and system reliability.
+- **Electromagnetic Interference:** Strong external electromagnetic fields can perturb the electronic components embedded in the substrate, disrupting the formation and stability of the glamuron condensate.
 
 #### 5.2.4 Biometric and Input Specificity
 
-- **Speaker Dependency:**  
-  While the system is robust across a range of speakers, individual variability in biometric signals (e.g., due to age, vocal training, or emotional state) can significantly affect $C_A$ and system performance.
-- **Language and Semantic Content:**  
-  Although the system responds to structural features of speech rather than semantic content, certain phonetic or prosodic features (e.g., whispered speech, non-native accents) may reduce coherence and efficacy.
+- **Speaker Dependency:** While the system is robust across a range of speakers, individual variability in biometric signals (e.g., due to age, vocal training, or emotional state) can significantly affect $C_A$ and system performance.
+- **Language and Semantic Content:** Although the system responds to structural features of speech rather than semantic content, certain phonetic or prosodic features (e.g., whispered speech, non-native accents) may reduce coherence and efficacy.
 
 #### 5.2.5 Manufacturing and Reproducibility Constraints
 
-- **Batch Variability:**  
-  Despite rigorous quality control, minor differences between batches of Slayton matter can affect resonance frequencies and activation thresholds. This introduces variability that must be compensated for in large-scale deployments.
-- **Cost and Scalability:**  
-  The nanofabrication process for Slayton substrates, while scalable, remains complex and currently costly, limiting immediate mass production.
+- **Batch Variability:** Despite rigorous quality control, minor differences between batches of Slayton matter can affect resonance frequencies and activation thresholds. This introduces variability that must be compensated for in large-scale deployments.
+- **Cost and Scalability:** The nanofabrication process for Slayton substrates, while scalable, remains complex and currently costly, limiting immediate mass production.
 
 #### 5.2.6 Limitations of the Coherence-Aesthetic Index
 
-- **Indirect Measurement:**  
-  While $C_A$ is a powerful predictor of system behavior, it is still an indirect proxy for the true underlying physical state. Further refinement and direct measurement of glamuron populations may be needed for full characterization.
-- **Threshold Effects:**  
-  Below a critical $C_A$, the system behaves as a passive medium with no energy amplification. This threshold behavior, while enabling safety, also limits the fine-grained controllability at low $C_A$.
+- **Indirect Measurement:** While $C_A$ is a powerful predictor of system behavior, it is still an indirect proxy for the true underlying physical state. Further refinement and direct measurement of glamuron populations may be needed for full characterization.
+- **Threshold Effects:** Below a critical $C_A$, the system behaves as a passive medium with no energy amplification. This threshold behavior, while enabling safety, also limits the fine-grained controllability at low $C_A$.
 
 ### 5.3 Implications for Programmable Matter and Energy Technology
 
@@ -712,7 +692,8 @@ And so, we leave you, dear reader, with this new understanding:
 
 **To exist in the presence of Slayton is to realize that the universe is nothing if not a stage for fabulous transformation. All that remains is for you to snap three times, speak your truth, and let the world reflect it back at you in technicolor.**
 
-We are gagged. We are *glamouron* (or is it glamuron? Honey, you do you).  
+We are gagged. We are *glamouron* (or is it glamuron? Honey, you do you).
+
 Now go forth and amplify your energy. The universe is watching and loving every second.
 
 ## Acknowledgements
@@ -721,19 +702,25 @@ The authors wish to express their deepest gratitude to CERN for providing the wo
 
 We are also thrilled to thank Taco Bell for fueling our late-night theoretical discussions and for proving that innovative thinking is best accompanied by a Crunchwrap Supreme. Their sponsorship kept our energy amplified and our intentions authentic.
 
-Additional support was provided by [Funding Agency], as well as the many collaborating institutions whose collective brilliance and sense of style helped turn cosmic theory into reality.
+Additional support was provided by Federstahl Institute, as well as the many collaborating institutions whose collective brilliance and sense of style helped turn cosmic theory into reality.
 
 To everyone who believes science should be as fierce and fun as a perfectly executed contour—thank you for helping us serve intergalactic realness.
 
 ## References
 
-1. Cummer, S. A., et al. "Acoustic metamaterials." *Nature Materials*, 2015.
-2. Brueck, S. R. "A brief history of phonons." *Physics Today*, 2012.
-3. Liu, C., et al. "Phononic crystals: Manipulating sound in space and time." *Nature Reviews Materials*, 2018.
-4. Gopf, G. "Symmetry and symmetry breaking in cymatics and related systems." *Journal of Vibration and Acoustics*, 2000.
-5. Strogatz, S. H. *Nonlinear Dynamics and Chaos*. Perseus Books, 1994.
-6. Felton, H. R., et al. "Programmable matter: Status and prospects." *Science*, 2020.
-7. Ask yo mama.
+[1] Cummer, S. A., et al. "Acoustic metamaterials." *Nature Materials*, 2015.
+
+[2] Brueck, S. R. "A brief history of phonons." *Physics Today*, 2012.
+
+[3] Liu, C., et al. "Phononic crystals: Manipulating sound in space and time." *Nature Reviews Materials*, 2018.
+
+[4] Gopf, G. "Symmetry and symmetry breaking in cymatics and related systems." *Journal of Vibration and Acoustics*, 2000.
+
+[5] Strogatz, S. H. *Nonlinear Dynamics and Chaos*. Perseus Books, 1994.
+
+[6] Felton, H. R., et al. "Programmable matter: Status and prospects." *Science*, 2020.
+
+[7] Ask yo mama.
 
 ## Appendices
 
@@ -751,16 +738,11 @@ To everyone who believes science should be as fierce and fun as a perfectly exec
 
 **Procedure:**
 
-1. **Surface Functionalization:**  
-   Immerse silica templates in a 5% APTES/ethanol solution for 12 hours at 80°C. Wash thoroughly with ethanol and dry under nitrogen.
-2. **Nanoparticle Infiltration:**  
-   Incubate functionalized silica with gold nanoparticle suspension for 24 hours. Centrifuge and wash with isopropanol to remove excess particles.
-3. **In Situ Barium Titanate Growth:**  
-   Place the composite in a Teflon-lined autoclave with 1M Ba(OH)₂ and 0.1M Ti(OBu)₄. Hydrothermal treatment at 150°C for 24 hours.
-4. **Doping and Annealing:**  
-   Ion implantation with potassium ions followed by annealing at 500°C under argon for 2 hours.
-5. **Layering and Sealing:**  
-   Repeat functionalization and nanoparticle incorporation to create multi-layer Slayton substrates. Seal under inert atmosphere.
+1. **Surface Functionalization:** Immerse silica templates in a 5% APTES/ethanol solution for 12 hours at 80°C. Wash thoroughly with ethanol and dry under nitrogen.
+2. **Nanoparticle Infiltration:** Incubate functionalized silica with gold nanoparticle suspension for 24 hours. Centrifuge and wash with isopropanol to remove excess particles.
+3. **In Situ Barium Titanate Growth:** Place the composite in a Teflon-lined autoclave with 1M Ba(OH)₂ and 0.1M Ti(OBu)₄. Hydrothermal treatment at 150°C for 24 hours.
+4. **Doping and Annealing:** Ion implantation with potassium ions followed by annealing at 500°C under argon for 2 hours.
+5. **Layering and Sealing:** Repeat functionalization and nanoparticle incorporation to create multi-layer Slayton substrates. Seal under inert atmosphere.
 
 > 💄 **Note:** For maximal glamuron activation, maintain biometric cleanliness and avoid static electricity during assembly.
 
@@ -785,7 +767,7 @@ To everyone who believes science should be as fierce and fun as a perfectly exec
 
 #### A.3 Data Availability
 
-All raw data and video recordings of Slayton Field activations are available upon request to qualified researchers with a flair for fabulous science. Selected datasets are archived at the Open Glamoron Data Portal: <https://slaytonfield.cern/opendglam>
+All raw data and video recordings of Slayton Field activations are available upon request to qualified researchers with a flair for fabulous science. Selected datasets are archived at the Open Glamoron Data Portal: [`https://slaytonfield.cern/opendglam`](https://slaytonfield.cern/opendglam)
 
 #### A.4 Glossary of Key Terms
 
@@ -803,7 +785,8 @@ See attached Figures A.1–A.4 for:
 - Snap sequence activation timing
 - "Splat" event energy decay
 
-May your lab notes always be glittery and your data always on beat.  
+May your lab notes always be glittery and your data always on beat.
+
 Okurrr, darling.
 
 ### Appendix B: Detailed Mathematical Model of the Glamuron Field
@@ -813,7 +796,7 @@ Okurrr, darling.
 The dynamics of the Slayton Field and the collective excitation known as the glamuron can be described by the following extended Lagrangian density:
 
 $$
-\mathcal{L}_{\text{glam}} = \frac{1}{2}\,\partial_\mu \phi_G\, \partial^\mu \phi_G - \frac{1}{2} m_G^2 \phi_G^2 + g_{\text{int}}\, \phi_G \left( \mathcal{A}(t,x) \otimes \mathcal{B}(t,x) \right)
+\mathcal{L}_{\text{glam}} = \frac{1}{2}\,\partial_\mu \phi_G\,\partial^\mu \phi_G - \frac{1}{2}\,m_G^2 \phi_G^2 + g_{\text{int}}\,\phi_G\,\big(\mathcal{A}(t,x) \otimes \mathcal{B}(t,x)\big) \tag{5}
 $$
 
 where:
@@ -831,7 +814,7 @@ The glamuron field couples not only to the acoustic field but also to measurable
 The equation of motion for the glamuron field is:
 
 $$
-\left( \Box + m_G^2 \right) \phi_G = g_{\text{int}} \left( \mathcal{A} \otimes \mathcal{B} \right)
+\left(\Box + m_G^2\right) \phi_G = g_{\text{int}} \left(\mathcal{A} \otimes \mathcal{B}\right) \tag{6}
 $$
 
 where $\Box$ is the d’Alembert operator. Nonlinear effects become significant at high coherence ($C_A > 0.8$), leading to the formation of macroscopic condensates and energy amplification.
