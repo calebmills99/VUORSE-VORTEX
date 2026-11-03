@@ -1,0 +1,61 @@
+{
+  "owner": "glamuron_mid_figures",
+  "generation_method": "built-in image_gen with deterministic synthetic Matplotlib plot references",
+  "source_prompt_pack": "C:\\Users\\caleb\\.codex\\attachments\\8f750a46-e377-4efd-8ca3-b44b4400a54a\\Pasted text.txt",
+  "source_prompt_pack_sha256": "b5021c5a79072db6ae4f032f83d63036f345ecb5ed67f2609ab91b2711246bc3",
+  "synthetic_plot_data": "C:\\Users\\caleb\\Documents\\Codex\\2026-10-31\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\Glamuron_OpenAI_Comparison\\plot_references\\mid_figures_reference_data.json",
+  "data_provenance": "Illustrative synthetic data reconstructed from user supplied prompt specifications; not experimental measurements. Final images are generated decorative illustrations. Exact geometric fidelity has not been pixel-registered or independently measured.",
+  "figures": [
+    {
+      "figure": "4.3",
+      "status": "generated_and_visually_inspected",
+      "output_file": "C:\\Users\\caleb\\Documents\\Codex\\2026-10-31\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\Glamuron_OpenAI_Comparison\\fig_4_3_openai_v2.png",
+      "prompt_file": "C:\\Users\\caleb\\Documents\\Codex\\2026-10-31\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\Glamuron_OpenAI_Comparison\\prompts\\fig_4_3_openai_v2_prompt.txt",
+      "reference_file": "C:\\Users\\caleb\\Documents\\Codex\\2026-10-31\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\Glamuron_OpenAI_Comparison\\plot_references\\fig_4_3_reference.png",
+      "generation_source_file": "C:\\Users\\caleb\\.codex\\generated_images\\01a19d92-5ff7-75f2-9455-78cd8fe9417b\\exec-d0cb5bf3-1131-4fdc-bbb4-7cea7f0810cd.png",
+      "sha256": "df65ef0dc7c5f467d5610926dad3b06247fffec1a33d645f022fe1586dd6fc0e",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2848920,
+      "mode": "RGB",
+      "visual_qa": [
+        "Logarithmic ticks0.1/1/10, three bars near0.8/1/14 and capped error bars visible; category labels intact.",
+        "Pale pink satin, subtle glitter trails and four eye rhinestones visible, no extra curve or legend."
+      ]
+    },
+    {
+      "figure": "4.4",
+      "status": "generated_and_visually_inspected",
+      "output_file": "C:\\Users\\caleb\\Documents\\Codex\\2026-10-31\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\Glamuron_OpenAI_Comparison\\fig_4_4_openai_v2.png",
+      "prompt_file": "C:\\Users\\caleb\\Documents\\Codex\\2026-10-31\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\Glamuron_OpenAI_Comparison\\prompts\\fig_4_4_openai_v2_prompt.txt",
+      "reference_file": "C:\\Users\\caleb\\Documents\\Codex\\2026-10-31\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\Glamuron_OpenAI_Comparison\\plot_references\\fig_4_4_reference.png",
+      "generation_source_file": "C:\\Users\\caleb\\.codex\\generated_images\\01a19d92-5ff7-75f2-9455-78cd8fe9417b\\exec-3a334236-3b9a-4a93-bb94-f54b846c5c34.png",
+      "sha256": "255e2065115b1357edb3f77cfde160be3e69c8e9dfd1729e09cbec5eec02b8a3",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2263400,
+      "mode": "RGB",
+      "visual_qa": [
+        "Two categories, Input100 and Output97.3±2.1%, correct two/three segment topology and five legend entries visible.",
+        "Rhinestone bars, pearl axes, corner feathers and exactly one shoe outside data categories visible."
+      ]
+    },
+    {
+      "figure": "4.5",
+      "status": "generated_and_visually_inspected",
+      "output_file": "C:\\Users\\caleb\\Documents\\Codex\\2026-10-31\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\Glamuron_OpenAI_Comparison\\fig_4_5_openai_v2.png",
+      "prompt_file": "C:\\Users\\caleb\\Documents\\Codex\\2026-10-31\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\Glamuron_OpenAI_Comparison\\prompts\\fig_4_5_openai_v2_prompt.txt",
+      "reference_file": "C:\\Users\\caleb\\Documents\\Codex\\2026-10-31\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\Glamuron_OpenAI_Comparison\\plot_references\\fig_4_5_reference.png",
+      "generation_source_file": "C:\\Users\\caleb\\.codex\\generated_images\\01a19d92-5ff7-75f2-9455-78cd8fe9417b\\exec-b27ba062-a8e3-49d9-a7cd-766d6d28c12e.png",
+      "sha256": "4142d1c54c8b6e821d8ab928d5b7b7ebe24457eb456f43a9ee6b95072bf4eda3",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2928280,
+      "mode": "RGB",
+      "visual_qa": [
+        "Linear-axis exponential decay and τ=250ms legend visible; blue crystal markers and orange curve preserve reference shape.",
+        "Champagne-pink satin, rhinestone frame, small cupcake-like splat and exactly two unmatched pegged socks visible."
+      ]
+    }
+  ]
+}

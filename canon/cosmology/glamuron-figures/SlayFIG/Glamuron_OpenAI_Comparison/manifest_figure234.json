@@ -1,0 +1,83 @@
+{
+  "owner": "figure_placement_check",
+  "source_file": "C:\\Users\\caleb\\.codex\\attachments\\8f750a46-e377-4efd-8ca3-b44b4400a54a\\Pasted text.txt",
+  "source_sha256": "b5021c5a79072db6ae4f032f83d63036f345ecb5ed67f2609ab91b2711246bc3",
+  "data_status": "Deterministic synthetic illustrative reference data reconstructed from user-provided image prompts; not experimental measurements.",
+  "tool": "built-in image_gen",
+  "figures": [
+    {
+      "figure": "2.3",
+      "glamour_level": 1,
+      "reference_path": "C:\\Users\\caleb\\Documents\\Codex\\2026-10-31\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\Glamuron_OpenAI_Comparison\\plot_references\\fig_2_3_synthetic_reference.png",
+      "prompt_path": "C:\\Users\\caleb\\Documents\\Codex\\2026-10-31\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\Glamuron_OpenAI_Comparison\\prompts\\fig_2_3_openai_v2_prompt.txt",
+      "source_prompt_path": "C:\\Users\\caleb\\Documents\\Codex\\2026-10-31\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\Glamuron_OpenAI_Comparison\\prompts\\fig_2_3_source_prompt.txt",
+      "output_path": "C:\\Users\\caleb\\Documents\\Codex\\2026-10-31\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\Glamuron_OpenAI_Comparison\\fig_2_3_openai_v2.png",
+      "generation_result_path": "C:/Users/caleb/.codex/generated_images/01a19a9f-87ef-75d2-bdb2-2e62ecb58043/exec-6ef5cfba-f3c4-4c84-a129-ac7c600bc410.png",
+      "visual_qa": "PASS: 18 positions and error bars visible, threshold guide at 0.7, one tiny pink rhinestone at the transition, black labels and ticks legible, no extra decoration or fitted curve. Synthetic illustrative data.",
+      "dimensions_px": [
+        1536,
+        1024
+      ],
+      "output_sha256": "cb3f8ad77817e9e2b22217f96907b634cc109440877bc72de279e0dc130f77a7",
+      "reference_sha256": "134b781faa6281d94f9cff21626afd74b59330616889caefa23149cdef8e1f85",
+      "prompt_sha256": "0a29a76cb8005fed9ba1459e32277ede315211543972444eec7c380eb3268416",
+      "status": "complete"
+    },
+    {
+      "figure": "4.1",
+      "glamour_level": 2,
+      "reference_path": "C:\\Users\\caleb\\Documents\\Codex\\2026-10-31\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\Glamuron_OpenAI_Comparison\\plot_references\\fig_4_1_synthetic_reference.png",
+      "prompt_path": "C:\\Users\\caleb\\Documents\\Codex\\2026-10-31\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\Glamuron_OpenAI_Comparison\\prompts\\fig_4_1_openai_v2_prompt.txt",
+      "source_prompt_path": "C:\\Users\\caleb\\Documents\\Codex\\2026-10-31\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\Glamuron_OpenAI_Comparison\\prompts\\fig_4_1_source_prompt.txt",
+      "output_path": "C:\\Users\\caleb\\Documents\\Codex\\2026-10-31\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\Glamuron_OpenAI_Comparison\\fig_4_1_openai_v2.png",
+      "generation_result_path": "C:/Users/caleb/.codex/generated_images/01a19a9f-87ef-75d2-bdb2-2e62ecb58043/exec-7ffdf37e-ed7f-4c1d-b8b5-dd39e951cd1b.png",
+      "visual_qa": "PASS: narrow solid-blue 16.2 kHz peak at amplitude1.0; broad dashed-grey hump at0.2; exact legend text, ticks and labels; small gold apex star, restrained gold axes, one grey knitted sock outside chart. Synthetic illustrative data.",
+      "dimensions_px": [
+        1536,
+        1024
+      ],
+      "output_sha256": "977e5516156ac64cb9fe374e627ba8eafb4e23997a7a1ac8b4a5be87fab82596",
+      "reference_sha256": "7cc7f1678bd1fcfdc33fc2944e80752bfde960a8d0d4397ef1f15b9fbe37427e",
+      "prompt_sha256": "0056375d7f6976937d61688487ac35c066c1078405cf6bc4ec713ea014cff2ea",
+      "status": "complete"
+    },
+    {
+      "figure": "4.2",
+      "glamour_level": 3,
+      "reference_path": "C:\\Users\\caleb\\Documents\\Codex\\2026-10-31\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\Glamuron_OpenAI_Comparison\\plot_references\\fig_4_2_synthetic_reference.png",
+      "prompt_path": "C:\\Users\\caleb\\Documents\\Codex\\2026-10-31\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\Glamuron_OpenAI_Comparison\\prompts\\fig_4_2_openai_v2_prompt.txt",
+      "source_prompt_path": "C:\\Users\\caleb\\Documents\\Codex\\2026-10-31\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\Glamuron_OpenAI_Comparison\\prompts\\fig_4_2_source_prompt.txt",
+      "output_path": "C:\\Users\\caleb\\Documents\\Codex\\2026-10-31\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\Glamuron_OpenAI_Comparison\\fig_4_2_openai_v2.png",
+      "generation_result_path": "C:/Users/caleb/.codex/generated_images/01a19a9f-87ef-75d2-bdb2-2e62ecb58043/exec-83008d38-a205-4ebb-b4cf-6e5ad054a1ab.png",
+      "visual_qa": "PASS: two labelled panels; twelve pink square rhinestones with gold-pin error bars; threshold and baseline dashed guides; faint glitter uncertainty band; eight blue circles and eight open grey triangles with endpoints2.3/2.2; exact two-entry legend with gold border; three white snapping gloves above panel b clear of text. Synthetic illustrative data.",
+      "dimensions_px": [
+        1536,
+        1024
+      ],
+      "output_sha256": "f478a929597bf84e2d87f7387cc9bea034102cc731710f39a1c9f5fd4c936863",
+      "reference_sha256": "2e4f62a4ef8e6aea14c4ffebdb9c9fc8478c3dc1f14a36a4fc6c8879b806847b",
+      "prompt_sha256": "c049be3ccfb1e9c6017429cd2b8bb189c4c841fe92e56dc6c33e9824639e05f3",
+      "status": "complete"
+    },
+    {
+      "figure": "4.2-S",
+      "glamour_level": 4,
+      "reference_path": "C:\\Users\\caleb\\Documents\\Codex\\2026-10-31\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\Glamuron_OpenAI_Comparison\\plot_references\\fig_4_2-S_synthetic_reference.png",
+      "prompt_path": "C:\\Users\\caleb\\Documents\\Codex\\2026-10-31\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\Glamuron_OpenAI_Comparison\\prompts\\fig_4_2-S_openai_v2_prompt.txt",
+      "source_prompt_path": "C:\\Users\\caleb\\Documents\\Codex\\2026-10-31\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\Glamuron_OpenAI_Comparison\\prompts\\fig_4_2-S_source_prompt.txt",
+      "output_path": "C:\\Users\\caleb\\Documents\\Codex\\2026-10-31\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\Glamuron_OpenAI_Comparison\\fig_4_2-S_openai_v2.png",
+      "generation_result_path": "C:/Users/caleb/.codex/generated_images/01a19a9f-87ef-75d2-bdb2-2e62ecb58043/exec-584761f8-feaf-4873-8215-505ffda5637c.png",
+      "visual_qa": "PASS: square map, six-by-six lattice with one embroidered sock replacing one pattern node; blue sequins and white negative space; 0-to-5 position axes; magenta open lipstick colorbar with ticks -2,-1,0,1,2 and readable displacement label; 5 cm arrow retained; no reunion or returning-sock narrative. Synthetic illustrative data.",
+      "dimensions_px": [
+        1254,
+        1254
+      ],
+      "output_sha256": "075ec0f24d41e6330ce30f141123959f124f01938fa3e56cfbfb0aff7977e221",
+      "reference_sha256": "f47e161e306219ffa52f7c12b9b4761b0a2be7c5634c903413daa1338ce2b1b6",
+      "prompt_sha256": "baaf323e4a2ffeb9a64bad36c9c2655addda18ccff97e76d1787e8628efb933e",
+      "status": "complete"
+    }
+  ],
+  "material_gaps": [],
+  "verification_scope": "All four generated images visually inspected; text/number/geometry checks by visual comparison to deterministic references. Files decoded and original-copy hashes matched. These are synthetic illustrative figures, not experimental data."
+}

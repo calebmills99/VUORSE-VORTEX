@@ -1,0 +1,87 @@
+{
+  "mode": "built-in image_gen",
+  "source_json": "C:\\Users\\caleb\\.codex\\attachments\\8f750a46-e377-4efd-8ca3-b44b4400a54a\\Pasted text.txt",
+  "data_status": "deterministic synthetic illustrations reconstructed from user image prompt specifications, not experimental measurements",
+  "reference_manifest": "appendix_reference_manifest.json",
+  "source_prompt_set": "appendix_imagegen_prompts.json",
+  "figures": [
+    {
+      "figure": "A.1",
+      "file": "fig_A_1_openai_v2.png",
+      "generated_source": "C:\\Users\\caleb\\.codex\\generated_images\\01a19d92-aac5-71a0-8cc5-3f997f4d7142\\exec-38175b13-cc20-4dbf-8fba-9b65780e7bb6.png",
+      "output": "C:\\Users\\caleb\\Documents\\Codex\\2026-10-31\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\Glamuron_OpenAI_Comparison\\fig_A_1_openai_v2.png",
+      "reference": "fig_A_1_reference.png",
+      "prompt_file": "prompts/fig_A_1_openai_v2_prompt.txt",
+      "qa": {
+        "visually_inspected": true,
+        "geometry": "matches reference within raster interpretation",
+        "text": "readable and labels correct",
+        "glamour_level": 8,
+        "notes": "Chrome dryer portal, sequins, rhinestone panel, fairy lights, four unmatched socks; activation2s and bands12/16.2/18kHz remain intact."
+      }
+    },
+    {
+      "figure": "A.2",
+      "file": "fig_A_2_openai_v2.png",
+      "generated_source": "C:\\Users\\caleb\\.codex\\generated_images\\01a19d92-aac5-71a0-8cc5-3f997f4d7142\\exec-6281bbb3-d2ba-4fc1-9143-b4a7342f0d63.png",
+      "output": "C:\\Users\\caleb\\Documents\\Codex\\2026-10-31\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\Glamuron_OpenAI_Comparison\\fig_A_2_openai_v2.png",
+      "reference": "fig_A_2_reference.png",
+      "prompt_file": "prompts/fig_A_2_openai_v2_prompt.txt",
+      "qa": {
+        "visually_inspected": true,
+        "geometry": "matches reference within raster interpretation",
+        "text": "readable and labels correct",
+        "glamour_level": 9,
+        "notes": "Three aligned panels; transitions2s, heart rate66bpm, C_A0.3to0.9 with0.7threshold; glove, tiara, eye gems, liquid-blue glitter."
+      }
+    },
+    {
+      "figure": "A.3",
+      "file": "fig_A_3_openai_v2.png",
+      "generated_source": "C:\\Users\\caleb\\.codex\\generated_images\\01a19d92-aac5-71a0-8cc5-3f997f4d7142\\exec-cc605109-638e-4080-a127-0089c7701649.png",
+      "output": "C:\\Users\\caleb\\Documents\\Codex\\2026-10-31\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\Glamuron_OpenAI_Comparison\\fig_A_3_openai_v2.png",
+      "reference": "fig_A_3_reference.png",
+      "prompt_file": "prompts/fig_A_3_openai_v2_prompt.txt",
+      "generation_chain": [
+        {
+          "step": 1,
+          "source": "C:\\Users\\caleb\\.codex\\generated_images\\01a19d92-aac5-71a0-8cc5-3f997f4d7142\\exec-993b850a-3075-43ad-8d01-11832b233c5e.png",
+          "reference": "fig_A_3_reference.png",
+          "prompt_file": "prompts/fig_A_3_openai_v2_initial_prompt.txt"
+        },
+        {
+          "step": 2,
+          "source": "C:\\Users\\caleb\\.codex\\generated_images\\01a19d92-aac5-71a0-8cc5-3f997f4d7142\\exec-cc605109-638e-4080-a127-0089c7701649.png",
+          "prompt_file": "prompts/fig_A_3_openai_v2_geometry_repair_prompt.txt",
+          "references": [
+            "C:\\Users\\caleb\\.codex\\generated_images\\01a19d92-aac5-71a0-8cc5-3f997f4d7142\\exec-993b850a-3075-43ad-8d01-11832b233c5e.png",
+            "fig_A_3_reference.png"
+          ],
+          "change": "Aligned blue pulse apexes to the0/110/330ms dimension endpoints; preserved stagecraft and labels."
+        }
+      ],
+      "qa": {
+        "visually_inspected": true,
+        "geometry": "three same-height narrow Gaussian peaks at approximately0/110/330ms after targeted repair; dimension labels110/220ms and1:2interval ratio preserved",
+        "text": "black x/y labels, allticks, Snap1/2/3 and interval labels clear",
+        "glamour_level": 10,
+        "notes": "Rhinestone snapping opera-glove hands behind blue trace, marabou boa, gold/pink disco mosaic, unmatched socks approaching dark vortex. Scientific geometry remains an artistic raster interpretation; exact deterministic reference accompanies it."
+      }
+    },
+    {
+      "figure": "A.4",
+      "file": "fig_A_4_openai_v2.png",
+      "generated_source": "C:\\Users\\caleb\\.codex\\generated_images\\01a19d92-aac5-71a0-8cc5-3f997f4d7142\\exec-95d3264f-2b20-455c-9cff-218bfacd3b47.png",
+      "output": "C:\\Users\\caleb\\Documents\\Codex\\2026-10-31\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\Glamuron_OpenAI_Comparison\\fig_A_4_openai_v2.png",
+      "reference": "fig_A_4_reference.png",
+      "prompt_file": "prompts/fig_A_4_openai_v2_prompt.txt",
+      "qa": {
+        "visually_inspected": true,
+        "geometry": "semilog diagonal endpoint below0.01 at1500ms, approximately0.00248, retained",
+        "text": "clear black labels, log ticks1/0.1/0.01, tau250ms legend correct",
+        "glamour_level": 11,
+        "notes": "Crown, feathers, jewels, pearls, confetti, unmatched raining socks, relieved face sock, miniature sequinned heel at terminal endpoint; scientific panel remains clear."
+      }
+    }
+  ]
+}

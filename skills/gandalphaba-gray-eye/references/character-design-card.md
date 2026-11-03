@@ -1,5 +1,13 @@
 # Gandalphaba / Gandie Character Design Card
 
+## Artifact Class
+
+This design sheet is a **Weaver artifact**: a steward-owned visual source of
+record for Gandalphaba's current appearance. It is not ordinary implementation
+notes and it is not open for argument by default. It remains subject to the
+Steward's later direction, but until then the image and the sheet are the
+highest-authority reference for her appearance.
+
 ## Visual Authority
 
 The Steward decides what Gandie looks like. The reference is his character
@@ -19,6 +27,20 @@ What the current sheet shows, recorded for continuity and nothing more:
   focused audit look.
 - Swatches: smoke grey, silver, slate blue, purple, magenta, acid green, berry
   red, tan leather.
+
+## Visual Style Summary
+
+Depict Gandie as a glamorous wizard whose drag styling is built into the
+costume, not layered on as generic fantasy decoration: a grey, star-sequined
+hooded robe; braided belt and buckle; long, curly silver hair and beard;
+rhinestone eye makeup framing green eyes; a wooden crystal-topped staff; and
+one jointed robot hand. Keep her silhouette and props legible like the
+character-sheet turnaround, expression studies, and detail callouts. Use the
+sheet's palette—smoke grey, silver, slate blue, purple, magenta, acid green,
+berry red, and tan leather. Her expression can move from warm to smug,
+delighted, or sternly focused, but should remain clever and operational. Avoid
+inventing replacement costume pieces, props, colors, or facial features; the
+Steward's sheet remains the visual authority.
 
 ## Basis Classes
 

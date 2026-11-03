@@ -1,8 +1,6 @@
 # VUORSE-VORTEX
 
-VUORSE-VORTEX is the Slayverse continuity system: a canon-governed corpus, a
-disclosure firewall, and the tooling that turns sealed narrative sources into
-indexes, graphs, and — downstream — production.
+VUORSE-VORTEX is the Slayverse continuity system: a canon-governed corpus, a disclosure firewall, and the tooling that turns sealed narrative sources into indexes, graphs, and downstream production.
 
 ```text
 RAG retrieves.
@@ -30,19 +28,38 @@ not redefine the canon.
 
 ## Repository map
 
-| Layer | Location | Purpose |
-|---|---|---|
-| Governance | `policies/` | firewall, disclosure classes, writer-room boundary, GPU floor |
-| Corpus of record | `manifests/corpus/` | source manifest, entity index, relationship index |
-| Canon | `canon/` | Books One/Two, characters, cosmology, artifacts, story arcs, TV bible |
-| Sealed layers | `roadmap/`, `hooplehopper_totality/` | private by default; promotion is explicit |
-| Runtime | `vuorse_vortex/` | firewall, walled load, indexing, graph, synthesis, vectors, API/CLI |
-| Agents | `agents/` | canon extractor, indexer, firewall validator, seam clerk, writers room, enricher |
-| Retrieval | `embeddings/indexes/` | sqlite-fts5 chunk store carrying per-chunk visibility |
-| Writers room | `docs/writers-room/` | Season 1 spine, canon ledger, room protocol |
-| Forge | `worldforge/` | reconnaissance and exploratory runs — **provisional, never canon** |
-| Production specialist | `comfyui-expert/` | ComfyUI/VideoAgent orchestration, called — not sovereign |
-| Tests | `tests/` | including `test_manifest_integrity.py` (disclosure-boundary invariants) |
+| Layer | Location         | Purpose                                                    |
+| ----- | ---------------- | ---------------------------------------------------------- |
+| Gover | `policies/`      | firewall, disclosure classes, writer-room boundary, GPU    |
+| nance |                  | floor                                                      |
+| Corpu | `manifests/corp  | source manifest, entity index, relationship index          |
+| s of  | us/`             |                                                            |
+| recor |                  |                                                            |
+| d     |                  |                                                            |
+| Canon | `canon/`         | Books One/Two, characters, cosmology, artifacts, story     |
+|       |                  | arcs, TV bible                                             |
+| Seale | `roadmap/` ,     | private by default; promotion is explicit                  |
+| d     | `hooplehopper_t  |                                                            |
+| layer | otality/`        |                                                            |
+| s     |                  |                                                            |
+| Runti | ` vuorse_vortex/ | firewall, walled load, indexing, graph, synthesis,         |
+|       |                  | vectors,                                                   |
+| me    | `                | API/CLI                                                    |
+| Agent | `agents/`        | canon extractor, indexer, firewall validator, seam clerk,  |
+| s     |                  | writers room, enricher                                     |
+| Retri | `embeddings/ind  | sqlite-fts5 chunk store carrying per-chunk visibility      |
+| eval  | exes/`           |                                                            |
+| Write | `docs/writers-r  | Season 1 spine, canon ledger, room protocol                |
+| rs    | oom/`            |                                                            |
+| room  |                  |                                                            |
+| Forge | `worldforge/`    | reconnaissance and exploratory runs — **provisional, never |
+|       |                  | canon**                                                    |
+| Produ | `comfyui-expert  | ComfyUI/VideoAgent orchestration, called — not sovereign   |
+| ction | /`               |                                                            |
+| speci |                  |                                                            |
+| alist |                  |                                                            |
+| Tests | `tests/`         | including `test_manifest_integrity.py`                     |
+|       |                  | (disclosure-boundary invariants)                           |
 
 ## Core rules
 

@@ -1,5 +1,9 @@
 /* ─── Design System Tokens ─────────────────────────────────────────────────── */
 /* Edit these variables to update the entire UI. All components reference them. */
+window.MathJax = {
+  loader: {load: ['[tex]/colorv2']},
+  tex: {packages: {'[+]': ['colorv2']}}
+};
 
 :root {
   /* ── Color: Brand Gold ── */

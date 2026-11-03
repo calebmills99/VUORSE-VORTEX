@@ -1,0 +1,66 @@
+{
+  "source_json": "C:\\Users\\caleb\\.codex\\attachments\\8f750a46-e377-4efd-8ca3-b44b4400a54a\\Pasted text.txt",
+  "source_sha256": "b5021c5a79072db6ae4f032f83d63036f345ecb5ed67f2609ab91b2711246bc3",
+  "data_status": "synthetic illustrative data derived from user prompt descriptions; not experimental measurements",
+  "references": [
+    {
+      "figure": "A.1",
+      "path": "C:\\Users\\caleb\\Documents\\Codex\\2026-10-31\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\Glamuron_OpenAI_Comparison\\plot_references\\fig_A_1_reference.png",
+      "sha256": "f42136c64a4a7009c37807aa97fb989f26e693992887591a37185d533334d1c9"
+    },
+    {
+      "figure": "A.2",
+      "path": "C:\\Users\\caleb\\Documents\\Codex\\2026-10-31\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\Glamuron_OpenAI_Comparison\\plot_references\\fig_A_2_reference.png",
+      "sha256": "82391e225ba2b1fe82448342122ffd70e65d8d9d3fd4c50724586a8296dadf8d"
+    },
+    {
+      "figure": "A.3",
+      "path": "C:\\Users\\caleb\\Documents\\Codex\\2026-10-31\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\Glamuron_OpenAI_Comparison\\plot_references\\fig_A_3_reference.png",
+      "sha256": "39689af04106a5b8865532c30c0ba0e152ecdf8170fe2755679567a8086bf4e0"
+    },
+    {
+      "figure": "A.4",
+      "path": "C:\\Users\\caleb\\Documents\\Codex\\2026-10-31\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\Glamuron_OpenAI_Comparison\\plot_references\\fig_A_4_reference.png",
+      "sha256": "d415d64b0b4843fc100d17dff9f9fbbfe73e8f2826079f078af22180b0908fad"
+    }
+  ],
+  "invariants": {
+    "A.1": {
+      "activation_s": 2,
+      "primary_frequency_khz": 16.2,
+      "secondary_frequencies_khz": [
+        12,
+        18
+      ],
+      "power_db_range": [
+        -60,
+        0
+      ]
+    },
+    "A.2": {
+      "settled_heart_rate_bpm": 66,
+      "coherence_range": [
+        0.3,
+        0.9
+      ],
+      "threshold": 0.7
+    },
+    "A.3": {
+      "snap_times_ms": [
+        0,
+        110,
+        330
+      ],
+      "intervals_ms": [
+        110,
+        220
+      ]
+    },
+    "A.4": {
+      "decay_tau_ms": 250,
+      "energy_at_0": 1,
+      "energy_at_1500": 0.0024787521766663585,
+      "y_scale": "log"
+    }
+  }
+}

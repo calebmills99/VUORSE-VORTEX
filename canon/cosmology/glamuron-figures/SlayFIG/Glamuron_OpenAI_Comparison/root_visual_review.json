@@ -1,0 +1,74 @@
+{
+  "reviewed_by": "root",
+  "review_type": "Visual inspection of every selected final image against the supplied prompt and clean reference; file integrity checked separately.",
+  "approved_cover": {
+    "file": "cover_glamuron_openai_v2.png",
+    "sha256": "2eefab03bf390dde2474cd533533b5a39cda337068a0b341be1ae45079b697ad",
+    "status": "User-approved cover preserved"
+  },
+  "figures": [
+    {
+      "id": "2.3",
+      "status": "pass",
+      "observed": "Blue scatter and capped error bars, flat-to-rising threshold shape, dotted0.7guide, one pink rhinestone, clear plain text."
+    },
+    {
+      "id": "4.1",
+      "status": "pass",
+      "observed": "Narrow16.2kHz blue resonance, low broad dashed-grey hump, legend intact, gold star, fine gold axes, one grey sock outside plot."
+    },
+    {
+      "id": "4.2",
+      "status": "pass",
+      "observed": "Two panels, twelve pink square stones and gold error bars, threshold guides/glitter band, blue-circle and grey-triangle component series, three snapping gloves."
+    },
+    {
+      "id": "4.2-S",
+      "status": "pass",
+      "observed": "Square0–5cm lattice of sequin lobes, embroidered sock, magenta lipstick displacement scale with-2,-1,0,1,2labels."
+    },
+    {
+      "id": "4.3",
+      "status": "pass",
+      "observed": "Logarithmic0.1/1/10axis, three bars at approximately0.8/1/14, error bars, dashed baseline, pink satin, discreet eye jewels."
+    },
+    {
+      "id": "4.4",
+      "status": "pass",
+      "observed": "Two stacked totals100and97.3, five legend entries,97.3±2.1annotation, colored rhinestone segments, pearl axes, feather corners, one heel."
+    },
+    {
+      "id": "4.5",
+      "status": "pass",
+      "observed": "Linear-y exponential decay, blue crystal data points, orange tau250ms fit, correct ticks/legend, champagne satin, two unmatched pegged socks, small cupcake splat."
+    },
+    {
+      "id": "A.1",
+      "status": "pass",
+      "observed": "Activation at2s, strong16.2kHz and weaker12/18kHz bands, navy-yellow power scale, dryer chrome surround, sequins, fairy lights, decorative socks."
+    },
+    {
+      "id": "A.2",
+      "status": "pass",
+      "observed": "Three aligned panels, noisy-to-periodic microtremor, heart rate settling near66, coherence rising0.3to0.9with0.7guide, jeweled frame, eye gems, glove and tiara."
+    },
+    {
+      "id": "A.3",
+      "status": "pass_after_targeted_repair",
+      "observed": "Three narrow equal-height pulses aligned approximately0/110/330ms with110/220ms dimensions, clear labels/ticks, snapping jeweled gloves, boa, disco mosaic, socks/vortex."
+    },
+    {
+      "id": "A.4",
+      "status": "pass",
+      "observed": "Straight semilog decay from1toapproximately0.0025at1500ms,0.01/0.1/1ticks, tau250ms legend, crown/feathers/pearls/confetti/socks and heel-shaped endpoint splat."
+    }
+  ],
+  "limits": "Generated decorative charts are artistic raster interpretations. The clean accompanying plot references use synthetic data from the supplied briefs, not experimental measurements; the artwork is not independently pixel-registered.",
+  "source_brief_resolutions": [
+    "Figure4.3 calls the bar chart a curve in its glamour sentence: glitter was applied along bar edges without inventing another data curve.",
+    "Figure4.3 asks for both gold-foil ticks and plain-black text: primary labels remain black with restrained gold accents.",
+    "Figure4.4 gives approximate component heights summing97and exact total97.3: the top synthetic output segment uses12.3to retain the exact97.3total.",
+    "FigureA.3 required one targeted alignment correction; both initial and correction prompts and the selected generation chain are retained."
+  ],
+  "rendered_gallery_checked": false
+}
